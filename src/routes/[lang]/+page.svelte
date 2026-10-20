@@ -3,11 +3,14 @@ ABOUTME: Localized home page: the site's mission and the zoomable budget map.
 ABOUTME: Text comes from the message files and every figure from the sourced data in data/.
 -->
 <script lang="ts">
+	import Outlook from '#lib/builder/Outlook.svelte';
+	import type { Changes } from '#lib/builder/choices.ts';
 	import BudgetMap from '#lib/explorer/BudgetMap.svelte';
 	import { translate } from '#lib/i18n/translate.ts';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
+	let changes: Changes = $state({});
 	const t = $derived((key: Parameters<typeof translate>[1]) => translate(data.locale, key));
 </script>
 
@@ -23,7 +26,8 @@ ABOUTME: Text comes from the message files and every figure from the sourced dat
 	<p class="article__status">{t('home.status')}</p>
 </main>
 
-<BudgetMap data={data.dataset} locale={data.locale} />
+<BudgetMap data={data.dataset} locale={data.locale} bind:changes />
+<Outlook data={data.dataset} locale={data.locale} {changes} onreset={() => (changes = {})} />
 
 <style>
 	.article {

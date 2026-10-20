@@ -1,8 +1,9 @@
 <!--
 ABOUTME: Zoomable, area-true budget map: Belgium's governments, then one government's spending lines.
-ABOUTME: Includes a "you are here" minimap when zoomed, breadcrumbs, and an equivalent table with sources.
+ABOUTME: Includes a "you are here" minimap, breadcrumbs, and a table with sources and per-line budget sliders.
 -->
 <script lang="ts">
+	import type { Changes } from '../builder/choices.ts';
 	import type { Dataset } from '../data/schema.ts';
 	import type { Locale } from '../i18n/locales.ts';
 	import { translate, type MessageKey } from '../i18n/translate.ts';
@@ -10,7 +11,23 @@ ABOUTME: Includes a "you are here" minimap when zoomed, breadcrumbs, and an equi
 	import { formatEuro } from './format.ts';
 	import { mapTiles, type Tile } from './layout.ts';
 
-	let { data, locale }: { data: Dataset; locale: Locale } = $props();
+	let {
+		data,
+		locale,
+		changes = $bindable({})
+	}: { data: Dataset; locale: Locale; changes?: Changes } = $props();
+
+	const percentOf = (id: string, amount: number) => Math.round(((changes[id] ?? 0) / amount) * 100);
+
+	function setPercent(id: string, amount: number, percent: number) {
+		const next = { ...changes };
+		if (percent === 0) delete next[id];
+		else next[id] = (amount * percent) / 100;
+		changes = next;
+	}
+
+	const signed = (eurMillion: number) =>
+		eurMillion > 0 ? `+${formatEuro(eurMillion, locale)}` : formatEuro(eurMillion, locale);
 
 	const t = (key: MessageKey) => translate(locale, key);
 
@@ -133,6 +150,9 @@ ABOUTME: Includes a "you are here" minimap when zoomed, breadcrumbs, and an equi
 					<th scope="col" class="num">{t('map.colAmount')}</th>
 					<th scope="col" class="num">{t('map.colShare')}</th>
 					<th scope="col">{t('map.colSource')}</th>
+					{#if focusEntity?.adjustable}
+						<th scope="col">{t('builder.change')}</th>
+					{/if}
 				</tr>
 			</thead>
 			<tbody>
@@ -150,6 +170,23 @@ ABOUTME: Includes a "you are here" minimap when zoomed, breadcrumbs, and an equi
 								{t('map.sumOfLines')}
 							{/if}
 						</td>
+						{#if focusEntity?.adjustable}
+							<td class="change">
+								<input
+									type="range"
+									min="-50"
+									max="50"
+									step="5"
+									value={percentOf(tile.id, tile.eurMillion)}
+									aria-label={t('builder.sliderLabel').replace('{name}', tile.label[locale])}
+									oninput={(e) =>
+										setPercent(tile.id, tile.eurMillion, Number(e.currentTarget.value))}
+								/>
+								<span class="change__value"
+									>{percentOf(tile.id, tile.eurMillion)}% · {signed(changes[tile.id] ?? 0)}</span
+								>
+							</td>
+						{/if}
 					</tr>
 				{/each}
 			</tbody>
@@ -311,6 +348,21 @@ ABOUTME: Includes a "you are here" minimap when zoomed, breadcrumbs, and an equi
 
 	.num {
 		text-align: right;
+		font-variant-numeric: tabular-nums;
+		white-space: nowrap;
+	}
+
+	.change {
+		min-width: 9rem;
+	}
+
+	.change input {
+		width: 100%;
+	}
+
+	.change__value {
+		display: block;
+		color: var(--ink-muted);
 		font-variant-numeric: tabular-nums;
 		white-space: nowrap;
 	}
