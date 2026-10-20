@@ -1,5 +1,5 @@
-// ABOUTME: End-to-end tests for the notice after a cut or an addition: a tangible illustration of the
-// ABOUTME: change, which can be closed and disappears by itself after a few seconds.
+// ABOUTME: End-to-end tests for the notice after each click: a tangible illustration of that one step, different
+// ABOUTME: on each click, which can be closed and disappears by itself after a few seconds.
 import { expect, test, type Page } from '@playwright/test';
 
 async function cutDefence(page: Page, times: number) {
@@ -18,15 +18,24 @@ test.describe('change notice', () => {
 		await map.getByRole('group', { name: /^Finance/ }).hover();
 		await map.getByRole('button', { name: 'Cut Finance by 1%' }).click();
 		const notice = page.getByRole('status').filter({ hasText: 'Finance' });
-		await expect(notice).toContainText('Finance −1%: about €2 less per inhabitant a year.');
-		await expect(notice).not.toContainText('Deficit');
+		await expect(notice).toContainText(
+			'Finance: this cut equals about €2 less per inhabitant a year.'
+		);
+		await expect(notice).not.toContainText('%');
 	});
 
-	test('illustrates a federal cut with its example', async ({ page }) => {
-		await cutDefence(page, 2);
+	test('illustrates each click on its own, with something new each time', async ({ page }) => {
+		await cutDefence(page, 1);
 		const notice = page.getByRole('status').filter({ hasText: 'Defence' });
 		await expect(notice).toContainText(
-			/Defence −2%: that is about [\d,]+ average yearly pay costs of a member of the armed forces\./
+			'Defence: this cut equals about 1,600 average yearly pay costs of a member of the armed forces.'
+		);
+		await page
+			.getByRole('region', { name: 'Budget map' })
+			.getByRole('button', { name: 'Cut Defence by 1%' })
+			.click();
+		await expect(notice).toContainText(
+			'Defence: this cut equals about €9 less per inhabitant a year.'
 		);
 	});
 
@@ -37,14 +46,16 @@ test.describe('change notice', () => {
 		await map.getByRole('group', { name: /^Healthcare/ }).hover();
 		await map.getByRole('button', { name: /^Cut Healthcare/ }).click();
 		const notice = page.getByRole('status').filter({ hasText: 'Healthcare' });
-		await expect(notice).toContainText(/that is about [\d,]+ GP consultations/);
+		await expect(notice).toContainText(
+			/Healthcare \(RIZIV\/INAMI\): this cut equals about [\d,]+ GP consultations/
+		);
 	});
 
 	test('disappears by itself', async ({ page }) => {
 		await page.clock.install();
 		await cutDefence(page, 1);
 		const notice = page.getByRole('status').filter({ hasText: 'Defence' });
-		await expect(notice).toContainText('Defence −1%');
+		await expect(notice).toContainText('Defence: this cut');
 		await page.clock.runFor(6000);
 		await expect(notice).toHaveCount(0);
 	});

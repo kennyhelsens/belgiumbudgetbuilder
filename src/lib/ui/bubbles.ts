@@ -5,7 +5,7 @@ export type Mood = 'happy' | 'worried';
 
 export const HAPPY = ['😀', '🎉', '👍', '🥳', '💚', '✨'];
 export const WORRIED = ['🐷', '💸', '📈', '❌', '🏦', '🤵'];
-export const BUBBLE_COUNT = 8;
+export const BUBBLE_COUNT = 4;
 
 export type Bubble = {
 	emoji: string;
@@ -26,6 +26,6 @@ export function bubblesFor(mood: Mood, random: () => number): Bubble[] {
 		left: 5 + random() * 90,
 		delay: random() * 0.5,
 		duration: 1.6 + random() * 0.8,
-		size: 1.25 + random() * 0.75
+		size: 1.1 + random() * 0.5
 	}));
 }

@@ -74,7 +74,8 @@
 	"builder.noticeReset": "{name} revient au budget officiel.",
 	"builder.noticeClose": "Fermer",
 	"metrics.ofGdp": "du PIB",
-	"builder.noticeExample": "{name} {percent} : cela représente environ {count} {unit}.",
-	"builder.noticeLess": "{name} {percent} : environ {amount} de moins par habitant et par an.",
-	"builder.noticeMore": "{name} {percent} : environ {amount} de plus par habitant et par an."
+	"builder.noticeCutExample": "{name} : cette économie équivaut à environ {count} {unit}.",
+	"builder.noticeAddExample": "{name} : cette hausse équivaut à environ {count} {unit}.",
+	"builder.noticeCutPerInhabitant": "{name} : cette économie équivaut à environ {amount} de moins par habitant et par an.",
+	"builder.noticeAddPerInhabitant": "{name} : cette hausse équivaut à environ {amount} de plus par habitant et par an."
 }

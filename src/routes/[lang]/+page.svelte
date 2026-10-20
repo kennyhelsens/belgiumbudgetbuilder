@@ -7,7 +7,7 @@ ABOUTME: Text comes from the message files and every figure from the sourced dat
 	import Outlook from '#lib/builder/Outlook.svelte';
 	import type { Changes } from '#lib/builder/choices.ts';
 	import { headlineMetrics } from '#lib/builder/metrics.ts';
-	import { changeNotice } from '#lib/builder/notice.ts';
+	import { changeNotice, pickIllustration } from '#lib/builder/notice.ts';
 	import { preferReviewed } from '#lib/consequences/consequences.ts';
 	import BudgetMap from '#lib/explorer/BudgetMap.svelte';
 	import { translate } from '#lib/i18n/translate.ts';
@@ -28,29 +28,29 @@ ABOUTME: Text comes from the message files and every figure from the sourced dat
 			nominalGrowth: growthPct === undefined ? undefined : growthPct / 100
 		})
 	);
-	// The last change the visitor made, illustrated by the notice.
-	let lastChange = $state<{
-		id: string;
+	// Approved examples first; examples still waiting for review are shown too, by the owners' choice.
+	const examplesFor = (id: string) =>
+		preferReviewed(data.dataset.details.find((d) => d.line === id)?.equivalents ?? []).map(
+			(example) => ({ unitEur: example.unitEur.value, label: example.label[data.locale] })
+		);
+	// Clicks per line, so every click on the same line is illustrated with something new.
+	const clicks: Record<string, number> = {};
+	// The last step the visitor took, illustrated by the notice.
+	let lastStep = $state<{
 		name: string;
 		percent: number;
-		changeEurMillion: number;
+		stepEurMillion: number;
+		example?: { unitEur: number; label: string };
 	}>();
-	// Approved examples first; examples still waiting for review are shown too, by the owners' choice.
-	const exampleFor = (id: string) => {
-		const details = data.dataset.details.find((d) => d.line === id);
-		const example = details && preferReviewed(details.equivalents)[0];
-		return example && { unitEur: example.unitEur.value, label: example.label[data.locale] };
-	};
 	let noticeKey = $state(0);
 	// How the last change moved the debt: more spending raises it, less spending lowers it.
 	let debtMove = $state<'up' | 'down'>();
 	const notice = $derived(
-		lastChange === undefined
+		lastStep === undefined
 			? undefined
 			: changeNotice(data.locale, {
-					...lastChange,
-					population: data.dataset.overview.population.persons,
-					example: exampleFor(lastChange.id)
+					...lastStep,
+					population: data.dataset.overview.population.persons
 				})
 	);
 	const t = $derived((key: Parameters<typeof translate>[1]) => translate(data.locale, key));
@@ -79,8 +79,10 @@ ABOUTME: Text comes from the message files and every figure from the sourced dat
 	locale={data.locale}
 	bind:changes
 	onchange={(change) => {
-		lastChange = change;
-		debtMove = change.direction > 0 ? 'up' : 'down';
+		const click = clicks[change.id] ?? 0;
+		clicks[change.id] = click + 1;
+		lastStep = { ...change, example: pickIllustration(examplesFor(change.id), click) };
+		debtMove = change.stepEurMillion > 0 ? 'up' : 'down';
 		noticeKey += 1;
 	}}
 />

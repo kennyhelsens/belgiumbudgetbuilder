@@ -74,7 +74,8 @@
 	"builder.noticeReset": "{name} is back to the official budget.",
 	"builder.noticeClose": "Close",
 	"metrics.ofGdp": "of GDP",
-	"builder.noticeExample": "{name} {percent}: that is about {count} {unit}.",
-	"builder.noticeLess": "{name} {percent}: about {amount} less per inhabitant a year.",
-	"builder.noticeMore": "{name} {percent}: about {amount} more per inhabitant a year."
+	"builder.noticeCutExample": "{name}: this cut equals about {count} {unit}.",
+	"builder.noticeAddExample": "{name}: this increase equals about {count} {unit}.",
+	"builder.noticeCutPerInhabitant": "{name}: this cut equals about {amount} less per inhabitant a year.",
+	"builder.noticeAddPerInhabitant": "{name}: this increase equals about {amount} more per inhabitant a year."
 }

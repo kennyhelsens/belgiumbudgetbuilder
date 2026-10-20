@@ -24,15 +24,14 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 		locale: Locale;
 		changes?: Changes;
 		/**
-		 * Called after the visitor changes a line, with its id, name, new percentage, change in € million,
-		 * and the direction of this step: 1 = more spending than before, -1 = less.
+		 * Called after the visitor changes a line, with its id, name, new percentage, and what this one
+		 * step changed in € million (positive = more spending than before).
 		 */
 		onchange?: (change: {
 			id: string;
 			name: string;
 			percent: number;
-			changeEurMillion: number;
-			direction: 1 | -1;
+			stepEurMillion: number;
 		}) => void;
 	} = $props();
 
@@ -48,8 +47,7 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 			id: tile.id,
 			name: tile.label[locale],
 			percent,
-			changeEurMillion: next[tile.id] ?? 0,
-			direction: (next[tile.id] ?? 0) > before ? 1 : -1
+			stepEurMillion: (next[tile.id] ?? 0) - before
 		});
 	}
 

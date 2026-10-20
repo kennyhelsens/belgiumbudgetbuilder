@@ -287,13 +287,13 @@ They stay at the top of the screen while you change the budget:
   ten-year outlook, with the result for an unchanged budget next to it once
   you make a change.
 
-After every change, a short notice illustrates it. Where the line has an
-example in concrete units, such as GP consultations reimbursed, the notice
-says roughly how many of them the change is worth, rounded to two digits
-because it is an illustration. Otherwise it gives the change per inhabitant
-per year (Belgium's population on 1 January 2026, 11,867,634, Statbel). The
-exact amounts are in the key figures and on the map. The notice disappears by
-itself after a few seconds.
+After every click, a short notice illustrates that one step, not your total
+change. Each click on the same line shows something new: the line's examples
+in concrete units in turn, such as GP consultations reimbursed, and then the
+step per inhabitant per year (Belgium's population on 1 January 2026,
+11,867,634, Statbel). Counts are rounded to two digits because they are
+illustrations. The exact amounts are in the key figures and on the map. The
+notice disappears by itself after a few seconds.
 
 Each change also moves the debt: more spending raises it and less spending
 lowers it. The figures at the top react, and emojis bubble up the screen:

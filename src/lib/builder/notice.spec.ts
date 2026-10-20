@@ -1,7 +1,7 @@
-// ABOUTME: Unit tests for the short notice shown after a visitor cuts or adds to a budget line: a tangible
-// ABOUTME: illustration (an example in concrete units, or the amount per inhabitant), in NL, FR and EN.
+// ABOUTME: Unit tests for the short notice shown after each click on a budget line: a tangible illustration of
+// ABOUTME: that one step (an example in concrete units, or the amount per inhabitant), rotating per click, in NL/FR/EN.
 import { describe, expect, it } from 'vitest';
-import { changeNotice, formatPercentChange, roughCount } from './notice.ts';
+import { changeNotice, formatPercentChange, pickIllustration, roughCount } from './notice.ts';
 
 describe('formatPercentChange', () => {
 	it('signs a change with a real minus sign', () => {
@@ -23,47 +23,80 @@ describe('roughCount', () => {
 	});
 });
 
-describe('changeNotice', () => {
-	const base = { name: 'Defence', population: 11867634 };
+describe('pickIllustration', () => {
+	const examples = ['soldiers', 'prisoners'];
 
-	it('illustrates a change with an example in concrete units', () => {
+	it('gives a different illustration on each click: every example, then the amount per inhabitant', () => {
+		expect([0, 1, 2, 3, 4].map((click) => pickIllustration(examples, click))).toEqual([
+			'soldiers',
+			'prisoners',
+			undefined,
+			'soldiers',
+			'prisoners'
+		]);
+	});
+
+	it('uses the amount per inhabitant when a line has no examples', () => {
+		expect(pickIllustration([], 0)).toBeUndefined();
+		expect(pickIllustration([], 7)).toBeUndefined();
+	});
+});
+
+describe('changeNotice', () => {
+	const base = { name: 'Defence', percent: -1, population: 11867634 };
+
+	it('illustrates the step just taken, not the total change', () => {
+		const step = { ...base, stepEurMillion: -109.6 };
+		const example = {
+			unitEur: 70690,
+			label: 'average yearly pay costs of a member of the armed forces'
+		};
+		expect(changeNotice('en', { ...step, example })).toBe(
+			'Defence: this cut equals about 1,600 average yearly pay costs of a member of the armed forces.'
+		);
+		expect(changeNotice('en', { ...step, percent: -7, example })).toBe(
+			changeNotice('en', { ...step, example })
+		);
+	});
+
+	it('says whether the step adds money', () => {
 		expect(
 			changeNotice('en', {
 				...base,
-				name: 'Healthcare',
-				percent: -1,
-				changeEurMillion: -438.6,
-				example: { unitEur: 29.74, label: 'GP consultations reimbursed by RIZIV' }
+				percent: 1,
+				stepEurMillion: 109.6,
+				example: { unitEur: 62283, label: 'prisoners held for a year (average cost)' }
 			})
-		).toBe('Healthcare −1%: that is about 15,000,000 GP consultations reimbursed by RIZIV.');
+		).toBe('Defence: this increase equals about 1,800 prisoners held for a year (average cost).');
 	});
 
-	it('falls back to the amount per inhabitant when the line has no example', () => {
-		expect(changeNotice('en', { ...base, percent: -2, changeEurMillion: -219.2 })).toBe(
-			'Defence −2%: about €18 less per inhabitant a year.'
+	it('falls back to the amount per inhabitant, with cents for small steps', () => {
+		expect(changeNotice('en', { ...base, stepEurMillion: -109.6 })).toBe(
+			'Defence: this cut equals about €9 less per inhabitant a year.'
 		);
-		expect(changeNotice('en', { ...base, percent: 2, changeEurMillion: 219.2 })).toBe(
-			'Defence +2%: about €18 more per inhabitant a year.'
+		expect(changeNotice('en', { ...base, name: 'Chancellery', stepEurMillion: -2.33 })).toBe(
+			'Chancellery: this cut equals about €0.20 less per inhabitant a year.'
 		);
 	});
 
-	it('leaves out exact budget amounts and the deficit, which the key figures already show', () => {
-		const text = changeNotice('en', { ...base, percent: -2, changeEurMillion: -219.2 });
-		expect(text).not.toMatch(/million|billion|Deficit/);
+	it('leaves out percentages and exact budget amounts, which the tiles and key figures show', () => {
+		const text = changeNotice('en', { ...base, stepEurMillion: -109.6 });
+		expect(text).not.toMatch(/%|million|billion|Deficit/);
 	});
 
 	it('says when a line is back to the official budget', () => {
-		expect(changeNotice('en', { ...base, percent: 0, changeEurMillion: 0 })).toBe(
+		expect(changeNotice('en', { ...base, percent: 0, stepEurMillion: 109.6 })).toBe(
 			'Defence is back to the official budget.'
 		);
 	});
 
 	it('speaks Dutch and French', () => {
-		expect(changeNotice('nl', { ...base, percent: -2, changeEurMillion: -219.2 })).toMatch(
-			/^Defence −2%: ongeveer €\s18 minder per inwoner per jaar\.$/
+		const step = { ...base, stepEurMillion: -109.6 };
+		expect(changeNotice('nl', step)).toMatch(
+			/^Defence: deze besparing is ongeveer €\s9 minder per inwoner per jaar\.$/
 		);
-		expect(changeNotice('fr', { ...base, percent: -2, changeEurMillion: -219.2 })).toMatch(
-			/^Defence −2\s%\s: environ 18\s€ de moins par habitant et par an\.$/
+		expect(changeNotice('fr', step)).toMatch(
+			/^Defence\s: cette économie équivaut à environ 9\s€ de moins par habitant et par an\.$/
 		);
 	});
 });
