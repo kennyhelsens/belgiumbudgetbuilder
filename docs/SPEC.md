@@ -4,6 +4,10 @@ Status: draft for review · Last updated: 2026-10-20
 
 ## 1. Purpose
 
+**Mission:** grow people's sense of the order of magnitude of public spending
+(how big each topic is relative to the others) and of the complexity of
+landing a budget, to support an informed democratic debate.
+
 A public, politically neutral website that **educates** people about
 Belgium's public finances. Building your own budget is the way in, not the
 point. The site does not say "how hard can it be"; it shows *why* landing a
@@ -161,9 +165,34 @@ that line and states the change in those units:
 
 ## 6. Interaction
 
-- **Zoomable map** (circle-pack or treemap, D3): click to zoom, breadcrumb to go up,
-  smooth "Google Maps" transitions. Keyboard and screen-reader accessible list
-  view as an equivalent alternative.
+### Seeing scale (the core of the site)
+- **Area-true treemap** as the zoomable map (D3). Rectangles, not circles:
+  people compare rectangle areas more accurately than circle areas, and
+  every euro gets the same amount of ink. Never a log scale.
+- **Scale stays visible when zooming.** A minimap ("you are here") shows the
+  zoomed area inside the whole budget, like the Google Maps inset, so a
+  zoomed-in line never looks bigger than it is.
+- **Guess first, then reveal.** On first visit (and in stories), people guess
+  the share of a few lines ("what share of spending goes to pensions? to
+  asylum? to justice?") before seeing the answer. The gap between guess and
+  reality is the lesson.
+- **Compare any two lines to scale:** pick two lines and see them drawn side
+  by side ("pensions are N times justice").
+- **Per-person units:** every amount can be shown as € per inhabitant per
+  month, alongside the totals in billions.
+
+### Seeing complexity
+- **Who decides:** each line shows which government controls it (federal,
+  region, community, local) and whether EU fiscal rules constrain it.
+- **How fixed is it:** each line is tagged *legal entitlement* (e.g.
+  pensions), *committed* (wages, debt interest, contracts) or
+  *discretionary*. Users can move any line, but the tag explains why some are
+  much harder to change in practice.
+
+### Building
+- **Zoomable map navigation:** click to zoom, breadcrumb to go up, smooth
+  transitions. Keyboard and screen-reader accessible list view as an
+  equivalent alternative.
 - **Sliders** per L3 line and revenue lever; changes roll up to L2/L1 live.
 - **Balance strip** always visible: deficit now vs official plan, debt in 2036 (2046 when the 20-year view is on).
 - **Presets**: Official 2026 (adjusted); later Official 2027.
