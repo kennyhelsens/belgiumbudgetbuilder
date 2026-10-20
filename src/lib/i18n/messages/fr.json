@@ -61,5 +61,6 @@
 	"consequence.aboutUnit": "{count} × {unit}",
 	"consequence.how": "Comment s'y prendre ?",
 	"consequence.howIntro": "Ce type de dépenses évolue par ces leviers. Chacun touche des personnes différentes.",
-	"consequence.source": "Source"
+	"consequence.source": "Source",
+	"consequence.perInhabitant": "≈ {amount} par habitant et par an"
 }

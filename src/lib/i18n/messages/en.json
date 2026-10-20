@@ -61,5 +61,6 @@
 	"consequence.aboutUnit": "{count} × {unit}",
 	"consequence.how": "How could it be done?",
 	"consequence.howIntro": "Spending like this changes through these levers. Each one is felt by someone different.",
-	"consequence.source": "Source"
+	"consequence.source": "Source",
+	"consequence.perInhabitant": "≈ {amount} per inhabitant per year"
 }

@@ -1,7 +1,12 @@
 // ABOUTME: Tests for the consequence card logic: where a change to a spending line lands and what it is worth in units.
 // ABOUTME: Covers proportional spreading over sub-budgets, unit equivalents and the review rule for examples.
 import { describe, expect, it } from 'vitest';
-import { distributeChange, equivalentCount, reviewedEquivalents } from './consequences.ts';
+import {
+	distributeChange,
+	equivalentCount,
+	perInhabitantPerYear,
+	reviewedEquivalents
+} from './consequences.ts';
 
 const ref = { source: 'x', locator: 'p. 1' };
 
@@ -45,6 +50,13 @@ describe('equivalentCount', () => {
 
 	it('refuses a unit amount that is not positive', () => {
 		expect(() => equivalentCount(1, 0)).toThrow();
+	});
+});
+
+describe('perInhabitantPerYear', () => {
+	it('spreads a yearly change in € million over every inhabitant', () => {
+		// −€4,385.7 million over 11,867,634 people is about −€369.6 each.
+		expect(perInhabitantPerYear(-4385.7, 11_867_634)).toBeCloseTo(-369.55, 2);
 	});
 });
 

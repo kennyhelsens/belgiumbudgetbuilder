@@ -61,5 +61,6 @@
 	"consequence.aboutUnit": "{count} × {unit}",
 	"consequence.how": "Hoe zou het kunnen?",
 	"consequence.howIntro": "Zulke uitgaven veranderen via deze hefbomen. Telkens voelt iemand anders het.",
-	"consequence.source": "Bron"
+	"consequence.source": "Bron",
+	"consequence.perInhabitant": "≈ {amount} per inwoner per jaar"
 }

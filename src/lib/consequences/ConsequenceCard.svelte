@@ -7,7 +7,12 @@ ABOUTME: Shows where the change would land, reviewed unit equivalents, and the o
 	import type { Locale } from '../i18n/locales.ts';
 	import { translate, type MessageKey } from '../i18n/translate.ts';
 	import { formatEuro } from '../explorer/format.ts';
-	import { distributeChange, equivalentCount, reviewedEquivalents } from './consequences.ts';
+	import {
+		distributeChange,
+		equivalentCount,
+		perInhabitantPerYear,
+		reviewedEquivalents
+	} from './consequences.ts';
 
 	let {
 		data,
@@ -34,6 +39,14 @@ ABOUTME: Shows where the change would land, reviewed unit equivalents, and the o
 			(changeEurMillion / line.amount.eurMillion) * 100
 		)
 	);
+	const perPerson = $derived(
+		new Intl.NumberFormat(locale, {
+			style: 'currency',
+			currency: 'EUR',
+			maximumFractionDigits: 0,
+			signDisplay: 'always'
+		}).format(perInhabitantPerYear(changeEurMillion, data.overview.population.persons))
+	);
 	const titleId = $derived(`consequence-${details.line.replace(/\W/g, '-')}`);
 </script>
 
@@ -43,6 +56,9 @@ ABOUTME: Shows where the change would land, reviewed unit equivalents, and the o
 		{t('consequence.change')
 			.replace('{percent}', percent)
 			.replace('{amount}', signed(changeEurMillion))}
+	</p>
+	<p class="card__anchor" data-testid="per-inhabitant">
+		{t('consequence.perInhabitant').replace('{amount}', perPerson)}
 	</p>
 
 	<h4 id="{titleId}-where">{t('consequence.where')}</h4>
@@ -120,6 +136,12 @@ ABOUTME: Shows where the change would land, reviewed unit equivalents, and the o
 	.card__change {
 		margin: var(--space-1) 0 0;
 		color: var(--ink-muted);
+		font-variant-numeric: tabular-nums;
+	}
+
+	.card__anchor {
+		margin: var(--space-2) 0 0;
+		font-size: var(--text-xl);
 		font-variant-numeric: tabular-nums;
 	}
 

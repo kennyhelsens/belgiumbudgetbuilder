@@ -32,6 +32,12 @@ export function equivalentCount(changeEurMillion: number, unitEur: number): numb
 	return Math.round((Math.abs(changeEurMillion) * 1_000_000) / unitEur);
 }
 
+/** A yearly change in € million, spread over every inhabitant, in €. */
+export function perInhabitantPerYear(changeEurMillion: number, population: number): number {
+	if (population <= 0) throw new Error('perInhabitantPerYear: population must be positive');
+	return (changeEurMillion * 1_000_000) / population;
+}
+
 /** Only examples approved by a reviewer may be shown. */
 export function reviewedEquivalents<T extends { reviewedBy?: string }>(
 	equivalents: readonly T[]

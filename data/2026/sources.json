@@ -126,5 +126,12 @@
 		"url": "https://www.plan.be/sites/default/files/documents/DATA_FOR_VERG_NL.xlsx",
 		"published": "2026-07-09",
 		"retrieved": "2026-10-20"
+	},
+	{
+		"id": "statbel-pop-2026-en",
+		"title": "Population by place of residence, nationality (Belgian/non-Belgian), marital status, age and gender - Population on January 1st 2026",
+		"publisher": "Statbel (Directorate-general Statistics - Statistics Belgium)",
+		"url": "https://bestat.statbel.fgov.be/bestat/api/views/30754598-f021-4274-a8f6-4e634fb7bb58/result/PDF",
+		"retrieved": "2026-10-20"
 	}
 ]

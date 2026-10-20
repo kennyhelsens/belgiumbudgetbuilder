@@ -15,7 +15,8 @@ export const sourceSchema = z.object({
 	title: nonEmpty,
 	publisher: nonEmpty,
 	url: z.url({ protocol: /^https$/ }),
-	published: isoDate,
+	/** Publication date, when the document states one. */
+	published: isoDate.optional(),
 	retrieved: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'expected YYYY-MM-DD')
 });
 
@@ -132,7 +133,9 @@ export const datasetSchema = z.object({
 		revenue: amountSchema,
 		balance: signedAmountSchema,
 		interest: amountSchema,
-		debt: amountSchema
+		debt: amountSchema,
+		/** Legal population on 1 January of the budget year. */
+		population: z.object({ persons: z.number().int().positive(), ref: sourceRefSchema })
 	}),
 	/** Inputs for the static debt projection. */
 	outlook: z.object({

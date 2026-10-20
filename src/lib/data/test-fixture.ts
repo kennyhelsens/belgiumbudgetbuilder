@@ -30,7 +30,8 @@ export function datasetFixture(): Dataset {
 			revenue: { eurMillion: 300000, ref: ref('p. 2') },
 			balance: { eurMillion: -30000, ref: ref('p. 2') },
 			interest: { eurMillion: 14000, ref: ref('p. 3') },
-			debt: { eurMillion: 640000, ref: ref('p. 3') }
+			debt: { eurMillion: 640000, ref: ref('p. 3') },
+			population: { persons: 12000000, ref: ref('p. 4') }
 		},
 		outlook: {
 			interestRate: { value: 0.023, ref: ref('p. 4') },

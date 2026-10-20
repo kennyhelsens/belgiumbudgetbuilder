@@ -21,6 +21,7 @@ test.describe('consequence card', () => {
 		const card = page.getByRole('region', { name: /What this change means/ });
 		await expect(card).toBeVisible();
 		await expect(card).toContainText('Where it would land');
+		await expect(card.getByTestId('per-inhabitant')).toContainText('per inhabitant per year');
 		await expect(
 			card.getByRole('list', { name: 'Where it would land' }).getByRole('listitem')
 		).not.toHaveCount(0);
