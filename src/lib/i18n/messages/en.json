@@ -51,5 +51,15 @@
 	"ageing.health": "Healthcare",
 	"ageing.other": "Other (e.g. lower unemployment)",
 	"ageing.scaled": "Your changes to pensions and healthcare in the map above also change this cost, in the same proportion.",
-	"ageing.chartLabel": "Extra cost of ageing per year compared with 2026, in % of GDP, by pensions, healthcare and other, {from} to {to}"
+	"ageing.chartLabel": "Extra cost of ageing per year compared with 2026, in % of GDP, by pensions, healthcare and other, {from} to {to}",
+	"consequence.title": "What this change means: {name}",
+	"consequence.change": "{percent}% · {amount} a year",
+	"consequence.where": "Where it would land",
+	"consequence.whereNote": "Spread in proportion to the size of each part. A real reform chooses where to cut.",
+	"consequence.offset": "matched by equal receipts, so cutting it alone saves nothing",
+	"consequence.about": "That's about",
+	"consequence.aboutUnit": "{count} × {unit}",
+	"consequence.how": "How could it be done?",
+	"consequence.howIntro": "Spending like this changes through these levers. Each one is felt by someone different.",
+	"consequence.source": "Source"
 }

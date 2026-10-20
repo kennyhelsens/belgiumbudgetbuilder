@@ -51,5 +51,15 @@
 	"ageing.health": "Gezondheidszorg",
 	"ageing.other": "Overige (bv. minder werkloosheid)",
 	"ageing.scaled": "Uw wijzigingen aan pensioenen en gezondheidszorg in de kaart hierboven veranderen ook deze kosten, in dezelfde verhouding.",
-	"ageing.chartLabel": "Extra kosten van de vergrijzing per jaar vergeleken met 2026, in procent van het bbp, voor pensioenen, gezondheidszorg en overige, {from} tot {to}"
+	"ageing.chartLabel": "Extra kosten van de vergrijzing per jaar vergeleken met 2026, in procent van het bbp, voor pensioenen, gezondheidszorg en overige, {from} tot {to}",
+	"consequence.title": "Wat deze wijziging betekent: {name}",
+	"consequence.change": "{percent}% · {amount} per jaar",
+	"consequence.where": "Waar het zou terechtkomen",
+	"consequence.whereNote": "Verdeeld naar verhouding van de grootte van elk deel. Een echte hervorming kiest waar ze snoeit.",
+	"consequence.offset": "staat tegenover even grote ontvangsten, dus alleen hierop besparen levert niets op",
+	"consequence.about": "Dat is ongeveer",
+	"consequence.aboutUnit": "{count} × {unit}",
+	"consequence.how": "Hoe zou het kunnen?",
+	"consequence.howIntro": "Zulke uitgaven veranderen via deze hefbomen. Telkens voelt iemand anders het.",
+	"consequence.source": "Bron"
 }
