@@ -1,0 +1,11 @@
+{
+	"language.name": "Français",
+	"language.code": "FR",
+	"language.switcherLabel": "Langue",
+	"site.title": "Bâtir le budget belge",
+	"home.kicker": "Les finances publiques, à l'échelle",
+	"home.title": "Où va l'argent public belge ?",
+	"home.lede": "La plupart d'entre nous ont peu d'idée de la taille de chaque partie du budget public. Ce site montre à l'échelle le budget fédéral, la sécurité sociale et les budgets régionaux de 2026, pour voir comment les thèmes se comparent, à quel point il est difficile de boucler un budget et ce que les choix signifient pour les dix prochaines années.",
+	"home.status": "En construction. Chaque chiffre sera sourcé et vérifié avant sa publication.",
+	"footer.note": "Un projet indépendant et non partisan."
+}

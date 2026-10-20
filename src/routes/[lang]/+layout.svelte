@@ -1,0 +1,95 @@
+<!--
+ABOUTME: Shell for localized pages: masthead with the site title and language switcher, and a footer.
+ABOUTME: The switcher links to the home page in each language.
+-->
+<script lang="ts">
+	import { resolve } from '$app/paths';
+	import { LOCALES } from '#lib/i18n/locales.ts';
+	import { translate } from '#lib/i18n/translate.ts';
+	import type { LayoutProps } from './$types';
+
+	let { data, children }: LayoutProps = $props();
+
+	// The server sets <html lang> for the first page load; keep it in sync on client-side navigation.
+	$effect(() => {
+		document.documentElement.lang = data.locale;
+	});
+</script>
+
+<header class="masthead">
+	<a class="masthead__title" href={resolve('/[lang]', { lang: data.locale })}
+		>{translate(data.locale, 'site.title')}</a
+	>
+	<nav aria-label={translate(data.locale, 'language.switcherLabel')}>
+		<ul class="switcher">
+			{#each LOCALES as locale (locale)}
+				<li>
+					<a
+						href={resolve('/[lang]', { lang: locale })}
+						lang={locale}
+						hreflang={locale}
+						aria-current={locale === data.locale ? 'page' : undefined}
+						>{translate(locale, 'language.code')}</a
+					>
+				</li>
+			{/each}
+		</ul>
+	</nav>
+</header>
+
+{@render children()}
+
+<footer class="colophon">
+	<p>{translate(data.locale, 'footer.note')}</p>
+</footer>
+
+<style>
+	.masthead {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-2) var(--space-4);
+		justify-content: space-between;
+		align-items: baseline;
+		max-width: var(--measure);
+		margin: 0 auto;
+		padding: var(--space-3) var(--gutter);
+		border-bottom: 1px solid var(--rule);
+	}
+
+	.masthead__title {
+		color: var(--ink);
+		font-size: var(--text-lg);
+		font-weight: 600;
+		text-decoration: none;
+	}
+
+	.switcher {
+		display: flex;
+		gap: var(--space-3);
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		font-size: var(--text-sm);
+	}
+
+	.switcher a {
+		color: var(--ink-muted);
+		text-decoration: none;
+	}
+
+	.switcher a[aria-current='page'] {
+		color: var(--ink);
+		font-weight: 600;
+		text-decoration: underline;
+		text-underline-offset: 0.2em;
+	}
+
+	.colophon {
+		max-width: var(--measure);
+		margin: var(--space-6) auto 0;
+		padding: var(--space-3) var(--gutter) var(--space-5);
+		border-top: 1px solid var(--rule);
+		color: var(--ink-muted);
+		font-size: var(--text-sm);
+	}
+</style>
