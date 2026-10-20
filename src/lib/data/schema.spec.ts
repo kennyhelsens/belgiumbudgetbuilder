@@ -53,6 +53,24 @@ describe('datasetSchema', () => {
 		expect(datasetSchema.safeParse(data).success).toBe(false);
 	});
 
+	it('accepts a verbatim quote on a source reference', () => {
+		const data = datasetFixture();
+		data.overview.gdp.ref.quote = 'Bbp 2026: 642.871';
+		expect(datasetSchema.safeParse(data).success).toBe(true);
+	});
+
+	it('rejects rates given as percentages instead of fractions', () => {
+		const data = datasetFixture();
+		data.outlook.interestRate.value = 2.3;
+		expect(datasetSchema.safeParse(data).success).toBe(false);
+	});
+
+	it('requires at least one ageing cost point', () => {
+		const data = datasetFixture();
+		data.outlook.ageingCostPctGdp = [];
+		expect(datasetSchema.safeParse(data).success).toBe(false);
+	});
+
 	it('rejects an unknown nature tag', () => {
 		const data = datasetFixture();
 		// @ts-expect-error: deliberately using an invalid tag

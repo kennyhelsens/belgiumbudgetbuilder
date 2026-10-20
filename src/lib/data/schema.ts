@@ -23,6 +23,8 @@ export const sourceSchema = z.object({
 export const sourceRefSchema = z.object({
 	source: slug,
 	locator: nonEmpty,
+	/** The line of the source containing the number, copied verbatim, so reviewers can find it. */
+	quote: nonEmpty.optional(),
 	note: nonEmpty.optional()
 });
 
@@ -42,6 +44,18 @@ const signedAmountSchema = z.object({
  * discretionary = decided in the yearly budget.
  */
 export const natureSchema = z.enum(['entitlement', 'committed', 'discretionary']);
+
+/** A rate as a fraction (0.023 = 2.3%); bounded to catch percentages entered by mistake. */
+const rateSchema = z.object({
+	value: z.number().min(-0.1).max(0.2),
+	ref: sourceRefSchema
+});
+
+const yearPointSchema = z.object({
+	year: z.number().int(),
+	value: z.number().finite(),
+	ref: sourceRefSchema
+});
 
 const lineSchema = z.object({
 	id: slug,
@@ -78,6 +92,17 @@ export const datasetSchema = z.object({
 		balance: signedAmountSchema,
 		interest: amountSchema,
 		debt: amountSchema
+	}),
+	/** Inputs for the static debt projection. */
+	outlook: z.object({
+		/** Average (implicit) interest rate on the public debt. */
+		interestRate: rateSchema,
+		/** Nominal GDP growth per year. */
+		nominalGrowth: rateSchema,
+		/** Official budgetary cost of ageing, % of GDP, for the years the report gives. */
+		ageingCostPctGdp: z.array(yearPointSchema).min(1),
+		/** The official projected debt path, % of GDP, shown as a reference. */
+		officialDebtPctGdp: z.array(yearPointSchema).min(1)
 	}),
 	entities: z.array(entitySchema).min(1)
 });

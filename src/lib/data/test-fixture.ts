@@ -32,6 +32,18 @@ export function datasetFixture(): Dataset {
 			interest: { eurMillion: 14000, ref: ref('p. 3') },
 			debt: { eurMillion: 640000, ref: ref('p. 3') }
 		},
+		outlook: {
+			interestRate: { value: 0.023, ref: ref('p. 4') },
+			nominalGrowth: { value: 0.031, ref: ref('p. 4') },
+			ageingCostPctGdp: [
+				{ year: 2026, value: 25.7, ref: ref('p. 5') },
+				{ year: 2036, value: 27.0, ref: ref('p. 5') }
+			],
+			officialDebtPctGdp: [
+				{ year: 2026, value: 109.9, ref: ref('p. 6') },
+				{ year: 2031, value: 122.3, ref: ref('p. 6') }
+			]
+		},
 		entities: [
 			{
 				id: 'federal',

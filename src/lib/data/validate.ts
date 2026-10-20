@@ -57,6 +57,13 @@ function collectRefs(data: Dataset): { where: string; ref: SourceRef }[] {
 		where: `overview.${key}`,
 		ref: amount.ref
 	}));
+	refs.push({ where: 'outlook.interestRate', ref: data.outlook.interestRate.ref });
+	refs.push({ where: 'outlook.nominalGrowth', ref: data.outlook.nominalGrowth.ref });
+	for (const series of ['ageingCostPctGdp', 'officialDebtPctGdp'] as const) {
+		for (const point of data.outlook[series]) {
+			refs.push({ where: `outlook.${series}.${point.year}`, ref: point.ref });
+		}
+	}
 	for (const entity of data.entities) {
 		refs.push({ where: `${entity.id}.total`, ref: entity.expenditure.total.ref });
 		for (const line of entity.expenditure.lines) {

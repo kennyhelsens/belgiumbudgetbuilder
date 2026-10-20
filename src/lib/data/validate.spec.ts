@@ -17,6 +17,14 @@ describe('findProblems', () => {
 		);
 	});
 
+	it('checks references in the outlook too', () => {
+		const data = datasetFixture();
+		data.outlook.ageingCostPctGdp[1].ref.source = 'nowhere';
+		expect(findProblems(data)).toContainEqual(
+			expect.stringContaining('outlook.ageingCostPctGdp.2036: unknown source "nowhere"')
+		);
+	});
+
 	it('reports a source that nothing refers to', () => {
 		const data = datasetFixture();
 		data.sources.push({ ...data.sources[0], id: 'unused' });
