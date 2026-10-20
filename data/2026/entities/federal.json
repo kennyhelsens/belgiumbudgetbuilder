@@ -13,68 +13,12 @@
 			"eurMillion": 104674.9,
 			"ref": {
 				"source": "be-chamber-56-1468-001",
-				"locator": "DOC 56 1468/001 p. 77, Derde deel, Hoofdstuk 1, § 2 'De uitgaven', Tabel 2 'Vereffeningskredieten', line 'Totaal uitgaven' (Aangepaste begroting column); exact figure = 145,132.885 - 31,198.072 - 9,259.958 thousand EUR from DOC 56 1470/001 p. 10 and Tabel 1 p. 950",
+				"locator": "DOC 56 1468/001 p. 77, Derde deel, Hoofdstuk 1, § 2 'De uitgaven', Tabel 2 'Vereffeningskredieten', line 'Totaal uitgaven' (Aangepaste begroting column); exact figure = 145,132.885 - 31,198.072 - 9,259.958 thousand EUR from DOC 56 1470/001 p. 10 and Tabel 1 p. 950; cross-checked with the BOSA infocenter export (sum of all basic allocations 145,132.885)",
 				"quote": "Totaal uitgaven 104.363 312 104.675 Dépenses totales | Aflossingen en aankoop van effecten 38.430 2.028 40.458 | Algemeen totaal 142.793 2.340 145.133 (in miljoen EUR); 'Zonder de aflossingen van de overheidsschuld bedraagt het totaal van de lopende en kapitaaluitgaven 104.675 milljoen euro.'",
 				"note": "General total of liquidation credits 145,132.885 (incl. section 51 = 54,094.365) minus amortisation and redemption of long-term debt (B.A. 51 45 11 91.10.01: 31,198.072) minus purchase of securities (B.A. 51 45 11 81.70.15: 9,259.958) = 104,674.855. Primary expenditure 91,038.5 + public debt excl. refinancing 13,636.3."
 			}
 		},
 		"lines": [
-			{
-				"id": "federal.public-debt-interest",
-				"label": {
-					"nl": "Intresten op de rijksschuld",
-					"fr": "Intérêts de la dette publique",
-					"en": "Interest on the public debt"
-				},
-				"amount": {
-					"eurMillion": 12289.7,
-					"ref": {
-						"source": "be-chamber-56-1470-001",
-						"locator": "DOC 56 1470/001, Tabel 1 'Aangepaste programma's' (tables annexed to the law), p. 949-950, section 51, programme 51.45.1, basic allocations 51 45 10 21.10.01 / 21.10.08 / 21.20.02 / 21.20.08 (liquidation row); cross-check DOC 56 1468/001 p. 121",
-						"quote": "Rente van de leningen op lange termijn in Belgische frank en in euro 45 10 21.10.01 ... 10.739.498 | Rente van de schuld op korte termijn in euro 45 10 21.10.08 ... 1.221.278 | ... in vreemde munt 45 10 21.20.02 ... 289.736 | ... korte termijn in vreemde munt 45 10 21.20.08 ... 39.199 (x 1 000 EUR); 1468/001 p.121: 'Dit bedrag is opgebouwd uit 12.290 miljoen euro op de Rijksschuldbegroting aan te rekenen rentelasten'",
-						"note": "10,739.498 + 1,221.278 + 289.736 + 39.199 = 12,289.711 (thousand EUR -> EUR m). Excludes other section-51 costs (commissions, derivatives, FX losses, F-35/MALE hedging, Debt Agency dotation, credit granting: 1,346.6) which sit in 'other', and excludes debt amortisation and purchases of securities (40,458.0) which are outside the total. ESA interest charges of the federal government (incl. consolidated bodies) are 12,455 (1468/001 p. 22/121)."
-					}
-				},
-				"nature": "committed"
-			},
-			{
-				"id": "federal.civil-service-pensions",
-				"label": {
-					"nl": "Pensioenen overheidssector (FPD)",
-					"fr": "Pensions du secteur public (SFP)",
-					"en": "Public-sector (civil service) pensions paid by the Federal Pension Service"
-				},
-				"amount": {
-					"eurMillion": 16145.9,
-					"ref": {
-						"source": "be-chamber-56-1470-001",
-						"locator": "DOC 56 1470/001, Tabel 1 'Aangepaste programma's' (tables annexed to the law), p. 852, section 24, division 24-58, activity 45 'Dotaties gestort aan de FPD - overheidspensioenen' (liquidation row)",
-						"quote": "Pensioenen overheidssector 58 45 42.10.01 14.584.187 ... 14.589.292 | Pensioenen HR-Rail 58 45 42.10.05 1.325.778 ... 1.313.082 (x 1 000 EUR)",
-						"note": "Sum of activity 24.58.45: public-sector pensions 14,589.292 + war/reparation pensions 62.460 + work-accident rents 61.605 + operating costs 57.791 + HR-Rail (SNCB statutory staff) pensions 1,313.082 + civilian war/terror victims 11.714 + national-recognition rent 0.002 + subsidy to solidarity pension fund of local authorities 50.000 = 16,145.946. The SFP is a social-security institution, but these pensions are a federal (State) liability, so transferTo is left null; GRAPA (1,036.8) is NOT included here (it is in 'other')."
-					}
-				},
-				"nature": "entitlement",
-				"ageingGroup": "pensions"
-			},
-			{
-				"id": "federal.social-security-grants",
-				"label": {
-					"nl": "Dotaties en toelagen aan de sociale zekerheid",
-					"fr": "Dotations et subsides à la sécurité sociale",
-					"en": "Grants to social security (state subsidies and balancing grants)"
-				},
-				"amount": {
-					"eurMillion": 10216.0,
-					"ref": {
-						"source": "be-chamber-56-1470-001",
-						"locator": "DOC 56 1470/001, Tabel 1 'Aangepaste programma's' (tables annexed to the law), p. 851-853, section 24, division 24-58, activities 41, 42, 43, 46, 47, 48 (liquidation row)",
-						"quote": "Globale rijkstoelage - sociale zekerheid voor werknemers 58 42 42.80.03 ... 2.683.705 | Evenwichtsdotatie - sociale zekerheid voor werknemers 58 42 42.80.04 ... 5.446.190 | Globale rijkstoelage - sociale zekerheid voor zelfstandigen 58 43 42.80.01 ... 481.432 | Evenwichtsdotatie - sociale zekerheid voor zelfstandigen 58 43 42.80.02 ... 820.976 (x 1 000 EUR)",
-						"note": "Global management employees (RSZ/ONSS): state subsidy 2,683.705 + balancing grant 5,446.190 + overseas social security 269.143 = 8,399.038; self-employed (RSVZ/INASTI): state subsidy 481.432 + balancing grant 820.976 = 1,302.408; RIZIV/INAMI health-care subsidy 491.462; KCE 1.347 + SIGeDIS 4.285; Fedris 9.381; HZIV/CAAMI 8.114. Total 10,216.035. Of which to the two global managements strictly (state subsidies + balancing grants) = 9,432.303. The much larger 'alternative financing' (27,686 m) is a revenue transfer, not expenditure - see notes."
-					}
-				},
-				"nature": "entitlement",
-				"transferTo": "social-security"
-			},
 			{
 				"id": "federal.dotation-flemish-community",
 				"label": {
@@ -151,19 +95,69 @@
 				"nature": "committed"
 			},
 			{
-				"id": "federal.defence",
+				"id": "federal.royal-family-parliament",
 				"label": {
-					"nl": "Landsverdediging",
-					"fr": "Défense",
-					"en": "Defence"
+					"nl": "Koninklijke familie, parlement en andere dotaties",
+					"fr": "Famille royale, parlement et autres dotations",
+					"en": "Royal family, parliament and other grants"
 				},
 				"amount": {
-					"eurMillion": 10957.8,
+					"eurMillion": 453.096,
 					"ref": {
-						"source": "be-chamber-56-1470-001",
-						"locator": "DOC 56 1470/001 p. 8, 1.3 Synthesetabel / Globaal overzicht, section 16, liquidation credits 'tot' row; same in Tabel 1 p. 793",
-						"quote": "16 MINISTERIE VAN LANDSVERDEDIGING ... tot ... 10.769.639 188.150 10.957.789 (x 1 000 EUR, vereffeningskredieten)",
-						"note": "Section 16 total (lim + fon). Excludes the 'provision for reinforcing security' (546) and 'provision Ukraine' (443) booked in section 06 (in 'other'), part of which may be allocated to defence during the year. Commitment credits for defence are much higher (20,300.4)."
+						"source": "bosa-infocenter-budget-2026",
+						"locator": "Export FOD-POD, section 01, column 'Aangepaste kredieten vereffeningen', all basic allocations except those shown as separate lines (EUR)",
+						"note": "Section 01 total 17,805.396 minus the lines shown separately (17,352.300) = 453.096. Civil list and royal grants, the Chamber, the Senate, the Constitutional Court, the Court of Audit and other bodies of section 01, after the grants to the communities shown separately. The section total is the same in DOC 56 1470/001 p. 8, Synthesetabel: 'lim 17.743.612 61.823 17.805.435 17.743.573 61.823 17.805.396 lim 01 DOTATIONS ET ACTIVITES DE LA FAMILLE ROYALE'."
+					}
+				},
+				"nature": "committed"
+			},
+			{
+				"id": "federal.chancellery",
+				"label": {
+					"nl": "Kanselarij van de Eerste Minister",
+					"fr": "Chancellerie du Premier ministre",
+					"en": "Chancellery of the Prime Minister"
+				},
+				"amount": {
+					"eurMillion": 233.269,
+					"ref": {
+						"source": "bosa-infocenter-budget-2026",
+						"locator": "Export FOD-POD, section 02, column 'Aangepaste kredieten vereffeningen', all basic allocations (EUR)",
+						"note": "Whole section 02: 233.269. The section total is the same in DOC 56 1470/001 p. 8, Synthesetabel: 'lim 365.685 4.648 370.333 228.621 4.648 233.269 lim 02 SPF CHANCELLERIE DU PREMIER MINISTRE'."
+					}
+				},
+				"nature": "discretionary"
+			},
+			{
+				"id": "federal.policy-and-support",
+				"label": {
+					"nl": "Beleid en Ondersteuning (BOSA), met provisies",
+					"fr": "Stratégie et Appui (BOSA), avec provisions",
+					"en": "Policy and Support (BOSA), with provisions"
+				},
+				"amount": {
+					"eurMillion": 2551.737,
+					"ref": {
+						"source": "bosa-infocenter-budget-2026",
+						"locator": "Export FOD-POD, section 06, column 'Aangepaste kredieten vereffeningen', all basic allocations (EUR)",
+						"note": "Whole section 06: 2,551.737. Includes the interdepartmental provisions (1,659.8: legal costs 622.4, security 545.6, Ukraine 442.8), part of which is allocated to other departments during the year, and the Recovery and Resilience Plan (610.8). The section total is the same in DOC 56 1470/001 p. 8, Synthesetabel: '06 FEDERALE OVERHEIDSDIENST BELEID EN ONDERSTEUNING ... lim + fon tot 2.740.259 -391.266 2.348.993 3.004.949 -453.212 2.551.737 tot lim + fon'."
+					}
+				},
+				"nature": "discretionary"
+			},
+			{
+				"id": "federal.independent-bodies",
+				"label": {
+					"nl": "Onafhankelijke organen",
+					"fr": "Organes indépendants",
+					"en": "Independent bodies"
+				},
+				"amount": {
+					"eurMillion": 30.718,
+					"ref": {
+						"source": "bosa-infocenter-budget-2026",
+						"locator": "Export FOD-POD, section 07, column 'Aangepaste kredieten vereffeningen', all basic allocations (EUR)",
+						"note": "Whole section 07: 30.718. The section total is the same in DOC 56 1470/001 p. 8, Synthesetabel: 'lim 36.735 -6.017 30.718 36.735 -6.017 30.718 lim 07 ORGANES INDEPENDANTS'."
 					}
 				},
 				"nature": "discretionary"
@@ -182,24 +176,6 @@
 						"locator": "DOC 56 1470/001 p. 8, Synthesetabel, section 12, liquidation 'tot' row",
 						"quote": "12 FOD JUSTITIE ... tot ... 2.843.653 80.687 2.924.340 (x 1 000 EUR)",
 						"note": "Section 12 total (lim + fon)."
-					}
-				},
-				"nature": "discretionary"
-			},
-			{
-				"id": "federal.home-affairs-federal-police",
-				"label": {
-					"nl": "Binnenlandse Zaken en federale politie (excl. asiel en migratie, dotaties politiezones)",
-					"fr": "Intérieur et police fédérale (hors asile et migration, dotations zones de police)",
-					"en": "Home affairs and federal police (excluding asylum & migration and grants to local police zones)"
-				},
-				"amount": {
-					"eurMillion": 3059.6,
-					"ref": {
-						"source": "be-chamber-56-1470-001",
-						"locator": "DOC 56 1470/001 p. 8-9, Synthesetabel, sections 13 and 17, liquidation 'tot' rows",
-						"quote": "13 FOD BINNENLANDSE ZAKEN ... tot ... 2.297.679 100.099 2.397.778 | 17 FEDERALE POLITIE & GEINTEGREERDE WERKING ... tot ... 2.892.865 4.280 2.897.145 (x 1 000 EUR)",
-						"note": "Section 13 (2,397.778) + section 17 (2,897.145) - Fedasil dotation (743.871) - Immigration Office (217.551) - grants to local police zones (1,273.858) = 3,059.643. Still includes the Commissioner General for Refugees (CGRS) and the Council for Alien Law Litigation, which were not separated."
 					}
 				},
 				"nature": "discretionary"
@@ -241,56 +217,18 @@
 				"nature": "discretionary"
 			},
 			{
-				"id": "federal.local-government-grants",
+				"id": "federal.home-affairs",
 				"label": {
-					"nl": "Federale dotaties aan politiezones en toelagen aan OCMW's",
-					"fr": "Dotations fédérales aux zones de police et subventions aux CPAS",
-					"en": "Grants to local police zones and to public social welfare centres (CPAS/OCMW)"
+					"nl": "Binnenlandse Zaken (zonder Fedasil en Dienst Vreemdelingenzaken)",
+					"fr": "Intérieur (hors Fedasil et Office des étrangers)",
+					"en": "Home affairs (excluding Fedasil and the Immigration Office)"
 				},
 				"amount": {
-					"eurMillion": 3582.7,
+					"eurMillion": 1436.356,
 					"ref": {
-						"source": "be-chamber-56-1470-001",
-						"locator": "DOC 56 1470/001, Tabel 1 'Aangepaste programma's' (tables annexed to the law), p. 812 (section 17, division 17-90, B.A. 90 11 43.51.01-13 and 90 12 43.51.02/06) and p. 932-933 (section 44, B.A. 55 11 43.52.16 and 55 12 43.52.23), liquidation rows",
-						"quote": "Federale dotatie aan de meergemeentepolitiezones en aan de gemeenten tot dekking van de meerkosten voortvloeiend uit de politiehervorming 90 11 43.51.01 962.513 3.734 966.247 | Toelagen OCMW's recht op maatschappelijke integratie 55 11 43.52.16 2.085.102 48.254 2.133.356 | Toelagen OCMW's Wet 2 april 1965 55 12 43.52.23 155.778 19.733 175.511 (x 1 000 EUR)",
-						"note": "Police zones (economic code 43.51 allocations of division 17-90): 966.247 + 0.425 + 2.075 + 5.727 + 125.463 + 29.293 + 4.500 + 99.185 + 39.000 + 1.943 = 1,273.858. CPAS: social-integration income refunds 2,133.356 + Law of 2 April 1965 (medical/social aid) 175.511 = 2,308.867. Total 3,582.725. Smaller local transfers (e.g. section 13 'dode hand' compensations, CPAS installation premiums) are in 'other'. The police social allowance (381 m) is a revenue transfer - see notes."
-					}
-				},
-				"nature": "committed",
-				"transferTo": "local"
-			},
-			{
-				"id": "federal.disability-allowances",
-				"label": {
-					"nl": "Tegemoetkomingen aan personen met een handicap",
-					"fr": "Allocations aux personnes handicapées",
-					"en": "Allowances for persons with disabilities"
-				},
-				"amount": {
-					"eurMillion": 3235.4,
-					"ref": {
-						"source": "be-chamber-56-1470-001",
-						"locator": "DOC 56 1470/001, Tabel 1 'Aangepaste programma's' (tables annexed to the law), p. 847, section 24, B.A. 24 55 31 34.31.06 (liquidation row)",
-						"quote": "Betaling van de tegemoetkomingen aan personen met een handicap bij toepassing van de wet van 27 februari 1987 55 31 34.31.06 3.285.541 -50.189 3.235.352 (x 1 000 EUR)",
-						"note": "Income-replacement and integration allowances (law of 27 Feb 1987)."
-					}
-				},
-				"nature": "entitlement"
-			},
-			{
-				"id": "federal.mobility-rail",
-				"label": {
-					"nl": "Mobiliteit en Vervoer (vooral NMBS en Infrabel)",
-					"fr": "Mobilité et Transports (surtout SNCB et Infrabel)",
-					"en": "Mobility and transport (mostly SNCB and Infrabel railways)"
-				},
-				"amount": {
-					"eurMillion": 4692.0,
-					"ref": {
-						"source": "be-chamber-56-1470-001",
-						"locator": "DOC 56 1470/001 p. 10, Synthesetabel, section 33, liquidation 'tot' row; railway programme 33.51.1 on p. 919",
-						"quote": "33 FOD MOBILITEIT EN VERVOER ... tot ... 4.704.054 -12.005 4.692.049 (x 1 000 EUR)",
-						"note": "Section 33 total. Of which programme 33.51.1 'Spoorwegvervoer' (SNCB/Infrabel operating grants, capital participations, PPP fees) = 4,235.245 (liquidation, Tabel 1 p. 919). SNCB and Infrabel are federal public companies, not separate governments in this model."
+						"source": "bosa-infocenter-budget-2026",
+						"locator": "Export FOD-POD, section 13, column 'Aangepaste kredieten vereffeningen', all basic allocations except those shown as separate lines (EUR)",
+						"note": "Section 13 total 2,397.778 minus the lines shown separately (961.422) = 1,436.356. Includes the Commissioner General for Refugees and Stateless Persons and the Council for Alien Law Litigation. The section total is the same in DOC 56 1470/001 p. 8, Synthesetabel: '13 FOD BINNENLANDSE ZAKEN ... lim + fon tot 2.332.960 92.610 2.425.570 2.297.679 100.099 2.397.778 tot lim + fon'."
 					}
 				},
 				"nature": "discretionary"
@@ -314,6 +252,322 @@
 				"nature": "discretionary"
 			},
 			{
+				"id": "federal.defence",
+				"label": {
+					"nl": "Landsverdediging",
+					"fr": "Défense",
+					"en": "Defence"
+				},
+				"amount": {
+					"eurMillion": 10957.8,
+					"ref": {
+						"source": "be-chamber-56-1470-001",
+						"locator": "DOC 56 1470/001 p. 8, 1.3 Synthesetabel / Globaal overzicht, section 16, liquidation credits 'tot' row; same in Tabel 1 p. 793",
+						"quote": "16 MINISTERIE VAN LANDSVERDEDIGING ... tot ... 10.769.639 188.150 10.957.789 (x 1 000 EUR, vereffeningskredieten)",
+						"note": "Section 16 total (lim + fon). Excludes the 'provision for reinforcing security' (546) and 'provision Ukraine' (443) booked in section 06 (in 'other'), part of which may be allocated to defence during the year. Commitment credits for defence are much higher (20,300.4)."
+					}
+				},
+				"nature": "discretionary"
+			},
+			{
+				"id": "federal.police-zone-grants",
+				"label": {
+					"nl": "Federale dotaties aan de lokale politiezones",
+					"fr": "Dotations fédérales aux zones de police locales",
+					"en": "Federal grants to local police zones"
+				},
+				"amount": {
+					"eurMillion": 1273.9,
+					"ref": {
+						"source": "be-chamber-56-1470-001",
+						"locator": "DOC 56 1470/001, Tabel 1 'Aangepaste programma's', p. 812, section 17, division 17-90, B.A. 90 11 43.51.01-13 and 90 12 43.51.02/06 (liquidation rows)",
+						"note": "Economic code 43.51 allocations of division 17-90: 966.247 + 0.425 + 2.075 + 5.727 + 125.463 + 29.293 + 4.500 + 99.185 + 39.000 + 1.943 = 1,273.858. The police social allowance (381 m) is a revenue transfer, not included."
+					}
+				},
+				"nature": "committed",
+				"transferTo": "local"
+			},
+			{
+				"id": "federal.police",
+				"label": {
+					"nl": "Federale politie (zonder dotaties aan de politiezones)",
+					"fr": "Police fédérale (hors dotations aux zones de police)",
+					"en": "Federal police (excluding grants to local police zones)"
+				},
+				"amount": {
+					"eurMillion": 1623.287,
+					"ref": {
+						"source": "bosa-infocenter-budget-2026",
+						"locator": "Export FOD-POD, section 17, column 'Aangepaste kredieten vereffeningen', all basic allocations except those shown as separate lines (EUR)",
+						"note": "Section 17 total 2,897.145 minus the lines shown separately (1,273.858) = 1,623.287. The section total is the same in DOC 56 1470/001 p. 9, Synthesetabel: '17 FEDERALE POLITIE & GEINTEGREERDE WERKING ... lim + fon tot 2.872.909 20.680 2.893.589 2.892.865 4.280 2.897.145 tot lim + fon'."
+					}
+				},
+				"nature": "discretionary"
+			},
+			{
+				"id": "federal.finance",
+				"label": {
+					"nl": "Financiën",
+					"fr": "Finances",
+					"en": "Finance"
+				},
+				"amount": {
+					"eurMillion": 2546.929,
+					"ref": {
+						"source": "bosa-infocenter-budget-2026",
+						"locator": "Export FOD-POD, section 18, column 'Aangepaste kredieten vereffeningen', all basic allocations (EUR)",
+						"note": "Whole section 18: 2,546.929. The section total is the same in DOC 56 1470/001 p. 9, Synthesetabel: '18 FOD FINANCIEN ... lim + fon tot 2.359.415 177.077 2.536.492 2.384.270 162.659 2.546.929 tot lim + fon'."
+					}
+				},
+				"nature": "discretionary"
+			},
+			{
+				"id": "federal.buildings-agency",
+				"label": {
+					"nl": "Regie der Gebouwen",
+					"fr": "Régie des Bâtiments",
+					"en": "Buildings Agency (Régie des Bâtiments)"
+				},
+				"amount": {
+					"eurMillion": 906.474,
+					"ref": {
+						"source": "bosa-infocenter-budget-2026",
+						"locator": "Export FOD-POD, section 19, column 'Aangepaste kredieten vereffeningen', all basic allocations (EUR)",
+						"note": "Whole section 19: 906.474. The section total is the same in DOC 56 1470/001 p. 9, Synthesetabel: 'lim 948.791 -42.317 906.474 948.791 -42.317 906.474 lim 19 RÉGIE DES BÂTIMENTS'."
+					}
+				},
+				"nature": "discretionary"
+			},
+			{
+				"id": "federal.employment",
+				"label": {
+					"nl": "Werkgelegenheid, Arbeid en Sociaal Overleg",
+					"fr": "Emploi, Travail et Concertation sociale",
+					"en": "Employment, labour and social dialogue"
+				},
+				"amount": {
+					"eurMillion": 277.667,
+					"ref": {
+						"source": "bosa-infocenter-budget-2026",
+						"locator": "Export FOD-POD, section 23, column 'Aangepaste kredieten vereffeningen', all basic allocations (EUR)",
+						"note": "Whole section 23: 277.667. The section total is the same in DOC 56 1470/001 p. 9, Synthesetabel: '23 FOD WERKGELEGENHEID, ARBEID EN SOCIAAL OVERLEG ... lim + fon tot 278.191 -628 277.563 278.295 -628 277.667 tot lim + fon'."
+					}
+				},
+				"nature": "discretionary"
+			},
+			{
+				"id": "federal.civil-service-pensions",
+				"label": {
+					"nl": "Pensioenen overheidssector (FPD)",
+					"fr": "Pensions du secteur public (SFP)",
+					"en": "Public-sector (civil service) pensions paid by the Federal Pension Service"
+				},
+				"amount": {
+					"eurMillion": 16145.9,
+					"ref": {
+						"source": "be-chamber-56-1470-001",
+						"locator": "DOC 56 1470/001, Tabel 1 'Aangepaste programma's' (tables annexed to the law), p. 852, section 24, division 24-58, activity 45 'Dotaties gestort aan de FPD - overheidspensioenen' (liquidation row)",
+						"quote": "Pensioenen overheidssector 58 45 42.10.01 14.584.187 ... 14.589.292 | Pensioenen HR-Rail 58 45 42.10.05 1.325.778 ... 1.313.082 (x 1 000 EUR)",
+						"note": "Sum of activity 24.58.45: public-sector pensions 14,589.292 + war/reparation pensions 62.460 + work-accident rents 61.605 + operating costs 57.791 + HR-Rail (SNCB statutory staff) pensions 1,313.082 + civilian war/terror victims 11.714 + national-recognition rent 0.002 + subsidy to solidarity pension fund of local authorities 50.000 = 16,145.946. The SFP is a social-security institution, but these pensions are a federal (State) liability, so transferTo is left null; GRAPA (1,036.8) is NOT included here (it is in 'other')."
+					}
+				},
+				"nature": "entitlement",
+				"ageingGroup": "pensions"
+			},
+			{
+				"id": "federal.social-security-grants",
+				"label": {
+					"nl": "Dotaties en toelagen aan de sociale zekerheid",
+					"fr": "Dotations et subsides à la sécurité sociale",
+					"en": "Grants to social security (state subsidies and balancing grants)"
+				},
+				"amount": {
+					"eurMillion": 10216.0,
+					"ref": {
+						"source": "be-chamber-56-1470-001",
+						"locator": "DOC 56 1470/001, Tabel 1 'Aangepaste programma's' (tables annexed to the law), p. 851-853, section 24, division 24-58, activities 41, 42, 43, 46, 47, 48 (liquidation row)",
+						"quote": "Globale rijkstoelage - sociale zekerheid voor werknemers 58 42 42.80.03 ... 2.683.705 | Evenwichtsdotatie - sociale zekerheid voor werknemers 58 42 42.80.04 ... 5.446.190 | Globale rijkstoelage - sociale zekerheid voor zelfstandigen 58 43 42.80.01 ... 481.432 | Evenwichtsdotatie - sociale zekerheid voor zelfstandigen 58 43 42.80.02 ... 820.976 (x 1 000 EUR)",
+						"note": "Global management employees (RSZ/ONSS): state subsidy 2,683.705 + balancing grant 5,446.190 + overseas social security 269.143 = 8,399.038; self-employed (RSVZ/INASTI): state subsidy 481.432 + balancing grant 820.976 = 1,302.408; RIZIV/INAMI health-care subsidy 491.462; KCE 1.347 + SIGeDIS 4.285; Fedris 9.381; HZIV/CAAMI 8.114. Total 10,216.035. Of which to the two global managements strictly (state subsidies + balancing grants) = 9,432.303. The much larger 'alternative financing' (27,686 m) is a revenue transfer, not expenditure - see notes."
+					}
+				},
+				"nature": "entitlement",
+				"transferTo": "social-security"
+			},
+			{
+				"id": "federal.disability-allowances",
+				"label": {
+					"nl": "Tegemoetkomingen aan personen met een handicap",
+					"fr": "Allocations aux personnes handicapées",
+					"en": "Allowances for persons with disabilities"
+				},
+				"amount": {
+					"eurMillion": 3235.4,
+					"ref": {
+						"source": "be-chamber-56-1470-001",
+						"locator": "DOC 56 1470/001, Tabel 1 'Aangepaste programma's' (tables annexed to the law), p. 847, section 24, B.A. 24 55 31 34.31.06 (liquidation row)",
+						"quote": "Betaling van de tegemoetkomingen aan personen met een handicap bij toepassing van de wet van 27 februari 1987 55 31 34.31.06 3.285.541 -50.189 3.235.352 (x 1 000 EUR)",
+						"note": "Income-replacement and integration allowances (law of 27 Feb 1987)."
+					}
+				},
+				"nature": "entitlement"
+			},
+			{
+				"id": "federal.social-security-other",
+				"label": {
+					"nl": "Inkomensgarantie voor ouderen (IGO) en werking FOD Sociale Zekerheid",
+					"fr": "Garantie de revenus aux personnes âgées (GRAPA) et fonctionnement du SPF Sécurité sociale",
+					"en": "Income guarantee for older people (GRAPA) and running costs of the Social Security department"
+				},
+				"amount": {
+					"eurMillion": 1119.821,
+					"ref": {
+						"source": "bosa-infocenter-budget-2026",
+						"locator": "Export FOD-POD, section 24, column 'Aangepaste kredieten vereffeningen', all basic allocations except those shown as separate lines (EUR)",
+						"note": "Section 24 total 30,717.154 minus the lines shown separately (29,597.333) = 1,119.821. Income guarantee for older people 1,034.4 (B.A. 24 58 44 34.31.08) plus its running costs 2.3, and the department's own running costs. The section total is the same in DOC 56 1470/001 p. 9, Synthesetabel: 'lim 30.723.479 -6.347 30.717.132 30.723.501 -6.347 30.717.154 lim 24 SPF SÉCURITÉ SOCIALE'."
+					}
+				},
+				"nature": "entitlement"
+			},
+			{
+				"id": "federal.public-health",
+				"label": {
+					"nl": "Volksgezondheid, Veiligheid van de Voedselketen en Leefmilieu",
+					"fr": "Santé publique, Sécurité de la chaîne alimentaire et Environnement",
+					"en": "Public health, food chain safety and environment"
+				},
+				"amount": {
+					"eurMillion": 1147.148,
+					"ref": {
+						"source": "bosa-infocenter-budget-2026",
+						"locator": "Export FOD-POD, section 25, column 'Aangepaste kredieten vereffeningen', all basic allocations (EUR)",
+						"note": "Whole section 25: 1,147.148. The section total is the same in DOC 56 1470/001 p. 9, Synthesetabel: '25 FOD VOLKSGEZONDHEID, VEILIGHEID VAN DE VOEDSELKETEN EN LEEFMILIEU ... lim + fon tot 1.063.021 29.335 1.092.356 1.117.813 29.335 1.147.148 tot lim + fon'."
+					}
+				},
+				"nature": "discretionary"
+			},
+			{
+				"id": "federal.economy",
+				"label": {
+					"nl": "Economie, KMO, Middenstand en Energie",
+					"fr": "Économie, PME, Classes moyennes et Énergie",
+					"en": "Economy, small businesses, self-employed and energy"
+				},
+				"amount": {
+					"eurMillion": 1414.044,
+					"ref": {
+						"source": "bosa-infocenter-budget-2026",
+						"locator": "Export FOD-POD, section 32, column 'Aangepaste kredieten vereffeningen', all basic allocations (EUR)",
+						"note": "Whole section 32: 1,414.044. The section total is the same in DOC 56 1470/001 p. 9, Synthesetabel: '32 FOD ECONOMIE, KMO, MIDDENSTAND EN ENERGIE ... lim + fon tot 1.402.976 -18.850 1.384.126 1.444.270 -30.226 1.414.044 tot lim + fon'."
+					}
+				},
+				"nature": "discretionary"
+			},
+			{
+				"id": "federal.mobility-rail",
+				"label": {
+					"nl": "Mobiliteit en Vervoer (vooral NMBS en Infrabel)",
+					"fr": "Mobilité et Transports (surtout SNCB et Infrabel)",
+					"en": "Mobility and transport (mostly SNCB and Infrabel railways)"
+				},
+				"amount": {
+					"eurMillion": 4692.0,
+					"ref": {
+						"source": "be-chamber-56-1470-001",
+						"locator": "DOC 56 1470/001 p. 10, Synthesetabel, section 33, liquidation 'tot' row; railway programme 33.51.1 on p. 919",
+						"quote": "33 FOD MOBILITEIT EN VERVOER ... tot ... 4.704.054 -12.005 4.692.049 (x 1 000 EUR)",
+						"note": "Section 33 total. Of which programme 33.51.1 'Spoorwegvervoer' (SNCB/Infrabel operating grants, capital participations, PPP fees) = 4,235.245 (liquidation, Tabel 1 p. 919). SNCB and Infrabel are federal public companies, not separate governments in this model."
+					}
+				},
+				"nature": "discretionary"
+			},
+			{
+				"id": "federal.cpas-grants",
+				"label": {
+					"nl": "Terugbetalingen aan de OCMW's (leefloon en medische hulp)",
+					"fr": "Remboursements aux CPAS (revenu d'intégration et aide médicale)",
+					"en": "Refunds to public social welfare centres (OCMW/CPAS): integration income and medical aid"
+				},
+				"amount": {
+					"eurMillion": 2308.9,
+					"ref": {
+						"source": "be-chamber-56-1470-001",
+						"locator": "DOC 56 1470/001, Tabel 1 'Aangepaste programma's', p. 932-933, section 44, B.A. 55 11 43.52.16 and 55 12 43.52.23 (liquidation rows)",
+						"note": "Social-integration income refunds 2,133.356 + Law of 2 April 1965 (medical and social aid) 175.511 = 2,308.867."
+					}
+				},
+				"nature": "committed",
+				"transferTo": "local"
+			},
+			{
+				"id": "federal.social-integration-other",
+				"label": {
+					"nl": "Maatschappelijke Integratie (overige)",
+					"fr": "Intégration sociale (autres)",
+					"en": "Social integration (other)"
+				},
+				"amount": {
+					"eurMillion": 160.357,
+					"ref": {
+						"source": "bosa-infocenter-budget-2026",
+						"locator": "Export FOD-POD, section 44, column 'Aangepaste kredieten vereffeningen', all basic allocations except those shown as separate lines (EUR)",
+						"note": "Section 44 total 2,469.224 minus the lines shown separately (2,308.867) = 160.357. Includes refunds to the Auxiliary Fund for Sickness and Disability Insurance (100.3) and the European Social Fund+. The section total is the same in DOC 56 1470/001 p. 10, Synthesetabel: '44 POD MAATSCHAPPELIJKE INTEGRATIE ... lim + fon tot 2.408.512 50.546 2.459.058 2.409.179 60.045 2.469.224 tot lim + fon'."
+					}
+				},
+				"nature": "discretionary"
+			},
+			{
+				"id": "federal.science-policy",
+				"label": {
+					"nl": "Wetenschapsbeleid",
+					"fr": "Politique scientifique",
+					"en": "Science policy"
+				},
+				"amount": {
+					"eurMillion": 528.897,
+					"ref": {
+						"source": "bosa-infocenter-budget-2026",
+						"locator": "Export FOD-POD, section 46, column 'Aangepaste kredieten vereffeningen', all basic allocations (EUR)",
+						"note": "Whole section 46: 528.897. The section total is the same in DOC 56 1470/001 p. 10, Synthesetabel: '46 POD WETENSCHAPSBELEID ... lim + fon tot 497.027 7.584 504.611 520.272 8.625 528.897 tot lim + fon'."
+					}
+				},
+				"nature": "discretionary"
+			},
+			{
+				"id": "federal.public-debt-interest",
+				"label": {
+					"nl": "Intresten op de rijksschuld",
+					"fr": "Intérêts de la dette publique",
+					"en": "Interest on the public debt"
+				},
+				"amount": {
+					"eurMillion": 12289.7,
+					"ref": {
+						"source": "be-chamber-56-1470-001",
+						"locator": "DOC 56 1470/001, Tabel 1 'Aangepaste programma's' (tables annexed to the law), p. 949-950, section 51, programme 51.45.1, basic allocations 51 45 10 21.10.01 / 21.10.08 / 21.20.02 / 21.20.08 (liquidation row); cross-check DOC 56 1468/001 p. 121",
+						"quote": "Rente van de leningen op lange termijn in Belgische frank en in euro 45 10 21.10.01 ... 10.739.498 | Rente van de schuld op korte termijn in euro 45 10 21.10.08 ... 1.221.278 | ... in vreemde munt 45 10 21.20.02 ... 289.736 | ... korte termijn in vreemde munt 45 10 21.20.08 ... 39.199 (x 1 000 EUR); 1468/001 p.121: 'Dit bedrag is opgebouwd uit 12.290 miljoen euro op de Rijksschuldbegroting aan te rekenen rentelasten'",
+						"note": "10,739.498 + 1,221.278 + 289.736 + 39.199 = 12,289.711 (thousand EUR -> EUR m). Excludes other section-51 costs (commissions, derivatives, FX losses, F-35/MALE hedging, Debt Agency dotation, credit granting: 1,346.6) which sit in 'other', and excludes debt amortisation and purchases of securities (40,458.0) which are outside the total. ESA interest charges of the federal government (incl. consolidated bodies) are 12,455 (1468/001 p. 22/121)."
+					}
+				},
+				"nature": "committed"
+			},
+			{
+				"id": "federal.public-debt-other-costs",
+				"label": {
+					"nl": "Rijksschuld: andere kosten (zonder aflossingen)",
+					"fr": "Dette publique : autres frais (hors amortissements)",
+					"en": "Public debt: other costs (excluding repayments)"
+				},
+				"amount": {
+					"eurMillion": 1346.624,
+					"ref": {
+						"source": "bosa-infocenter-budget-2026",
+						"locator": "Export FOD-POD, section 51, column 'Aangepaste kredieten vereffeningen', all basic allocations except those shown as separate lines (EUR)",
+						"note": "Section 51 total 54,094.365 minus the lines shown separately (52,747.741) = 1,346.624. Derivatives (391.4 and 445.9 for hedging payments), exchange losses (172.7), differences on securities transactions (52.5), credit to public bodies (200.0) and other costs. Excludes the repayment of long-term loans (31,198.072) and purchases of securities (9,259.958), which are financing. The section total is the same in DOC 56 1470/001 p. 10, Synthesetabel: 'lim 51.844.557 2.249.808 54.094.365 51.844.557 2.249.808 54.094.365 lim 51 SPF FINANCES, POUR LA DETTE PUBLIQUE.'."
+					}
+				},
+				"nature": "committed"
+			},
+			{
 				"id": "federal.eu-gni-contribution",
 				"label": {
 					"nl": "Bni-bijdrage aan de Europese Unie",
@@ -330,24 +584,6 @@
 					}
 				},
 				"nature": "committed"
-			},
-			{
-				"id": "federal.other",
-				"label": {
-					"nl": "Overige uitgaven",
-					"fr": "Autres dépenses",
-					"en": "Other spending"
-				},
-				"amount": {
-					"eurMillion": 12716.781,
-					"ref": {
-						"source": "be-chamber-56-1470-001",
-						"locator": "Computed: total minus listed lines",
-						"quote": "n/a (residual)",
-						"note": "Corrected in verification."
-					}
-				},
-				"nature": "discretionary"
 			}
 		]
 	}

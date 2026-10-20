@@ -38,4 +38,14 @@ describe('data/2026', () => {
 		const simpleSum = dataset.entities.reduce((t, e) => t + e.expenditure.total.eurMillion, 0);
 		expect(consolidatedExpenditure(dataset)).toBeLessThan(simpleSum);
 	});
+
+	// Federal lines follow the budget sections BOSA publishes, so there is no catch-all line.
+	it('has no catch-all line in the federal budget', () => {
+		const federal = dataset.entities.find((e) => e.id === 'federal');
+		const ids = federal?.expenditure.lines.map((l) => l.id) ?? [];
+		expect(ids).not.toContain('federal.other');
+		expect(ids).toEqual(
+			expect.arrayContaining(['federal.policy-and-support', 'federal.public-debt-other-costs'])
+		);
+	});
 });

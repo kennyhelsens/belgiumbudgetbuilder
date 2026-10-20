@@ -13,11 +13,12 @@ kept up to date with every change to the data or the calculations.
 Only from official documents: the budgets voted by the federal, regional and
 community parliaments, the social security budget, RIZIV/INAMI, the Federal
 Planning Bureau, the Study Committee on Ageing (part of the High Council of
-Finance), the National Bank, Statbel and Eurostat. News articles were used at most to find a
-document, never as a source.
+Finance), the National Bank, Statbel, Eurostat and BOSA's interactive federal
+budget. News articles were used at most to find a document, never as a
+source.
 
 Every amount in `data/2026/` carries its source: the document, its link, the
-page or table, and the line of the document copied word for word, so anyone
+page or table, and for documents the line copied word for word, so anyone
 can check it. On the site, the table view under the budget map shows the
 source of each line.
 
@@ -35,6 +36,30 @@ Budget year **2026**, in the latest voted version:
 | Brussels (Region + COCOM)    | initial budget (voted 27 March 2026)         | payment credits, including budget funds |
 | Local government             | Federal Planning Bureau forecast (June 2026) | national accounts (ESA 2010)            |
 | Belgium as a whole           | Federal Planning Bureau forecast (June 2026) | national accounts (ESA 2010)            |
+
+### How is the federal budget grouped?
+
+The same way BOSA (the federal Policy and Support department) groups it in
+its interactive budget at budget.infocenter.belgium.be: by budget section,
+one per department or group of grants. Every section total matches BOSA's
+export and the adjusted budget law (DOC 56 1470/001) to the thousand euro.
+
+A few sections are split, so that money handed to another government can be
+shown where it is spent, and pensions can follow the ageing path:
+
+- **Section 01 (grants):** the grants to the Flemish Community, the French
+  Community, COCOM and the German-speaking Community are separate lines.
+- **Section 13 (Home affairs):** Fedasil and the Immigration Office are
+  separate lines.
+- **Section 17 (Federal police):** the grants to local police zones (€1.3
+  billion) are a separate line.
+- **Section 24 (Social security):** civil-service pensions, the grants to
+  social security and the allowances for persons with disabilities are
+  separate lines.
+- **Section 44 (Social integration):** the refunds to OCMW/CPAS (€2.3
+  billion) are a separate line.
+- **Section 51 (Public debt):** interest is a separate line. Repaying loans
+  and buying securities (€40.5 billion) are left out (see below).
 
 ### What counts as "spending"?
 
