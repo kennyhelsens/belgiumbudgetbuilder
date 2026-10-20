@@ -45,5 +45,14 @@ data/2026/
   document exists (local government).
 - **Labels** are given in Dutch, French and English.
 
+## Not yet included
+
+- **German-speaking Community**: its 2026 budget could only be read through an
+  unofficial mirror of the Belgian Official Journal, and a first adjustment
+  has since been adopted. It will be added once the figures are checked
+  against the official documents (pdg.be, ostbelgienlive.be or the Moniteur
+  belge block automated access). Until then, the federal grant to it is shown
+  as federal spending.
+
 The checks in `src/lib/data/` run in CI and fail the pull request if any rule
 is broken.
