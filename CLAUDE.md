@@ -20,6 +20,6 @@ debt projection (20-year view optional). Full spec: `docs/SPEC.md`.
 
 ## Git
 
-- Never, ever add Claude acknowledgements to commit messages: no
-  `Co-Authored-By: Claude ...`, no `Claude-Session: ...`, no "Generated with
-  Claude Code" lines. Commit messages describe the change only.
+- Never, ever add Claude acknowledgements to commit messages or pull request
+  descriptions: no `Co-Authored-By: Claude ...`, no `Claude-Session: ...`, no
+  "Generated with Claude Code" lines or links. They describe the change only.
