@@ -72,8 +72,11 @@ const entitySchema = z.object({
 	label: localized,
 	government: z.enum(['federal', 'social-security', 'region', 'community', 'local']),
 	adjustable: z.boolean(),
-	/** provisional = no voted budget; spending runs on provisional credits. */
-	budgetStatus: z.enum(['initial', 'adjusted', 'provisional']),
+	/**
+	 * provisional = no voted budget; spending runs on provisional credits.
+	 * forecast = official forecast, for governments without one budget document (e.g. all municipalities).
+	 */
+	budgetStatus: z.enum(['initial', 'adjusted', 'provisional', 'forecast']),
 	expenditure: z.object({
 		total: amountSchema,
 		lines: z.array(lineSchema).min(1)
