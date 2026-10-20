@@ -1,0 +1,22 @@
+{
+	"line": "social-security.incapacity",
+	"equivalents": [
+		{
+			"id": "avg-yearly-invalidity-benefit-per-invalid",
+			"label": {
+				"nl": "gemiddelde jaarbedragen aan invaliditeitsuitkering per persoon in invaliditeit (werknemers en werklozen, 2025)",
+				"fr": "montants annuels moyens d'indemnités d'invalidité par personne en invalidité (salariés et chômeurs, 2025)",
+				"en": "average yearly invalidity benefits per person in invalidity (employees and unemployed, 2025)"
+			},
+			"unitEur": {
+				"value": 18951.48,
+				"ref": {
+					"source": "riziv-invalidity-2025-amounts",
+					"locator": "riziv-invalidity-2025-amounts, PDF p. 2, Tabel 7 'Werknemers en werklozen - Uitgekeerde bedragen in invaliditeit (in EUR) per geslacht - Evolutie 2021-2025', row 'Algemeen totaal', column 2025; divided by the mean of riziv-invalidity-2025-counts PDF p. 1, Tabel 1 'Aantal werknemers en werklozen in invaliditeit op 31 december', row 'Algemeen totaal', columns 2024 and 2025",
+					"quote": "Tabel 7: 'Inhaalpremie 283.584.669 316.692.365 365.002.170 395.137.240 419.513.347 | Algemeen totaal 6.959.092.628 7.783.374.526 8.594.647.580 9.390.066.845 9.971.120.879' | Tabel 1: 'Algemeen totaal 455.996 471.927 493.681 514.551 537.728'",
+					"note": "9,971,120,879 EUR paid in 2025 / 537,728 invalids on 31 Dec 2025 = 18,543.06 EUR per invalid per year. Without the catch-up premium: 9,551,607,532 / 537,728 = 17,762.90. Stated arithmetic with a mismatch: the numerator is a full-year flow, the denominator a year-end stock (which grew 4.5% during 2025), so the true amount per person-year is somewhat higher. Covers only invalidity (after the first year of incapacity), not primary incapacity or maternity; employees/unemployed only (self-employed in separate tables). 2025 figures are provisional per RIZIV. Alternative simpler unit from the same source: average daily invalidity benefit 62.17 EUR (Tabel 8, 'Algemeen totaal', 2025). Checked by a second agent: Figures verified. The original 9,971,120,879 / 537,728 = 18,543.06 is arithmetically right but divides a full-year flow by the year-end stock, which grew 4.5% during 2025, so it understates the amount per person. Corrected calculation: 9,971,120,879 / ((514,551 + 537,728) / 2 = 526,139.5) = 18,951.48 EUR per person per year. Cross-check: 160,384,103 paid days (Tabel 6) / 526,139.5 = 304.8 days per person, consistent with the 6-day-week benefit system, and Tabel 8 'Algemeen totaal' 2025 = 62.17 EUR per day = 9,971,120,879 / 160,384,103. If no averaging of stocks is wanted, use the printed figure instead: 62.17 EUR per paid day of invalidity benefit (Tabel 8, 'Algemeen totaal', 2025), labelled 'days of invalidity benefit (average daily amount, employees and unemployed, 2025)'. The amount includes the yearly catch-up premium (inhaalpremie). The table does not say gross or net, so the label says neither. It covers invalidity only (after the first year of incapacity) and employees/unemployed only. RIZIV marks the 2025 counts as provisional ('De cijfers zijn mogelijk nog onderhevig aan verandering'). Invalidity is about 63% of this 15.9 bn line, so this is a real and representative cost of the line. I avoided the noun 'invalide' and used 'persoon in invaliditeit' / 'personne en invalidité'."
+				}
+			}
+		}
+	]
+}

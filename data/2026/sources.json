@@ -237,5 +237,57 @@
 		"url": "https://themis.vlaanderen.be/files/213f0980-aa6a-11f0-9b44-3797f8128cc9/download",
 		"published": "2025-10-17",
 		"retrieved": "2026-10-20"
+	},
+	{
+		"id": "fpd-monthly-stat-2026-04",
+		"title": "Maandelijkse statistiek van de sociale uitkeringen – April 2026",
+		"publisher": "Federale Pensioendienst (FPD/SFP), Dienst Financiële Studies",
+		"url": "https://www.sfpd.fgov.be/media/Stat/Maandelijks/nl_stat_2604.pdf",
+		"retrieved": "2026-10-20"
+	},
+	{
+		"id": "fpd-gewaarborgd-minimumpensioen",
+		"title": "Gewaarborgd minimumpensioen",
+		"publisher": "Federale Pensioendienst (FPD) / Service fédéral des Pensions (SFP)",
+		"url": "https://www.sfpd.fgov.be/nl/pensioenbedrag/berekening/gewaarborgd-minimum-pensioen",
+		"retrieved": "2026-10-20"
+	},
+	{
+		"id": "rsvz-faq-hoeveel-pensioen",
+		"title": "Hoeveel zal mijn pensioen bedragen?",
+		"publisher": "RSVZ / INASTI",
+		"url": "https://www.rsvz.be/nl/faq/hoeveel-zal-mijn-pensioen-bedragen",
+		"retrieved": "2026-10-20"
+	},
+	{
+		"id": "rva-annual-report-2025-vol2",
+		"title": "De RVA in 2025 – Vol. 2: Indicatoren van de arbeidsmarkt en evolutie van de uitkeringen",
+		"publisher": "RVA / ONEM",
+		"url": "https://www.rva.be/file/cc73d96153bbd5448a56f19d925d05b1379c7f21/d734d434d3191df489f8b02e2edafbfe930cedd7/rajv2025-vol2-nl.pdf?name=RAJV2025_vol2_NL.pdf&type=application/pdf",
+		"published": "2026-03-26",
+		"retrieved": "2026-10-20"
+	},
+	{
+		"id": "rva-amounts-full-unemployment-2026-09",
+		"title": "Nieuwe reglementering – Volledige werkloosheid zonder anciënniteitstoeslag (Brutobedragen)",
+		"publisher": "RVA / ONEM",
+		"url": "https://www.rva.be/documentatie/bedragen/volledige-werkloosheid-nieuwe-reglementering",
+		"retrieved": "2026-10-20"
+	},
+	{
+		"id": "riziv-invalidity-2025-amounts",
+		"title": "Statistieken over de invaliditeit van werknemers en werklozen in 2025 – tabellen 6-8 (vergoede dagen, uitgekeerde bedragen, gemiddelde dagelijkse uitkering)",
+		"publisher": "RIZIV / INAMI – Dienst uitkeringen, Directie financiën en statistieken",
+		"url": "https://www.inami.fgov.be/SiteCollectionDocuments/stat_du2025_2_invaliditeit.pdf",
+		"published": "2026-05-19",
+		"retrieved": "2026-10-20"
+	},
+	{
+		"id": "riziv-tariff-physicians-2026-01",
+		"title": "Tarieven artsen – raadplegingen en bezoeken, toezicht en reiskosten, van toepassing vanaf 1/01/2026 (Omzendbrief VI nr 2025/337)",
+		"publisher": "RIZIV / INAMI",
+		"url": "https://www.inami.fgov.be/SiteCollectionDocuments/tarief_artsen_deel01_20260101.pdf",
+		"published": "2025-12-19",
+		"retrieved": "2026-10-20"
 	}
 ]
