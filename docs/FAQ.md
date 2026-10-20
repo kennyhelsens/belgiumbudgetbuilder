@@ -85,13 +85,27 @@ total either.
 
 ### Why is the map total (€346 billion) lower than the official €362 billion?
 
-The €362 billion is general government spending in the national accounts
-(ESA 2010). The map adds up the governments' own budgets, which cover
-slightly less. Some spending sits outside those budgets; for example,
-civil-servant pensions paid from those schemes' own contributions. The
-methods also differ, such as payment credits versus accrual accounting.
-The ten-year outlook uses the national-accounts figures, so the debt
-calculation is not affected.
+The €362 billion (€361.8 billion) is general government spending in the
+national accounts (ESA 2010, Federal Planning Bureau, June 2026). The map adds
+up the governments' own 2026 budgets instead. Every step between the two
+totals was traced in the source documents and checked a second time:
+
+| Difference                                                                                                                                                                                                                                                                                              | € billion |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
+| **Public-sector pensions.** ESA counts all civil-servant pensions as spending, plus a notional employer pension contribution in staff costs. The map only counts the federal grant to the pension scheme.                                                                                               | +18.6     |
+| **Tax measures.** ESA counts some tax measures as spending, while the budget counts them as lower revenue: withholding-tax exemptions, refundable tax credits, the VAT-based EU contribution, and tax revenue passed on to bodies such as CREG and Elia.                                                | +8.2      |
+| **Transfers counted twice in our data.** Regions and communities pay grants to municipalities that our data does not yet mark as transfers, so they are counted twice: in the regional budget and in local government. The largest are the French Community's grants for teachers in municipal schools. | −8.5      |
+| **Federal timing and accounting corrections.** These include the assumed underspending, the timing of Defence purchases, non-interest debt costs, and the difference between the budgeted and the ESA interest bill.                                                                                    | −3.7      |
+| **Governments and schemes missing from our data:** the German-speaking Community, the French Community Commission in Brussels (COCOF) and smaller social security schemes.                                                                                                                              | +2.4      |
+| **Small consolidation items** (payments between governments)                                                                                                                                                                                                                                            | −0.6      |
+| **Not explained**                                                                                                                                                                                                                                                                                       | −0.6      |
+| **Total difference**                                                                                                                                                                                                                                                                                    | **+15.7** |
+
+The €8.5 billion counted twice is an estimate, because the national accounts
+and the budgets do not record transfers in exactly the same way. It is an
+error in our data, and we will correct it by marking those grants as
+transfers. The ten-year outlook uses the national-accounts figures, so the
+debt calculation is not affected.
 
 ### Why is the German-speaking Community missing?
 
