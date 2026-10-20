@@ -40,7 +40,16 @@
 	"outlook.interestRate": "Average interest rate on the debt",
 	"outlook.growth": "Nominal economic growth per year",
 	"outlook.sources": "Sources",
-	"outlook.caveat": "This is simple arithmetic, not a forecast. It does not model how people and companies react to tax or spending changes, nor interest rates that change over time. Ageing costs follow the official Study Committee on Ageing report.",
+	"outlook.caveat": "This is simple arithmetic, not a forecast. It does not model how people and companies react to tax or spending changes, nor interest rates that change over time. Ageing costs follow the official Study Committee on Ageing report; changing pension or healthcare spending scales their projected increase in the same proportion.",
 	"builder.change": "Your change",
-	"builder.sliderLabel": "Change {name}, in percent"
+	"builder.sliderLabel": "Change {name}, in percent",
+	"ageing.title": "The cost of ageing",
+	"ageing.intro": "Compared with 2026, pensions and healthcare take a growing share of the economy, even if nothing else changes. These are the official projections of the Study Committee on Ageing; the extra cost is already included in the outlook above.",
+	"ageing.extraIn": "Extra cost of ageing in {year}",
+	"ageing.perYear": "per year, compared with 2026",
+	"ageing.pensions": "Pensions",
+	"ageing.health": "Healthcare",
+	"ageing.other": "Other (e.g. lower unemployment)",
+	"ageing.scaled": "Your changes to pensions and healthcare in the map above also change this cost, in the same proportion.",
+	"ageing.chartLabel": "Extra cost of ageing per year compared with 2026, in % of GDP, by pensions, healthcare and other, {from} to {to}"
 }

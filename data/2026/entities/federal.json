@@ -53,7 +53,8 @@
 						"note": "Sum of activity 24.58.45: public-sector pensions 14,589.292 + war/reparation pensions 62.460 + work-accident rents 61.605 + operating costs 57.791 + HR-Rail (SNCB statutory staff) pensions 1,313.082 + civilian war/terror victims 11.714 + national-recognition rent 0.002 + subsidy to solidarity pension fund of local authorities 50.000 = 16,145.946. The SFP is a social-security institution, but these pensions are a federal (State) liability, so transferTo is left null; GRAPA (1,036.8) is NOT included here (it is in 'other')."
 					}
 				},
-				"nature": "entitlement"
+				"nature": "entitlement",
+				"ageingGroup": "pensions"
 			},
 			{
 				"id": "federal.social-security-grants",

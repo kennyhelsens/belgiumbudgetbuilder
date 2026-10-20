@@ -17,6 +17,9 @@ debt projection (20-year view optional). Full spec: `docs/SPEC.md`.
 - Trade-off examples must be reviewed before they ship.
 - TDD: unit, integration and e2e tests for every feature.
 - Languages: NL, FR, EN.
+- Keep `docs/FAQ.md` up to date in every PR that changes data, sources,
+  calculations or assumptions. The FAQ must match the numbers in `data/` and
+  the code exactly; check figures against the data files, never from memory.
 
 ## Git
 

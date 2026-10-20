@@ -8,6 +8,7 @@ ABOUTME: Headline figures, a line chart with hover values, adjustable assumption
 	import { translate, type MessageKey } from '../i18n/translate.ts';
 	import { formatEuro } from '../explorer/format.ts';
 	import { project } from '../projection/project.ts';
+	import AgeingCost from './AgeingCost.svelte';
 	import { balanceChangeFrom, outlookInput, type Changes } from './choices.ts';
 
 	let {
@@ -182,6 +183,8 @@ ABOUTME: Headline figures, a line chart with hover values, adjustable assumption
 			</div>
 		{/if}
 	</div>
+
+	<AgeingCost rows={yours} {locale} />
 
 	<details class="assumptions">
 		<summary>{t('outlook.assumptions')}</summary>

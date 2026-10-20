@@ -19,4 +19,5 @@ Reviewer checklist:
 ## Checks
 
 - [ ] Tests added or updated for the change.
+- [ ] `docs/FAQ.md` updated if data, sources, calculations or assumptions changed.
 - [ ] Checked on the Cloudflare preview link.

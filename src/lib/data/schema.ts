@@ -45,6 +45,9 @@ const signedAmountSchema = z.object({
  */
 export const natureSchema = z.enum(['entitlement', 'committed', 'discretionary']);
 
+/** Parts of the official cost of ageing that have their own projected path. */
+export const ageingGroupSchema = z.enum(['pensions', 'health']);
+
 /** A rate as a fraction (0.023 = 2.3%); bounded to catch percentages entered by mistake. */
 const rateSchema = z.object({
 	value: z.number().min(-0.1).max(0.2),
@@ -64,6 +67,8 @@ const lineSchema = z.object({
 	nature: natureSchema,
 	/** Set when this line is money handed to another government in the dataset. */
 	transferTo: slug.optional(),
+	/** Set when this spending follows an official ageing path, so changing it scales that path's increase. */
+	ageingGroup: ageingGroupSchema.optional(),
 	note: localized.optional()
 });
 
@@ -104,6 +109,10 @@ export const datasetSchema = z.object({
 		nominalGrowth: rateSchema,
 		/** Official budgetary cost of ageing, % of GDP, for the years the report gives. */
 		ageingCostPctGdp: z.array(yearPointSchema).min(1),
+		/** Official paths for parts of the ageing cost (pensions, health), % of GDP. */
+		ageingGroups: z.array(
+			z.object({ id: ageingGroupSchema, points: z.array(yearPointSchema).min(1) })
+		),
 		/** The official projected debt path, % of GDP, shown as a reference. */
 		officialDebtPctGdp: z.array(yearPointSchema).min(1)
 	}),

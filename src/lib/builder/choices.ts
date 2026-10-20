@@ -1,7 +1,7 @@
 // ABOUTME: Turns a visitor's budget choices into inputs for the debt projection.
 // ABOUTME: Choices are changes per spending line in € million; more spending worsens the balance one for one.
 import type { Dataset } from '../data/schema.ts';
-import type { ProjectionInput } from '../projection/project.ts';
+import type { AgeingGroup, ProjectionInput } from '../projection/project.ts';
 
 /** Spending changes per line id, € million per year; positive = spend more. */
 export type Changes = Record<string, number>;
@@ -19,6 +19,25 @@ export function balanceChangeFrom(changes: Changes): number {
 	return 0 - Object.values(changes).reduce((total, change) => total + change, 0);
 }
 
+/**
+ * The visitor's relative change to each ageing group's spending (e.g. -0.1 = 10% less on pensions),
+ * computed over the lines tagged with that group.
+ */
+function ageingGroupsFor(data: Dataset, changes: Changes): AgeingGroup[] {
+	const lines = data.entities.flatMap((entity) => entity.expenditure.lines);
+	return data.outlook.ageingGroups.map((group) => {
+		const tagged = lines.filter((line) => line.ageingGroup === group.id);
+		const base = tagged.reduce((sum, line) => sum + line.amount.eurMillion, 0);
+		const changed = tagged.reduce((sum, line) => sum + (changes[line.id] ?? 0), 0);
+		return {
+			id: group.id,
+			points: group.points.map(({ year, value }) => ({ year, value })),
+			// 0 + … avoids -0 when nothing changed.
+			change: base > 0 ? 0 + changed / base : 0
+		};
+	});
+}
+
 export function outlookInput(data: Dataset, choices: Choices): ProjectionInput {
 	const { overview, outlook } = data;
 	return {
@@ -31,6 +50,7 @@ export function outlookInput(data: Dataset, choices: Choices): ProjectionInput {
 		interestRate: choices.interestRate ?? outlook.interestRate.value,
 		nominalGrowth: choices.nominalGrowth ?? outlook.nominalGrowth.value,
 		ageingCostPctGdp: outlook.ageingCostPctGdp.map(({ year, value }) => ({ year, value })),
-		primaryBalanceChange: balanceChangeFrom(choices.changes)
+		primaryBalanceChange: balanceChangeFrom(choices.changes),
+		ageingGroups: ageingGroupsFor(data, choices.changes)
 	};
 }

@@ -56,3 +56,29 @@ test.describe('building your own budget', () => {
 		await expect.poll(() => debtAtHorizon(page)).toBe(before);
 	});
 });
+
+test.describe('cost of ageing', () => {
+	const euros = async (page: Page, testId: string) =>
+		Number(((await page.getByTestId(testId).textContent()) ?? '').replace(/[^0-9.]/g, ''));
+
+	test('shows the extra cost of pensions and healthcare at the horizon', async ({ page }) => {
+		await page.goto('/en/');
+		const outlook = page.getByRole('region', { name: 'Ten-year outlook' });
+		await expect(outlook).toContainText('Extra cost of ageing in 2036');
+		await expect(page.getByTestId('ageing-pensions')).toContainText('billion');
+		await expect(page.getByTestId('ageing-health')).toContainText('billion');
+		await expect(
+			outlook.getByRole('img', { name: /Extra cost of ageing per year compared with 2026/ })
+		).toBeVisible();
+	});
+
+	test('a pension cut also lowers the projected pension increase', async ({ page }) => {
+		await page.goto('/en/');
+		const before = await euros(page, 'ageing-pensions');
+		const map = page.getByRole('region', { name: 'Budget map' });
+		await map.getByRole('button', { name: /^Social security/ }).click();
+		await map.getByText('Show as a table').click();
+		await map.getByRole('slider', { name: /^Change Employee pensions/ }).fill('-20');
+		await expect.poll(() => euros(page, 'ageing-pensions')).toBeLessThan(before);
+	});
+});

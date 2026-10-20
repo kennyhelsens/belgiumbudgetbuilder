@@ -7,6 +7,7 @@ budget, and what choices mean over the next ten years.
 
 - Product spec: [`docs/SPEC.md`](docs/SPEC.md)
 - Deployment and custom domain: [`docs/DEPLOY.md`](docs/DEPLOY.md)
+- How the numbers are made: [`docs/FAQ.md`](docs/FAQ.md)
 
 ## Development
 

@@ -37,7 +37,11 @@ export function findProblems(data: Dataset): string[] {
 			problems.push(`${entity.id}: expenditure lines add up to ${sum}, total is ${total}`);
 		}
 
+		const ageingGroups = new Set(data.outlook.ageingGroups.map((group) => group.id));
 		for (const line of lines) {
+			if (line.ageingGroup && !ageingGroups.has(line.ageingGroup)) {
+				problems.push(`${line.id}: ageing group "${line.ageingGroup}" has no path in the outlook`);
+			}
 			if (!line.id.startsWith(`${entity.id}.`)) {
 				problems.push(`line "${line.id}" should start with "${entity.id}."`);
 			}
@@ -59,6 +63,11 @@ function collectRefs(data: Dataset): { where: string; ref: SourceRef }[] {
 	}));
 	refs.push({ where: 'outlook.interestRate', ref: data.outlook.interestRate.ref });
 	refs.push({ where: 'outlook.nominalGrowth', ref: data.outlook.nominalGrowth.ref });
+	for (const group of data.outlook.ageingGroups) {
+		for (const point of group.points) {
+			refs.push({ where: `outlook.ageingGroups.${group.id}.${point.year}`, ref: point.ref });
+		}
+	}
 	for (const series of ['ageingCostPctGdp', 'officialDebtPctGdp'] as const) {
 		for (const point of data.outlook[series]) {
 			refs.push({ where: `outlook.${series}.${point.year}`, ref: point.ref });

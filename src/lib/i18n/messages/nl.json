@@ -40,7 +40,16 @@
 	"outlook.interestRate": "Gemiddelde rente op de schuld",
 	"outlook.growth": "Nominale economische groei per jaar",
 	"outlook.sources": "Bronnen",
-	"outlook.caveat": "Dit is eenvoudige rekenkunde, geen voorspelling. Het model houdt geen rekening met hoe mensen en bedrijven reageren op belasting- of uitgavenwijzigingen, noch met rentes die in de tijd veranderen. De vergrijzingskosten volgen het officiële rapport van de Studiecommissie voor de Vergrijzing.",
+	"outlook.caveat": "Dit is eenvoudige rekenkunde, geen voorspelling. Het model houdt geen rekening met hoe mensen en bedrijven reageren op belasting- of uitgavenwijzigingen, noch met rentes die in de tijd veranderen. De vergrijzingskosten volgen het officiële rapport van de Studiecommissie voor de Vergrijzing; wie de uitgaven voor pensioenen of gezondheidszorg wijzigt, wijzigt hun verwachte stijging in dezelfde verhouding.",
 	"builder.change": "Uw wijziging",
-	"builder.sliderLabel": "Wijzig {name}, in procent"
+	"builder.sliderLabel": "Wijzig {name}, in procent",
+	"ageing.title": "De kosten van de vergrijzing",
+	"ageing.intro": "Vergeleken met 2026 nemen pensioenen en gezondheidszorg een groeiend deel van de economie in, ook als er verder niets verandert. Dit zijn de officiële projecties van de Studiecommissie voor de Vergrijzing; de extra kosten zitten al in het vooruitzicht hierboven.",
+	"ageing.extraIn": "Extra kosten van de vergrijzing in {year}",
+	"ageing.perYear": "per jaar, vergeleken met 2026",
+	"ageing.pensions": "Pensioenen",
+	"ageing.health": "Gezondheidszorg",
+	"ageing.other": "Overige (bv. minder werkloosheid)",
+	"ageing.scaled": "Uw wijzigingen aan pensioenen en gezondheidszorg in de kaart hierboven veranderen ook deze kosten, in dezelfde verhouding.",
+	"ageing.chartLabel": "Extra kosten van de vergrijzing per jaar vergeleken met 2026, in procent van het bbp, voor pensioenen, gezondheidszorg en overige, {from} tot {to}"
 }

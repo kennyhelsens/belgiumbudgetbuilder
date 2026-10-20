@@ -40,7 +40,16 @@
 	"outlook.interestRate": "Taux d'intérêt moyen de la dette",
 	"outlook.growth": "Croissance économique nominale par an",
 	"outlook.sources": "Sources",
-	"outlook.caveat": "Il s'agit d'un simple calcul, pas d'une prévision. Le modèle ne tient pas compte de la réaction des personnes et des entreprises aux changements d'impôts ou de dépenses, ni de taux d'intérêt qui évoluent dans le temps. Le coût du vieillissement suit le rapport officiel du Comité d'étude sur le vieillissement.",
+	"outlook.caveat": "Il s'agit d'un simple calcul, pas d'une prévision. Le modèle ne tient pas compte de la réaction des personnes et des entreprises aux changements d'impôts ou de dépenses, ni de taux d'intérêt qui évoluent dans le temps. Le coût du vieillissement suit le rapport officiel du Comité d'étude sur le vieillissement ; modifier les dépenses de pensions ou de soins de santé modifie leur hausse projetée dans la même proportion.",
 	"builder.change": "Votre modification",
-	"builder.sliderLabel": "Modifier {name}, en pour cent"
+	"builder.sliderLabel": "Modifier {name}, en pour cent",
+	"ageing.title": "Le coût du vieillissement",
+	"ageing.intro": "Par rapport à 2026, les pensions et les soins de santé pèsent de plus en plus dans l'économie, même si rien d'autre ne change. Ce sont les projections officielles du Comité d'étude sur le vieillissement ; ce surcoût est déjà inclus dans les perspectives ci-dessus.",
+	"ageing.extraIn": "Surcoût du vieillissement en {year}",
+	"ageing.perYear": "par an, par rapport à 2026",
+	"ageing.pensions": "Pensions",
+	"ageing.health": "Soins de santé",
+	"ageing.other": "Autres (p. ex. moins de chômage)",
+	"ageing.scaled": "Vos modifications des pensions et des soins de santé dans la carte ci-dessus modifient aussi ce coût, dans la même proportion.",
+	"ageing.chartLabel": "Surcoût annuel du vieillissement par rapport à 2026, en % du PIB, pour les pensions, les soins de santé et les autres postes, de {from} à {to}"
 }

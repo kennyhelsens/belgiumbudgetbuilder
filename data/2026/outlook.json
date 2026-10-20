@@ -208,6 +208,396 @@
 			}
 		}
 	],
+	"ageingGroups": [
+		{
+			"id": "pensions",
+			"points": [
+				{
+					"year": 2026,
+					"value": 11.3,
+					"ref": {
+						"source": "scvv-2026-data",
+						"locator": "sheet 'budgettaire kosten vergrijzing', cell AE5 (row 'Pensioenen', column 2026); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+						"quote": "Pensioenen | 2026 | 11,3"
+					}
+				},
+				{
+					"year": 2027,
+					"value": 11.4,
+					"ref": {
+						"source": "scvv-2026-data",
+						"locator": "sheet 'budgettaire kosten vergrijzing', cell AF5 (row 'Pensioenen', column 2027); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+						"quote": "Pensioenen | 2027 | 11,4"
+					}
+				},
+				{
+					"year": 2028,
+					"value": 11.4,
+					"ref": {
+						"source": "scvv-2026-data",
+						"locator": "sheet 'budgettaire kosten vergrijzing', cell AG5 (row 'Pensioenen', column 2028); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+						"quote": "Pensioenen | 2028 | 11,4"
+					}
+				},
+				{
+					"year": 2029,
+					"value": 11.4,
+					"ref": {
+						"source": "scvv-2026-data",
+						"locator": "sheet 'budgettaire kosten vergrijzing', cell AH5 (row 'Pensioenen', column 2029); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+						"quote": "Pensioenen | 2029 | 11,4"
+					}
+				},
+				{
+					"year": 2030,
+					"value": 11.5,
+					"ref": {
+						"source": "scvv-2026-data",
+						"locator": "sheet 'budgettaire kosten vergrijzing', cell AI5 (row 'Pensioenen', column 2030); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+						"quote": "Pensioenen | 2030 | 11,5"
+					}
+				},
+				{
+					"year": 2031,
+					"value": 11.5,
+					"ref": {
+						"source": "scvv-2026-data",
+						"locator": "sheet 'budgettaire kosten vergrijzing', cell AJ5 (row 'Pensioenen', column 2031); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+						"quote": "Pensioenen | 2031 | 11,5"
+					}
+				},
+				{
+					"year": 2032,
+					"value": 11.6,
+					"ref": {
+						"source": "scvv-2026-data",
+						"locator": "sheet 'budgettaire kosten vergrijzing', cell AK5 (row 'Pensioenen', column 2032); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+						"quote": "Pensioenen | 2032 | 11,6"
+					}
+				},
+				{
+					"year": 2033,
+					"value": 11.7,
+					"ref": {
+						"source": "scvv-2026-data",
+						"locator": "sheet 'budgettaire kosten vergrijzing', cell AL5 (row 'Pensioenen', column 2033); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+						"quote": "Pensioenen | 2033 | 11,7"
+					}
+				},
+				{
+					"year": 2034,
+					"value": 11.8,
+					"ref": {
+						"source": "scvv-2026-data",
+						"locator": "sheet 'budgettaire kosten vergrijzing', cell AM5 (row 'Pensioenen', column 2034); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+						"quote": "Pensioenen | 2034 | 11,8"
+					}
+				},
+				{
+					"year": 2035,
+					"value": 11.9,
+					"ref": {
+						"source": "scvv-2026-data",
+						"locator": "sheet 'budgettaire kosten vergrijzing', cell AN5 (row 'Pensioenen', column 2035); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+						"quote": "Pensioenen | 2035 | 11,9"
+					}
+				},
+				{
+					"year": 2036,
+					"value": 12,
+					"ref": {
+						"source": "scvv-2026-data",
+						"locator": "sheet 'budgettaire kosten vergrijzing', cell AO5 (row 'Pensioenen', column 2036); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+						"quote": "Pensioenen | 2036 | 12"
+					}
+				},
+				{
+					"year": 2037,
+					"value": 12.1,
+					"ref": {
+						"source": "scvv-2026-data",
+						"locator": "sheet 'budgettaire kosten vergrijzing', cell AP5 (row 'Pensioenen', column 2037); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+						"quote": "Pensioenen | 2037 | 12,1"
+					}
+				},
+				{
+					"year": 2038,
+					"value": 12.1,
+					"ref": {
+						"source": "scvv-2026-data",
+						"locator": "sheet 'budgettaire kosten vergrijzing', cell AQ5 (row 'Pensioenen', column 2038); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+						"quote": "Pensioenen | 2038 | 12,1"
+					}
+				},
+				{
+					"year": 2039,
+					"value": 12.1,
+					"ref": {
+						"source": "scvv-2026-data",
+						"locator": "sheet 'budgettaire kosten vergrijzing', cell AR5 (row 'Pensioenen', column 2039); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+						"quote": "Pensioenen | 2039 | 12,1"
+					}
+				},
+				{
+					"year": 2040,
+					"value": 12.1,
+					"ref": {
+						"source": "scvv-2026-data",
+						"locator": "sheet 'budgettaire kosten vergrijzing', cell AS5 (row 'Pensioenen', column 2040); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+						"quote": "Pensioenen | 2040 | 12,1"
+					}
+				},
+				{
+					"year": 2041,
+					"value": 12,
+					"ref": {
+						"source": "scvv-2026-data",
+						"locator": "sheet 'budgettaire kosten vergrijzing', cell AT5 (row 'Pensioenen', column 2041); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+						"quote": "Pensioenen | 2041 | 12"
+					}
+				},
+				{
+					"year": 2042,
+					"value": 12,
+					"ref": {
+						"source": "scvv-2026-data",
+						"locator": "sheet 'budgettaire kosten vergrijzing', cell AU5 (row 'Pensioenen', column 2042); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+						"quote": "Pensioenen | 2042 | 12"
+					}
+				},
+				{
+					"year": 2043,
+					"value": 12,
+					"ref": {
+						"source": "scvv-2026-data",
+						"locator": "sheet 'budgettaire kosten vergrijzing', cell AV5 (row 'Pensioenen', column 2043); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+						"quote": "Pensioenen | 2043 | 12"
+					}
+				},
+				{
+					"year": 2044,
+					"value": 12,
+					"ref": {
+						"source": "scvv-2026-data",
+						"locator": "sheet 'budgettaire kosten vergrijzing', cell AW5 (row 'Pensioenen', column 2044); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+						"quote": "Pensioenen | 2044 | 12"
+					}
+				},
+				{
+					"year": 2045,
+					"value": 12,
+					"ref": {
+						"source": "scvv-2026-data",
+						"locator": "sheet 'budgettaire kosten vergrijzing', cell AX5 (row 'Pensioenen', column 2045); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+						"quote": "Pensioenen | 2045 | 12"
+					}
+				},
+				{
+					"year": 2046,
+					"value": 12,
+					"ref": {
+						"source": "scvv-2026-data",
+						"locator": "sheet 'budgettaire kosten vergrijzing', cell AY5 (row 'Pensioenen', column 2046); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+						"quote": "Pensioenen | 2046 | 12"
+					}
+				}
+			]
+		},
+		{
+			"id": "health",
+			"points": [
+				{
+					"year": 2026,
+					"value": 8.1,
+					"ref": {
+						"source": "scvv-2026-data",
+						"locator": "sheet 'budgettaire kosten vergrijzing', cell AE9 (row 'Gezondheidszorg (b)', column 2026); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+						"quote": "Gezondheidszorg (b) | 2026 | 8,1"
+					}
+				},
+				{
+					"year": 2027,
+					"value": 8.2,
+					"ref": {
+						"source": "scvv-2026-data",
+						"locator": "sheet 'budgettaire kosten vergrijzing', cell AF9 (row 'Gezondheidszorg (b)', column 2027); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+						"quote": "Gezondheidszorg (b) | 2027 | 8,2"
+					}
+				},
+				{
+					"year": 2028,
+					"value": 8.4,
+					"ref": {
+						"source": "scvv-2026-data",
+						"locator": "sheet 'budgettaire kosten vergrijzing', cell AG9 (row 'Gezondheidszorg (b)', column 2028); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+						"quote": "Gezondheidszorg (b) | 2028 | 8,4"
+					}
+				},
+				{
+					"year": 2029,
+					"value": 8.4,
+					"ref": {
+						"source": "scvv-2026-data",
+						"locator": "sheet 'budgettaire kosten vergrijzing', cell AH9 (row 'Gezondheidszorg (b)', column 2029); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+						"quote": "Gezondheidszorg (b) | 2029 | 8,4"
+					}
+				},
+				{
+					"year": 2030,
+					"value": 8.5,
+					"ref": {
+						"source": "scvv-2026-data",
+						"locator": "sheet 'budgettaire kosten vergrijzing', cell AI9 (row 'Gezondheidszorg (b)', column 2030); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+						"quote": "Gezondheidszorg (b) | 2030 | 8,5"
+					}
+				},
+				{
+					"year": 2031,
+					"value": 8.7,
+					"ref": {
+						"source": "scvv-2026-data",
+						"locator": "sheet 'budgettaire kosten vergrijzing', cell AJ9 (row 'Gezondheidszorg (b)', column 2031); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+						"quote": "Gezondheidszorg (b) | 2031 | 8,7"
+					}
+				},
+				{
+					"year": 2032,
+					"value": 8.8,
+					"ref": {
+						"source": "scvv-2026-data",
+						"locator": "sheet 'budgettaire kosten vergrijzing', cell AK9 (row 'Gezondheidszorg (b)', column 2032); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+						"quote": "Gezondheidszorg (b) | 2032 | 8,8"
+					}
+				},
+				{
+					"year": 2033,
+					"value": 8.9,
+					"ref": {
+						"source": "scvv-2026-data",
+						"locator": "sheet 'budgettaire kosten vergrijzing', cell AL9 (row 'Gezondheidszorg (b)', column 2033); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+						"quote": "Gezondheidszorg (b) | 2033 | 8,9"
+					}
+				},
+				{
+					"year": 2034,
+					"value": 9,
+					"ref": {
+						"source": "scvv-2026-data",
+						"locator": "sheet 'budgettaire kosten vergrijzing', cell AM9 (row 'Gezondheidszorg (b)', column 2034); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+						"quote": "Gezondheidszorg (b) | 2034 | 9"
+					}
+				},
+				{
+					"year": 2035,
+					"value": 9.1,
+					"ref": {
+						"source": "scvv-2026-data",
+						"locator": "sheet 'budgettaire kosten vergrijzing', cell AN9 (row 'Gezondheidszorg (b)', column 2035); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+						"quote": "Gezondheidszorg (b) | 2035 | 9,1"
+					}
+				},
+				{
+					"year": 2036,
+					"value": 9.1,
+					"ref": {
+						"source": "scvv-2026-data",
+						"locator": "sheet 'budgettaire kosten vergrijzing', cell AO9 (row 'Gezondheidszorg (b)', column 2036); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+						"quote": "Gezondheidszorg (b) | 2036 | 9,1"
+					}
+				},
+				{
+					"year": 2037,
+					"value": 9.2,
+					"ref": {
+						"source": "scvv-2026-data",
+						"locator": "sheet 'budgettaire kosten vergrijzing', cell AP9 (row 'Gezondheidszorg (b)', column 2037); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+						"quote": "Gezondheidszorg (b) | 2037 | 9,2"
+					}
+				},
+				{
+					"year": 2038,
+					"value": 9.2,
+					"ref": {
+						"source": "scvv-2026-data",
+						"locator": "sheet 'budgettaire kosten vergrijzing', cell AQ9 (row 'Gezondheidszorg (b)', column 2038); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+						"quote": "Gezondheidszorg (b) | 2038 | 9,2"
+					}
+				},
+				{
+					"year": 2039,
+					"value": 9.3,
+					"ref": {
+						"source": "scvv-2026-data",
+						"locator": "sheet 'budgettaire kosten vergrijzing', cell AR9 (row 'Gezondheidszorg (b)', column 2039); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+						"quote": "Gezondheidszorg (b) | 2039 | 9,3"
+					}
+				},
+				{
+					"year": 2040,
+					"value": 9.3,
+					"ref": {
+						"source": "scvv-2026-data",
+						"locator": "sheet 'budgettaire kosten vergrijzing', cell AS9 (row 'Gezondheidszorg (b)', column 2040); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+						"quote": "Gezondheidszorg (b) | 2040 | 9,3"
+					}
+				},
+				{
+					"year": 2041,
+					"value": 9.4,
+					"ref": {
+						"source": "scvv-2026-data",
+						"locator": "sheet 'budgettaire kosten vergrijzing', cell AT9 (row 'Gezondheidszorg (b)', column 2041); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+						"quote": "Gezondheidszorg (b) | 2041 | 9,4"
+					}
+				},
+				{
+					"year": 2042,
+					"value": 9.4,
+					"ref": {
+						"source": "scvv-2026-data",
+						"locator": "sheet 'budgettaire kosten vergrijzing', cell AU9 (row 'Gezondheidszorg (b)', column 2042); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+						"quote": "Gezondheidszorg (b) | 2042 | 9,4"
+					}
+				},
+				{
+					"year": 2043,
+					"value": 9.5,
+					"ref": {
+						"source": "scvv-2026-data",
+						"locator": "sheet 'budgettaire kosten vergrijzing', cell AV9 (row 'Gezondheidszorg (b)', column 2043); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+						"quote": "Gezondheidszorg (b) | 2043 | 9,5"
+					}
+				},
+				{
+					"year": 2044,
+					"value": 9.6,
+					"ref": {
+						"source": "scvv-2026-data",
+						"locator": "sheet 'budgettaire kosten vergrijzing', cell AW9 (row 'Gezondheidszorg (b)', column 2044); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+						"quote": "Gezondheidszorg (b) | 2044 | 9,6"
+					}
+				},
+				{
+					"year": 2045,
+					"value": 9.6,
+					"ref": {
+						"source": "scvv-2026-data",
+						"locator": "sheet 'budgettaire kosten vergrijzing', cell AX9 (row 'Gezondheidszorg (b)', column 2045); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+						"quote": "Gezondheidszorg (b) | 2045 | 9,6"
+					}
+				},
+				{
+					"year": 2046,
+					"value": 9.7,
+					"ref": {
+						"source": "scvv-2026-data",
+						"locator": "sheet 'budgettaire kosten vergrijzing', cell AY9 (row 'Gezondheidszorg (b)', column 2046); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+						"quote": "Gezondheidszorg (b) | 2046 | 9,7"
+					}
+				}
+			]
+		}
+	],
 	"officialDebtPctGdp": [
 		{
 			"year": 2026,

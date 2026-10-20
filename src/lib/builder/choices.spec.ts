@@ -56,4 +56,27 @@ describe('outlookInput', () => {
 		const input = outlookInput(data, { changes: { 'federal.justice': -1000 }, years: 10 });
 		expect(input.primaryBalanceChange).toBe(1000);
 	});
+
+	it("passes the official ageing groups, scaled by the visitor's change to the tagged lines", () => {
+		// The fixture's only pensions line is social security pensions (200); -20 is a 10% cut.
+		const input = outlookInput(data, {
+			changes: { 'social-security.pensions': -20 },
+			years: 10
+		});
+		expect(input.ageingGroups).toEqual([
+			{
+				id: 'pensions',
+				points: [
+					{ year: 2026, value: 11.3 },
+					{ year: 2036, value: 12.0 }
+				],
+				change: -0.1
+			}
+		]);
+	});
+
+	it('leaves a group unscaled when its lines are not changed', () => {
+		const input = outlookInput(data, { changes: { 'federal.justice': 100 }, years: 10 });
+		expect(input.ageingGroups?.[0].change).toBe(0);
+	});
 });
