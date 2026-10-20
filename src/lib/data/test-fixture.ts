@@ -30,7 +30,8 @@ export function datasetFixture(): Dataset {
 			revenue: { eurMillion: 300000, ref: ref('p. 2') },
 			balance: { eurMillion: -30000, ref: ref('p. 2') },
 			interest: { eurMillion: 14000, ref: ref('p. 3') },
-			debt: { eurMillion: 640000, ref: ref('p. 3') }
+			debt: { eurMillion: 640000, ref: ref('p. 3') },
+			population: { persons: 12000000, ref: ref('p. 4') }
 		},
 		outlook: {
 			interestRate: { value: 0.023, ref: ref('p. 4') },
@@ -101,6 +102,46 @@ export function datasetFixture(): Dataset {
 						}
 					]
 				}
+			}
+		],
+		details: [
+			{
+				line: 'federal.justice',
+				breakdown: [
+					{
+						id: 'courts',
+						label: { nl: 'Rechtbanken', fr: 'Tribunaux', en: 'Courts' },
+						amount: { eurMillion: 30, ref: ref('p. 20') }
+					},
+					{
+						id: 'prisons',
+						label: { nl: 'Gevangenissen', fr: 'Prisons', en: 'Prisons' },
+						amount: { eurMillion: 10, ref: ref('p. 21') }
+					}
+				],
+				equivalents: [
+					{
+						id: 'judge-year',
+						label: {
+							nl: 'jaarloon van een rechter',
+							fr: "salaire annuel d'un juge",
+							en: "a judge's yearly salary"
+						},
+						unitEur: { value: 100000, ref: ref('p. 22') }
+					}
+				],
+				levers: [
+					{
+						id: 'court-fees',
+						label: { nl: 'Griffierechten', fr: 'Droits de greffe', en: 'Court fees' },
+						description: {
+							nl: 'Wat partijen betalen om een zaak in te leiden.',
+							fr: 'Ce que les parties paient pour introduire une affaire.',
+							en: 'What parties pay to bring a case.'
+						},
+						ref: ref('p. 23')
+					}
+				]
 			}
 		]
 	};

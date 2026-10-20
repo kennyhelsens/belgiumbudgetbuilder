@@ -51,5 +51,16 @@
 	"ageing.health": "Soins de santé",
 	"ageing.other": "Autres (p. ex. moins de chômage)",
 	"ageing.scaled": "Vos modifications des pensions et des soins de santé dans la carte ci-dessus modifient aussi ce coût, dans la même proportion.",
-	"ageing.chartLabel": "Surcoût annuel du vieillissement par rapport à 2026, en % du PIB, pour les pensions, les soins de santé et les autres postes, de {from} à {to}"
+	"ageing.chartLabel": "Surcoût annuel du vieillissement par rapport à 2026, en % du PIB, pour les pensions, les soins de santé et les autres postes, de {from} à {to}",
+	"consequence.title": "Ce que ce changement signifie : {name}",
+	"consequence.change": "{percent} % · {amount} par an",
+	"consequence.where": "Où cela tomberait",
+	"consequence.whereNote": "Réparti en proportion de la taille de chaque partie. Une vraie réforme choisit où couper.",
+	"consequence.offset": "compensé par des recettes équivalentes : le réduire seul n'économise rien",
+	"consequence.about": "Cela représente environ",
+	"consequence.aboutUnit": "{count} × {unit}",
+	"consequence.how": "Comment s'y prendre ?",
+	"consequence.howIntro": "Ce type de dépenses évolue par ces leviers. Chacun touche des personnes différentes.",
+	"consequence.source": "Source",
+	"consequence.perInhabitant": "≈ {amount} par habitant et par an"
 }

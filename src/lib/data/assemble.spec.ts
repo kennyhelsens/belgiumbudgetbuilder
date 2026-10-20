@@ -14,6 +14,9 @@ function filesFromFixture(): Record<string, unknown> {
 	for (const entity of data.entities) {
 		files[`/data/2026/entities/${entity.id}.json`] = entity;
 	}
+	for (const details of data.details) {
+		files[`/data/2026/details/${details.line}.json`] = details;
+	}
 	return files;
 }
 
@@ -23,6 +26,21 @@ describe('assembleDataset', () => {
 		expect(dataset.year).toBe(2026);
 		expect(dataset.sources.map((s) => s.id)).toEqual(['fed-budget', 'socsec-budget']);
 		expect(dataset.entities.map((e) => e.id).sort()).toEqual(['federal', 'social-security']);
+	});
+
+	it('reads the details files of spending lines', () => {
+		const dataset = assembleDataset(filesFromFixture(), 2026);
+		expect(dataset.details.map((d) => d.line)).toEqual(['federal.justice']);
+	});
+
+	it('names the details file whose line does not match its file name', () => {
+		const files = filesFromFixture();
+		files['/data/2026/details/federal.defence.json'] =
+			files['/data/2026/details/federal.justice.json'];
+		delete files['/data/2026/details/federal.justice.json'];
+		expect(() => assembleDataset(files, 2026)).toThrow(
+			'/data/2026/details/federal.defence.json: line "federal.justice" does not match the file name'
+		);
 	});
 
 	it('only reads files for the requested year', () => {

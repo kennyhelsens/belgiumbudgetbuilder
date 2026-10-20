@@ -28,8 +28,8 @@ data/2026/
   Add `quote`, the line of the document containing the number, copied
   verbatim, so reviewers can find it. Use `note` to explain any calculation,
   e.g. "sum of divisions 12 and 13".
-- **Sources** have a title, publisher, `https` link, publication date and the
-  date we retrieved it.
+- **Sources** have a title, publisher, `https` link, the date we retrieved
+  it, and the publication date when the document states one (never guessed).
 - **Lines add up to the total** of their government, within rounding. Use an
   explicit "other" line rather than leaving a gap.
 - **Transfers between governments** (e.g. the federal grant to social security,

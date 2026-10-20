@@ -84,6 +84,30 @@ describe('datasetSchema', () => {
 		expect(datasetSchema.safeParse(data).success).toBe(false);
 	});
 
+	it('rejects a unit amount for an example that is not positive', () => {
+		const data = datasetFixture();
+		data.details[0].equivalents[0].unitEur.value = 0;
+		expect(datasetSchema.safeParse(data).success).toBe(false);
+	});
+
+	it('requires the population as a positive whole number of persons', () => {
+		const data = datasetFixture();
+		data.overview.population.persons = 11.8;
+		expect(datasetSchema.safeParse(data).success).toBe(false);
+	});
+
+	it('accepts a source without a publication date when the document states none', () => {
+		const data = datasetFixture();
+		delete (data.sources[0] as { published?: string }).published;
+		expect(datasetSchema.safeParse(data).success).toBe(true);
+	});
+
+	it('still requires the date the source was retrieved', () => {
+		const data = datasetFixture();
+		delete (data.sources[0] as { retrieved?: string }).retrieved;
+		expect(datasetSchema.safeParse(data).success).toBe(false);
+	});
+
 	it('rejects an unknown nature tag', () => {
 		const data = datasetFixture();
 		// @ts-expect-error: deliberately using an invalid tag

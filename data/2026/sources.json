@@ -16,6 +16,14 @@
 		"retrieved": "2026-10-20"
 	},
 	{
+		"id": "doc-56-1469-002",
+		"title": "Commentaar en opmerkingen bij de ontwerpen van aanpassing van staatsbegroting voor het begrotingsjaar 2026 (DOC 56 1469/002), Deel III Ontvangsten en uitgaven van de sociale zekerheid",
+		"publisher": "Rekenhof / Cour des comptes (via Kamer van volksvertegenwoordigers)",
+		"url": "https://www.dekamer.be/FLWB/PDF/56/1469/56K1469002.pdf",
+		"published": "2026-05-22",
+		"retrieved": "2026-10-20"
+	},
+	{
 		"id": "vp-17-2025-2026-nr1-algemene-toelichting-ba2026",
 		"title": "Algemene toelichting bij de aanpassing van de middelenbegroting en de uitgavenbegroting van de Vlaamse Gemeenschap voor het begrotingsjaar 2026 (Stuk 17 (2025-2026) – Nr. 1)",
 		"publisher": "Vlaams Parlement (ingediend door de Vlaamse Regering)",
@@ -125,6 +133,29 @@
 		"publisher": "Federaal Planbureau (secretariaat Studiecommissie voor de Vergrijzing)",
 		"url": "https://www.plan.be/sites/default/files/documents/DATA_FOR_VERG_NL.xlsx",
 		"published": "2026-07-09",
+		"retrieved": "2026-10-20"
+	},
+	{
+		"id": "statbel-pop-2026-en",
+		"title": "Population by place of residence, nationality (Belgian/non-Belgian), marital status, age and gender - Population on January 1st 2026",
+		"publisher": "Statbel (Directorate-general Statistics - Statistics Belgium)",
+		"url": "https://bestat.statbel.fgov.be/bestat/api/views/30754598-f021-4274-a8f6-4e634fb7bb58/result/PDF",
+		"retrieved": "2026-10-20"
+	},
+	{
+		"id": "riziv-argv-2025-069",
+		"title": "Nota ARGV 2025/069 - Gezondheidszorgbegroting 2026 (Algemene Raad), met bijlage 1 (overzicht begroting) en bijlage 2 (verdeling globale begrotingsdoelstelling 2026 in partiële begrotingsdoelstellingen)",
+		"publisher": "RIZIV/INAMI - Dienst Geneeskundige Verzorging, Algemene Raad",
+		"url": "https://www.riziv.fgov.be/SiteCollectionDocuments/RIZIV_ARGV_2025.pdf",
+		"published": "2025-10-20",
+		"retrieved": "2026-10-20"
+	},
+	{
+		"id": "riziv-tarief-artsen-01-2026",
+		"title": "Tarieven artsen - raadplegingen en bezoeken, toezicht en reiskosten; 01-01-2026 (Omzendbrief VI nr 2025/337)",
+		"publisher": "RIZIV/INAMI - Geneeskundige verzorging, Actuariaat",
+		"url": "https://www.riziv.fgov.be/SiteCollectionDocuments/tarief_artsen_deel01_20260101.pdf",
+		"published": "2025-12-19",
 		"retrieved": "2026-10-20"
 	}
 ]

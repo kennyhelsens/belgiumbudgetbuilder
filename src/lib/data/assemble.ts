@@ -22,12 +22,26 @@ export function assembleDataset(files: Record<string, unknown>, year: number): D
 			return entity;
 		});
 
+	const detailsPrefix = `${root}/details/`;
+	const details = Object.entries(files)
+		.filter(([path]) => path.startsWith(detailsPrefix))
+		.sort(([a], [b]) => a.localeCompare(b))
+		.map(([path, item]) => {
+			const expectedLine = path.slice(detailsPrefix.length).replace(/\.json$/, '');
+			const line = (item as { line?: unknown }).line;
+			if (line !== expectedLine) {
+				throw new Error(`${path}: line "${String(line)}" does not match the file name`);
+			}
+			return item;
+		});
+
 	const result = datasetSchema.safeParse({
 		year,
 		sources: required(`${root}/sources.json`),
 		overview: required(`${root}/overview.json`),
 		outlook: required(`${root}/outlook.json`),
-		entities
+		entities,
+		details
 	});
 	if (!result.success) {
 		const details = result.error.issues
