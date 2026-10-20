@@ -10,6 +10,9 @@ and are reviewed by the code owners before they are published.
 data/2026/
   sources.json            every document we cite
   overview.json           Belgium as a whole (all governments, ESA 2010)
+  outlook.json            inputs for the 10-year projection: interest rate,
+                          nominal growth, official ageing costs, official
+                          debt path
   entities/<id>.json      one file per government: federal, social-security,
                           flanders, wallonia, wallonia-brussels-federation,
                           brussels, german-speaking-community, local
@@ -18,9 +21,13 @@ data/2026/
 ## Rules
 
 - **Amounts are in millions of euro** (`eurMillion`), for the budget year.
+  Spending excludes repayments of debt principal (that is financing, not
+  spending) but includes interest.
 - **Every amount has a `ref`**: the `source` id from `sources.json` and a
   `locator` saying where in the document the number is (page, table, line).
-  Use `note` to explain any calculation, e.g. "sum of divisions 12 and 13".
+  Add `quote`, the line of the document containing the number, copied
+  verbatim, so reviewers can find it. Use `note` to explain any calculation,
+  e.g. "sum of divisions 12 and 13".
 - **Sources** have a title, publisher, `https` link, publication date and the
   date we retrieved it.
 - **Lines add up to the total** of their government, within rounding. Use an

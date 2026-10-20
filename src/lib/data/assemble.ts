@@ -1,4 +1,4 @@
-// ABOUTME: Combines the JSON files of one budget year (sources, overview, one file per government) into a dataset.
+// ABOUTME: Combines the JSON files of one budget year (sources, overview, outlook, one file per government) into a dataset.
 // ABOUTME: Validates the result against the schema and reports problems with file paths.
 import { datasetSchema, type Dataset } from './schema.ts';
 
@@ -26,6 +26,7 @@ export function assembleDataset(files: Record<string, unknown>, year: number): D
 		year,
 		sources: required(`${root}/sources.json`),
 		overview: required(`${root}/overview.json`),
+		outlook: required(`${root}/outlook.json`),
 		entities
 	});
 	if (!result.success) {
