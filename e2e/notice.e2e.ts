@@ -1,5 +1,5 @@
-// ABOUTME: End-to-end tests for the notice after a cut or an addition: it says what changed and what the
-// ABOUTME: deficit is now, can be closed, and disappears by itself after a few seconds.
+// ABOUTME: End-to-end tests for the notice after a cut or an addition: a tangible illustration of the
+// ABOUTME: change, which can be closed and disappears by itself after a few seconds.
 import { expect, test, type Page } from '@playwright/test';
 
 async function cutDefence(page: Page, times: number) {
@@ -11,26 +11,21 @@ async function cutDefence(page: Page, times: number) {
 }
 
 test.describe('change notice', () => {
-	test('says what a cut means and what the deficit is now', async ({ page }) => {
+	test('illustrates a cut per inhabitant when the line has no example', async ({ page }) => {
 		await cutDefence(page, 2);
 		const notice = page.getByRole('status').filter({ hasText: 'Defence' });
-		await expect(notice).toContainText(
-			'Defence −2%: −€219 million a year, or −€18 per inhabitant.'
-		);
-		await expect(notice).toContainText('Deficit 2026: €33.5 billion.');
+		await expect(notice).toContainText('Defence −2%: about €18 less per inhabitant a year.');
+		await expect(notice).not.toContainText('Deficit');
 	});
 
-	test('shows examples in concrete units only once a reviewer has approved them', async ({
-		page
-	}) => {
+	test('illustrates a change with an example in concrete units', async ({ page }) => {
 		await page.goto('/en/');
 		const map = page.getByRole('region', { name: 'Budget map' });
 		await map.getByRole('button', { name: /^Social security/ }).click();
 		await map.getByRole('group', { name: /^Healthcare/ }).hover();
 		await map.getByRole('button', { name: /^Cut Healthcare/ }).click();
 		const notice = page.getByRole('status').filter({ hasText: 'Healthcare' });
-		await expect(notice).toContainText('per inhabitant');
-		await expect(notice).not.toContainText('GP consultations');
+		await expect(notice).toContainText(/that is about [\d,]+ GP consultations/);
 	});
 
 	test('disappears by itself', async ({ page }) => {

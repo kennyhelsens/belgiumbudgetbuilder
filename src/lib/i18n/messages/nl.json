@@ -71,9 +71,10 @@
 	"metrics.official": "officieel: {value}",
 	"metrics.unchanged": "ongewijzigde begroting: {value}",
 	"metrics.pathLabel": "Schuld van {from} tot {to} met uw begroting, in % van het bbp",
-	"builder.noticeChanged": "{name} {percent}: {amount} per jaar, of {perInhabitant} per inwoner.{example} Tekort {year}: {deficit}.",
-	"builder.noticeReset": "{name} terug naar de officiële begroting. Tekort {year}: {deficit}.",
+	"builder.noticeReset": "{name} staat weer op de officiële begroting.",
 	"builder.noticeClose": "Sluiten",
 	"metrics.ofGdp": "van het bbp",
-	"builder.noticeExample": "Dat is ongeveer {count} {unit}."
+	"builder.noticeExample": "{name} {percent}: dat is ongeveer {count} {unit}.",
+	"builder.noticeLess": "{name} {percent}: ongeveer {amount} minder per inwoner per jaar.",
+	"builder.noticeMore": "{name} {percent}: ongeveer {amount} meer per inwoner per jaar."
 }

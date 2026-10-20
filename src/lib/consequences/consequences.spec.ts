@@ -5,6 +5,7 @@ import {
 	distributeChange,
 	equivalentCount,
 	perInhabitantPerYear,
+	preferReviewed,
 	reviewedEquivalents
 } from './consequences.ts';
 
@@ -69,5 +70,15 @@ describe('reviewedEquivalents', () => {
 
 	it('only offers examples that a reviewer has approved', () => {
 		expect(reviewedEquivalents(equivalents).map((e) => e.id)).toEqual(['gp-visit', 'dmg']);
+	});
+});
+
+describe('preferReviewed', () => {
+	it('offers approved examples first, then the ones still waiting for review', () => {
+		const equivalents = [
+			{ id: 'hospital-day', unitEur: { value: 20.61, ref } },
+			{ id: 'gp-visit', unitEur: { value: 29.74, ref }, reviewedBy: 'kennyhelsens' }
+		];
+		expect(preferReviewed(equivalents).map((e) => e.id)).toEqual(['gp-visit', 'hospital-day']);
 	});
 });

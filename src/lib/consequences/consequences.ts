@@ -44,3 +44,11 @@ export function reviewedEquivalents<T extends { reviewedBy?: string }>(
 ): T[] {
 	return equivalents.filter((equivalent) => Boolean(equivalent.reviewedBy));
 }
+
+/** Examples approved by a reviewer first, then the ones still waiting for review. */
+export function preferReviewed<T extends { reviewedBy?: string }>(equivalents: readonly T[]): T[] {
+	return [
+		...reviewedEquivalents(equivalents),
+		...equivalents.filter((equivalent) => !equivalent.reviewedBy)
+	];
+}
