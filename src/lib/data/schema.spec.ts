@@ -84,6 +84,12 @@ describe('datasetSchema', () => {
 		expect(datasetSchema.safeParse(data).success).toBe(false);
 	});
 
+	it('rejects a unit amount for an example that is not positive', () => {
+		const data = datasetFixture();
+		data.details[0].equivalents[0].unitEur.value = 0;
+		expect(datasetSchema.safeParse(data).success).toBe(false);
+	});
+
 	it('rejects an unknown nature tag', () => {
 		const data = datasetFixture();
 		// @ts-expect-error: deliberately using an invalid tag

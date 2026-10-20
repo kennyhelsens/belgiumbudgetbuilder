@@ -89,6 +89,39 @@ const entitySchema = z.object({
 	note: localized.optional()
 });
 
+/** Details behind one spending line, used for its consequence card. */
+const lineDetailsSchema = z.object({
+	/** The id of the spending line these details belong to, e.g. "social-security.healthcare". */
+	line: slug,
+	/** Sub-budgets that add up to the line. */
+	breakdown: z
+		.array(
+			z.object({
+				id: slug,
+				label: localized,
+				amount: amountSchema,
+				/** Spending matched by equal receipts: cutting it alone saves nothing. */
+				offsetByReceipts: z.boolean().optional(),
+				note: localized.optional()
+			})
+		)
+		.min(1),
+	/** Concrete units ("a GP consultation reimbursed") to express a change in. Shown only once reviewed. */
+	equivalents: z.array(
+		z.object({
+			id: slug,
+			label: localized,
+			unitEur: z.object({ value: z.number().positive(), ref: sourceRefSchema }),
+			/** GitHub handle of the reviewer who approved this example. */
+			reviewedBy: nonEmpty.optional()
+		})
+	),
+	/** The official ways this spending can be changed. */
+	levers: z.array(
+		z.object({ id: slug, label: localized, description: localized, ref: sourceRefSchema })
+	)
+});
+
 export const datasetSchema = z.object({
 	year: z.number().int(),
 	sources: z.array(sourceSchema).min(1),
@@ -116,10 +149,12 @@ export const datasetSchema = z.object({
 		/** The official projected debt path, % of GDP, shown as a reference. */
 		officialDebtPctGdp: z.array(yearPointSchema).min(1)
 	}),
-	entities: z.array(entitySchema).min(1)
+	entities: z.array(entitySchema).min(1),
+	details: z.array(lineDetailsSchema)
 });
 
 export type Dataset = z.infer<typeof datasetSchema>;
 export type Entity = Dataset['entities'][number];
 export type Line = Entity['expenditure']['lines'][number];
 export type SourceRef = z.infer<typeof sourceRefSchema>;
+export type LineDetails = Dataset['details'][number];

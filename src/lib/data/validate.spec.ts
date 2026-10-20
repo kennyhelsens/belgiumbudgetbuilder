@@ -43,6 +43,30 @@ describe('findProblems', () => {
 		);
 	});
 
+	it('reports details for a line that does not exist', () => {
+		const data = datasetFixture();
+		data.details[0].line = 'federal.unicorns';
+		expect(findProblems(data)).toContainEqual(
+			expect.stringContaining('details for unknown line "federal.unicorns"')
+		);
+	});
+
+	it('reports a breakdown that does not add up to its line', () => {
+		const data = datasetFixture();
+		data.details[0].breakdown[0].amount.eurMillion = 35;
+		expect(findProblems(data)).toContainEqual(
+			expect.stringContaining('federal.justice: breakdown adds up to 45, line is 40')
+		);
+	});
+
+	it('checks references in the details too', () => {
+		const data = datasetFixture();
+		data.details[0].levers[0].ref.source = 'nowhere';
+		expect(findProblems(data)).toContainEqual(
+			expect.stringContaining('federal.justice.levers.court-fees: unknown source "nowhere"')
+		);
+	});
+
 	it('reports a source that nothing refers to', () => {
 		const data = datasetFixture();
 		data.sources.push({ ...data.sources[0], id: 'unused' });
