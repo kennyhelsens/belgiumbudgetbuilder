@@ -53,6 +53,23 @@ export function findProblems(data: Dataset): string[] {
 		}
 	}
 
+	const lineAmounts = new Map(
+		data.entities.flatMap((entity) =>
+			entity.expenditure.lines.map((line) => [line.id, line.amount.eurMillion] as const)
+		)
+	);
+	for (const details of data.details) {
+		const lineAmount = lineAmounts.get(details.line);
+		if (lineAmount === undefined) {
+			problems.push(`details for unknown line "${details.line}"`);
+			continue;
+		}
+		const sum = details.breakdown.reduce((total, item) => total + item.amount.eurMillion, 0);
+		if (Math.abs(sum - lineAmount) > ROUNDING_PER_LINE * details.breakdown.length) {
+			problems.push(`${details.line}: breakdown adds up to ${sum}, line is ${lineAmount}`);
+		}
+	}
+
 	return problems;
 }
 
@@ -71,6 +88,20 @@ function collectRefs(data: Dataset): { where: string; ref: SourceRef }[] {
 	for (const series of ['ageingCostPctGdp', 'officialDebtPctGdp'] as const) {
 		for (const point of data.outlook[series]) {
 			refs.push({ where: `outlook.${series}.${point.year}`, ref: point.ref });
+		}
+	}
+	for (const details of data.details) {
+		for (const item of details.breakdown) {
+			refs.push({ where: `${details.line}.breakdown.${item.id}`, ref: item.amount.ref });
+		}
+		for (const equivalent of details.equivalents) {
+			refs.push({
+				where: `${details.line}.equivalents.${equivalent.id}`,
+				ref: equivalent.unitEur.ref
+			});
+		}
+		for (const lever of details.levers) {
+			refs.push({ where: `${details.line}.levers.${lever.id}`, ref: lever.ref });
 		}
 	}
 	for (const entity of data.entities) {

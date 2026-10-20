@@ -4,6 +4,7 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, and a table with source
 -->
 <script lang="ts">
 	import type { Changes } from '../builder/choices.ts';
+	import ConsequenceCard from '../consequences/ConsequenceCard.svelte';
 	import type { Dataset } from '../data/schema.ts';
 	import type { Locale } from '../i18n/locales.ts';
 	import { translate, type MessageKey } from '../i18n/translate.ts';
@@ -193,6 +194,12 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, and a table with source
 			</tbody>
 		</table>
 	</details>
+
+	{#each data.details as details (details.line)}
+		{#if changes[details.line]}
+			<ConsequenceCard {data} {details} {locale} changeEurMillion={changes[details.line]} />
+		{/if}
+	{/each}
 </section>
 
 <style>

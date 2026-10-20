@@ -1,0 +1,408 @@
+{
+	"line": "social-security.healthcare",
+	"breakdown": [
+		{
+			"id": "physicians-fees",
+			"label": {
+				"nl": "Honoraria artsen (zonder klinische biologie en medische beeldvorming)",
+				"fr": "Honoraires médicaux (hors biologie clinique et imagerie médicale)",
+				"en": "Physicians' fees (excl. clinical biology and medical imaging)"
+			},
+			"amount": {
+				"eurMillion": 8646.001,
+				"ref": {
+					"source": "riziv-argv-2025-069",
+					"locator": "Bijlage 2, PDF p. 33 (printed p. 31), line 1 'subtotaal zonder bio en rx', column Budget 2026",
+					"quote": "subtotaal zonder bio en rx 8.491.193 238.035 8.729.228 -61.600 8.646.001",
+					"note": "Initial split by sector (October 2025); RIZIV has not republished it since the 2026 budget control."
+				}
+			}
+		},
+		{
+			"id": "clinical-biology-imaging",
+			"label": {
+				"nl": "Klinische biologie en medische beeldvorming",
+				"fr": "Biologie clinique et imagerie médicale",
+				"en": "Clinical biology (lab tests) and medical imaging"
+			},
+			"amount": {
+				"eurMillion": 3433.304,
+				"ref": {
+					"source": "riziv-argv-2025-069",
+					"locator": "Bijlage 2, PDF p. 33 (printed p. 31), lines 1a and 1b, column Budget 2026",
+					"quote": "a) Klinische biologie - Biologie clinique 1.612.451 48.256 1.660.707 -26.600 1.634.107 | b) Medische beeldvorming - Imagerie médicale 1.806.308 50.289 1.856.597 -57.400 1.799.197",
+					"note": "Initial split by sector (October 2025); RIZIV has not republished it since the 2026 budget control."
+				}
+			}
+		},
+		{
+			"id": "hospital-per-diem",
+			"label": {
+				"nl": "Ziekenhuizen: verpleegdagprijs (RIZIV-deel BFM) en forfaitaire dagprijzen",
+				"fr": "Hôpitaux : prix de journée d'entretien (part INAMI du BMF) et prix de journée forfaitaires",
+				"en": "Hospitals: per-diem price (RIZIV share of the hospital budget of financial means) and flat-rate day prices"
+			},
+			"amount": {
+				"eurMillion": 8813.167,
+				"ref": {
+					"source": "riziv-argv-2025-069",
+					"locator": "Bijlage 2, PDF p. 34 (printed p. 32), line 12 Totaal, column Budget 2026",
+					"quote": "12. a) Verpleegdagprijs - Prix de la journée d'entretien 8.288.110 124.230 8.412.340 -25.644 -47.995 8.338.701 ... Totaal - Total 8.753.208 11.373 124.230 8.888.811 -25.644 -50.000 8.813.167",
+					"note": "Initial split by sector (October 2025); RIZIV has not republished it since the 2026 budget control."
+				}
+			}
+		},
+		{
+			"id": "hospital-bfm-state-part",
+			"label": {
+				"nl": "Ziekenhuizen: staatsgedeelte van het Budget van Financiële Middelen (vanaf 2026 in de begrotingsdoelstelling)",
+				"fr": "Hôpitaux : part état du Budget des Moyens Financiers (intégrée dans l'objectif à partir de 2026)",
+				"en": "Hospitals: state part of the budget of financial means (BFM), integrated into the healthcare objective from 2026"
+			},
+			"amount": {
+				"eurMillion": 2801.676,
+				"ref": {
+					"source": "be-chamber-56-1468-001",
+					"locator": "Deel IV, Hoofdstuk 4, punt 2 'Commentaar bij de financiele toestand', printed p. 173 (table 'Globale begrotingsdoelstelling 2026') and p. 174",
+					"quote": "Integratie \"Deel staat\" van het BFM 2.765.859 ... Integratie \"Deel staat\" van het BFM - Spilindexmassa 2026 40.439 ... het budget van het BFM met 4.622 duizend euro verlaagd",
+					"note": "2,765.859 + 40.439 - 4.622 = 2,801.676. The Court of Audit (DOC 56 1469/002 p. 55) gives the integrated amount as 2,806.3 (=2,765.859+40.439) and books the 4.6 reduction as a higher non-allocable amount."
+				}
+			}
+		},
+		{
+			"id": "medicines",
+			"label": {
+				"nl": "Farmaceutische verstrekkingen (openbare en ziekenhuisapotheken)",
+				"fr": "Fournitures pharmaceutiques (officines publiques et hospitalières)",
+				"en": "Medicines and pharmaceutical supplies (community and hospital pharmacy)"
+			},
+			"amount": {
+				"eurMillion": 7268.699,
+				"ref": {
+					"source": "riziv-argv-2025-069",
+					"locator": "Bijlage 2, PDF p. 34 (printed p. 32), line 3 Totaal, column Budget 2026",
+					"quote": "3. Farmaceutische verstrekkingen - Fournitures pharmaceutiques ... Totaal - Total 7.472.604 28.091 144 7.500.839 -815 -3.417 -227.908 7.268.699",
+					"note": "Initial split by sector (October 2025); RIZIV has not republished it since the 2026 budget control."
+				}
+			}
+		},
+		{
+			"id": "medicines-contracts-compensation",
+			"label": {
+				"nl": "Compensatie volledige ontvangsten art. 111/81 (geneesmiddelencontracten)",
+				"fr": "Compensation recettes totales art. 111/81 (contrats médicaments)",
+				"en": "Managed-entry medicine contracts (art. 111/81): gross-up line offset by equal receipts"
+			},
+			"amount": {
+				"eurMillion": 1919.845,
+				"ref": {
+					"source": "riziv-argv-2025-069",
+					"locator": "Bijlage 2, PDF p. 36 (printed p. 34), line 39, column Budget 2026; matching receipt in Bijlage 1 'Contracten art. 111 geneesmiddelen (oud art. 81)' 1.919.845",
+					"quote": "39. Compensatie volledige ontvangsten art. 111/81 - Compensation recettes totales art. 111/81 1.919.845 1.919.845 1.919.845",
+					"note": "Initial split by sector (October 2025); RIZIV has not republished it since the 2026 budget control."
+				}
+			},
+			"offsetByReceipts": true
+		},
+		{
+			"id": "home-nursing",
+			"label": {
+				"nl": "Thuisverpleging (honoraria verpleegkundigen, Zorgpersoneelsfonds, diensten thuisverpleging)",
+				"fr": "Soins infirmiers à domicile (honoraires, Fonds blouses blanches, services de soins à domicile)",
+				"en": "Home nursing care (nurses' fees, healthcare staff fund share, home-nursing services)"
+			},
+			"amount": {
+				"eurMillion": 2399.633,
+				"ref": {
+					"source": "riziv-argv-2025-069",
+					"locator": "Bijlage 2, PDF p. 34 (printed p. 32), lines 4 Totaal and 5, column Budget 2026",
+					"quote": "4. ... Totaal - Total 2.316.590 62.590 2.379.180 -25.088 -11.907 2.342.185 | 5. Specifieke tegemoetkomingen diensten thuisverpleging ... 57.448 57.448 57.448",
+					"note": "Initial split by sector (October 2025); RIZIV has not republished it since the 2026 budget control."
+				}
+			}
+		},
+		{
+			"id": "physiotherapy",
+			"label": {
+				"nl": "Kinesitherapie",
+				"fr": "Kinésithérapie",
+				"en": "Physiotherapy"
+			},
+			"amount": {
+				"eurMillion": 1424.17,
+				"ref": {
+					"source": "riziv-argv-2025-069",
+					"locator": "Bijlage 2, PDF p. 34 (printed p. 32), line 6, column Budget 2026",
+					"quote": "6. Verzorging door kinesitherapeuten - Soins par kinésithérapeutes 1.386.753 45.791 1.432.544 -8.374 1.424.170",
+					"note": "Initial split by sector (October 2025); RIZIV has not republished it since the 2026 budget control."
+				}
+			}
+		},
+		{
+			"id": "dentists",
+			"label": {
+				"nl": "Tandheelkunde",
+				"fr": "Soins dentaires",
+				"en": "Dentists"
+			},
+			"amount": {
+				"eurMillion": 1721.197,
+				"ref": {
+					"source": "riziv-argv-2025-069",
+					"locator": "Bijlage 2, PDF p. 33 (printed p. 31), line 2, column Budget 2026",
+					"quote": "2. Honoraria van tandheelkundigen - Honoraires dentaires 1.678.828 50.811 1.729.639 -2.027 -6.415 1.721.197",
+					"note": "Initial split by sector (October 2025); RIZIV has not republished it since the 2026 budget control."
+				}
+			}
+		},
+		{
+			"id": "devices-implants",
+			"label": {
+				"nl": "Implantaten, medische hulpmiddelen, orthopedie, opticiens en audiciens",
+				"fr": "Implants, dispositifs médicaux, orthopédie, opticiens et audiciens",
+				"en": "Implants and medical devices, orthopaedic technologists, opticians and hearing-aid providers"
+			},
+			"amount": {
+				"eurMillion": 1550.11,
+				"ref": {
+					"source": "riziv-argv-2025-069",
+					"locator": "Bijlage 2, PDF p. 34 (printed p. 32), lines 7, 8, 9 and 10, column Budget 2026",
+					"quote": "7. Orthopedisch technologen ... 352.403 | 8. Implantaten en invasieve medische hulpmiddelen ... 1.010.991 | 9. Verzorging door opticiens ... 50.109 | 10. Verzorging door audiciens ... 136.607",
+					"note": "Initial split by sector (October 2025); RIZIV has not republished it since the 2026 budget control."
+				}
+			}
+		},
+		{
+			"id": "other-partial-budgets",
+			"label": {
+				"nl": "Overige partiële doelstellingen (revalidatie, dialyse, medische huizen, MAF, sociaal akkoord, psychologische zorg, logopedie, ...)",
+				"fr": "Autres objectifs partiels (rééducation, dialyse, maisons médicales, MàF, accord social, aide psychologique, logopédie, ...)",
+				"en": "Other partial budgets (rehabilitation, dialysis, medical houses, maximum billing, social agreement, psychological care, speech therapy, ...)"
+			},
+			"amount": {
+				"eurMillion": 3810.604,
+				"ref": {
+					"source": "riziv-argv-2025-069",
+					"locator": "Bijlage 2, PDF pp. 33-36 (printed pp. 31-34); total line PDF p. 36",
+					"quote": "Totaal - Total 40.827.853 630.464 135.029 41.593.346 -37.359 -98.482 -470.775 40.986.730",
+					"note": "Initial split by sector (October 2025); RIZIV has not republished it since the 2026 budget control."
+				}
+			}
+		},
+		{
+			"id": "not-broken-down",
+			"label": {
+				"nl": "Niet per sector verdeeld in de gepubliceerde bronnen",
+				"fr": "Non réparti par secteur dans les sources publiées",
+				"en": "Not broken down by sector in published sources"
+			},
+			"amount": {
+				"eurMillion": 68.967,
+				"ref": {
+					"source": "be-chamber-56-1468-001",
+					"locator": "Printed p. 174 (non-allocable amounts -241.472 and -246.094) vs ARGV 2025/069 Bijlage 2, PDF p. 36 ('Niet te besteden bedrag 310.439')",
+					"quote": "en de niet te besteden bedragen (-241.472 duizend euro) gerelateerd aan de begrotingsdoelstelling.",
+					"note": "43,857.373 (adjusted total) - 40,986.730 (initial partial objectives) - 2,801.676 (BFM state part) = 68.967 = 310.439 (non-allocable in ARGV 2025/069) - 241.472 (non-allocable before BFM reduction in DOC 56 1468/001). The source does not say to which sectors this margin goes; treat as unallocated."
+				}
+			}
+		}
+	],
+	"equivalents": [
+		{
+			"id": "gp-consultation-reimbursement",
+			"label": {
+				"nl": "huisartsraadplegingen terugbetaald door het RIZIV",
+				"fr": "consultations chez le généraliste remboursées par l'INAMI",
+				"en": "GP consultations reimbursed by RIZIV"
+			},
+			"unitEur": {
+				"value": 29.74,
+				"ref": {
+					"source": "riziv-tarief-artsen-01-2026",
+					"locator": "Tarief A.I.1.b) (IN het kader van het GMD), code 101076, column 'Tegemoetkoming - Rechthebbenden zonder voorkeurregeling'",
+					"quote": "101076 N 8 4,050671 Raadpleging in de spreekkamer door een geaccrediteerde huisarts 33,74 32,74 29,74"
+				}
+			}
+		},
+		{
+			"id": "gmd-annual-fee",
+			"label": {
+				"nl": "jaarlijkse vergoedingen voor een globaal medisch dossier",
+				"fr": "forfaits annuels pour un dossier médical global",
+				"en": "yearly fees for a global medical file"
+			},
+			"unitEur": {
+				"value": 38.82,
+				"ref": {
+					"source": "riziv-tarief-artsen-01-2026",
+					"locator": "Tarief A.I.1.e), codes 101496/101533",
+					"quote": "101496 N 8,415 4,613386 Honorarium voor het beheer van het globaal medisch dossier gedurende het openingsjaar 38,82 38,82 38,82"
+				}
+			}
+		}
+	],
+	"levers": [
+		{
+			"id": "growth-norm",
+			"label": {
+				"nl": "Groeinorm van het zorgbudget",
+				"fr": "Norme de croissance du budget des soins",
+				"en": "Growth norm of the healthcare budget"
+			},
+			"description": {
+				"nl": "De wet legt vast hoeveel het zorgbudget elk jaar mag groeien boven de inflatie: 2% in 2026. Een lagere norm remt alle sectoren tegelijk af.",
+				"fr": "La loi fixe de combien le budget des soins peut croître chaque année au-delà de l'inflation : 2 % en 2026. Une norme plus basse freine tous les secteurs à la fois.",
+				"en": "The law sets how much the healthcare budget may grow each year above inflation: 2% in 2026. A lower norm slows every sector at once."
+			},
+			"ref": {
+				"source": "be-chamber-56-1468-001",
+				"locator": "Printed p. 173 (table) and p. 174",
+				"quote": "Overeenkomstig de notificaties van het begrotingsconclaaf van 14 februari 2025 wordt de groeinorm voor de vaststelling van de begrotingsdoelstelling verlaagd tot 2 %. | Reële groeinorm 2 % 756.233"
+			}
+		},
+		{
+			"id": "health-index",
+			"label": {
+				"nl": "Indexering van honoraria en tarieven",
+				"fr": "Indexation des honoraires et tarifs",
+				"en": "Indexation of fees and tariffs"
+			},
+			"description": {
+				"nl": "Honoraria en tarieven stijgen met de gezondheidsindex (2,72% op 1 januari 2026). Minder indexeren raakt zorgverleners rechtstreeks.",
+				"fr": "Les honoraires et tarifs suivent l'indice santé (2,72 % au 1er janvier 2026). Indexer moins touche directement les prestataires de soins.",
+				"en": "Fees and tariffs follow the health index (2.72% on 1 January 2026). Indexing less directly affects care providers."
+			},
+			"ref": {
+				"source": "riziv-argv-2025-069",
+				"locator": "Punt 2/3.1, PDF p. 3 (printed p. 2)",
+				"quote": "De toegepaste indexfactor voor de honoraria en tarieven is gebaseerd op de evolutie juni 2025/juni 2024 en bedraagt 2,72%."
+			}
+		},
+		{
+			"id": "partial-objectives-and-savings",
+			"label": {
+				"nl": "Sectorbudgetten en besparingen",
+				"fr": "Budgets sectoriels et économies",
+				"en": "Sector budgets and savings"
+			},
+			"description": {
+				"nl": "Elk jaar verdeelt de Algemene Raad van het RIZIV het budget over de sectoren, inclusief besparingen per sector. Wie snoeit, kiest dus welke sector het voelt.",
+				"fr": "Chaque année, le Conseil général de l'INAMI répartit le budget entre les secteurs, économies par secteur comprises. Couper, c'est donc choisir quel secteur le ressent.",
+				"en": "Each year RIZIV's General Council splits the budget over the sectors, including savings per sector. Cutting means choosing which sector feels it."
+			},
+			"ref": {
+				"source": "riziv-argv-2025-069",
+				"locator": "Inhoud, PDF p. 1; punt 'Verdeling van de inspanning voor het jaar 2026', PDF p. 7 (printed p. 5)",
+				"quote": "Om de geautoriseerde uitgaven voor 2026 te kunnen respecteren, is een besparing van 470,775 miljoen euro noodzakelijk"
+			}
+		},
+		{
+			"id": "fees-nomenclature",
+			"label": {
+				"nl": "Honoraria en akkoorden met zorgverleners",
+				"fr": "Honoraires et accords avec les prestataires",
+				"en": "Fees and agreements with care providers"
+			},
+			"description": {
+				"nl": "Wat artsen, tandartsen en andere zorgverleners aanrekenen, ligt vast in de nomenclatuur en in akkoorden tussen zorgverleners en ziekenfondsen.",
+				"fr": "Ce que facturent médecins, dentistes et autres prestataires est fixé dans la nomenclature et dans des accords entre prestataires et mutualités.",
+				"en": "What doctors, dentists and other providers charge is set in the nomenclature and in agreements between providers and sickness funds."
+			},
+			"ref": {
+				"source": "riziv-argv-2025-069",
+				"locator": "Punt 4.B Artsen, measures table, PDF p. 15",
+				"quote": "Raadpleging niet- [line break] Andere geaccrediteerde artsen 8.500.000 Sleutelletterwaarde aanpassen"
+			}
+		},
+		{
+			"id": "patient-copayments",
+			"label": {
+				"nl": "Remgeld voor de patiënt",
+				"fr": "Ticket modérateur du patient",
+				"en": "Patients' own contributions"
+			},
+			"description": {
+				"nl": "Patiënten betalen zelf een deel (remgeld). Hogere remgelden besparen voor het RIZIV maar verschuiven de kost naar patiënten; de verhoogde tegemoetkoming en de maximumfactuur beschermen wie minder kan betalen.",
+				"fr": "Les patients paient une partie eux-mêmes (ticket modérateur). L'augmenter fait économiser l'INAMI mais reporte le coût sur les patients ; l'intervention majorée et le maximum à facturer protègent ceux qui peuvent moins payer.",
+				"en": "Patients pay part of the cost themselves. Raising that share saves RIZIV money but shifts the cost to patients; increased reimbursement and maximum billing protect those who can pay less."
+			},
+			"ref": {
+				"source": "riziv-argv-2025-069",
+				"locator": "Punt 4.A, PDF p. 13 (printed p. 11)",
+				"quote": "Inspanning: deze maatregel brengt 26.200 duizend euro op. Dit wordt rechtstreeks geïnvesteerd in de uitbreiding van de maximumfactuur en de enveloppe voor Early and Equitable Fast Access"
+			}
+		},
+		{
+			"id": "medicines-framework",
+			"label": {
+				"nl": "Geneesmiddelenprijzen en -terugbetaling",
+				"fr": "Prix et remboursement des médicaments",
+				"en": "Medicine prices and reimbursement"
+			},
+			"description": {
+				"nl": "Een meerjarenkader met de farma-industrie begrenst de uitgaven voor terugbetaalde geneesmiddelen; overschrijdingen worden deels door de industrie terugbetaald.",
+				"fr": "Un cadre pluriannuel avec l'industrie pharmaceutique plafonne les dépenses de médicaments remboursés ; les dépassements sont en partie remboursés par l'industrie.",
+				"en": "A multi-year framework with the pharmaceutical industry caps spending on reimbursed medicines; overruns are partly paid back by the industry."
+			},
+			"ref": {
+				"source": "riziv-argv-2025-069",
+				"locator": "Punt 4.A 'Het meerjarenkader met de farmaceutische industrie', PDF p. 8 (printed p. 7)",
+				"quote": "Het Farmaceutisch meerjarenkader voorziet in een voorspelbaar, duurzaam groeitraject voor het budget farmaceutische specialiteiten, vastgeklikt op 17.3% van de geautoriseerde netto-uitgaven van het normbudget voor de gezondheidszorgdoelstelling."
+			}
+		},
+		{
+			"id": "hospital-financing",
+			"label": {
+				"nl": "Financiering van ziekenhuizen",
+				"fr": "Financement des hôpitaux",
+				"en": "Hospital financing"
+			},
+			"description": {
+				"nl": "Ziekenhuizen krijgen een budget van financiële middelen en een prijs per ligdag. Sinds 2026 zit het staatsgedeelte daarvan in het zorgbudget; in 2026 is er al een lineaire besparing op.",
+				"fr": "Les hôpitaux reçoivent un budget des moyens financiers et un prix par journée. Depuis 2026, la part de l'État en fait partie du budget des soins ; une économie linéaire s'y applique déjà en 2026.",
+				"en": "Hospitals receive a budget of financial means and a price per hospital day. Since 2026 the state part is inside the healthcare budget; a flat-rate saving already applies in 2026."
+			},
+			"ref": {
+				"source": "doc-56-1469-002",
+				"locator": "Deel III, punt 3, PDF p. 55",
+				"quote": "Dat komt omdat het staatsgedeelte van de ziekenhuisfinanciering, voor een bedrag van 2.806,3 miljoen euro, vanaf 2026 deel uitmaakt van de begrotingsdoelstelling"
+			}
+		},
+		{
+			"id": "non-allocable-reserve",
+			"label": {
+				"nl": "Niet te besteden bedrag",
+				"fr": "Montant non affectable",
+				"en": "Amount that may not be spent"
+			},
+			"description": {
+				"nl": "Een deel van het budget wordt ingeschreven maar mag niet uitgegeven worden. Dat bedrag aanpassen is een boekhoudkundige keuze, geen zorgmaatregel.",
+				"fr": "Une partie du budget est inscrite mais ne peut pas être dépensée. Modifier ce montant est un choix comptable, pas une mesure de soins.",
+				"en": "Part of the budget is entered but may not be spent. Changing that amount is a bookkeeping choice, not a care measure."
+			},
+			"ref": {
+				"source": "be-chamber-56-1468-001",
+				"locator": "Printed p. 174",
+				"quote": "Rekening houdend met de niet te besteden bedragen (-246.094 duizend euro) bedragen de toegestane uitgaven voor geneeskundige verzorging 43.857.373 duizend euro."
+			}
+		},
+		{
+			"id": "insurer-responsibilisation-fraud",
+			"label": {
+				"nl": "Ziekenfondsen en fraudebestrijding",
+				"fr": "Mutualités et lutte contre la fraude",
+				"en": "Sickness funds and anti-fraud"
+			},
+			"description": {
+				"nl": "Ziekenfondsen financieel verantwoordelijk maken voor de correcte uitvoering, en een versterkt plan tegen fraude, staan elk voor een kleine besparing in 2026.",
+				"fr": "Responsabiliser financièrement les mutualités pour une exécution correcte, et un plan renforcé contre la fraude, représentent chacun une petite économie en 2026.",
+				"en": "Making sickness funds financially responsible for correct execution, and a stronger anti-fraud plan, each account for a small saving in 2026."
+			},
+			"ref": {
+				"source": "riziv-argv-2025-069",
+				"locator": "Bijlage 2, PDF p. 36 (printed p. 34)",
+				"quote": "Regeerakkoord - Responsabilisering VI / Accord gouvernement - Responsabilisation OA -25.000 -25.000 -25.000 | Krachtig plan handhaving en fraudebestrijding - Plan renforcé de contrôle et lutte contre la fraude -25.000"
+			}
+		}
+	]
+}

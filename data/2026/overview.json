@@ -47,5 +47,13 @@
 			"quote": "Geconsolideerde bruto-schuld                        103,9    107,9   109,9   111,8   114,0",
 			"note": "Calculated: 109.9% of GDP 663326 (same source, Tabel A.2); the source gives the 2026 debt only as a share of GDP."
 		}
+	},
+	"population": {
+		"persons": 11867634,
+		"ref": {
+			"source": "statbel-pop-2026-en",
+			"locator": "p. 2, last row 'Belgium / Mens and womens / All Ages', total column",
+			"quote": "Belgium                                                       Mens and womens         All Ages                         6.108.135   4.037.470   621.582   1.100.447   11.867.634"
+		}
 	}
 }
