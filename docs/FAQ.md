@@ -11,9 +11,9 @@ kept up to date with every change to the data or the calculations.
 ### Where do the figures come from?
 
 Only from official documents: the budgets voted by the federal, regional and
-community parliaments, the social security budget, the Federal Planning
-Bureau, the Study Committee on Ageing (part of the High Council of Finance),
-the National Bank and Eurostat. News articles were used at most to find a
+community parliaments, the social security budget, RIZIV/INAMI, the Federal
+Planning Bureau, the Study Committee on Ageing (part of the High Council of
+Finance), the National Bank, Statbel and Eurostat. News articles were used at most to find a
 document, never as a source.
 
 Every amount in `data/2026/` carries its source: the document, its link, the
@@ -222,6 +222,49 @@ the ageing path.
 The report counts **pensions**, not people. Someone with a pension from
 two schemes is counted twice, so the numbers must not be read as the number
 of pensioners.
+
+---
+
+## What a change means
+
+### What is the card that appears when I change healthcare spending?
+
+When you change a spending line that has detailed data behind it (for now:
+healthcare through RIZIV/INAMI), a card explains what the change means:
+
+- **Per inhabitant:** the yearly change divided by Belgium's population on
+  1 January 2026 (11,867,634, Statbel). For example, a 10% cut in healthcare
+  is about €370 less per inhabitant per year.
+- **Where it would land:** the change is spread over the sub-budgets in
+  proportion to their size. A real reform chooses where to cut; the
+  proportional spread only shows the scale.
+- **That's about:** the change expressed in concrete units, such as GP
+  consultations reimbursed by RIZIV (€29.74 each in 2026). These examples are
+  shown only after a reviewer has approved them.
+- **How could it be done?:** the official levers through which this spending
+  changes, each with a neutral explanation and its source.
+
+### Where do the healthcare sub-budgets come from?
+
+The 2026 healthcare budget of €43.9 billion (budget control 2026,
+DOC 56 1468/001) is split over 12 lines:
+
+- **Ten sector budgets** as set by the RIZIV General Council in October 2025
+  (note ARGV 2025/069). RIZIV has not republished the split by sector since
+  the 2026 budget control, so this is the initial split.
+- **The state part of hospital financing (€2.8 billion),** which is counted
+  inside the healthcare budget from 2026.
+- **€69 million** not broken down by sector in published sources.
+
+The **medicine contracts line (€1.9 billion)** is matched by equal receipts
+from drug companies, so cutting it alone would save nothing. The card shows it
+but leaves it out of the spread.
+
+### Are the healthcare figures checked?
+
+Yes, in the same way as all other data: a second agent re-downloaded every
+source and checked every figure, unit amount and lever. None was wrong; two
+labels were corrected.
 
 ---
 
