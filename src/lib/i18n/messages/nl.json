@@ -43,6 +43,8 @@
 	"outlook.caveat": "Dit is eenvoudige rekenkunde, geen voorspelling. Het model houdt geen rekening met hoe mensen en bedrijven reageren op belasting- of uitgavenwijzigingen, noch met rentes die in de tijd veranderen. De vergrijzingskosten volgen het officiële rapport van de Studiecommissie voor de Vergrijzing; wie de uitgaven voor pensioenen of gezondheidszorg wijzigt, wijzigt hun verwachte stijging in dezelfde verhouding.",
 	"builder.change": "Uw wijziging",
 	"builder.sliderLabel": "Wijzig {name}, in procent",
+	"builder.stepDown": "Verlaag {name} met 1%",
+	"builder.stepUp": "Verhoog {name} met 1%",
 	"ageing.title": "De kosten van de vergrijzing",
 	"ageing.intro": "Vergeleken met 2026 nemen pensioenen en gezondheidszorg een groeiend deel van de economie in, ook als er verder niets verandert. Dit zijn de officiële projecties van de Studiecommissie voor de Vergrijzing; de extra kosten zitten al in het vooruitzicht hierboven.",
 	"ageing.extraIn": "Extra kosten van de vergrijzing in {year}",
@@ -62,5 +64,15 @@
 	"consequence.how": "Hoe zou het kunnen?",
 	"consequence.howIntro": "Zulke uitgaven veranderen via deze hefbomen. Telkens voelt iemand anders het.",
 	"consequence.source": "Bron",
-	"consequence.perInhabitant": "≈ {amount} per inwoner per jaar"
+	"consequence.perInhabitant": "≈ {amount} per inwoner per jaar",
+	"metrics.title": "Kerncijfers",
+	"metrics.debt": "Overheidsschuld {year}",
+	"metrics.deficit": "Tekort {year}",
+	"metrics.official": "officieel: {value}",
+	"metrics.unchanged": "ongewijzigde begroting: {value}",
+	"metrics.pathLabel": "Schuld van {from} tot {to} met uw begroting, in % van het bbp",
+	"builder.noticeChanged": "{name} {percent}: {amount} per jaar. Tekort {year}: {deficit}.",
+	"builder.noticeReset": "{name} terug naar de officiële begroting. Tekort {year}: {deficit}.",
+	"builder.noticeClose": "Sluiten",
+	"metrics.ofGdp": "van het bbp"
 }

@@ -43,6 +43,8 @@
 	"outlook.caveat": "Il s'agit d'un simple calcul, pas d'une prévision. Le modèle ne tient pas compte de la réaction des personnes et des entreprises aux changements d'impôts ou de dépenses, ni de taux d'intérêt qui évoluent dans le temps. Le coût du vieillissement suit le rapport officiel du Comité d'étude sur le vieillissement ; modifier les dépenses de pensions ou de soins de santé modifie leur hausse projetée dans la même proportion.",
 	"builder.change": "Votre modification",
 	"builder.sliderLabel": "Modifier {name}, en pour cent",
+	"builder.stepDown": "Réduire {name} de 1 %",
+	"builder.stepUp": "Augmenter {name} de 1 %",
 	"ageing.title": "Le coût du vieillissement",
 	"ageing.intro": "Par rapport à 2026, les pensions et les soins de santé pèsent de plus en plus dans l'économie, même si rien d'autre ne change. Ce sont les projections officielles du Comité d'étude sur le vieillissement ; ce surcoût est déjà inclus dans les perspectives ci-dessus.",
 	"ageing.extraIn": "Surcoût du vieillissement en {year}",
@@ -62,5 +64,15 @@
 	"consequence.how": "Comment s'y prendre ?",
 	"consequence.howIntro": "Ce type de dépenses évolue par ces leviers. Chacun touche des personnes différentes.",
 	"consequence.source": "Source",
-	"consequence.perInhabitant": "≈ {amount} par habitant et par an"
+	"consequence.perInhabitant": "≈ {amount} par habitant et par an",
+	"metrics.title": "Chiffres clés",
+	"metrics.debt": "Dette publique {year}",
+	"metrics.deficit": "Déficit {year}",
+	"metrics.official": "officiel : {value}",
+	"metrics.unchanged": "budget inchangé : {value}",
+	"metrics.pathLabel": "Dette de {from} à {to} avec votre budget, en % du PIB",
+	"builder.noticeChanged": "{name} {percent} : {amount} par an. Déficit {year} : {deficit}.",
+	"builder.noticeReset": "{name} revient au budget officiel. Déficit {year} : {deficit}.",
+	"builder.noticeClose": "Fermer",
+	"metrics.ofGdp": "du PIB"
 }

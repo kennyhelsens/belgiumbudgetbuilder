@@ -15,14 +15,22 @@ ABOUTME: Headline figures, a line chart with hover values, adjustable assumption
 		data,
 		locale,
 		changes,
-		onreset
-	}: { data: Dataset; locale: Locale; changes: Changes; onreset: () => void } = $props();
+		onreset,
+		years = $bindable(10),
+		interestPct = $bindable(undefined),
+		growthPct = $bindable(undefined)
+	}: {
+		data: Dataset;
+		locale: Locale;
+		changes: Changes;
+		onreset: () => void;
+		years?: number;
+		/** Visitor's own assumptions in percent; the sourced values apply when undefined. */
+		interestPct?: number;
+		growthPct?: number;
+	} = $props();
 
 	const t = (key: MessageKey) => translate(locale, key);
-
-	let years = $state(10);
-	let interestPct = $state<number | undefined>(undefined);
-	let growthPct = $state<number | undefined>(undefined);
 
 	const sourcedInterestPct = $derived(data.outlook.interestRate.value * 100);
 	const sourcedGrowthPct = $derived(data.outlook.nominalGrowth.value * 100);
