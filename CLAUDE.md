@@ -14,3 +14,8 @@ debt projection (20-year view optional). Full spec: `docs/SPEC.md`.
 - Trade-off examples must be reviewed before they ship.
 - TDD: unit, integration and e2e tests for every feature.
 - Languages: NL, FR, EN.
+
+## Git
+- Never, ever add Claude acknowledgements to commit messages: no
+  `Co-Authored-By: Claude ...`, no `Claude-Session: ...`, no "Generated with
+  Claude Code" lines. Commit messages describe the change only.
