@@ -6,8 +6,8 @@ Status: draft for review · Last updated: 2026-10-20
 
 A public, politically neutral website where anyone can understand Belgium's
 public finances and build their own budget. Every lever shows its real cost:
-**now** (in concrete, relatable examples), and **over 10–20 years** (debt,
-interest, ageing costs).
+**now** (in concrete, relatable examples), and **over the next 10 years** (debt,
+interest, ageing costs), with an optional 20-year view.
 
 Primary audience: **curious citizens**. Plain language first; sources one click
 away so journalists and policy people can verify and share.
@@ -33,7 +33,12 @@ away so journalists and policy people can verify and share.
 | Zoom lens | **Who → what**: L1 Belgium, L2 government level, L3 function/programme. Secondary "by theme" view shows the same totals by function across levels. |
 | Languages | **NL + FR + EN** at launch; DE later via the same i18n files. |
 | Trade-off examples | **Claude drafts with sources, Kenny/expert reviews** before publication. |
-| Projection | **Static debt arithmetic + official ageing costs**, prominent caveat. No behavioural feedback. |
+| Projection | **Static debt arithmetic + official ageing costs**, prominent caveat. No behavioural feedback. **10-year horizon (to 2036) by default**; a "show 20 years" toggle extends to 2046, where the ageing snowball becomes clearest. |
+| Focus | The **federal budget cycle** is the main playground. Regions and communities are adjustable; **local government is display-only**. |
+| Social security | Shown with a **simple funding view**: who pays in (contributions, state subsidy, alternative financing), kept to one card. |
+| Stack | **SvelteKit (static adapter) + TypeScript + D3**, Vitest, Playwright. |
+| Hosting | **Cloudflare Pages** (free) with a preview URL per PR; GitHub Pages as fallback. |
+| Review | Kenny and a politically versed reviewer review figures and examples **via GitHub PRs**. |
 
 ## 4. Information architecture
 
@@ -47,7 +52,7 @@ Total spending, total revenue, deficit, debt (€ and % of GDP), interest bill.
 - Walloon Region + Fédération Wallonie-Bruxelles
 - Brussels-Capital Region (+ COCOM/COCOF)
 - German-speaking Community
-- Local government (municipalities, provinces, OCMW/CPAS, police zones) — shown, not adjustable in v1 *(to confirm)*
+- Local government (municipalities, provinces, OCMW/CPAS, police zones) — **display-only**
 
 A "money flows" explainer shows the major transfers (Special Financing Act
 grants, state subsidy to social security) without counting them twice.
@@ -60,6 +65,12 @@ Example for social security:
 - Incapacity & disability
 - Family allowances (regionalised — shown under the regions)
 - Administration
+
+**Funding card (social security only).** One simple stacked bar: social
+contributions, state subsidy from the federal budget, alternative financing
+(earmarked tax revenue, e.g. a share of VAT), other. One sentence explains
+that a gap in social security lands on the federal budget, which is why cutting
+or raising social security moves the federal deficit.
 
 ### Fact cards (L3)
 Each L3 line has a sidebar card:
@@ -106,13 +117,13 @@ that line and states the change in those units:
   smooth "Google Maps" transitions. Keyboard and screen-reader accessible list
   view as an equivalent alternative.
 - **Sliders** per L3 line and revenue lever; changes roll up to L2/L1 live.
-- **Balance strip** always visible: deficit now vs official plan, debt in 2036/2046.
+- **Balance strip** always visible: deficit now vs official plan, debt in 2036 (2046 when the 20-year view is on).
 - **Presets**: Official 2026 (adjusted); later Official 2027.
 - **Share**: full state encoded in the URL. No accounts, no backend in v1.
 
 ## 7. 10–20 year projection
 
-Transparent, static model, yearly steps to 2046:
+Transparent, static model, yearly steps to **2036 by default**, extendable to 2046:
 
 ```
 debt[t+1]     = debt[t] * (1 + r) / (1 + g) + primaryDeficit[t+1]      (as % of GDP)
@@ -137,8 +148,18 @@ interest[t]   = r_effective[t] * debt[t]
 - Stability programme / EU fiscal-structural plan; Eurostat for cross-checks
 - Workforce: Statbel, sector federations, agency annual reports
 
-Open data question: verify whether Brussels has a regular 2026 budget or
-provisional twelfths, and model whichever is factual.
+### Brussels without a regular budget
+Brussels is believed to have no voted 2026 budget (to verify at data
+collection). We model what legally applies, as accurately as possible:
+- Baseline = spending authorised under **provisional credits/twelfths**,
+  based on the last voted budget, clearly labelled "provisional" in the UI.
+- **Committed spending** (wages, including grants that fund police zones,
+  debt service, legal entitlements) is flagged: users can still move it, but
+  the card warns that these bills arrive regardless.
+- A note explains what provisional twelfths are and why the baseline is less
+  certain than for other entities.
+
+The "committed" flag is a general data field, usable for any entity.
 
 ## 9. Design system
 
@@ -150,12 +171,27 @@ provisional twelfths, and model whichever is factual.
 - Muted, accessible categorical palette for L2 entities; colour never the only signal.
 - Mobile-first; works at 360px width.
 
-## 10. Tech (proposal)
+## 10. Tech
 
-- Static site: **SvelteKit or Astro** (decide at kickoff), D3 for the zoomable map.
+- **SvelteKit with the static adapter, TypeScript.** The app is one highly
+  interactive tool (sliders, zoom, live roll-ups), which Svelte's reactivity
+  handles with little code; the static adapter outputs plain files.
+- **D3** (hierarchy, zoom, scales) for the zoomable map and charts.
 - Data: JSON in `data/` with a schema and a validation script (every number has a source).
-- i18n: message files per language.
-- Hosting: any static host (domain to decide).
+- i18n: message files per language (NL, FR, EN).
+- **Hosting: Cloudflare Pages**, free tier, connected to the GitHub repo.
+  Every PR gets its own preview URL, so reviewers check figures on the live
+  site before merging; `main` deploys to production. Fallback: GitHub Pages
+  via a GitHub Actions workflow (no previews).
+- **CI (GitHub Actions)** on every PR: lint, typecheck, unit + integration tests,
+  data validation, Playwright e2e, build.
+
+## 10a. Review workflow
+
+- All figures and examples change via PRs touching `data/`.
+- `CODEOWNERS` routes `data/` changes to Kenny and the political reviewer.
+- PR template for data changes: what changed, source links, reviewer checklist.
+- An example's `reviewed` field is filled in only after PR approval.
 
 ## 11. Testing
 
@@ -166,6 +202,7 @@ TDD throughout.
 
 ## 12. Milestones
 
+0. **Scaffold** — SvelteKit app, CI, Cloudflare Pages previews, CODEOWNERS, PR template.
 1. **Data foundation** — schema, sourced 2026-adjusted L1–L3 figures, reconciliation tests.
 2. **Projection engine** — model + tests, ageing data.
 3. **Zoom map + fact cards** (read-only explorer).
@@ -175,9 +212,11 @@ TDD throughout.
 
 ## 13. Open items
 
-- [ ] Local government: adjustable or display-only in v1?
-- [ ] Include social-security financing view (contributions vs state subsidy)?
-- [ ] Framework choice (SvelteKit vs Astro).
-- [ ] Domain name and hosting.
-- [ ] Who are the reviewers for examples and figures?
-- [ ] Brussels 2026 budget status.
+- [x] Local government: display-only.
+- [x] Social-security financing view: yes, one simple card.
+- [x] Framework: SvelteKit (static).
+- [x] Hosting: Cloudflare Pages (Kenny connects the repo once).
+- [x] Reviewers: Kenny + political reviewer via GitHub PRs.
+- [ ] Brussels 2026 budget status: verify during data collection (approach in §8).
+- [ ] Domain name (default `*.pages.dev` until decided).
+- [ ] GitHub handle of the political reviewer (for `CODEOWNERS`).
