@@ -1,0 +1,22 @@
+{
+	"line": "flanders.economy-work-science-agriculture",
+	"equivalents": [
+		{
+			"id": "vl-dienstencheque-subsidy-hour",
+			"label": {
+				"nl": "uren huishoudhulp met dienstencheques, enkel de Vlaamse subsidie per uur (tarief vanaf 1 oktober 2025)",
+				"fr": "heures d'aide ménagère en titres-services, en ne comptant que la subvention flamande par heure (tarif au 1er octobre 2025)",
+				"en": "hours of household help with service vouchers, counting only the Flemish subsidy per hour (rate from 1 October 2025)"
+			},
+			"unitEur": {
+				"value": 19.63,
+				"ref": {
+					"source": "vr-2025-1710-bvr-dienstencheques",
+					"locator": "Besluit Vlaamse Regering 17 October 2025 (VR 2025 1710 DOC.0926/2BIS), Artikel 1, 1° (replaces the second paragraph of art. 8, §1, KB 12 December 2001) and Art. 2 (effect 1 October 2025); one cheque per hour: vlaanderen.be 'Dienstencheques aankopen en gebruiken' ('U betaalt 1 dienstencheque per gepresteerd uur.')",
+					"quote": "Het bedrag van de tegemoetkoming is gelijk aan 19,63 euro per dienstencheque voor de dienstencheques waarvan de aanschafprijs 10 euro bedraagt, en 18,63 euro per dienstencheque voor de dienstencheques waarvan de aanschafprijs 11 euro bedraagt.",
+					"note": "Amount in force for work done from 1 October 2025 (Vlaamse Regering decision of 17 October 2025); it is the latest legal amount found and applies in 2026 unless indexed since. A Flanders.be page says the exchange value is raised after an indexation; whether a 2026 indexation changed 19.63 could not be checked (the consolidated decree on ejustice.just.fgov.be is behind bot protection). 19.63 euro applies to cheques bought at 10 euro (first 400 per person per year); cheques bought at 11 euro get 18.63 euro. Total exchange value 29.63 euro per hour (nota VR 2025 1710 DOC.0926/1, p. 3, source vr-2025-1710-nota-dienstencheques). The user's tax credit was abolished from 1 January 2025, so there is no extra tax cost per cheque. The subsidy was raised again in 2026; the last rate found in an official source is the one from 1 October 2025, shown here with its date. Checked by a second agent: Quote, 19,63 and the one-cheque-per-hour rule confirmed; nota DOC.0926/1 p. 3 confirms 10 + 19,63 = 29,63 euro exchange value and budget article TB0-1TDE2RA-WT (Werk domain, so the right line). BUT the same decree adds 'Het bedrag van de tegemoetkoming wordt verhoogd conform het derde lid', and official sources say the Flemish government pays the indexation of the exchange value at each pivot-index overshoot (nota VR December 2024 (themis c5da2810…), p. 3-4: user price rises only by 1 euro per five overshoots, the subsidy absorbs the other indexations; example: 18,07 -> 18,63 after the December 2024 overshoot; vlaanderen.be 'Dienstencheques volledig gedigitaliseerd sinds 1 juni 2025': 'de inruilwaarde ... na een indexering verhoogd op basis van de prestatiedatum'). The vlaanderen.be teacher-indexation page shows public-sector index steps on 01.03.2026 and 01.09.2026, so pivot overshoots happened in 2026 and the subsidy in force in October 2026 is very probably higher than 19,63 (no official 2026 amount found; ejustice consolidated text is behind CAPTCHA, not bypassed). So: keep 19.63 only as the 2025 rate (year 2025, dated in the label), or better, replace it with the indexed 2026 amount once an official source is found. Labels also corrected: the amount is only the Flemish subsidy part (the user pays 10 euro on top), which the original parenthesis '(Vlaamse tegemoetkoming)' did not make clear enough. Recommend the reviewer hold this example until the 2026 amount is sourced."
+				}
+			}
+		}
+	]
+}
