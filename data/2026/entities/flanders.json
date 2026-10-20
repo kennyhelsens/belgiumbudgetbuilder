@@ -1,0 +1,215 @@
+{
+	"id": "flanders",
+	"label": {
+		"nl": "Vlaanderen",
+		"fr": "Flandre",
+		"en": "Flanders"
+	},
+	"government": "community",
+	"adjustable": true,
+	"budgetStatus": "adjusted",
+	"expenditure": {
+		"total": {
+			"eurMillion": 67114.044,
+			"ref": {
+				"source": "vp-17-2025-2026-nr1-algemene-toelichting-ba2026",
+				"locator": "p. 45, Tabel IV-9 'Vereffeningskredieten per beleidsdomein (in duizend euro)', row Totaal, column BA 2026 (same figure in Tabel IV-1, p. 40, and Tabel IV-7, p. 43)",
+				"quote": "Totaal                                                66.033.525      67.114.044"
+			}
+		},
+		"lines": [
+			{
+				"id": "flanders.education",
+				"label": {
+					"nl": "Onderwijs en Vorming",
+					"fr": "Enseignement et formation",
+					"en": "Education and training"
+				},
+				"amount": {
+					"eurMillion": 20223.063,
+					"ref": {
+						"source": "vp-17-2025-2026-nr1-algemene-toelichting-ba2026",
+						"locator": "p. 45, Tabel IV-9, row 'Onderwijs en Vorming', column BA 2026",
+						"quote": "Onderwijs en Vorming                                  20.207.912      20.223.063"
+					}
+				},
+				"nature": "committed"
+			},
+			{
+				"id": "flanders.welfare-health-family",
+				"label": {
+					"nl": "Welzijn, Volksgezondheid en Gezin (incl. Groeipakket en Vlaamse sociale bescherming)",
+					"fr": "Bien-être, santé publique et famille (y compris allocations familiales « Groeipakket » et protection sociale flamande)",
+					"en": "Welfare, public health and family (incl. Groeipakket family allowances and Flemish social protection)"
+				},
+				"amount": {
+					"eurMillion": 17768.858,
+					"ref": {
+						"source": "vp-17-2025-2026-nr1-algemene-toelichting-ba2026",
+						"locator": "p. 45, Tabel IV-9, row 'Welzijn, Volksgezondheid en Gezin', column BA 2026",
+						"quote": "Welzijn, Volksgezondheid en Gezin                     17.767.208      17.768.858"
+					}
+				},
+				"nature": "entitlement"
+			},
+			{
+				"id": "flanders.mobility-public-works",
+				"label": {
+					"nl": "Mobiliteit en Openbare Werken",
+					"fr": "Mobilité et travaux publics",
+					"en": "Mobility and public works"
+				},
+				"amount": {
+					"eurMillion": 6263.371,
+					"ref": {
+						"source": "vp-17-2025-2026-nr1-algemene-toelichting-ba2026",
+						"locator": "p. 45, Tabel IV-9, row 'Mobiliteit en Openbare Werken', column BA 2026",
+						"quote": "Mobiliteit en Openbare Werken                         6.027.239       6.263.371"
+					}
+				},
+				"nature": "committed"
+			},
+			{
+				"id": "flanders.economy-work-science-agriculture",
+				"label": {
+					"nl": "Werk, Economie, Wetenschap, Innovatie, Landbouw en Sociale Economie",
+					"fr": "Emploi, économie, science, innovation, agriculture et économie sociale",
+					"en": "Work, economy, science, innovation, agriculture and social economy"
+				},
+				"amount": {
+					"eurMillion": 5991.959,
+					"ref": {
+						"source": "vp-17-2025-2026-nr1-algemene-toelichting-ba2026",
+						"locator": "p. 45, Tabel IV-9, row 'Werk, Economie, Wetenschap, Innovatie, Landbouw en Sociale Economie', column BA 2026",
+						"quote": "Werk, Economie, Wetenschap, Innovatie, Landbouw ... en Sociale Economie   5.895.425       5.991.959"
+					}
+				},
+				"nature": "discretionary"
+			},
+			{
+				"id": "flanders.environment",
+				"label": {
+					"nl": "Omgeving",
+					"fr": "Environnement et aménagement du territoire (Omgeving)",
+					"en": "Environment and spatial planning (Omgeving)"
+				},
+				"amount": {
+					"eurMillion": 3345.709,
+					"ref": {
+						"source": "vp-17-2025-2026-nr1-algemene-toelichting-ba2026",
+						"locator": "p. 45, Tabel IV-9, row 'Omgeving', column BA 2026",
+						"quote": "Omgeving                                              3.416.944       3.345.709"
+					}
+				},
+				"nature": "discretionary"
+			},
+			{
+				"id": "flanders.culture-youth-sport-media",
+				"label": {
+					"nl": "Cultuur, Jeugd, Sport en Media",
+					"fr": "Culture, jeunesse, sport et médias",
+					"en": "Culture, youth, sport and media"
+				},
+				"amount": {
+					"eurMillion": 1689.764,
+					"ref": {
+						"source": "vp-17-2025-2026-nr1-algemene-toelichting-ba2026",
+						"locator": "p. 45, Tabel IV-9, row 'Cultuur, Jeugd, Sport en Media', column BA 2026",
+						"quote": "Cultuur, Jeugd, Sport en Media                        1.689.330       1.689.764"
+					}
+				},
+				"nature": "discretionary"
+			},
+			{
+				"id": "flanders.local-government-funds",
+				"label": {
+					"nl": "Fondsen lokale financiering (o.a. Vlaams Gemeentefonds)",
+					"fr": "Fonds de financement local (dont le Fonds flamand des communes)",
+					"en": "Local government funds (incl. Flemish Municipal Fund)"
+				},
+				"amount": {
+					"eurMillion": 4773.156,
+					"ref": {
+						"source": "vp-19-2025-2026-nr10-bijlagen-1",
+						"locator": "Administratieve uitgavenbegroting, beleidsdomein Kanselarij, Bestuur, Buitenlandse Zaken en Justitie, programma SM Binnenlands Bestuur en Stedenbeleid, begrotingsartikel SJ0-1SMC2GC-WT, VEK, third row (= BA 2026; rows are BO 2026 / delta / BA 2026), p. 131 of the PDF",
+						"quote": "SJ0-1SMC2GC-WT        1        FONDSEN LOKALE FINANCIERING                        4.776.961   4.776.961 / -3.805 -3.805 / 4.773.156   4.773.156",
+						"note": "Split out of the 'Kanselarij, Bestuur, Buitenlandse Zaken en Justitie' domain total (Tabel IV-9). Article is ESA code WT (operating/transfer expenditure, not an intra-Flemish 'IS' grant), so it is counted in full in the consolidated VEK."
+					}
+				},
+				"nature": "committed",
+				"transferTo": "local"
+			},
+			{
+				"id": "flanders.chancellery-governance-foreign-justice",
+				"label": {
+					"nl": "Kanselarij, Bestuur, Buitenlandse Zaken en Justitie (excl. fondsen lokale financiering)",
+					"fr": "Chancellerie, gouvernance publique, affaires étrangères et justice (hors fonds de financement local)",
+					"en": "Chancellery, governance, foreign affairs and justice (excl. local government funds)"
+				},
+				"amount": {
+					"eurMillion": 1532.724,
+					"ref": {
+						"source": "vp-17-2025-2026-nr1-algemene-toelichting-ba2026",
+						"locator": "p. 45, Tabel IV-9, row 'Kanselarij, Bestuur, Buitenlandse Zaken en Justitie' (6.305.880), minus article SJ0-1SMC2GC-WT (4.773.156) from vp-19-2025-2026-nr10-bijlagen-1 p. 131",
+						"quote": "Kanselarij, Bestuur, Buitenlandse Zaken en Justitie   6.321.441       6.305.880",
+						"note": "6305.880 - 4773.156 = 1532.724"
+					}
+				},
+				"nature": "committed"
+			},
+			{
+				"id": "flanders.interest",
+				"label": {
+					"nl": "Rente en financiële kosten op de Vlaamse schuld",
+					"fr": "Intérêts et frais financiers de la dette flamande",
+					"en": "Interest and financial costs on Flemish debt"
+				},
+				"amount": {
+					"eurMillion": 1230.706,
+					"ref": {
+						"source": "vp-19-2025-2026-nr10-bijlagen-1",
+						"locator": "Administratieve uitgavenbegroting, beleidsdomein Financiën en Begroting, programma CE Financiële operaties, begrotingsartikel CB0-1CED2BA-WT 'Actief schuldbeheer', VEK, third row (= BA 2026), p. 42 of the PDF. Cross-check: vp-17-2025-2026-nr1-algemene-toelichting-ba2026 p. 91, Tabel VII-5: 'Totaal rente + kosten 1.224.370 1.230.705 6.336' (interest 1.206.167 + costs 24.538)",
+						"quote": "CB0-1CED2BA-WT            1   ACTIEF SCHULDBEHEER                           1.224.369   1.224.369 / 6.337 6.337 / 1.230.706   1.230.706",
+						"note": "Split out of the 'Financiën en Begroting' domain total (Tabel IV-9). Covers interest of the Vlaamse Gemeenschap's central debt management only; interest paid by Flemish legal entities in their own budgets (e.g. VMSW, VWF, Lantis) stays in their domains."
+					}
+				},
+				"nature": "committed"
+			},
+			{
+				"id": "flanders.finance-budget-other",
+				"label": {
+					"nl": "Financiën en Begroting (excl. rente): provisies, fiscaliteit, budgettair beleid",
+					"fr": "Finances et budget (hors intérêts) : provisions, fiscalité, politique budgétaire",
+					"en": "Finance and budget (excl. interest): provisions, tax administration, budget policy"
+				},
+				"amount": {
+					"eurMillion": 4119.76,
+					"ref": {
+						"source": "vp-17-2025-2026-nr1-algemene-toelichting-ba2026",
+						"locator": "p. 45, Tabel IV-9, row 'Financiën en Begroting' (5.350.466), minus article CB0-1CED2BA-WT (1.230.706) from vp-19-2025-2026-nr10-bijlagen-1 p. 42",
+						"quote": "Financiën en Begroting                                4.531.491       5.350.466",
+						"note": "5350.466 - 1230.706 = 4119.760"
+					}
+				},
+				"nature": "discretionary"
+			},
+			{
+				"id": "flanders.higher-entities",
+				"label": {
+					"nl": "Hogere Entiteiten (Vlaams Parlement e.a.)",
+					"fr": "Entités supérieures (Parlement flamand, etc.)",
+					"en": "Higher entities (Flemish Parliament etc.)"
+				},
+				"amount": {
+					"eurMillion": 174.974,
+					"ref": {
+						"source": "vp-17-2025-2026-nr1-algemene-toelichting-ba2026",
+						"locator": "p. 45, Tabel IV-9, row 'Hogere Entiteiten', column BA 2026",
+						"quote": "Hogere Entiteiten                                      176.535         174.974"
+					}
+				},
+				"nature": "committed"
+			}
+		]
+	}
+}
