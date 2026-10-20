@@ -5,6 +5,8 @@ import { consolidatedExpenditure } from './consolidate.ts';
 import { loadDataset } from './dataset.ts';
 import { findProblems } from './validate.ts';
 
+// The German-speaking Community is left out until its 2026 figures are verified against a primary
+// source; its official sites block automated access (see data/README.md).
 const EXPECTED_ENTITIES = [
 	'federal',
 	'social-security',
@@ -12,7 +14,6 @@ const EXPECTED_ENTITIES = [
 	'wallonia',
 	'wallonia-brussels-federation',
 	'brussels',
-	'german-speaking-community',
 	'local'
 ];
 

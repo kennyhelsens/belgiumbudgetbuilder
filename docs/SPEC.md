@@ -244,18 +244,18 @@ interest[t]   = r_effective[t] * debt[t]
 - Stability programme / EU fiscal-structural plan; Eurostat for cross-checks
 - Workforce: Statbel, sector federations, agency annual reports
 
-### Brussels without a regular budget
+### Brussels and provisional credits
 
-Brussels is believed to have no voted 2026 budget (to verify at data
-collection). We model what legally applies, as accurately as possible:
+Data collection showed that Brussels **did** vote a 2026 budget: the Region ran
+all of 2025 and January–March 2026 on provisional credits based on the 2024
+budget, and the Brussels Parliament adopted the initial 2026 budget on
+27 March 2026 (COCOM on 22 May 2026). The 2026 figures are therefore the voted
+initial budget (no adjustment yet).
 
-- Baseline = spending authorised under **provisional credits/twelfths**,
-  based on the last voted budget, clearly labelled "provisional" in the UI.
-- **Committed spending** (wages, including grants that fund police zones,
-  debt service, legal entitlements) is flagged: users can still move it, but
-  the card warns that these bills arrive regardless.
-- A note explains what provisional twelfths are and why the baseline is less
-  certain than for other entities.
+The schema keeps a `provisional` budget status for any government that runs
+without a voted budget in a future year; the map then labels it clearly.
+**Committed spending** (wages, debt interest, contracts) is tagged per line, so
+the site can explain that those bills arrive regardless.
 
 The "committed" flag is a general data field, usable for any entity.
 
