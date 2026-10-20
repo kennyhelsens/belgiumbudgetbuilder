@@ -64,6 +64,30 @@
 		"retrieved": "2026-10-20"
 	},
 	{
+		"id": "fwb-decree-adjustment-2026",
+		"title": "Décret contenant l'ajustement du budget des dépenses de la Communauté française pour l'année budgétaire 2026 (D. 17-07-2026, M.B. 17-08-2026), Gallilex Docu 54133",
+		"publisher": "Fédération Wallonie-Bruxelles, Secrétariat général, Direction des Publications juridiques et de la Transparence (Gallilex)",
+		"url": "https://gallilex.cfwb.be/sites/default/files/textes-normatifs/2026-08/54133_0000.pdf",
+		"published": "2026-08-17",
+		"retrieved": "2026-10-20"
+	},
+	{
+		"id": "bru-a268-5-p1",
+		"title": "Projet d'ordonnance contenant le Budget général des Dépenses de la Région de Bruxelles-Capitale pour l'année budgétaire 2026 – Texte adopté par la séance plénière (Doc. A-268/5 – 2025/2026, Partie 1: dispositif + tableaux budgétaires section 1, SPRB)",
+		"publisher": "Parlement de la Région de Bruxelles-Capitale",
+		"url": "https://weblex.irisnet.be/data/crb/doc/2025-26/153979/images.pdf",
+		"published": "2026-03-27",
+		"retrieved": "2026-10-20"
+	},
+	{
+		"id": "cocom-b67-5",
+		"title": "Ordonnance contenant le Budget général des Dépenses de la Commission communautaire commune pour l'année budgétaire 2026 – Texte adopté par la séance plénière (Doc. B-67/5 – 2025/2026)",
+		"publisher": "Assemblée réunie de la Commission communautaire commune",
+		"url": "https://weblex.irisnet.be/data/arccc/doc/2025-26/110317/images.pdf",
+		"published": "2026-05-22",
+		"retrieved": "2026-10-20"
+	},
+	{
 		"id": "fpb-outlook-2026-06",
 		"title": "Economische begroting 2026-2027 – Economische vooruitzichten 2028-2031 – Juni 2026 (FOR_MIDTERM_2631_13322)",
 		"publisher": "Federaal Planbureau",

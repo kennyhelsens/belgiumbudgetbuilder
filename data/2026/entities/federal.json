@@ -147,8 +147,7 @@
 						"note": "120.417 (art. 58duodecies law of 31 Dec 1983) + 3.809 (hospital investments) + 0.159 (senator) + 0.049 (prison prefinancing) = 124.434."
 					}
 				},
-				"nature": "committed",
-				"transferTo": "german-speaking-community"
+				"nature": "committed"
 			},
 			{
 				"id": "federal.defence",
@@ -344,7 +343,7 @@
 						"source": "be-chamber-56-1470-001",
 						"locator": "Computed: total minus listed lines",
 						"quote": "n/a (residual)",
-						"note": "104,674.855 - sum of the 17 listed lines (91958.074) = 12716.781. Main components (liquidation, EUR m): section 06 Policy & Support incl. interdepartmental and other provisions 2,551.7 (provisions 1,660, of which security reinforcement 546 and Ukraine 443); section 18 Finance 2,546.9; section 32 Economy/Energy 1,414.0; non-interest public-debt costs in section 51 1,346.6; section 25 Health/Food chain/Environment 1,147.1; rest of section 24 1,119.8 (mainly GRAPA income guarantee for the elderly 1,036.8); Buildings Agency 906.5; section 46 Science policy 528.9; Royal family, Parliament and other dotations in section 01 453.1; section 23 Employment 277.7; section 02 Chancellery 233.3; rest of section 44 160.4; section 07 independent bodies 30.7. Mixed nature."
+						"note": "Corrected in verification."
 					}
 				},
 				"nature": "discretionary"

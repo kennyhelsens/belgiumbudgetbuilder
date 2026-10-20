@@ -1,0 +1,110 @@
+{
+	"id": "wallonia-brussels-federation",
+	"label": {
+		"nl": "Federatie Wallonië-Brussel",
+		"fr": "Fédération Wallonie-Bruxelles",
+		"en": "Wallonia-Brussels Federation"
+	},
+	"government": "community",
+	"adjustable": true,
+	"budgetStatus": "adjusted",
+	"expenditure": {
+		"total": {
+			"eurMillion": 16531.721,
+			"ref": {
+				"source": "fwb-decree-adjustment-2026",
+				"locator": "Décret du 17-07-2026, Article 1er, summary table, row 'Total général' (unlabelled sum row under CELL/CELNL/FBM), p.1; columns: Crédits initiaux Eng./Liq. | Répartitions Eng./Liq. | Variations Eng./Liq. | Crédits 1er ajustement Eng./Liq.; last figure = liquidation credits after 1st adjustment, thousand EUR",
+				"quote": "Total général ... 16.215.841 16.319.608 0 0 221.257 212.113 16.437.098 16.531.721"
+			}
+		},
+		"lines": [
+			{
+				"id": "wallonia-brussels-federation.general-services",
+				"label": {
+					"nl": "Algemene diensten (Parlement, kabinetten, Secretariaat-generaal incl. personeel, informatica, gebouwen, internationale betrekkingen)",
+					"fr": "Services généraux (Parlement, cabinets, Secrétariat général y compris personnel, informatique, immeubles, relations internationales)",
+					"en": "General services (parliament, ministers' offices, general secretariat incl. staff, IT, buildings, international relations)"
+				},
+				"amount": {
+					"eurMillion": 1168.997,
+					"ref": {
+						"source": "fwb-decree-adjustment-2026",
+						"locator": "Décret du 17-07-2026, Article 1er, summary table, sum row of 'CHAPITRE I – Services généraux', p.1; columns: Crédits initiaux Eng./Liq. | Répartitions Eng./Liq. | Variations Eng./Liq. | Crédits 1er ajustement Eng./Liq.; last figure = liquidation credits after 1st adjustment, thousand EUR",
+						"quote": "CHAPITRE I – Services généraux ... 1.203.087 1.184.679 -40.349 -39.757 23.532 24.075 1.186.270 1.168.997"
+					}
+				},
+				"nature": "discretionary"
+			},
+			{
+				"id": "wallonia-brussels-federation.health-social-culture-media-sport",
+				"label": {
+					"nl": "Gezondheid, sociale zaken, cultuur, audiovisuele media en sport (o.a. ONE/kinderopvang, jeugdhulp, justitiehuizen, cultuur, RTBF, sport)",
+					"fr": "Santé, affaires sociales, culture, audiovisuel et sport (dont ONE/enfance, aide à la jeunesse, maisons de justice, culture, RTBF, sport)",
+					"en": "Health, social affairs, culture, media and sport (incl. early childhood/ONE, youth care, justice houses, culture, RTBF public broadcaster, sport)"
+				},
+				"amount": {
+					"eurMillion": 2379.013,
+					"ref": {
+						"source": "fwb-decree-adjustment-2026",
+						"locator": "Décret du 17-07-2026, Article 1er, summary table, sum row of 'CHAPITRE II – Santé, Affaires sociales, Culture, Audiovisuel et Sport', p.1; columns: Crédits initiaux Eng./Liq. | Répartitions Eng./Liq. | Variations Eng./Liq. | Crédits 1er ajustement Eng./Liq.; last figure = liquidation credits after 1st adjustment, thousand EUR",
+						"quote": "CHAPITRE II – Santé, Affaires sociales, Culture, Audiovisuel et Sport ... 2.206.568 2.325.485 40.599 40.007 17.213 13.521 2.264.380 2.379.013"
+					}
+				},
+				"nature": "committed"
+			},
+			{
+				"id": "wallonia-brussels-federation.education-research-training",
+				"label": {
+					"nl": "Onderwijs, onderzoek en vorming (leerplichtonderwijs incl. lerarenlonen, hoger onderwijs, onderzoek, schoolgebouwen)",
+					"fr": "Éducation, recherche et formation (enseignement obligatoire y compris traitements des enseignants, enseignement supérieur, recherche, bâtiments scolaires)",
+					"en": "Education, research and training (compulsory education incl. teacher salaries, higher education, research, school buildings)"
+				},
+				"amount": {
+					"eurMillion": 11089.788,
+					"ref": {
+						"source": "fwb-decree-adjustment-2026",
+						"locator": "Décret du 17-07-2026, Article 1er, summary table, sum row of 'CHAPITRE III – Education, Recherche et Formation', p.1; columns: Crédits initiaux Eng./Liq. | Répartitions Eng./Liq. | Variations Eng./Liq. | Crédits 1er ajustement Eng./Liq.; last figure = liquidation credits after 1st adjustment, thousand EUR",
+						"quote": "CHAPITRE III – Education, Recherche et Formation ... 10.925.380 10.928.638 -250 -250 167.395 161.400 11.092.525 11.089.788"
+					}
+				},
+				"nature": "committed"
+			},
+			{
+				"id": "wallonia-brussels-federation.public-debt",
+				"label": {
+					"nl": "Overheidsschuld van de Franse Gemeenschap (rente en lasten)",
+					"fr": "Dette publique de la Communauté française (intérêts et charges)",
+					"en": "Public debt of the French Community (interest and charges)"
+				},
+				"amount": {
+					"eurMillion": 1312.984,
+					"ref": {
+						"source": "fwb-decree-adjustment-2026",
+						"locator": "Décret du 17-07-2026, Article 1er, summary table, sum row of 'CHAPITRE IV – Dette publique de la Communauté française', p.1; columns: Crédits initiaux Eng./Liq. | Répartitions Eng./Liq. | Variations Eng./Liq. | Crédits 1er ajustement Eng./Liq.; last figure = liquidation credits after 1st adjustment, thousand EUR",
+						"quote": "CHAPITRE IV – Dette publique de la Communauté française ... 1.305.490 1.305.490 0 0 7.494 7.494 1.312.984 1.312.984"
+					}
+				},
+				"nature": "committed"
+			},
+			{
+				"id": "wallonia-brussels-federation.transfers-walloon-region-cocof",
+				"label": {
+					"nl": "Dotaties aan het Waals Gewest en de COCOF (Sint-Kwintensakkoorden 1993)",
+					"fr": "Dotations à la Région wallonne et à la Commission communautaire française (accords de la Saint-Quentin, 1993)",
+					"en": "Grants to the Walloon Region and the French Community Commission (COCOF) (Saint-Quentin agreements, 1993)"
+				},
+				"amount": {
+					"eurMillion": 580.939,
+					"ref": {
+						"source": "fwb-decree-adjustment-2026",
+						"locator": "Décret du 17-07-2026, Article 1er, summary table, sum row of 'CHAPITRE V – Dotations à la Région wallonne et à la Commission communautaire française', p.1; columns: Crédits initiaux Eng./Liq. | Répartitions Eng./Liq. | Variations Eng./Liq. | Crédits 1er ajustement Eng./Liq.; last figure = liquidation credits after 1st adjustment, thousand EUR",
+						"quote": "CHAPITRE V – Dotations à la Région wallonne et à la Commission communautaire française ... 575.316 575.316 0 0 5.623 5.623 580.939 580.939",
+						"note": "Combined Saint-Quentin grants to the Walloon Region and COCOF; the adjusted split is not published (initial budget: Walloon Region 446.776, COCOF 128.540). Netted as a transfer to the Walloon Region; COCOF is not shown separately."
+					}
+				},
+				"nature": "committed",
+				"transferTo": "wallonia"
+			}
+		]
+	}
+}
