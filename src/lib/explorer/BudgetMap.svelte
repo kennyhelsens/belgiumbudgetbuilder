@@ -1,9 +1,11 @@
 <!--
 ABOUTME: Zoomable, area-true budget map: Belgium's governments, then one government's spending lines.
-ABOUTME: Includes a "you are here" minimap, breadcrumbs, and a table with sources and per-line budget sliders.
+ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles, and a table with sources and sliders.
 -->
 <script lang="ts">
 	import type { Changes } from '../builder/choices.ts';
+	import { formatPercentChange } from '../builder/notice.ts';
+	import { CHANGE_LIMIT, changeSlice, stepPercent } from '../builder/steps.ts';
 	import ConsequenceCard from '../consequences/ConsequenceCard.svelte';
 	import type { Dataset } from '../data/schema.ts';
 	import type { Locale } from '../i18n/locales.ts';
@@ -15,16 +17,34 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, and a table with source
 	let {
 		data,
 		locale,
-		changes = $bindable({})
-	}: { data: Dataset; locale: Locale; changes?: Changes } = $props();
+		changes = $bindable({}),
+		onchange
+	}: {
+		data: Dataset;
+		locale: Locale;
+		changes?: Changes;
+		/** Called after the visitor changes a line, with its id, name, new percentage and change in € million. */
+		onchange?: (change: {
+			id: string;
+			name: string;
+			percent: number;
+			changeEurMillion: number;
+		}) => void;
+	} = $props();
 
 	const percentOf = (id: string, amount: number) => Math.round(((changes[id] ?? 0) / amount) * 100);
 
-	function setPercent(id: string, amount: number, percent: number) {
+	function setPercent(tile: Tile, percent: number) {
 		const next = { ...changes };
-		if (percent === 0) delete next[id];
-		else next[id] = (amount * percent) / 100;
+		if (percent === 0) delete next[tile.id];
+		else next[tile.id] = (tile.eurMillion * percent) / 100;
 		changes = next;
+		onchange?.({
+			id: tile.id,
+			name: tile.label[locale],
+			percent,
+			changeEurMillion: next[tile.id] ?? 0
+		});
 	}
 
 	const signed = (eurMillion: number) =>
@@ -65,6 +85,12 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, and a table with source
 	function hasRoom(tile: Tile) {
 		const scale = width / frame.width;
 		return (tile.x1 - tile.x0) * scale > 80 && (tile.y1 - tile.y0) * scale > 44;
+	}
+
+	/** Large tiles always show their −/+ buttons; small ones only on hover or focus. */
+	function hasRoomForSteppers(tile: Tile) {
+		const scale = width / frame.width;
+		return (tile.x1 - tile.x0) * scale > 160 && (tile.y1 - tile.y0) * scale > 140;
 	}
 
 	const share = (amount: number) =>
@@ -128,6 +154,49 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, and a table with source
 						<span class="tile__amount">{formatEuro(tile.eurMillion, locale)}</span>
 					{/if}
 				</button>
+			{:else if focusEntity?.adjustable}
+				{@const percent = percentOf(tile.id, tile.eurMillion)}
+				{@const slice = changeSlice(percent)}
+				<div
+					class="tile tile--leaf"
+					style={boxStyle(tile, frame)}
+					role="group"
+					aria-label={label}
+					tabindex="-1"
+				>
+					{#if slice}
+						<span
+							class="tile__slice tile__slice--{slice.kind}"
+							style="width: {slice.widthPercent}%"
+							data-testid="change-slice"
+							data-kind={slice.kind}
+						></span>
+					{/if}
+					{#if hasRoom(tile)}
+						<span class="tile__name">{tile.label[locale]}</span>
+						<span class="tile__amount"
+							>{formatEuro(tile.eurMillion, locale)}{#if percent}
+								→ {formatEuro(tile.eurMillion + (changes[tile.id] ?? 0), locale)}{/if}</span
+						>
+					{/if}
+					{#if percent}
+						<span class="tile__badge">{formatPercentChange(percent, locale)}</span>
+					{/if}
+					<span class="stepper" class:stepper--always={hasRoomForSteppers(tile)}>
+						<button
+							type="button"
+							aria-label={t('builder.stepDown').replace('{name}', tile.label[locale])}
+							disabled={percent <= -CHANGE_LIMIT}
+							onclick={() => setPercent(tile, stepPercent(percent, -1))}>−</button
+						>
+						<button
+							type="button"
+							aria-label={t('builder.stepUp').replace('{name}', tile.label[locale])}
+							disabled={percent >= CHANGE_LIMIT}
+							onclick={() => setPercent(tile, stepPercent(percent, 1))}>+</button
+						>
+					</span>
+				</div>
 			{:else}
 				<div class="tile tile--leaf" style={boxStyle(tile, frame)} role="img" aria-label={label}>
 					{#if hasRoom(tile)}
@@ -176,13 +245,12 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, and a table with source
 							<td class="change">
 								<input
 									type="range"
-									min="-50"
-									max="50"
-									step="5"
+									min={-CHANGE_LIMIT}
+									max={CHANGE_LIMIT}
+									step="1"
 									value={percentOf(tile.id, tile.eurMillion)}
 									aria-label={t('builder.sliderLabel').replace('{name}', tile.label[locale])}
-									oninput={(e) =>
-										setPercent(tile.id, tile.eurMillion, Number(e.currentTarget.value))}
+									oninput={(e) => setPercent(tile, Number(e.currentTarget.value))}
 								/>
 								<span class="change__value"
 									>{percentOf(tile.id, tile.eurMillion)}% · {signed(changes[tile.id] ?? 0)}</span
@@ -307,6 +375,98 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, and a table with source
 	.tile__amount {
 		font-size: var(--text-sm);
 		color: var(--ink-muted);
+	}
+
+	/* The tile keeps its official size; a slice along its right edge marks the change. */
+	.tile__slice {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		max-width: 100%;
+		pointer-events: none;
+	}
+
+	/* A cut: hatched, the money that is no longer there. */
+	.tile__slice--cut {
+		border-left: 1px dashed var(--ink-muted);
+		background: repeating-linear-gradient(
+			135deg,
+			color-mix(in oklab, var(--ink-muted) 45%, transparent) 0 1.5px,
+			var(--paper) 1.5px 6px
+		);
+	}
+
+	/* An addition: dotted, in a darker shade of the tile colour. */
+	.tile__slice--add {
+		border-left: 2px solid var(--tile-color);
+		background-color: color-mix(in oklab, var(--tile-color) 55%, var(--paper));
+		background-image: radial-gradient(var(--ink) 1.1px, transparent 1.5px);
+		background-size: 5px 5px;
+	}
+
+	.tile__badge {
+		position: relative;
+		align-self: flex-start;
+		padding: 0 var(--space-1);
+		background: var(--paper);
+		font-size: var(--text-sm);
+		font-variant-numeric: tabular-nums;
+	}
+
+	.tile__name,
+	.tile__amount {
+		position: relative;
+	}
+
+	.stepper {
+		position: absolute;
+		right: var(--space-1);
+		bottom: var(--space-1);
+		z-index: 1;
+		display: flex;
+		gap: 2px;
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	.tile:hover .stepper,
+	.tile:focus-within .stepper,
+	.stepper--always {
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+	/* A small tile lets its buttons spill over its neighbours while it is in use. */
+	.tile--leaf:hover,
+	.tile--leaf:focus-within {
+		z-index: 2;
+		overflow: visible;
+	}
+
+	.stepper button {
+		display: grid;
+		place-items: center;
+		width: 2rem;
+		height: 2rem;
+		padding: 0;
+		border: 1px solid var(--ink-muted);
+		background: var(--paper);
+		color: var(--ink);
+		font: inherit;
+		font-size: 1.25rem;
+		font-weight: 600;
+		line-height: 1;
+		cursor: pointer;
+	}
+
+	.stepper button:hover:not(:disabled) {
+		background: color-mix(in oklab, var(--tile-color) 22%, var(--paper));
+	}
+
+	.stepper button:disabled {
+		opacity: 0.4;
+		cursor: not-allowed;
 	}
 
 	.minimap {

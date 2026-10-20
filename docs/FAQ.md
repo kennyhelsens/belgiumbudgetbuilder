@@ -266,6 +266,33 @@ of pensioners.
 
 ## What a change means
 
+### How do I change a budget?
+
+Open a government on the map and use − and + on a tile: each click changes
+that line by 1% of its 2026 amount, up to 50% either way. The table under the
+map has the same change as a slider. The tile keeps its official size; a
+hatched slice along its edge shows a cut, and a dotted slice shows extra
+spending, as wide as the change.
+
+### What do the key figures at the top show?
+
+They stay at the top of the screen while you change the budget:
+
+- **Public debt 2026:** €729 billion, or 109.9% of GDP (Federal Planning
+  Bureau, June 2026; see "What are the starting values?").
+- **Deficit 2026:** €33.7 billion, or 5.1% of GDP, minus your cuts and plus
+  your extra spending, euro for euro. Changes are assumed not to affect the
+  economy or tax revenue (see "What does the outlook leave out?").
+- **Debt at the end of the outlook:** your budget as calculated in the
+  ten-year outlook, with the result for an unchanged budget next to it once
+  you make a change.
+
+After every change, a short notice says what changed per year and per
+inhabitant (Belgium's population on 1 January 2026, 11,867,634, Statbel),
+and what the deficit is now. Where a reviewer has approved an example in
+concrete units for that line, such as GP consultations reimbursed, the notice
+gives it too. It disappears by itself after a few seconds.
+
 ### What is the card that appears when I change healthcare spending?
 
 When you change a spending line that has detailed data behind it (for now:
