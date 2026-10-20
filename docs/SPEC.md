@@ -183,6 +183,25 @@ The "committed" flag is a general data field, usable for any entity.
   Every PR gets its own preview URL, so reviewers check figures on the live
   site before merging; `main` deploys to production. Fallback: GitHub Pages
   via a GitHub Actions workflow (no previews).
+- **Custom domain:** added later in the Cloudflare Pages dashboard (Custom
+  domains → add). Easiest if the domain's DNS is on Cloudflare; otherwise a
+  single CNAME record. The app uses relative paths only, so no code changes.
+
+## 10b. Usage insights (later, designed-in now)
+
+Not in v1, but the architecture keeps it a small addition on Cloudflare:
+- **Traffic:** Cloudflare Web Analytics: free, cookieless, a single toggle.
+- **What people build:** a Pages Function (`functions/api/budgets.ts`) writing
+  to **Cloudflare D1** (managed SQLite). The site stays static; the function is
+  the only server code.
+- **What we would store:** the budget state (already a compact URL string),
+  language, the preset it started from, timestamp. **No accounts, no IP
+  addresses, no cookies, no personal data.**
+- **Consent:** an explicit, opt-in "share my budget anonymously for research"
+  button, not silent tracking. Privacy note on the site (GDPR).
+- **What we learn:** which lines people cut or raise most, how often they
+  close the deficit, which examples change minds. Aggregates could be
+  published back on the site.
 - **CI (GitHub Actions)** on every PR: lint, typecheck, unit + integration tests,
   data validation, Playwright e2e, build.
 
@@ -218,5 +237,6 @@ TDD throughout.
 - [x] Hosting: Cloudflare Pages (Kenny connects the repo once).
 - [x] Reviewers: Kenny + political reviewer via GitHub PRs.
 - [ ] Brussels 2026 budget status: verify during data collection (approach in §8).
-- [ ] Domain name (default `*.pages.dev` until decided).
+- [ ] Domain name (default `*.pages.dev`; plugs in via the dashboard later).
+- [ ] Usage insights (§10b): decide on scope after launch.
 - [ ] GitHub handle of the political reviewer (for `CODEOWNERS`).
