@@ -1,0 +1,56 @@
+{
+	"line": "wallonia-brussels-federation.education-research-training",
+	"equivalents": [
+		{
+			"id": "fwb-starting-upper-secondary-teacher-501-year",
+			"label": {
+				"nl": "bruto jaarwedden van een beginnende leraar hoger secundair onderwijs (master), zonder vakantiegeld en eindejaarstoelage",
+				"fr": "traitements annuels bruts d'un enseignant débutant du secondaire supérieur (master), hors pécule de vacances et allocation de fin d'année",
+				"en": "gross annual salaries of a starting upper-secondary teacher (master's degree), excluding holiday pay and year-end bonus"
+			},
+			"unitEur": {
+				"value": 47103.3,
+				"ref": {
+					"source": "fwb-baremes-indexes-2026-09",
+					"locator": "enseignement.be 'Barèmes indexés septembre 2026 (xlsx)', sheet 'Enseignants,aux,param,soc,psy', column 'Barème 501' (Titre requis), row ancienneté 0; header 'Traitements annuels bruts indexés au 1er septembre 2026 au coefficient : 2.208'. Base: 'Salaires indicatifs' page, table 'Les six barèmes de base dans l'enseignement obligatoire', row Secondaire supérieur / Master / 501",
+					"quote": "Traitements annuels bruts indexés au 1er septembre 2026 au coefficient : 2.208 … Barème 501 … 0 → 47103.3",
+					"note": "Gross annual salary at the rate in force since 1 September 2026; earlier 2026 months used a lower coefficient. The non-indexed base is 21,333.02 euro (enseignement.be 'Salaires indicatifs': 'Secondaire supérieur … Master … 501 … 21 333,02 €'). Not included: holiday pay (pécule de vacances), year-end bonus (allocation de fin d'année), employer contributions, and pensions of appointed teachers (paid by the federal government). Barème 501 is for master's holders with the required teaching title in upper secondary; primary teachers are mostly on barème 301 (37,715.84 euro at 0 years in the same file). It is a starting salary, below the average. Checked by a second agent: xlsx re-downloaded and read: 501 titre requis, 0 years = 47103.3; 'Salaires indicatifs' gives 'Secondaire supérieur | Master | 501 | 21 333,02 €' non-indexed; 21,333.02 x 2.208 = 47,103.31, consistent. 301 at 0 years = 37,715.84 confirmed. Value right; labels corrected for the same reason as the Flemish teacher (gross scale amount only, not full yearly pay). Note: enseignement.be blocks requests with a browser-like User-Agent ('Requête non autorisée'); plain curl works. Not comparable with the Flemish 501 (different scales)."
+				}
+			}
+		},
+		{
+			"id": "fwb-pupil-year-ordinary-secondary",
+			"label": {
+				"nl": "schooljaren van een leerling in het gewoon secundair onderwijs",
+				"fr": "années de scolarité d'un élève de l'enseignement secondaire ordinaire",
+				"en": "school years of a pupil in mainstream secondary education"
+			},
+			"unitEur": {
+				"value": 9557,
+				"ref": {
+					"source": "fwb-indicateurs-enseignement-2025",
+					"locator": "Les Indicateurs de l'Enseignement 2025, p. 34, indicator [4] 'Évolution des dépenses annuelles moyennes par élève/étudiant (en euros, à prix courants en 2024)', row 'SECONDAIRE ORDINAIRE', column 2023-2024; 'Clé de lecture'",
+					"quote": "En 2023‑2024, la dépense annuelle moyenne pour un élève de l'enseignement secondaire ordinaire s'élève à 9 557 €.",
+					"note": "School year 2023-2024 at 2024 prices; no 2025 or 2026 figure published yet. Covers FWB spending on education 'au sens strict' (mainly salaries and operating grants); excludes central administration, inspection, school buildings, study grants, medical inspection and research. Includes ACS/APE staff pay. Special-needs education costs far more (25,172 euro)."
+				}
+			}
+		},
+		{
+			"id": "fwb-pupil-year-primary",
+			"label": {
+				"nl": "schooljaren van een leerling in het gewoon lager onderwijs",
+				"fr": "années de scolarité d'un élève de l'enseignement primaire ordinaire",
+				"en": "school years of a pupil in mainstream primary education"
+			},
+			"unitEur": {
+				"value": 6163,
+				"ref": {
+					"source": "fwb-indicateurs-enseignement-2025",
+					"locator": "Les Indicateurs de l'Enseignement 2025, p. 34, indicator [4], row 'Primaire' (under FONDAMENTAL ORDINAIRE), column 2023-2024",
+					"quote": "Primaire 4 308 4 363 4 472 4 585 4 616 4 820 5 059 5 727 5 953 6 163",
+					"note": "Same basis and exclusions as the secondary figure; school year 2023-2024, 2024 prices."
+				}
+			}
+		}
+	]
+}

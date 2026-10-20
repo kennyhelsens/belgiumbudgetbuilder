@@ -179,5 +179,55 @@
 		"publisher": "Titres-services Wallonie (official Walloon titres-services site, operated by the issuer Pluxee for the Walloon Region)",
 		"url": "https://titres-services.wallonie.be/getattachment/3cc01e0a-17ef-4d4c-80f9-7a23c83ac589/tableau_indexation.pdf",
 		"retrieved": "2026-10-20"
+	},
+	{
+		"id": "vl-onderwijs-hoeveel-verdien-je",
+		"title": "Hoeveel verdien je in het onderwijs?",
+		"publisher": "Vlaams Ministerie van Onderwijs en Vorming (Onderwijs Vlaanderen, vlaanderen.be)",
+		"url": "https://www.vlaanderen.be/onderwijsprofessionals/werken-in-het-onderwijs/salaris-onderwijspersoneel/hoeveel-verdien-je-in-het-onderwijs",
+		"retrieved": "2026-10-20"
+	},
+	{
+		"id": "sv-onderwijsbegroting-2025",
+		"title": "Onderwijsbegroting (Statistiek Vlaanderen, thema Onderwijs en vorming)",
+		"publisher": "Statistiek Vlaanderen (Vlaamse overheid); bron: Vlaams Ministerie van Onderwijs en Vorming, Statistisch Jaarboek van het Vlaams onderwijs",
+		"url": "https://www.vlaanderen.be/statistiek-vlaanderen/onderwijs-en-vorming/onderwijsbegroting",
+		"published": "2026-02-12",
+		"retrieved": "2026-10-20"
+	},
+	{
+		"id": "vl-groeipakket-bedragen-2026-09",
+		"title": "Bedragen en betaaldata (Vlaams Groeipakket)",
+		"publisher": "Vlaamse overheid (Vlaanderen.be, Vlaams Groeipakket)",
+		"url": "https://www.vlaanderen.be/nl/vlaams-groeipakket/bedragen-en-betaaldata",
+		"retrieved": "2026-10-20"
+	},
+	{
+		"id": "vl-zorgbudget-zwaar-zorgbehoevenden",
+		"title": "Zorgbudget voor zwaar zorgbehoevenden van de Vlaamse Sociale Bescherming",
+		"publisher": "Vlaamse overheid (Vlaanderen.be, Vlaamse sociale bescherming)",
+		"url": "https://www.vlaanderen.be/gezondheid-en-welzijn/gezondheid/zorgkassen-in-vlaanderen/zorgbudget-van-de-vlaamse-sociale-bescherming/zorgbudget-voor-zwaar-zorgbehoevenden-van-de-vlaamse-sociale-bescherming",
+		"retrieved": "2026-10-20"
+	},
+	{
+		"id": "delijn-geintegreerd-jaarverslag-2024",
+		"title": "Geïntegreerd Jaarverslag 2024 – Vlaanderen beter en duurzamer verbinden",
+		"publisher": "Vlaamse Vervoermaatschappij De Lijn (via publicaties.vlaanderen.be)",
+		"url": "https://publicaties.vlaanderen.be/view-file/75699",
+		"retrieved": "2026-10-20"
+	},
+	{
+		"id": "fwb-baremes-indexes-2026-09",
+		"title": "Barèmes indexés septembre 2026 (xlsx) – Traitements annuels bruts indexés au 1er septembre 2026",
+		"publisher": "Fédération Wallonie-Bruxelles, Administration générale de l'Enseignement (enseignement.be)",
+		"url": "https://www.enseignement.be/fileadmin/portail_age/uploads/professionnels_enseignement/travailler_dans_enseignement/Enseignants_et_assimiles/Salaires/2026_baremes-indexes-septembre.xlsx",
+		"retrieved": "2026-10-20"
+	},
+	{
+		"id": "fwb-indicateurs-enseignement-2025",
+		"title": "Les Indicateurs de l'Enseignement 2025",
+		"publisher": "Fédération Wallonie-Bruxelles, AGE / Direction générale du Pilotage du Système éducatif",
+		"url": "https://www.enseignement.be/fileadmin/portail_age/uploads/Systeme_educatif/Chiffres-cles/Indicateurs/indicateurs-enseignement_2025.pdf",
+		"retrieved": "2026-10-20"
 	}
 ]
