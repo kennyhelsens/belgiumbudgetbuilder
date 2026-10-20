@@ -5,8 +5,8 @@
 ## Budget figures or examples (fill in only if `data/` changes)
 
 | Line or example | Old value | New value | Source (link, publisher, publication date) |
-| --- | --- | --- | --- |
-|  |  |  |  |
+| --------------- | --------- | --------- | ------------------------------------------ |
+|                 |           |           |                                            |
 
 Reviewer checklist:
 
