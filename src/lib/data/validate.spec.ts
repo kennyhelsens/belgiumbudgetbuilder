@@ -25,6 +25,24 @@ describe('findProblems', () => {
 		);
 	});
 
+	it('checks references in the ageing groups too', () => {
+		const data = datasetFixture();
+		data.outlook.ageingGroups[0].points[0].ref.source = 'nowhere';
+		expect(findProblems(data)).toContainEqual(
+			expect.stringContaining('outlook.ageingGroups.pensions.2026: unknown source "nowhere"')
+		);
+	});
+
+	it('reports a line tagged with an ageing group that has no official path', () => {
+		const data = datasetFixture();
+		data.entities[1].expenditure.lines[0].ageingGroup = 'health';
+		expect(findProblems(data)).toContainEqual(
+			expect.stringContaining(
+				'social-security.pensions: ageing group "health" has no path in the outlook'
+			)
+		);
+	});
+
 	it('reports a source that nothing refers to', () => {
 		const data = datasetFixture();
 		data.sources.push({ ...data.sources[0], id: 'unused' });

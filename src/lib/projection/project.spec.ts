@@ -109,4 +109,61 @@ describe('project', () => {
 		expect(() => project(input({ years: 0 }))).toThrow();
 		expect(() => project(input({ gdp: 0 }))).toThrow();
 	});
+
+	describe('ageing costs by group', () => {
+		const ageing = {
+			ageingCostPctGdp: [
+				{ year: 2026, value: 25 },
+				{ year: 2028, value: 28 }
+			],
+			ageingGroups: [
+				{
+					id: 'pensions',
+					points: [
+						{ year: 2026, value: 11 },
+						{ year: 2028, value: 13 }
+					],
+					change: 0
+				},
+				{
+					id: 'health',
+					points: [
+						{ year: 2026, value: 8 },
+						{ year: 2028, value: 9 }
+					],
+					change: 0
+				}
+			],
+			interestRate: 0,
+			nominalGrowth: 0,
+			years: 2
+		};
+
+		it('reports the yearly extra cost of ageing, split by group, with the rest as "other"', () => {
+			const rows = project(input(ageing));
+			expect(rows[0].ageingExtraPctGdp).toEqual({ total: 0, other: 0, pensions: 0, health: 0 });
+			expect(rows[2].ageingExtraPctGdp.total).toBeCloseTo(3, 10);
+			expect(rows[2].ageingExtraPctGdp.pensions).toBeCloseTo(2, 10);
+			expect(rows[2].ageingExtraPctGdp.health).toBeCloseTo(1, 10);
+			expect(rows[2].ageingExtraPctGdp.other).toBeCloseTo(0, 10);
+		});
+
+		it("scales a group's increase with the visitor's change to that group", () => {
+			// Pensions 10% lower: the pension increase of 2 points becomes 1.8 points.
+			const groups = ageing.ageingGroups.map((g) =>
+				g.id === 'pensions' ? { ...g, change: -0.1 } : g
+			);
+			const rows = project(input({ ...ageing, ageingGroups: groups }));
+			expect(rows[2].ageingExtraPctGdp.pensions).toBeCloseTo(1.8, 10);
+			expect(rows[2].ageingExtraPctGdp.total).toBeCloseTo(2.8, 10);
+			// On a GDP of 1000, the 2028 primary balance is −28 instead of −30.
+			expect(rows[2].primaryBalance).toBeCloseTo(-28, 10);
+		});
+
+		it('gives the same result as before when no group is changed', () => {
+			const withGroups = project(input(ageing));
+			const without = project(input({ ...ageing, ageingGroups: [] }));
+			expect(withGroups.at(-1)!.debt).toBeCloseTo(without.at(-1)!.debt, 10);
+		});
+	});
 });

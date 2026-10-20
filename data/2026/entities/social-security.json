@@ -34,7 +34,8 @@
 						"quote": "Pensioenen 41.754.560 43.270.729 43.036.631 -234.098 -0,54 % 1.282.071 3,07 % Pensions"
 					}
 				},
-				"nature": "entitlement"
+				"nature": "entitlement",
+				"ageingGroup": "pensions"
 			},
 			{
 				"id": "social-security.selfemployed-pensions",
@@ -51,7 +52,8 @@
 						"quote": "Pensioenen 5.773.059 5.919.922 5.857.250 -62.671 -1,06 % 84.191 1,46 % Pensions"
 					}
 				},
-				"nature": "entitlement"
+				"nature": "entitlement",
+				"ageingGroup": "pensions"
 			},
 			{
 				"id": "social-security.healthcare",
@@ -68,7 +70,8 @@
 						"quote": "Prestaties 39.612.451 43.857.373 Prestations | p. 174: 'bedragen de toegestane uitgaven voor geneeskundige verzorging 43.857.373 duizend euro.'"
 					}
 				},
-				"nature": "entitlement"
+				"nature": "entitlement",
+				"ageingGroup": "health"
 			},
 			{
 				"id": "social-security.incapacity",

@@ -39,6 +39,15 @@ export function datasetFixture(): Dataset {
 				{ year: 2026, value: 25.7, ref: ref('p. 5') },
 				{ year: 2036, value: 27.0, ref: ref('p. 5') }
 			],
+			ageingGroups: [
+				{
+					id: 'pensions',
+					points: [
+						{ year: 2026, value: 11.3, ref: ref('p. 5') },
+						{ year: 2036, value: 12.0, ref: ref('p. 5') }
+					]
+				}
+			],
 			officialDebtPctGdp: [
 				{ year: 2026, value: 109.9, ref: ref('p. 6') },
 				{ year: 2031, value: 122.3, ref: ref('p. 6') }
@@ -87,7 +96,8 @@ export function datasetFixture(): Dataset {
 							id: 'social-security.pensions',
 							label: { nl: 'Pensioenen', fr: 'Pensions', en: 'Pensions' },
 							amount: { eurMillion: 200, ref: { source: 'socsec-budget', locator: 'table 1' } },
-							nature: 'entitlement'
+							nature: 'entitlement',
+							ageingGroup: 'pensions'
 						}
 					]
 				}

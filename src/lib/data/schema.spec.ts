@@ -77,6 +77,13 @@ describe('datasetSchema', () => {
 		expect(datasetSchema.safeParse(data).success).toBe(true);
 	});
 
+	it('rejects an ageing group other than pensions or health', () => {
+		const data = datasetFixture();
+		// @ts-expect-error: deliberately using an invalid group
+		data.entities[1].expenditure.lines[0].ageingGroup = 'defence';
+		expect(datasetSchema.safeParse(data).success).toBe(false);
+	});
+
 	it('rejects an unknown nature tag', () => {
 		const data = datasetFixture();
 		// @ts-expect-error: deliberately using an invalid tag

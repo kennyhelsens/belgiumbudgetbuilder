@@ -22,7 +22,14 @@ export type ProjectionInput = {
 	ageingCostPctGdp: readonly YearValue[];
 	/** The user's change to the yearly primary balance, € million in start-year terms; positive improves it. */
 	primaryBalanceChange: number;
+	/**
+	 * Parts of the ageing cost (e.g. pensions, health) with their own official path. A visitor's change
+	 * to that spending (e.g. -0.1 = 10% lower) scales the part's increase above the start year.
+	 */
+	ageingGroups?: readonly AgeingGroup[];
 };
+
+export type AgeingGroup = { id: string; points: readonly YearValue[]; change: number };
 
 export type ProjectionRow = {
 	year: number;
@@ -33,6 +40,8 @@ export type ProjectionRow = {
 	interest: number;
 	interestPctGdp: number;
 	balance: number;
+	/** Extra cost of ageing compared with the start year, in % of GDP: total, per group, and the rest as "other". */
+	ageingExtraPctGdp: Record<string, number>;
 };
 
 export function project(input: ProjectionInput): ProjectionRow[] {
@@ -41,20 +50,40 @@ export function project(input: ProjectionInput): ProjectionRow[] {
 
 	const startPrimaryPct = input.primaryBalance / input.gdp;
 	const changePct = input.primaryBalanceChange / input.gdp;
-	const startAgeing = valueForYear(input.ageingCostPctGdp, input.startYear);
+	const groups = input.ageingGroups ?? [];
+
+	function ageingExtra(year: number): Record<string, number> {
+		const increase = (points: readonly YearValue[]) =>
+			valueForYear(points, year) - valueForYear(points, input.startYear);
+		const extra: Record<string, number> = { total: 0, other: increase(input.ageingCostPctGdp) };
+		for (const group of groups) {
+			const groupIncrease = increase(group.points);
+			extra.other -= groupIncrease;
+			extra[group.id] = groupIncrease * (1 + group.change);
+		}
+		extra.total = Object.entries(extra).reduce((sum, [, value]) => sum + value, 0);
+		return extra;
+	}
 
 	const rows: ProjectionRow[] = [
-		row(input.startYear, input.gdp, input.debt, input.primaryBalance, input.interest)
+		row(
+			input.startYear,
+			input.gdp,
+			input.debt,
+			input.primaryBalance,
+			input.interest,
+			ageingExtra(input.startYear)
+		)
 	];
 	for (let i = 1; i <= input.years; i++) {
 		const previous = rows[i - 1];
 		const year = input.startYear + i;
 		const gdp = previous.gdp * (1 + input.nominalGrowth);
-		const extraAgeingPct = (valueForYear(input.ageingCostPctGdp, year) - startAgeing) / 100;
-		const primaryBalance = gdp * (startPrimaryPct + changePct - extraAgeingPct);
+		const ageing = ageingExtra(year);
+		const primaryBalance = gdp * (startPrimaryPct + changePct - ageing.total / 100);
 		const interest = previous.debt * input.interestRate;
 		const debt = previous.debt + interest - primaryBalance;
-		rows.push(row(year, gdp, debt, primaryBalance, interest));
+		rows.push(row(year, gdp, debt, primaryBalance, interest, ageing));
 	}
 	return rows;
 }
@@ -64,7 +93,8 @@ function row(
 	gdp: number,
 	debt: number,
 	primaryBalance: number,
-	interest: number
+	interest: number,
+	ageingExtraPctGdp: Record<string, number>
 ): ProjectionRow {
 	return {
 		year,
@@ -74,6 +104,7 @@ function row(
 		primaryBalance,
 		interest,
 		interestPctGdp: (interest / gdp) * 100,
-		balance: primaryBalance - interest
+		balance: primaryBalance - interest,
+		ageingExtraPctGdp
 	};
 }
