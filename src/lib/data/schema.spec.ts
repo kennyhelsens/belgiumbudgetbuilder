@@ -90,6 +90,15 @@ describe('datasetSchema', () => {
 		expect(datasetSchema.safeParse(data).success).toBe(false);
 	});
 
+	it('accepts details with only examples, without a breakdown or levers', () => {
+		const data = datasetFixture();
+		const { line, equivalents } = data.details[0];
+		const parsed = datasetSchema.safeParse({ ...data, details: [{ line, equivalents }] });
+		expect(parsed.success).toBe(true);
+		expect(parsed.data?.details[0].breakdown).toEqual([]);
+		expect(parsed.data?.details[0].levers).toEqual([]);
+	});
+
 	it('requires the population as a positive whole number of persons', () => {
 		const data = datasetFixture();
 		data.overview.population.persons = 11.8;

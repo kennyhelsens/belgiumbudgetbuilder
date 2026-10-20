@@ -61,27 +61,29 @@ ABOUTME: Shows where the change would land, unit equivalents (approved ones firs
 		{t('consequence.perInhabitant').replace('{amount}', perPerson)}
 	</p>
 
-	<h4 id="{titleId}-where">{t('consequence.where')}</h4>
-	<ul class="spread" aria-labelledby="{titleId}-where">
-		{#each details.breakdown as item, i (item.id)}
-			<li>
-				<span class="spread__label">{item.label[locale]}</span>
-				{#if item.offsetByReceipts}
-					<span class="spread__offset">{t('consequence.offset')}</span>
-				{:else}
-					<span class="spread__bar">
-						<span
-							class="spread__fill"
-							class:spread__fill--up={spread[i].change > 0}
-							style="width:{(Math.abs(spread[i].change) / largestChange) * 100}%"
-						></span>
-					</span>
-					<span class="spread__value">{signed(spread[i].change)}</span>
-				{/if}
-			</li>
-		{/each}
-	</ul>
-	<p class="card__note">{t('consequence.whereNote')}</p>
+	{#if details.breakdown.length > 0}
+		<h4 id="{titleId}-where">{t('consequence.where')}</h4>
+		<ul class="spread" aria-labelledby="{titleId}-where">
+			{#each details.breakdown as item, i (item.id)}
+				<li>
+					<span class="spread__label">{item.label[locale]}</span>
+					{#if item.offsetByReceipts}
+						<span class="spread__offset">{t('consequence.offset')}</span>
+					{:else}
+						<span class="spread__bar">
+							<span
+								class="spread__fill"
+								class:spread__fill--up={spread[i].change > 0}
+								style="width:{(Math.abs(spread[i].change) / largestChange) * 100}%"
+							></span>
+						</span>
+						<span class="spread__value">{signed(spread[i].change)}</span>
+					{/if}
+				</li>
+			{/each}
+		</ul>
+		<p class="card__note">{t('consequence.whereNote')}</p>
+	{/if}
 
 	{#if examples.length > 0}
 		<h4>{t('consequence.about')}</h4>
@@ -96,23 +98,25 @@ ABOUTME: Shows where the change would land, unit equivalents (approved ones firs
 		</ul>
 	{/if}
 
-	<div class="levers" role="group" aria-labelledby="{titleId}-how">
-		<h4 id="{titleId}-how">{t('consequence.how')}</h4>
-		<p class="card__note">{t('consequence.howIntro')}</p>
-		{#each details.levers as lever (lever.id)}
-			{@const source = sourcesById.get(lever.ref.source)}
-			<details class="lever">
-				<summary>{lever.label[locale]}</summary>
-				<p>{lever.description[locale]}</p>
-				{#if source}
-					<p class="lever__source">
-						{t('consequence.source')}:
-						<a href={source.url} rel="external noopener">{source.title}</a>, {lever.ref.locator}
-					</p>
-				{/if}
-			</details>
-		{/each}
-	</div>
+	{#if details.levers.length > 0}
+		<div class="levers" role="group" aria-labelledby="{titleId}-how">
+			<h4 id="{titleId}-how">{t('consequence.how')}</h4>
+			<p class="card__note">{t('consequence.howIntro')}</p>
+			{#each details.levers as lever (lever.id)}
+				{@const source = sourcesById.get(lever.ref.source)}
+				<details class="lever">
+					<summary>{lever.label[locale]}</summary>
+					<p>{lever.description[locale]}</p>
+					{#if source}
+						<p class="lever__source">
+							{t('consequence.source')}:
+							<a href={source.url} rel="external noopener">{source.title}</a>, {lever.ref.locator}
+						</p>
+					{/if}
+				</details>
+			{/each}
+		</div>
+	{/if}
 </section>
 
 <style>

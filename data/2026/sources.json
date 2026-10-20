@@ -164,5 +164,20 @@
 		"url": "https://www.riziv.fgov.be/SiteCollectionDocuments/tarief_artsen_deel01_20260101.pdf",
 		"published": "2025-12-19",
 		"retrieved": "2026-10-20"
+	},
+	{
+		"id": "famiwal-resume-montants",
+		"title": "Résumé des montants",
+		"publisher": "FAMIWAL (caisse publique wallonne d'allocations familiales)",
+		"url": "https://www.famiwal.be/montants/resume-des-montants",
+		"published": "2026-09-10",
+		"retrieved": "2026-10-20"
+	},
+	{
+		"id": "ts-wallonie-tableau-indexation",
+		"title": "Tableau récapitulatif par région (titres-services) – Processus de remboursement du titre-service de la Région wallonne depuis le 01/01/2026",
+		"publisher": "Titres-services Wallonie (official Walloon titres-services site, operated by the issuer Pluxee for the Walloon Region)",
+		"url": "https://titres-services.wallonie.be/getattachment/3cc01e0a-17ef-4d4c-80f9-7a23c83ac589/tableau_indexation.pdf",
+		"retrieved": "2026-10-20"
 	}
 ]
