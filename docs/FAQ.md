@@ -13,11 +13,12 @@ kept up to date with every change to the data or the calculations.
 Only from official documents: the budgets voted by the federal, regional and
 community parliaments, the social security budget, RIZIV/INAMI, the Federal
 Planning Bureau, the Study Committee on Ageing (part of the High Council of
-Finance), the National Bank, Statbel and Eurostat. News articles were used at most to find a
-document, never as a source.
+Finance), the National Bank, Statbel, Eurostat and BOSA's interactive federal
+budget. News articles were used at most to find a document, never as a
+source.
 
 Every amount in `data/2026/` carries its source: the document, its link, the
-page or table, and the line of the document copied word for word, so anyone
+page or table, and for documents the line copied word for word, so anyone
 can check it. On the site, the table view under the budget map shows the
 source of each line.
 
@@ -35,6 +36,30 @@ Budget year **2026**, in the latest voted version:
 | Brussels (Region + COCOM)    | initial budget (voted 27 March 2026)         | payment credits, including budget funds |
 | Local government             | Federal Planning Bureau forecast (June 2026) | national accounts (ESA 2010)            |
 | Belgium as a whole           | Federal Planning Bureau forecast (June 2026) | national accounts (ESA 2010)            |
+
+### How is the federal budget grouped?
+
+The same way BOSA (the federal Policy and Support department) groups it in
+its interactive budget at budget.infocenter.belgium.be: by budget section,
+one per department or group of grants. Every section total matches BOSA's
+export and the adjusted budget law (DOC 56 1470/001) to the thousand euro.
+
+A few sections are split, so that money handed to another government can be
+shown where it is spent, and pensions can follow the ageing path:
+
+- **Section 01 (grants):** the grants to the Flemish Community, the French
+  Community, COCOM and the German-speaking Community are separate lines.
+- **Section 13 (Home affairs):** Fedasil and the Immigration Office are
+  separate lines.
+- **Section 17 (Federal police):** the grants to local police zones (€1.3
+  billion) are a separate line.
+- **Section 24 (Social security):** civil-service pensions, the grants to
+  social security and the allowances for persons with disabilities are
+  separate lines.
+- **Section 44 (Social integration):** the refunds to OCMW/CPAS (€2.3
+  billion) are a separate line.
+- **Section 51 (Public debt):** interest is a separate line. Repaying loans
+  and buying securities (€40.5 billion) are left out (see below).
 
 ### What counts as "spending"?
 
@@ -60,13 +85,27 @@ total either.
 
 ### Why is the map total (€346 billion) lower than the official €362 billion?
 
-The €362 billion is general government spending in the national accounts
-(ESA 2010). The map adds up the governments' own budgets, which cover
-slightly less. Some spending sits outside those budgets; for example,
-civil-servant pensions paid from those schemes' own contributions. The
-methods also differ, such as payment credits versus accrual accounting.
-The ten-year outlook uses the national-accounts figures, so the debt
-calculation is not affected.
+The €362 billion (€361.8 billion) is general government spending in the
+national accounts (ESA 2010, Federal Planning Bureau, June 2026). The map adds
+up the governments' own 2026 budgets instead. Every step between the two
+totals was traced in the source documents and checked a second time:
+
+| Difference                                                                                                                                                                                                                                                                                              | € billion |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
+| **Public-sector pensions.** ESA counts all civil-servant pensions as spending, plus a notional employer pension contribution in staff costs. The map only counts the federal grant to the pension scheme.                                                                                               | +18.6     |
+| **Tax measures.** ESA counts some tax measures as spending, while the budget counts them as lower revenue: withholding-tax exemptions, refundable tax credits, the VAT-based EU contribution, and tax revenue passed on to bodies such as CREG and Elia.                                                | +8.2      |
+| **Transfers counted twice in our data.** Regions and communities pay grants to municipalities that our data does not yet mark as transfers, so they are counted twice: in the regional budget and in local government. The largest are the French Community's grants for teachers in municipal schools. | −8.5      |
+| **Federal timing and accounting corrections.** These include the assumed underspending, the timing of Defence purchases, non-interest debt costs, and the difference between the budgeted and the ESA interest bill.                                                                                    | −3.7      |
+| **Governments and schemes missing from our data:** the German-speaking Community, the French Community Commission in Brussels (COCOF) and smaller social security schemes.                                                                                                                              | +2.4      |
+| **Small consolidation items** (payments between governments)                                                                                                                                                                                                                                            | −0.6      |
+| **Not explained**                                                                                                                                                                                                                                                                                       | −0.6      |
+| **Total difference**                                                                                                                                                                                                                                                                                    | **+15.7** |
+
+The €8.5 billion counted twice is an estimate, because the national accounts
+and the budgets do not record transfers in exactly the same way. It is an
+error in our data, and we will correct it by marking those grants as
+transfers. The ten-year outlook uses the national-accounts figures, so the
+debt calculation is not affected.
 
 ### Why is the German-speaking Community missing?
 
