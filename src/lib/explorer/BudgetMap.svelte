@@ -88,6 +88,21 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, and a table with source
 		{/if}
 		<span class="crumbs__total">{formatEuro(shownTotal, locale)}</span>
 	</nav>
+	{#if focusEntity}
+		<div
+			class="minimap"
+			role="img"
+			aria-label={t('map.minimapLabel').replace('{name}', focusEntity.label[locale])}
+		>
+			{#each overviewTiles as tile (tile.id)}
+				<span
+					class="minimap__tile"
+					class:minimap__tile--here={tile.id === focus}
+					style={boxStyle(tile, { width: 160, height: 100 })}
+				></span>
+			{/each}
+		</div>
+	{/if}
 
 	{#if focusEntity?.budgetStatus === 'provisional'}
 		<p class="map__flag">{t('map.provisional')}</p>
@@ -121,22 +136,6 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, and a table with source
 				</div>
 			{/if}
 		{/each}
-
-		{#if focusEntity}
-			<div
-				class="minimap"
-				role="img"
-				aria-label={t('map.minimapLabel').replace('{name}', focusEntity.label[locale])}
-			>
-				{#each overviewTiles as tile (tile.id)}
-					<span
-						class="minimap__tile"
-						class:minimap__tile--here={tile.id === focus}
-						style={boxStyle(tile, { width: 160, height: 100 })}
-					></span>
-				{/each}
-			</div>
-		{/if}
 	</div>
 
 	<p class="map__note">{t('map.transfersNote')}</p>
@@ -164,8 +163,10 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, and a table with source
 						<td class="num">{share(tile.eurMillion)}</td>
 						<td>
 							{#if cited?.source}
-								<a href={cited.source.url} rel="external noopener">{cited.source.title}</a>,
-								{cited.ref.locator}
+								<a class="source" href={cited.source.url} rel="external noopener"
+									>{cited.source.title}</a
+								>
+								<span class="locator">{cited.ref.locator}</span>
 							{:else}
 								{t('map.sumOfLines')}
 							{/if}
@@ -302,10 +303,9 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, and a table with source
 	}
 
 	.minimap {
-		position: absolute;
-		right: var(--space-2);
-		bottom: var(--space-2);
+		position: relative;
 		width: 6rem;
+		margin: 0 0 var(--space-2) auto;
 		aspect-ratio: 160 / 100;
 		border: 1px solid var(--ink-muted);
 		background: var(--paper);
@@ -319,6 +319,24 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, and a table with source
 
 	.minimap__tile--here {
 		background: var(--tile-color);
+	}
+
+	.source {
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		line-clamp: 2;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+
+	.locator {
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		line-clamp: 2;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+		color: var(--ink-muted);
+		font-size: 0.8125rem;
 	}
 
 	.table-view {
