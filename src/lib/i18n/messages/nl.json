@@ -74,7 +74,8 @@
 	"builder.noticeReset": "{name} staat weer op de officiële begroting.",
 	"builder.noticeClose": "Sluiten",
 	"metrics.ofGdp": "van het bbp",
-	"builder.noticeExample": "{name} {percent}: dat is ongeveer {count} {unit}.",
-	"builder.noticeLess": "{name} {percent}: ongeveer {amount} minder per inwoner per jaar.",
-	"builder.noticeMore": "{name} {percent}: ongeveer {amount} meer per inwoner per jaar."
+	"builder.noticeCutExample": "{name}: deze besparing is ongeveer {count} {unit}.",
+	"builder.noticeAddExample": "{name}: deze verhoging is ongeveer {count} {unit}.",
+	"builder.noticeCutPerInhabitant": "{name}: deze besparing is ongeveer {amount} minder per inwoner per jaar.",
+	"builder.noticeAddPerInhabitant": "{name}: deze verhoging is ongeveer {amount} meer per inwoner per jaar."
 }
