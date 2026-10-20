@@ -1,0 +1,267 @@
+{
+	"interestRate": {
+		"value": 0.024,
+		"ref": {
+			"source": "eurostat-gov-10dd-edpt1",
+			"locator": "gov_10dd_edpt1, geo=BE, sector=S13, na_item=GD, unit=MIO_EUR, time=2025",
+			"quote": "GD Government consolidated gross debt: 692460.8 MIO_EUR; 107.9 PC_GDP (2025)",
+			"note": "Calculated: 2026 interest 16611 (Federal Planning Bureau, June 2026, Tabel D.1) divided by end-2025 debt 692460.8 = 0.0240."
+		}
+	},
+	"nominalGrowth": {
+		"value": 0.0326,
+		"ref": {
+			"source": "fpb-outlook-2026-06-annex",
+			"locator": "sheet T03 'A.2 Bbp en belangrijkste bestedingscategorieën tegen lopende prijzen - miljoenen euro', cell AK14 (row 'Bruto binnenlands product', column 2031)",
+			"quote": "Bruto binnenlands product | 2031 | 778846",
+			"note": "Calculated: average yearly growth of nominal GDP from 663326 (2026) to 778846 (2031) = 0.0326."
+		}
+	},
+	"ageingCostPctGdp": [
+		{
+			"year": 2026,
+			"value": 25.7,
+			"ref": {
+				"source": "scvv-2026-data",
+				"locator": "sheet 'budgettaire kosten vergrijzing', cell AE16 (row 'TOTAAL', column 2026); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+				"quote": "TOTAAL | 2026 | 25,7"
+			}
+		},
+		{
+			"year": 2027,
+			"value": 25.9,
+			"ref": {
+				"source": "scvv-2026-data",
+				"locator": "sheet 'budgettaire kosten vergrijzing', cell AF16 (row 'TOTAAL', column 2027); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+				"quote": "TOTAAL | 2027 | 25,9"
+			}
+		},
+		{
+			"year": 2028,
+			"value": 26,
+			"ref": {
+				"source": "scvv-2026-data",
+				"locator": "sheet 'budgettaire kosten vergrijzing', cell AG16 (row 'TOTAAL', column 2028); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+				"quote": "TOTAAL | 2028 | 26"
+			}
+		},
+		{
+			"year": 2029,
+			"value": 26,
+			"ref": {
+				"source": "scvv-2026-data",
+				"locator": "sheet 'budgettaire kosten vergrijzing', cell AH16 (row 'TOTAAL', column 2029); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+				"quote": "TOTAAL | 2029 | 26"
+			}
+		},
+		{
+			"year": 2030,
+			"value": 26.1,
+			"ref": {
+				"source": "scvv-2026-data",
+				"locator": "sheet 'budgettaire kosten vergrijzing', cell AI16 (row 'TOTAAL', column 2030); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+				"quote": "TOTAAL | 2030 | 26,1"
+			}
+		},
+		{
+			"year": 2031,
+			"value": 26.3,
+			"ref": {
+				"source": "scvv-2026-data",
+				"locator": "sheet 'budgettaire kosten vergrijzing', cell AJ16 (row 'TOTAAL', column 2031); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+				"quote": "TOTAAL | 2031 | 26,3"
+			}
+		},
+		{
+			"year": 2032,
+			"value": 26.5,
+			"ref": {
+				"source": "scvv-2026-data",
+				"locator": "sheet 'budgettaire kosten vergrijzing', cell AK16 (row 'TOTAAL', column 2032); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+				"quote": "TOTAAL | 2032 | 26,5"
+			}
+		},
+		{
+			"year": 2033,
+			"value": 26.6,
+			"ref": {
+				"source": "scvv-2026-data",
+				"locator": "sheet 'budgettaire kosten vergrijzing', cell AL16 (row 'TOTAAL', column 2033); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+				"quote": "TOTAAL | 2033 | 26,6"
+			}
+		},
+		{
+			"year": 2034,
+			"value": 26.7,
+			"ref": {
+				"source": "scvv-2026-data",
+				"locator": "sheet 'budgettaire kosten vergrijzing', cell AM16 (row 'TOTAAL', column 2034); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+				"quote": "TOTAAL | 2034 | 26,7"
+			}
+		},
+		{
+			"year": 2035,
+			"value": 26.9,
+			"ref": {
+				"source": "scvv-2026-data",
+				"locator": "sheet 'budgettaire kosten vergrijzing', cell AN16 (row 'TOTAAL', column 2035); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+				"quote": "TOTAAL | 2035 | 26,9"
+			}
+		},
+		{
+			"year": 2036,
+			"value": 27,
+			"ref": {
+				"source": "scvv-2026-data",
+				"locator": "sheet 'budgettaire kosten vergrijzing', cell AO16 (row 'TOTAAL', column 2036); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+				"quote": "TOTAAL | 2036 | 27"
+			}
+		},
+		{
+			"year": 2037,
+			"value": 27.1,
+			"ref": {
+				"source": "scvv-2026-data",
+				"locator": "sheet 'budgettaire kosten vergrijzing', cell AP16 (row 'TOTAAL', column 2037); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+				"quote": "TOTAAL | 2037 | 27,1"
+			}
+		},
+		{
+			"year": 2038,
+			"value": 27.1,
+			"ref": {
+				"source": "scvv-2026-data",
+				"locator": "sheet 'budgettaire kosten vergrijzing', cell AQ16 (row 'TOTAAL', column 2038); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+				"quote": "TOTAAL | 2038 | 27,1"
+			}
+		},
+		{
+			"year": 2039,
+			"value": 27.1,
+			"ref": {
+				"source": "scvv-2026-data",
+				"locator": "sheet 'budgettaire kosten vergrijzing', cell AR16 (row 'TOTAAL', column 2039); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+				"quote": "TOTAAL | 2039 | 27,1"
+			}
+		},
+		{
+			"year": 2040,
+			"value": 27,
+			"ref": {
+				"source": "scvv-2026-data",
+				"locator": "sheet 'budgettaire kosten vergrijzing', cell AS16 (row 'TOTAAL', column 2040); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+				"quote": "TOTAAL | 2040 | 27"
+			}
+		},
+		{
+			"year": 2041,
+			"value": 27,
+			"ref": {
+				"source": "scvv-2026-data",
+				"locator": "sheet 'budgettaire kosten vergrijzing', cell AT16 (row 'TOTAAL', column 2041); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+				"quote": "TOTAAL | 2041 | 27"
+			}
+		},
+		{
+			"year": 2042,
+			"value": 26.9,
+			"ref": {
+				"source": "scvv-2026-data",
+				"locator": "sheet 'budgettaire kosten vergrijzing', cell AU16 (row 'TOTAAL', column 2042); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+				"quote": "TOTAAL | 2042 | 26,9"
+			}
+		},
+		{
+			"year": 2043,
+			"value": 27,
+			"ref": {
+				"source": "scvv-2026-data",
+				"locator": "sheet 'budgettaire kosten vergrijzing', cell AV16 (row 'TOTAAL', column 2043); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+				"quote": "TOTAAL | 2043 | 27"
+			}
+		},
+		{
+			"year": 2044,
+			"value": 27,
+			"ref": {
+				"source": "scvv-2026-data",
+				"locator": "sheet 'budgettaire kosten vergrijzing', cell AW16 (row 'TOTAAL', column 2044); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+				"quote": "TOTAAL | 2044 | 27"
+			}
+		},
+		{
+			"year": 2045,
+			"value": 27.1,
+			"ref": {
+				"source": "scvv-2026-data",
+				"locator": "sheet 'budgettaire kosten vergrijzing', cell AX16 (row 'TOTAAL', column 2045); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+				"quote": "TOTAAL | 2045 | 27,1"
+			}
+		},
+		{
+			"year": 2046,
+			"value": 27.1,
+			"ref": {
+				"source": "scvv-2026-data",
+				"locator": "sheet 'budgettaire kosten vergrijzing', cell AY16 (row 'TOTAAL', column 2046); table: 'De budgettaire kosten van de vergrijzing en evolutie van de sociale uitgaven, referentiescenario van juli 2026', in procent van het bbp",
+				"quote": "TOTAAL | 2046 | 27,1"
+			}
+		}
+	],
+	"officialDebtPctGdp": [
+		{
+			"year": 2026,
+			"value": 109.9,
+			"ref": {
+				"source": "fpb-outlook-2026-06",
+				"locator": "Tabel 7 'Overheidsschuld', in procent van het bbp, printed p. 31 (PDF p. 35), row 'Geconsolideerde bruto-schuld', column 2026",
+				"quote": "Geconsolideerde bruto-schuld 103,9 107,9 109,9 111,8 114,0 116,5 119,2 122,3"
+			}
+		},
+		{
+			"year": 2027,
+			"value": 111.8,
+			"ref": {
+				"source": "fpb-outlook-2026-06",
+				"locator": "Tabel 7 'Overheidsschuld', in procent van het bbp, printed p. 31 (PDF p. 35), row 'Geconsolideerde bruto-schuld', column 2027",
+				"quote": "Geconsolideerde bruto-schuld 103,9 107,9 109,9 111,8 114,0 116,5 119,2 122,3"
+			}
+		},
+		{
+			"year": 2028,
+			"value": 114.0,
+			"ref": {
+				"source": "fpb-outlook-2026-06",
+				"locator": "Tabel 7 'Overheidsschuld', in procent van het bbp, printed p. 31 (PDF p. 35), row 'Geconsolideerde bruto-schuld', column 2028",
+				"quote": "Geconsolideerde bruto-schuld 103,9 107,9 109,9 111,8 114,0 116,5 119,2 122,3"
+			}
+		},
+		{
+			"year": 2029,
+			"value": 116.5,
+			"ref": {
+				"source": "fpb-outlook-2026-06",
+				"locator": "Tabel 7 'Overheidsschuld', in procent van het bbp, printed p. 31 (PDF p. 35), row 'Geconsolideerde bruto-schuld', column 2029",
+				"quote": "Geconsolideerde bruto-schuld 103,9 107,9 109,9 111,8 114,0 116,5 119,2 122,3"
+			}
+		},
+		{
+			"year": 2030,
+			"value": 119.2,
+			"ref": {
+				"source": "fpb-outlook-2026-06",
+				"locator": "Tabel 7 'Overheidsschuld', in procent van het bbp, printed p. 31 (PDF p. 35), row 'Geconsolideerde bruto-schuld', column 2030",
+				"quote": "Geconsolideerde bruto-schuld 103,9 107,9 109,9 111,8 114,0 116,5 119,2 122,3"
+			}
+		},
+		{
+			"year": 2031,
+			"value": 122.3,
+			"ref": {
+				"source": "fpb-outlook-2026-06",
+				"locator": "Tabel 7 'Overheidsschuld', in procent van het bbp, printed p. 31 (PDF p. 35), row 'Geconsolideerde bruto-schuld', column 2031",
+				"quote": "Geconsolideerde bruto-schuld 103,9 107,9 109,9 111,8 114,0 116,5 119,2 122,3"
+			}
+		}
+	]
+}

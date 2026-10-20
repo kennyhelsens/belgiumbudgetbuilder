@@ -1,0 +1,143 @@
+{
+	"id": "local",
+	"label": {
+		"nl": "Lokale besturen",
+		"fr": "Pouvoirs locaux",
+		"en": "Local government"
+	},
+	"government": "local",
+	"adjustable": false,
+	"budgetStatus": "forecast",
+	"expenditure": {
+		"total": {
+			"eurMillion": 46063,
+			"ref": {
+				"source": "fpb-outlook-2026-06",
+				"locator": "Tabel D.5 'Rekening van de lagere overheid' (Miljoenen euro), p. 63, column 2026, line '2. Uitgaven'",
+				"quote": "2. Uitgaven                                 41822   44397   44985   46063   47516"
+			}
+		},
+		"lines": [
+			{
+				"id": "local.staff",
+				"label": {
+					"nl": "Personeel (beloning van werknemers)",
+					"fr": "Personnel (rémunération des salariés)",
+					"en": "Staff (compensation of employees)"
+				},
+				"amount": {
+					"eurMillion": 26216,
+					"ref": {
+						"source": "fpb-outlook-2026-06",
+						"locator": "Tabel D.5 'Rekening van de lagere overheid' (Miljoenen euro), p. 63, column 2026",
+						"quote": "1. Beloning van werknemers               23385   24616   25396   26216   27075"
+					}
+				},
+				"nature": "committed"
+			},
+			{
+				"id": "local.goods-services",
+				"label": {
+					"nl": "Werkingsmiddelen (intermediair verbruik)",
+					"fr": "Frais de fonctionnement (consommation intermédiaire)",
+					"en": "Goods and services (intermediate consumption)"
+				},
+				"amount": {
+					"eurMillion": 7458,
+					"ref": {
+						"source": "fpb-outlook-2026-06",
+						"locator": "Tabel D.5 'Rekening van de lagere overheid' (Miljoenen euro), p. 63, column 2026",
+						"quote": "2. Intermediair verbruik en betaalde      6625    7326    7473    7458    7657"
+					}
+				},
+				"nature": "discretionary"
+			},
+			{
+				"id": "local.social-benefits",
+				"label": {
+					"nl": "Sociale uitkeringen (o.a. leefloon via OCMW)",
+					"fr": "Prestations sociales (dont revenu d'intégration via CPAS)",
+					"en": "Social benefits (incl. integration income via OCMW/CPAS)"
+				},
+				"amount": {
+					"eurMillion": 5776,
+					"ref": {
+						"source": "fpb-outlook-2026-06",
+						"locator": "Tabel D.5 'Rekening van de lagere overheid' (Miljoenen euro), p. 63, column 2026",
+						"quote": "4. Sociale uitkeringen                   4546    4867    4960    5776    6159"
+					}
+				},
+				"nature": "entitlement"
+			},
+			{
+				"id": "local.investment",
+				"label": {
+					"nl": "Investeringen",
+					"fr": "Investissements",
+					"en": "Gross fixed capital formation"
+				},
+				"amount": {
+					"eurMillion": 4472,
+					"ref": {
+						"source": "fpb-outlook-2026-06",
+						"locator": "Tabel D.5 'Rekening van de lagere overheid' (Miljoenen euro), p. 63, column 2026",
+						"quote": "1. Bruto-investeringen in vaste activa   4816    5154    5087    4472    4382"
+					}
+				},
+				"nature": "discretionary"
+			},
+			{
+				"id": "local.transfers-other-gov",
+				"label": {
+					"nl": "Overdrachten aan andere overheden",
+					"fr": "Transferts à d'autres administrations",
+					"en": "Transfers to other governments"
+				},
+				"amount": {
+					"eurMillion": 393,
+					"ref": {
+						"source": "fpb-outlook-2026-06",
+						"locator": "Tabel D.5 'Rekening van de lagere overheid' (Miljoenen euro), p. 63, column 2026",
+						"quote": "c. Overdrachten aan andere overheden         352     369     375     393     404"
+					}
+				},
+				"nature": "committed"
+			},
+			{
+				"id": "local.interest",
+				"label": {
+					"nl": "Rentelasten",
+					"fr": "Charges d'intérêts",
+					"en": "Interest"
+				},
+				"amount": {
+					"eurMillion": 173,
+					"ref": {
+						"source": "fpb-outlook-2026-06",
+						"locator": "Tabel D.5 'Rekening van de lagere overheid' (Miljoenen euro), p. 63, column 2026",
+						"quote": "B. Rentelasten                               529     385     113     173     222"
+					}
+				},
+				"nature": "committed"
+			},
+			{
+				"id": "local.other",
+				"label": {
+					"nl": "Overige (subsidies, overdrachten aan gezinnen en bedrijven, overige kapitaaluitgaven)",
+					"fr": "Autres (subventions, transferts aux ménages et entreprises, autres dépenses en capital)",
+					"en": "Other (subsidies, transfers to households and companies, other capital spending)"
+				},
+				"amount": {
+					"eurMillion": 1575,
+					"ref": {
+						"source": "fpb-outlook-2026-06",
+						"locator": "Tabel D.5 'Rekening van de lagere overheid' (Miljoenen euro), p. 63, column 2026",
+						"quote": "2. Uitgaven 41822 44397 44985 46063 47516",
+						"note": "total 46063 − (26216 + 7458 + 5776 + 4472 + 393 + 173 = 44488) = 1575; components in the table: subsidies 419 + current transfers to households 640 + to companies 55 + other net non-financial assets 150 + capital transfers to households 110 + to companies 202 = 1576 (1 m rounding)"
+					}
+				},
+				"nature": "discretionary"
+			}
+		]
+	}
+}
