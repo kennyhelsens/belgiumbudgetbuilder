@@ -10,11 +10,12 @@
 	"budgetStatus": "adjusted",
 	"expenditure": {
 		"total": {
-			"eurMillion": 16531.721,
+			"eurMillion": 15591.4,
 			"ref": {
-				"source": "fwb-decree-adjustment-2026",
-				"locator": "Décret du 17-07-2026, Article 1er, summary table, row 'Total général' (unlabelled sum row under CELL/CELNL/FBM), p.1; columns: Crédits initiaux Eng./Liq. | Répartitions Eng./Liq. | Variations Eng./Liq. | Crédits 1er ajustement Eng./Liq.; last figure = liquidation credits after 1st adjustment, thousand EUR",
-				"quote": "Total général ... 16.215.841 16.319.608 0 0 221.257 212.113 16.437.098 16.531.721"
+				"source": "pfwb-269-2025-2026-n2",
+				"locator": "Table 'Perspectives' (Comité de Monitoring, May 2026), p. (62)",
+				"quote": "Dépenses totales MFWB (hors amortissements emprunt dette publique) 15.406,9 [2026 INI] 15.591,4 [2026 aju]",
+				"note": "Total payment credits 16,531.721 (adjustment decree of 17 July 2026, art. 1) excluding repayment of debt principal."
 			}
 		},
 		"lines": [
@@ -72,16 +73,17 @@
 			{
 				"id": "wallonia-brussels-federation.public-debt",
 				"label": {
-					"nl": "Overheidsschuld van de Franse Gemeenschap (rente en lasten)",
-					"fr": "Dette publique de la Communauté française (intérêts et charges)",
-					"en": "Public debt of the French Community (interest and charges)"
+					"nl": "Overheidsschuld: rente en kosten (zonder aflossing van het kapitaal)",
+					"fr": "Dette publique : intérêts et frais (hors remboursement du capital)",
+					"en": "Public debt: interest and charges (excluding repayment of principal)"
 				},
 				"amount": {
-					"eurMillion": 1312.984,
+					"eurMillion": 372.663,
 					"ref": {
-						"source": "fwb-decree-adjustment-2026",
-						"locator": "Décret du 17-07-2026, Article 1er, summary table, sum row of 'CHAPITRE IV – Dette publique de la Communauté française', p.1; columns: Crédits initiaux Eng./Liq. | Répartitions Eng./Liq. | Variations Eng./Liq. | Crédits 1er ajustement Eng./Liq.; last figure = liquidation credits after 1st adjustment, thousand EUR",
-						"quote": "CHAPITRE IV – Dette publique de la Communauté française ... 1.305.490 1.305.490 0 0 7.494 7.494 1.312.984 1.312.984"
+						"source": "pfwb-269-2025-2026-n2",
+						"locator": "Table 'Perspectives' (Comité de Monitoring, May 2026), p. (62)",
+						"quote": "Dépenses totales MFWB (hors amortissements emprunt dette publique) 15.406,9 [2026 INI] 15.591,4 [2026 aju]",
+						"note": "Calculated: total excluding principal 15,591.4 minus chapters I (1,168.997), II (2,379.013), III (11,089.788) and V (580.939) of the adjustment decree. Chapter IV including principal is 1,312.984."
 					}
 				},
 				"nature": "committed"
