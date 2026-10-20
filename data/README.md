@@ -41,7 +41,8 @@ data/2026/
   - `discretionary`: decided in the yearly budget.
 - **`budgetStatus`** is `adjusted` for 2026 budgets as adjusted, or
   `provisional` when there is no voted budget and spending runs on provisional
-  credits.
+  credits, or `forecast` for an official forecast where no single budget
+  document exists (local government).
 - **Labels** are given in Dutch, French and English.
 
 The checks in `src/lib/data/` run in CI and fail the pull request if any rule

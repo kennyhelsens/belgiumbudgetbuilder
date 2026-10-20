@@ -71,6 +71,12 @@ describe('datasetSchema', () => {
 		expect(datasetSchema.safeParse(data).success).toBe(false);
 	});
 
+	it('accepts a forecast as budget status, for governments without one budget document', () => {
+		const data = datasetFixture();
+		data.entities[1].budgetStatus = 'forecast';
+		expect(datasetSchema.safeParse(data).success).toBe(true);
+	});
+
 	it('rejects an unknown nature tag', () => {
 		const data = datasetFixture();
 		// @ts-expect-error: deliberately using an invalid tag
