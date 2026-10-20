@@ -1,0 +1,223 @@
+{
+	"id": "brussels",
+	"label": {
+		"nl": "Brussel",
+		"fr": "Bruxelles",
+		"en": "Brussels"
+	},
+	"government": "region",
+	"adjustable": true,
+	"budgetStatus": "initial",
+	"expenditure": {
+		"total": {
+			"eurMillion": 9158.828,
+			"ref": {
+				"source": "bru-a268-5-p1",
+				"locator": "A-268/5 Part 1 p. 77 'TOTAUX SPRB' row B, column Initial 2026 (7.437.833 k EUR); COCOM B-67/5 p. 2 art. 3 'Crédits de liquidation' (2.040.467.000 EUR); netting items: SPRB programme 45.001 (A-268/5 p. 75) and COCOM AB 04.006.27.01.4352 (B-67/5 p. 39)",
+				"quote": "TOTAUX SPRB B 7.240.078 7.544.485 7.437.833 B | B-67/5 art. 3: 'Crédits dissociés 2.040.467.000 [Crédits de liquidation] 2.027.747.000 [Crédits d'engagement]'",
+				"note": "Payment credits 9,542.577 (Region rows B and E 7,777.846 + COCOM 2,040.467 minus Region-to-COCOM grants 236.109 and 39.626) minus repayment of debt principal 383.749."
+			}
+		},
+		"lines": [
+			{
+				"id": "brussels.mobility",
+				"label": {
+					"nl": "Mobiliteit en openbaar vervoer (incl. MIVB)",
+					"fr": "Mobilité et transports publics (y compris STIB)",
+					"en": "Mobility and public transport (incl. STIB)"
+				},
+				"amount": {
+					"eurMillion": 1622.706,
+					"ref": {
+						"source": "bru-a268-5-p1",
+						"locator": "Section 1 table (SPRB, Initial 2026, k EUR), Mission 42 Mobilité, 'Total Mission 42', row B, column Initial 2026, p. 60; of which Programme 112 'Financer la STIB' B 1.167.303, p. 63",
+						"quote": "Total Mission 42 ... B 1.451.601 1.478.736 1.600.154 B",
+						"note": "Payment credits: row B plus row E (variable credits of budget funds), A-268/5 programme tables."
+					}
+				},
+				"nature": "discretionary"
+			},
+			{
+				"id": "brussels.employment-economy",
+				"label": {
+					"nl": "Werk en economie (Actiris, dienstencheques, Innoviris, hub.brussels)",
+					"fr": "Emploi et économie (Actiris, titres-services, Innoviris, hub.brussels)",
+					"en": "Employment and economy (Actiris, service vouchers, Innoviris, hub.brussels)"
+				},
+				"amount": {
+					"eurMillion": 1194.683,
+					"ref": {
+						"source": "bru-a268-5-p1",
+						"locator": "Section 1 table (SPRB, Initial 2026, k EUR), Mission 44, 'Total Mission 44', row B, p. 70; Programme 111 Actiris B 647.722 and Programme 048 titres-services B 303.832, p. 73",
+						"quote": "Total Mission 44 ... B 1.335.316 1.302.688 1.194.683 B",
+						"note": "Mission 44 total: Actiris 647.722 + service vouchers (titres-services) 303.832 + other economy/research/innovation 243.129. The service-voucher subsidy (303.8) is demand-driven per voucher and behaves like an entitlement."
+					}
+				},
+				"nature": "discretionary"
+			},
+			{
+				"id": "brussels.housing",
+				"label": {
+					"nl": "Huisvesting en stadsontwikkeling",
+					"fr": "Logement et développement territorial",
+					"en": "Housing and urban development"
+				},
+				"amount": {
+					"eurMillion": 762.851,
+					"ref": {
+						"source": "bru-a268-5-p1",
+						"locator": "Section 1 table (SPRB, Initial 2026, k EUR), Mission 43 Développement territorial & Logement, 'Total Mission 43', row B, p. 64",
+						"quote": "Total Mission 43 ... B 752.689 775.823 755.467 B",
+						"note": "Payment credits: row B plus row E (variable credits of budget funds), A-268/5 programme tables."
+					}
+				},
+				"nature": "discretionary"
+			},
+			{
+				"id": "brussels.local-authorities",
+				"label": {
+					"nl": "Lokale besturen (algemene dotatie aan de gemeenten e.a.)",
+					"fr": "Pouvoirs locaux (dotation générale aux communes, etc.)",
+					"en": "Local authorities (general grant to municipalities, etc.)"
+				},
+				"amount": {
+					"eurMillion": 790.449,
+					"ref": {
+						"source": "bru-a268-5-p1",
+						"locator": "Section 1 table (SPRB, Initial 2026, k EUR), Mission 40, Programme 041 'Soutenir les pouvoirs locaux' total row B (757.611), p. 51; Programme 105 'Financer le FRBRTC' total row B (32.838), p. 53",
+						"quote": "Programme 041: Soutenir les pouvoirs locaux ... Total Programme 041 B 745.982 740.250 757.611 B; Programme 105 ... B 32.838 32.838 32.838 B",
+						"note": "757.611 + 32.838 = 790.449. Programme 041 is almost entirely transfers to municipalities (general grant, art. 46bis grant, etc.; own spending < 1 M). Per the 2024-2026 concordance table (A-268/5 Part 4, annex 5a) it also carries the 'Dotation générale aux communes (quote-part pour la CCC)', which goes via COCOM to the CPAS (Fonds spécial de l'action sociale: 39.627 in 2026, see COCOM line); that amount reaches local government (CPAS) and is therefore kept here and removed from the COCOM line."
+					}
+				},
+				"nature": "committed",
+				"transferTo": "local"
+			},
+			{
+				"id": "brussels.security-fire",
+				"label": {
+					"nl": "Brandweer, preventie en veiligheid (DBDMH, Brussel Preventie & Veiligheid)",
+					"fr": "Pompiers, prévention et sécurité (SIAMU, Bruxelles Prévention & Sécurité)",
+					"en": "Fire service, prevention and security (SIAMU, Brussels Prevention & Security)"
+				},
+				"amount": {
+					"eurMillion": 261.527,
+					"ref": {
+						"source": "bru-a268-5-p1",
+						"locator": "Section 1 table (SPRB, Initial 2026, k EUR), Mission 40, programme totals row B: 044 (5.423), 104 Pompiers.brussels (126.829), 107 Bruxelles Prévention et Sécurité (128.164), 135 (0.421), 147 (0.169), 148 (0.321), 149 (0.200), pp. 53-55",
+						"quote": "Programme 104: Financer Pompiers.brussels ... B 135.892 137.852 126.829 B; Programme 107: Financer Bruxelles Prévention et Sécurité ... B 128.743 127.316 128.164 B",
+						"note": "5.423 + 126.829 + 128.164 + 0.421 + 0.169 + 0.321 + 0.200 = 261.527. Mainly fire-brigade staff and the BPS grant; BPS passes part on to municipalities/police zones (BPS's own 2026 budget, A-268/5 Part 2 p. 50 (BPS section 2 table), programme 302 'Financement de la mise en oeuvre du PGSP', total row B: 68.654), but the ordinance does not split that by recipient, so it is not marked as a transfer."
+					}
+				},
+				"nature": "committed"
+			},
+			{
+				"id": "brussels.environment",
+				"label": {
+					"nl": "Leefmilieu, energie en netheid",
+					"fr": "Environnement, énergie et propreté",
+					"en": "Environment, energy and cleanliness"
+				},
+				"amount": {
+					"eurMillion": 488.054,
+					"ref": {
+						"source": "bru-a268-5-p1",
+						"locator": "Section 1 table (SPRB, Initial 2026, k EUR), Mission 41 Environnement et Energie, 'Total Mission 41', row B, p. 55",
+						"quote": "Total Mission 41 ... B 479.918 680.914 426.218 B",
+						"note": "Payment credits: row B plus row E (variable credits of budget funds), A-268/5 programme tables."
+					}
+				},
+				"nature": "discretionary"
+			},
+			{
+				"id": "brussels.family-allowances",
+				"label": {
+					"nl": "Gezinsbijslagen (GGC, via Iriscare)",
+					"fr": "Prestations familiales (COCOM, via Iriscare)",
+					"en": "Family allowances (COCOM, via Iriscare)"
+				},
+				"amount": {
+					"eurMillion": 1057.784,
+					"ref": {
+						"source": "cocom-b67-5",
+						"locator": "COCOM general expenditure table, Mission 05, Programme 001, AB 05.001.15.03.4140 'Dotation à IRISCARE (Allocations familiales)', row B, column Initial 2026, p. 43",
+						"quote": "Dotation à IRISCARE (Allocations familiales) 05.001.15.03.4140 ***** B 1.061.735 1.057.784 B",
+						"note": "Single budget line; financed mainly by the federal dotation to COCOM under the Special Financing Act (COCOM revenue AB 01.002.01.01.4940 'Dotation en provenance du pouvoir fédéral': 1,648.591, B-66/4 p. 4)."
+					}
+				},
+				"nature": "entitlement"
+			},
+			{
+				"id": "brussels.cocom-health-welfare",
+				"label": {
+					"nl": "GGC: gezondheid, ouderenzorg en welzijn (Vivalis, Iriscare, New Samusocial)",
+					"fr": "COCOM: santé, aide aux personnes âgées et action sociale (Vivalis, Iriscare, New Samusocial)",
+					"en": "COCOM: health, elderly care and welfare (Vivalis, Iriscare, New Samusocial)"
+				},
+				"amount": {
+					"eurMillion": 943.056,
+					"ref": {
+						"source": "cocom-b67-5",
+						"locator": "COCOM general expenditure table, 'TOTAUX GÉNÉRAUX DÉPENSES' row B (2.040.467), p. 52, minus AB 05.001.15.03.4140 (1.057.784, p. 43) and AB 04.006.27.01.4352 'Fonds spécial de l'action sociale' (39.627, p. 39)",
+						"quote": "TOTAUX GÉNÉRAUX DÉPENSES B 1.955.233 2.040.467 B",
+						"note": "2,040.467 - 1,057.784 (family allowances, own line) - 39.627 (FSAS paid on to the CPAS; already counted in the local-authorities line) = 943.056. Includes the dotations to Iriscare for health (469.647) and aid to persons (100.137), Iriscare operating/non-profit dotations, New Samusocial/Bruss'Help and Vivalis' own health and welfare programmes. Much of it (care-home and hospital financing) is set by regulation and hard to change in-year."
+					}
+				},
+				"nature": "discretionary"
+			},
+			{
+				"id": "brussels.cocof-vgc",
+				"label": {
+					"nl": "Dotaties aan de COCOF en de VGC",
+					"fr": "Dotations à la COCOF et à la VGC",
+					"en": "Grants to the French (COCOF) and Flemish (VGC) community commissions"
+				},
+				"amount": {
+					"eurMillion": 455.566,
+					"ref": {
+						"source": "bru-a268-5-p1",
+						"locator": "Section 1 table (SPRB, Initial 2026, k EUR), Mission 45, Programme 002 'Financer la Commission communautaire flamande' total row B (98.476) and Programme 003 'Financer la Commission communautaire francophone' total row B (357.090), p. 75",
+						"quote": "Programme 002 ... B 96.952 96.868 98.476 B; Total Programme 003 B 355.958 355.649 357.090 B",
+						"note": "98.476 + 357.090 = 455.566. COCOF and VGC budgets themselves are not consolidated here (see missing); their spending (social, health, education, culture for Brussels) is shown as this grant."
+					}
+				},
+				"nature": "committed"
+			},
+			{
+				"id": "brussels.interest",
+				"label": {
+					"nl": "Rentelasten op de gewestschuld",
+					"fr": "Charges d'intérêts de la dette régionale",
+					"en": "Interest on regional debt"
+				},
+				"amount": {
+					"eurMillion": 505.153,
+					"ref": {
+						"source": "bru-a268-5-p1",
+						"locator": "Section 1 table (SPRB, Initial 2026, k EUR), Mission 36, Programme 042 'Gérer efficacement la dette publique régionale', economic class 06 'Charges d'intérêts', AB 36.042.06, row B, p. 42",
+						"quote": "06 Charges d'intérêts B 36.042.06 335.087 414.980 470.480 36.042.06 B",
+						"note": "Payment credits: row B plus row E (variable credits of budget funds), A-268/5 programme tables."
+					}
+				},
+				"nature": "committed"
+			},
+			{
+				"id": "brussels.other",
+				"label": {
+					"nl": "Overige (bestuur, fiscaliteit, financiële participaties, EU-projecten, internationale betrekkingen, ...)",
+					"fr": "Autres (administration, fiscalité, participations financières, projets européens, relations extérieures, ...)",
+					"en": "Other (administration, tax service, financial stakes and loans, EU-funded projects, external relations, ...)"
+				},
+				"amount": {
+					"eurMillion": 1076.999,
+					"ref": {
+						"source": "bru-a268-5-p1",
+						"locator": "Section 1 table (SPRB, Initial 2026, k EUR), mission totals row B, pp. 38-76",
+						"quote": "TOTAUX SPRB B 7.240.078 7.544.485 7.437.833 B",
+						"note": "Payment credits: row B plus row E (variable credits of budget funds), A-268/5 programme tables. Excludes 0.223 of debt principal in mission 41."
+					}
+				},
+				"nature": "discretionary"
+			}
+		]
+	}
+}
