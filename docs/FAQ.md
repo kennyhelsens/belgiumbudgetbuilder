@@ -304,15 +304,68 @@ their device for reduced motion do not see these animations.
 ### Are the examples in concrete units checked?
 
 Every example comes from an official source, with its amount, page and quote
-in the data. The project owners have chosen to show them while their review
+in the data. Each was found by one AI research agent and then checked by a
+second agent that downloaded the source again, found the quote and redid the
+arithmetic. That second check confirmed, corrected or rejected each example:
+corrected examples carry the reason in the data, and rejected or misleading
+ones were left out.
+
+The project owners have chosen to show the examples while their own review
 is still under way: examples a reviewer has approved come first, and the
 others are shown too. Each example records who approved it, once that has
 happened.
 
-### What is the card that appears when I change healthcare spending?
+Examples are approximate by nature. Some are averages, some are legal
+minimums or maximums, and a few use the latest published year (2024 or 2025)
+or a rate that has since been indexed; the label says which.
 
-When you change a spending line that has detailed data behind it (for now:
-healthcare through RIZIV/INAMI), a card explains what the change means:
+### Which examples are there?
+
+| Government                   | Line                                                                                                                         | Example                                                                                                                  | € per unit |
+| ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ | ---------- |
+| Federal government           | Allowances for persons with disabilities                                                                                     | years of disability allowance for one person (average amount)                                                            | 11,256     |
+| Federal government           | Allowances for persons with disabilities                                                                                     | years of combined income-replacement and integration allowance for one person (average)                                  | 17,100     |
+| Federal government           | Defence                                                                                                                      | average yearly pay costs of a member of the armed forces                                                                 | 70,690     |
+| Federal government           | Federal police (excluding grants to local police zones)                                                                      | average yearly pay costs per federal police staff member (police officers and civilian staff together)                   | 85,008     |
+| Federal government           | Grant to Fedasil (reception of asylum seekers)                                                                               | adult asylum seekers housed for a year in a local reception initiative                                                   | 18,360     |
+| Federal government           | Grant to Fedasil (reception of asylum seekers)                                                                               | asylum reception places for a year (saving per place closed)                                                             | 19,018     |
+| Federal government           | Income guarantee for older people (GRAPA) and running costs of the Social Security department                                | years of income guarantee (GRAPA) for one older person (average amount)                                                  | 9,032      |
+| Federal government           | Income guarantee for older people (GRAPA) and running costs of the Social Security department                                | years of the maximum income guarantee for a single older person                                                          | 19,731     |
+| Federal government           | Justice                                                                                                                      | prisoners held for a year (average cost)                                                                                 | 62,283     |
+| Federal government           | Public-sector (civil service) pensions paid by the Federal Pension Service                                                   | months of the guaranteed minimum civil-service pension (gross, single rate)                                              | 1,881.58   |
+| Social security              | Employee pensions                                                                                                            | average gross monthly pensions from the employee scheme (per pensioner)                                                  | 1,435.91   |
+| Social security              | Employee pensions                                                                                                            | yearly gross minimum pensions for a full career as an employee (single rate)                                             | 22,582.98  |
+| Social security              | Healthcare (RIZIV/INAMI)                                                                                                     | GP consultations reimbursed by RIZIV                                                                                     | 29.74      |
+| Social security              | Healthcare (RIZIV/INAMI)                                                                                                     | yearly fees for a global medical file                                                                                    | 38.82      |
+| Social security              | Healthcare (RIZIV/INAMI)                                                                                                     | RIZIV/INAMI reimbursements of a consultation with an accredited cardiologist (standard rate, no GP referral)             | 38.33      |
+| Social security              | Self-employed pensions                                                                                                       | yearly gross minimum pensions for a full career as a self-employed person (single rate)                                  | 22,582.98  |
+| Social security              | Sickness, disability and maternity benefits                                                                                  | average yearly invalidity benefits per person in invalidity (employees and unemployed, 2025)                             | 18,951.48  |
+| Social security              | Unemployment and related benefits (RVA/ONEM)                                                                                 | average monthly unemployment benefits of a fully unemployed jobseeker (2025)                                             | 1,461.17   |
+| Social security              | Unemployment and related benefits (RVA/ONEM)                                                                                 | maximum gross monthly unemployment benefits in the first three months of unemployment                                    | 2,812.94   |
+| Flanders                     | Education and training                                                                                                       | gross annual salaries of a starting secondary-school teacher (master's degree), excluding holiday pay and year-end bonus | 48,499.92  |
+| Flanders                     | Education and training                                                                                                       | school years of a pupil in mainstream secondary education                                                                | 11,800     |
+| Flanders                     | Education and training                                                                                                       | school years of a pupil in mainstream nursery and primary education                                                      | 7,600      |
+| Flanders                     | Mobility and public works                                                                                                    | boardings on a De Lijn bus or tram (average Flemish contribution per boarding, 2024)                                     | 3.30       |
+| Flanders                     | Welfare, public health and family (incl. Groeipakket family allowances and Flemish social protection)                        | years of the basic Groeipakket child benefit for one child born since 2019                                               | 2,287.92   |
+| Flanders                     | Welfare, public health and family (incl. Groeipakket family allowances and Flemish social protection)                        | years of the Flemish care budget for a person with severe care needs                                                     | 1,680      |
+| Flanders                     | Work, economy, science, innovation, agriculture and social economy                                                           | hours of household help with service vouchers, counting only the Flemish subsidy per hour (rate from 1 October 2025)     | 19.63      |
+| Walloon Region               | Employment and training (FOREM, IFAPME, service vouchers, target-group reductions)                                           | hours of service-voucher home help subsidised by the Walloon Region (regional share per hour)                            | 20.35      |
+| Walloon Region               | Family allowances (AVIQ, family branch)                                                                                      | years of basic family allowance (without supplements) for one child in Wallonia (born 2020 or later)                     | 2,406.12   |
+| Walloon Region               | Family allowances (AVIQ, family branch)                                                                                      | birth grants in Wallonia                                                                                                 | 1,422.96   |
+| Wallonia-Brussels Federation | Education, research and training (compulsory education incl. teacher salaries, higher education, research, school buildings) | gross annual salaries of a starting upper-secondary teacher (master's degree), excluding holiday pay and year-end bonus  | 47,103.30  |
+| Wallonia-Brussels Federation | Education, research and training (compulsory education incl. teacher salaries, higher education, research, school buildings) | school years of a pupil in mainstream secondary education                                                                | 9,557      |
+| Wallonia-Brussels Federation | Education, research and training (compulsory education incl. teacher salaries, higher education, research, school buildings) | school years of a pupil in mainstream primary education                                                                  | 6,163      |
+
+There are no examples yet for Brussels, the railways, the Immigration Office
+or foreign affairs and development: the sources could not be reached or give
+no amount per unit that is easy to understand. Local government cannot be
+changed on the site, so it has no examples.
+
+### What is the card that appears when I change a spending line?
+
+When you change a spending line that has detailed data behind it, a card
+explains what the change means. Healthcare through RIZIV/INAMI has every part
+below; the other lines in "Which examples are there?" have the examples only:
 
 - **Per inhabitant:** the yearly change divided by Belgium's population on
   1 January 2026 (11,867,634, Statbel). For example, a 10% cut in healthcare

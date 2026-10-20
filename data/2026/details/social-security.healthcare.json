@@ -239,6 +239,23 @@
 					"quote": "101496 N 8,415 4,613386 Honorarium voor het beheer van het globaal medisch dossier gedurende het openingsjaar 38,82 38,82 38,82"
 				}
 			}
+		},
+		{
+			"id": "specialist-consultation-reimbursed",
+			"label": {
+				"nl": "RIZIV-terugbetalingen van een raadpleging bij een geaccrediteerde cardioloog (gewone tegemoetkoming, zonder verwijzing)",
+				"fr": "remboursements INAMI d'une consultation chez un cardiologue accrédité (intervention ordinaire, sans renvoi)",
+				"en": "RIZIV/INAMI reimbursements of a consultation with an accredited cardiologist (standard rate, no GP referral)"
+			},
+			"unitEur": {
+				"value": 38.33,
+				"ref": {
+					"source": "riziv-tariff-physicians-2026-01",
+					"locator": "riziv-tariff-physicians-2026-01 (Omzendbrief VI nr 2025/337, van toepassing vanaf 1/01/2026), PDF p. 5 (printed p. 3), A.I.2.a) 'Raadplegingen in de spreekkamer van artsen-specialisten, met uitzondering van deze voor rechthebbenden tot en met de leeftijd van 24 jaar en wiens globaal medisch dossier wordt beheerd door een huisarts', code 102594, column 'Verzekeringstegemoetkoming – Rechthebbenden zonder voorkeurregeling'. Unchanged in the later circulars VI nr 2026/99 (from 1/06/2026), 2026/138 (from 1/07/2026) and 2026/187 (from 1/09/2026; https://www.inami.fgov.be/SiteCollectionDocuments/tarief_artsen_deel01_20260901.pdf, PDF p. 4, I.2.a), code 102594: '50,33 47,33 38,33')",
+					"quote": "102594 N 16 3,062751 Raadpleging in de spreekkamer door een geaccrediteerde arts-specialist in de cardiologie, inclusief een eventueel schriftelijk verslag aan de behandelende arts 50,33 47,33 38,33",
+					"note": "Checked by a second agent: Value verified in the January 2026 circular and re-checked in the most recent one (1 Sept 2026): fee 50.33, RIZIV pays 47.33 (preferential) or 38.33 (no preferential status), and 43.33 after a GP referral (A.I.2.d). I corrected the label because 'reimbursed consultations' could be read as the full price of the consultation (50.33). The unit is only the RIZIV share for a patient without preferential reimbursement and without referral, so the label now says so. Patient co-payment and any supplements are excluded. The unit is a real cost of the healthcare line. Researcher's working: - Fee 50.33 EUR, of which RIZIV pays 38.33 (no preferential status) or 47.33 (preferential). After a GP referral (section A.I.2.d) RIZIV pays 43.33. Patient supplements charged by non-conventioned doctors are not included. Pairs naturally with the existing GP-consultation unit (29.74 EUR), which comes from the same circular (code 101076, GMD)."
+				}
+			}
 		}
 	],
 	"levers": [

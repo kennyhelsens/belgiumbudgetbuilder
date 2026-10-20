@@ -12,10 +12,22 @@ async function cutDefence(page: Page, times: number) {
 
 test.describe('change notice', () => {
 	test('illustrates a cut per inhabitant when the line has no example', async ({ page }) => {
+		await page.goto('/en/');
+		const map = page.getByRole('region', { name: 'Budget map' });
+		await map.getByRole('button', { name: /^Federal government/ }).click();
+		await map.getByRole('group', { name: /^Finance/ }).hover();
+		await map.getByRole('button', { name: 'Cut Finance by 1%' }).click();
+		const notice = page.getByRole('status').filter({ hasText: 'Finance' });
+		await expect(notice).toContainText('Finance −1%: about €2 less per inhabitant a year.');
+		await expect(notice).not.toContainText('Deficit');
+	});
+
+	test('illustrates a federal cut with its example', async ({ page }) => {
 		await cutDefence(page, 2);
 		const notice = page.getByRole('status').filter({ hasText: 'Defence' });
-		await expect(notice).toContainText('Defence −2%: about €18 less per inhabitant a year.');
-		await expect(notice).not.toContainText('Deficit');
+		await expect(notice).toContainText(
+			/Defence −2%: that is about [\d,]+ average yearly pay costs of a member of the armed forces\./
+		);
 	});
 
 	test('illustrates a change with an example in concrete units', async ({ page }) => {

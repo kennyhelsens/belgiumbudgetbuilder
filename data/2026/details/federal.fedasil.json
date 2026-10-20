@@ -1,0 +1,39 @@
+{
+	"line": "federal.fedasil",
+	"equivalents": [
+		{
+			"id": "loi-adult-reception-year",
+			"label": {
+				"nl": "volwassen asielzoekers een jaar lang opgevangen in een lokaal opvanginitiatief (LOI)",
+				"fr": "demandeurs d'asile adultes accueillis pendant un an dans une initiative locale d'accueil (ILA)",
+				"en": "adult asylum seekers housed for a year in a local reception initiative"
+			},
+			"unitEur": {
+				"value": 18360,
+				"ref": {
+					"source": "fedasil-loi-brochure-2024",
+					"locator": "Fedasil brochure 'Opening van een lokaal opvanginitiatief (LOI)', colophon '09.2023 (update 09.2024)', section 3 'Financiering', table 'Forfaitaire bedragen 2024' (PDF page 5, printed page 7).",
+					"quote": "'Forfaitaire bedragen 2024 ... Type plaats / Bezette plaats / Niet-bezette plaats ... Volwassene 50,30 € 25,15 €'; 'Het forfaitair bedrag wordt toegekend per opvangplaats en per dag'",
+					"note": "50.30 EUR per day x 365 days = 18,359.50 EUR, rounded to 18,360 EUR per year. 2024 rate (the most recent published in a primary source found); the rate is indexed, so the 2026 amount is probably slightly higher. It covers one type of place only: an occupied adult place in a local reception initiative run by a public social welfare centre (OCMW/CPAS). The rate covers housing, staff, the weekly living allowance and pocket money, school, transport and clothing; medical costs are paid separately (RIZIV/INAMI, POD MI, Mediprima). Places for unaccompanied minors cost more (90.27 EUR per day), and collective centres run by Fedasil or the Red Cross are funded differently. An empty place is paid at half the rate."
+				}
+			}
+		},
+		{
+			"id": "reception-place-year-coa",
+			"label": {
+				"nl": "opvangplaatsen voor asielzoekers gedurende een jaar (besparing per afgebouwde plaats)",
+				"fr": "places d'accueil pour demandeurs d'asile pendant un an (économie par place supprimée)",
+				"en": "asylum reception places for a year (saving per place closed)"
+			},
+			"unitEur": {
+				"value": 19018,
+				"ref": {
+					"source": "doc-56-1469-002",
+					"locator": "DOC 56 1469/002 (Court of Audit comments on the 2026 budget adjustment), PDF p. 40 (printed p. 38), point 2.2.1 'Asielopvang'; French version on PDF p. 104.",
+					"quote": "'De gerealiseerde capaciteitsdaling in 2025 is gebaseerd op het verschil in opvangcapaciteit van 36.478 plaatsen waar rekening mee gehouden werd bij de opmaak van de initiële begroting 2026 en de werkelijke opvangcapaciteit van 34.564 opvangplaatsen aan de start van 2026. Dit vertaalt zich in een jaarlijkse besparing van 36,4 miljoen euro.'",
+					"note": "Checked by a second agent: Quote verified; (36,478 - 34,564) = 1,914 places; 36,400,000 / 1,914 = 19,017.76, rounded 19,018 (matches). This is the yearly saving per place removed, as estimated in Fedasil's savings plan, not the average full cost of a place. The old label ('asylum reception places for a year') read like a full cost, so I added the qualifier. That qualifier also suits the site's use: cutting the line by X euros is roughly X / 19,018 places closed. Plausibility: the same paragraph gives 93.9 million a year from 2027 for a further drop to 'about 30,000' places, roughly 20,600 per place. The 35.3 million for 2026 is a part-year effect, so do not divide it by places. The savings amount is rounded in the source (36.4 million). This unit is 2026 and covers the whole network; the LOI unit is a concrete published rate but from 2024 and for one type of place only. Keep at most these two units for Fedasil; I would show this one first. Researcher's working: 36,478 - 34,564 = 1,914 places; 36,400,000 EUR / 1,914 places = 19,017.76 EUR, rounded to 19,018 EUR per place per year. This is the saving per place removed (a marginal cost), not a full average cost per place: fixed costs such as Fedasil's head office do not shrink with each place. The saving amount is rounded in the source (36.4 million). It agrees with candidate 'loi-adult-reception-year' (about 18,360 EUR), which supports its plausibility."
+				}
+			}
+		}
+	]
+}

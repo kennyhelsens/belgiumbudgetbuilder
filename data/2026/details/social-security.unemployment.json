@@ -1,0 +1,39 @@
+{
+	"line": "social-security.unemployment",
+	"equivalents": [
+		{
+			"id": "avg-monthly-unemployment-benefit-jobseeker",
+			"label": {
+				"nl": "gemiddelde maandelijkse werkloosheidsuitkeringen van een volledig werkloze werkzoekende (2025)",
+				"fr": "allocations de chômage mensuelles moyennes d'un demandeur d'emploi chômeur complet (2025)",
+				"en": "average monthly unemployment benefits of a fully unemployed jobseeker (2025)"
+			},
+			"unitEur": {
+				"value": 1461.17,
+				"ref": {
+					"source": "rva-annual-report-2025-vol2",
+					"locator": "rva-annual-report-2025-vol2, PDF p. 162 (printed p. 161), section 4.6 'Evolutie van de gemiddelde uitkering (UVW)', Tab. 4.6.I 'Gemiddelde maandelijkse uitkering van UVW volgens subgroep (in lopende prijzen)', row 'UVW-WZ', column 2025",
+					"quote": "UVW-WZ 1.214,84 1.303,45 1.366,74 1.429,46 1.461,17 +20,3% +2,2% | NB: de gemiddelde uitkering wordt berekend als de som van de bedragen gedeeld door het aantal budgettaire eenheden.",
+					"note": "Checked by a second agent: Value and quote verified; the text on the next page says 'De gemiddelde maandelijkse uitkering in 2025 bedroeg 1.461,17 EUR bij de werkzoekenden'. I corrected only the label: UVW-WZ means fully unemployed benefit recipients who are jobseekers, and the year belongs in the label because this is a 2025 average while amounts have since been indexed and the 2026 reform is changing the population. 'Gross' stays out of the label because the table does not say gross or net. It is per budgetary unit (full-time equivalent), not per head. The line also funds temporary unemployment, SWT, time credit and other schemes. Researcher's working: - 2025 average (no 2026 average published yet); amounts were indexed again in 2026. Per budgetary unit (full-time equivalent), not per head. The table does not say gross/net explicitly; RVA publishes benefit scales as gross amounts (withholding tax is deducted on payment). The budget line (4,836 M) also covers temporary unemployment, SWT, career breaks etc.; this unit is only full unemployment of jobseekers. Text PDF p. 163: 'De gemiddelde maandelijkse uitkering in 2025 bedroeg 1.461,17 EUR bij de werkzoekenden'."
+				}
+			}
+		},
+		{
+			"id": "max-monthly-unemployment-benefit-first-months",
+			"label": {
+				"nl": "maximale maandelijkse werkloosheidsuitkeringen (bruto) in de eerste drie maanden werkloosheid",
+				"fr": "allocations de chômage mensuelles maximales (brutes) des trois premiers mois de chômage",
+				"en": "maximum gross monthly unemployment benefits in the first three months of unemployment"
+			},
+			"unitEur": {
+				"value": 2812.94,
+				"ref": {
+					"source": "rva-amounts-full-unemployment-2026-09",
+					"locator": "rva-amounts-full-unemployment-2026-09 (https://www.rva.be/documentatie/bedragen/volledige-werkloosheid-nieuwe-reglementering, page title 'Nieuwe reglementering - Volledige werkloosheid zonder anciënniteitstoeslag (Brutobedragen)'), table 'Alleenwonende' (same in 'Samenwonende met gezinslast' and 'Samenwonende'), row 'maand 1-3', column 'Maximum per maand'; 'Bedragen geldig vanaf 01.09.2026'",
+					"quote": "Alleenwonende Minimum per dag Maximum per dag Minimum per maand Maximum per maand maand 1-3 63,29 108,19 1.645,54 2.812,94 ... Bedragen geldig vanaf 01.09.2026",
+					"note": "Legal ceiling for the first 3 months only; it falls to 2,446.60 (months 4-6) and 1,997.06 (months 7-12). Most beneficiaries receive less (2025 average 1,461.17). Under the 2026 reform benefits are limited in time. Minimum for a single person in months 1-3 is 1,645.54/month."
+				}
+			}
+		}
+	]
+}

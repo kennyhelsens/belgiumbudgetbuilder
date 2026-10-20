@@ -94,7 +94,7 @@ const entitySchema = z.object({
 const lineDetailsSchema = z.object({
 	/** The id of the spending line these details belong to, e.g. "social-security.healthcare". */
 	line: slug,
-	/** Sub-budgets that add up to the line. */
+	/** Sub-budgets that add up to the line; empty when only examples are known. */
 	breakdown: z
 		.array(
 			z.object({
@@ -106,7 +106,7 @@ const lineDetailsSchema = z.object({
 				note: localized.optional()
 			})
 		)
-		.min(1),
+		.default([]),
 	/** Concrete units ("a GP consultation reimbursed") to express a change in. Shown only once reviewed. */
 	equivalents: z.array(
 		z.object({
@@ -118,9 +118,9 @@ const lineDetailsSchema = z.object({
 		})
 	),
 	/** The official ways this spending can be changed. */
-	levers: z.array(
-		z.object({ id: slug, label: localized, description: localized, ref: sourceRefSchema })
-	)
+	levers: z
+		.array(z.object({ id: slug, label: localized, description: localized, ref: sourceRefSchema }))
+		.default([])
 });
 
 export const datasetSchema = z.object({

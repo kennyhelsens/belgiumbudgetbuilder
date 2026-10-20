@@ -1,0 +1,39 @@
+{
+	"line": "federal.disability-allowances",
+	"equivalents": [
+		{
+			"id": "disability-allowance-average-year",
+			"label": {
+				"nl": "jaren tegemoetkoming voor een persoon met een handicap (gemiddeld bedrag)",
+				"fr": "années d'allocations pour une personne en situation de handicap (montant moyen)",
+				"en": "years of disability allowance for one person (average amount)"
+			},
+			"unitEur": {
+				"value": 11256,
+				"ref": {
+					"source": "fodss-ivt-it-average-monthly-amount",
+					"locator": "FOD Sociale Zekerheid, Excel table 4-1 'Uitgaven - Gemiddeld maandelijks bedrag' (update March 2026), sheet '2025' ('Gemiddeld maandelijks bedrag inkomensvervangende en/of integratietegemoetkoming naar type op 31/12/2025'), row 12 'Gemiddeld maandelijks bedrag in lopende prijzen', column E 'Totaal'; same value in sheet 'Historiek', column 2025.",
+					"quote": "'Enkel IVT | Enkel IT | IVT + IT | Totaal' / 'Gemiddeld maandelijks bedrag in lopende prijzen 924 349 1425 938'",
+					"note": "938 EUR per month x 12 = 11,256 EUR per year. 2025 figure (the 2026 figure is not yet published), before the 2026 indexation. Average over all recipients, so it mixes people who get only the integration allowance, only the income-replacement allowance, or both. The amounts are means-tested and often add to other income."
+				}
+			}
+		},
+		{
+			"id": "disability-allowance-ivt-plus-it-year",
+			"label": {
+				"nl": "jaren inkomensvervangende plus integratietegemoetkoming voor één persoon (gemiddeld)",
+				"fr": "années d'ARR et d'AI cumulées pour une personne (moyenne)",
+				"en": "years of combined income-replacement and integration allowance for one person (average)"
+			},
+			"unitEur": {
+				"value": 17100,
+				"ref": {
+					"source": "fodss-ivt-it-average-monthly-amount",
+					"locator": "Excel table 4-1, sheet '2025', row 12 'Gemiddeld maandelijks bedrag in lopende prijzen', column D 'IVT + IT'; same figure in FOD Sociale Zekerheid, 'Cijfers in de kijker: Uitkeringen voor personen met een handicap ... 2025', section on graph 6.",
+					"quote": "'Gemiddeld maandelijks bedrag in lopende prijzen 924 349 1425 938'; article: 'Personen met een handicap die zowel recht hebben op een IVT als op een IT, ontvangen in 2025 logischerwijs het hoogste gemiddelde maandbedrag, namelijk € 1.425.'",
+					"note": "1,425 EUR per month x 12 = 17,100 EUR per year. Applies to the largest group of recipients (49.1% in 2025), not to everyone. 2025 amount, before the 2026 indexation. Means-tested."
+				}
+			}
+		}
+	]
+}

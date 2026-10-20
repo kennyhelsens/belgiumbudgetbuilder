@@ -1,0 +1,22 @@
+{
+	"line": "federal.civil-service-pensions",
+	"equivalents": [
+		{
+			"id": "min-pension-civil-service-single-month",
+			"label": {
+				"nl": "maanden gewaarborgd minimumpensioen van een ambtenaar (bruto, bedrag alleenstaande)",
+				"fr": "mois de pension minimum garantie d'un fonctionnaire (brut, taux isolé)",
+				"en": "months of the guaranteed minimum civil-service pension (gross, single rate)"
+			},
+			"unitEur": {
+				"value": 1881.58,
+				"ref": {
+					"source": "fpd-gewaarborgd-minimumpensioen",
+					"locator": "Section 'Ik ben ambtenaar', table 'Bedragen voor het gewaarborgd minimumrustpensioen (vanaf 01.09.2026 aan index 2,2080)', row 'Leeftijd of anciënniteit', column 'Alleenstaand'",
+					"quote": "Leeftijd of anciënniteit 2 351,89 EUR bruto per maand 1 881,58 EUR bruto per maand",
+					"note": "Legal minimum for a civil servant retiring on age or seniority, single rate, from 1 September 2026; not an average. Proposed by the verifier as a replacement for a rejected average; quote checked against the downloaded page."
+				}
+			}
+		}
+	]
+}

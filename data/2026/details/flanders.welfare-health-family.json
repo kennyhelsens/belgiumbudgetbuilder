@@ -1,0 +1,39 @@
+{
+	"line": "flanders.welfare-health-family",
+	"equivalents": [
+		{
+			"id": "vl-groeipakket-basic-amount-child-year",
+			"label": {
+				"nl": "jaren basisbedrag Groeipakket voor één kind geboren sinds 2019",
+				"fr": "années du montant de base du Groeipakket (allocations familiales flamandes) pour un enfant né depuis 2019",
+				"en": "years of the basic Groeipakket child benefit for one child born since 2019"
+			},
+			"unitEur": {
+				"value": 2287.92,
+				"ref": {
+					"source": "vl-groeipakket-bedragen-2026-09",
+					"locator": "vlaanderen.be 'Bedragen en betaaldata' (Vlaams Groeipakket), section 'Kinderen geboren sinds 1 januari 2019', item 'Basisbedrag'",
+					"quote": "De onderstaande bedragen gelden sinds 1 september 2026 (uitbetaling vanaf oktober 2026). … Basisbedrag 190,66 euro per maand",
+					"note": "Checked by a second agent: 190,66 euro/month confirmed; x 12 = 2,287.92 confirmed. Labels corrected to say 'born since 2019': children born before 2019 get a different basic amount (109,75 / 203,07 / 274,56 euro per month by rank on the same page), so 'for one child' alone was ambiguous. Groeipakket is explicitly inside this line in data/2026/entities/flanders.json. Rate since 1 Sept 2026; earlier 2026 months were lower. Neutral. Researcher's working: 190.66 €/month × 12 = 2,287.92 €/year Basic amount only, for a child born since 1 January 2019 (the new system). Excludes the one-off start amount (1,310.75 euro), the yearly school bonus, social, care, orphan and childcare supplements, and the school allowance. Children born before 2019 get different basic amounts (109.75 / 203.07 / 274.56 euro per month depending on rank). The rate applies since 1 September 2026; months before that in 2026 were paid at the earlier, lower rate (not given on this page), so the 2026 calendar-year amount is slightly lower than 12 × 190.66."
+				}
+			}
+		},
+		{
+			"id": "vl-zorgbudget-zwaar-zorgbehoevenden-year",
+			"label": {
+				"nl": "jaren zorgbudget voor een zwaar zorgbehoevende",
+				"fr": "années de budget de soins flamand pour une personne fortement dépendante",
+				"en": "years of the Flemish care budget for a person with severe care needs"
+			},
+			"unitEur": {
+				"value": 1680,
+				"ref": {
+					"source": "vl-zorgbudget-zwaar-zorgbehoevenden",
+					"locator": "vlaanderen.be 'Zorgbudget voor zwaar zorgbehoevenden van de Vlaamse Sociale Bescherming', section 'Bedrag'",
+					"quote": "Het zorgbudget voor zwaar zorgbehoevenden bedraagt 140 euro per maand. Dat bedrag is niet belastbaar.",
+					"note": "140 €/month × 12 = 1,680 €/year Flat amount, the same for everyone who qualifies (home care or residential care). The page shows no date; it is the amount listed on the official page as retrieved on 2026-10-20. Paid out of the Flemish social protection (VSB) budget, which is in the Welzijn, Volksgezondheid en Gezin domain."
+				}
+			}
+		}
+	]
+}

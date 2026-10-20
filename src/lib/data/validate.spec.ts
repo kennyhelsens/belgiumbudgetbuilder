@@ -59,6 +59,12 @@ describe('findProblems', () => {
 		);
 	});
 
+	it('does not ask a breakdown of details that have none', () => {
+		const data = datasetFixture();
+		data.details[0].breakdown = [];
+		expect(findProblems(data)).toEqual([]);
+	});
+
 	it('checks references in the details too', () => {
 		const data = datasetFixture();
 		data.details[0].levers[0].ref.source = 'nowhere';

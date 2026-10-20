@@ -1,0 +1,22 @@
+{
+	"line": "flanders.mobility-public-works",
+	"equivalents": [
+		{
+			"id": "vl-delijn-grant-per-boarding",
+			"label": {
+				"nl": "keer opstappen op een bus of tram van De Lijn (gemiddelde Vlaamse bijdrage per opstapper, 2024)",
+				"fr": "montées à bord d'un bus ou tram De Lijn (contribution flamande moyenne par montée, 2024)",
+				"en": "boardings on a De Lijn bus or tram (average Flemish contribution per boarding, 2024)"
+			},
+			"unitEur": {
+				"value": 3.3,
+				"ref": {
+					"source": "delijn-geintegreerd-jaarverslag-2024",
+					"locator": "De Lijn, Geïntegreerd verslag 2024: grant p. 147 ('Resultaten'); boardings p. 30 ('Kerncijfers', table 'Aantal reizigers / Reizigersaantallen', Kernnet en aanvullend net, row Totaal, column 2024)",
+					"quote": "De tussenkomst van het Vlaams Gewest in de omzet bedroeg 1.230,5 miljoen euro, waarvan 49,6 miljoen euro voor beschikbaarheidsvergoeding PPS. | Totaal 357 158 997 373 138 838",
+					"note": "Checked by a second agent: Both figures confirmed on the stated pages (PDF page 147 and 30). 1,230,500,000 / 373,138,838 = 3.2977 -> 3.30 confirmed (including the 1,129,600 flex trips gives 3.288, still 3.29-3.30). The p. 31 text confirms the count is estimated boardings (opstappers), so a transfer counts twice. Labels corrected: the original 'passenger boardings' did not say the unit is the average Flemish contribution per boarding, so a reader could take it as the full cost of a trip; also flags the 2024 basis. Cross-check of the 2026 budget article MB0-1MEH2GY-IS (Stuk 19 (2025-2026) Nr. 10 Bijlagen-1, p. 84): 1.063.331 + 50.118 = 1.113.449 thousand euro VEK, confirmed. It is an average, not a marginal cost per trip; wording is neutral. Researcher's working: 1,230,500,000 € ÷ 373,138,838 boardings = 3.298 € ≈ 3.30 € per boarding (both figures from the same 2024 report) 2024 figures: De Lijn's 2025 integrated report was not found (news reports say 2025 ridership was slightly lower). The count is boardings (opstappers) estimated with counting cameras and an extrapolation algorithm, so a trip with a transfer counts twice; flex transport (1,129,600 in 2024) is counted separately and not included. The grant includes 49.6 million euro PPS availability fees; capital subsidies are not included. For reference, the 2026 adjusted budget gives an operating grant to De Lijn of 1,113,449 thousand euro (article MB0-1MEH2GY-IS, VEK, source vp-19-2025-2026-nr10-bijlagen-1 p. 84), which over the 2024 boardings would be about 2.98 euro; it was not used because it mixes years and excludes Vervoer op maat and PPS items."
+				}
+			}
+		}
+	]
+}

@@ -16,6 +16,9 @@ data/2026/
   entities/<id>.json      one file per government: federal, social-security,
                           flanders, wallonia, wallonia-brussels-federation,
                           brussels, german-speaking-community, local
+  details/<line id>.json  what a change to one spending line means: unit
+                          examples, and optionally a breakdown into
+                          sub-budgets and the official levers
 ```
 
 ## Rules
@@ -44,6 +47,12 @@ data/2026/
   credits, or `forecast` for an official forecast where no single budget
   document exists (local government).
 - **Labels** are given in Dutch, French and English.
+- **Unit examples** (`equivalents` in `details/`) have a `unitEur` amount with
+  its own `ref`, and a label written as a plural noun phrase that reads after
+  a number ("That is about 3,100 …"). The label says what the amount is: an
+  average or a legal minimum or maximum, gross or net, and its year when it is
+  not 2026. A reviewer who approves an example adds `reviewedBy` with their
+  GitHub handle. A `breakdown`, when given, must add up to its line.
 
 ## Not yet included
 

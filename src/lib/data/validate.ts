@@ -64,6 +64,8 @@ export function findProblems(data: Dataset): string[] {
 			problems.push(`details for unknown line "${details.line}"`);
 			continue;
 		}
+		// Details may hold only examples; a breakdown, when there is one, must add up to the line.
+		if (details.breakdown.length === 0) continue;
 		const sum = details.breakdown.reduce((total, item) => total + item.amount.eurMillion, 0);
 		if (Math.abs(sum - lineAmount) > ROUNDING_PER_LINE * details.breakdown.length) {
 			problems.push(`${details.line}: breakdown adds up to ${sum}, line is ${lineAmount}`);
