@@ -1,0 +1,22 @@
+{
+	"line": "federal.defence",
+	"equivalents": [
+		{
+			"id": "military-pay-per-soldier-year",
+			"label": {
+				"nl": "gemiddelde jaarlijkse loonkosten van een militair",
+				"fr": "coûts salariaux annuels moyens d'un militaire",
+				"en": "average yearly pay costs of a member of the armed forces"
+			},
+			"unitEur": {
+				"value": 70690,
+				"ref": {
+					"source": "be-chamber-56-1470-001",
+					"locator": "Input 1: DOC 56 1470/001, Tabel 1 'Aangepaste programma's', PDF p. 784, section 16, division 50 'Krijgsmacht', programme 16.50.0, activity '01 Uitgaven van het militair personeel', B.A. 16 50 01 11.00.03, adjusted 2026 credit (x 1 000 EUR; commitment = liquidation). Input 2: Strategische Visie Defensie 2025 (integrale versie), Bijlage A (2025), printed page A-1 (PDF p. 66).",
+					"quote": "Input 1: 'Bezoldigingen van het statutair personeel 50 01 11.00.03 1.852.069 ... 1.852.069'. Input 2: 'Begin 2025 telde Defensie ongeveer 28.500 voltijdse werknemers (26.200 militairen en 2.300 burgers) en ongeveer 2.500 actieve reservisten.'",
+					"note": "Checked by a second agent: Both quotes found in my own downloads; 1,852,069,000 / 26,200 = 70,689.66, rounded 70,690 (matches). The credit sits in section 16, so it is inside the Defence line (section 16 total). Corrected only the labels: the old ones ('yearly salaries of a soldier') suggested one soldier's salary, but the figure is total pay cost (wages, allowances, bonuses and employer social-security contribution) averaged over all soldiers, and it includes officers, so 'member of the armed forces' fits better than 'soldier'. Mixing the 2026 credit with the start-2025 headcount is acceptable only with a caveat, because the figure is probably on the high side: (a) the justification DOC 56 1281/008 p. 17-18 says this credit also pays reservists doing voluntary service, ordinary reservist recalls (15.1 million), 'militairen buiten enveloppe' (162.3 million) and the new military service year. The count of 26,200 does not cover reservists, and it is unclear whether soldiers outside the envelope are in it. (b) Headcount rises in 2026 (2,800 recruits against 2,343 departures). Together this may push the figure up by several per cent, possibly up to about 10%. A 2025-consistent alternative is the 2025 credit (1,699,190 thousand, DOC 56 1281/008 p. 16) / 26,200 = 64,855 EUR, but it is a 2025 figure. Military pensions are not in this credit (they are paid from the civil-service-pensions line). Reviewer should keep this caveat visible. Researcher's working: 1,852,069,000 EUR (B.A. 16 50 01 11.00.03, 2026) / 26,200 military full-time staff (begin 2025) = 70,689.66 EUR, rounded to 70,690 EUR per soldier per year. Ratio of two sourced figures from different dates: the 2026 budget credit and the headcount at the start of 2025 (Defence plans to recruit 2,800 soldiers in 2026 against 2,343 departures, so the 2026 average headcount is probably somewhat higher and the true per-head figure somewhat lower). The credit covers wages, allowances and the employer social-security contribution for soldiers, including soldiers 'buiten enveloppe' and reservists doing voluntary service (DOC 56 1281/008 p. 17-18). It excludes activity-related pay allowances on other programmes (e.g. B.A. 50 11 11.00.03, 83.8 million), hospitalisation insurance and military pensions (paid from the civil-service-pensions line). Prefer this per-head pay cost over one-off equipment costs, as the brief asked. Strategic Vision PDF shows no publication date; the government approved the vision on 18 July 2025 and the PDF was created on 2026-03-26."
+				}
+			}
+		}
+	]
+}

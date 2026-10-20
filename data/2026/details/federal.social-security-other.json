@@ -1,0 +1,39 @@
+{
+	"line": "federal.social-security-other",
+	"equivalents": [
+		{
+			"id": "grapa-average-year",
+			"label": {
+				"nl": "jaren inkomensgarantie (IGO) voor één oudere (gemiddeld bedrag)",
+				"fr": "années de garantie de revenus (GRAPA) pour une personne âgée (montant moyen)",
+				"en": "years of income guarantee (GRAPA) for one older person (average amount)"
+			},
+			"unitEur": {
+				"value": 9032,
+				"ref": {
+					"source": "fpd-monthly-stat-2026-04",
+					"locator": "FPD, Maandelijkse statistiek van de sociale uitkeringen, april 2026, table 2.4.1 'Verdeling van het aantal gerechtigden op een inkomensgarantie voor ouderen met de overeenstemmende maandelijkse uitgave', row 'april 2026', columns TOTAAL 'Aantal' and 'Maandbedrag IGO' (PDF page 36).",
+					"quote": "'april 2026 113.657 85.548.713,72'",
+					"note": "85,548,713.72 EUR / 113,657 beneficiaries = 752.69 EUR per month; x 12 = 9,032.30 EUR, rounded to 9,032 EUR per year. The income guarantee tops up low pensions, so most beneficiaries receive only part of the maximum; this is the average top-up actually paid, not a full income. Based on one month (April 2026) times 12, so before the September 2026 indexation and without any one-off payments. The budget line also contains the running costs of the FPS Social Security, which this unit does not cover."
+				}
+			}
+		},
+		{
+			"id": "grapa-maximum-single-year",
+			"label": {
+				"nl": "jaren maximale inkomensgarantie (IGO) voor een alleenstaande oudere",
+				"fr": "années de GRAPA maximale pour une personne âgée isolée",
+				"en": "years of the maximum income guarantee for a single older person"
+			},
+			"unitEur": {
+				"value": 19731,
+				"ref": {
+					"source": "fpd-igo-nl",
+					"locator": "FPD page 'De inkomensgarantie voor ouderen (IGO)', section 'Hoeveel krijg ik?'; French page 'La garantie de revenus aux personnes âgées (GRAPA)', section 'À combien ai-je droit ?'",
+					"quote": "NL: 'Voor alleenstaanden – verhoogd basisbedrag = 1 644,28 euro (op 01.09.2026 aan index 186,83)'; FR: 'Pour les isolés - montant de base majoré = 1 644,28 euros (au 01.09.2026 à l'indice 186,83)'",
+					"note": "1,644.28 EUR per month x 12 = 19,731.36 EUR, rounded to 19,731 EUR per year. This is the ceiling a single person reaches only if they have no other resources; the average amount actually paid is much lower (see 'grapa-average-year'). Gross amount, valid from 1 September 2026 (earlier in 2026 the amount was lower). The cohabitant base amount is 1,096.18 EUR per month."
+				}
+			}
+		}
+	]
+}

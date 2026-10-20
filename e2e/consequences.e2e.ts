@@ -49,3 +49,17 @@ test.describe('consequence card', () => {
 		await expect(page.getByRole('region', { name: /What this change means/ })).toHaveCount(0);
 	});
 });
+
+test.describe('consequence card for a line with only examples', () => {
+	test('shows the examples, without the sections it has no data for', async ({ page }) => {
+		await page.goto('/en/');
+		const map = page.getByRole('region', { name: 'Budget map' });
+		await map.getByRole('button', { name: /^Federal government/ }).click();
+		await map.getByRole('button', { name: 'Cut Defence by 1%' }).click();
+		const card = page.getByRole('region', { name: /What this change means: Defence/ });
+		await expect(card).toContainText("That's about");
+		await expect(card).toContainText('average yearly pay costs of a member of the armed forces');
+		await expect(card).not.toContainText('Where it would land');
+		await expect(card).not.toContainText('How could it be done?');
+	});
+});

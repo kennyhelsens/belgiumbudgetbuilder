@@ -1,0 +1,22 @@
+{
+	"line": "federal.justice",
+	"equivalents": [
+		{
+			"id": "prisoner-year",
+			"label": {
+				"nl": "gedetineerden een jaar lang in de gevangenis (gemiddelde kost)",
+				"fr": "détenus pendant un an en prison (coût moyen)",
+				"en": "prisoners held for a year (average cost)"
+			},
+			"unitEur": {
+				"value": 62283,
+				"ref": {
+					"source": "be-chamber-56-1470-001",
+					"locator": "Input 1: DOC 56 1470/001, Tabel 1 'Aangepaste programma's', PDF p. 705, section 12, 'Totalen voor de organisatieafdeling 12-51' (Directoraat-generaal Penitentiaire Inrichtingen), second row = liquidation credits (x 1 000 EUR). Input 2: same document, PDF p. 48 (printed p. 48), justification of organisatieafdeling 51, programme 0.",
+					"quote": "Input 1: 'Totalen voor de organisatieafdeling 12-51 lim 822.046 +14.893 836.939 / 822.629 +14.893 837.522'. Input 2: 'het aantal gedetineerden (oorspronkelijke hypothese 2026 12.831 gedetineerden) ten opzichte van de op 26 januari 2026 vastgestelde populatie (13.447 gedetineerden)'",
+					"note": "Checked by a second agent: Both figures verified; 837,522,000 / 13,447 = 62,283.19 (170.64 EUR/day), matches. Division 12-51 is part of section 12, so it is inside the Justice line. The 13,447 is the population the adjusted 2026 budget itself is built on (the adjustment adds credits for the move from 12,831 to 13,447), so budget and count belong together. Label correction: added '(average cost)', because the amount is the whole prisons administration budget per detainee (staff 547.2 + 44.2 + medical staff 30.9 million, food, health care, DBFM fees for new prisons 45.1 million and forensic psychiatric centres 31.2 million, transition houses 6.9 million), not the marginal cost of one extra prisoner. It excludes prison buildings paid by the Buildings Agency (section 19). People held in forensic psychiatric centres are funded here but are probably not in the prison population count, which pushes the figure slightly up (the FPC fee is about 3.7% of the division). Wording is neutral; the three languages match. Researcher's working: 837,522,000 EUR (DG EPI liquidation credits 2026) / 13,447 detainees (population on 26 January 2026) = 62,283.19 EUR per prisoner per year, rounded to 62,283 EUR (/ 365 = 170.64 EUR per day). Average running cost of the prison administration per detainee: staff, food, upkeep, health care, and the DBFM fees for the new prisons and forensic psychiatric centres (45.1 + 31.2 million on B.A. 51 71 12.11.35/36). It excludes prison building investments and maintenance paid by the Buildings Agency (Regie der Gebouwen, section 19). Interned persons in forensic psychiatric centres are funded on this budget but may not all be in the 13,447 count. News reports (June 2026) quote the Justice minister giving about 160 EUR per detainee per day; that figure was not found in a primary document and is not used here."
+				}
+			}
+		}
+	]
+}
