@@ -4,8 +4,12 @@ Status: draft for review · Last updated: 2026-10-20
 
 ## 1. Purpose
 
-A public, politically neutral website where anyone can understand Belgium's
-public finances and build their own budget. Every lever shows its real cost:
+A public, politically neutral website that **educates** people about
+Belgium's public finances. Building your own budget is the way in, not the
+point. The site does not say "how hard can it be"; it shows *why* landing a
+budget is hard: where the money really goes, what is growing on its own
+(pensions, healthcare, interest), and how small some much-debated lines are
+next to the big ones. Every lever shows its real cost:
 **now** (in concrete, relatable examples), and **over the next 10 years** (debt,
 interest, ageing costs), with an optional 20-year view.
 
@@ -21,6 +25,16 @@ away so journalists and policy people can verify and share.
 3. **Kind and explanatory.** Journal/editorial tone: explain, don't lecture.
 4. **Shallow but zoomable.** Max 3 levels of depth.
 5. **Honest about limits.** The projection model is static (see §7) and says so.
+6. **Educate, don't gamify.** No "you fixed the budget!" victory screen. When
+   someone closes the deficit, the site shows what their choices mean for
+   people and services, and what they don't solve (e.g. ageing costs keep
+   growing after 2030).
+7. **Proportion over opinion.** The site's voice states sizes, trends and
+   comparisons. Words like "underfunded" or "too expensive" appear only when
+   attributed to a cited source (e.g. a Court of Audit report or a court
+   ruling), never as the site's own judgement.
+8. **Even-handed myths.** Common beliefs are tested from across the political
+   spectrum, not only from one side.
 
 ## 3. Scope decisions (locked)
 
@@ -87,6 +101,40 @@ The three "people" counts are always labelled distinctly; never merged.
 Personal income tax, social contributions, VAT, corporate tax, excises,
 capital/wealth-related taxes, (optional) other. Each lever moves in rates or €,
 with examples ("+1pt VAT ≈ €X per household per year").
+
+## 4a. Stories: a sense of scale
+
+Short, guided explainers (3–5 steps each) that walk through the zoom map and
+sliders. They are the main educational layer; each is a data file with cited
+claims, reviewed via PR like the figures.
+
+**Launch set (draft):**
+1. **Pensions: the line that grows on its own.** Today's pension spending, the
+   number of pensioners now and in 2036, ageing costs per the Study Committee
+   on Ageing, and what that growth equals in other budget lines.
+2. **Asylum and migration in proportion.** Where this money actually sits
+   (mostly the federal reception budget, e.g. Fedasil; some at local
+   OCMW/CPAS level, partly refunded by the federal level), its size next to
+   pensions and healthcare, and what "stopping it completely" would change
+   for social security and the deficit. Shows the numbers; leaves the
+   conclusion to the reader.
+3. **Justice: what it costs and what the system is under.** Spending per
+   inhabitant vs the EU average (once §14 data exists), plus cited facts such
+   as court backlogs, prison overcrowding and court rulings against Belgium.
+   "Underfunded" appears only as a quote from a cited source.
+4. **Interest: the silent budget line.** How the interest bill grows when rates
+   rise, and what it crowds out.
+
+**Balance check:** the story list is reviewed as a set, so that beliefs held
+on different sides are tested with the same rigour. Candidates for later:
+development aid, politicians' pay and party funding, the royal endowment,
+civil-servant numbers, taxing the highest earners, company car tax treatment,
+subsidies to companies.
+
+**"What if" presets:** each story can load a one-click scenario (e.g. "stop all
+asylum reception spending") into the builder. The result shows the change to
+the deficit and the 10-year debt next to the pension growth over the same
+period, so the size speaks for itself.
 
 ## 5. Trade-off examples
 
@@ -187,7 +235,7 @@ The "committed" flag is a general data field, usable for any entity.
   domains → add). Easiest if the domain's DNS is on Cloudflare; otherwise a
   single CNAME record. The app uses relative paths only, so no code changes.
 
-## 10b. Usage insights (later, designed-in now)
+## 10a. Usage insights (later, designed-in now)
 
 Not in v1, but the architecture keeps it a small addition on Cloudflare:
 - **Traffic:** Cloudflare Web Analytics: free, cookieless, a single toggle.
@@ -205,7 +253,7 @@ Not in v1, but the architecture keeps it a small addition on Cloudflare:
 - **CI (GitHub Actions)** on every PR: lint, typecheck, unit + integration tests,
   data validation, Playwright e2e, build.
 
-## 10a. Review workflow
+## 10b. Review workflow
 
 - All figures and examples change via PRs touching `data/`.
 - `CODEOWNERS` routes `data/` changes to Kenny and the political reviewer.
@@ -238,5 +286,24 @@ TDD throughout.
 - [x] Reviewers: Kenny + political reviewer via GitHub PRs.
 - [ ] Brussels 2026 budget status: verify during data collection (approach in §8).
 - [ ] Domain name (default `*.pages.dev`; plugs in via the dashboard later).
-- [ ] Usage insights (§10b): decide on scope after launch.
+- [ ] Usage insights (§10a): decide on scope after launch.
+- [ ] Final launch set of stories (§4a), reviewed as a set for balance.
+- [ ] EU comparison countries (§14), v2.
 - [ ] GitHub handle of the political reviewer (for `CODEOWNERS`).
+
+## 14. v2: European comparison
+
+Compare Belgium's spending by function with a few EU countries, so people can
+see whether a line is large or small by European standards.
+- **Data:** Eurostat COFOG (general government expenditure by function), which
+  uses the same ESA 2010 basis as our figures, so comparisons are like for
+  like.
+- **Measures:** % of GDP and € per inhabitant, per function (pensions,
+  health, education, justice, defence, …).
+- **Proposed countries:** Netherlands, Germany, France, plus the EU-27
+  average; optionally one Nordic country (e.g. Denmark or Sweden) as a
+  high-tax/high-service reference.
+- **Placement:** a "How do others compare?" strip on each level-3 fact card
+  and in the stories.
+- **Caveat:** systems differ (e.g. private vs public pensions), so each
+  comparison carries a short note on what it does and does not capture.
