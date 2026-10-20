@@ -1,0 +1,8 @@
+# ABOUTME: Routes pull request reviews: Kenny reviews everything; budget figures also go to the political reviewer.
+# ABOUTME: Later rules override earlier ones for matching paths.
+* @kennyhelsens
+
+# Budget figures, sources and trade-off examples.
+# Add the political reviewer's GitHub handle on this line once known, e.g.:
+# /data/ @kennyhelsens @their-handle
+/data/ @kennyhelsens

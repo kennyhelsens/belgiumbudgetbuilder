@@ -1,0 +1,11 @@
+{
+	"language.name": "English",
+	"language.code": "EN",
+	"language.switcherLabel": "Language",
+	"site.title": "Belgium Budget Builder",
+	"home.kicker": "Public finances, to scale",
+	"home.title": "Where does Belgium's money go?",
+	"home.lede": "Most of us have little sense of how big each part of the public budget is. This site shows the federal, social security and regional budgets of 2026 to scale, so you can see how the topics relate, how hard it is to land a budget, and what choices mean over the next ten years.",
+	"home.status": "Under construction. Every figure will be sourced and reviewed before it is published.",
+	"footer.note": "An independent, non-partisan project."
+}

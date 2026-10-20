@@ -1,0 +1,81 @@
+/*
+ABOUTME: Design tokens and base styles for the journal-like design system (paper, ink, serif).
+ABOUTME: Light by default, with a dark palette following the visitor's system preference.
+*/
+:root {
+	--paper: #f8f4ec;
+	--paper-raised: #fffdf8;
+	--ink: #1f1c18;
+	--ink-muted: #5c554b;
+	--rule: #d9d0c1;
+	--accent: #8a3b12;
+
+	--font-serif: 'Newsreader Variable', Georgia, 'Times New Roman', serif;
+
+	--text-sm: 0.9375rem;
+	--text-base: 1.1875rem;
+	--text-lg: 1.375rem;
+	--text-xl: 1.75rem;
+	--text-2xl: clamp(2rem, 6vw, 3.25rem);
+
+	--space-1: 0.25rem;
+	--space-2: 0.5rem;
+	--space-3: 1rem;
+	--space-4: 1.5rem;
+	--space-5: 2.5rem;
+	--space-6: 4rem;
+
+	--gutter: 1rem;
+	--measure: 40rem;
+
+	color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--paper: #1a1815;
+		--paper-raised: #23201c;
+		--ink: #ece6da;
+		--ink-muted: #a89f90;
+		--rule: #3b362f;
+		--accent: #e39a6b;
+	}
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	margin: 0;
+	background: var(--paper);
+	color: var(--ink);
+	font-family: var(--font-serif);
+	font-size: var(--text-base);
+	line-height: 1.55;
+	font-optical-sizing: auto;
+}
+
+h1,
+h2,
+h3 {
+	font-family: var(--font-serif);
+	font-weight: 500;
+	line-height: 1.15;
+	letter-spacing: -0.01em;
+}
+
+a {
+	color: var(--accent);
+}
+
+:focus-visible {
+	outline: 2px solid var(--accent);
+	outline-offset: 3px;
+}
