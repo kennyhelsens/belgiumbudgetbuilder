@@ -7,5 +7,19 @@
 	"home.title": "Waar gaat het Belgische overheidsgeld naartoe?",
 	"home.lede": "De meesten van ons hebben weinig zicht op hoe groot elk deel van de overheidsbegroting is. Deze site toont de federale begroting, de sociale zekerheid en de regionale begrotingen van 2026 op schaal, zodat je ziet hoe de thema's zich tot elkaar verhouden, hoe moeilijk het is om een begroting rond te krijgen en wat keuzes betekenen voor de komende tien jaar.",
 	"home.status": "In opbouw. Elk cijfer wordt onderbouwd met een bron en nagekeken voor het gepubliceerd wordt.",
-	"footer.note": "Een onafhankelijk, partijpolitiek neutraal project."
+	"footer.note": "Een onafhankelijk, partijpolitiek neutraal project.",
+	"map.title": "Begrotingskaart",
+	"map.intro": "Elke rechthoek is op schaal getekend: dubbel zo groot is dubbel zoveel geld. Kies een overheid om te zien waaraan ze geld uitgeeft.",
+	"map.belgium": "België",
+	"map.breadcrumbLabel": "U bent hier",
+	"map.minimapLabel": "{name} in de hele begroting",
+	"map.tableToggle": "Toon als tabel",
+	"map.colItem": "Post",
+	"map.colAmount": "Bedrag per jaar",
+	"map.colShare": "Aandeel",
+	"map.colSource": "Bron",
+	"map.sumOfLines": "Som van de posten hieronder",
+	"map.transfersNote": "Geld dat een overheid doorgeeft aan een andere, staat alleen waar het uiteindelijk wordt uitgegeven. Zo telt niets dubbel.",
+	"map.provisional": "Geen gestemde begroting: voorlopige kredieten",
+	"map.displayOnly": "Ter volledigheid getoond; niet aanpasbaar"
 }

@@ -1,8 +1,9 @@
 <!--
-ABOUTME: Localized home page: states the site's mission while the budget explorer is being built.
-ABOUTME: All text comes from the message files; no figures appear here.
+ABOUTME: Localized home page: the site's mission and the zoomable budget map.
+ABOUTME: Text comes from the message files and every figure from the sourced data in data/.
 -->
 <script lang="ts">
+	import BudgetMap from '#lib/explorer/BudgetMap.svelte';
 	import { translate } from '#lib/i18n/translate.ts';
 	import type { PageProps } from './$types';
 
@@ -21,6 +22,8 @@ ABOUTME: All text comes from the message files; no figures appear here.
 	<p class="article__lede">{t('home.lede')}</p>
 	<p class="article__status">{t('home.status')}</p>
 </main>
+
+<BudgetMap data={data.dataset} locale={data.locale} />
 
 <style>
 	.article {

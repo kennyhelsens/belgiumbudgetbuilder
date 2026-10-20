@@ -7,5 +7,19 @@
 	"home.title": "Where does Belgium's money go?",
 	"home.lede": "Most of us have little sense of how big each part of the public budget is. This site shows the federal, social security and regional budgets of 2026 to scale, so you can see how the topics relate, how hard it is to land a budget, and what choices mean over the next ten years.",
 	"home.status": "Under construction. Every figure will be sourced and reviewed before it is published.",
-	"footer.note": "An independent, non-partisan project."
+	"footer.note": "An independent, non-partisan project.",
+	"map.title": "Budget map",
+	"map.intro": "Every rectangle is drawn to scale: twice the area means twice the money. Choose a government to see what it spends on.",
+	"map.belgium": "Belgium",
+	"map.breadcrumbLabel": "You are here",
+	"map.minimapLabel": "{name} in the whole budget",
+	"map.tableToggle": "Show as a table",
+	"map.colItem": "Item",
+	"map.colAmount": "Amount per year",
+	"map.colShare": "Share",
+	"map.colSource": "Source",
+	"map.sumOfLines": "Sum of its lines below",
+	"map.transfersNote": "Money one government passes on to another is shown only where it is finally spent, so nothing is counted twice.",
+	"map.provisional": "No voted budget: provisional credits",
+	"map.displayOnly": "Shown for completeness; not adjustable"
 }

@@ -7,5 +7,19 @@
 	"home.title": "Où va l'argent public belge ?",
 	"home.lede": "La plupart d'entre nous ont peu d'idée de la taille de chaque partie du budget public. Ce site montre à l'échelle le budget fédéral, la sécurité sociale et les budgets régionaux de 2026, pour voir comment les thèmes se comparent, à quel point il est difficile de boucler un budget et ce que les choix signifient pour les dix prochaines années.",
 	"home.status": "En construction. Chaque chiffre sera sourcé et vérifié avant sa publication.",
-	"footer.note": "Un projet indépendant et non partisan."
+	"footer.note": "Un projet indépendant et non partisan.",
+	"map.title": "Carte du budget",
+	"map.intro": "Chaque rectangle est dessiné à l'échelle : une surface double, c'est deux fois plus d'argent. Choisissez un niveau de pouvoir pour voir à quoi il dépense.",
+	"map.belgium": "Belgique",
+	"map.breadcrumbLabel": "Vous êtes ici",
+	"map.minimapLabel": "{name} dans l'ensemble du budget",
+	"map.tableToggle": "Afficher sous forme de tableau",
+	"map.colItem": "Poste",
+	"map.colAmount": "Montant par an",
+	"map.colShare": "Part",
+	"map.colSource": "Source",
+	"map.sumOfLines": "Somme des postes ci-dessous",
+	"map.transfersNote": "L'argent qu'un niveau de pouvoir transfère à un autre n'apparaît que là où il est finalement dépensé : rien n'est compté deux fois.",
+	"map.provisional": "Pas de budget voté : crédits provisoires",
+	"map.displayOnly": "Montré pour être complet ; non modifiable"
 }
