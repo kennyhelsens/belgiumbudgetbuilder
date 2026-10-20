@@ -1,0 +1,83 @@
+// ABOUTME: Tests for cross-checks the schema cannot express: references, unique ids and totals that add up.
+// ABOUTME: Each check reports a readable problem so reviewers can fix the data file.
+import { describe, expect, it } from 'vitest';
+import { datasetFixture } from './test-fixture.ts';
+import { findProblems } from './validate.ts';
+
+describe('findProblems', () => {
+	it('reports nothing for a consistent dataset', () => {
+		expect(findProblems(datasetFixture())).toEqual([]);
+	});
+
+	it('reports a reference to a source that does not exist', () => {
+		const data = datasetFixture();
+		data.entities[0].expenditure.lines[0].amount.ref.source = 'missing-source';
+		expect(findProblems(data)).toContainEqual(
+			expect.stringContaining('unknown source "missing-source"')
+		);
+	});
+
+	it('checks references in the outlook too', () => {
+		const data = datasetFixture();
+		data.outlook.ageingCostPctGdp[1].ref.source = 'nowhere';
+		expect(findProblems(data)).toContainEqual(
+			expect.stringContaining('outlook.ageingCostPctGdp.2036: unknown source "nowhere"')
+		);
+	});
+
+	it('reports a source that nothing refers to', () => {
+		const data = datasetFixture();
+		data.sources.push({ ...data.sources[0], id: 'unused' });
+		expect(findProblems(data)).toContainEqual(expect.stringContaining('"unused" is never used'));
+	});
+
+	it('reports duplicate source ids', () => {
+		const data = datasetFixture();
+		data.sources.push({ ...data.sources[0] });
+		expect(findProblems(data)).toContainEqual(expect.stringContaining('duplicate source id'));
+	});
+
+	it('reports duplicate entity or line ids', () => {
+		const data = datasetFixture();
+		data.entities[0].expenditure.lines[1].id = 'federal.justice';
+		expect(findProblems(data)).toContainEqual(
+			expect.stringContaining('duplicate id "federal.justice"')
+		);
+	});
+
+	it('reports a line id that does not start with its entity id', () => {
+		const data = datasetFixture();
+		data.entities[0].expenditure.lines[0].id = 'justice';
+		expect(findProblems(data)).toContainEqual(
+			expect.stringContaining('"justice" should start with "federal."')
+		);
+	});
+
+	it('reports lines that do not add up to the entity total', () => {
+		const data = datasetFixture();
+		data.entities[0].expenditure.lines[0].amount.eurMillion = 50;
+		expect(findProblems(data)).toContainEqual(
+			expect.stringContaining('federal: expenditure lines add up to 110, total is 100')
+		);
+	});
+
+	it('tolerates rounding of up to 1 million per line', () => {
+		const data = datasetFixture();
+		data.entities[0].expenditure.lines[0].amount.eurMillion = 41;
+		expect(findProblems(data)).toEqual([]);
+	});
+
+	it('reports a transfer to an entity that does not exist', () => {
+		const data = datasetFixture();
+		data.entities[0].expenditure.lines[1].transferTo = 'atlantis';
+		expect(findProblems(data)).toContainEqual(
+			expect.stringContaining('transfer to unknown entity "atlantis"')
+		);
+	});
+
+	it('reports a transfer from an entity to itself', () => {
+		const data = datasetFixture();
+		data.entities[0].expenditure.lines[1].transferTo = 'federal';
+		expect(findProblems(data)).toContainEqual(expect.stringContaining('transfers to itself'));
+	});
+});

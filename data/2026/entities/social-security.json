@@ -1,0 +1,199 @@
+{
+	"id": "social-security",
+	"label": {
+		"nl": "Sociale zekerheid",
+		"fr": "Sécurité sociale",
+		"en": "Social security"
+	},
+	"government": "social-security",
+	"adjustable": true,
+	"budgetStatus": "adjusted",
+	"expenditure": {
+		"total": {
+			"eurMillion": 122783.866,
+			"ref": {
+				"source": "be-chamber-56-1468-001",
+				"locator": "p. 136, Tabel I.2 'Samenvattende tabel 2026 (In duizend euro) (begrotingscontrole) (vervolg)', row 'Uitgaven vóór overdrachten', columns Globaal beheer werknemers + Globaal beheer zelfstandigen + Geneeskundige verzorging; plus row 'Kapitaalrekeningen - Uitgaven', column Globaal beheer werknemers",
+				"quote": "Uitgaven vóór overdrachten 68.777.204 7.160.441 46.784.088 23.920.576 1.384.284 148.026.593 6.580.980 154.607.573 | Kapitaalrekeningen: Uitgaven 62.133 40.000 102.133 102.133",
+				"note": "68,777,204 + 7,160,441 + 46,784,088 (current expenditure before inter-regime transfers of the employees' global management, self-employed global management and RIZIV/INAMI healthcare) + 62,133 (capital expenditure, employees' global management) = 122,783,866 thousand EUR. Excludes transfers between social security regimes (GB -> RIZIV healthcare 39.5 bn would otherwise be counted twice), civil-servant pensions (23,920.6 M; financed by the federal budget) and 'other regimes' outside the global management (1,384.3 M)."
+			}
+		},
+		"lines": [
+			{
+				"id": "social-security.employee-pensions",
+				"label": {
+					"nl": "Pensioenen werknemers",
+					"fr": "Pensions des travailleurs salariés",
+					"en": "Employee pensions"
+				},
+				"amount": {
+					"eurMillion": 43036.631,
+					"ref": {
+						"source": "be-chamber-56-1468-001",
+						"locator": "p. 154, Tabel II.4 'Prestaties van het stelsel globaal beheer voor werknemers', row 'Pensioenen', column 2026 Begrotingscontrole (II) (same amount on p. 143, Tabel II.2, row 'Prestaties', column 'Pensioenen')",
+						"quote": "Pensioenen 41.754.560 43.270.729 43.036.631 -234.098 -0,54 % 1.282.071 3,07 % Pensions"
+					}
+				},
+				"nature": "entitlement"
+			},
+			{
+				"id": "social-security.selfemployed-pensions",
+				"label": {
+					"nl": "Pensioenen zelfstandigen",
+					"fr": "Pensions des travailleurs indépendants",
+					"en": "Self-employed pensions"
+				},
+				"amount": {
+					"eurMillion": 5857.25,
+					"ref": {
+						"source": "be-chamber-56-1468-001",
+						"locator": "p. 167, Tabel III.3 'Prestaties van het stelsel globaal beheer voor zelfstandigen', row 'Pensioenen', column 2026 Begrotingscontrole (II) (same amount p. 161, Tabel III.2)",
+						"quote": "Pensioenen 5.773.059 5.919.922 5.857.250 -62.671 -1,06 % 84.191 1,46 % Pensions"
+					}
+				},
+				"nature": "entitlement"
+			},
+			{
+				"id": "social-security.healthcare",
+				"label": {
+					"nl": "Geneeskundige verzorging (RIZIV)",
+					"fr": "Soins de santé (INAMI)",
+					"en": "Healthcare (RIZIV/INAMI)"
+				},
+				"amount": {
+					"eurMillion": 43857.373,
+					"ref": {
+						"source": "be-chamber-56-1468-001",
+						"locator": "p. 172, Tabel IV.1 'Begroting van de geneeskundige verzorging 2025-2026 (vervolg)', row 'Prestaties', column 2026; confirmed in text p. 174",
+						"quote": "Prestaties 39.612.451 43.857.373 Prestations | p. 174: 'bedragen de toegestane uitgaven voor geneeskundige verzorging 43.857.373 duizend euro.'"
+					}
+				},
+				"nature": "entitlement"
+			},
+			{
+				"id": "social-security.incapacity",
+				"label": {
+					"nl": "Arbeidsongeschiktheid en invaliditeit (ziekte- en moederschapsuitkeringen)",
+					"fr": "Incapacité de travail et invalidité (indemnités maladie et maternité)",
+					"en": "Sickness, disability and maternity benefits"
+				},
+				"amount": {
+					"eurMillion": 15904.022,
+					"ref": {
+						"source": "be-chamber-56-1468-001",
+						"locator": "p. 154, Tabel II.4, row 'Ziekte & invaliditeit' (employees), and p. 167, Tabel III.3, row 'Ziekte & invaliditeit' (self-employed), column 2026 Begrotingscontrole (II)",
+						"quote": "Ziekte & invaliditeit 14.074.165 14.879.377 14.839.393 (Tabel II.4) | Ziekte & invaliditeit 999.168 1.069.980 1.064.629 (Tabel III.3)",
+						"note": "14,839,393 (employees) + 1,064,629 (self-employed) = 15,904,022 thousand EUR"
+					}
+				},
+				"nature": "entitlement"
+			},
+			{
+				"id": "social-security.unemployment",
+				"label": {
+					"nl": "Werkloosheid en verwante uitkeringen (RVA)",
+					"fr": "Chômage et allocations apparentées (ONEM)",
+					"en": "Unemployment and related benefits (RVA/ONEM)"
+				},
+				"amount": {
+					"eurMillion": 4836.419,
+					"ref": {
+						"source": "be-chamber-56-1468-001",
+						"locator": "p. 154, Tabel II.4, row 'Werkloosheid', column 2026 Begrotingscontrole (II). Covers full and temporary unemployment, SWT/bridging pensions, time credit etc. (volume factors in Tabel II.5, p. 155)",
+						"quote": "Werkloosheid 6.486.013 4.637.921 4.836.419 198.497 4,28 % -1.649.595 -25,43 % Chômage"
+					}
+				},
+				"nature": "entitlement"
+			},
+			{
+				"id": "social-security.work-accidents-occupational-diseases",
+				"label": {
+					"nl": "Arbeidsongevallen en beroepsziekten (Fedris)",
+					"fr": "Accidents du travail et maladies professionnelles (Fedris)",
+					"en": "Work accidents and occupational diseases (Fedris)"
+				},
+				"amount": {
+					"eurMillion": 546.719,
+					"ref": {
+						"source": "be-chamber-56-1468-001",
+						"locator": "p. 154, Tabel II.4, rows 'Arbeidsongevallen' and 'Beroepsziekten', column 2026 Begrotingscontrole (II)",
+						"quote": "Arbeidsongevallen 334.389 341.105 339.545 | Beroepsziekten 214.472 204.879 207.174",
+						"note": "339,545 + 207,174 = 546,719 thousand EUR"
+					}
+				},
+				"nature": "entitlement"
+			},
+			{
+				"id": "social-security.administration",
+				"label": {
+					"nl": "Beheerskosten (instellingen en ziekenfondsen)",
+					"fr": "Frais d'administration (institutions et mutualités)",
+					"en": "Administration costs (institutions and health insurance funds)"
+				},
+				"amount": {
+					"eurMillion": 2888.476,
+					"ref": {
+						"source": "be-chamber-56-1468-001",
+						"locator": "p. 136, Tabel I.2 (vervolg), row 'Beheerskosten', columns Globaal beheer werknemers, Globaal beheer zelfstandigen, Geneeskundige verzorging",
+						"quote": "Beheerskosten 1.487.054 163.001 1.238.421 70.852 44.560 3.003.888 2.313 3.006.201 Frais d'administration",
+						"note": "1,487,054 + 163,001 + 1,238,421 = 2,888,476 thousand EUR (includes 'Diensten derden', mainly administration costs paid to mutualities/payment bodies)"
+					}
+				},
+				"nature": "committed"
+			},
+			{
+				"id": "social-security.contribution-reductions-esa",
+				"label": {
+					"nl": "Bijdrageverminderingen geboekt als uitgave (ESR 2010)",
+					"fr": "Réductions de cotisations inscrites en dépenses (SEC 2010)",
+					"en": "Contribution reductions booked as spending (ESA 2010)"
+				},
+				"amount": {
+					"eurMillion": 1157.768,
+					"ref": {
+						"source": "be-chamber-56-1468-001",
+						"locator": "p. 143, Tabel II.2 (vervolg), row 'Externe overdrachten - Bijdrageverminderingen (ESR 2010)', column RSZ-Globaal beheer / Totaal",
+						"quote": "Bijdrageverminderingen (ESR 2010) 1.157.768 1.157.768 Réductions de cotisations (SEC 2010) | Federale overheid 848.383 | Gefedereerde entiteiten 309.385",
+						"note": "Accounting item: targeted employer contribution reductions that ESA 2010 records as spending rather than as lower contributions (848,383 federal, 309,385 financed by federated entities)."
+					}
+				},
+				"nature": "committed"
+			},
+			{
+				"id": "social-security.equilibrium-grant-repayment",
+				"label": {
+					"nl": "Terugbetaling te veel ontvangen evenwichtsdotatie 2025 aan de federale Staat",
+					"fr": "Remboursement à l'État du trop-perçu de la dotation d'équilibre 2025",
+					"en": "Repayment to the federal state of the 2025 equilibrium grant overpayment"
+				},
+				"amount": {
+					"eurMillion": 547.511,
+					"ref": {
+						"source": "be-chamber-56-1468-001",
+						"locator": "p. 143, Tabel II.2 (vervolg), row 'Diversen', column RSZ-Globaal beheer (547.511); explained in text p. 148",
+						"quote": "De diverse uitgaven stijgen met 555.166 duizend euro. Deze stijging wordt voornamelijk verklaard door de opname van een bedrag van 547.511 duizend euro voor de terugbetaling van de te veel ontvangen evenwichtsdotatie 2025, die in 2026 zal worden teruggestort aan de Staat."
+					}
+				},
+				"nature": "committed",
+				"transferTo": "federal"
+			},
+			{
+				"id": "social-security.other",
+				"label": {
+					"nl": "Overige uitgaven",
+					"fr": "Autres dépenses",
+					"en": "Other spending"
+				},
+				"amount": {
+					"eurMillion": 4151.697,
+					"ref": {
+						"source": "be-chamber-56-1468-001",
+						"locator": "Computed: total minus the lines above; components from p. 136 (Tabel I.2), p. 143 (Tabel II.2), p. 161 (Tabel III.2), p. 172 (Tabel IV.1)",
+						"note": "total 122,783.866 minus listed lines = 4151.697 M EUR. Composition (thousand EUR): employees' GB: other external transfers 2,047,173 (= 3,204,941 'Externe overdrachten' in Tabel I.2 minus 1,157,768 contribution reductions; recipients not itemised), misc. spending 249,018 (796,529 minus the 547,511 repayment), interest 19,348, payment costs 2,278, miners/seamen benefits 7,894, capital expenditure 62,133; self-employed GB: bridging right 16,741, carers' allowance 6,638, misc. 39,918, interest 7,692, external transfers 4,212, payment costs 360; healthcare: misc. spending 1,660,424, external transfers 24,970, EU recovery plan 2,900. Components sum to 4,151,699 (2 thousand EUR rounding difference)."
+					}
+				},
+				"nature": "committed"
+			}
+		]
+	}
+}

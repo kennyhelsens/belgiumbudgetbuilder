@@ -1,0 +1,51 @@
+{
+	"gdp": {
+		"eurMillion": 663326,
+		"ref": {
+			"source": "fpb-outlook-2026-06",
+			"locator": "Tabel A.2 'Bbp en belangrijkste bestedingscategorieën tegen lopende prijzen' (Miljoenen euro), p. 45, column 2026",
+			"quote": "Bruto binnenlands product                  602376 620272 642012 663326 687370 710640 733587 756470 778846"
+		}
+	},
+	"expenditure": {
+		"eurMillion": 361797,
+		"ref": {
+			"source": "fpb-outlook-2026-06",
+			"locator": "Tabel D.1 'Rekening van de overheid' (Miljoenen euro), p. 58, column 2026",
+			"quote": "2. Uitgaven                                 318078 335288 347722 361797 374303"
+		}
+	},
+	"revenue": {
+		"eurMillion": 328113,
+		"ref": {
+			"source": "fpb-outlook-2026-06",
+			"locator": "Tabel D.1 'Rekening van de overheid' (Miljoenen euro), p. 58, column 2026",
+			"quote": "1. Ontvangsten                              293943   308230   314849   328113   338525"
+		}
+	},
+	"balance": {
+		"eurMillion": -33684,
+		"ref": {
+			"source": "fpb-outlook-2026-06",
+			"locator": "Tabel D.1 'Rekening van de overheid' (Miljoenen euro), p. 58, column 2026",
+			"quote": "3. Vorderingensaldo                         -24135 -27058 -32874 -33684 -35778"
+		}
+	},
+	"interest": {
+		"eurMillion": 16611,
+		"ref": {
+			"source": "fpb-outlook-2026-06",
+			"locator": "Tabel D.1 'Rekening van de overheid' (Miljoenen euro), p. 58, column 2026",
+			"quote": "B. Rentelasten                               11767 13723 14282 16611 18985"
+		}
+	},
+	"debt": {
+		"eurMillion": 728995.3,
+		"ref": {
+			"source": "fpb-outlook-2026-06",
+			"locator": "Tabel 7 'Overheidsschuld' (in % bbp), p. 31, column 2026",
+			"quote": "Geconsolideerde bruto-schuld                        103,9    107,9   109,9   111,8   114,0",
+			"note": "Calculated: 109.9% of GDP 663326 (same source, Tabel A.2); the source gives the 2026 debt only as a share of GDP."
+		}
+	}
+}
