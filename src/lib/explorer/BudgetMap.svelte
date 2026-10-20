@@ -23,18 +23,23 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 		data: Dataset;
 		locale: Locale;
 		changes?: Changes;
-		/** Called after the visitor changes a line, with its id, name, new percentage and change in € million. */
+		/**
+		 * Called after the visitor changes a line, with its id, name, new percentage, change in € million,
+		 * and the direction of this step: 1 = more spending than before, -1 = less.
+		 */
 		onchange?: (change: {
 			id: string;
 			name: string;
 			percent: number;
 			changeEurMillion: number;
+			direction: 1 | -1;
 		}) => void;
 	} = $props();
 
 	const percentOf = (id: string, amount: number) => Math.round(((changes[id] ?? 0) / amount) * 100);
 
 	function setPercent(tile: Tile, percent: number) {
+		const before = changes[tile.id] ?? 0;
 		const next = { ...changes };
 		if (percent === 0) delete next[tile.id];
 		else next[tile.id] = (tile.eurMillion * percent) / 100;
@@ -43,7 +48,8 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 			id: tile.id,
 			name: tile.label[locale],
 			percent,
-			changeEurMillion: next[tile.id] ?? 0
+			changeEurMillion: next[tile.id] ?? 0,
+			direction: (next[tile.id] ?? 0) > before ? 1 : -1
 		});
 	}
 

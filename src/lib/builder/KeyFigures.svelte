@@ -1,6 +1,6 @@
 <!--
 ABOUTME: Key figures that stay at the top of the screen while visitors change the budget: public debt and
-ABOUTME: deficit for the budget year, and the debt at the end of the outlook with a small sparkline of its path.
+ABOUTME: deficit for the budget year, and the debt at the end of the outlook with a sparkline; they react to each change.
 -->
 <script lang="ts">
 	import type { Locale } from '../i18n/locales.ts';
@@ -8,8 +8,18 @@ ABOUTME: deficit for the budget year, and the debt at the end of the outlook wit
 	import { formatEuro } from '../explorer/format.ts';
 	import type { HeadlineMetrics } from './metrics.ts';
 
-	let { metrics, year, locale }: { metrics: HeadlineMetrics; year: number; locale: Locale } =
-		$props();
+	let {
+		metrics,
+		year,
+		locale,
+		reaction
+	}: {
+		metrics: HeadlineMetrics;
+		year: number;
+		locale: Locale;
+		/** The last change's effect on the debt; a new key replays the animation. */
+		reaction?: { debt: 'up' | 'down'; key: number };
+	} = $props();
 
 	const t = (key: MessageKey) => translate(locale, key);
 	const percent = (value: number) =>
@@ -46,7 +56,14 @@ ABOUTME: deficit for the budget year, and the debt at the end of the outlook wit
 		</div>
 		<div class="metric" data-testid="metric-deficit">
 			<span class="metric__label">{t('metrics.deficit').replace('{year}', String(year))}</span>
-			<span class="metric__value">{formatEuro(metrics.deficit.yours, locale)}</span>
+			{#key reaction?.key}
+				<span
+					class="metric__value"
+					class:metric__value--up={reaction?.debt === 'up'}
+					class:metric__value--down={reaction?.debt === 'down'}
+					>{formatEuro(metrics.deficit.yours, locale)}</span
+				>
+			{/key}
 			<span class="metric__sub">
 				{#if changed}
 					{t('metrics.official').replace('{value}', formatEuro(metrics.deficit.official, locale))}
@@ -59,7 +76,14 @@ ABOUTME: deficit for the budget year, and the debt at the end of the outlook wit
 			<span class="metric__label"
 				>{t('outlook.debtIn').replace('{year}', String(metrics.horizon.year))}</span
 			>
-			<span class="metric__value">{percent(metrics.horizon.yoursPctGdp)}</span>
+			{#key reaction?.key}
+				<span
+					class="metric__value"
+					class:metric__value--up={reaction?.debt === 'up'}
+					class:metric__value--down={reaction?.debt === 'down'}
+					>{percent(metrics.horizon.yoursPctGdp)}</span
+				>
+			{/key}
 			<span class="metric__sub">
 				{t('metrics.ofGdp')} ·
 				{#if changed}
@@ -128,6 +152,55 @@ ABOUTME: deficit for the budget year, and the debt at the end of the outlook wit
 		font-size: var(--text-lg);
 		font-weight: 600;
 		line-height: 1.2;
+	}
+
+	/* The debt rises: the figure wiggles and swells for a moment. */
+	.metric__value--up {
+		transform-origin: left center;
+		animation: debt-up 0.7s ease-out;
+	}
+
+	/* The debt falls: the figure settles and shrinks for a moment. */
+	.metric__value--down {
+		transform-origin: left center;
+		animation: debt-down 0.6s ease-out;
+	}
+
+	@keyframes debt-up {
+		0% {
+			transform: scale(1) rotate(0);
+		}
+		20% {
+			transform: scale(1.18) rotate(-3deg);
+		}
+		40% {
+			transform: scale(1.18) rotate(3deg);
+		}
+		60% {
+			transform: scale(1.12) rotate(-2deg);
+		}
+		100% {
+			transform: scale(1) rotate(0);
+		}
+	}
+
+	@keyframes debt-down {
+		0% {
+			transform: scale(1);
+		}
+		40% {
+			transform: scale(0.9);
+		}
+		100% {
+			transform: scale(1);
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.metric__value--up,
+		.metric__value--down {
+			animation: none;
+		}
 	}
 
 	.metric__spark {

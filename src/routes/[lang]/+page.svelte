@@ -8,9 +8,10 @@ ABOUTME: Text comes from the message files and every figure from the sourced dat
 	import type { Changes } from '#lib/builder/choices.ts';
 	import { headlineMetrics } from '#lib/builder/metrics.ts';
 	import { changeNotice } from '#lib/builder/notice.ts';
-	import { reviewedEquivalents } from '#lib/consequences/consequences.ts';
+	import { preferReviewed } from '#lib/consequences/consequences.ts';
 	import BudgetMap from '#lib/explorer/BudgetMap.svelte';
 	import { translate } from '#lib/i18n/translate.ts';
+	import Bubbles from '#lib/ui/Bubbles.svelte';
 	import Toast from '#lib/ui/Toast.svelte';
 	import type { PageProps } from './$types';
 
@@ -27,27 +28,27 @@ ABOUTME: Text comes from the message files and every figure from the sourced dat
 			nominalGrowth: growthPct === undefined ? undefined : growthPct / 100
 		})
 	);
-	// The last change the visitor made; the notice reads the deficit after it from the metrics.
+	// The last change the visitor made, illustrated by the notice.
 	let lastChange = $state<{
 		id: string;
 		name: string;
 		percent: number;
 		changeEurMillion: number;
 	}>();
-	// Only reviewed examples may be shown, as the project rules require.
+	// Approved examples first; examples still waiting for review are shown too, by the owners' choice.
 	const exampleFor = (id: string) => {
 		const details = data.dataset.details.find((d) => d.line === id);
-		const example = details && reviewedEquivalents(details.equivalents)[0];
+		const example = details && preferReviewed(details.equivalents)[0];
 		return example && { unitEur: example.unitEur.value, label: example.label[data.locale] };
 	};
 	let noticeKey = $state(0);
+	// How the last change moved the debt: more spending raises it, less spending lowers it.
+	let debtMove = $state<'up' | 'down'>();
 	const notice = $derived(
 		lastChange === undefined
 			? undefined
 			: changeNotice(data.locale, {
 					...lastChange,
-					year: data.dataset.year,
-					deficitEurMillion: metrics.deficit.yours,
 					population: data.dataset.overview.population.persons,
 					example: exampleFor(lastChange.id)
 				})
@@ -67,13 +68,19 @@ ABOUTME: Text comes from the message files and every figure from the sourced dat
 	<p class="article__status">{t('home.status')}</p>
 </main>
 
-<KeyFigures {metrics} year={data.dataset.year} locale={data.locale} />
+<KeyFigures
+	{metrics}
+	year={data.dataset.year}
+	locale={data.locale}
+	reaction={debtMove && { debt: debtMove, key: noticeKey }}
+/>
 <BudgetMap
 	data={data.dataset}
 	locale={data.locale}
 	bind:changes
 	onchange={(change) => {
 		lastChange = change;
+		debtMove = change.direction > 0 ? 'up' : 'down';
 		noticeKey += 1;
 	}}
 />
@@ -87,6 +94,7 @@ ABOUTME: Text comes from the message files and every figure from the sourced dat
 	bind:growthPct
 />
 <Toast message={notice} key={noticeKey} closeLabel={t('builder.noticeClose')} />
+<Bubbles burst={debtMove && { mood: debtMove === 'down' ? 'happy' : 'worried', key: noticeKey }} />
 
 <style>
 	.article {

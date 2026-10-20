@@ -287,11 +287,27 @@ They stay at the top of the screen while you change the budget:
   ten-year outlook, with the result for an unchanged budget next to it once
   you make a change.
 
-After every change, a short notice says what changed per year and per
-inhabitant (Belgium's population on 1 January 2026, 11,867,634, Statbel),
-and what the deficit is now. Where a reviewer has approved an example in
-concrete units for that line, such as GP consultations reimbursed, the notice
-gives it too. It disappears by itself after a few seconds.
+After every change, a short notice illustrates it. Where the line has an
+example in concrete units, such as GP consultations reimbursed, the notice
+says roughly how many of them the change is worth, rounded to two digits
+because it is an illustration. Otherwise it gives the change per inhabitant
+per year (Belgium's population on 1 January 2026, 11,867,634, Statbel). The
+exact amounts are in the key figures and on the map. The notice disappears by
+itself after a few seconds.
+
+Each change also moves the debt: more spending raises it and less spending
+lowers it. The figures at the top react, and emojis bubble up the screen:
+happy ones when the debt falls, worried ones when it rises. This is a playful
+signal of direction, not a judgement of the choice. People who have asked
+their device for reduced motion do not see these animations.
+
+### Are the examples in concrete units checked?
+
+Every example comes from an official source, with its amount, page and quote
+in the data. The project owners have chosen to show them while their review
+is still under way: examples a reviewer has approved come first, and the
+others are shown too. Each example records who approved it, once that has
+happened.
 
 ### What is the card that appears when I change healthcare spending?
 
@@ -305,8 +321,9 @@ healthcare through RIZIV/INAMI), a card explains what the change means:
   proportion to their size. A real reform chooses where to cut; the
   proportional spread only shows the scale.
 - **That's about:** the change expressed in concrete units, such as GP
-  consultations reimbursed by RIZIV (€29.74 each in 2026). These examples are
-  shown only after a reviewer has approved them.
+  consultations reimbursed by RIZIV (€29.74 each in 2026). Examples a
+  reviewer has approved come first (see "Are the examples in concrete units
+  checked?").
 - **How could it be done?:** the official levers through which this spending
   changes, each with a neutral explanation and its source.
 

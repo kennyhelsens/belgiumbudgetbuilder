@@ -71,9 +71,10 @@
 	"metrics.official": "official: {value}",
 	"metrics.unchanged": "unchanged budget: {value}",
 	"metrics.pathLabel": "Debt from {from} to {to} with your budget, in % of GDP",
-	"builder.noticeChanged": "{name} {percent}: {amount} a year, or {perInhabitant} per inhabitant.{example} Deficit {year}: {deficit}.",
-	"builder.noticeReset": "{name} back to the official budget. Deficit {year}: {deficit}.",
+	"builder.noticeReset": "{name} is back to the official budget.",
 	"builder.noticeClose": "Close",
 	"metrics.ofGdp": "of GDP",
-	"builder.noticeExample": "That is about {count} {unit}."
+	"builder.noticeExample": "{name} {percent}: that is about {count} {unit}.",
+	"builder.noticeLess": "{name} {percent}: about {amount} less per inhabitant a year.",
+	"builder.noticeMore": "{name} {percent}: about {amount} more per inhabitant a year."
 }

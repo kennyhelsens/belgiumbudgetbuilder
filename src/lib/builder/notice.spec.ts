@@ -1,7 +1,7 @@
-// ABOUTME: Unit tests for the short notice shown after a visitor cuts or adds to a budget line:
-// ABOUTME: what changed, by how much per year, and what the deficit is now, in NL, FR and EN.
+// ABOUTME: Unit tests for the short notice shown after a visitor cuts or adds to a budget line: a tangible
+// ABOUTME: illustration (an example in concrete units, or the amount per inhabitant), in NL, FR and EN.
 import { describe, expect, it } from 'vitest';
-import { changeNotice, formatPercentChange } from './notice.ts';
+import { changeNotice, formatPercentChange, roughCount } from './notice.ts';
 
 describe('formatPercentChange', () => {
 	it('signs a change with a real minus sign', () => {
@@ -14,54 +14,56 @@ describe('formatPercentChange', () => {
 	});
 });
 
-describe('changeNotice', () => {
-	const base = { name: 'Defence', year: 2026, deficitEurMillion: 33136, population: 11867634 };
-
-	it('says what a cut means per year and for the deficit', () => {
-		expect(changeNotice('en', { ...base, percent: -5, changeEurMillion: -547.9 })).toBe(
-			'Defence −5%: −€548 million a year, or −€46 per inhabitant. Deficit 2026: €33.1 billion.'
-		);
+describe('roughCount', () => {
+	it('keeps two significant digits, because an illustration is approximate', () => {
+		expect(roughCount(14746931, 'en')).toBe('15,000,000');
+		expect(roughCount(3187, 'en')).toBe('3,200');
+		expect(roughCount(45, 'en')).toBe('45');
+		expect(roughCount(3187, 'nl')).toBe('3.200');
 	});
+});
 
-	it('adds a reviewed example in concrete units when there is one', () => {
+describe('changeNotice', () => {
+	const base = { name: 'Defence', population: 11867634 };
+
+	it('illustrates a change with an example in concrete units', () => {
 		expect(
 			changeNotice('en', {
 				...base,
 				name: 'Healthcare',
 				percent: -1,
-				changeEurMillion: -475,
+				changeEurMillion: -438.6,
 				example: { unitEur: 29.74, label: 'GP consultations reimbursed by RIZIV' }
 			})
-		).toBe(
-			'Healthcare −1%: −€475 million a year, or −€40 per inhabitant. ' +
-				'That is about 15,971,755 GP consultations reimbursed by RIZIV. Deficit 2026: €33.1 billion.'
+		).toBe('Healthcare −1%: that is about 15,000,000 GP consultations reimbursed by RIZIV.');
+	});
+
+	it('falls back to the amount per inhabitant when the line has no example', () => {
+		expect(changeNotice('en', { ...base, percent: -2, changeEurMillion: -219.2 })).toBe(
+			'Defence −2%: about €18 less per inhabitant a year.'
+		);
+		expect(changeNotice('en', { ...base, percent: 2, changeEurMillion: 219.2 })).toBe(
+			'Defence +2%: about €18 more per inhabitant a year.'
 		);
 	});
 
-	it('signs an addition with a plus', () => {
-		expect(
-			changeNotice('en', {
-				...base,
-				name: 'Justice',
-				percent: 2,
-				changeEurMillion: 58.5,
-				deficitEurMillion: 33742.5
-			})
-		).toBe('Justice +2%: +€59 million a year, or +€5 per inhabitant. Deficit 2026: €33.7 billion.');
+	it('leaves out exact budget amounts and the deficit, which the key figures already show', () => {
+		const text = changeNotice('en', { ...base, percent: -2, changeEurMillion: -219.2 });
+		expect(text).not.toMatch(/million|billion|Deficit/);
 	});
 
 	it('says when a line is back to the official budget', () => {
-		expect(
-			changeNotice('en', { ...base, percent: 0, changeEurMillion: 0, deficitEurMillion: 33684 })
-		).toBe('Defence back to the official budget. Deficit 2026: €33.7 billion.');
+		expect(changeNotice('en', { ...base, percent: 0, changeEurMillion: 0 })).toBe(
+			'Defence is back to the official budget.'
+		);
 	});
 
 	it('speaks Dutch and French', () => {
-		expect(changeNotice('nl', { ...base, percent: -5, changeEurMillion: -547.9 })).toMatch(
-			/^Defence −5%: −€ 548 miljoen per jaar, of €\s−46 per inwoner\. Tekort 2026: € 33,1 miljard\.$/
+		expect(changeNotice('nl', { ...base, percent: -2, changeEurMillion: -219.2 })).toMatch(
+			/^Defence −2%: ongeveer €\s18 minder per inwoner per jaar\.$/
 		);
-		expect(changeNotice('fr', { ...base, percent: -5, changeEurMillion: -547.9 })).toMatch(
-			/^Defence −5\s%\s: −548 millions € par an, soit −46\s€ par habitant\. Déficit 2026\s: 33,1 milliards €\.$/
+		expect(changeNotice('fr', { ...base, percent: -2, changeEurMillion: -219.2 })).toMatch(
+			/^Defence −2\s%\s: environ 18\s€ de moins par habitant et par an\.$/
 		);
 	});
 });

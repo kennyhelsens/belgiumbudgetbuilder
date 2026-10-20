@@ -1,6 +1,6 @@
 <!--
 ABOUTME: Consequence card: what a visitor's change to one spending line means, from that line's sourced details.
-ABOUTME: Shows where the change would land, reviewed unit equivalents, and the official levers with neutral explanations.
+ABOUTME: Shows where the change would land, unit equivalents (approved ones first), and the official levers with neutral explanations.
 -->
 <script lang="ts">
 	import type { Dataset, LineDetails } from '../data/schema.ts';
@@ -11,7 +11,7 @@ ABOUTME: Shows where the change would land, reviewed unit equivalents, and the o
 		distributeChange,
 		equivalentCount,
 		perInhabitantPerYear,
-		reviewedEquivalents
+		preferReviewed
 	} from './consequences.ts';
 
 	let {
@@ -29,7 +29,7 @@ ABOUTME: Shows where the change would land, reviewed unit equivalents, and the o
 	const sourcesById = $derived(new Map(data.sources.map((source) => [source.id, source])));
 	const spread = $derived(distributeChange(details.breakdown, changeEurMillion));
 	const largestChange = $derived(Math.max(...spread.map((item) => Math.abs(item.change)), 1));
-	const examples = $derived(reviewedEquivalents(details.equivalents).slice(0, 2));
+	const examples = $derived(preferReviewed(details.equivalents).slice(0, 2));
 
 	const signed = (eurMillion: number) =>
 		eurMillion > 0 ? `+${formatEuro(eurMillion, locale)}` : formatEuro(eurMillion, locale);
