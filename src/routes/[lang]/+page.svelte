@@ -8,6 +8,7 @@ ABOUTME: Text comes from the message files and every figure from the sourced dat
 	import type { Changes } from '#lib/builder/choices.ts';
 	import { headlineMetrics } from '#lib/builder/metrics.ts';
 	import { changeNotice } from '#lib/builder/notice.ts';
+	import { reviewedEquivalents } from '#lib/consequences/consequences.ts';
 	import BudgetMap from '#lib/explorer/BudgetMap.svelte';
 	import { translate } from '#lib/i18n/translate.ts';
 	import Toast from '#lib/ui/Toast.svelte';
@@ -27,7 +28,18 @@ ABOUTME: Text comes from the message files and every figure from the sourced dat
 		})
 	);
 	// The last change the visitor made; the notice reads the deficit after it from the metrics.
-	let lastChange = $state<{ name: string; percent: number; changeEurMillion: number }>();
+	let lastChange = $state<{
+		id: string;
+		name: string;
+		percent: number;
+		changeEurMillion: number;
+	}>();
+	// Only reviewed examples may be shown, as the project rules require.
+	const exampleFor = (id: string) => {
+		const details = data.dataset.details.find((d) => d.line === id);
+		const example = details && reviewedEquivalents(details.equivalents)[0];
+		return example && { unitEur: example.unitEur.value, label: example.label[data.locale] };
+	};
 	let noticeKey = $state(0);
 	const notice = $derived(
 		lastChange === undefined
@@ -35,7 +47,9 @@ ABOUTME: Text comes from the message files and every figure from the sourced dat
 			: changeNotice(data.locale, {
 					...lastChange,
 					year: data.dataset.year,
-					deficitEurMillion: metrics.deficit.yours
+					deficitEurMillion: metrics.deficit.yours,
+					population: data.dataset.overview.population.persons,
+					example: exampleFor(lastChange.id)
 				})
 	);
 	const t = $derived((key: Parameters<typeof translate>[1]) => translate(data.locale, key));

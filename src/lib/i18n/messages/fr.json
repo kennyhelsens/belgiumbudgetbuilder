@@ -71,8 +71,9 @@
 	"metrics.official": "officiel : {value}",
 	"metrics.unchanged": "budget inchangé : {value}",
 	"metrics.pathLabel": "Dette de {from} à {to} avec votre budget, en % du PIB",
-	"builder.noticeChanged": "{name} {percent} : {amount} par an. Déficit {year} : {deficit}.",
+	"builder.noticeChanged": "{name} {percent} : {amount} par an, soit {perInhabitant} par habitant.{example} Déficit {year} : {deficit}.",
 	"builder.noticeReset": "{name} revient au budget officiel. Déficit {year} : {deficit}.",
 	"builder.noticeClose": "Fermer",
-	"metrics.ofGdp": "du PIB"
+	"metrics.ofGdp": "du PIB",
+	"builder.noticeExample": "Cela représente environ {count} {unit}."
 }

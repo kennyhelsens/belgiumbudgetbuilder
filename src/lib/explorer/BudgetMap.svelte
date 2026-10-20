@@ -23,8 +23,13 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 		data: Dataset;
 		locale: Locale;
 		changes?: Changes;
-		/** Called after the visitor changes a line, with its name, the new percentage and the change in € million. */
-		onchange?: (change: { name: string; percent: number; changeEurMillion: number }) => void;
+		/** Called after the visitor changes a line, with its id, name, new percentage and change in € million. */
+		onchange?: (change: {
+			id: string;
+			name: string;
+			percent: number;
+			changeEurMillion: number;
+		}) => void;
 	} = $props();
 
 	const percentOf = (id: string, amount: number) => Math.round(((changes[id] ?? 0) / amount) * 100);
@@ -34,7 +39,12 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 		if (percent === 0) delete next[tile.id];
 		else next[tile.id] = (tile.eurMillion * percent) / 100;
 		changes = next;
-		onchange?.({ name: tile.label[locale], percent, changeEurMillion: next[tile.id] ?? 0 });
+		onchange?.({
+			id: tile.id,
+			name: tile.label[locale],
+			percent,
+			changeEurMillion: next[tile.id] ?? 0
+		});
 	}
 
 	const signed = (eurMillion: number) =>

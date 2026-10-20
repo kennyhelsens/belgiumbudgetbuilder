@@ -248,8 +248,11 @@ They stay at the top of the screen while you change the budget:
   ten-year outlook, with the result for an unchanged budget next to it once
   you make a change.
 
-After every change, a short notice says what changed per year and what the
-deficit is now. It disappears by itself after a few seconds.
+After every change, a short notice says what changed per year and per
+inhabitant (Belgium's population on 1 January 2026, 11,867,634, Statbel),
+and what the deficit is now. Where a reviewer has approved an example in
+concrete units for that line, such as GP consultations reimbursed, the notice
+gives it too. It disappears by itself after a few seconds.
 
 ### What is the card that appears when I change healthcare spending?
 
