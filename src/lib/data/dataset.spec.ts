@@ -58,6 +58,22 @@ describe('data/2026', () => {
 		expect(grant?.ageingGroup).toBeUndefined();
 	});
 
+	// Interest follows from the debt and interest rates, which the outlook calculates; it is not a budget choice.
+	it('does not let visitors change interest and other debt costs', () => {
+		const debtLines = [
+			'federal.public-debt-interest',
+			'federal.public-debt-other-costs',
+			'flanders.interest',
+			'wallonia.debt-interest',
+			'wallonia-brussels-federation.public-debt',
+			'brussels.interest'
+		];
+		const lines = dataset.entities.flatMap((e) => e.expenditure.lines);
+		for (const id of debtLines) {
+			expect(lines.find((l) => l.id === id)?.adjustable, id).toBe(false);
+		}
+	});
+
 	// Federal lines follow the budget sections BOSA publishes, so there is no catch-all line.
 	it('has no catch-all line in the federal budget', () => {
 		const federal = dataset.entities.find((e) => e.id === 'federal');

@@ -198,7 +198,8 @@
 						"note": "Payment credits: row B plus row E (variable credits of budget funds), A-268/5 programme tables."
 					}
 				},
-				"nature": "committed"
+				"nature": "committed",
+				"adjustable": false
 			},
 			{
 				"id": "brussels.other",

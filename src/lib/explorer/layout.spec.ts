@@ -2,7 +2,7 @@
 // ABOUTME: Tile areas must be proportional to money, and transfers between governments must not take space twice.
 import { describe, expect, it } from 'vitest';
 import { datasetFixture } from '../data/test-fixture.ts';
-import { mapTiles } from './layout.ts';
+import { mapTiles, tooltipPlacement } from './layout.ts';
 
 const area = (t: { x0: number; y0: number; x1: number; y1: number }) =>
 	(t.x1 - t.x0) * (t.y1 - t.y0);
@@ -52,5 +52,20 @@ describe('mapTiles zoomed into one government', () => {
 		expect(() => mapTiles(datasetFixture(), { width: 1, height: 1, focus: 'atlantis' })).toThrow(
 			'atlantis'
 		);
+	});
+});
+
+describe('tooltipPlacement', () => {
+	const frame = { width: 400, height: 250 };
+	const tile = (x0: number, y0: number, x1: number, y1: number) => ({ x0, y0, x1, y1 });
+
+	it('opens below a tile in the top half, and above one in the bottom half', () => {
+		expect(tooltipPlacement(tile(0, 0, 50, 40), frame).vertical).toBe('below');
+		expect(tooltipPlacement(tile(0, 200, 50, 250), frame).vertical).toBe('above');
+	});
+
+	it('aligns to the left edge of a tile on the left, and to the right edge of one on the right', () => {
+		expect(tooltipPlacement(tile(10, 0, 60, 40), frame).horizontal).toBe('left');
+		expect(tooltipPlacement(tile(350, 0, 400, 40), frame).horizontal).toBe('right');
 	});
 });

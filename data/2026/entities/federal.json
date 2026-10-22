@@ -548,7 +548,8 @@
 						"note": "10,739.498 + 1,221.278 + 289.736 + 39.199 = 12,289.711 (thousand EUR -> EUR m). Excludes other section-51 costs (commissions, derivatives, FX losses, F-35/MALE hedging, Debt Agency dotation, credit granting: 1,346.6) which sit in 'other', and excludes debt amortisation and purchases of securities (40,458.0) which are outside the total. ESA interest charges of the federal government (incl. consolidated bodies) are 12,455 (1468/001 p. 22/121)."
 					}
 				},
-				"nature": "committed"
+				"nature": "committed",
+				"adjustable": false
 			},
 			{
 				"id": "federal.public-debt-other-costs",
@@ -565,7 +566,8 @@
 						"note": "Section 51 total 54,094.365 minus the lines shown separately (52,747.741) = 1,346.624. Derivatives (391.4 and 445.9 for hedging payments), exchange losses (172.7), differences on securities transactions (52.5), credit to public bodies (200.0) and other costs. Excludes the repayment of long-term loans (31,198.072) and purchases of securities (9,259.958), which are financing. The section total is the same in DOC 56 1470/001 p. 10, Synthesetabel: 'lim 51.844.557 2.249.808 54.094.365 51.844.557 2.249.808 54.094.365 lim 51 SPF FINANCES, POUR LA DETTE PUBLIQUE.'."
 					}
 				},
-				"nature": "committed"
+				"nature": "committed",
+				"adjustable": false
 			},
 			{
 				"id": "federal.eu-gni-contribution",

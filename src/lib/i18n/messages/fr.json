@@ -46,6 +46,7 @@
 	"outlook.caveat": "Il s'agit d'un simple calcul, pas d'une prévision. Le modèle ne tient pas compte de la réaction des personnes et des entreprises aux changements d'impôts ou de dépenses, ni de taux d'intérêt qui évoluent dans le temps. Le coût du vieillissement suit le rapport officiel du Comité d'étude sur le vieillissement ; modifier les dépenses de pensions ou de soins de santé modifie leur hausse projetée dans la même proportion.",
 	"builder.change": "Votre modification",
 	"builder.sliderLabel": "Modifier {name}, en pour cent",
+	"builder.fixed": "Découle de la dette et des taux d’intérêt (voir les perspectives)",
 	"builder.stepDown": "Réduire {name} de 1 %",
 	"builder.stepUp": "Augmenter {name} de 1 %",
 	"ageing.title": "Le coût du vieillissement",

@@ -46,6 +46,7 @@
 	"outlook.caveat": "This is simple arithmetic, not a forecast. It does not model how people and companies react to tax or spending changes, nor interest rates that change over time. Ageing costs follow the official Study Committee on Ageing report; changing pension or healthcare spending scales their projected increase in the same proportion.",
 	"builder.change": "Your change",
 	"builder.sliderLabel": "Change {name}, in percent",
+	"builder.fixed": "Follows from the debt and interest rates (see the outlook)",
 	"builder.stepDown": "Cut {name} by 1%",
 	"builder.stepUp": "Add 1% to {name}",
 	"ageing.title": "The cost of ageing",

@@ -70,6 +70,11 @@ const lineSchema = z.object({
 	transferTo: slug.optional(),
 	/** Set when this spending follows an official ageing path, so changing it scales that path's increase. */
 	ageingGroup: ageingGroupSchema.optional(),
+	/**
+	 * false when no budget decision can change this line, e.g. interest on debt, which follows from the debt
+	 * and interest rates (the outlook calculates it). Lines are adjustable unless stated.
+	 */
+	adjustable: z.boolean().optional(),
 	note: localized.optional()
 });
 

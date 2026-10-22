@@ -81,3 +81,34 @@ test.describe('national-accounts reference total', () => {
 		await expect(map.getByTestId('national-accounts')).toHaveCount(0);
 	});
 });
+
+test.describe('tile tooltips', () => {
+	async function openFederal(page: import('@playwright/test').Page) {
+		await page.goto('/en/');
+		const map = page.getByRole('region', { name: 'Budget map' });
+		await map.getByRole('button', { name: /^Federal government/ }).click();
+		return map;
+	}
+
+	test('a small tile shows its name and amount on hover', async ({ page }) => {
+		const map = await openFederal(page);
+		await map.getByRole('group', { name: /^Immigration Office/ }).hover();
+		const tooltip = map.getByRole('tooltip');
+		await expect(tooltip).toBeVisible();
+		await expect(tooltip).toContainText('Immigration Office');
+		await expect(tooltip).toContainText('€218 million');
+	});
+
+	test('keyboard focus on a small tile shows its tooltip too', async ({ page }) => {
+		const map = await openFederal(page);
+		await page.mouse.move(0, 0);
+		await map.getByRole('button', { name: 'Cut Immigration Office by 1%' }).focus();
+		await expect(map.getByRole('tooltip')).toContainText('Immigration Office');
+	});
+
+	test('a tile whose text fits shows no tooltip', async ({ page }) => {
+		const map = await openFederal(page);
+		await map.getByRole('group', { name: /^Defence/ }).hover();
+		await expect(map.getByRole('tooltip')).toHaveCount(0);
+	});
+});

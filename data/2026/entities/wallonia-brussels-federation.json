@@ -86,7 +86,8 @@
 						"note": "Calculated: total excluding principal 15,591.4 minus chapters I (1,168.997), II (2,379.013), III (11,089.788) and V (580.939) of the adjustment decree. Chapter IV including principal is 1,312.984."
 					}
 				},
-				"nature": "committed"
+				"nature": "committed",
+				"adjustable": false
 			},
 			{
 				"id": "wallonia-brussels-federation.transfers-walloon-region-cocof",

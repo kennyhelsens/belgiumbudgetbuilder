@@ -12,7 +12,7 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 	import { translate, type MessageKey } from '../i18n/translate.ts';
 	import { colorSlot } from './colors.ts';
 	import { formatEuro } from './format.ts';
-	import { mapTiles, type Tile } from './layout.ts';
+	import { mapTiles, tooltipPlacement, type Tile } from './layout.ts';
 
 	let {
 		data,
@@ -97,6 +97,46 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 		return (tile.x1 - tile.x0) * scale > 160 && (tile.y1 - tile.y0) * scale > 140;
 	}
 
+	/** The tile whose tooltip is open: one that cannot show its own name and amount in full. */
+	let tip: Tile | undefined = $state(undefined);
+
+	function showTip(tile: Tile, element: HTMLElement) {
+		const clipped =
+			element.scrollHeight > element.clientHeight + 1 ||
+			element.scrollWidth > element.clientWidth + 1;
+		tip = !hasRoom(tile) || clipped ? tile : undefined;
+	}
+
+	function hideTip(tile: Tile) {
+		if (tip?.id === tile.id) tip = undefined;
+	}
+
+	/** Hover, keyboard focus and tap (which focuses the tile) all open the tooltip. */
+	const tipEvents = (tile: Tile) => ({
+		onpointerenter: (event: PointerEvent) => showTip(tile, event.currentTarget as HTMLElement),
+		onpointerleave: () => hideTip(tile),
+		onfocusin: (event: FocusEvent) => showTip(tile, event.currentTarget as HTMLElement),
+		onfocusout: () => hideTip(tile)
+	});
+
+	$effect(() => {
+		void focus;
+		tip = undefined;
+	});
+
+	function tipStyle(tile: Tile) {
+		const place = tooltipPlacement(tile, frame);
+		const horizontal =
+			place.horizontal === 'left'
+				? `left:${(tile.x0 / frame.width) * 100}%`
+				: `right:${(1 - tile.x1 / frame.width) * 100}%`;
+		const vertical =
+			place.vertical === 'below'
+				? `top:${(tile.y1 / frame.height) * 100}%`
+				: `bottom:${(1 - tile.y0 / frame.height) * 100}%`;
+		return `${horizontal};${vertical}`;
+	}
+
 	const share = (amount: number) =>
 		new Intl.NumberFormat(locale, { style: 'percent', maximumFractionDigits: 1 }).format(
 			amount / shownTotal
@@ -164,21 +204,24 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 					style={boxStyle(tile, frame)}
 					aria-label={label}
 					onclick={() => (focus = tile.id)}
+					{...tipEvents(tile)}
 				>
 					{#if hasRoom(tile)}
 						<span class="tile__name">{tile.label[locale]}</span>
 						<span class="tile__amount">{formatEuro(tile.eurMillion, locale)}</span>
 					{/if}
 				</button>
-			{:else if focusEntity?.adjustable}
+			{:else if focusEntity?.adjustable && tile.adjustable}
 				{@const percent = percentOf(tile.id, tile.eurMillion)}
 				{@const slice = changeSlice(percent)}
 				<div
 					class="tile tile--leaf"
+					class:tile--small={!hasRoom(tile)}
 					style={boxStyle(tile, frame)}
 					role="group"
 					aria-label={label}
 					tabindex="-1"
+					{...tipEvents(tile)}
 				>
 					{#if slice}
 						<span
@@ -214,14 +257,37 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 					</span>
 				</div>
 			{:else}
-				<div class="tile tile--leaf" style={boxStyle(tile, frame)} role="img" aria-label={label}>
+				<div
+					class="tile tile--leaf"
+					style={boxStyle(tile, frame)}
+					role="img"
+					aria-label={label}
+					{...tipEvents(tile)}
+				>
 					{#if hasRoom(tile)}
 						<span class="tile__name">{tile.label[locale]}</span>
 						<span class="tile__amount">{formatEuro(tile.eurMillion, locale)}</span>
+						{#if focusEntity?.adjustable && !tile.adjustable}
+							<span class="tile__fixed">{t('builder.fixed')}</span>
+						{/if}
 					{/if}
 				</div>
 			{/if}
 		{/each}
+		{#if tip}
+			{@const percent = percentOf(tip.id, tip.eurMillion)}
+			<div class="tile-tip" role="tooltip" style={tipStyle(tip)}>
+				<strong>{tip.label[locale]}</strong>
+				<span
+					>{formatEuro(tip.eurMillion, locale)}{#if percent}
+						→ {formatEuro(tip.eurMillion + (changes[tip.id] ?? 0), locale)}{/if}
+					· {share(tip.eurMillion)}</span
+				>
+				{#if focusEntity?.adjustable && !tip.adjustable}
+					<span>{t('builder.fixed')}</span>
+				{/if}
+			</div>
+		{/if}
 	</div>
 
 	<p class="map__note">{t('map.transfersNote')}</p>
@@ -257,7 +323,9 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 								{t('map.sumOfLines')}
 							{/if}
 						</td>
-						{#if focusEntity?.adjustable}
+						{#if focusEntity?.adjustable && !tile.adjustable}
+							<td class="change change--fixed">{t('builder.fixed')}</td>
+						{:else if focusEntity?.adjustable}
 							<td class="change">
 								<input
 									type="range"
@@ -436,6 +504,12 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 		background-size: 5px 5px;
 	}
 
+	.tile__fixed {
+		color: var(--ink-muted);
+		font-size: 0.8125rem;
+		font-style: italic;
+	}
+
 	.tile__badge {
 		position: relative;
 		align-self: flex-start;
@@ -468,9 +542,9 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 		pointer-events: auto;
 	}
 
-	/* A small tile lets its buttons spill over its neighbours while it is in use. */
-	.tile--leaf:hover,
-	.tile--leaf:focus-within {
+	/* A small tile lets its buttons spill over its neighbours while it is in use; its name is in the tooltip. */
+	.tile--small:hover,
+	.tile--small:focus-within {
 		z-index: 2;
 		overflow: visible;
 	}
@@ -498,6 +572,26 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 	.stepper button:disabled {
 		opacity: 0.4;
 		cursor: not-allowed;
+	}
+
+	.tile-tip {
+		position: absolute;
+		z-index: 5;
+		display: grid;
+		gap: 2px;
+		max-width: min(18rem, 90%);
+		margin: 4px 0;
+		padding: var(--space-1) var(--space-2);
+		border: 1px solid var(--rule);
+		background: var(--paper-raised);
+		box-shadow: 0 2px 8px color-mix(in oklab, var(--ink) 15%, transparent);
+		font-size: var(--text-sm);
+		pointer-events: none;
+	}
+
+	.tile-tip span {
+		color: var(--ink-muted);
+		font-variant-numeric: tabular-nums;
 	}
 
 	.minimap {
@@ -574,6 +668,11 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 
 	.change input {
 		width: 100%;
+	}
+
+	.change--fixed {
+		color: var(--ink-muted);
+		font-style: italic;
 	}
 
 	.change__value {
