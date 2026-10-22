@@ -147,6 +147,12 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 	<h2 id="map-title">{t('map.title')}</h2>
 	<p class="map__intro">{t('map.intro')}</p>
 
+	{#if focusEntity}
+		<button type="button" class="map__back" onclick={() => (focus = undefined)}>
+			<span aria-hidden="true">←</span>
+			{t('map.back')}
+		</button>
+	{/if}
 	<nav class="crumbs" aria-label={t('map.breadcrumbLabel')}>
 		{#if focusEntity}
 			<button type="button" class="crumbs__link" onclick={() => (focus = undefined)}
@@ -395,6 +401,26 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 		border: 1px solid var(--rule);
 		font-size: var(--text-sm);
 		font-style: italic;
+	}
+
+	.map__back {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
+		margin: var(--space-3) 0 0;
+		padding: var(--space-1) var(--space-3);
+		border: 1px solid var(--ink);
+		background: var(--paper);
+		color: var(--ink);
+		font: inherit;
+		font-size: var(--text-sm);
+		font-weight: 600;
+		cursor: pointer;
+	}
+
+	.map__back:hover {
+		background: var(--ink);
+		color: var(--paper);
 	}
 
 	.crumbs {
