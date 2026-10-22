@@ -105,17 +105,31 @@ ABOUTME: Text comes from the message files and every figure from the sourced dat
 		padding: var(--space-5) var(--gutter) 0;
 	}
 
+	/* A label above the headline: crimson bar, small bold capitals. */
 	.article__kicker {
+		display: flex;
+		align-items: center;
+		gap: var(--space-2);
 		margin: 0;
 		color: var(--accent);
-		font-size: var(--text-sm);
-		letter-spacing: 0.08em;
+		font-size: 0.8125rem;
+		font-weight: 700;
+		letter-spacing: 0.12em;
 		text-transform: uppercase;
+	}
+
+	.article__kicker::before {
+		content: '';
+		width: 1.5rem;
+		height: 0.375rem;
+		background: var(--accent);
 	}
 
 	h1 {
 		margin: var(--space-2) 0 var(--space-4);
-		font-size: var(--text-2xl);
+		font-size: clamp(2.25rem, 7vw, 3.75rem);
+		font-weight: 900;
+		letter-spacing: -0.025em;
 	}
 
 	.article__lede {

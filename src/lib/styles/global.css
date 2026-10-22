@@ -1,26 +1,28 @@
 /*
-ABOUTME: Design tokens and base styles for the journal-like design system (paper, ink, serif).
+ABOUTME: Design tokens and base styles: an editorial look with a bold display serif on pastel-cream paper.
 ABOUTME: Light by default, with a dark palette following the visitor's system preference.
 */
 :root {
-	--paper: #f8f4ec;
-	--paper-raised: #fffdf8;
-	--ink: #1f1c18;
-	--ink-muted: #5c554b;
-	--rule: #d9d0c1;
-	--accent: #8a3b12;
+	--paper: #fbf4e4;
+	--paper-raised: #fffaf0;
+	--ink: #15151c;
+	--ink-muted: #56545e;
+	--rule: #e2d6bf;
+	--accent: #c8243a;
 
-	/* Categorical palette for governments, fixed order (validated with the dataviz palette checker). */
-	--series-1: #2a78d6;
-	--series-2: #eb6834;
-	--series-3: #1baf7a;
-	--series-4: #eda100;
-	--series-5: #e87ba4;
-	--series-6: #008300;
-	--series-7: #6250d6;
-	--series-8: #e34948;
+	/* Categorical palette, fixed order (validated with the dataviz palette checker on the paper colour). */
+	--series-1: #2f6bc4;
+	--series-2: #12937a;
+	--series-3: #d2930f;
+	--series-4: #c8243a;
+	--series-5: #8e4bb0;
+	--series-6: #e07a2e;
+	--series-7: #d6578c;
+	--series-8: #6f9a1e;
 
-	--font-serif: 'Newsreader Variable', Georgia, 'Times New Roman', serif;
+	/* A bold display serif for headlines, a calm reading serif for text. Both are served from the site. */
+	--font-display: 'Fraunces Variable', Georgia, 'Times New Roman', serif;
+	--font-serif: 'Source Serif 4 Variable', Georgia, 'Times New Roman', serif;
 
 	--text-sm: 0.9375rem;
 	--text-base: 1.1875rem;
@@ -43,21 +45,21 @@ ABOUTME: Light by default, with a dark palette following the visitor's system pr
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--paper: #1a1815;
-		--paper-raised: #23201c;
-		--ink: #ece6da;
-		--ink-muted: #a89f90;
-		--rule: #3b362f;
-		--accent: #e39a6b;
+		--paper: #17161c;
+		--paper-raised: #201f26;
+		--ink: #f3ede0;
+		--ink-muted: #aba6b2;
+		--rule: #35333d;
+		--accent: #f0707e;
 
-		--series-1: #3987e5;
-		--series-2: #d95926;
-		--series-3: #199e70;
-		--series-4: #c98500;
-		--series-5: #d55181;
-		--series-6: #008300;
-		--series-7: #9085e9;
-		--series-8: #e66767;
+		--series-1: #5b8fe6;
+		--series-2: #1f9c82;
+		--series-3: #b98212;
+		--series-4: #d23a52;
+		--series-5: #b07ad6;
+		--series-6: #d77634;
+		--series-7: #cf5fa8;
+		--series-8: #7da22c;
 	}
 }
 
@@ -84,10 +86,17 @@ body {
 h1,
 h2,
 h3 {
-	font-family: var(--font-serif);
-	font-weight: 500;
-	line-height: 1.15;
-	letter-spacing: -0.01em;
+	font-family: var(--font-display);
+	font-weight: 800;
+	line-height: 1.08;
+	letter-spacing: -0.015em;
+	font-optical-sizing: auto;
+}
+
+/* Sections open with a heavy ink rule, as in a newspaper. */
+h2 {
+	padding-top: var(--space-2);
+	border-top: 4px solid var(--ink);
 }
 
 a {
