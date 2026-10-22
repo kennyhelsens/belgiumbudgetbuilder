@@ -15,6 +15,7 @@ ABOUTME: Text comes from the message files and every figure from the sourced dat
 	import { translate } from '#lib/i18n/translate.ts';
 	import Intro from '#lib/intro/Intro.svelte';
 	import { introFacts } from '#lib/intro/facts.ts';
+	import { ClickLog, trackingAllowed } from '#lib/tracking/clicklog.ts';
 	import Bubbles from '#lib/ui/Bubbles.svelte';
 	import Toast from '#lib/ui/Toast.svelte';
 	import type { PageProps } from './$types';
@@ -83,6 +84,26 @@ ABOUTME: Text comes from the message files and every figure from the sourced dat
 			// Nothing to remember without storage.
 		}
 	}
+	// Anonymous tile clicks, to learn which budgets people look at, cut or add to; see the FAQ on privacy.
+	let clickLog: ClickLog | undefined;
+	onMount(() => {
+		const nav = navigator as Navigator & { globalPrivacyControl?: boolean };
+		if (!trackingAllowed(nav)) return;
+		const log = new ClickLog(data.locale, (body) =>
+			navigator.sendBeacon('/api/events', new Blob([body], { type: 'application/json' }))
+		);
+		clickLog = log;
+		const flush = () => log.flush();
+		addEventListener('pagehide', flush);
+		const onHidden = () => document.visibilityState === 'hidden' && log.flush();
+		document.addEventListener('visibilitychange', onHidden);
+		return () => {
+			log.flush();
+			removeEventListener('pagehide', flush);
+			document.removeEventListener('visibilitychange', onHidden);
+		};
+	});
+
 	function showMap() {
 		const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 		document
@@ -117,7 +138,9 @@ ABOUTME: Text comes from the message files and every figure from the sourced dat
 	data={data.dataset}
 	locale={data.locale}
 	bind:changes
+	onopen={(id) => clickLog?.record(id, 'open', 0)}
 	onchange={(change) => {
+		clickLog?.record(change.id, change.stepEurMillion < 0 ? 'cut' : 'add', change.percent);
 		const click = clicks[change.id] ?? 0;
 		clicks[change.id] = click + 1;
 		lastStep = { ...change, example: pickIllustration(examplesFor(change.id), click) };

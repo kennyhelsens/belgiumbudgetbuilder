@@ -18,7 +18,8 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 		data,
 		locale,
 		changes = $bindable({}),
-		onchange
+		onchange,
+		onopen
 	}: {
 		data: Dataset;
 		locale: Locale;
@@ -33,6 +34,8 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 			percent: number;
 			stepEurMillion: number;
 		}) => void;
+		/** Called when the visitor opens a government's tile to see its budget, with the government's id. */
+		onopen?: (id: string) => void;
 	} = $props();
 
 	const percentOf = (id: string, amount: number) => Math.round(((changes[id] ?? 0) / amount) * 100);
@@ -209,7 +212,10 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 					class="tile"
 					style={boxStyle(tile, frame)}
 					aria-label={label}
-					onclick={() => (focus = tile.id)}
+					onclick={() => {
+						focus = tile.id;
+						onopen?.(tile.id);
+					}}
 					{...tipEvents(tile)}
 				>
 					{#if hasRoom(tile)}

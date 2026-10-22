@@ -1,0 +1,10 @@
+# ABOUTME: Local-only Cloudflare configuration for tests and `wrangler pages dev`: a D1 database bound as DB.
+# ABOUTME: Production bindings are set in the Cloudflare Pages dashboard; this file is not read by Pages builds.
+name = "belgiumbudgetbuilder-local"
+compatibility_date = "2026-10-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "bbb-local"
+database_id = "bbb-local"
+migrations_dir = "migrations"
