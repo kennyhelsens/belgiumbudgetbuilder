@@ -112,3 +112,15 @@ test.describe('tile tooltips', () => {
 		await expect(map.getByRole('tooltip')).toHaveCount(0);
 	});
 });
+
+test.describe('going back up a level', () => {
+	test('a back button returns from a government to Belgium as a whole', async ({ page }) => {
+		await page.goto('/en/');
+		const map = page.getByRole('region', { name: 'Budget map' });
+		await expect(map.getByRole('button', { name: /^Back to Belgium/ })).toHaveCount(0);
+		await map.getByRole('button', { name: /^Federal government/ }).click();
+		await map.getByRole('button', { name: /^Back to Belgium/ }).click();
+		await expect(map.getByRole('button', { name: /^Federal government/ })).toBeVisible();
+		await expect(map.getByRole('button', { name: /^Back to Belgium/ })).toHaveCount(0);
+	});
+});
