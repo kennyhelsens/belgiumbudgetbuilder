@@ -539,9 +539,26 @@ to this FAQ.
 - **Technology:** SvelteKit, D3, TypeScript.
 - **Hosting:** Cloudflare Pages, which builds a preview of every proposed
   change.
-- **Privacy:** the site has no cookies, no tracking and no accounts. Its fonts
-  are served from the site itself, so no third-party font service sees your
-  visit.
+- **Privacy:** the site has no cookies, no accounts and no third-party
+  trackers. Its fonts are served from the site itself, so no third-party font
+  service sees your visit. It does count clicks on the budget map, anonymously;
+  see below.
+
+### Does the site track what I click?
+
+Only on the budget map, and anonymously, to learn which budgets people look
+at, cut or add to. For each click on a tile the site records:
+
+- which government or spending line was clicked (e.g. `federal.defence`);
+- whether you opened it, cut it or added to it, and the resulting percentage;
+- the language of the page and the order of the click;
+- a random session id that exists only while the page is open. It is not
+  stored on your device, so a reload or a second visit gets a new one.
+
+It does not record your IP address, browser, device or location, and sets no
+cookies. If your browser sends Global Privacy Control or Do Not Track, nothing
+is recorded at all. The clicks are stored in a Cloudflare D1 database that
+only the project's maintainers can read.
 
 ### I found a mistake. What now?
 
