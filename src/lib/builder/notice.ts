@@ -1,6 +1,8 @@
-// ABOUTME: The short notice shown after each click on a budget line: a tangible illustration of that one step,
-// ABOUTME: an example in concrete units or the amount per inhabitant, rotating per click. Text is NL/FR/EN.
+// ABOUTME: The short notice shown after each click on a budget line: a tangible illustration of that one step (time for
+// ABOUTME: the people who receive a benefit, an example in concrete units, or the amount per inhabitant). NL/FR/EN.
 import { equivalentCount, perInhabitantPerYear } from '../consequences/consequences.ts';
+import { asIfSentence, type Recipients } from '../consequences/human.ts';
+import { roughCount } from '../explorer/format.ts';
 import type { Locale } from '../i18n/locales.ts';
 import { translate } from '../i18n/translate.ts';
 
@@ -9,11 +11,6 @@ export function formatPercentChange(percent: number, locale: Locale): string {
 	return new Intl.NumberFormat(locale, { style: 'percent', signDisplay: 'exceptZero' })
 		.format(percent / 100)
 		.replace('-', '−');
-}
-
-/** A count rounded to two significant digits: an illustration is approximate, not exact. */
-export function roughCount(count: number, locale: Locale): string {
-	return new Intl.NumberFormat(locale, { maximumSignificantDigits: 2 }).format(count);
 }
 
 /**
@@ -34,6 +31,9 @@ export type ChangeNotice = {
 	population: number;
 	/** An example for this line, to express the step in concrete units. */
 	example?: { unitEur: number; label: string };
+	/** For a benefit line: who receives it, to tell the step as time; needs the step in percent of the line. */
+	recipients?: Recipients;
+	stepPercent?: number;
 };
 
 export function changeNotice(locale: Locale, notice: ChangeNotice): string {
@@ -41,6 +41,10 @@ export function changeNotice(locale: Locale, notice: ChangeNotice): string {
 		return translate(locale, 'builder.noticeReset').replace('{name}', notice.name);
 	}
 	const cut = notice.stepEurMillion < 0;
+	if (notice.recipients && notice.stepPercent) {
+		const sentence = asIfSentence(locale, notice.recipients, notice.stepPercent);
+		return `${notice.name}: ${sentence.charAt(0).toLocaleLowerCase(locale)}${sentence.slice(1)}`;
+	}
 	if (notice.example) {
 		return translate(locale, cut ? 'builder.noticeCutExample' : 'builder.noticeAddExample')
 			.replace('{name}', notice.name)

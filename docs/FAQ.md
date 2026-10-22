@@ -383,10 +383,14 @@ They stay at the top of the screen while you change the budget:
   you make a change.
 
 After every click, a short notice illustrates that one step, not your total
-change. Each click on the same line shows something new: the line's examples
-in concrete units in turn, such as GP consultations reimbursed, and then the
-step per inhabitant per year (Belgium's population on 1 January 2026,
-11,867,634, Statbel). Counts are rounded to two digits because they are
+change. Each click on the same line shows something new. For a benefit line
+(see "What is the card that appears when I change a spending line?") the
+first click says what the step means in time for the people who receive it,
+for example "as if every retired employee got about 4 days less pension a
+year" for 1% of employee pensions. Then come the line's examples in concrete
+units in turn, such as GP consultations reimbursed, and then the step per
+inhabitant per year (Belgium's population on 1 January 2026, 11,867,634,
+Statbel). Counts are rounded to two digits because they are
 illustrations. The exact amounts are in the key figures and on the map. The
 notice disappears by itself after a few seconds.
 
@@ -410,6 +414,11 @@ is still under way: examples a reviewer has approved come first, and the
 others are shown too. Each example records who approved it, once that has
 happened.
 
+Examples are measured per year or per item, so they can be compared with a
+yearly budget. Where the source gives a monthly amount, the data multiplies
+it by 12 (or by 3 for the maximum unemployment benefit, which only applies
+in the first three months) and says so in the note next to the quote.
+
 Examples are approximate by nature. Some are averages, some are legal
 minimums or maximums, and a few use the latest published year (2024 or 2025)
 or a rate that has since been indexed; the label says which.
@@ -427,16 +436,16 @@ or a rate that has since been indexed; the label says which.
 | Federal government           | Income guarantee for older people (GRAPA) and running costs of the Social Security department                                | years of income guarantee (GRAPA) for one older person (average amount)                                                  | 9,032      |
 | Federal government           | Income guarantee for older people (GRAPA) and running costs of the Social Security department                                | years of the maximum income guarantee for a single older person                                                          | 19,731     |
 | Federal government           | Justice                                                                                                                      | prisoners held for a year (average cost)                                                                                 | 62,283     |
-| Social security              | Employee pensions                                                                                                            | average gross monthly pensions from the employee scheme (per pensioner)                                                  | 1,435.91   |
+| Social security              | Employee pensions                                                                                                            | years of the average gross pension from the employee scheme (per pensioner)                                              | 17,230.92  |
 | Social security              | Employee pensions                                                                                                            | yearly gross minimum pensions for a full career as an employee (single rate)                                             | 22,582.98  |
 | Social security              | Healthcare (RIZIV/INAMI)                                                                                                     | GP consultations reimbursed by RIZIV                                                                                     | 29.74      |
 | Social security              | Healthcare (RIZIV/INAMI)                                                                                                     | yearly fees for a global medical file                                                                                    | 38.82      |
 | Social security              | Healthcare (RIZIV/INAMI)                                                                                                     | RIZIV/INAMI reimbursements of a consultation with an accredited cardiologist (standard rate, no GP referral)             | 38.33      |
-| Social security              | Public-sector pensions (all levels of government, Federal Pension Service)                                                   | months of the guaranteed minimum civil-service pension (gross, single rate)                                              | 1,881.58   |
+| Social security              | Public-sector pensions (all levels of government, Federal Pension Service)                                                   | years of the guaranteed minimum civil-service pension (gross, single rate)                                               | 22,578.96  |
 | Social security              | Self-employed pensions                                                                                                       | yearly gross minimum pensions for a full career as a self-employed person (single rate)                                  | 22,582.98  |
 | Social security              | Sickness, disability and maternity benefits                                                                                  | average yearly invalidity benefits per person in invalidity (employees and unemployed, 2025)                             | 18,951.48  |
-| Social security              | Unemployment and related benefits (RVA/ONEM)                                                                                 | average monthly unemployment benefits of a fully unemployed jobseeker (2025)                                             | 1,461.17   |
-| Social security              | Unemployment and related benefits (RVA/ONEM)                                                                                 | maximum gross monthly unemployment benefits in the first three months of unemployment                                    | 2,812.94   |
+| Social security              | Unemployment and related benefits (RVA/ONEM)                                                                                 | years of the average unemployment benefit of a fully unemployed jobseeker (2025)                                         | 17,534.04  |
+| Social security              | Unemployment and related benefits (RVA/ONEM)                                                                                 | first three months of unemployment at the maximum gross benefit                                                          | 8,438.82   |
 | Flanders                     | Education and training                                                                                                       | gross annual salaries of a starting secondary-school teacher (master's degree), excluding holiday pay and year-end bonus | 48,499.92  |
 | Flanders                     | Education and training                                                                                                       | school years of a pupil in mainstream secondary education                                                                | 11,800     |
 | Flanders                     | Education and training                                                                                                       | school years of a pupil in mainstream nursery and primary education                                                      | 7,600      |
@@ -459,19 +468,36 @@ changed on the site, so it has no examples.
 ### What is the card that appears when I change a spending line?
 
 When you change a spending line that has detailed data behind it, a card
-explains what the change means. Healthcare through RIZIV/INAMI has every part
-below; the other lines in "Which examples are there?" have the examples only:
+says in one plain sentence what the change means, with the amounts in small
+print below. Healthcare through RIZIV/INAMI also has the last two parts; the
+other lines in "Which examples are there?" have the sentence and the
+amounts:
 
-- **Per inhabitant:** the yearly change divided by Belgium's population on
-  1 January 2026 (11,867,634, Statbel). For example, a 10% cut in healthcare
-  is about €370 less per inhabitant per year.
+- **The plain sentence, for benefit lines:** for lines that are mostly
+  payments to people (employee, self-employed and public-sector pensions,
+  unemployment, sickness and invalidity benefits, disability allowances and
+  Walloon family allowances), the card tells the change as time for the
+  people who receive it. A 6% cut in employee pensions reads: "As if every
+  retired employee got about 3 weeks less pension a year". This is 6% of a
+  year (365 days × 6% ≈ 22 days), rounded to days, weeks or months. It is an
+  average: it spreads the change evenly over everyone. A real reform could
+  instead hit some people harder, or only new pensioners (see "How could it
+  be done?").
+- **The plain sentence, for other lines, and the second sentence for benefit
+  lines:** one example in concrete units, such as the average yearly pay
+  costs of a member of the armed forces. Counts are rounded to two digits,
+  because they show an order of size. For 6% of employee pensions:
+  "Or about 150,000 × years of the average gross pension from the employee
+  scheme". Every example is measured per year or per item, never per month,
+  so a yearly budget change is always compared with a yearly amount.
+  Examples a reviewer has approved come first (see "Are the examples in
+  concrete units checked?").
+- **The amounts:** the yearly change, and that change divided by Belgium's
+  population on 1 January 2026 (11,867,634, Statbel). For example, a 10% cut
+  in healthcare is about €370 less per inhabitant a year.
 - **Where it would land:** the change is spread over the sub-budgets in
   proportion to their size. A real reform chooses where to cut; the
   proportional spread only shows the scale.
-- **That's about:** the change expressed in concrete units, such as GP
-  consultations reimbursed by RIZIV (€29.74 each in 2026). Examples a
-  reviewer has approved come first (see "Are the examples in concrete units
-  checked?").
 - **How could it be done?:** the official levers through which this spending
   changes, each with a neutral explanation and its source.
 

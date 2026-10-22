@@ -1,20 +1,32 @@
 {
 	"line": "social-security.employee-pensions",
+	"recipients": {
+		"who": {
+			"nl": "elke gepensioneerde werknemer",
+			"fr": "chaque pensionné salarié",
+			"en": "every retired employee"
+		},
+		"what": {
+			"nl": "pensioen",
+			"fr": "de pension",
+			"en": "pension"
+		}
+	},
 	"equivalents": [
 		{
-			"id": "avg-monthly-pension-employee-only-career",
+			"id": "avg-yearly-pension-employee-scheme",
 			"label": {
-				"nl": "gemiddelde maandelijkse brutopensioenen uit de werknemersregeling (per gepensioneerde)",
-				"fr": "pensions mensuelles brutes moyennes du régime des salariés (par pensionné)",
-				"en": "average gross monthly pensions from the employee scheme (per pensioner)"
+				"nl": "jaren gemiddeld brutopensioen uit de werknemersregeling (per gepensioneerde)",
+				"fr": "années de pension brute moyenne du régime des salariés (par pensionné)",
+				"en": "years of the average gross pension from the employee scheme (per pensioner)"
 			},
 			"unitEur": {
-				"value": 1435.91,
+				"value": 17230.92,
 				"ref": {
 					"source": "fpd-monthly-stat-2026-04",
 					"locator": "Source fpd-monthly-stat-2026-04 (https://www.sfpd.fgov.be/media/Stat/Maandelijks/nl_stat_2604.pdf), PDF p. 22, Tabel 2.2, block 'Totalen – Mannen en vrouwen', column 'Totaal': row 'Aantal – Werknemers' and row 'Bedrag – Werknemers: pensioen + bonus' (situation April 2026). Calculation: 3,379,381,837.43 / 2,353,477 = 1,435.91 EUR per person per month.",
 					"quote": "Aantal Werknemers 2.353.477 1.815.675 537.802 | Bedrag Werknemers: pensioen + bonus 3.379.381.837,43 2.823.056.056,70 556.325.780,73",
-					"note": "Checked by a second agent: The candidate's figure (1,555.23 'Gemiddeld bedrag', column 'Werknemer') is printed correctly, but the label 'employee-only career' is wrong. That column means 'employee pension and no self-employed pension'; it still contains people who also have a civil-service pension. Cross-check with the FPD annual statistics 2025 (Jan 2025, tables 1.1.4 and 1.1.6): pure employee career 1,431,026 + employee & civil-servant 390,180 = 1,821,206, which is close to the 1,815,675 in the April 2026 'Werknemer' column. The 390,180 mixed employee/civil-servant people get only about 495 EUR a month from the employee scheme (193,201,968.90 / 390,180). The corrected unit is what the line actually pays per person: every employee-scheme beneficiary, including the employee part of mixed careers, with retirement and survivor's pensions and the pension bonus included. It is the full employee-scheme amount booked for April 2026, divided by the number of people receiving an employee pension (simple stated arithmetic on two figures printed in the same table). Gross: the FPD annual statistics (p. 3, 'Bedragen') say amounts are always gross monthly amounts. The amount excludes the holiday allowance paid in May, and many recipients also get a pension from another scheme. It is April 2026, so before the 1 Sept 2026 indexation (FPD indexation page: 01.09.2026 index 186,83). Alternative if a 'typical full pensioner' unit is preferred: the pure employee-career average from the FPD annual statistics 2025, PDF table 1.1.4 'Zuivere loopbaan werknemer ~ Mannen en vrouwen', row 'Totaal': 2,483,716,563.33 / 1,431,026 = 1,735.62 EUR gross/month (January 2025; this includes survivors). Re-verified: 2,823,792,233.52 / 1,815,675 = 1,555.23 (the original arithmetic is right; only the label is wrong). Researcher's working: - Average of the monthly amount booked for 1,815,675 people whose only FPD pension is an employee pension (situation 1 April 2026). Includes survivors' pensions, so it is not the average retirement pension of a full career. Excludes the yearly holiday allowance paid in May, so 12 x this amount understates the yearly cost per pensioner. People with mixed employee + self-employed careers (537,802) are in a separate column; people with an employee + civil-service career are counted here for their employee part only. The monthly report does not itself say 'bruto'; the FPD annual statistics state their amounts are always gross monthly amounts before withholding tax, health-insurance and solidarity deductions (fpd-annual-stat-2025, p. 3 'Bedragen'), and the totals in table 2.2 match the gross expenditure in table 1.1 of the same report. Averages are 'very general' per the FPD's own warning (PDF p. 19, intro of Deel 2)."
+					"note": "Checked by a second agent: The candidate's figure (1,555.23 'Gemiddeld bedrag', column 'Werknemer') is printed correctly, but the label 'employee-only career' is wrong. That column means 'employee pension and no self-employed pension'; it still contains people who also have a civil-service pension. Cross-check with the FPD annual statistics 2025 (Jan 2025, tables 1.1.4 and 1.1.6): pure employee career 1,431,026 + employee & civil-servant 390,180 = 1,821,206, which is close to the 1,815,675 in the April 2026 'Werknemer' column. The 390,180 mixed employee/civil-servant people get only about 495 EUR a month from the employee scheme (193,201,968.90 / 390,180). The corrected unit is what the line actually pays per person: every employee-scheme beneficiary, including the employee part of mixed careers, with retirement and survivor's pensions and the pension bonus included. It is the full employee-scheme amount booked for April 2026, divided by the number of people receiving an employee pension (simple stated arithmetic on two figures printed in the same table). Gross: the FPD annual statistics (p. 3, 'Bedragen') say amounts are always gross monthly amounts. The amount excludes the holiday allowance paid in May, and many recipients also get a pension from another scheme. It is April 2026, so before the 1 Sept 2026 indexation (FPD indexation page: 01.09.2026 index 186,83). Alternative if a 'typical full pensioner' unit is preferred: the pure employee-career average from the FPD annual statistics 2025, PDF table 1.1.4 'Zuivere loopbaan werknemer ~ Mannen en vrouwen', row 'Totaal': 2,483,716,563.33 / 1,431,026 = 1,735.62 EUR gross/month (January 2025; this includes survivors). Re-verified: 2,823,792,233.52 / 1,815,675 = 1,555.23 (the original arithmetic is right; only the label is wrong). Researcher's working: - Average of the monthly amount booked for 1,815,675 people whose only FPD pension is an employee pension (situation 1 April 2026). Includes survivors' pensions, so it is not the average retirement pension of a full career. Excludes the yearly holiday allowance paid in May, so 12 x this amount understates the yearly cost per pensioner. People with mixed employee + self-employed careers (537,802) are in a separate column; people with an employee + civil-service career are counted here for their employee part only. The monthly report does not itself say 'bruto'; the FPD annual statistics state their amounts are always gross monthly amounts before withholding tax, health-insurance and solidarity deductions (fpd-annual-stat-2025, p. 3 'Bedragen'), and the totals in table 2.2 match the gross expenditure in table 1.1 of the same report. Averages are 'very general' per the FPD's own warning (PDF p. 19, intro of Deel 2). Unit: 12 × the monthly amount (1,435.91 × 12 = 17,230.92 EUR), so the yearly budget change is compared with a year of the benefit, not with one month."
 				}
 			}
 		},

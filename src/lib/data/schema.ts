@@ -127,6 +127,11 @@ const lineDetailsSchema = z.object({
 			reviewedBy: nonEmpty.optional()
 		})
 	),
+	/**
+	 * For benefit lines: who receives the benefit and what it is called, so a change can be told as time,
+	 * e.g. "as if every retired employee got about 3 weeks less pension a year".
+	 */
+	recipients: z.object({ who: localized, what: localized }).optional(),
 	/** The official ways this spending can be changed. */
 	levers: z
 		.array(z.object({ id: slug, label: localized, description: localized, ref: sourceRefSchema }))

@@ -1,5 +1,17 @@
 {
 	"line": "social-security.selfemployed-pensions",
+	"recipients": {
+		"who": {
+			"nl": "elke gepensioneerde zelfstandige",
+			"fr": "chaque pensionné indépendant",
+			"en": "every retired self-employed person"
+		},
+		"what": {
+			"nl": "pensioen",
+			"fr": "de pension",
+			"en": "pension"
+		}
+	},
 	"equivalents": [
 		{
 			"id": "min-pension-selfemployed-full-career-single-year",

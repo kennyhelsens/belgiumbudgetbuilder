@@ -1,7 +1,7 @@
 // ABOUTME: Unit tests for the short notice shown after each click on a budget line: a tangible illustration of
 // ABOUTME: that one step (an example in concrete units, or the amount per inhabitant), rotating per click, in NL/FR/EN.
 import { describe, expect, it } from 'vitest';
-import { changeNotice, formatPercentChange, pickIllustration, roughCount } from './notice.ts';
+import { changeNotice, formatPercentChange, pickIllustration } from './notice.ts';
 
 describe('formatPercentChange', () => {
 	it('signs a change with a real minus sign', () => {
@@ -11,15 +11,6 @@ describe('formatPercentChange', () => {
 
 	it('follows the language', () => {
 		expect(formatPercentChange(-3, 'fr')).toMatch(/^−3\s%$/);
-	});
-});
-
-describe('roughCount', () => {
-	it('keeps two significant digits, because an illustration is approximate', () => {
-		expect(roughCount(14746931, 'en')).toBe('15,000,000');
-		expect(roughCount(3187, 'en')).toBe('3,200');
-		expect(roughCount(45, 'en')).toBe('45');
-		expect(roughCount(3187, 'nl')).toBe('3.200');
 	});
 });
 
@@ -68,6 +59,28 @@ describe('changeNotice', () => {
 				example: { unitEur: 62283, label: 'prisoners held for a year (average cost)' }
 			})
 		).toBe('Defence: this increase equals about 1,800 prisoners held for a year (average cost).');
+	});
+
+	it('tells a step on a benefit line as time for the people who receive it', () => {
+		const recipients = {
+			who: {
+				nl: 'elke gepensioneerde werknemer',
+				fr: 'chaque pensionné salarié',
+				en: 'every retired employee'
+			},
+			what: { nl: 'pensioen', fr: 'de pension', en: 'pension' }
+		};
+		expect(
+			changeNotice('nl', {
+				...base,
+				name: 'Pensioenen werknemers',
+				stepEurMillion: -430.4,
+				stepPercent: -1,
+				recipients
+			})
+		).toBe(
+			"Pensioenen werknemers: alsof elke gepensioneerde werknemer zo'n 4 dagen pensioen per jaar minder krijgt."
+		);
 	});
 
 	it('falls back to the amount per inhabitant, with cents for small steps', () => {

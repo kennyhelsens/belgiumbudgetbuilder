@@ -1,5 +1,17 @@
 {
 	"line": "federal.disability-allowances",
+	"recipients": {
+		"who": {
+			"nl": "elke persoon met een handicap die een tegemoetkoming krijgt",
+			"fr": "chaque personne handicapée qui reçoit une allocation",
+			"en": "every person with a disability who receives an allowance"
+		},
+		"what": {
+			"nl": "tegemoetkoming",
+			"fr": "d'allocation",
+			"en": "allowance"
+		}
+	},
 	"equivalents": [
 		{
 			"id": "disability-allowance-average-year",

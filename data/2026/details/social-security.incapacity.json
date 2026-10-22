@@ -1,5 +1,17 @@
 {
 	"line": "social-security.incapacity",
+	"recipients": {
+		"who": {
+			"nl": "iedereen met een ziekte-, invaliditeits- of moederschapsuitkering",
+			"fr": "chaque bénéficiaire d'indemnités de maladie, d'invalidité ou de maternité",
+			"en": "everyone on sickness, invalidity or maternity benefit"
+		},
+		"what": {
+			"nl": "uitkering",
+			"fr": "d'indemnités",
+			"en": "benefit"
+		}
+	},
 	"equivalents": [
 		{
 			"id": "avg-yearly-invalidity-benefit-per-invalid",
