@@ -10,12 +10,12 @@
 	"budgetStatus": "adjusted",
 	"expenditure": {
 		"total": {
-			"eurMillion": 122783.866,
+			"eurMillion": 148088.726,
 			"ref": {
 				"source": "be-chamber-56-1468-001",
 				"locator": "p. 136, Tabel I.2 'Samenvattende tabel 2026 (In duizend euro) (begrotingscontrole) (vervolg)', row 'Uitgaven vóór overdrachten', columns Globaal beheer werknemers + Globaal beheer zelfstandigen + Geneeskundige verzorging; plus row 'Kapitaalrekeningen - Uitgaven', column Globaal beheer werknemers",
 				"quote": "Uitgaven vóór overdrachten 68.777.204 7.160.441 46.784.088 23.920.576 1.384.284 148.026.593 6.580.980 154.607.573 | Kapitaalrekeningen: Uitgaven 62.133 40.000 102.133 102.133",
-				"note": "68,777,204 + 7,160,441 + 46,784,088 (current expenditure before inter-regime transfers of the employees' global management, self-employed global management and RIZIV/INAMI healthcare) + 62,133 (capital expenditure, employees' global management) = 122,783,866 thousand EUR. Excludes transfers between social security regimes (GB -> RIZIV healthcare 39.5 bn would otherwise be counted twice), civil-servant pensions (23,920.6 M; financed by the federal budget) and 'other regimes' outside the global management (1,384.3 M)."
+				"note": "Social security as in BOSA and the national accounts: global management of employees 68,777.204 + of the self-employed 7,160.441 + healthcare 46,784.088 + public-sector pensions 23,920.576 + other schemes 1,384.284 (spending before transfers between schemes) + capital spending of the global management of employees 62.133. Excludes social assistance (6,580.980), which the federal budget pays and BOSA counts outside social security."
 			}
 		},
 		"lines": [
@@ -196,6 +196,43 @@
 					}
 				},
 				"nature": "committed"
+			},
+			{
+				"id": "social-security.civil-service-pensions",
+				"label": {
+					"nl": "Overheidspensioenen (alle overheden, Federale Pensioendienst)",
+					"fr": "Pensions du secteur public (tous les pouvoirs publics, Service fédéral des Pensions)",
+					"en": "Public-sector pensions (all levels of government, Federal Pension Service)"
+				},
+				"amount": {
+					"eurMillion": 23920.576,
+					"ref": {
+						"source": "be-chamber-56-1468-001",
+						"locator": "p. 136, Tabel I.2 'Samenvattende tabel 2026 (In duizend euro) (begrotingscontrole) (vervolg)', row 'Uitgaven vóór overdrachten', column 'Ambtenarenpensioenen'",
+						"quote": "Uitgaven vóór overdrachten 68.777.204 7.160.441 46.784.088 23.920.576 1.384.284 148.026.593 6.580.980 154.607.573",
+						"note": "Spending before transfers of the public-sector pension scheme: benefits 22,526.804 (pensions of federal, community, regional and local civil servants, the military, education, police, HR Rail and public bodies), administration 70.852, external transfers 1,322.503 and other. Financed by the federal grant (16,146.386, a transfer from the federal government) and pension contributions (7,465.244, of which local authorities 3,823.259; DOC 56 1468/001 Tabel VII.2 pp. 194-195)."
+					}
+				},
+				"nature": "entitlement",
+				"ageingGroup": "pensions"
+			},
+			{
+				"id": "social-security.other-schemes",
+				"label": {
+					"nl": "Andere stelsels (Fedris-fondsen, loopbaanonderbreking overheid, ex-Overzeese Sociale Zekerheid, ...)",
+					"fr": "Autres régimes (fonds de Fedris, interruption de carrière secteur public, ex-Sécurité sociale d'outre-mer, ...)",
+					"en": "Other schemes (Fedris funds, public-sector career breaks, former Overseas Social Security, ...)"
+				},
+				"amount": {
+					"eurMillion": 1384.284,
+					"ref": {
+						"source": "be-chamber-56-1468-001",
+						"locator": "p. 136, Tabel I.2 'Samenvattende tabel 2026 (In duizend euro) (begrotingscontrole) (vervolg)', row 'Uitgaven vóór overdrachten', column 'Andere stelsels'",
+						"quote": "Uitgaven vóór overdrachten 68.777.204 7.160.441 46.784.088 23.920.576 1.384.284 148.026.593 6.580.980 154.607.573",
+						"note": "Schemes outside the two global managements: Fedris capitalisation and asbestos funds, Fedris public-sector occupational diseases, former Overseas Social Security, RVA/ONEM career-break missions for the public sector, Medical Accidents Fund, war and terror victims."
+					}
+				},
+				"nature": "entitlement"
 			}
 		]
 	},

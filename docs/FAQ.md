@@ -53,9 +53,11 @@ shown where it is spent, and pensions can follow the ageing path:
   separate lines.
 - **Section 17 (Federal police):** the grants to local police zones (€1.3
   billion) are a separate line.
-- **Section 24 (Social security):** civil-service pensions, the grants to
-  social security and the allowances for persons with disabilities are
-  separate lines.
+- **Section 24 (Social security):** the grant to the Federal Pension Service,
+  the grants to social security and the allowances for persons with
+  disabilities are separate lines. The grant to the Federal Pension Service
+  is passed on to social security, where the public-sector pensions are shown
+  (see "Why are public-sector pensions under social security?").
 - **Section 44 (Social integration):** the refunds to OCMW/CPAS (€2.3
   billion) are a separate line.
 - **Section 51 (Public debt):** interest is a separate line. Repaying loans
@@ -83,7 +85,47 @@ Financing Act is not federal spending at all. The federal budget books it
 as revenue handed over, not as expenditure, so it is not in the federal
 total either.
 
-### Why is the map total (€346 billion) lower than the official €362 billion?
+### Why are public-sector pensions under social security?
+
+Because that is how BOSA and the national accounts present them. The Federal
+Pension Service pays the pensions of former civil servants of every level of
+government: federal, community and regional (including teachers), local
+(municipalities, provinces, OCMW/CPAS, police zones), the military, HR Rail
+and public bodies. In 2026 that scheme spends €23.9 billion (DOC 56 1468/001,
+Tabel I.2). It is financed by a federal grant of €16.1 billion and by €7.5
+billion of pension contributions, of which €3.8 billion from local
+authorities.
+
+On the map, the federal grant is a transfer to social security, so it is
+counted once, under social security. Employers' pension contributions are not
+treated as transfers: in the national accounts they are part of staff pay,
+like the rest of a salary.
+
+The income guarantee for older people (GRAPA/IGO) and the allowances for
+persons with disabilities stay with the federal government. In the social
+security budget they are "social assistance", which BOSA also counts outside
+social security.
+
+### How do the totals compare with BOSA's?
+
+BOSA's overview of the 2026 budget gives totals in the national accounts (ESA
+2010), for the initial budget (DOC 56 1278/001 of January 2026, p. 6). The map
+shows them beside ours:
+
+|                    | Map (adjusted budget) | BOSA (national accounts, initial budget) |
+| ------------------ | --------------------- | ---------------------------------------- |
+| Social security    | €147.5 billion        | €147.3 billion                           |
+| Federal government | €57.5 billion         | €54.2 billion                            |
+
+- **Federal government:** BOSA counts the contribution to the EU budget as
+  money handed to another government, not as federal spending. Without it,
+  the map's federal total is €52.6 billion. BOSA's €41.9 billion is its €54.2
+  billion without interest charges (€12.3 billion).
+- **The rest of the difference** comes from the basis: the map uses the
+  adjusted budget of June 2026, in payment credits, line by line; BOSA's
+  overview uses the initial budget and the national accounts.
+
+### Why is the map total (€355 billion) lower than the official €362 billion?
 
 The €362 billion (€361.8 billion) is general government spending in the
 national accounts (ESA 2010, Federal Planning Bureau, June 2026). The map adds
@@ -92,14 +134,14 @@ totals was traced in the source documents and checked a second time:
 
 | Difference                                                                                                                                                                                                                                                                                              | € billion |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
-| **Public-sector pensions.** ESA counts all civil-servant pensions as spending, plus a notional employer pension contribution in staff costs. The map only counts the federal grant to the pension scheme.                                                                                               | +18.6     |
+| **Public-sector pensions.** ESA adds a notional employer pension contribution for federal, community and regional civil servants to their staff costs (€12.7 billion), and records €1.8 billion less in pension benefits than the pension scheme's budget spends.                                       | +10.8     |
 | **Tax measures.** ESA counts some tax measures as spending, while the budget counts them as lower revenue: withholding-tax exemptions, refundable tax credits, the VAT-based EU contribution, and tax revenue passed on to bodies such as CREG and Elia.                                                | +8.2      |
 | **Transfers counted twice in our data.** Regions and communities pay grants to municipalities that our data does not yet mark as transfers, so they are counted twice: in the regional budget and in local government. The largest are the French Community's grants for teachers in municipal schools. | −8.5      |
 | **Federal timing and accounting corrections.** These include the assumed underspending, the timing of Defence purchases, non-interest debt costs, and the difference between the budgeted and the ESA interest bill.                                                                                    | −3.7      |
-| **Governments and schemes missing from our data:** the German-speaking Community, the French Community Commission in Brussels (COCOF) and smaller social security schemes.                                                                                                                              | +2.4      |
+| **Governments missing from our data:** the German-speaking Community and the French Community Commission in Brussels (COCOF).                                                                                                                                                                           | +1.0      |
 | **Small consolidation items** (payments between governments)                                                                                                                                                                                                                                            | −0.6      |
 | **Not explained**                                                                                                                                                                                                                                                                                       | −0.6      |
-| **Total difference**                                                                                                                                                                                                                                                                                    | **+15.7** |
+| **Total difference**                                                                                                                                                                                                                                                                                    | **+6.6**  |
 
 The €8.5 billion counted twice is an estimate, because the national accounts
 and the budgets do not record transfers in exactly the same way. It is an
@@ -249,8 +291,8 @@ affect different groups of pensioners differently.
 
 The lines that count:
 
-- **Pensions:** employee pensions, self-employed pensions and civil-servant
-  pensions.
+- **Pensions:** employee pensions, self-employed pensions and public-sector
+  pensions (all levels of government).
 - **Healthcare:** healthcare through RIZIV/INAMI.
 
 Regional care spending, such as the Flemish care budget, is not linked to
@@ -332,12 +374,12 @@ or a rate that has since been indexed; the label says which.
 | Federal government           | Income guarantee for older people (GRAPA) and running costs of the Social Security department                                | years of income guarantee (GRAPA) for one older person (average amount)                                                  | 9,032      |
 | Federal government           | Income guarantee for older people (GRAPA) and running costs of the Social Security department                                | years of the maximum income guarantee for a single older person                                                          | 19,731     |
 | Federal government           | Justice                                                                                                                      | prisoners held for a year (average cost)                                                                                 | 62,283     |
-| Federal government           | Public-sector (civil service) pensions paid by the Federal Pension Service                                                   | months of the guaranteed minimum civil-service pension (gross, single rate)                                              | 1,881.58   |
 | Social security              | Employee pensions                                                                                                            | average gross monthly pensions from the employee scheme (per pensioner)                                                  | 1,435.91   |
 | Social security              | Employee pensions                                                                                                            | yearly gross minimum pensions for a full career as an employee (single rate)                                             | 22,582.98  |
 | Social security              | Healthcare (RIZIV/INAMI)                                                                                                     | GP consultations reimbursed by RIZIV                                                                                     | 29.74      |
 | Social security              | Healthcare (RIZIV/INAMI)                                                                                                     | yearly fees for a global medical file                                                                                    | 38.82      |
 | Social security              | Healthcare (RIZIV/INAMI)                                                                                                     | RIZIV/INAMI reimbursements of a consultation with an accredited cardiologist (standard rate, no GP referral)             | 38.33      |
+| Social security              | Public-sector pensions (all levels of government, Federal Pension Service)                                                   | months of the guaranteed minimum civil-service pension (gross, single rate)                                              | 1,881.58   |
 | Social security              | Self-employed pensions                                                                                                       | yearly gross minimum pensions for a full career as a self-employed person (single rate)                                  | 22,582.98  |
 | Social security              | Sickness, disability and maternity benefits                                                                                  | average yearly invalidity benefits per person in invalidity (employees and unemployed, 2025)                             | 18,951.48  |
 | Social security              | Unemployment and related benefits (RVA/ONEM)                                                                                 | average monthly unemployment benefits of a fully unemployed jobseeker (2025)                                             | 1,461.17   |

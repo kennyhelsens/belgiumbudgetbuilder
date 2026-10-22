@@ -358,9 +358,9 @@
 			{
 				"id": "federal.civil-service-pensions",
 				"label": {
-					"nl": "Pensioenen overheidssector (FPD)",
-					"fr": "Pensions du secteur public (SFP)",
-					"en": "Public-sector (civil service) pensions paid by the Federal Pension Service"
+					"nl": "Dotatie aan de Federale Pensioendienst voor de overheidspensioenen",
+					"fr": "Dotation au Service fédéral des Pensions pour les pensions du secteur public",
+					"en": "Grant to the Federal Pension Service for public-sector pensions"
 				},
 				"amount": {
 					"eurMillion": 16145.9,
@@ -372,7 +372,7 @@
 					}
 				},
 				"nature": "entitlement",
-				"ageingGroup": "pensions"
+				"transferTo": "social-security"
 			},
 			{
 				"id": "federal.social-security-grants",

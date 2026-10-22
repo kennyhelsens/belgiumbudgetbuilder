@@ -47,6 +47,17 @@ describe('data/2026', () => {
 		}
 	});
 
+	// As BOSA and the national accounts do: the Federal Pension Service's public-sector pensions are social
+	// security, and the federal grant to it is a transfer, counted once.
+	it('shows public-sector pensions under social security, with the federal grant as a transfer', () => {
+		const lines = dataset.entities.flatMap((e) => e.expenditure.lines);
+		const pensions = lines.find((l) => l.id === 'social-security.civil-service-pensions');
+		const grant = lines.find((l) => l.id === 'federal.civil-service-pensions');
+		expect(pensions?.ageingGroup).toBe('pensions');
+		expect(grant?.transferTo).toBe('social-security');
+		expect(grant?.ageingGroup).toBeUndefined();
+	});
+
 	// Federal lines follow the budget sections BOSA publishes, so there is no catch-all line.
 	it('has no catch-all line in the federal budget', () => {
 		const federal = dataset.entities.find((e) => e.id === 'federal');
