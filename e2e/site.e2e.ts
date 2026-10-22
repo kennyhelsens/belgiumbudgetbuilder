@@ -84,3 +84,12 @@ test.describe('design basics', () => {
 		}
 	});
 });
+
+test.describe('introduction', () => {
+	test('says the map shows all governments together, and what is missing', async ({ page }) => {
+		await page.goto('/en/');
+		const lede = page.locator('.article__lede');
+		await expect(lede).toContainText('all Belgian governments together');
+		await expect(lede).toContainText('German-speaking Community');
+	});
+});
