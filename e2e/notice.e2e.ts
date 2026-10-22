@@ -24,6 +24,18 @@ test.describe('change notice', () => {
 		await expect(notice).not.toContainText('%');
 	});
 
+	test('tells a step on a benefit line as time for the people who receive it', async ({ page }) => {
+		await page.goto('/nl/');
+		const map = page.getByRole('region', { name: 'Begrotingskaart' });
+		await map.getByRole('button', { name: /^Sociale zekerheid/ }).click();
+		await map.getByRole('group', { name: /^Pensioenen werknemers/ }).hover();
+		await map.getByRole('button', { name: 'Verlaag Pensioenen werknemers met 1%' }).click();
+		const notice = page.getByRole('status').filter({ hasText: 'Pensioenen werknemers' });
+		await expect(notice).toContainText(
+			"Pensioenen werknemers: alsof elke gepensioneerde werknemer zo'n 4 dagen pensioen per jaar minder krijgt."
+		);
+	});
+
 	test('illustrates each click on its own, with something new each time', async ({ page }) => {
 		await cutDefence(page, 1);
 		const notice = page.getByRole('status').filter({ hasText: 'Defence' });

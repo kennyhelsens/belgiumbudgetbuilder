@@ -10,6 +10,7 @@ ABOUTME: Text comes from the message files and every figure from the sourced dat
 	import type { Changes } from '#lib/builder/choices.ts';
 	import { headlineMetrics } from '#lib/builder/metrics.ts';
 	import { changeNotice, pickIllustration } from '#lib/builder/notice.ts';
+	import type { Recipients } from '#lib/consequences/human.ts';
 	import { preferReviewed } from '#lib/consequences/consequences.ts';
 	import BudgetMap from '#lib/explorer/BudgetMap.svelte';
 	import { translate } from '#lib/i18n/translate.ts';
@@ -46,6 +47,8 @@ ABOUTME: Text comes from the message files and every figure from the sourced dat
 		percent: number;
 		stepEurMillion: number;
 		example?: { unitEur: number; label: string };
+		recipients?: Recipients;
+		stepPercent?: number;
 	}>();
 	let noticeKey = $state(0);
 	// How the last change moved the debt: more spending raises it, less spending lowers it.
@@ -143,7 +146,23 @@ ABOUTME: Text comes from the message files and every figure from the sourced dat
 		clickLog?.record(change.id, change.stepEurMillion < 0 ? 'cut' : 'add', change.percent);
 		const click = clicks[change.id] ?? 0;
 		clicks[change.id] = click + 1;
-		lastStep = { ...change, example: pickIllustration(examplesFor(change.id), click) };
+		// Benefit lines first tell the step as time for the people who receive them, then the examples.
+		const recipients = data.dataset.details.find((d) => d.line === change.id)?.recipients;
+		const pick = pickIllustration<'asIf' | { unitEur: number; label: string }>(
+			recipients ? ['asIf', ...examplesFor(change.id)] : examplesFor(change.id),
+			click
+		);
+		const lineAmount = data.dataset.entities
+			.flatMap((e) => e.expenditure.lines)
+			.find((l) => l.id === change.id)?.amount.eurMillion;
+		lastStep =
+			pick === 'asIf'
+				? {
+						...change,
+						recipients,
+						stepPercent: lineAmount ? (change.stepEurMillion / lineAmount) * 100 : undefined
+					}
+				: { ...change, example: pick };
 		debtMove = change.stepEurMillion > 0 ? 'up' : 'down';
 		noticeKey += 1;
 	}}

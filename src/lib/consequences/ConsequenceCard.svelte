@@ -1,18 +1,15 @@
 <!--
-ABOUTME: Consequence card: what a visitor's change to one spending line means, from that line's sourced details.
-ABOUTME: Shows where the change would land, unit equivalents (approved ones first), and the official levers with neutral explanations.
+ABOUTME: Consequence card: what a visitor's change to one spending line means, in one plain sentence from that line's
+ABOUTME: sourced details, the amounts in small print, where the change would land, and the official levers.
 -->
 <script lang="ts">
 	import type { Dataset, LineDetails } from '../data/schema.ts';
 	import type { Locale } from '../i18n/locales.ts';
 	import { translate, type MessageKey } from '../i18n/translate.ts';
 	import { formatEuro } from '../explorer/format.ts';
-	import {
-		distributeChange,
-		equivalentCount,
-		perInhabitantPerYear,
-		preferReviewed
-	} from './consequences.ts';
+	import { formatPercentChange } from '../builder/notice.ts';
+	import { distributeChange, preferReviewed } from './consequences.ts';
+	import { amountsLine, asIfSentence, exampleSentence } from './human.ts';
 
 	let {
 		data,
@@ -29,36 +26,43 @@ ABOUTME: Shows where the change would land, unit equivalents (approved ones firs
 	const sourcesById = $derived(new Map(data.sources.map((source) => [source.id, source])));
 	const spread = $derived(distributeChange(details.breakdown, changeEurMillion));
 	const largestChange = $derived(Math.max(...spread.map((item) => Math.abs(item.change)), 1));
-	const examples = $derived(preferReviewed(details.equivalents).slice(0, 2));
-
 	const signed = (eurMillion: number) =>
 		eurMillion > 0 ? `+${formatEuro(eurMillion, locale)}` : formatEuro(eurMillion, locale);
-	const count = (value: number) => new Intl.NumberFormat(locale).format(value);
-	const percent = $derived(
-		new Intl.NumberFormat(locale, { maximumFractionDigits: 0, signDisplay: 'always' }).format(
-			(changeEurMillion / line.amount.eurMillion) * 100
-		)
+	const percent = $derived((changeEurMillion / line.amount.eurMillion) * 100);
+	// One example only: the card tells one thing well rather than many numbers.
+	const example = $derived(
+		preferReviewed(details.equivalents)
+			.slice(0, 1)
+			.map((e) => ({ unitEur: e.unitEur.value, label: e.label[locale] }))[0]
 	);
-	const perPerson = $derived(
-		new Intl.NumberFormat(locale, {
-			style: 'currency',
-			currency: 'EUR',
-			maximumFractionDigits: 0,
-			signDisplay: 'always'
-		}).format(perInhabitantPerYear(changeEurMillion, data.overview.population.persons))
+	// Benefit lines lead with time for the people who receive them; other lines with an example.
+	const lead = $derived(
+		details.recipients
+			? asIfSentence(locale, details.recipients, percent)
+			: example && exampleSentence(locale, 'lead', changeEurMillion, example)
+	);
+	const also = $derived(
+		details.recipients && example
+			? exampleSentence(locale, 'also', changeEurMillion, example)
+			: undefined
 	);
 	const titleId = $derived(`consequence-${details.line.replace(/\W/g, '-')}`);
 </script>
 
 <section class="card" aria-labelledby={titleId}>
-	<h3 id={titleId}>{t('consequence.title').replace('{name}', line.label[locale])}</h3>
-	<p class="card__change">
-		{t('consequence.change')
-			.replace('{percent}', percent)
-			.replace('{amount}', signed(changeEurMillion))}
-	</p>
-	<p class="card__anchor" data-testid="per-inhabitant">
-		{t('consequence.perInhabitant').replace('{amount}', perPerson)}
+	<h3 id={titleId}>
+		{t('consequence.title')
+			.replace('{change}', formatPercentChange(Math.round(percent), locale))
+			.replace('{name}', line.label[locale])}
+	</h3>
+	{#if lead}
+		<p class="card__lead">{lead}</p>
+	{/if}
+	{#if also}
+		<p class="card__also">{also}</p>
+	{/if}
+	<p class="card__amounts" data-testid="amounts">
+		{amountsLine(locale, changeEurMillion, data.overview.population.persons)}
 	</p>
 
 	{#if details.breakdown.length > 0}
@@ -83,19 +87,6 @@ ABOUTME: Shows where the change would land, unit equivalents (approved ones firs
 			{/each}
 		</ul>
 		<p class="card__note">{t('consequence.whereNote')}</p>
-	{/if}
-
-	{#if examples.length > 0}
-		<h4>{t('consequence.about')}</h4>
-		<ul class="examples">
-			{#each examples as example (example.id)}
-				<li>
-					{t('consequence.aboutUnit')
-						.replace('{count}', count(equivalentCount(changeEurMillion, example.unitEur.value)))
-						.replace('{unit}', example.label[locale])}
-				</li>
-			{/each}
-		</ul>
 	{/if}
 
 	{#if details.levers.length > 0}
@@ -127,9 +118,14 @@ ABOUTME: Shows where the change would land, unit equivalents (approved ones firs
 		border-left: 3px solid var(--accent);
 	}
 
+	/* The title only names the change; the sentence below it is what the card says. */
 	h3 {
 		margin: 0;
-		font-size: var(--text-lg);
+		color: var(--ink-muted);
+		font-family: var(--font-serif);
+		font-size: var(--text-sm);
+		font-weight: 600;
+		letter-spacing: 0;
 	}
 
 	h4 {
@@ -137,15 +133,23 @@ ABOUTME: Shows where the change would land, unit equivalents (approved ones firs
 		font-size: var(--text-base);
 	}
 
-	.card__change {
-		margin: var(--space-1) 0 0;
-		color: var(--ink-muted);
-		font-variant-numeric: tabular-nums;
+	/* The plain sentence is the point of the card; the amounts are small print. */
+	.card__lead {
+		margin: var(--space-2) 0 0;
+		font-family: var(--font-display);
+		font-size: var(--text-lg);
+		font-weight: 700;
+		line-height: 1.3;
 	}
 
-	.card__anchor {
+	.card__also {
 		margin: var(--space-2) 0 0;
-		font-size: var(--text-xl);
+	}
+
+	.card__amounts {
+		margin: var(--space-2) 0 0;
+		color: var(--ink-muted);
+		font-size: var(--text-sm);
 		font-variant-numeric: tabular-nums;
 	}
 
@@ -194,11 +198,6 @@ ABOUTME: Shows where the change would land, unit equivalents (approved ones firs
 		grid-column: 2 / 4;
 		color: var(--ink-muted);
 		font-style: italic;
-	}
-
-	.examples {
-		margin: 0;
-		padding-left: var(--space-4);
 	}
 
 	.lever {

@@ -86,6 +86,32 @@ describe('data/2026', () => {
 		}
 	});
 
+	// The card tells a change to a benefit line as time for the people who receive it, so they must be named.
+	it('names who receives each benefit line', () => {
+		const benefitLines = [
+			'social-security.employee-pensions',
+			'social-security.selfemployed-pensions',
+			'social-security.civil-service-pensions',
+			'social-security.unemployment',
+			'social-security.incapacity',
+			'federal.disability-allowances',
+			'wallonia.family-allowances'
+		];
+		for (const id of benefitLines) {
+			const details = dataset.details.find((d) => d.line === id);
+			expect(details?.recipients?.who.nl, id).toBeTruthy();
+		}
+	});
+
+	// Budget lines are yearly; an example per month would be counted twelve times too often.
+	it('measures every example per year or per item, never per month', () => {
+		for (const details of dataset.details) {
+			for (const example of details.equivalents) {
+				expect(example.label.en, example.id).not.toMatch(/^(\w+ )*monthly|^months? of/i);
+			}
+		}
+	});
+
 	// Federal lines follow the budget sections BOSA publishes, so there is no catch-all line.
 	it('has no catch-all line in the federal budget', () => {
 		const federal = dataset.entities.find((e) => e.id === 'federal');
