@@ -107,6 +107,12 @@ describe('datasetSchema', () => {
 		expect(datasetSchema.safeParse(data).success).toBe(false);
 	});
 
+	it('accepts a line that cannot be changed by a budget decision', () => {
+		const data = datasetFixture();
+		data.entities[0].expenditure.lines[0].adjustable = false;
+		expect(datasetSchema.safeParse(data).success).toBe(true);
+	});
+
 	it('requires the population as a positive whole number of persons', () => {
 		const data = datasetFixture();
 		data.overview.population.persons = 11.8;

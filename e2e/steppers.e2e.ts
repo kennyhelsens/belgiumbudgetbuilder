@@ -59,3 +59,19 @@ test.describe('tile steppers', () => {
 		await expect(map.getByRole('button', { name: /^Cut / })).toHaveCount(0);
 	});
 });
+
+test.describe('fixed lines', () => {
+	test('interest on the public debt cannot be changed, and says why', async ({ page }) => {
+		const map = await openFederal(page);
+		await expect(
+			map.getByRole('button', { name: /Interest on the public debt by 1%/ })
+		).toHaveCount(0);
+		await expect(map.getByRole('img', { name: /^Interest on the public debt/ })).toContainText(
+			'Follows from the debt and interest rates'
+		);
+		await map.getByText('Show as a table').click();
+		const row = map.getByRole('row', { name: /^Interest on the public debt/ });
+		await expect(row.getByRole('slider')).toHaveCount(0);
+		await expect(row).toContainText('Follows from the debt and interest rates');
+	});
+});

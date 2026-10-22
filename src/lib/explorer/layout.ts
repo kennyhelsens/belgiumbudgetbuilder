@@ -14,6 +14,8 @@ export type Tile = {
 	y1: number;
 	/** True when the tile is a government that can be opened to show its lines. */
 	zoomable: boolean;
+	/** False for a line no budget decision can change, such as interest on debt. */
+	adjustable: boolean;
 };
 
 type Item = Omit<Tile, 'x0' | 'y0' | 'x1' | 'y1'>;
@@ -46,7 +48,8 @@ function governments(data: Dataset): Item[] {
 			id: entity.id,
 			label: entity.label,
 			eurMillion: ownExpenditure(entity),
-			zoomable: true
+			zoomable: true,
+			adjustable: entity.adjustable
 		}))
 		.filter((item) => item.eurMillion > 0);
 }
@@ -60,6 +63,20 @@ function linesOf(data: Dataset, entityId: string): Item[] {
 			id: line.id,
 			label: line.label,
 			eurMillion: line.amount.eurMillion,
-			zoomable: false
+			zoomable: false,
+			adjustable: line.adjustable !== false
 		}));
+}
+
+export type TooltipPlacement = { vertical: 'above' | 'below'; horizontal: 'left' | 'right' };
+
+/** Where a tile's tooltip opens so it stays inside the map: towards the middle of the frame. */
+export function tooltipPlacement(
+	tile: Pick<Tile, 'x0' | 'y0' | 'x1' | 'y1'>,
+	frame: { width: number; height: number }
+): TooltipPlacement {
+	return {
+		vertical: (tile.y0 + tile.y1) / 2 > frame.height / 2 ? 'above' : 'below',
+		horizontal: (tile.x0 + tile.x1) / 2 > frame.width / 2 ? 'right' : 'left'
+	};
 }

@@ -314,7 +314,13 @@ Open a government on the map and use − and + on a tile: each click changes
 that line by 1% of its 2026 amount, up to 50% either way. The table under the
 map has the same change as a slider. The tile keeps its official size; a
 hatched slice along its edge shows a cut, and a dotted slice shows extra
-spending, as wide as the change.
+spending, as wide as the change. Where a tile is too small for its name, or
+its name is cut off, hovering over it, tapping it or reaching it with the
+keyboard shows its full name, amount and share.
+
+Interest and other costs of the debt cannot be changed. They are not a budget
+choice: they follow from the debt and the interest rates, which the ten-year
+outlook calculates (see "How is the future debt calculated?").
 
 ### What do the key figures at the top show?
 

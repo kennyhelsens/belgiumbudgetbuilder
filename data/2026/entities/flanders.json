@@ -173,7 +173,8 @@
 						"note": "Split out of the 'Financiën en Begroting' domain total (Tabel IV-9). Covers interest of the Vlaamse Gemeenschap's central debt management only; interest paid by Flemish legal entities in their own budgets (e.g. VMSW, VWF, Lantis) stays in their domains."
 					}
 				},
-				"nature": "committed"
+				"nature": "committed",
+				"adjustable": false
 			},
 			{
 				"id": "flanders.finance-budget-other",

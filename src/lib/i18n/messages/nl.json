@@ -46,6 +46,7 @@
 	"outlook.caveat": "Dit is eenvoudige rekenkunde, geen voorspelling. Het model houdt geen rekening met hoe mensen en bedrijven reageren op belasting- of uitgavenwijzigingen, noch met rentes die in de tijd veranderen. De vergrijzingskosten volgen het officiële rapport van de Studiecommissie voor de Vergrijzing; wie de uitgaven voor pensioenen of gezondheidszorg wijzigt, wijzigt hun verwachte stijging in dezelfde verhouding.",
 	"builder.change": "Uw wijziging",
 	"builder.sliderLabel": "Wijzig {name}, in procent",
+	"builder.fixed": "Volgt uit de schuld en de rentevoeten (zie de vooruitzichten)",
 	"builder.stepDown": "Verlaag {name} met 1%",
 	"builder.stepUp": "Verhoog {name} met 1%",
 	"ageing.title": "De kosten van de vergrijzing",

@@ -198,7 +198,8 @@
 						"note": "Programme 19.036 total 1.915.356 − amortisation DF 036.012 1.101.887 = 813.469 k EUR: interest on consolidated debt 729.128 (036.001) + swaps 61.600 (036.013) + treasury interest 3.750 (036.002) + issuance costs 8.000 (036.016) + FSE prefinancing interest 300 (036.004) + SPABS guarantee calls 10.691 (036.006). Court of Audit puts interest on direct debt at 753,7 M EUR (Table 6)."
 					}
 				},
-				"nature": "committed"
+				"nature": "committed",
+				"adjustable": false
 			},
 			{
 				"id": "wallonia.other",
