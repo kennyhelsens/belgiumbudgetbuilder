@@ -13,6 +13,9 @@ data/2026/
   outlook.json            inputs for the 10-year projection: interest rate,
                           nominal growth, official ageing costs, official
                           debt path
+  history.json            how the budget got where it is, from published
+                          analyses: how much the deficit grew since 2016,
+                          and why (National Bank of Belgium)
   entities/<id>.json      one file per government: federal, social-security,
                           flanders, wallonia, wallonia-brussels-federation,
                           brussels, german-speaking-community, local

@@ -33,6 +33,18 @@ export function datasetFixture(): Dataset {
 			debt: { eurMillion: 640000, ref: ref('p. 3') },
 			population: { persons: 12000000, ref: ref('p. 4') }
 		},
+		history: {
+			deficitWidening: {
+				from: 2016,
+				to: 2025,
+				balance: { eurMillion: 18000, ref: ref('p. 6') },
+				primaryBalance: { eurMillion: 21000, ref: ref('p. 6') },
+				lowerRevenue: { eurMillion: 12000, ref: ref('p. 6') },
+				higherPrimaryExpenditure: { eurMillion: 9000, ref: ref('p. 6') },
+				federal: { eurMillion: 11000, ref: ref('p. 6') },
+				communitiesAndRegions: { eurMillion: 8000, ref: ref('p. 6') }
+			}
+		},
 		outlook: {
 			interestRate: { value: 0.023, ref: ref('p. 4') },
 			nominalGrowth: { value: 0.031, ref: ref('p. 4') },

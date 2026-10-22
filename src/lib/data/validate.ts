@@ -80,6 +80,17 @@ function collectRefs(data: Dataset): { where: string; ref: SourceRef }[] {
 		where: `overview.${key}`,
 		ref: amount.ref
 	}));
+	const { deficitWidening } = data.history;
+	for (const key of [
+		'balance',
+		'primaryBalance',
+		'lowerRevenue',
+		'higherPrimaryExpenditure',
+		'federal',
+		'communitiesAndRegions'
+	] as const) {
+		refs.push({ where: `history.deficitWidening.${key}`, ref: deficitWidening[key].ref });
+	}
 	refs.push({ where: 'outlook.interestRate', ref: data.outlook.interestRate.ref });
 	refs.push({ where: 'outlook.nominalGrowth', ref: data.outlook.nominalGrowth.ref });
 	for (const group of data.outlook.ageingGroups) {

@@ -162,6 +162,21 @@ export const datasetSchema = z.object({
 		/** The official projected debt path, % of GDP, shown as a reference. */
 		officialDebtPctGdp: z.array(yearPointSchema).min(1)
 	}),
+	/** How the budget got where it is, from published analyses; amounts are changes over the period. */
+	history: z.object({
+		/** How much the general government deficit grew between two years, and why. */
+		deficitWidening: z.object({
+			from: z.number().int(),
+			to: z.number().int(),
+			balance: amountSchema,
+			/** The balance without interest, which fell over the period. */
+			primaryBalance: amountSchema,
+			lowerRevenue: amountSchema,
+			higherPrimaryExpenditure: amountSchema,
+			federal: amountSchema,
+			communitiesAndRegions: amountSchema
+		})
+	}),
 	entities: z.array(entitySchema).min(1),
 	details: z.array(lineDetailsSchema)
 });
