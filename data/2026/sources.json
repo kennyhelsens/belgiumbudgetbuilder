@@ -23,6 +23,14 @@
 		"retrieved": "2026-10-20"
 	},
 	{
+		"id": "be-chamber-56-1278-001",
+		"title": "Begrotingen van ontvangsten en uitgaven voor het begrotingsjaar 2026 – Algemene toelichting / Exposé général (DOC 56 1278/001), initial 2026 budget",
+		"publisher": "Belgische Kamer van volksvertegenwoordigers / Chambre des représentants de Belgique",
+		"url": "https://www.dekamer.be/FLWB/PDF/56/1278/56K1278001.pdf",
+		"published": "2026-01-28",
+		"retrieved": "2026-10-20"
+	},
+	{
 		"id": "doc-56-1469-002",
 		"title": "Commentaar en opmerkingen bij de ontwerpen van aanpassing van staatsbegroting voor het begrotingsjaar 2026 (DOC 56 1469/002), Deel III Ontvangsten en uitgaven van de sociale zekerheid",
 		"publisher": "Rekenhof / Cour des comptes (via Kamer van volksvertegenwoordigers)",
@@ -217,6 +225,14 @@
 		"retrieved": "2026-10-20"
 	},
 	{
+		"id": "vr-2025-1710-bvr-dienstencheques",
+		"title": "VR 2025 1710 DOC.0926/2BIS – Besluit van de Vlaamse Regering tot wijziging van het koninklijk besluit van 12 december 2001 betreffende de dienstencheques, wat betreft de aanpassing van het bedrag van de tegemoetkoming",
+		"publisher": "Vlaamse Regering",
+		"url": "https://themis.vlaanderen.be/files/213f0980-aa6a-11f0-9b44-3797f8128cc9/download",
+		"published": "2025-10-17",
+		"retrieved": "2026-10-20"
+	},
+	{
 		"id": "fwb-baremes-indexes-2026-09",
 		"title": "Barèmes indexés septembre 2026 (xlsx) – Traitements annuels bruts indexés au 1er septembre 2026",
 		"publisher": "Fédération Wallonie-Bruxelles, Administration générale de l'Enseignement (enseignement.be)",
@@ -228,14 +244,6 @@
 		"title": "Les Indicateurs de l'Enseignement 2025",
 		"publisher": "Fédération Wallonie-Bruxelles, AGE / Direction générale du Pilotage du Système éducatif",
 		"url": "https://www.enseignement.be/fileadmin/portail_age/uploads/Systeme_educatif/Chiffres-cles/Indicateurs/indicateurs-enseignement_2025.pdf",
-		"retrieved": "2026-10-20"
-	},
-	{
-		"id": "vr-2025-1710-bvr-dienstencheques",
-		"title": "VR 2025 1710 DOC.0926/2BIS – Besluit van de Vlaamse Regering tot wijziging van het koninklijk besluit van 12 december 2001 betreffende de dienstencheques, wat betreft de aanpassing van het bedrag van de tegemoetkoming",
-		"publisher": "Vlaamse Regering",
-		"url": "https://themis.vlaanderen.be/files/213f0980-aa6a-11f0-9b44-3797f8128cc9/download",
-		"published": "2025-10-17",
 		"retrieved": "2026-10-20"
 	},
 	{

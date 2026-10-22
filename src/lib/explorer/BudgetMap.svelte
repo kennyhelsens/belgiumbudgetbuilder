@@ -135,6 +135,18 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 		</div>
 	{/if}
 
+	{#if focusEntity?.nationalAccounts}
+		{@const reference = focusEntity.nationalAccounts}
+		{@const source = sourcesById.get(reference.ref.source)}
+		<p class="map__reference" data-testid="national-accounts">
+			{t('map.nationalAccounts')}: <strong>{formatEuro(reference.eurMillion, locale)}</strong>
+			{#if source}
+				· <a href={source.url} rel="external noopener">{t('map.nationalAccountsSource')}</a>
+			{/if}
+			<span class="map__reference-why">{t('map.nationalAccountsWhy')}</span>
+		</p>
+	{/if}
+
 	{#if focusEntity?.budgetStatus === 'provisional'}
 		<p class="map__flag">{t('map.provisional')}</p>
 	{/if}
@@ -291,6 +303,21 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 		max-width: var(--measure);
 		color: var(--ink-muted);
 		font-size: var(--text-sm);
+	}
+
+	.map__reference {
+		margin: 0 0 var(--space-2);
+		color: var(--ink-muted);
+		font-size: var(--text-sm);
+	}
+
+	.map__reference strong {
+		color: var(--ink);
+	}
+
+	.map__reference-why {
+		display: block;
+		font-size: 0.8125rem;
 	}
 
 	.map__flag {

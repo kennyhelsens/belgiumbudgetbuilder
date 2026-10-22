@@ -358,9 +358,9 @@
 			{
 				"id": "federal.civil-service-pensions",
 				"label": {
-					"nl": "Pensioenen overheidssector (FPD)",
-					"fr": "Pensions du secteur public (SFP)",
-					"en": "Public-sector (civil service) pensions paid by the Federal Pension Service"
+					"nl": "Dotatie aan de Federale Pensioendienst voor de overheidspensioenen",
+					"fr": "Dotation au Service fédéral des Pensions pour les pensions du secteur public",
+					"en": "Grant to the Federal Pension Service for public-sector pensions"
 				},
 				"amount": {
 					"eurMillion": 16145.9,
@@ -372,7 +372,7 @@
 					}
 				},
 				"nature": "entitlement",
-				"ageingGroup": "pensions"
+				"transferTo": "social-security"
 			},
 			{
 				"id": "federal.social-security-grants",
@@ -586,5 +586,14 @@
 				"nature": "committed"
 			}
 		]
+	},
+	"nationalAccounts": {
+		"eurMillion": 54200,
+		"ref": {
+			"source": "be-chamber-56-1278-001",
+			"locator": "DOC 56 1278/001 p. 6, Deel I, Hoofdstuk 1, Grafiek 1 'Budgettaire stromen op het niveau van entiteit I' (ESA 2010, initial 2026 budget, EUR billion)",
+			"quote": "Uitgaven federale overheid 54,2 Dépenses du pouvoir fédéral",
+			"note": "Federal government including public-interest bodies, ESA 2010, initial budget; excludes money for other governments (EU 9.1, entity II 81.5, social security 54.3 bn). Of which interest charges 12.3 bn, so 41.9 bn without interest."
+		}
 	}
 }

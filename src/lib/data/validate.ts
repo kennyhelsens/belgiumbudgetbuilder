@@ -108,6 +108,9 @@ function collectRefs(data: Dataset): { where: string; ref: SourceRef }[] {
 	}
 	for (const entity of data.entities) {
 		refs.push({ where: `${entity.id}.total`, ref: entity.expenditure.total.ref });
+		if (entity.nationalAccounts) {
+			refs.push({ where: `${entity.id}.nationalAccounts`, ref: entity.nationalAccounts.ref });
+		}
 		for (const line of entity.expenditure.lines) {
 			refs.push({ where: line.id, ref: line.amount.ref });
 		}

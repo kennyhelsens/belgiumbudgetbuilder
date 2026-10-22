@@ -60,3 +60,24 @@ test.describe('budget map', () => {
 		).toBeVisible();
 	});
 });
+
+test.describe('national-accounts reference total', () => {
+	test('shows BOSA’s national-accounts total beside a government, with its source', async ({
+		page
+	}) => {
+		await page.goto('/en/');
+		const map = page.getByRole('region', { name: 'Budget map' });
+		await map.getByRole('button', { name: /^Social security/ }).click();
+		const reference = map.getByTestId('national-accounts');
+		await expect(reference).toContainText('In the national accounts (ESA, initial budget)');
+		await expect(reference).toContainText('€147.3 billion');
+		await expect(reference.getByRole('link')).toHaveAttribute('href', /56K1278001\.pdf$/);
+	});
+
+	test('shows no reference total where none is published', async ({ page }) => {
+		await page.goto('/en/');
+		const map = page.getByRole('region', { name: 'Budget map' });
+		await map.getByRole('button', { name: /^Flanders/ }).click();
+		await expect(map.getByTestId('national-accounts')).toHaveCount(0);
+	});
+});

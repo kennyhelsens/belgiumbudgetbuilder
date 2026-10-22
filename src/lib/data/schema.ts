@@ -87,6 +87,11 @@ const entitySchema = z.object({
 		total: amountSchema,
 		lines: z.array(lineSchema).min(1)
 	}),
+	/**
+	 * The same government's spending in the national accounts (ESA 2010), as an official body such as BOSA
+	 * publishes it: a reference figure shown beside ours, not used in any calculation.
+	 */
+	nationalAccounts: amountSchema.optional(),
 	note: localized.optional()
 });
 
