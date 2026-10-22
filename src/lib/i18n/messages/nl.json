@@ -81,5 +81,10 @@
 	"builder.noticeCutExample": "{name}: deze besparing is ongeveer {count} {unit}.",
 	"builder.noticeAddExample": "{name}: deze verhoging is ongeveer {count} {unit}.",
 	"builder.noticeCutPerInhabitant": "{name}: deze besparing is ongeveer {amount} minder per inwoner per jaar.",
-	"builder.noticeAddPerInhabitant": "{name}: deze verhoging is ongeveer {amount} meer per inwoner per jaar."
+	"builder.noticeAddPerInhabitant": "{name}: deze verhoging is ongeveer {amount} meer per inwoner per jaar.",
+	"site.wip": "In opbouw",
+	"footer.disclaimer": "De cijfers zijn met behulp van AI-agenten overgenomen uit officiële bronnen: BOSA, de Kamer van volksvertegenwoordigers (lachambre.be) en andere officiële referenties. Fouten zijn mogelijk.",
+	"footer.faq": "FAQ: hoe de cijfers gemaakt zijn",
+	"faq.title": "FAQ: hoe de cijfers gemaakt zijn",
+	"faq.englishOnly": "Deze pagina bestaat enkel in het Engels."
 }

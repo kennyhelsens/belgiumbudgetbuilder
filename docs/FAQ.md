@@ -474,6 +474,16 @@ by two code owners before they are published.
 3. **Human review:** every change to the data goes through a pull request on
    GitHub and is reviewed by the code owners before it is published.
 
+### Why does the site say "work in progress"? Can the figures be wrong?
+
+Yes, mistakes are possible. The figures were extracted with the help of AI
+agents from official sources: BOSA, the Chamber of Representatives
+(lachambre.be) and other official references, as described above. Each one
+was checked against its source, but the site is still being built and not
+every figure has had a human review yet. That is why the masthead carries a
+"work in progress" badge and every page ends with this disclaimer and a link
+to this FAQ.
+
 ### How is the site itself made and tested?
 
 - **Code:** written with Claude Code (an AI coding assistant), test first. The
@@ -482,8 +492,8 @@ by two code owners before they are published.
 - **Technology:** SvelteKit, D3, TypeScript.
 - **Hosting:** Cloudflare Pages, which builds a preview of every proposed
   change.
-- **Privacy:** the site has no cookies, no tracking and no accounts. Its font
-  is served from the site itself, so no third-party font service sees your
+- **Privacy:** the site has no cookies, no tracking and no accounts. Its fonts
+  are served from the site itself, so no third-party font service sees your
   visit.
 
 ### I found a mistake. What now?

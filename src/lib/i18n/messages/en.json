@@ -81,5 +81,10 @@
 	"builder.noticeCutExample": "{name}: this cut equals about {count} {unit}.",
 	"builder.noticeAddExample": "{name}: this increase equals about {count} {unit}.",
 	"builder.noticeCutPerInhabitant": "{name}: this cut equals about {amount} less per inhabitant a year.",
-	"builder.noticeAddPerInhabitant": "{name}: this increase equals about {amount} more per inhabitant a year."
+	"builder.noticeAddPerInhabitant": "{name}: this increase equals about {amount} more per inhabitant a year.",
+	"site.wip": "Work in progress",
+	"footer.disclaimer": "The figures were extracted with the help of AI agents from official sources: BOSA, the Chamber of Representatives (lachambre.be) and other official references. Mistakes are possible.",
+	"footer.faq": "FAQ: how the numbers are made",
+	"faq.title": "FAQ: how the numbers are made",
+	"faq.englishOnly": "This page is only available in English."
 }
