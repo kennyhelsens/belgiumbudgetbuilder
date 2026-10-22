@@ -198,5 +198,14 @@
 				"nature": "committed"
 			}
 		]
+	},
+	"nationalAccounts": {
+		"eurMillion": 147300,
+		"ref": {
+			"source": "be-chamber-56-1278-001",
+			"locator": "DOC 56 1278/001 p. 6, Deel I, Hoofdstuk 1, Grafiek 1 'Budgettaire stromen op het niveau van entiteit I' (ESA 2010, initial 2026 budget, EUR billion)",
+			"quote": "Totale uitgaven sociale zekerheid 147,3 Dépenses totales de la sécurité sociale",
+			"note": "Social security, ESA 2010, initial budget; includes all public-sector pensions paid by the Federal Pension Service (pensions 72.3 bn in total)."
+		}
 	}
 }

@@ -39,6 +39,14 @@ describe('data/2026', () => {
 		expect(consolidatedExpenditure(dataset)).toBeLessThan(simpleSum);
 	});
 
+	// BOSA's chart of budget flows gives national-accounts totals for these two; the map shows them beside ours.
+	it('has national-accounts reference totals for the federal government and social security', () => {
+		for (const id of ['federal', 'social-security']) {
+			const entity = dataset.entities.find((e) => e.id === id);
+			expect(entity?.nationalAccounts?.eurMillion, id).toBeGreaterThan(0);
+		}
+	});
+
 	// Federal lines follow the budget sections BOSA publishes, so there is no catch-all line.
 	it('has no catch-all line in the federal budget', () => {
 		const federal = dataset.entities.find((e) => e.id === 'federal');

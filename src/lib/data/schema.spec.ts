@@ -99,6 +99,14 @@ describe('datasetSchema', () => {
 		expect(parsed.data?.details[0].levers).toEqual([]);
 	});
 
+	it('accepts an optional national-accounts total for a government, as a reference', () => {
+		const data = datasetFixture();
+		data.entities[0].nationalAccounts = { eurMillion: 54200, ref: data.overview.gdp.ref };
+		expect(datasetSchema.safeParse(data).success).toBe(true);
+		data.entities[0].nationalAccounts = { eurMillion: -1, ref: data.overview.gdp.ref };
+		expect(datasetSchema.safeParse(data).success).toBe(false);
+	});
+
 	it('requires the population as a positive whole number of persons', () => {
 		const data = datasetFixture();
 		data.overview.population.persons = 11.8;
