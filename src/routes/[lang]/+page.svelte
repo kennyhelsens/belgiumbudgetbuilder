@@ -1,8 +1,10 @@
 <!--
-ABOUTME: Localized home page: the mission, key figures that stay in view, the budget map, the outlook and a change notice.
+ABOUTME: Localized home page: the intro on a first visit, the mission, key figures that stay in view, the budget map,
+ABOUTME: the outlook and a change notice.
 ABOUTME: Text comes from the message files and every figure from the sourced data in data/.
 -->
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import KeyFigures from '#lib/builder/KeyFigures.svelte';
 	import Outlook from '#lib/builder/Outlook.svelte';
 	import type { Changes } from '#lib/builder/choices.ts';
@@ -11,6 +13,8 @@ ABOUTME: Text comes from the message files and every figure from the sourced dat
 	import { preferReviewed } from '#lib/consequences/consequences.ts';
 	import BudgetMap from '#lib/explorer/BudgetMap.svelte';
 	import { translate } from '#lib/i18n/translate.ts';
+	import Intro from '#lib/intro/Intro.svelte';
+	import { introFacts } from '#lib/intro/facts.ts';
 	import Bubbles from '#lib/ui/Bubbles.svelte';
 	import Toast from '#lib/ui/Toast.svelte';
 	import type { PageProps } from './$types';
@@ -54,6 +58,37 @@ ABOUTME: Text comes from the message files and every figure from the sourced dat
 				})
 	);
 	const t = $derived((key: Parameters<typeof translate>[1]) => translate(data.locale, key));
+
+	const facts = $derived(introFacts(data.dataset));
+	const legend = $derived(
+		facts.dots.map(({ id }) => ({
+			id,
+			label: data.dataset.entities.find((e) => e.id === id)?.label[data.locale] ?? id
+		}))
+	);
+	// The intro opens on a first visit only; the browser remembers that it was seen, nothing more.
+	const INTRO_SEEN = 'bbb-intro-seen';
+	let introOpen = $state(false);
+	onMount(() => {
+		try {
+			introOpen = localStorage.getItem(INTRO_SEEN) === null;
+		} catch {
+			// Storage can be blocked; then the intro stays closed and can still be opened by hand.
+		}
+	});
+	function rememberIntro() {
+		try {
+			localStorage.setItem(INTRO_SEEN, '1');
+		} catch {
+			// Nothing to remember without storage.
+		}
+	}
+	function showMap() {
+		const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+		document
+			.getElementById('map-title')
+			?.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+	}
 </script>
 
 <svelte:head>
@@ -65,6 +100,10 @@ ABOUTME: Text comes from the message files and every figure from the sourced dat
 	<p class="article__kicker">{t('home.kicker')}</p>
 	<h1>{t('home.title')}</h1>
 	<p class="article__lede">{t('home.lede')}</p>
+	<button type="button" class="article__replay" onclick={() => (introOpen = true)}>
+		<span aria-hidden="true">▶</span>
+		{t('intro.replay')}
+	</button>
 	<p class="article__status">{t('home.status')}</p>
 </main>
 
@@ -94,6 +133,15 @@ ABOUTME: Text comes from the message files and every figure from the sourced dat
 	bind:years
 	bind:interestPct
 	bind:growthPct
+/>
+<Intro
+	{facts}
+	{legend}
+	year={data.dataset.year}
+	locale={data.locale}
+	bind:open={introOpen}
+	onclose={rememberIntro}
+	onstart={showMap}
 />
 <Toast message={notice} key={noticeKey} closeLabel={t('builder.noticeClose')} />
 <Bubbles burst={debtMove && { mood: debtMove === 'down' ? 'happy' : 'worried', key: noticeKey }} />
@@ -134,6 +182,66 @@ ABOUTME: Text comes from the message files and every figure from the sourced dat
 
 	.article__lede {
 		font-size: var(--text-lg);
+	}
+
+	/* The headline block rises in on load, line after line. */
+	.article > * {
+		animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+	}
+
+	.article > :nth-child(2) {
+		animation-delay: 0.08s;
+	}
+
+	.article > :nth-child(3) {
+		animation-delay: 0.16s;
+	}
+
+	.article > :nth-child(n + 4) {
+		animation-delay: 0.24s;
+	}
+
+	@keyframes rise {
+		from {
+			opacity: 0;
+			transform: translateY(0.75rem);
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.article > * {
+			animation: none;
+		}
+	}
+
+	.article__replay {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-2);
+		margin-bottom: var(--space-3);
+		padding: 0.5em 1.1em;
+		border: 1.5px solid var(--ink);
+		border-radius: 999px;
+		background: none;
+		color: var(--ink);
+		font: inherit;
+		font-size: var(--text-sm);
+		font-weight: 600;
+		cursor: pointer;
+		transition:
+			background 0.2s ease,
+			color 0.2s ease;
+	}
+
+	.article__replay:hover,
+	.article__replay:focus-visible {
+		background: var(--ink);
+		color: var(--paper);
+	}
+
+	.article__replay span {
+		font-size: 0.75em;
+		color: var(--accent);
 	}
 
 	.article__status {

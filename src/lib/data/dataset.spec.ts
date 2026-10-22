@@ -74,6 +74,18 @@ describe('data/2026', () => {
 		}
 	});
 
+	// The National Bank's account of how the deficit grew: both revenue and spending, at every level.
+	it('explains how the deficit grew since 2016, after the National Bank of Belgium', () => {
+		const widening = dataset.history.deficitWidening;
+		expect([widening.from, widening.to]).toEqual([2016, 2025]);
+		expect(widening.lowerRevenue.eurMillion + widening.higherPrimaryExpenditure.eurMillion).toBe(
+			widening.primaryBalance.eurMillion
+		);
+		for (const part of [widening.balance, widening.lowerRevenue, widening.federal]) {
+			expect(part.ref.source).toBe('nbb-economic-review-2026-07');
+		}
+	});
+
 	// Federal lines follow the budget sections BOSA publishes, so there is no catch-all line.
 	it('has no catch-all line in the federal budget', () => {
 		const federal = dataset.entities.find((e) => e.id === 'federal');

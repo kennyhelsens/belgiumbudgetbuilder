@@ -306,6 +306,53 @@ of pensioners.
 
 ---
 
+## The intro
+
+### What does the intro show?
+
+On a first visit, a short intro asks what a headline like "Government looks
+for 10 billion" means. It shows all public spending of 2026 as a grid of
+dots, one dot per billion euros (355 dots, coloured by government, rounded
+so they add up to the €355.2 billion on the map). Then it sets 10 billion
+against that total and against the population, the deficit, the interest
+bill and the debt outlook. Every number comes from the data files:
+
+| Step                 | Figure                                             | From                                                            |
+| -------------------- | -------------------------------------------------- | --------------------------------------------------------------- |
+| All spending         | €355.2 billion                                     | Sum of the map, money passed between governments counted once   |
+| 10 billion           | 2.8% of all spending; €843 per inhabitant          | 10 billion ÷ €355.2 billion; ÷ 11,867,634 inhabitants (Statbel) |
+| The gap              | Deficit €33.7 billion; 10 billion closes 30%       | `overview.balance` (Federal Planning Bureau)                    |
+| How did we get here? | +€18 billion since 2016 (see below)                | `history.json` (National Bank of Belgium)                       |
+| The bill             | Interest €16.6 billion; debt 132.7% of GDP in 2036 | `overview.interest`; the outlook without changes                |
+
+The intro can be skipped, closed with Escape and watched again from the
+home page. The browser only remembers that it was seen; nothing is sent
+anywhere.
+
+### Where does "10 billion" come from?
+
+It is a round amount like the ones in newspaper headlines, used as a
+yardstick. It is not the figure of any specific plan, and the intro does not
+say where the money should come from.
+
+### Why does the intro quote the National Bank?
+
+To explain how the deficit got this big, the intro uses the factual findings
+of the National Bank of Belgium's Economic Review article "What's behind the
+increase in the federal and regional budget deficits in Belgium?" (October
+2026, p. 25):
+
+- Between 2016 and 2025 the deficit grew by €18 billion. Without interest,
+  which fell by €4 billion, the gap grew by €21 billion.
+- That €21 billion comes from both **lower revenue (€12 billion)** and
+  **higher spending (€9 billion)**.
+- Both the **federal government (€11 billion)** and the **communities and
+  regions (€8 billion)** contributed.
+
+These findings name no single cause or culprit, which suits a neutral site.
+The article also ends with a policy recommendation, for a binding national
+fiscal framework; the site leaves that out, as it does every recommendation.
+
 ## What a change means
 
 ### How do I change a budget?
@@ -474,6 +521,16 @@ by two code owners before they are published.
 3. **Human review:** every change to the data goes through a pull request on
    GitHub and is reviewed by the code owners before it is published.
 
+### Why does the site say "work in progress"? Can the figures be wrong?
+
+Yes, mistakes are possible. The figures were extracted with the help of AI
+agents from official sources: BOSA, the Chamber of Representatives
+(lachambre.be) and other official references, as described above. Each one
+was checked against its source, but the site is still being built and not
+every figure has had a human review yet. That is why the masthead carries a
+"work in progress" badge and every page ends with this disclaimer and a link
+to this FAQ.
+
 ### How is the site itself made and tested?
 
 - **Code:** written with Claude Code (an AI coding assistant), test first. The
@@ -482,8 +539,8 @@ by two code owners before they are published.
 - **Technology:** SvelteKit, D3, TypeScript.
 - **Hosting:** Cloudflare Pages, which builds a preview of every proposed
   change.
-- **Privacy:** the site has no cookies, no tracking and no accounts. Its font
-  is served from the site itself, so no third-party font service sees your
+- **Privacy:** the site has no cookies, no tracking and no accounts. Its fonts
+  are served from the site itself, so no third-party font service sees your
   visit.
 
 ### I found a mistake. What now?

@@ -1,0 +1,57 @@
+{
+	"deficitWidening": {
+		"from": 2016,
+		"to": 2025,
+		"balance": {
+			"eurMillion": 18000,
+			"ref": {
+				"source": "nbb-economic-review-2026-07",
+				"locator": "Conclusion, p. 25",
+				"quote": "A first general finding is that the budget balance deteriorated by 2.7% of GDP (or € 18 billion) between 2016 and 2025, while the primary balance worsened by 3.3% of GDP (or € 21 billion)"
+			}
+		},
+		"primaryBalance": {
+			"eurMillion": 21000,
+			"ref": {
+				"source": "nbb-economic-review-2026-07",
+				"locator": "Conclusion, p. 25",
+				"quote": "A first general finding is that the budget balance deteriorated by 2.7% of GDP (or € 18 billion) between 2016 and 2025, while the primary balance worsened by 3.3% of GDP (or € 21 billion)",
+				"note": "The primary balance leaves out interest, which fell by € 4 billion over the period (same page)."
+			}
+		},
+		"lowerRevenue": {
+			"eurMillion": 12000,
+			"ref": {
+				"source": "nbb-economic-review-2026-07",
+				"locator": "Conclusion, p. 25",
+				"quote": "A second finding is that the deterioration of the primary balance since 2016 can be attributed to both lower revenue (€ 12 billion) and higher primary expenditure (€ 9 billion)."
+			}
+		},
+		"higherPrimaryExpenditure": {
+			"eurMillion": 9000,
+			"ref": {
+				"source": "nbb-economic-review-2026-07",
+				"locator": "Conclusion, p. 25",
+				"quote": "A second finding is that the deterioration of the primary balance since 2016 can be attributed to both lower revenue (€ 12 billion) and higher primary expenditure (€ 9 billion)."
+			}
+		},
+		"federal": {
+			"eurMillion": 11000,
+			"ref": {
+				"source": "nbb-economic-review-2026-07",
+				"locator": "Conclusion, p. 25",
+				"quote": "A third finding is that both the federal government (€ 11 billion) and the communities and regions (€ 8 billion) contributed to the deterioration of the primary balance over the past decade.",
+				"note": "Contribution to the € 21 billion deterioration of the primary balance."
+			}
+		},
+		"communitiesAndRegions": {
+			"eurMillion": 8000,
+			"ref": {
+				"source": "nbb-economic-review-2026-07",
+				"locator": "Conclusion, p. 25",
+				"quote": "A third finding is that both the federal government (€ 11 billion) and the communities and regions (€ 8 billion) contributed to the deterioration of the primary balance over the past decade.",
+				"note": "Contribution to the € 21 billion deterioration of the primary balance."
+			}
+		}
+	}
+}

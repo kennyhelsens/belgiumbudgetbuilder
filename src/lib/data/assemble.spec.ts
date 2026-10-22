@@ -9,7 +9,8 @@ function filesFromFixture(): Record<string, unknown> {
 	const files: Record<string, unknown> = {
 		'/data/2026/sources.json': data.sources,
 		'/data/2026/overview.json': data.overview,
-		'/data/2026/outlook.json': data.outlook
+		'/data/2026/outlook.json': data.outlook,
+		'/data/2026/history.json': data.history
 	};
 	for (const entity of data.entities) {
 		files[`/data/2026/entities/${entity.id}.json`] = entity;

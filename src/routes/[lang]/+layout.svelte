@@ -1,6 +1,6 @@
 <!--
-ABOUTME: Shell for localized pages: masthead with the site title and language switcher, and a footer.
-ABOUTME: The switcher links to the home page in each language.
+ABOUTME: Shell for localized pages: masthead with the site title, a work-in-progress badge and the language
+ABOUTME: switcher, and a footer that says how the figures were extracted and links to the FAQ.
 -->
 <script lang="ts">
 	import { resolve } from '$app/paths';
@@ -17,9 +17,12 @@ ABOUTME: The switcher links to the home page in each language.
 </script>
 
 <header class="masthead">
-	<a class="masthead__title" href={resolve('/[lang]', { lang: data.locale })}
-		>{translate(data.locale, 'site.title')}</a
-	>
+	<div class="masthead__brand">
+		<a class="masthead__title" href={resolve('/[lang]', { lang: data.locale })}
+			>{translate(data.locale, 'site.title')}</a
+		>
+		<span class="masthead__badge">{translate(data.locale, 'site.wip')}</span>
+	</div>
 	<nav aria-label={translate(data.locale, 'language.switcherLabel')}>
 		<ul class="switcher">
 			{#each LOCALES as locale (locale)}
@@ -40,6 +43,12 @@ ABOUTME: The switcher links to the home page in each language.
 {@render children()}
 
 <footer class="colophon">
+	<p class="colophon__disclaimer">
+		{translate(data.locale, 'footer.disclaimer')}
+		<a href={resolve('/[lang]/faq', { lang: data.locale })}
+			>{translate(data.locale, 'footer.faq')}</a
+		>
+	</p>
 	<p>{translate(data.locale, 'footer.note')}</p>
 </footer>
 
@@ -56,6 +65,13 @@ ABOUTME: The switcher links to the home page in each language.
 		border-bottom: 4px solid var(--ink);
 	}
 
+	.masthead__brand {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		gap: var(--space-1) var(--space-2);
+	}
+
 	.masthead__title {
 		color: var(--ink);
 		font-family: var(--font-display);
@@ -63,6 +79,18 @@ ABOUTME: The switcher links to the home page in each language.
 		font-weight: 900;
 		letter-spacing: -0.02em;
 		text-decoration: none;
+	}
+
+	.masthead__badge {
+		padding: 0.15em 0.6em;
+		border: 1.5px solid var(--accent);
+		border-radius: 999px;
+		color: var(--accent);
+		font-size: 0.75rem;
+		font-weight: 700;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		white-space: nowrap;
 	}
 
 	.switcher {
@@ -93,5 +121,14 @@ ABOUTME: The switcher links to the home page in each language.
 		border-top: 1px solid var(--rule);
 		color: var(--ink-muted);
 		font-size: var(--text-sm);
+	}
+
+	.colophon__disclaimer {
+		color: var(--ink);
+	}
+
+	.colophon a {
+		color: inherit;
+		font-weight: 600;
 	}
 </style>
