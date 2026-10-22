@@ -47,10 +47,21 @@ test.describe('localized home page', () => {
 });
 
 test.describe('design basics', () => {
-	test('uses the Newsreader serif for headings', async ({ page }) => {
+	test('uses the Fraunces display serif for headings and Source Serif for text', async ({
+		page
+	}) => {
 		await page.goto('/en/');
-		const fontFamily = await page.locator('h1').evaluate((el) => getComputedStyle(el).fontFamily);
-		expect(fontFamily).toContain('Newsreader');
+		const heading = await page.locator('h1').evaluate((el) => getComputedStyle(el).fontFamily);
+		const body = await page.evaluate(() => getComputedStyle(document.body).fontFamily);
+		expect(heading).toContain('Fraunces');
+		expect(body).toContain('Source Serif 4');
+	});
+
+	test('sits on a pastel cream background in light mode', async ({ page }) => {
+		await page.emulateMedia({ colorScheme: 'light' });
+		await page.goto('/en/');
+		const background = await page.evaluate(() => getComputedStyle(document.body).backgroundColor);
+		expect(background).toBe('rgb(251, 244, 228)');
 	});
 
 	test('has a different background in dark mode', async ({ page }) => {

@@ -53,13 +53,15 @@ ABOUTME: The switcher links to the home page in each language.
 		max-width: var(--measure);
 		margin: 0 auto;
 		padding: var(--space-3) var(--gutter);
-		border-bottom: 1px solid var(--rule);
+		border-bottom: 4px solid var(--ink);
 	}
 
 	.masthead__title {
 		color: var(--ink);
-		font-size: var(--text-lg);
-		font-weight: 600;
+		font-family: var(--font-display);
+		font-size: var(--text-xl);
+		font-weight: 900;
+		letter-spacing: -0.02em;
 		text-decoration: none;
 	}
 
