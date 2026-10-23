@@ -118,10 +118,6 @@ ABOUTME: Text comes from the message files and every figure from the sourced dat
 	<p class="article__kicker">{t('home.kicker')}</p>
 	<h1>{t('home.title')}</h1>
 	<p class="article__lede">{t('home.lede')}</p>
-	<button type="button" class="article__replay" onclick={() => (introOpen = true)}>
-		<span aria-hidden="true">▶</span>
-		{t('intro.replay')}
-	</button>
 	<p class="article__status">{t('home.status')}</p>
 </main>
 
@@ -130,6 +126,7 @@ ABOUTME: Text comes from the message files and every figure from the sourced dat
 	year={data.dataset.year}
 	locale={data.locale}
 	reaction={debtMove && { debt: debtMove, key: noticeKey }}
+	onintro={() => (introOpen = true)}
 />
 <BudgetMap
 	data={data.dataset}
@@ -240,36 +237,6 @@ ABOUTME: Text comes from the message files and every figure from the sourced dat
 		.article > * {
 			animation: none;
 		}
-	}
-
-	.article__replay {
-		display: inline-flex;
-		align-items: center;
-		gap: var(--space-2);
-		margin-bottom: var(--space-3);
-		padding: 0.5em 1.1em;
-		border: 1.5px solid var(--ink);
-		border-radius: 999px;
-		background: none;
-		color: var(--ink);
-		font: inherit;
-		font-size: var(--text-sm);
-		font-weight: 600;
-		cursor: pointer;
-		transition:
-			background 0.2s ease,
-			color 0.2s ease;
-	}
-
-	.article__replay:hover,
-	.article__replay:focus-visible {
-		background: var(--ink);
-		color: var(--paper);
-	}
-
-	.article__replay span {
-		font-size: 0.75em;
-		color: var(--accent);
 	}
 
 	.article__status {

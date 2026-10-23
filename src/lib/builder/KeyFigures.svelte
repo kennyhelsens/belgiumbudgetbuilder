@@ -1,6 +1,6 @@
 <!--
-ABOUTME: Key figures that stay at the top of the screen while visitors change the budget: public debt and
-ABOUTME: deficit for the budget year, and the debt at the end of the outlook with a sparkline; they react to each change.
+ABOUTME: Key figures that stay at the top of the screen while visitors change the budget: public debt, deficit, and the
+ABOUTME: debt at the end of the outlook with a sparkline, reacting to each change; plus a button to watch the intro again.
 -->
 <script lang="ts">
 	import type { Locale } from '../i18n/locales.ts';
@@ -12,13 +12,16 @@ ABOUTME: deficit for the budget year, and the debt at the end of the outlook wit
 		metrics,
 		year,
 		locale,
-		reaction
+		reaction,
+		onintro
 	}: {
 		metrics: HeadlineMetrics;
 		year: number;
 		locale: Locale;
 		/** The last change's effect on the debt; a new key replays the animation. */
 		reaction?: { debt: 'up' | 'down'; key: number };
+		/** Plays the intro again; it sets out why the budget matters, so it stays one click away. */
+		onintro?: () => void;
 	} = $props();
 
 	const t = (key: MessageKey) => translate(locale, key);
@@ -103,6 +106,14 @@ ABOUTME: deficit for the budget year, and the debt at the end of the outlook wit
 				<path d={sparkline} />
 			</svg>
 		</div>
+		{#if onintro}
+			<!-- On a phone only "Intro" shows; the accessible name stays the full phrase. -->
+			<button type="button" class="intro" aria-label={t('intro.replay')} onclick={onintro}>
+				<span class="intro__play" aria-hidden="true">▶</span>
+				<span class="intro__long" aria-hidden="true">{t('intro.replay')}</span>
+				<span class="intro__short" aria-hidden="true">{t('intro.replayShort')}</span>
+			</button>
+		{/if}
 	</div>
 </section>
 
@@ -123,11 +134,92 @@ ABOUTME: deficit for the budget year, and the debt at the end of the outlook wit
 
 	.figures__row {
 		display: grid;
-		grid-template-columns: repeat(3, minmax(0, 1fr));
+		grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
 		gap: var(--space-3);
 		max-width: 64rem;
 		margin: 0 auto;
 		padding: var(--space-2) var(--gutter);
+	}
+
+	.intro {
+		display: inline-flex;
+		align-self: center;
+		align-items: center;
+		gap: var(--space-1);
+		padding: 0.3em 0.9em;
+		border: 1.5px solid var(--ink);
+		border-radius: 999px;
+		background: none;
+		color: var(--ink);
+		font: inherit;
+		font-size: var(--text-sm);
+		font-weight: 600;
+		white-space: nowrap;
+		cursor: pointer;
+		transition:
+			background 0.2s ease,
+			color 0.2s ease;
+	}
+
+	.intro:hover,
+	.intro:focus-visible {
+		background: var(--ink);
+		color: var(--paper);
+	}
+
+	.intro__play {
+		font-size: 0.75em;
+		color: var(--accent);
+	}
+
+	.intro__short {
+		display: none;
+	}
+
+	/* On a phone the button is a small round play sign with a caption, so the three figures keep their width. */
+	@media (max-width: 40rem) {
+		.intro {
+			flex-direction: column;
+			gap: 2px;
+			padding: 0;
+			border: 0;
+			font-size: 0.6875rem;
+		}
+
+		.intro:hover,
+		.intro:focus-visible {
+			background: none;
+			color: var(--ink);
+		}
+
+		.intro__play {
+			display: grid;
+			place-items: center;
+			width: 1.9rem;
+			height: 1.9rem;
+			border: 1.5px solid var(--ink);
+			border-radius: 50%;
+			font-size: 0.75rem;
+		}
+
+		.intro:hover .intro__play,
+		.intro:focus-visible .intro__play {
+			background: var(--ink);
+		}
+
+		.intro__long {
+			display: none;
+		}
+
+		.intro__short {
+			display: inline;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.intro {
+			transition: none;
+		}
 	}
 
 	.metric {
@@ -146,6 +238,8 @@ ABOUTME: deficit for the budget year, and the debt at the end of the outlook wit
 		color: var(--ink-muted);
 		font-size: 0.8125rem;
 		line-height: 1.3;
+		overflow-wrap: anywhere;
+		hyphens: auto;
 	}
 
 	.metric__value {

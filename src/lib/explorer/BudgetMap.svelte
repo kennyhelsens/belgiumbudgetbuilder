@@ -969,10 +969,13 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 		background: color-mix(in oklab, var(--tile-color) 34%, var(--paper));
 	}
 
+	/* Long words, such as Dutch compounds, break inside the tile: hyphenated where the browser can, else anywhere. */
 	.tile__name {
 		font-size: var(--text-sm);
 		font-weight: 600;
 		line-height: 1.2;
+		overflow-wrap: anywhere;
+		hyphens: auto;
 	}
 
 	.tile__amount {

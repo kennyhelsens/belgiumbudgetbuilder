@@ -84,7 +84,7 @@
 	"intro.next": "Suivant",
 	"intro.back": "Retour",
 	"intro.progress": "Étape {n} sur {total}",
-	"intro.replay": "Revoir l'introduction",
+	"intro.replay": "Voir l'intro",
 	"intro.dotLegend": "1 point = 1 milliard €",
 	"intro.start": "Vers la carte du budget",
 	"intro.s1.kicker": "Vous l'avez lu dans le journal",
@@ -147,5 +147,6 @@
 	"level.local": "Pouvoirs locaux",
 	"level.social-security": "Sécurité sociale",
 	"consequence.levelsNote": "Qui la perçoit, avant que l'argent ne passe d'un pouvoir à l'autre : le pouvoir fédéral, par exemple, reverse une partie de ce qu'il perçoit aux communautés et régions et à la sécurité sociale. Source : Bureau fédéral du Plan, comptes par pouvoir.",
-	"footer.purpose": "Ce site n'est pas conçu pour les responsables politiques : ils devraient connaître ces chiffres par cœur. Il veut faire grandir notre compréhension commune des finances publiques, ne prétend pas être exact à 100 % et n'est pas un outil budgétaire pour les pouvoirs publics."
+	"footer.purpose": "Ce site n'est pas conçu pour les responsables politiques : ils devraient connaître ces chiffres par cœur. Il veut faire grandir notre compréhension commune des finances publiques, ne prétend pas être exact à 100 % et n'est pas un outil budgétaire pour les pouvoirs publics.",
+	"intro.replayShort": "Intro"
 }
