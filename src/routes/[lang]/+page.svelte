@@ -21,20 +21,24 @@ ABOUTME: Text comes from the message files and every figure from the sourced dat
 
 	let { data }: PageProps = $props();
 	let changes: Changes = $state({});
+	let revenue: Changes = $state({});
 	let years = $state(10);
 	let interestPct: number | undefined = $state(undefined);
 	let growthPct: number | undefined = $state(undefined);
 	const metrics = $derived(
 		headlineMetrics(data.dataset, {
 			changes,
+			revenue,
 			years,
 			interestRate: interestPct === undefined ? undefined : interestPct / 100,
 			nominalGrowth: growthPct === undefined ? undefined : growthPct / 100
 		})
 	);
-	// What a cut or an increase to a line could mean, in plain words, in the page's language.
+	// What a cut or an increase to a line or revenue type could mean, in plain words, in the page's language.
 	const effectsFor = (id: string, cut: boolean) => {
-		const effects = data.dataset.details.find((d) => d.line === id)?.effects;
+		const effects =
+			data.dataset.details.find((d) => d.line === id)?.effects ??
+			data.dataset.revenue.types.find((type) => type.id === id)?.effects;
 		return ((cut ? effects?.cut : effects?.add) ?? []).map((effect) => effect[data.locale]);
 	};
 	// Clicks per line, so every click on the same line tells something new.
@@ -44,10 +48,11 @@ ABOUTME: Text comes from the message files and every figure from the sourced dat
 		name: string;
 		percent: number;
 		stepEurMillion: number;
+		revenue: boolean;
 		effect?: string;
 	}>();
 	let noticeKey = $state(0);
-	// How the last change moved the debt: more spending raises it, less spending lowers it.
+	// How the last change moved the debt: more spending or less revenue raises it, the opposite lowers it.
 	let debtMove = $state<'up' | 'down'>();
 	const notice = $derived(lastStep === undefined ? undefined : changeNotice(data.locale, lastStep));
 	const t = $derived((key: Parameters<typeof translate>[1]) => translate(data.locale, key));
@@ -130,6 +135,7 @@ ABOUTME: Text comes from the message files and every figure from the sourced dat
 	data={data.dataset}
 	locale={data.locale}
 	bind:changes
+	bind:revenue
 	onopen={(id) => clickLog?.record(id, 'open', 0)}
 	onchange={(change) => {
 		clickLog?.record(change.id, change.stepEurMillion < 0 ? 'cut' : 'add', change.percent);
@@ -139,7 +145,7 @@ ABOUTME: Text comes from the message files and every figure from the sourced dat
 			...change,
 			effect: pickEffect(effectsFor(change.id, change.stepEurMillion < 0), click)
 		};
-		debtMove = change.stepEurMillion > 0 ? 'up' : 'down';
+		debtMove = change.stepEurMillion > 0 !== change.revenue ? 'up' : 'down';
 		noticeKey += 1;
 	}}
 />
@@ -147,7 +153,11 @@ ABOUTME: Text comes from the message files and every figure from the sourced dat
 	data={data.dataset}
 	locale={data.locale}
 	{changes}
-	onreset={() => (changes = {})}
+	{revenue}
+	onreset={() => {
+		changes = {};
+		revenue = {};
+	}}
 	bind:years
 	bind:interestPct
 	bind:growthPct

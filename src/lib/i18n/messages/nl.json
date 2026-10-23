@@ -125,5 +125,20 @@
 	"theme.culture": "Cultuur, sport en media",
 	"theme.general": "Bestuur en algemene diensten",
 	"theme.debt": "Rente op de schuld",
-	"theme.by-type": "Lokale uitgaven naar soort"
+	"theme.by-type": "Lokale uitgaven naar soort",
+	"map.viewLabel": "Toon",
+	"map.viewSpending": "Uitgaven",
+	"map.viewRevenue": "Inkomsten",
+	"map.revenueIntro": "Wat alle Belgische overheden samen in 2026 ontvangen, per soort, op schaal. Verlaag of verhoog een soort om te zien wat het doet met het tekort en de schuld.",
+	"map.revenueNote": "Alle overheden samen, geconsolideerd, zoals het Federaal Planbureau ze in de nationale rekeningen (ESR 2010) raamt. Wat een overheid aan een andere doorgeeft, telt maar één keer.",
+	"builder.revenueStepDown": "Verlaag {name} met 1%",
+	"builder.revenueStepUp": "Verhoog {name} met 1%",
+	"builder.revenueFixed": "Een boekhoudkundige tegenpost: verandert het tekort niet",
+	"builder.noticeLessRevenueEffect": "Minder inkomsten uit {name} kan betekenen: {effect}.",
+	"builder.noticeMoreRevenueEffect": "Meer inkomsten uit {name} kan betekenen: {effect}.",
+	"builder.noticeLessRevenuePlain": "Minder inkomsten uit {name}.",
+	"builder.noticeMoreRevenuePlain": "Meer inkomsten uit {name}.",
+	"consequence.lessRevenueTitle": "Minder inkomsten uit {name} kan betekenen:",
+	"consequence.moreRevenueTitle": "Meer inkomsten uit {name} kan betekenen:",
+	"consequence.revenueEffectsNote": "Mogelijke manieren, geen voorspelling: wie meer of minder betaalt, hangt af van hoe de overheid de keuze invult. Hoe mensen en bedrijven daarop reageren, rekent deze site niet mee."
 }

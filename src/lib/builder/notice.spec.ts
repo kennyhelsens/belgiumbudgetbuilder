@@ -82,4 +82,30 @@ describe('changeNotice', () => {
 			'Healthcare is back to the official budget.'
 		);
 	});
+
+	it('says what less or more revenue could mean', () => {
+		const tax = { name: 'Corporate income tax', revenue: true };
+		expect(
+			changeNotice('en', {
+				...tax,
+				percent: -1,
+				stepEurMillion: -287,
+				effect: 'lower tax on company profits'
+			})
+		).toBe('Less revenue from Corporate income tax could mean: lower tax on company profits.');
+		expect(
+			changeNotice('nl', {
+				...tax,
+				name: 'Vennootschapsbelasting',
+				percent: 1,
+				stepEurMillion: 287,
+				effect: 'een hogere belasting op de winst van vennootschappen'
+			})
+		).toBe(
+			'Meer inkomsten uit Vennootschapsbelasting kan betekenen: een hogere belasting op de winst van vennootschappen.'
+		);
+		expect(changeNotice('en', { ...tax, percent: -1, stepEurMillion: -287 })).toBe(
+			'Less revenue from Corporate income tax.'
+		);
+	});
 });

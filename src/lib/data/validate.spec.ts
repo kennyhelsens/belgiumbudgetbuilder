@@ -128,4 +128,36 @@ describe('findProblems', () => {
 		data.entities[0].expenditure.lines[1].transferTo = 'federal';
 		expect(findProblems(data)).toContainEqual(expect.stringContaining('transfers to itself'));
 	});
+
+	it('reports revenue types that do not add up to the total revenue', () => {
+		const data = datasetFixture();
+		data.revenue.types[0].amount.eurMillion = 170000;
+		expect(findProblems(data)).toContainEqual(
+			expect.stringContaining('revenue types add up to 290000, total revenue is 300000')
+		);
+	});
+
+	it('checks references in the revenue types too', () => {
+		const data = datasetFixture();
+		data.revenue.types[0].effects!.ref.source = 'nowhere';
+		expect(findProblems(data)).toContainEqual(
+			expect.stringContaining('revenue.income-tax.effects: unknown source "nowhere"')
+		);
+	});
+
+	it('reports a revenue type id that does not start with "revenue."', () => {
+		const data = datasetFixture();
+		data.revenue.types[0].id = 'income-tax';
+		expect(findProblems(data)).toContainEqual(
+			expect.stringContaining('"income-tax" should start with "revenue."')
+		);
+	});
+
+	it('reports duplicate revenue type ids', () => {
+		const data = datasetFixture();
+		data.revenue.types[1].id = 'revenue.income-tax';
+		expect(findProblems(data)).toContainEqual(
+			expect.stringContaining('duplicate id "revenue.income-tax"')
+		);
+	});
 });

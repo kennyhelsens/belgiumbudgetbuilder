@@ -1,5 +1,5 @@
 // ABOUTME: Tests for turning a visitor's budget choices into projection inputs.
-// ABOUTME: Spending more worsens the balance one for one; rates default to the sourced outlook values.
+// ABOUTME: Spending more worsens the balance one for one, more revenue improves it; rates default to the outlook's.
 import { describe, expect, it } from 'vitest';
 import { datasetFixture } from '../data/test-fixture.ts';
 import { balanceChangeFrom, outlookInput } from './choices.ts';
@@ -13,6 +13,16 @@ describe('balanceChangeFrom', () => {
 
 	it('is zero without changes', () => {
 		expect(balanceChangeFrom({})).toBe(0);
+		expect(balanceChangeFrom({}, {})).toBe(0);
+	});
+
+	it('improves the balance by extra revenue and worsens it by less revenue', () => {
+		expect(balanceChangeFrom({}, { 'revenue.vat': 300, 'revenue.corporate': -100 })).toBe(200);
+	});
+
+	it('adds revenue and spending changes together', () => {
+		// 500 more spending and 800 more revenue: the balance improves by 300.
+		expect(balanceChangeFrom({ 'federal.justice': 500 }, { 'revenue.vat': 800 })).toBe(300);
 	});
 });
 
@@ -27,6 +37,15 @@ describe('outlookInput', () => {
 		expect(input.interest).toBe(14000);
 		// balance −30,000 = primary balance − interest 14,000, so primary balance is −16,000.
 		expect(input.primaryBalance).toBe(-16000);
+	});
+
+	it('carries revenue changes into the primary balance, like spending changes', () => {
+		const input = outlookInput(data, {
+			changes: { 'federal.justice': 100 },
+			revenue: { 'revenue.vat': 400 },
+			years: 10
+		});
+		expect(input.primaryBalanceChange).toBe(300);
 	});
 
 	it('uses the sourced rates unless the visitor sets their own', () => {

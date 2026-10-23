@@ -10,7 +10,8 @@ function filesFromFixture(): Record<string, unknown> {
 		'/data/2026/sources.json': data.sources,
 		'/data/2026/overview.json': data.overview,
 		'/data/2026/outlook.json': data.outlook,
-		'/data/2026/history.json': data.history
+		'/data/2026/history.json': data.history,
+		'/data/2026/revenue.json': data.revenue
 	};
 	for (const entity of data.entities) {
 		files[`/data/2026/entities/${entity.id}.json`] = entity;
@@ -27,6 +28,20 @@ describe('assembleDataset', () => {
 		expect(dataset.year).toBe(2026);
 		expect(dataset.sources.map((s) => s.id)).toEqual(['fed-budget', 'socsec-budget']);
 		expect(dataset.entities.map((e) => e.id).sort()).toEqual(['federal', 'social-security']);
+	});
+
+	it('reads the revenue file', () => {
+		const dataset = assembleDataset(filesFromFixture(), 2026);
+		expect(dataset.revenue.types.map((type) => type.id)).toEqual([
+			'revenue.income-tax',
+			'revenue.contributions'
+		]);
+	});
+
+	it('requires the revenue file', () => {
+		const files = filesFromFixture();
+		delete files['/data/2026/revenue.json'];
+		expect(() => assembleDataset(files, 2026)).toThrow('/data/2026/revenue.json is missing');
 	});
 
 	it('reads the details files of spending lines', () => {

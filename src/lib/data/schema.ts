@@ -120,6 +120,31 @@ const entitySchema = z.object({
 	note: localized.optional()
 });
 
+/**
+ * What a change could mean, in plain words and without numbers. For spending, cut = less money and add = more; for
+ * revenue, cut = less revenue and add = more.
+ */
+const effectsSchema = z.object({
+	cut: z.array(localized).min(1).max(4),
+	add: z.array(localized).min(1).max(4),
+	ref: sourceRefSchema
+});
+
+/** One type of general government revenue (ESA 2010, consolidated), e.g. personal income tax. */
+const revenueTypeSchema = z.object({
+	/** "revenue." followed by a kebab-case name, e.g. "revenue.personal-income-tax". */
+	id: slug,
+	label: localized,
+	amount: amountSchema,
+	/** false when no tax decision changes this revenue, e.g. contributions that are only a bookkeeping entry. */
+	adjustable: z.boolean().optional(),
+	/** Why a type that is not adjustable cannot be changed. */
+	fixedNote: localized.optional(),
+	note: localized.optional(),
+	/** What less or more of this revenue could mean for those who pay it, grounded in what it is levied on. */
+	effects: effectsSchema.optional()
+});
+
 /** Details behind one spending line, used for its consequence card. */
 const lineDetailsSchema = z.object({
 	/** The id of the spending line these details belong to, e.g. "social-security.healthcare". */
@@ -156,13 +181,7 @@ const lineDetailsSchema = z.object({
 	 * What a cut or an increase could mean, in plain words and without numbers ("a higher co-payment at the
 	 * GP"), grounded in what the line pays for according to the source.
 	 */
-	effects: z
-		.object({
-			cut: z.array(localized).min(1).max(4),
-			add: z.array(localized).min(1).max(4),
-			ref: sourceRefSchema
-		})
-		.optional(),
+	effects: effectsSchema.optional(),
 	/** The official ways this spending can be changed. */
 	levers: z
 		.array(z.object({ id: slug, label: localized, description: localized, ref: sourceRefSchema }))
@@ -213,6 +232,8 @@ export const datasetSchema = z.object({
 			communitiesAndRegions: amountSchema
 		})
 	}),
+	/** General government revenue split by type; the types add up to overview.revenue. */
+	revenue: z.object({ types: z.array(revenueTypeSchema).min(1) }),
 	entities: z.array(entitySchema).min(1),
 	details: z.array(lineDetailsSchema)
 });
@@ -222,3 +243,4 @@ export type Entity = Dataset['entities'][number];
 export type Line = Entity['expenditure']['lines'][number];
 export type SourceRef = z.infer<typeof sourceRefSchema>;
 export type LineDetails = Dataset['details'][number];
+export type RevenueType = Dataset['revenue']['types'][number];

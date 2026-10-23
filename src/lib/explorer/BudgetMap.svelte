@@ -1,5 +1,5 @@
 <!--
-ABOUTME: Zoomable, area-true budget map: Belgium's governments, then one government's spending lines.
+ABOUTME: Zoomable, area-true budget map: Belgium's governments, then one government's spending lines; or revenue by type.
 ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles, and a table with sources and sliders.
 -->
 <script lang="ts">
@@ -7,50 +7,63 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 	import { formatPercentChange } from '../builder/notice.ts';
 	import { CHANGE_LIMIT, changeSlice, stepPercent } from '../builder/steps.ts';
 	import ConsequenceCard from '../consequences/ConsequenceCard.svelte';
+	import RevenueCard from '../consequences/RevenueCard.svelte';
 	import type { Dataset } from '../data/schema.ts';
 	import type { Locale } from '../i18n/locales.ts';
 	import { translate, type MessageKey } from '../i18n/translate.ts';
-	import { colorSlot, THEMES, themeColor } from './colors.ts';
+	import { colorSlot, revenueColor, THEMES, themeColor } from './colors.ts';
 	import { formatEuro } from './format.ts';
-	import { mapTiles, tooltipPlacement, type Tile } from './layout.ts';
+	import { mapTiles, revenueTiles, tooltipPlacement, type Tile } from './layout.ts';
 
 	let {
 		data,
 		locale,
 		changes = $bindable({}),
+		revenue = $bindable({}),
 		onchange,
 		onopen
 	}: {
 		data: Dataset;
 		locale: Locale;
 		changes?: Changes;
+		/** Changes to revenue types, € million per year; positive = more revenue. */
+		revenue?: Changes;
 		/**
-		 * Called after the visitor changes a line, with its id, name, new percentage, and what this one
-		 * step changed in € million (positive = more spending than before).
+		 * Called after the visitor changes a line or revenue type, with its id, name, new percentage, and what this
+		 * one step changed in € million (positive = more spending, or more revenue, than before).
 		 */
 		onchange?: (change: {
 			id: string;
 			name: string;
 			percent: number;
 			stepEurMillion: number;
+			revenue: boolean;
 		}) => void;
 		/** Called when the visitor opens a government's tile to see its budget, with the government's id. */
 		onopen?: (id: string) => void;
 	} = $props();
 
-	const percentOf = (id: string, amount: number) => Math.round(((changes[id] ?? 0) / amount) * 100);
+	/** Spending (governments and their lines) or revenue (by type). */
+	let view = $state<'spending' | 'revenue'>('spending');
+	const onRevenue = $derived(view === 'revenue');
+	// The changes for what is on screen: spending changes, or revenue changes.
+	const current = $derived(onRevenue ? revenue : changes);
+
+	const percentOf = (id: string, amount: number) => Math.round(((current[id] ?? 0) / amount) * 100);
 
 	function setPercent(tile: Tile, percent: number) {
-		const before = changes[tile.id] ?? 0;
-		const next = { ...changes };
+		const before = current[tile.id] ?? 0;
+		const next = { ...current };
 		if (percent === 0) delete next[tile.id];
 		else next[tile.id] = (tile.eurMillion * percent) / 100;
-		changes = next;
+		if (onRevenue) revenue = next;
+		else changes = next;
 		onchange?.({
 			id: tile.id,
 			name: tile.label[locale],
 			percent,
-			stepEurMillion: (next[tile.id] ?? 0) - before
+			stepEurMillion: (next[tile.id] ?? 0) - before,
+			revenue: onRevenue
 		});
 	}
 
@@ -65,9 +78,17 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 	const portrait = $derived(width < 600);
 	const frame = $derived(portrait ? { width: 300, height: 400 } : { width: 400, height: 250 });
 
-	const tiles = $derived(mapTiles(data, { ...frame, focus }));
+	const tiles = $derived(
+		onRevenue ? revenueTiles(data, frame) : mapTiles(data, { ...frame, focus })
+	);
 	const overviewTiles = $derived(mapTiles(data, { width: 160, height: 100 }));
-	const focusEntity = $derived(data.entities.find((entity) => entity.id === focus));
+	// The government opened on the spending map; it stays open while the visitor looks at revenue.
+	const focusEntity = $derived(
+		onRevenue ? undefined : data.entities.find((entity) => entity.id === focus)
+	);
+	// Whether the tiles on screen can be changed: revenue, or the lines of a government that can be.
+	const editable = $derived(onRevenue || focusEntity?.adjustable === true);
+	const fixedText = $derived(t(onRevenue ? 'builder.revenueFixed' : 'builder.fixed'));
 	const shownTotal = $derived(tiles.reduce((sum, tile) => sum + tile.eurMillion, 0));
 	// The phone list: largest first, each bar as long as its amount against the largest.
 	const byAmount = $derived([...tiles].sort((a, b) => b.eurMillion - a.eurMillion));
@@ -76,14 +97,20 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 	const sourcesById = $derived(new Map(data.sources.map((source) => [source.id, source])));
 
 	function lineSource(id: string) {
-		const line = focusEntity?.expenditure.lines.find((l) => l.id === id);
+		const line = onRevenue
+			? data.revenue.types.find((type) => type.id === id)
+			: focusEntity?.expenditure.lines.find((l) => l.id === id);
 		if (!line) return undefined;
 		return { source: sourcesById.get(line.amount.ref.source), ref: line.amount.ref };
 	}
 
-	/** Governments in their own colour; lines inside a government in the colour of their theme. */
+	/** Governments in their own colour; lines inside a government in the colour of their theme; revenue by type. */
 	const tileColor = (tile: Pick<Tile, 'id' | 'theme'>) =>
-		tile.theme ? themeColor(tile.theme) : `var(--series-${colorSlot(tile.id)})`;
+		onRevenue
+			? revenueColor(tile.id)
+			: tile.theme
+				? themeColor(tile.theme)
+				: `var(--series-${colorSlot(tile.id)})`;
 	// The themes on screen, for the legend, in the legend's fixed order.
 	const shownThemes = $derived(
 		THEMES.filter((theme) => tiles.some((tile) => tile.theme === theme))
@@ -159,7 +186,21 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 
 <section class="map" aria-labelledby="map-title">
 	<h2 id="map-title">{t('map.title')}</h2>
-	<p class="map__intro">{t('map.intro')}</p>
+	<div class="views" role="group" aria-label={t('map.viewLabel')}>
+		<button
+			type="button"
+			class="views__button"
+			aria-pressed={!onRevenue}
+			onclick={() => (view = 'spending')}>{t('map.viewSpending')}</button
+		>
+		<button
+			type="button"
+			class="views__button"
+			aria-pressed={onRevenue}
+			onclick={() => (view = 'revenue')}>{t('map.viewRevenue')}</button
+		>
+	</div>
+	<p class="map__intro">{t(onRevenue ? 'map.revenueIntro' : 'map.intro')}</p>
 
 	{#if focusEntity}
 		<button type="button" class="map__back" onclick={() => (focus = undefined)}>
@@ -174,6 +215,8 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 			>
 			<span aria-hidden="true">›</span>
 			<span aria-current="location">{focusEntity.label[locale]}</span>
+		{:else if onRevenue}
+			<span aria-current="location">{t('map.viewRevenue')}</span>
 		{:else}
 			<span aria-current="location">{t('map.belgium')}</span>
 		{/if}
@@ -218,13 +261,19 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 		<span class="stepper" class:stepper--always={always}>
 			<button
 				type="button"
-				aria-label={t('builder.stepDown').replace('{name}', tile.label[locale])}
+				aria-label={t(onRevenue ? 'builder.revenueStepDown' : 'builder.stepDown').replace(
+					'{name}',
+					tile.label[locale]
+				)}
 				disabled={percent <= -CHANGE_LIMIT}
 				onclick={() => setPercent(tile, stepPercent(percent, -1))}>−</button
 			>
 			<button
 				type="button"
-				aria-label={t('builder.stepUp').replace('{name}', tile.label[locale])}
+				aria-label={t(onRevenue ? 'builder.revenueStepUp' : 'builder.stepUp').replace(
+					'{name}',
+					tile.label[locale]
+				)}
 				disabled={percent >= CHANGE_LIMIT}
 				onclick={() => setPercent(tile, stepPercent(percent, 1))}>+</button
 			>
@@ -238,13 +287,13 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 				{#each byAmount as tile (tile.id)}
 					{@const label = `${tile.label[locale]}, ${formatEuro(tile.eurMillion, locale)}`}
 					{@const percent = percentOf(tile.id, tile.eurMillion)}
-					{@const changeable = !tile.zoomable && focusEntity?.adjustable && tile.adjustable}
+					{@const changeable = !tile.zoomable && editable && tile.adjustable}
 					{#snippet barRow()}
 						<span class="bar__head">
 							<span class="bar__name">{tile.label[locale]}</span>
 							<span class="bar__amount"
 								>{formatEuro(tile.eurMillion, locale)}{#if percent}
-									→ {formatEuro(tile.eurMillion + (changes[tile.id] ?? 0), locale)}
+									→ {formatEuro(tile.eurMillion + (current[tile.id] ?? 0), locale)}
 									<span class="bar__badge">{formatPercentChange(percent, locale)}</span>{/if}</span
 							>
 						</span>
@@ -259,8 +308,8 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 								<span class="bar__spacer"></span>
 							{/if}
 						</span>
-						{#if !tile.zoomable && focusEntity?.adjustable && !tile.adjustable}
-							<span class="bar__fixed">{t('builder.fixed')}</span>
+						{#if !tile.zoomable && editable && !tile.adjustable}
+							<span class="bar__fixed">{fixedText}</span>
 						{/if}
 					{/snippet}
 					<li class="bar" data-testid="bar-row" style="--tile-color:{tileColor(tile)}">
@@ -302,7 +351,7 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 							<span class="tile__amount">{formatEuro(tile.eurMillion, locale)}</span>
 						{/if}
 					</button>
-				{:else if focusEntity?.adjustable && tile.adjustable}
+				{:else if editable && tile.adjustable}
 					{@const percent = percentOf(tile.id, tile.eurMillion)}
 					{@const slice = changeSlice(percent)}
 					<div
@@ -326,7 +375,7 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 							<span class="tile__name">{tile.label[locale]}</span>
 							<span class="tile__amount"
 								>{formatEuro(tile.eurMillion, locale)}{#if percent}
-									→ {formatEuro(tile.eurMillion + (changes[tile.id] ?? 0), locale)}{/if}</span
+									→ {formatEuro(tile.eurMillion + (current[tile.id] ?? 0), locale)}{/if}</span
 							>
 						{/if}
 						{#if percent}
@@ -345,8 +394,8 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 						{#if hasRoom(tile)}
 							<span class="tile__name">{tile.label[locale]}</span>
 							<span class="tile__amount">{formatEuro(tile.eurMillion, locale)}</span>
-							{#if focusEntity?.adjustable && !tile.adjustable}
-								<span class="tile__fixed">{t('builder.fixed')}</span>
+							{#if editable && !tile.adjustable}
+								<span class="tile__fixed">{fixedText}</span>
 							{/if}
 						{/if}
 					</div>
@@ -358,11 +407,11 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 					<strong>{tip.label[locale]}</strong>
 					<span
 						>{formatEuro(tip.eurMillion, locale)}{#if percent}
-							→ {formatEuro(tip.eurMillion + (changes[tip.id] ?? 0), locale)}{/if}
+							→ {formatEuro(tip.eurMillion + (current[tip.id] ?? 0), locale)}{/if}
 						· {share(tip.eurMillion)}</span
 					>
-					{#if focusEntity?.adjustable && !tip.adjustable}
-						<span>{t('builder.fixed')}</span>
+					{#if editable && !tip.adjustable}
+						<span>{fixedText}</span>
 					{/if}
 				</div>
 			{/if}
@@ -379,7 +428,7 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 		</ul>
 	{/if}
 
-	<p class="map__note">{t('map.transfersNote')}</p>
+	<p class="map__note">{t(onRevenue ? 'map.revenueNote' : 'map.transfersNote')}</p>
 
 	<details class="table-view">
 		<summary>{t('map.tableToggle')}</summary>
@@ -390,7 +439,7 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 					<th scope="col" class="num">{t('map.colAmount')}</th>
 					<th scope="col" class="num">{t('map.colShare')}</th>
 					<th scope="col">{t('map.colSource')}</th>
-					{#if focusEntity?.adjustable}
+					{#if editable}
 						<th scope="col">{t('builder.change')}</th>
 					{/if}
 				</tr>
@@ -412,9 +461,9 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 								{t('map.sumOfLines')}
 							{/if}
 						</td>
-						{#if focusEntity?.adjustable && !tile.adjustable}
-							<td class="change change--fixed">{t('builder.fixed')}</td>
-						{:else if focusEntity?.adjustable}
+						{#if editable && !tile.adjustable}
+							<td class="change change--fixed">{fixedText}</td>
+						{:else if editable}
 							<td class="change">
 								<input
 									type="range"
@@ -426,7 +475,7 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 									oninput={(e) => setPercent(tile, Number(e.currentTarget.value))}
 								/>
 								<span class="change__value"
-									>{percentOf(tile.id, tile.eurMillion)}% · {signed(changes[tile.id] ?? 0)}</span
+									>{percentOf(tile.id, tile.eurMillion)}% · {signed(current[tile.id] ?? 0)}</span
 								>
 							</td>
 						{/if}
@@ -439,6 +488,11 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 	{#each data.details as details (details.line)}
 		{#if changes[details.line]}
 			<ConsequenceCard {data} {details} {locale} changeEurMillion={changes[details.line]} />
+		{/if}
+	{/each}
+	{#each data.revenue.types as type (type.id)}
+		{#if revenue[type.id]}
+			<RevenueCard {data} {type} {locale} changeEurMillion={revenue[type.id]} />
 		{/if}
 	{/each}
 </section>
@@ -484,6 +538,47 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 		border: 1px solid var(--rule);
 		font-size: var(--text-sm);
 		font-style: italic;
+	}
+
+	/* Spending or revenue: two buttons joined into one switch; the chosen one is filled. */
+	.views {
+		display: inline-flex;
+		margin: 0 0 var(--space-2);
+		border: 1px solid var(--ink);
+	}
+
+	.views__button {
+		padding: var(--space-1) var(--space-3);
+		border: 0;
+		background: var(--paper);
+		color: var(--ink);
+		font: inherit;
+		font-size: var(--text-sm);
+		font-weight: 600;
+		cursor: pointer;
+		transition:
+			background-color 160ms ease,
+			color 160ms ease;
+	}
+
+	.views__button + .views__button {
+		border-left: 1px solid var(--ink);
+	}
+
+	.views__button[aria-pressed='true'] {
+		background: var(--ink);
+		color: var(--paper);
+	}
+
+	.views__button:focus-visible {
+		outline: 2px solid var(--accent);
+		outline-offset: 2px;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.views__button {
+			transition: none;
+		}
 	}
 
 	.map__back {

@@ -15,6 +15,7 @@ ABOUTME: Headline figures, a line chart with hover values, adjustable assumption
 		data,
 		locale,
 		changes,
+		revenue = {},
 		onreset,
 		years = $bindable(10),
 		interestPct = $bindable(undefined),
@@ -23,6 +24,8 @@ ABOUTME: Headline figures, a line chart with hover values, adjustable assumption
 		data: Dataset;
 		locale: Locale;
 		changes: Changes;
+		/** Revenue changes per type, € million per year; positive = more revenue. */
+		revenue?: Changes;
 		onreset: () => void;
 		years?: number;
 		/** Visitor's own assumptions in percent; the sourced values apply when undefined. */
@@ -40,11 +43,11 @@ ABOUTME: Headline figures, a line chart with hover values, adjustable assumption
 		interestRate: (interestPct ?? sourcedInterestPct) / 100,
 		nominalGrowth: (growthPct ?? sourcedGrowthPct) / 100
 	});
-	const yours = $derived(project(outlookInput(data, { ...assumptions, changes })));
+	const yours = $derived(project(outlookInput(data, { ...assumptions, changes, revenue })));
 	const unchanged = $derived(project(outlookInput(data, { ...assumptions, changes: {} })));
 	const official = $derived(data.outlook.officialDebtPctGdp);
 	const last = $derived(yours[yours.length - 1]);
-	const balanceChange = $derived(balanceChangeFrom(changes));
+	const balanceChange = $derived(balanceChangeFrom(changes, revenue));
 
 	const percent = (value: number) =>
 		new Intl.NumberFormat(locale, { maximumFractionDigits: 1 }).format(value);

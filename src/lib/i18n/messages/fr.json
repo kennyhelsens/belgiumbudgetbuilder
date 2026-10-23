@@ -125,5 +125,20 @@
 	"theme.culture": "Culture, sport et médias",
 	"theme.general": "Administration et services généraux",
 	"theme.debt": "Intérêts de la dette",
-	"theme.by-type": "Dépenses locales par nature"
+	"theme.by-type": "Dépenses locales par nature",
+	"map.viewLabel": "Afficher",
+	"map.viewSpending": "Dépenses",
+	"map.viewRevenue": "Recettes",
+	"map.revenueIntro": "Ce que l'ensemble des pouvoirs publics belges perçoit en 2026, par type, à l'échelle. Baissez ou augmentez un type pour voir l'effet sur le déficit et la dette.",
+	"map.revenueNote": "Tous les pouvoirs publics ensemble, consolidés, tels que le Bureau fédéral du Plan les estime dans les comptes nationaux (SEC 2010). Ce qu'un pouvoir transfère à un autre n'est compté qu'une fois.",
+	"builder.revenueStepDown": "Baisser {name} de 1 %",
+	"builder.revenueStepUp": "Augmenter {name} de 1 %",
+	"builder.revenueFixed": "Une contrepartie comptable : ne change pas le déficit",
+	"builder.noticeLessRevenueEffect": "Moins de recettes de {name} peut signifier : {effect}.",
+	"builder.noticeMoreRevenueEffect": "Plus de recettes de {name} peut signifier : {effect}.",
+	"builder.noticeLessRevenuePlain": "Moins de recettes de {name}.",
+	"builder.noticeMoreRevenuePlain": "Plus de recettes de {name}.",
+	"consequence.lessRevenueTitle": "Moins de recettes de {name} peut signifier :",
+	"consequence.moreRevenueTitle": "Plus de recettes de {name} peut signifier :",
+	"consequence.revenueEffectsNote": "Des pistes possibles, pas une prévision : qui paie plus ou moins dépend de la manière dont les pouvoirs publics font ce choix. Ce site ne tient pas compte de la réaction des personnes et des entreprises."
 }
