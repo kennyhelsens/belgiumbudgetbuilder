@@ -181,18 +181,17 @@ describe('data/2026', () => {
 		}
 	});
 
-	// The Planning Bureau reports the federal government with social security (Entity I), and the communities,
-	// regions and local government together (Entity II); the map pairs them the same way.
-	it('groups the governments as the Planning Bureau does: Entity I and Entity II', () => {
+	// Social security has its own budget, but its policy is federal: the map frames it with the federal government,
+	// as the Planning Bureau takes them together (its "Entity I"). The other governments stay on their own.
+	it('frames the federal government with social security, and no other governments', () => {
 		expect(dataset.groups.map((group) => [group.id, [...group.members].sort()])).toEqual([
-			['entity-1', ['federal', 'social-security']],
-			['entity-2', ['brussels', 'flanders', 'local', 'wallonia', 'wallonia-brussels-federation']]
+			['federal-level', ['federal', 'social-security']]
 		]);
 	});
 
 	it('says how social security relates to the federal government', () => {
 		const socialSecurity = dataset.entities.find((e) => e.id === 'social-security');
-		expect(socialSecurity?.note?.en).toMatch(/Entity I/);
+		expect(socialSecurity?.note?.en).toMatch(/own budget/);
 		expect(socialSecurity?.note?.en).toMatch(/grants from the federal government/);
 	});
 

@@ -164,14 +164,12 @@ const revenueTypeSchema = z.object({
 });
 
 /**
- * Governments that official reports take together, e.g. the Federal Planning Bureau's "Entity I" (the federal
- * government and social security) and "Entity II" (communities, regions and local government).
+ * Governments the map frames together, e.g. the federal government and social security: two separate budgets, both
+ * under federal policy (the Federal Planning Bureau takes them together as its "Entity I").
  */
 const groupSchema = z.object({
 	id: slug,
 	label: localized,
-	/** A short name for a tile or a heading, e.g. "Entity I". */
-	short: localized,
 	/** The ids of the governments in this group. */
 	members: z.array(slug).min(1),
 	ref: sourceRefSchema
@@ -266,7 +264,7 @@ export const datasetSchema = z.object({
 	}),
 	/** General government revenue split by type; the types add up to overview.revenue. */
 	revenue: z.object({ types: z.array(revenueTypeSchema).min(1) }),
-	/** Groups of governments shown together on the map; when there are any, every government is in one. */
+	/** Groups of governments framed together on the map; a government is in at most one. */
 	groups: z.array(groupSchema).default([]),
 	entities: z.array(entitySchema).min(1),
 	details: z.array(lineDetailsSchema)
