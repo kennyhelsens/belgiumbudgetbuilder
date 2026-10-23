@@ -1,0 +1,55 @@
+{
+	"line": "federal.royal-family-parliament",
+	"effects": {
+		"cut": [
+			{
+				"nl": "een kleiner budget voor Kamer en Senaat",
+				"fr": "un budget réduit pour la Chambre et le Sénat",
+				"en": "a smaller budget for the Chamber and Senate"
+			},
+			{
+				"nl": "kleinere budgetten voor het Rekenhof en het Grondwettelijk Hof",
+				"fr": "des budgets réduits pour la Cour des comptes et la Cour constitutionnelle",
+				"en": "smaller budgets for the Court of Audit and Constitutional Court"
+			},
+			{
+				"nl": "minder overheidsfinanciering voor partijen, via een wetswijziging",
+				"fr": "moins de financement public des partis, via une modification de la loi",
+				"en": "less party funding, through a change in the law"
+			},
+			{
+				"nl": "lagere dotaties voor de koninklijke familie, via een wetswijziging",
+				"fr": "des dotations plus faibles pour la famille royale, via une modification de la loi",
+				"en": "lower royal grants, through a change in the law"
+			}
+		],
+		"add": [
+			{
+				"nl": "een groter budget voor Kamer en Senaat",
+				"fr": "un budget plus élevé pour la Chambre et le Sénat",
+				"en": "a larger budget for the Chamber and Senate"
+			},
+			{
+				"nl": "grotere budgetten voor het Rekenhof en het Grondwettelijk Hof",
+				"fr": "des budgets plus élevés pour la Cour des comptes et la Cour constitutionnelle",
+				"en": "larger budgets for the Court of Audit and Constitutional Court"
+			},
+			{
+				"nl": "meer overheidsfinanciering voor partijen, via een wetswijziging",
+				"fr": "plus de financement public des partis, via une modification de la loi",
+				"en": "more party funding, through a change in the law"
+			},
+			{
+				"nl": "hogere dotaties voor de koninklijke familie, via een wetswijziging",
+				"fr": "des dotations plus élevées pour la famille royale, via une modification de la loi",
+				"en": "higher royal grants, through a change in the law"
+			}
+		],
+		"ref": {
+			"source": "be-chamber-56-1281-001",
+			"locator": "DOC 56 1281/001, section 01, division 32 'Dotaties aan de federale wetgevende vergaderingen', programmes 1-2 (art. 174 of the Constitution) and 4 (party funding, law of 4 July 1989), p. 18-19; division 33 (Constitutional Court, Court of Audit and other bodies), p. 20-21; division 30 'Civiele Lijst, dotaties en activiteiten van de Koninklijke Familie', p. 3-5",
+			"quote": "In toepassing van artikel 174 al. 1 van de Grondwet stelt de Kamer van Volksvertegenwoordigers elk jaar de dotatie voor haar werking vast.",
+			"note": "Mixed line: section 01 minus the grants to the communities. The Chamber and Senate set their own dotations (art. 174 of the Constitution); the civil list is fixed by the law of 27 November 2013 for the duration of King Philippe's reign and the other royal grants by law of the same date (indexed); party funding follows the law of 4 July 1989. Changing these amounts requires a parliamentary decision or a change in law, not only a budget change. The line also covers the High Council of Justice, the federal ombudsmen, the Standing Committees P and I, the Data Protection Authority and similar bodies. Second check: the civil list (law of 27 November 2013, fixed for the reign of King Philippe and indexed, p. 3) and the grants to King Albert II, Princess Astrid and Prince Laurent (same date, p. 3-5) are fixed by law, as is party funding (p. 19); their phrases now name that lever. The Chamber and Senate fix their own dotations (p. 18). Royal grants are a small part of the line; the Chamber dotation is the largest item. corrected: 'lower/higher grants to the King and the royal family' implied the budget alone sets them, but the civil list and royal grants are fixed by the laws of 27 November 2013 (DOC 56 1281/001 p. 3-5); rephrased as 'lower/higher royal grants, through a change in the law'. Party funding follows the law of 4 July 1989 (p. 19), so the same lever was added. Chamber/Senate and Court of Audit/Constitutional Court phrases kept (10 words because of official names). Quote confirmed verbatim at p. 18."
+		}
+	}
+}

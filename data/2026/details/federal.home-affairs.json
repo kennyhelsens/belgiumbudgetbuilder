@@ -1,0 +1,55 @@
+{
+	"line": "federal.home-affairs",
+	"effects": {
+		"cut": [
+			{
+				"nl": "minder federaal geld voor de hulpverleningszones (brandweer)",
+				"fr": "moins d'argent fédéral pour les zones de secours (pompiers)",
+				"en": "less federal money for fire and rescue zones"
+			},
+			{
+				"nl": "minder middelen voor de noodcentrales",
+				"fr": "moins de moyens pour les centrales d'urgence",
+				"en": "less money for emergency call centres"
+			},
+			{
+				"nl": "minder personeel voor asielbeslissingen bij het CGVS",
+				"fr": "moins de personnel pour les décisions d'asile au CGRA",
+				"en": "fewer staff deciding asylum applications at the CGRS"
+			},
+			{
+				"nl": "kleinere federale subsidies voor lokale veiligheid en preventie",
+				"fr": "des subsides fédéraux réduits pour la sécurité et la prévention locales",
+				"en": "smaller federal subsidies for local security and prevention"
+			}
+		],
+		"add": [
+			{
+				"nl": "meer federaal geld voor de hulpverleningszones (brandweer)",
+				"fr": "plus d'argent fédéral pour les zones de secours (pompiers)",
+				"en": "more federal money for fire and rescue zones"
+			},
+			{
+				"nl": "meer middelen voor de noodcentrales",
+				"fr": "plus de moyens pour les centrales d'urgence",
+				"en": "more money for emergency call centres"
+			},
+			{
+				"nl": "meer personeel voor asielbeslissingen bij het CGVS",
+				"fr": "plus de personnel pour les décisions d'asile au CGRA",
+				"en": "more staff deciding asylum applications at the CGRS"
+			},
+			{
+				"nl": "grotere federale subsidies voor lokale veiligheid en preventie",
+				"fr": "des subsides fédéraux plus élevés pour la sécurité et la prévention locales",
+				"en": "larger federal subsidies for local security and prevention"
+			}
+		],
+		"ref": {
+			"source": "be-chamber-56-1281-006",
+			"locator": "DOC 56 1281/006, DG Civiele Veiligheid, p. 52 (chain of emergency services); B.A. 54.80.435402 'Bijkomende federale dotaties aan de hulpverleningszones', p. 92; B.A. 56.81.432201 (gemeenschapswachten) and 56.82.432202 (lokaal veiligheids- en preventiebeleid), p. 126-127; programme 0 'Commissariaat-generaal voor de vluchtelingen en de staatlozen (CGVS)', p. 145-146",
+			"quote": "De noodcentrales 112, die de noodoproepen behandelen van burgers die zich mogelijk in een noodsituatie bevinden [...] De hulpverleningszones, die de eerstelijnshulpverlening op zich nemen om de bevolking te helpen",
+			"note": "Mixed line. Several large items are fixed by the special financing law of 16 January 1989 and cannot simply be changed in the budget: the mobility dotation to the Brussels-Capital Region (art. 64bis), the dotation to the City of Brussels for its capital-city charges (art. 64) and compensations for lost surcharges and property tax. Rescue zones are local bodies with their own budget; the federal dotation is one of their sources, next to municipal contributions. The line also covers the Council of State, the Council for Alien Law Litigation, the National Crisis Centre, ASTRID, and population registers and elections. The justification notes that the community-warden subsidies are being phased out in 2026 for a revised model from 2027. Second check: per the French column of p. 126-127, 2026 is a 'phasing out' year for the current community-warden and local security and prevention subsidies, which from 2027 are to be granted under a revised model; the 2026 credits are still in the budget. The phrase therefore no longer names community wardens and refers to federal subsidies for local security and prevention in general. corrected: 'less/more money for community wardens and local prevention' named a subsidy scheme that is being phased out in 2026 for a revised model from 2027 (DOC 56 1281/006 p. 126-127, B.A. 56.81.432201 and 56.82.432202); replaced by 'smaller/larger federal subsidies for local security and prevention'. Other phrases confirmed: emergency chain text verbatim at p. 52 (FR 'centrales d'urgence 112'), rescue-zone dotation p. 92, CGRS p. 145-146. No phrase touches the legally fixed Brussels mobility and capital-city grants."
+		}
+	}
+}

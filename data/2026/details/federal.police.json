@@ -18,5 +18,47 @@
 				}
 			}
 		}
-	]
+	],
+	"effects": {
+		"cut": [
+			{
+				"nl": "minder nieuwe politieagenten aangeworven en opgeleid",
+				"fr": "moins de nouveaux policiers recrutés et formés",
+				"en": "fewer new police officers recruited and trained"
+			},
+			{
+				"nl": "minder speurders voor georganiseerde misdaad en drugshandel",
+				"fr": "moins d'enquêteurs pour le crime organisé et le trafic de drogue",
+				"en": "fewer investigators for organised crime and drug trafficking"
+			},
+			{
+				"nl": "minder agenten bij de weg-, spoorweg- en luchtvaartpolitie",
+				"fr": "moins de policiers de la route, des chemins de fer et des aéroports",
+				"en": "fewer road, railway and airport police officers"
+			}
+		],
+		"add": [
+			{
+				"nl": "meer nieuwe politieagenten aangeworven en opgeleid",
+				"fr": "plus de nouveaux policiers recrutés et formés",
+				"en": "more new police officers recruited and trained"
+			},
+			{
+				"nl": "meer speurders voor georganiseerde misdaad en drugshandel",
+				"fr": "plus d'enquêteurs pour le crime organisé et le trafic de drogue",
+				"en": "more investigators for organised crime and drug trafficking"
+			},
+			{
+				"nl": "meer agenten bij de weg-, spoorweg- en luchtvaartpolitie",
+				"fr": "plus de policiers de la route, des chemins de fer et des aéroports",
+				"en": "more road, railway and airport police officers"
+			}
+		],
+		"ref": {
+			"source": "be-chamber-56-1281-009",
+			"locator": "DOC 56 1281/009, DG Bestuurlijke Politie missions, p. 29; DG Gerechtelijke Politie missions, p. 48-50 (organised drug trafficking also p. 54); division 80 'Geïntegreerde werking' (recruitment and training of aspirants), p. 102; B.A. 90.12.431203 (police schools), p. 120",
+			"quote": "Op het personeelsvlak hebben de voornaamste (recurrente) projecten betrekking op het rekruteren, selecteren, uitrusten, opleiden en verlonen van de aspiranten.",
+			"note": "Excludes the federal grants to local police zones (separate line). Recruitment and basic training of aspirants is organised federally for the integrated police (federal and local). Most of the line is statutory pay of federal police staff, with pay scales set by regulation. corrected: locator only (DG judicial police starts p. 48; organised drug trafficking named at p. 54). Quote confirmed verbatim at DOC 56 1281/009 p. 102; road, railway and aviation police at p. 29; police schools p. 120. Phrases confirmed."
+		}
+	}
 }

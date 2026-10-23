@@ -18,5 +18,47 @@
 				}
 			}
 		}
-	]
+	],
+	"effects": {
+		"cut": [
+			{
+				"nl": "minder gevangenispersoneel en minder celplaatsen",
+				"fr": "moins de personnel pénitentiaire et de places de prison",
+				"en": "fewer prison staff and prison places"
+			},
+			{
+				"nl": "minder magistraten en personeel in rechtbanken en parketten",
+				"fr": "moins de magistrats et de personnel dans les tribunaux et parquets",
+				"en": "fewer magistrates and staff in courts and prosecutors' offices"
+			},
+			{
+				"nl": "lagere vergoedingen voor pro-Deoadvocaten",
+				"fr": "des indemnités plus faibles pour les avocats pro deo",
+				"en": "lower fees for legal-aid lawyers"
+			}
+		],
+		"add": [
+			{
+				"nl": "meer gevangenispersoneel en meer celplaatsen",
+				"fr": "plus de personnel pénitentiaire et de places de prison",
+				"en": "more prison staff and prison places"
+			},
+			{
+				"nl": "meer magistraten en personeel in rechtbanken en parketten",
+				"fr": "plus de magistrats et de personnel dans les tribunaux et parquets",
+				"en": "more magistrates and staff in courts and prosecutors' offices"
+			},
+			{
+				"nl": "hogere vergoedingen voor pro-Deoadvocaten",
+				"fr": "des indemnités plus élevées pour les avocats pro deo",
+				"en": "higher fees for legal-aid lawyers"
+			}
+		],
+		"ref": {
+			"source": "be-chamber-56-1281-005",
+			"locator": "DOC 56 1281/005, DG Penitentiaire Inrichtingen, programme 51/0, p. 42-46; 'College van de Hoven en Rechtbanken', p. 89, and 'College van het Openbaar Ministerie', p. 91; activity programme 56/1 'Juridische bijstand', B.A. 12.56.11.344145, p. 82-83",
+			"quote": "Uitbreiding celcapaciteit en modern en gedifferentieerd penitentiair park [...] Vergoedingen van de advocaten belast met de juridische bijstand",
+			"note": "Legal aid (juridische tweedelijnsbijstand) is a legal right; the credits are variable and follow the number of cases, so lower fees means a lower value per point, not fewer people entitled. Salaries of ministers of recognised religions and of delegates of the secular organisations are fixed by law. Prison buildings are owned by the Buildings Agency (Regie der Gebouwen, separate line) and part of the prison infrastructure money sits in the interdepartmental provision of section 06. The line also covers State Security, victim support and the National Institute of Criminalistics and Criminology. Second check: the lawyers' fee is a point value set by the royal decree of 21 February 2024 and indexed (p. 82), so 'lower/higher fees' names that lever and does not suggest fewer people entitled to legal aid. No phrase concerns the salaries of ministers of religion or secular delegates, which are fixed by law. corrected: locator only (added 'College van het Openbaar Ministerie', p. 91, which grounds 'prosecutors' offices'). Phrases confirmed: prison capacity text at DOC 56 1281/005 p. 42-44 and legal-aid fees at p. 82-83 verbatim; legal-aid phrase is about fees, not entitlement, so it is not misleading."
+		}
+	}
 }

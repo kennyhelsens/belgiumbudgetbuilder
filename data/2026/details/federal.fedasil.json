@@ -35,5 +35,47 @@
 				}
 			}
 		}
-	]
+	],
+	"effects": {
+		"cut": [
+			{
+				"nl": "minder geld voor opvangcentra en materiële hulp",
+				"fr": "moins d'argent pour les centres d'accueil et l'aide matérielle",
+				"en": "less money for reception centres and material aid"
+			},
+			{
+				"nl": "minder geld voor opvangpartners zoals het Rode Kruis",
+				"fr": "moins d'argent pour les partenaires d'accueil comme la Croix-Rouge",
+				"en": "less money for reception partners such as the Red Cross"
+			},
+			{
+				"nl": "minder steun voor vrijwillige terugkeer",
+				"fr": "moins d'aide au retour volontaire",
+				"en": "less support for voluntary return"
+			}
+		],
+		"add": [
+			{
+				"nl": "meer geld voor opvangcentra en materiële hulp",
+				"fr": "plus d'argent pour les centres d'accueil et l'aide matérielle",
+				"en": "more money for reception centres and material aid"
+			},
+			{
+				"nl": "meer geld voor opvangpartners zoals het Rode Kruis",
+				"fr": "plus d'argent pour les partenaires d'accueil comme la Croix-Rouge",
+				"en": "more money for reception partners such as the Red Cross"
+			},
+			{
+				"nl": "meer steun voor vrijwillige terugkeer",
+				"fr": "plus d'aide au retour volontaire",
+				"en": "more support for voluntary return"
+			}
+		],
+		"ref": {
+			"source": "be-chamber-56-1281-022",
+			"locator": "DOC 56 1281/022, justification of the budget of EN_62005 – FEDASIL, p. 156 (capacity of federal centres), p. 173 (agreements with reception partners), p. 176 (material aid in federal centres and voluntary return), p. 179 (voluntary return budget, IOM)",
+			"quote": "In het kader van haar opdracht, sluit het Agentschap overeenkomsten af met verenigingen, andere overheden en publieke instellingen voor het organiseren van de opvang van asielzoekers.",
+			"note": "Reception is demand-driven: the right to material aid for applicants for international protection is set by the reception law of 12 January 2007, so the number of places needed depends on arrivals and procedure times, not on the budget alone. The line is the federal dotation only; Fedasil also has own revenue and EU (AMIF) funding. At the budget control +41 m was added for unavoidable reception costs, and the initial budget also held a reserve for Fedasil in the interdepartmental provision (section 06). Material aid includes food, hygiene products, school costs and medical costs. Second check: 'fewer/more reception places' was replaced because the right to reception under the law of 12 January 2007 means the number of places follows demand, not the budget alone; the phrase now names what the money pays for (federal centres' staff p. 156 and material aid p. 176). The 2025 budget renamed voluntary return 'Toekomstoriëntatie' (p. 178), but voluntary return remains one of its teams and budgets (p. 179). corrected: 'fewer/more reception places for asylum seekers' implied the budget alone sets capacity, while reception is a right under the law of 12 January 2007 and demand-driven; replaced by 'less/more money for reception centres and material aid' (DOC 56 1281/022 p. 156, p. 176). Partner and voluntary-return phrases confirmed (quote verbatim at p. 173; Belgian Red Cross named there; voluntary return p. 176-179)."
+		}
+	}
 }

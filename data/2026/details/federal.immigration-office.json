@@ -1,0 +1,45 @@
+{
+	"line": "federal.immigration-office",
+	"effects": {
+		"cut": [
+			{
+				"nl": "minder plaatsen in gesloten centra",
+				"fr": "moins de places en centres fermés",
+				"en": "fewer places in closed centres"
+			},
+			{
+				"nl": "minder gedwongen terugkeer van mensen zonder verblijfsrecht",
+				"fr": "moins de retours forcés de personnes sans droit de séjour",
+				"en": "fewer forced returns of people without residence rights"
+			},
+			{
+				"nl": "minder personeel voor visum- en verblijfsaanvragen",
+				"fr": "moins de personnel pour les demandes de visa et de séjour",
+				"en": "fewer staff handling visa and residence applications"
+			}
+		],
+		"add": [
+			{
+				"nl": "meer plaatsen in gesloten centra",
+				"fr": "plus de places en centres fermés",
+				"en": "more places in closed centres"
+			},
+			{
+				"nl": "meer gedwongen terugkeer van mensen zonder verblijfsrecht",
+				"fr": "plus de retours forcés de personnes sans droit de séjour",
+				"en": "more forced returns of people without residence rights"
+			},
+			{
+				"nl": "meer personeel voor visum- en verblijfsaanvragen",
+				"fr": "plus de personnel pour les demandes de visa et de séjour",
+				"en": "more staff handling visa and residence applications"
+			}
+		],
+		"ref": {
+			"source": "be-chamber-56-1281-006",
+			"locator": "DOC 56 1281/006, 'Dienst Vreemdelingenzaken', missions p. 99-100; B.A. 55.03.121123 'Kosten voor repatriëring en verwijdering', p. 105; programme 1 'Specifieke centra voor personen in illegaal verblijf', p. 105-106",
+			"quote": "Dit zijn kredieten bestemd voor de kosten voor repatriëring en verwijdering van ongewenst geachte personen. (vliegtuigtickets, politie-escortes, medische kosten, organisatie van Special Flights…)",
+			"note": "Most of the line is staff of the Immigration Office. New closed centres are built through the Buildings Agency (separate line) and escorts are carried out by the federal police (separate line), so places and returns also depend on those budgets. Removals also depend on cooperation from countries of return. confirmed"
+		}
+	}
+}
