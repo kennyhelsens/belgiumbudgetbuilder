@@ -22,7 +22,9 @@ test.describe('budget map on a phone', () => {
 		}
 	});
 
-	test('draws each bar to scale against the largest one', async ({ page }) => {
+	test('draws each bar to scale against the largest one, largest first in each group', async ({
+		page
+	}) => {
 		await page.goto('/en/');
 		const fills = map(page).getByTestId('bar-row').locator('.bar__fill');
 		await expect(fills.first()).toBeVisible();
@@ -30,7 +32,14 @@ test.describe('budget map on a phone', () => {
 			els.map((el) => parseFloat((el as HTMLElement).style.width))
 		);
 		expect(widths[0]).toBe(100);
-		for (let i = 1; i < widths.length; i++) expect(widths[i]).toBeLessThanOrEqual(widths[i - 1]);
+		const lists = map(page).locator('ol.bars');
+		expect(await lists.count()).toBe(2);
+		for (const list of await lists.all()) {
+			const inList = await list
+				.locator('.bar__fill')
+				.evaluateAll((els) => els.map((el) => parseFloat((el as HTMLElement).style.width)));
+			for (let i = 1; i < inList.length; i++) expect(inList[i]).toBeLessThanOrEqual(inList[i - 1]);
+		}
 	});
 
 	test('opens a government and changes a line with buttons that are always in view', async ({

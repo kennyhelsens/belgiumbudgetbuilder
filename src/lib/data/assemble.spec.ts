@@ -11,7 +11,8 @@ function filesFromFixture(): Record<string, unknown> {
 		'/data/2026/overview.json': data.overview,
 		'/data/2026/outlook.json': data.outlook,
 		'/data/2026/history.json': data.history,
-		'/data/2026/revenue.json': data.revenue
+		'/data/2026/revenue.json': data.revenue,
+		'/data/2026/groups.json': data.groups
 	};
 	for (const entity of data.entities) {
 		files[`/data/2026/entities/${entity.id}.json`] = entity;
@@ -42,6 +43,11 @@ describe('assembleDataset', () => {
 		const files = filesFromFixture();
 		delete files['/data/2026/revenue.json'];
 		expect(() => assembleDataset(files, 2026)).toThrow('/data/2026/revenue.json is missing');
+	});
+
+	it('reads the groups of governments', () => {
+		const dataset = assembleDataset(filesFromFixture(), 2026);
+		expect(dataset.groups.map((group) => group.id)).toEqual(['entity-1']);
 	});
 
 	it('reads the details files of spending lines', () => {

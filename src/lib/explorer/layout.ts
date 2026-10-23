@@ -18,15 +18,47 @@ export type Tile = {
 	adjustable: boolean;
 	/** What a line pays for, which sets its colour; governments have none. */
 	theme?: Line['theme'];
+	/** The group a government belongs to, such as Entity I; lines have none. */
+	group?: string;
+};
+
+/** The rectangle a group of governments takes on the map, e.g. Entity I: federal government and social security. */
+export type GroupBox = {
+	id: string;
+	/** The governments in the group, in the order the map lays them out. */
+	members: string[];
+	x0: number;
+	y0: number;
+	x1: number;
+	y1: number;
 };
 
 type Item = Omit<Tile, 'x0' | 'y0' | 'x1' | 'y1'>;
+type Node = Item | { id?: string; children: Node[] };
 
 export function mapTiles(
 	data: Dataset,
 	frame: { width: number; height: number; focus?: string }
 ): Tile[] {
-	return layOut(frame.focus ? linesOf(data, frame.focus) : governments(data), frame);
+	return leavesOf(layOut(frame.focus ? linesOf(data, frame.focus) : grouped(data), frame));
+}
+
+/** Where each group of governments sits on the map of Belgium; none inside one government. */
+export function mapGroups(
+	data: Dataset,
+	frame: { width: number; height: number; focus?: string }
+): GroupBox[] {
+	if (frame.focus) return [];
+	return (layOut(grouped(data), frame).children ?? [])
+		.filter((node) => node.children)
+		.map((node) => ({
+			id: (node.data as { id: string }).id,
+			members: node.leaves().map((leaf) => (leaf.data as Item).id),
+			x0: node.x0,
+			y0: node.y0,
+			x1: node.x1,
+			y1: node.y1
+		}));
 }
 
 /** General government revenue, one tile per type (personal income tax, VAT and other indirect taxes, ...). */
@@ -38,18 +70,19 @@ export function revenueTiles(data: Dataset, frame: { width: number; height: numb
 		zoomable: false,
 		adjustable: type.adjustable !== false
 	}));
-	return layOut(items, frame);
+	return leavesOf(layOut(items, frame));
 }
 
-function layOut(items: Item[], frame: { width: number; height: number }): Tile[] {
-	const root = hierarchy<{ children?: Item[] } | Item>({ children: items })
+/** Lays out the items, or groups of items, so that every euro gets the same area. */
+function layOut(items: Node[], frame: { width: number; height: number }) {
+	const root = hierarchy<Node>({ children: items })
 		.sum((node) => ('eurMillion' in node ? node.eurMillion : 0))
 		.sort((a, b) => (b.value ?? 0) - (a.value ?? 0));
 
-	const laidOut = treemap<{ children?: Item[] } | Item>()
-		.tile(treemapSquarify)
-		.size([frame.width, frame.height])(root);
+	return treemap<Node>().tile(treemapSquarify).size([frame.width, frame.height])(root);
+}
 
+function leavesOf(laidOut: ReturnType<typeof layOut>): Tile[] {
 	return laidOut.leaves().map((leaf) => ({
 		...(leaf.data as Item),
 		x0: leaf.x0,
@@ -57,6 +90,25 @@ function layOut(items: Item[], frame: { width: number; height: number }): Tile[]
 		x1: leaf.x1,
 		y1: leaf.y1
 	}));
+}
+
+/** The governments, nested in their groups so that each group stays together on the map. */
+function grouped(data: Dataset): Node[] {
+	const items = governments(data);
+	const groupOf = new Map(
+		data.groups.flatMap((group) => group.members.map((member) => [member, group.id] as const))
+	);
+	const withGroup = items.map((item) => ({ ...item, group: groupOf.get(item.id) }));
+	return [
+		...data.groups
+			.map((group) => ({
+				id: group.id,
+				children: withGroup.filter((item) => item.group === group.id)
+			}))
+			// An empty group would become a tile of its own.
+			.filter((group) => group.children.length > 0),
+		...withGroup.filter((item) => item.group === undefined)
+	];
 }
 
 function governments(data: Dataset): Item[] {

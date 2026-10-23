@@ -140,5 +140,6 @@
 	"builder.noticeMoreRevenuePlain": "Meer inkomsten uit {name}.",
 	"consequence.lessRevenueTitle": "Minder inkomsten uit {name} kan betekenen:",
 	"consequence.moreRevenueTitle": "Meer inkomsten uit {name} kan betekenen:",
-	"consequence.revenueEffectsNote": "Mogelijke manieren, geen voorspelling: wie meer of minder betaalt, hangt af van hoe de overheid de keuze invult. Hoe mensen en bedrijven daarop reageren, rekent deze site niet mee."
+	"consequence.revenueEffectsNote": "Mogelijke manieren, geen voorspelling: wie meer of minder betaalt, hangt af van hoe de overheid de keuze invult. Hoe mensen en bedrijven daarop reageren, rekent deze site niet mee.",
+	"map.groupsLabel": "Groepen van overheden"
 }

@@ -255,5 +255,10 @@
 			"quote": "Totale uitgaven sociale zekerheid 147,3 Dépenses totales de la sécurité sociale",
 			"note": "Social security, ESA 2010, initial budget; includes all public-sector pensions paid by the Federal Pension Service (pensions 72.3 bn in total)."
 		}
+	},
+	"note": {
+		"nl": "Samen met de federale overheid vormt de sociale zekerheid 'Entiteit I' (Federaal Planbureau): ze wordt federaal geregeld, maar heeft een eigen begroting en eigen ontvangsten. Ze wordt vooral gefinancierd met sociale bijdragen en met dotaties van de federale overheid. Die dotaties staan bij de federale overheid als overdracht, zodat niets dubbel telt.",
+		"fr": "Avec le pouvoir fédéral, la sécurité sociale forme l'« entité I » (Bureau fédéral du Plan) : elle est réglée au niveau fédéral, mais a son propre budget et ses propres recettes. Elle est financée surtout par les cotisations sociales et par des dotations du pouvoir fédéral. Ces dotations figurent chez le pouvoir fédéral comme transferts : rien n'est compté deux fois.",
+		"en": "Together with the federal government, social security forms 'Entity I' (Federal Planning Bureau): it is regulated at federal level, but has its own budget and its own revenue. It is financed mainly by social contributions and by grants from the federal government. Those grants are shown under the federal government as transfers, so nothing is counted twice."
 	}
 }
