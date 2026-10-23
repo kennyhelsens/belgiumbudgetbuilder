@@ -263,11 +263,7 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 							<span class="bar__fixed">{t('builder.fixed')}</span>
 						{/if}
 					{/snippet}
-					<li
-						class="bar"
-						data-testid="bar-row"
-						style="--tile-color:var(--series-{colorSlot(tile.id)})"
-					>
+					<li class="bar" data-testid="bar-row" style="--tile-color:{tileColor(tile)}">
 						{#if tile.zoomable}
 							<button
 								type="button"
