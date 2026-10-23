@@ -1,0 +1,35 @@
+{
+	"line": "social-security.other",
+	"effects": {
+		"cut": [
+			{
+				"nl": "minder geld voor overige uitgaven van de RSZ",
+				"fr": "moins d'argent pour d'autres dépenses de l'ONSS",
+				"en": "less money for other RSZ/ONSS spending"
+			},
+			{
+				"nl": "minder geld voor overige uitgaven van het RIZIV",
+				"fr": "moins d'argent pour d'autres dépenses de l'INAMI",
+				"en": "less money for other RIZIV/INAMI spending"
+			}
+		],
+		"add": [
+			{
+				"nl": "meer geld voor overige uitgaven van de RSZ",
+				"fr": "plus d'argent pour d'autres dépenses de l'ONSS",
+				"en": "more money for other RSZ/ONSS spending"
+			},
+			{
+				"nl": "meer geld voor overige uitgaven van het RIZIV",
+				"fr": "plus d'argent pour d'autres dépenses de l'INAMI",
+				"en": "more money for other RIZIV/INAMI spending"
+			}
+		],
+		"ref": {
+			"source": "be-chamber-56-1468-001",
+			"locator": "p. 143, Tabel II.2 'Begroting van het globaal beheer voor werknemers 2026 (vervolg)', rows 'Externe overdrachten - Andere' and 'Diversen'; p. 172, Tabel IV.1 'Begroting van de geneeskundige verzorging (vervolg)', row 'Diversen'",
+			"quote": "Andere 157.550 3.650 49.219 0 2.190.881 2.401.300 | Diversen 155.158 19.000 13.357 9.694 51.316 1 491 1 547.511 796.529 | Diversen 1.587.619 1.660.424",
+			"note": "Mixed residual line. By the composition in data/2026/entities/social-security.json, almost all of it is spending of the employees' global management run by RSZ/ONSS (other external transfers, misc. spending, interest, capital spending) and the RIZIV/INAMI healthcare 'Diversen' row; neither document itemises the recipients, so the phrases stay general and name the two bodies. Small named items are left out so they do not dominate the impression: the self-employed bridging right and carer's allowance (Tabel III.3, p. 167, together well under 1% of the line), miners' and seamen's benefits, and interest. corrected: dropped the bridging-right and carer's-allowance phrases (under 1% of the line) and the vague 'various other costs' phrase; replaced by two general phrases naming where the bulk sits (RSZ/ONSS employees' global management and RIZIV/INAMI 'Diversen'); quote and locator updated to those rows; two phrases each way because the bulk is not itemised"
+		}
+	}
+}

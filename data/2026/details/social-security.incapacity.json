@@ -18,5 +18,47 @@
 				}
 			}
 		}
-	]
+	],
+	"effects": {
+		"cut": [
+			{
+				"nl": "lagere ziekte-uitkeringen voor wie arbeidsongeschikt is",
+				"fr": "des indemnités plus basses en incapacité de travail",
+				"en": "lower sickness benefits for people unable to work"
+			},
+			{
+				"nl": "lagere invaliditeitsuitkeringen voor langdurig zieken",
+				"fr": "des indemnités d'invalidité plus basses",
+				"en": "lower invalidity benefits for the long-term sick"
+			},
+			{
+				"nl": "lagere uitkeringen tijdens moederschaps- en adoptieverlof",
+				"fr": "des indemnités plus basses en congé de maternité ou d'adoption",
+				"en": "lower benefits during maternity and adoption leave"
+			}
+		],
+		"add": [
+			{
+				"nl": "hogere ziekte-uitkeringen voor wie arbeidsongeschikt is",
+				"fr": "des indemnités plus élevées en incapacité de travail",
+				"en": "higher sickness benefits for people unable to work"
+			},
+			{
+				"nl": "hogere invaliditeitsuitkeringen voor langdurig zieken",
+				"fr": "des indemnités d'invalidité plus élevées",
+				"en": "higher invalidity benefits for the long-term sick"
+			},
+			{
+				"nl": "hogere uitkeringen tijdens moederschaps- en adoptieverlof",
+				"fr": "des indemnités plus élevées en congé de maternité ou d'adoption",
+				"en": "higher benefits during maternity and adoption leave"
+			}
+		],
+		"ref": {
+			"source": "be-chamber-56-1468-001",
+			"locator": "p. 155, Tabel II.5, block 'Ziekte & invaliditeit (aantal dagen)' (employees); same split for the self-employed in Tabel III.4, p. 168; adoption and foster-parent leave in Tabel II.6, p. 156",
+			"quote": "Primaire ongeschiktheid 44.277.042 47.398.021 45.781.439 | Invaliditeit 165.688.004 173.064.773 172.357.848 | Moederschapsverlof 9.404.810 9.590.542 9.413.689 | Versterking van het adoptieverlof: +1 week",
+			"note": "Primary incapacity is the first year of incapacity; invalidity follows after that. Benefits are legal entitlements paid by the sickness funds (RIZIV/INAMI). The self-employed part also pays paternity and birth leave, bereavement leave and maternity help through service vouchers (Tabel III.4). The 2026 'vulnerable groups' envelope (p. 152) raises some minimum benefits. confirmed"
+		}
+	}
 }

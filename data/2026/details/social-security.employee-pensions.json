@@ -35,5 +35,47 @@
 				}
 			}
 		}
-	]
+	],
+	"effects": {
+		"cut": [
+			{
+				"nl": "lagere pensioenen voor gepensioneerde werknemers",
+				"fr": "des pensions plus basses pour les salariés retraités",
+				"en": "lower pensions for retired employees"
+			},
+			{
+				"nl": "lagere overlevingspensioenen en overgangsuitkeringen",
+				"fr": "des pensions de survie et allocations de transition plus basses",
+				"en": "lower survivors' pensions and transition allowances"
+			},
+			{
+				"nl": "lager vakantiegeld voor gepensioneerde werknemers",
+				"fr": "un pécule de vacances plus bas pour les salariés retraités",
+				"en": "a lower holiday allowance for retired employees"
+			}
+		],
+		"add": [
+			{
+				"nl": "hogere pensioenen voor gepensioneerde werknemers",
+				"fr": "des pensions plus élevées pour les salariés retraités",
+				"en": "higher pensions for retired employees"
+			},
+			{
+				"nl": "hogere overlevingspensioenen en overgangsuitkeringen",
+				"fr": "des pensions de survie et allocations de transition plus élevées",
+				"en": "higher survivors' pensions and transition allowances"
+			},
+			{
+				"nl": "hoger vakantiegeld voor gepensioneerde werknemers",
+				"fr": "un pécule de vacances plus élevé pour les salariés retraités",
+				"en": "a higher holiday allowance for retired employees"
+			}
+		],
+		"ref": {
+			"source": "be-chamber-56-1468-001",
+			"locator": "p. 155, Tabel II.5 'Volumefactoren van de prestaties van het stelsel globaal beheer voor werknemers', block 'Pensioenen (aantal begunstigden)'",
+			"quote": "Rustpensioenen 2.213.555 2.327.883 2.270.282 | Overlevingspensioenen 406.201 401.035 401.866 | Overgangsuitkering 3.075 2.955 3.193 | Vakantiegeld 2.314.449 2.350.545 2.350.545",
+			"note": "Pensions are legal entitlements: amounts follow the pension rules and automatic indexation, so changing this line in practice means changing the law. The same block also lists a small heating allowance and capitalisation annuities. 'Vakantiegeld' here is the yearly holiday allowance paid to pensioners (pécule de vacances). confirmed"
+		}
+	}
 }

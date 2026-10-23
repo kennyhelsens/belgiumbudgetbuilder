@@ -1,0 +1,45 @@
+{
+	"line": "social-security.administration",
+	"effects": {
+		"cut": [
+			{
+				"nl": "minder werkingsmiddelen voor de ziekenfondsen",
+				"fr": "moins de moyens de fonctionnement pour les mutualités",
+				"en": "less money to run the sickness funds"
+			},
+			{
+				"nl": "kleinere werkingsbudgetten voor RSZ, RVA, RIZIV en FPD",
+				"fr": "moins de moyens pour l'ONSS, l'ONEM, l'INAMI et le SFP",
+				"en": "smaller running budgets for RSZ/ONSS, RVA/ONEM, RIZIV/INAMI and FPD/SFP"
+			},
+			{
+				"nl": "minder IT-vernieuwing bij RVA, FPD en Fedris",
+				"fr": "moins de modernisation informatique à l'ONEM, au SFP et chez Fedris",
+				"en": "fewer IT upgrades at RVA/ONEM, FPD/SFP and Fedris"
+			}
+		],
+		"add": [
+			{
+				"nl": "meer werkingsmiddelen voor de ziekenfondsen",
+				"fr": "plus de moyens de fonctionnement pour les mutualités",
+				"en": "more money to run the sickness funds"
+			},
+			{
+				"nl": "grotere werkingsbudgetten voor RSZ, RVA, RIZIV en FPD",
+				"fr": "plus de moyens pour l'ONSS, l'ONEM, l'INAMI et le SFP",
+				"en": "larger running budgets for RSZ/ONSS, RVA/ONEM, RIZIV/INAMI and FPD/SFP"
+			},
+			{
+				"nl": "meer IT-vernieuwing bij RVA, FPD en Fedris",
+				"fr": "plus de modernisation informatique à l'ONEM, au SFP et chez Fedris",
+				"en": "more IT upgrades at RVA/ONEM, FPD/SFP and Fedris"
+			}
+		],
+		"ref": {
+			"source": "be-chamber-56-1468-001",
+			"locator": "p. 147, comment on 'beheerskosten' 2026 (global management of employees); p. 172, Tabel IV.1, rows 'Beheerskosten', 'Centrale instellingen', 'Diensten derden'",
+			"quote": "de federale regering heeft beslist om extra kredieten toe te kennen aan de beheersbegroting van de RVA in het kader van de duurzame digitale diensten | om de IT-infrastructuur van de Federale Pensioendienst te versterken | Beheerskosten 1.186.416 1.238.421 | Diensten derden 1.072.264 1.108.232",
+			"note": "The sickness-fund phrase rests on the healthcare 'Diensten derden' row (the administration costs paid to the sickness funds) and on the Court of Audit (doc-56-1469-002, PDF p. 59: 'De regering heeft de verdeelsleutel voor het vaste gedeelte van de administratiekosten van de ziekenfondsen vanaf januari 2026 aangepast'). The employees' 'Diensten derden' under unemployment presumably pays the bodies that pay out unemployment benefit, but the document does not say so, so no phrase is built on it. The line excludes administration of public-sector pensions and of the other schemes. 'FPD/SFP' is the Federal Pension Service (Federale Pensioendienst / Service fédéral des Pensions). confirmed"
+		}
+	}
+}

@@ -1,0 +1,55 @@
+{
+	"line": "social-security.other-schemes",
+	"effects": {
+		"cut": [
+			{
+				"nl": "minder waarborg voor onbetaald loon na sluiting of faillissement",
+				"fr": "moins de garantie des salaires impayés après fermeture ou faillite",
+				"en": "less cover for unpaid pay after closure or bankruptcy"
+			},
+			{
+				"nl": "lagere loopbaanonderbrekingsuitkeringen voor overheidspersoneel",
+				"fr": "des allocations d'interruption de carrière plus basses pour les agents publics",
+				"en": "lower career-break allowances for public-sector staff"
+			},
+			{
+				"nl": "lagere pensioenen van de ex-Overzeese Sociale Zekerheid",
+				"fr": "des pensions plus basses de l'ex-Sécurité sociale d'outre-mer",
+				"en": "lower pensions from the former Overseas Social Security"
+			},
+			{
+				"nl": "minder vergoeding voor slachtoffers van medische ongevallen en asbest",
+				"fr": "moins d'indemnisation des victimes d'accidents médicaux et de l'amiante",
+				"en": "less compensation for medical-accident and asbestos victims"
+			}
+		],
+		"add": [
+			{
+				"nl": "meer waarborg voor onbetaald loon na sluiting of faillissement",
+				"fr": "plus de garantie des salaires impayés après fermeture ou faillite",
+				"en": "more cover for unpaid pay after closure or bankruptcy"
+			},
+			{
+				"nl": "hogere loopbaanonderbrekingsuitkeringen voor overheidspersoneel",
+				"fr": "des allocations d'interruption de carrière plus élevées pour les agents publics",
+				"en": "higher career-break allowances for public-sector staff"
+			},
+			{
+				"nl": "hogere pensioenen van de ex-Overzeese Sociale Zekerheid",
+				"fr": "des pensions plus élevées de l'ex-Sécurité sociale d'outre-mer",
+				"en": "higher pensions from the former Overseas Social Security"
+			},
+			{
+				"nl": "meer vergoeding voor slachtoffers van medische ongevallen en asbest",
+				"fr": "plus d'indemnisation des victimes d'accidents médicaux et de l'amiante",
+				"en": "more compensation for medical-accident and asbestos victims"
+			}
+		],
+		"ref": {
+			"source": "be-chamber-56-1468-001",
+			"locator": "p. 179, Tabel V.2 'Begroting van de andere stelsels van sociale zekerheid 2026', column headers and rows 'Prestaties', 'Externe overdrachten', 'Uitgaven vóór interne overdrachten'; p. 176-177 chapter 5 text",
+			"quote": "Fedris-AO Kapitalisatie | Fedris-BZ Asbestfonds | Fedris-BZ Sector PPO | RSZ - Ex-OSZ | RVA - Tewerkstellingsopdrachten | Fonds voor Medische Ongevallen | Oorlogsslachtoffers en slachtoffers van een terreurdaad | Fonds voor sluiting van ondernemingen | Prestaties ... 344.776 1.027.822 | Externe overdrachten ... 153.470 153.730 | Uitgaven vóór interne overdrachten ... 801.477 1.537.754",
+			"note": "Closure Fund: the line amount 1,384.284 M equals Tabel V.2 'Uitgaven vóór interne overdrachten' 1,537.754 minus the Closure Fund's external transfers 153.470, so the Fonds voor sluiting van ondernemingen / Fonds de fermeture des entreprises (Sluitingsfonds, FSO/FFE, set up within RVA/ONEM) is in this line and is its largest part (801.477 thousand EUR gross, 648.007 net; benefits 344.776, the rest mainly 'Diversen' 293.325, which the text p. 177 ties to write-downs of doubtful claims). The current label does not name it; the project owner may want to add it. The Closure Fund phrase rests on FOD WASO (Sluiting van ondernemingen (https://werk.belgie.be/nl/themas/herstructurering/sluiting-van-ondernemingen)): when the employer defaults after a closure, a transfer under court authority or a takeover after bankruptcy, the fund guarantees contractual pay ('achterstallige lonen, opzeggingsvergoedingen, eindejaarspremies') and the closure compensation, within a legal ceiling, and recovers the amounts from the employer; it is financed by employer contributions. Career breaks: RVA/ONEM still runs the career-break scheme for local and provincial authorities and for community and regional administrations, which the federated entities finance (doc-56-1469-002 p. 67, footnote 91; 47.960 thousand EUR financed by the federated entities in Tabel V.2). Overseas Social Security: the RSZ scheme pays old-age and survivors' pensions (De Overzeese Sociale Zekerheid van de RSZ (https://www.socialsecurity.be/CMS/nl/leaving_belgium/convention/OnssRsz_General_01)); the state grant is 269.144 thousand EUR. Not phrased: Fedris capitalisation annuities, public-sector occupational diseases of local authorities, war and terrorism victims. corrected: Closure Fund phrase kept (grounded in Tabel V.2 and the FOD WASO page; it is the largest part of the line) but reworded to what the fund does, guarantee unpaid pay when an employer defaults, instead of 'payments to workers of closed firms'; added an official source for the overseas pensions and the Court of Audit for career breaks; owner should consider naming the Closure Fund in the line label"
+		}
+	}
+}

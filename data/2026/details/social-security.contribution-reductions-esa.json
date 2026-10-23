@@ -1,0 +1,45 @@
+{
+	"line": "social-security.contribution-reductions-esa",
+	"effects": {
+		"cut": [
+			{
+				"nl": "hogere werkgeversbijdragen voor de eerste aanwervingen",
+				"fr": "des cotisations patronales plus élevées pour les premiers engagements",
+				"en": "higher employer contributions for first hires"
+			},
+			{
+				"nl": "hogere werkgeversbijdragen voor onderzoek en universiteiten",
+				"fr": "des cotisations patronales plus élevées pour la recherche et les universités",
+				"en": "higher employer contributions in research and universities"
+			},
+			{
+				"nl": "hogere werkgeversbijdragen voor betaalde sporters",
+				"fr": "des cotisations patronales plus élevées pour les sportifs rémunérés",
+				"en": "higher employer contributions for paid athletes"
+			}
+		],
+		"add": [
+			{
+				"nl": "lagere werkgeversbijdragen voor de eerste aanwervingen",
+				"fr": "des cotisations patronales moins élevées pour les premiers engagements",
+				"en": "lower employer contributions for first hires"
+			},
+			{
+				"nl": "lagere werkgeversbijdragen voor onderzoek en universiteiten",
+				"fr": "des cotisations patronales moins élevées pour la recherche et les universités",
+				"en": "lower employer contributions in research and universities"
+			},
+			{
+				"nl": "lagere werkgeversbijdragen voor betaalde sporters",
+				"fr": "des cotisations patronales moins élevées pour les sportifs rémunérés",
+				"en": "lower employer contributions for paid athletes"
+			}
+		],
+		"ref": {
+			"source": "be-chamber-56-1468-001",
+			"locator": "pp. 149-150, Tabel II.3 'Socialebijdrageverminderingen - Maribel uitgezonderd 2025-2026', rows marked (1) and (5), footnotes (1) and (5); first-hire equivalence: Court of Audit doc-56-1469-002 p. 48",
+			"quote": "Plus-plannen 633.664 586.344 512.461 | Loonmatiging universiteiten 118.116 119.774 121.249 | Wetenschappelijk onderzoek 66.507 69.811 69.618 | Vermindering doelgroepen betaalde sportbeoefenaars 58.464 65.591 63.170 | (1) Verminderingen ingeschreven in de uitgaven krachtens ESR 2010. | Rekenhof p. 48: 'verminderingen die worden beschouwd als sociale uitgaven (voornamelijk bijdrageverminderingen voor eerste aanwervingen voor een bedrag van 512,5 miljoen euro)'",
+			"note": "Accounting item: these are employer social-contribution reductions that ESA 2010 books as spending. Cutting the line means the reductions shrink, so employers pay more social contributions; adding means they pay less. No service is cut. 'Plus-plannen' in Tabel II.3 is the first-hire reduction: the Court of Audit (doc-56-1469-002 p. 48) gives the same amount, 512,5 M EUR, as 'bijdrageverminderingen voor eerste aanwervingen'. The paid-athletes reduction is described in the same report (p. 49, footnote 51). The regionalised reductions (footnote 5, e.g. older workers, subsidised contract staff; financed by the federated entities) are also in this line but are set and paid for by the regions, so no phrase is built on them. The horeca reduction is abolished from 1 July 2026 (footnote 4). corrected: phrases now say plainly that a cut means higher (an increase lower) employer contributions, instead of 'smaller/larger social-contribution cuts'; first-hire claim confirmed by the Court of Audit (doc-56-1469-002 p. 48, 512,5 M EUR = 'Plus-plannen'); 'older workers' dropped because that reduction is regional (footnote 5), replaced by the federal paid-athletes reduction"
+		}
+	}
+}
