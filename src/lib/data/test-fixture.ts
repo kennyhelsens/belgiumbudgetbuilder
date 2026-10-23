@@ -72,6 +72,12 @@ export function datasetFixture(): Dataset {
 					id: 'revenue.income-tax',
 					label: { nl: 'Personenbelasting', fr: 'Impôt des personnes physiques', en: 'Income tax' },
 					amount: { eurMillion: 180000, ref: ref('p. 2') },
+					byLevel: {
+						amounts: [
+							{ level: 'federal', amount: { eurMillion: 150000, ref: ref('p. 60') } },
+							{ level: 'communities-and-regions', amount: { eurMillion: 30000, ref: ref('p. 61') } }
+						]
+					},
 					effects: {
 						cut: [
 							{

@@ -130,12 +130,30 @@ const effectsSchema = z.object({
 	ref: sourceRefSchema
 });
 
+/** The levels of government in the Planning Bureau's accounts (Tables D.2 to D.6). */
+export const levelSchema = z.enum([
+	'federal',
+	'communities-and-regions',
+	'local',
+	'social-security'
+]);
+
 /** One type of general government revenue (ESA 2010, consolidated), e.g. personal income tax. */
 const revenueTypeSchema = z.object({
 	/** "revenue." followed by a kebab-case name, e.g. "revenue.personal-income-tax". */
 	id: slug,
 	label: localized,
 	amount: amountSchema,
+	/**
+	 * Which level of government collects it, before money passes between governments (e.g. the federal government
+	 * collects VAT and passes part of it on). Adds up to the amount, unless the note says why not.
+	 */
+	byLevel: z
+		.object({
+			amounts: z.array(z.object({ level: levelSchema, amount: amountSchema })).min(1),
+			note: localized.optional()
+		})
+		.optional(),
 	/** false when no tax decision changes this revenue, e.g. contributions that are only a bookkeeping entry. */
 	adjustable: z.boolean().optional(),
 	/** Why a type that is not adjustable cannot be changed. */
@@ -261,3 +279,4 @@ export type SourceRef = z.infer<typeof sourceRefSchema>;
 export type LineDetails = Dataset['details'][number];
 export type RevenueType = Dataset['revenue']['types'][number];
 export type Group = Dataset['groups'][number];
+export type Level = z.infer<typeof levelSchema>;

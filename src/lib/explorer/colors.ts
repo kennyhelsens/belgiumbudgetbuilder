@@ -1,7 +1,7 @@
 // ABOUTME: Fixed colour slot per government, following the validated categorical palette order (--series-1..8), and a
-// ABOUTME: colour per theme for the lines inside a government, so lines show what they pay for, and one per revenue type.
+// ABOUTME: colour per theme for the lines inside a government, one per revenue type, and one per level of government.
 import type { z } from 'zod';
-import type { themeSchema } from '../data/schema.ts';
+import type { Level, themeSchema } from '../data/schema.ts';
 const SLOTS: Record<string, number> = {
 	federal: 1,
 	'social-security': 2,
@@ -53,21 +53,26 @@ export function themeColor(theme: Theme): string {
 	return slot ? `var(--series-${slot})` : `var(--theme-${theme})`;
 }
 
-/** Revenue types in palette order, largest first; imputed contributions cannot be changed and stay neutral. */
-const REVENUE_SLOTS: Record<string, number | undefined> = {
-	'revenue.personal-income-tax': 1,
-	'revenue.social-contributions': 2,
-	'revenue.indirect-taxes': 3,
-	'revenue.corporate-income-tax': 4,
-	'revenue.sales-of-goods-and-services': 5,
-	'revenue.transfers-and-subsidies-received': 6,
-	'revenue.property-income': 7,
-	'revenue.capital-taxes': 8,
-	'revenue.imputed-social-contributions': undefined
-};
+/**
+ * Revenue tiles are neutral, so that on the revenue map colour only says who collects the money; revenue that cannot
+ * be changed (a bookkeeping entry) has a neutral colour of its own.
+ */
+export function revenueColor(adjustable: boolean): string {
+	return adjustable ? 'var(--revenue-tile)' : 'var(--revenue-fixed)';
+}
 
-export function revenueColor(id: string): string {
-	if (!(id in REVENUE_SLOTS)) throw new Error(`revenueColor: unknown revenue type "${id}"`);
-	const slot = REVENUE_SLOTS[id];
-	return slot ? `var(--series-${slot})` : 'var(--revenue-fixed)';
+/** The levels of government, in the order the legend and the strips list them. */
+export const LEVELS: readonly Level[] = [
+	'federal',
+	'communities-and-regions',
+	'local',
+	'social-security'
+];
+
+/**
+ * A level's colour: the federal government, local government and social security keep their colour from the map;
+ * the communities and regions together take the colour of the first of them.
+ */
+export function levelColor(level: Level): string {
+	return `var(--series-${colorSlot(level === 'communities-and-regions' ? 'flanders' : level)})`;
 }

@@ -1,8 +1,7 @@
 // ABOUTME: Tests that every government keeps one fixed colour slot, so colours never shift when the view changes, and that
 // ABOUTME: each theme of spending has its own colour. Slots follow the validated categorical palette order in global.css.
 import { describe, expect, it } from 'vitest';
-import { colorSlot, revenueColor, THEMES, themeColor } from './colors.ts';
-import { loadDataset } from '../data/dataset.ts';
+import { colorSlot, LEVELS, levelColor, revenueColor, THEMES, themeColor } from './colors.ts';
 
 const GOVERNMENTS = [
 	'federal',
@@ -51,21 +50,22 @@ describe('themeColor', () => {
 });
 
 describe('revenueColor', () => {
-	const types = loadDataset(2026).revenue.types;
-
-	it('gives every revenue type a visitor can change its own palette colour', () => {
-		const colours = types
-			.filter((type) => type.adjustable !== false)
-			.map((type) => revenueColor(type.id));
-		expect(new Set(colours).size).toBe(colours.length);
-		for (const colour of colours) expect(colour).toMatch(/^var\(--series-[1-8]\)$/);
+	// On the revenue map, colour says who collects the money (the strips); the tiles themselves stay neutral.
+	it('gives every revenue type a visitor can change the same neutral colour', () => {
+		expect(revenueColor(true)).toBe('var(--revenue-tile)');
 	});
 
-	it('shows revenue that cannot be changed in a neutral colour', () => {
-		expect(revenueColor('revenue.imputed-social-contributions')).toBe('var(--revenue-fixed)');
+	it('shows revenue that cannot be changed in a neutral colour of its own', () => {
+		expect(revenueColor(false)).toBe('var(--revenue-fixed)');
 	});
+});
 
-	it('refuses an unknown revenue type instead of inventing a colour', () => {
-		expect(() => revenueColor('revenue.unicorn-tax')).toThrow('revenue.unicorn-tax');
+describe('levelColor', () => {
+	it('gives each level of government its own palette colour, social security the same as on the map', () => {
+		const colours = LEVELS.map(levelColor);
+		expect(new Set(colours).size).toBe(4);
+		expect(levelColor('federal')).toBe(`var(--series-${colorSlot('federal')})`);
+		expect(levelColor('social-security')).toBe(`var(--series-${colorSlot('social-security')})`);
+		expect(levelColor('local')).toBe(`var(--series-${colorSlot('local')})`);
 	});
 });

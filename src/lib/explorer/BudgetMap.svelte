@@ -11,7 +11,7 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 	import type { Dataset } from '../data/schema.ts';
 	import type { Locale } from '../i18n/locales.ts';
 	import { translate, type MessageKey } from '../i18n/translate.ts';
-	import { colorSlot, revenueColor, THEMES, themeColor } from './colors.ts';
+	import { colorSlot, LEVELS, levelColor, revenueColor, THEMES, themeColor } from './colors.ts';
 	import { formatEuro } from './format.ts';
 	import { mapGroups, mapTiles, revenueTiles, tooltipPlacement, type Tile } from './layout.ts';
 
@@ -109,6 +109,16 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 		{ id: 'ungrouped', group: undefined, tiles: byAmount.filter((tile) => !tile.group) }
 	]);
 
+	/** Which levels of government collect a revenue type, as percentages of what they collect together. */
+	function levelShares(id: string) {
+		const amounts = data.revenue.types.find((type) => type.id === id)?.byLevel?.amounts ?? [];
+		const total = amounts.reduce((sum, { amount }) => sum + amount.eurMillion, 0);
+		return amounts.map(({ level, amount }) => ({
+			level,
+			percent: (amount.eurMillion / total) * 100
+		}));
+	}
+
 	const sourcesById = $derived(new Map(data.sources.map((source) => [source.id, source])));
 
 	function lineSource(id: string) {
@@ -119,10 +129,10 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 		return { source: sourcesById.get(line.amount.ref.source), ref: line.amount.ref };
 	}
 
-	/** Governments in their own colour; lines inside a government in the colour of their theme; revenue by type. */
-	const tileColor = (tile: Pick<Tile, 'id' | 'theme'>) =>
+	/** Governments in their own colour; lines inside a government in the colour of their theme; revenue neutral. */
+	const tileColor = (tile: Pick<Tile, 'id' | 'theme' | 'adjustable'>) =>
 		onRevenue
-			? revenueColor(tile.id)
+			? revenueColor(tile.adjustable)
 			: tile.theme
 				? themeColor(tile.theme)
 				: `var(--series-${colorSlot(tile.id)})`;
@@ -281,6 +291,19 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 		<p class="map__flag">{t('map.displayOnly')}</p>
 	{/if}
 
+	{#snippet levelStrip(tile: Tile)}
+		<!-- Who collects this revenue; the legend names the levels and the card gives the amounts. -->
+		<span class="levels" data-testid="level-strip" aria-hidden="true">
+			{#each levelShares(tile.id) as share (share.level)}
+				<span
+					class="levels__part"
+					data-level={share.level}
+					style="width:{share.percent}%;background:{levelColor(share.level)}"
+				></span>
+			{/each}
+		</span>
+	{/snippet}
+
 	{#snippet stepper(tile: Tile, percent: number, always: boolean)}
 		<span class="stepper" class:stepper--always={always}>
 			<button
@@ -334,6 +357,9 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 									<span class="bar__spacer"></span>
 								{/if}
 							</span>
+							{#if onRevenue}
+								{@render levelStrip(tile)}
+							{/if}
 							{#if !tile.zoomable && editable && !tile.adjustable}
 								<span class="bar__fixed">{fixedText}</span>
 							{/if}
@@ -424,6 +450,9 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 						{#if percent}
 							<span class="tile__badge">{formatPercentChange(percent, locale)}</span>
 						{/if}
+						{#if onRevenue}
+							{@render levelStrip(tile)}
+						{/if}
 						{@render stepper(tile, percent, hasRoomForSteppers(tile))}
 					</div>
 				{:else}
@@ -440,6 +469,9 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 							{#if editable && !tile.adjustable}
 								<span class="tile__fixed">{fixedText}</span>
 							{/if}
+						{/if}
+						{#if onRevenue}
+							{@render levelStrip(tile)}
 						{/if}
 					</div>
 				{/if}
@@ -475,6 +507,16 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 				<li class="groups__item">
 					<strong>{groupsById.get(box.id)?.label[locale]}</strong>
 					<span class="groups__total">{formatEuro(groupTotal(box.id), locale)}</span>
+				</li>
+			{/each}
+		</ul>
+	{/if}
+
+	{#if onRevenue}
+		<ul class="legend" aria-label={t('map.levelsLabel')}>
+			{#each LEVELS as level (level)}
+				<li class="legend__item" style="--tile-color:{levelColor(level)}">
+					{t(`level.${level}` as MessageKey)}
 				</li>
 			{/each}
 		</ul>
@@ -857,6 +899,26 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 	/* In the list the buttons sit beside the bar, always in view. */
 	.bar .stepper {
 		position: static;
+	}
+
+	/* Who collects a revenue type: a thin strip along the bottom of its tile, one part per level. */
+	.levels {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		display: flex;
+		height: 8px;
+	}
+
+	.levels__part {
+		height: 100%;
+	}
+
+	.bar .levels {
+		position: static;
+		margin-top: var(--space-1);
+		height: 5px;
 	}
 
 	.legend {

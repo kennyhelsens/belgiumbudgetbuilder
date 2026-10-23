@@ -170,8 +170,10 @@ the National Bank use, grouped into themes a reader recognises:
 - **Government and general services:** COFOG 01, including foreign affairs,
   the EU contribution, administration and grants to other governments
 
-On the revenue map, each type has its own colour, except imputed social
-contributions, which cannot be changed and have a neutral one.
+On the revenue map, the tiles are neutral, so that colour says only one
+thing there: which level of government collects the money (a strip along each
+tile, see "Who collects each type of revenue?"). Imputed social contributions,
+which cannot be changed, are a lighter neutral.
 
 Two more have neutral colours:
 
@@ -399,6 +401,69 @@ The property tax (onroerende voorheffing / précompte immobilier) is an
 fines are transfers received, not taxes. The national accounts description
 used for these choices dates from ESA 1995; the ESA 2010 rules that replaced
 it (§4.23, §4.80 and §4.132) book these items the same way.
+
+### Who collects each type of revenue?
+
+A strip along each revenue tile, and a list on its card, show which level of
+government collects it. The amounts come from the Planning Bureau's account
+of each level (June 2026, column 2026): Table D.2 for the federal government
+(p. 60), D.3 for the communities and regions (p. 61), D.5 for local
+government (p. 63) and D.6 for social security (p. 64). In € million:
+
+| Type                                                                | Federal | Communities and regions | Local | Social security |
+| ------------------------------------------------------------------- | ------: | ----------------------: | ----: | --------------: |
+| Personal income tax and other direct taxes                          |  59,932 |                  16,383 | 5,111 |           1,503 |
+| Corporate income tax                                                |  28,354 |                       – |     – |             391 |
+| VAT, excise duties and other indirect taxes                         |  57,244 |                   9,096 | 8,204 |           2,562 |
+| Inheritance and gift taxes and other capital taxes                  |     906 |                   4,113 |     – |               – |
+| Social contributions (employers, workers, self-employed and others) |      64 |                     462 |    21 |          84,816 |
+| Imputed social contributions                                        |   3,968 |                   8,723 | 2,159 |               – |
+| Sales of goods and services (fees and charges)                      |   5,508 |                   9,947 | 5,013 |             713 |
+| Property income (interest, dividends)                               |   2,832 |                   1,804 | 1,128 |             347 |
+| Transfers and subsidies received (incl. fines)                      |   2,209 |                   3,640 | 1,089 |             174 |
+
+This is who **collects** the money, not who finally spends it. The federal
+government, for example, collects VAT and personal income tax and passes a
+large part on to the communities and regions (under the Special Financing
+Act) and to social security. Those transfers are in the same tables, but not
+in this split.
+
+Most rows add up to the type's total within a million of rounding. Property
+income does not: added up per level it is more than the total for all
+governments together, which is consolidated, and the Planning Bureau does not
+explain the difference. The card says so.
+
+### Can I make a Flemish budget with this?
+
+Not really. The site shows all Belgian governments together, the way the
+national accounts and the European rules look at Belgium: what one government
+pays another counts only once, and revenue is shown for all governments
+together. That is the right view for the deficit and the debt of the country,
+but a budget for one region needs more: its own revenue, and the money it
+receives from and pays to other governments. A large part of what the
+communities and regions spend is financed by the federal government (see
+"Where do the communities and regions get their money?"), so cutting or
+raising their spending alone does not tell the whole story.
+
+You can open Flanders, or any other government, on the map and change its
+spending lines; the effect on the deficit and debt is calculated for Belgium
+as a whole. Revenue cannot be changed per government.
+
+### Where do the communities and regions get their money?
+
+Most of their revenue does not come from taxes they levy themselves, but from
+other governments: shares of federal taxes under the Special Financing Act,
+other grants from the federal government, and money from social security.
+The Planning Bureau's account of the communities and regions (June 2026,
+Table D.3, p. 61) shows this, for all of them together. The same is true,
+in other proportions, for local government (Table D.5) and for social
+security (Table D.6).
+
+The site does not show this split yet. A view of how each group of
+governments is financed, its own revenue next to the money it receives from
+other governments, is planned. It will be for all communities and regions
+together, as the Planning Bureau gives them; a split per region would need
+each region's own revenue budget.
 
 ---
 
@@ -724,7 +789,8 @@ in plain words and without numbers:
 
 A change to revenue gets a card too, with what less or more of that revenue
 could mean for those who pay it, and its source (see "Where do the phrases
-about less or more revenue come from?").
+about less or more revenue come from?"), and which level of government
+collects it (see "Who collects each type of revenue?").
 
 ### Where do the possible effects come from?
 

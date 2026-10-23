@@ -195,4 +195,20 @@ describe('data/2026', () => {
 		expect(socialSecurity?.note?.en).toMatch(/Entity I/);
 		expect(socialSecurity?.note?.en).toMatch(/grants from the federal government/);
 	});
+
+	// Who collects each type, from the Planning Bureau's accounts per level (Tables D.2, D.3, D.5 and D.6).
+	it('says which level of government collects each type of revenue', () => {
+		const share = (id: string, level: string) => {
+			const type = dataset.revenue.types.find((t) => t.id === id)!;
+			const amounts = type.byLevel!.amounts;
+			const total = amounts.reduce((sum, a) => sum + a.amount.eurMillion, 0);
+			return (amounts.find((a) => a.level === level)?.amount.eurMillion ?? 0) / total;
+		};
+		for (const type of dataset.revenue.types) expect(type.byLevel, type.id).toBeDefined();
+		expect(share('revenue.capital-taxes', 'communities-and-regions')).toBeGreaterThan(0.8);
+		expect(share('revenue.indirect-taxes', 'federal')).toBeGreaterThan(0.7);
+		expect(share('revenue.social-contributions', 'social-security')).toBeGreaterThan(0.99);
+		const propertyIncome = dataset.revenue.types.find((t) => t.id === 'revenue.property-income');
+		expect(propertyIncome?.byLevel?.note?.en).toMatch(/does not explain the difference/);
+	});
 });

@@ -76,6 +76,20 @@ export function findProblems(data: Dataset): string[] {
 		if (seenIds.has(type.id)) problems.push(`duplicate id "${type.id}"`);
 		seenIds.add(type.id);
 	}
+	for (const type of revenueTypes) {
+		if (!type.byLevel) continue;
+		const levels = type.byLevel.amounts;
+		const seen = new Set<string>();
+		for (const { level } of levels) {
+			if (seen.has(level)) problems.push(`${type.id}: level "${level}" appears twice`);
+			seen.add(level);
+		}
+		const sum = levels.reduce((total, { amount }) => total + amount.eurMillion, 0);
+		const differs = Math.abs(sum - type.amount.eurMillion) > ROUNDING_PER_LINE * levels.length;
+		if (differs && !type.byLevel.note) {
+			problems.push(`${type.id}: levels add up to ${sum}, type is ${type.amount.eurMillion}`);
+		}
+	}
 	const revenueSum = revenueTypes.reduce((total, type) => total + type.amount.eurMillion, 0);
 	const totalRevenue = data.overview.revenue.eurMillion;
 	if (Math.abs(revenueSum - totalRevenue) > ROUNDING_PER_LINE * revenueTypes.length) {
@@ -155,6 +169,9 @@ function collectRefs(data: Dataset): { where: string; ref: SourceRef }[] {
 	for (const type of data.revenue.types) {
 		refs.push({ where: type.id, ref: type.amount.ref });
 		if (type.effects) refs.push({ where: `${type.id}.effects`, ref: type.effects.ref });
+		for (const { level, amount } of type.byLevel?.amounts ?? []) {
+			refs.push({ where: `${type.id}.byLevel.${level}`, ref: amount.ref });
+		}
 	}
 	for (const entity of data.entities) {
 		refs.push({ where: `${entity.id}.total`, ref: entity.expenditure.total.ref });
