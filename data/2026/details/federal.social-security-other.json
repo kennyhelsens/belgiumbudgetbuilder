@@ -35,5 +35,47 @@
 				}
 			}
 		}
-	]
+	],
+	"effects": {
+		"cut": [
+			{
+				"nl": "een lagere inkomensgarantie voor ouderen (IGO)",
+				"fr": "une garantie de revenus aux personnes âgées (GRAPA) plus basse",
+				"en": "a lower income guarantee for older people (GRAPA)"
+			},
+			{
+				"nl": "strengere voorwaarden voor de IGO",
+				"fr": "des conditions plus strictes pour la GRAPA",
+				"en": "stricter conditions for the income guarantee (GRAPA)"
+			},
+			{
+				"nl": "minder personeel bij de FOD Sociale Zekerheid",
+				"fr": "moins de personnel au SPF Sécurité sociale",
+				"en": "fewer staff at the Social Security department"
+			}
+		],
+		"add": [
+			{
+				"nl": "een hogere inkomensgarantie voor ouderen (IGO)",
+				"fr": "une garantie de revenus aux personnes âgées (GRAPA) plus élevée",
+				"en": "a higher income guarantee for older people (GRAPA)"
+			},
+			{
+				"nl": "soepelere voorwaarden voor de IGO",
+				"fr": "des conditions plus souples pour la GRAPA",
+				"en": "less strict conditions for the income guarantee (GRAPA)"
+			},
+			{
+				"nl": "meer personeel bij de FOD Sociale Zekerheid",
+				"fr": "plus de personnel au SPF Sécurité sociale",
+				"en": "more staff at the Social Security department"
+			}
+		],
+		"ref": {
+			"source": "be-chamber-56-1470-001",
+			"locator": "DOC 56 1470/001, section 24 justification p. 110, B.A. 58.44.343108 and 58.44.421006; Tabel 1 p. 851",
+			"quote": "Toelage “Inkomensgarantie voor ouderen” ... De daling in volume houdt rekening met de herraming van de maatregelen inzake de verstrenging van de voorwaarden voor IGO ... en de IGO-controle",
+			"note": "The IGO/GRAPA is a means-tested legal entitlement paid by the Federal Pension Service; its amount and conditions are set by law, and spending follows the number of beneficiaries. The 'conditions' phrase rests on the official lever named in the source (verstrenging van de voorwaarden). The rest of the line is running costs of the FOD Sociale Zekerheid (staff, ICT, the DG Persons with disabilities' administration); the staff phrase rests on the line label ('werking FOD Sociale Zekerheid'). confirmed: quote found on p. 110 (B.A. 58.44.343108), amounts on Tabel 1 p. 851. Phrases name the levers of the IGO/GRAPA entitlement (amount and conditions, the latter named in the source as 'verstrenging van de voorwaarden') neutrally (flag 6)."
+		}
+	}
 }

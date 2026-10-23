@@ -35,5 +35,47 @@
 				}
 			}
 		}
-	]
+	],
+	"effects": {
+		"cut": [
+			{
+				"nl": "een lagere inkomensvervangende tegemoetkoming (IVT)",
+				"fr": "une allocation de remplacement de revenus (ARR) plus basse",
+				"en": "a lower income replacement allowance for people with disabilities"
+			},
+			{
+				"nl": "een lagere integratietegemoetkoming (IT)",
+				"fr": "une allocation d'intégration (AI) plus basse",
+				"en": "a lower integration allowance for disability-related costs"
+			},
+			{
+				"nl": "lagere inkomensgrenzen om een tegemoetkoming te krijgen",
+				"fr": "des plafonds de revenus plus bas pour l'allocation",
+				"en": "lower income limits to qualify for an allowance"
+			}
+		],
+		"add": [
+			{
+				"nl": "een hogere inkomensvervangende tegemoetkoming (IVT)",
+				"fr": "une allocation de remplacement de revenus (ARR) plus élevée",
+				"en": "a higher income replacement allowance for people with disabilities"
+			},
+			{
+				"nl": "een hogere integratietegemoetkoming (IT)",
+				"fr": "une allocation d'intégration (AI) plus élevée",
+				"en": "a higher integration allowance for disability-related costs"
+			},
+			{
+				"nl": "hogere inkomensgrenzen om een tegemoetkoming te krijgen",
+				"fr": "des plafonds de revenus plus élevés pour l'allocation",
+				"en": "higher income limits to qualify for an allowance"
+			}
+		],
+		"ref": {
+			"source": "dgph-ivt-nl",
+			"locator": "handicap.belgium.be, page 'Inkomensvervangende tegemoetkoming (IVT)', sections 'Wat is een inkomensvervangende tegemoetkoming?' and 'Voorwaarden'",
+			"quote": "De tegemoetkoming vervangt het inkomen dat je zou krijgen als je geen handicap had. ... Voor het berekenen van de tegemoetkoming houden we ook rekening met je gezinstoestand en met je inkomsten, die niet boven een bepaalde grens mogen liggen.",
+			"note": "Entitlement under the law of 27 February 1987 (B.A. 24 55 31 34.31.06, DOC 56 1470/001 p. 847 and justification p. 106): amounts and income limits are set by law/royal decree and spending follows the number of beneficiaries. Integration allowance grounded in source Integratietegemoetkoming (IT) (https://handicap.belgium.be/nl/tegemoetkomingen/integratietegemoetkoming): 'Het is een compensatie voor de bijkomende kosten die je als persoon met een handicap hebt als je wilt deelnemen aan het maatschappelijke leven'; same page: 'je inkomsten mogen bepaalde grenzen niet overschrijden'. The allowance for the elderly (THAB/APA) is regional; only its running costs on behalf of the Communities sit in section 24 (p. 107). French names from handicap.belgium.be/fr: 'allocation de remplacement de revenus', 'allocation d'intégration'. confirmed: both handicap.belgium.be pages re-downloaded (IVT updated 7/04/2026, IT 21/01/2026); quotes found verbatim; French names ARR and AI confirmed on handicap.belgium.be/fr/allocations. Phrases name the levers (allowance amounts and income limits) neutrally and mirror each other (flag 6)."
+		}
+	}
 }

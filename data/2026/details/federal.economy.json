@@ -1,0 +1,45 @@
+{
+	"line": "federal.economy",
+	"effects": {
+		"cut": [
+			{
+				"nl": "minder verwarmingssteun via het Sociaal Stookoliefonds",
+				"fr": "moins d'aide au chauffage via le Fonds social mazout",
+				"en": "less heating support from the Social Heating Oil Fund"
+			},
+			{
+				"nl": "minder controles door de Economische Inspectie",
+				"fr": "moins de contrôles de l'Inspection économique",
+				"en": "fewer checks by the Economic Inspection"
+			},
+			{
+				"nl": "minder subsidies voor energietransitieprojecten",
+				"fr": "moins de subsides pour des projets de transition énergétique",
+				"en": "fewer grants for energy transition projects"
+			}
+		],
+		"add": [
+			{
+				"nl": "meer verwarmingssteun via het Sociaal Stookoliefonds",
+				"fr": "plus d'aide au chauffage via le Fonds social mazout",
+				"en": "more heating support from the Social Heating Oil Fund"
+			},
+			{
+				"nl": "meer controles door de Economische Inspectie",
+				"fr": "plus de contrôles de l'Inspection économique",
+				"en": "more checks by the Economic Inspection"
+			},
+			{
+				"nl": "meer subsidies voor energietransitieprojecten",
+				"fr": "plus de subsides pour des projets de transition énergétique",
+				"en": "more grants for energy transition projects"
+			}
+		],
+		"ref": {
+			"source": "be-chamber-56-1470-001",
+			"locator": "DOC 56 1470/001, section 32 justification p. 130 (programme 42/4, B.A. 32 42 40 414001), p. 131 (programme 42/9), p. 134 (B.A. 32 46 02 121101); Tabel 1 pp. 888, 892",
+			"quote": "Programma voor uitgaven bestemd voor een sociaal energiebeleid ... Dotatie aan het sociaal stookoliefonds ... Toelagen in kader van de oproep tot projecten betreffende de energietransitie ... worden de monsternemingen, controles en analyses uitgevoerd door de Economische Inspectie.",
+			"note": "The largest items are not phrased because they are contracts, legal or international commitments: 'dotatie BE-WATT financiële verrichten' and provisions linked to the lifetime extension (LTO) of Doel 4 and Tihange 3, the 'Provisie energienorm', nuclear liabilities (NIRAS/ONDRAF for the IRE, SCK CEN) and the CERN contribution (pp. 889-890). Together these make up most of the line, so the phrases describe only its smaller, discretionary part. The Social Heating Oil Fund dotation was raised in 2026 'om de stijging van de energieprijzen op te vangen' (p. 130). confirmed: quotes found on pp. 130, 131, 134 and Tabel 1 pp. 888-892. The phrases cover only the discretionary part (heating oil fund, Economic Inspection, energy-transition calls); BE-WATT/nuclear lifetime extension, the energy-norm provision, NIRAS/ONDRAF liabilities and CERN are not phrased, so nothing suggests they move with the budget (flag 3). Owner should know the phrased items are a small share of this line."
+		}
+	}
+}

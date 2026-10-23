@@ -1,0 +1,45 @@
+{
+	"line": "federal.employment",
+	"effects": {
+		"cut": [
+			{
+				"nl": "lagere uitkeringen voor loopbaanonderbreking bij de overheid",
+				"fr": "des allocations d'interruption de carrière plus basses dans le secteur public",
+				"en": "lower career-break allowances for public-sector staff"
+			},
+			{
+				"nl": "minder controles door de arbeidsinspecties",
+				"fr": "moins de contrôles des inspections du travail",
+				"en": "fewer checks by the labour inspectorates"
+			},
+			{
+				"nl": "minder sociale bemiddeling bij arbeidsconflicten",
+				"fr": "moins de conciliation sociale dans les conflits du travail",
+				"en": "less social mediation in labour disputes"
+			}
+		],
+		"add": [
+			{
+				"nl": "hogere uitkeringen voor loopbaanonderbreking bij de overheid",
+				"fr": "des allocations d'interruption de carrière plus élevées dans le secteur public",
+				"en": "higher career-break allowances for public-sector staff"
+			},
+			{
+				"nl": "meer controles door de arbeidsinspecties",
+				"fr": "plus de contrôles des inspections du travail",
+				"en": "more checks by the labour inspectorates"
+			},
+			{
+				"nl": "meer sociale bemiddeling bij arbeidsconflicten",
+				"fr": "plus de conciliation sociale dans les conflits du travail",
+				"en": "more social mediation in labour disputes"
+			}
+		],
+		"ref": {
+			"source": "be-chamber-56-1470-001",
+			"locator": "DOC 56 1470/001, section 23 justification: p. 99 (B.A. 23.59.30.424002), p. 98 (divisions 54 'Toezicht op het welzijn op het werk' and 57 'Toezicht op de sociale wetten'), p. 96 (programme 51/1 'Sociaal overleg en sociale bemiddeling'); Tabel 1 p. 840",
+			"quote": "Dotatie aan de Rijksdienst voor Arbeidsvoorzieningen (RVA) inzake de federale uitgaven voor loopbaanonderbreking en de thematische verloven voor de publieke sector",
+			"note": "The RVA/ONEM dotation (well over half the line) covers career breaks and 'thematische verloven' (thematic leave) of public-sector staff only; allowance amounts are set by royal decree and the budget follows the number of users. The inspection phrase rests on the official division names (Toezicht op de sociale wetten / Contrôle des lois sociales; Toezicht op het welzijn op het werk / Contrôle du bien-être au travail), i.e. the labour inspectorates for social law and for well-being at work; the mediation phrase on programme 51/1 'Sociaal overleg en sociale bemiddeling / Concertation et conciliation sociale'. The adjustment also phases out training subsidies for worker representatives (p. 97); not phrased, as it is a government decision rather than a lever. corrected: French career-break phrase reworded without brackets ('dans le secteur public') to read naturally and match NL/EN; quotes confirmed on pp. 96, 98, 99 and Tabel 1 p. 840. Allowance amounts are the lever (royal decree), phrased neutrally."
+		}
+	}
+}

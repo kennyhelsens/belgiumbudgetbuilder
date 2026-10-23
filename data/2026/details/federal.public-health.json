@@ -1,0 +1,45 @@
+{
+	"line": "federal.public-health",
+	"effects": {
+		"cut": [
+			{
+				"nl": "minder subsidie voor ziekenwagendiensten",
+				"fr": "moins de subsides pour l'aide médicale urgente",
+				"en": "less funding for emergency ambulance services"
+			},
+			{
+				"nl": "minder steun voor zorgpersoneel in ziekenhuizen",
+				"fr": "moins de soutien au personnel soignant des hôpitaux",
+				"en": "less support for care staff in hospitals"
+			},
+			{
+				"nl": "minder voedselveiligheidscontroles door het FAVV",
+				"fr": "moins de contrôles de sécurité alimentaire par l'AFSCA",
+				"en": "fewer food safety checks by the FAVV/AFSCA"
+			}
+		],
+		"add": [
+			{
+				"nl": "meer subsidie voor ziekenwagendiensten",
+				"fr": "plus de subsides pour l'aide médicale urgente",
+				"en": "more funding for emergency ambulance services"
+			},
+			{
+				"nl": "meer steun voor zorgpersoneel in ziekenhuizen",
+				"fr": "plus de soutien au personnel soignant des hôpitaux",
+				"en": "more support for care staff in hospitals"
+			},
+			{
+				"nl": "meer voedselveiligheidscontroles door het FAVV",
+				"fr": "plus de contrôles de sécurité alimentaire par l'AFSCA",
+				"en": "more food safety checks by the FAVV/AFSCA"
+			}
+		],
+		"ref": {
+			"source": "be-chamber-56-1470-001",
+			"locator": "DOC 56 1470/001, Tabel 1, section 25: p. 858 (programme 25.51.2 'Ondersteuning zorgpersoneel'), p. 862 (B.A. 25 52 03 33.00.06), p. 864 (B.A. 25 54 51 41.40.01); justification of the FAVV dotation p. 121; FAVV's own budget pp. 461-468",
+			"quote": "Ondersteuning zorgpersoneel / Soutien du personnel soignant ... Bijdragen aan publieke ziekenhuizen ... Bijdragen aan privé ziekenhuizen ... Subsidie ziekenwagendiensten / Subsides aide médicale urgente ... Dotatie aan het FAVV / Dotation à l'AFSCA",
+			"note": "Mixed line. The care-staff programme also covers 'Stortingen Fonds Maribel' and 'Ondersteuning sector zelfstandige verpleging / Soutien au secteur des infirmiers indépendants' (p. 858). Food-safety phrase: the FAVV dotation funds the agency, whose own 2026 budget (same document pp. 466-468) lists 'Aankoop van monsters en staalnamemateriaal', 'controle-uitrusting voor controle en labo's' and 'Routineanalyses'; the FAVV is also funded by levies and fees. favv-afsca.be returned a CAPTCHA, so the agency site was not used. Also in the line, not phrased: Sciensano, FAGG/AFMPS (medicines agency), animal-health fund (compensation for slaughtered animals), COVID vaccines, environment. Health insurance (RIZIV/INAMI) is a separate line. confirmed: FAVV/AFSCA phrase (flag 2) holds: the dotation (p. 864, justification p. 121) funds the agency, whose own 2026 budget in the same document lists staff (pp. 461-463), 'Aankoop van monsters en staalnamemateriaal', 'controle-uitrusting voor controle en labo's' and 'Routineanalyses' with external labs (pp. 466-468). It is only part of the agency's income (fees such as 'Controlerechten' and 'Hercontroles', p. 488), as the caveat says. Locator widened to pp. 121 and 461-468; ambulance and care-staff allocations confirmed on pp. 858 and 862."
+		}
+	}
+}

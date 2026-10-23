@@ -1,0 +1,45 @@
+{
+	"line": "federal.buildings-agency",
+	"effects": {
+		"cut": [
+			{
+				"nl": "minder renovaties van federale overheidsgebouwen",
+				"fr": "moins de rénovations de bâtiments fédéraux",
+				"en": "fewer renovations of federal government buildings"
+			},
+			{
+				"nl": "minder nieuwe plaatsen in detentiehuizen",
+				"fr": "moins de nouvelles places en maisons de détention",
+				"en": "fewer new places in detention houses"
+			},
+			{
+				"nl": "minder onderhoud van federale gebouwen",
+				"fr": "moins d'entretien des bâtiments fédéraux",
+				"en": "less upkeep of federal buildings"
+			}
+		],
+		"add": [
+			{
+				"nl": "meer renovaties van federale overheidsgebouwen",
+				"fr": "plus de rénovations de bâtiments fédéraux",
+				"en": "more renovations of federal government buildings"
+			},
+			{
+				"nl": "meer nieuwe plaatsen in detentiehuizen",
+				"fr": "plus de nouvelles places en maisons de détention",
+				"en": "more new places in detention houses"
+			},
+			{
+				"nl": "meer onderhoud van federale gebouwen",
+				"fr": "plus d'entretien des bâtiments fédéraux",
+				"en": "more upkeep of federal buildings"
+			}
+		],
+		"ref": {
+			"source": "be-chamber-56-1470-001",
+			"locator": "DOC 56 1470/001, Tabel 1, section 19 Regie der Gebouwen, p. 827 (B.A. 19 55 21 01.00.01, 55 21 61.41.03, 55 21 61.41.05, 55 22 41.40.03); also justification p. 93",
+			"quote": "Provisioneel krediet voor de financiering van de creatie van plaatsen in de detentiehuizen. ... Dotatie bestemd voor investeringen van gebouwen van de Staat onder beheer van de Regie der Gebouwen. ... Dotatie voor de renovatie van Staatsgebouwen ... Dotatie als bezettingsvergoeding voor de gebouwen van de Staat en van de gebouwen die gehuurd zijn, beheerd door de Regie der Gebouwen, en bestemd tot dekking van haar onderhoudskosten.",
+			"note": "More than half of the line is 'Dotatie tot dekking van de huurgelden' (rents under existing leases) plus lease-purchase charges ('huurkoop'): these are contractual and cannot be cut quickly; they are not phrased. The detention-house places come from a multi-year envelope decided by the Council of Ministers (p. 93) for the FOD Justitie. confirmed: quote and B.A. found on p. 827, detention-house envelope on p. 93. Phrases name investments, renovation and upkeep only; rents and lease-purchase (the larger, contractual part) are not phrased and nothing suggests they move with the budget (flag 3)."
+		}
+	}
+}

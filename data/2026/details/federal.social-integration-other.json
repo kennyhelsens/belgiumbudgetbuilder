@@ -1,0 +1,45 @@
+{
+	"line": "federal.social-integration-other",
+	"effects": {
+		"cut": [
+			{
+				"nl": "een lagere installatiepremie voor daklozen",
+				"fr": "une prime d'installation plus basse pour les sans-abri",
+				"en": "a smaller installation grant for homeless people"
+			},
+			{
+				"nl": "minder voedselhulp voor mensen in armoede",
+				"fr": "moins d'aide alimentaire pour les personnes démunies",
+				"en": "less food aid for people in need"
+			},
+			{
+				"nl": "minder subsidie voor winteropvang van daklozen",
+				"fr": "moins de subsides pour l'accueil hivernal des sans-abri",
+				"en": "less funding for winter shelters for homeless people"
+			}
+		],
+		"add": [
+			{
+				"nl": "een hogere installatiepremie voor daklozen",
+				"fr": "une prime d'installation plus élevée pour les sans-abri",
+				"en": "a larger installation grant for homeless people"
+			},
+			{
+				"nl": "meer voedselhulp voor mensen in armoede",
+				"fr": "plus d'aide alimentaire pour les personnes démunies",
+				"en": "more food aid for people in need"
+			},
+			{
+				"nl": "meer subsidie voor winteropvang van daklozen",
+				"fr": "plus de subsides pour l'accueil hivernal des sans-abri",
+				"en": "more funding for winter shelters for homeless people"
+			}
+		],
+		"ref": {
+			"source": "be-chamber-56-1470-001",
+			"locator": "DOC 56 1470/001, Tabel 1, section 44: p. 932 (B.A. 44 55 11 43.52.02, 55 11 33.00.33), pp. 934-935 (B.A. 44 56 82 34.32.00, 56 83 34.32.01); justification pp. 151, 154",
+			"quote": "Installatiepremie daklozen / Prime d´installation sans-abris ... Subsidie VZW voor de winteropvang van daklozen / Subvention asbl pour l'accueil d'hiver des sans-abris ... ESF+ - Hulp gefinancierd door ESF+ aankoop voedingswaren ... Voedselhulp / Aide alimentaire",
+			"note": "The largest item in this residual line is 'Terugbetalingen aan de Hulpkas voor Ziekte- en Invaliditeitsverzekering (HZIV)' (justification p. 152: medical costs per person, about 5,700 persons a month). It is not phrased because the official explanation of who these costs cover (POD MI site mi-is.be) returned a CAPTCHA and the budget text does not say. Food aid is partly co-financed by the EU (ESF+). The installation grant is paid per person who qualifies, so a change means a lower/higher grant rather than fewer grants. Winter shelter subsidy is a small item. Commitments for 'Toelagen OCMW's participatie en sociale activering' were set to zero in the adjustment (p. 151), so that item is not phrased. The leefloon/revenu d'intégration and the law-of-1965 subsidies are separate lines. Second check: DOC 56 1470/001 does not name who the HZIV/CAAMI refunds cover. Justification p. 152 says only 'gemiddeld 5.697 personen per maand ... een gemiddelde maandelijkse kost ... en een gemiddelde stijging van de zorgkost per jaar per persoon' (health-care costs per person), and Tabel 1 p. 932 files it under activity 12 'Bestaanszekerheid bijzondere doelgroepen / Sécurité d'existence groupes cibles'. Mediprima is not mentioned, so no phrase was added. confirmed: quotes found on pp. 932, 934-935, 151 and 154. Flag 1: DOC 56 1470/001 says the HZIV/CAAMI refunds pay health-care costs ('zorgkost') for about 5,700 people a month under 'specific target groups', but does not say who they are or name Mediprima; a phrase on that basis would not tell visitors who is affected, so none was added and the three existing phrases are kept. The largest item of this line therefore remains unphrased; mi-is.be was not retried past its CAPTCHA."
+		}
+	}
+}

@@ -1,0 +1,45 @@
+{
+	"line": "federal.science-policy",
+	"effects": {
+		"cut": [
+			{
+				"nl": "minder Belgische deelname aan ESA-ruimtevaartprogramma's",
+				"fr": "moins de participation belge aux programmes spatiaux de l'ESA",
+				"en": "less Belgian participation in ESA space programmes"
+			},
+			{
+				"nl": "minder geld voor federale musea, archieven en wetenschappelijke instellingen",
+				"fr": "moins d'argent pour les musées, archives et établissements scientifiques fédéraux",
+				"en": "less money for federal museums, archives and science institutes"
+			},
+			{
+				"nl": "minder federale onderzoeksprojecten",
+				"fr": "moins de projets de recherche fédéraux",
+				"en": "fewer federally funded research projects"
+			}
+		],
+		"add": [
+			{
+				"nl": "meer Belgische deelname aan ESA-ruimtevaartprogramma's",
+				"fr": "plus de participation belge aux programmes spatiaux de l'ESA",
+				"en": "more Belgian participation in ESA space programmes"
+			},
+			{
+				"nl": "meer geld voor federale musea, archieven en wetenschappelijke instellingen",
+				"fr": "plus d'argent pour les musées, archives et établissements scientifiques fédéraux",
+				"en": "more money for federal museums, archives and science institutes"
+			},
+			{
+				"nl": "meer federale onderzoeksprojecten",
+				"fr": "plus de projets de recherche fédéraux",
+				"en": "more federally funded research projects"
+			}
+		],
+		"ref": {
+			"source": "be-chamber-56-1470-001",
+			"locator": "DOC 56 1470/001, section 46 justification pp. 157-158 (B.A. 46.60.22.354012; programme 3 'Federale wetenschappelijke instellingen'); Tabel 1 pp. 941-942",
+			"quote": "Belgische deelname aan de activiteiten van het Europees Ruimtevaart Agentschap (ESA) ... Federale wetenschappelijke instellingen en daarmee gelijkgestelde instellingen ... Dotatie aan de Koninklijke Bibliotheek Albert I (KBB) ... Dotatie aan het Algemeen Rijksarchief (ARA)",
+			"note": "ESA is close to half the line and is a multi-year commitment indexed under the ESA rules (p. 157), so it cannot be changed freely in one year. The institutes include the Royal Museums of Art and History and of Fine Arts, the AfricaMuseum, the Royal Library (KBR), the State Archives, KMI/IRM, the Royal Observatory and the Natural Sciences institute (Tabel 1 p. 942). The research phrase rests on the research programmes named on p. 157 (P4Science, S4Policy, FED-tWIN) and the national R&D contracts allocation. Also in the line: BELNET, contributions to ESO, EUMETSAT and ECMWF. confirmed: quotes found on pp. 157-158 and Tabel 1 pp. 941-943. The ESA phrase describes what the money pays for (Belgian participation in ESA programmes) without suggesting the multi-year commitment changes automatically (flag 3)."
+		}
+	}
+}
