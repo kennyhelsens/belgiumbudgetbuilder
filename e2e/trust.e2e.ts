@@ -63,9 +63,10 @@ test.describe('disclaimer', () => {
 			'href',
 			'https://github.com/kennyhelsens/belgiumbudgetbuilder/issues/new'
 		);
-		await expect(
-			footer.getByRole('link', { name: 'message Kenny Helsens on LinkedIn' })
-		).toHaveAttribute('href', 'https://www.linkedin.com/in/kennyhelsens/');
+		await expect(footer.getByRole('link', { name: 'message me on LinkedIn' })).toHaveAttribute(
+			'href',
+			'https://www.linkedin.com/in/kennyhelsens/'
+		);
 		await page.goto('/nl/');
 		await expect(page.getByRole('contentinfo')).toContainText('Vragen of een fout gevonden?');
 	});
