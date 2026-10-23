@@ -109,9 +109,13 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 		{ id: 'ungrouped', group: undefined, tiles: byAmount.filter((tile) => !tile.group) }
 	]);
 
+	/** What each level of government collects of a revenue type, € million. */
+	const levelAmounts = (id: string) =>
+		data.revenue.types.find((type) => type.id === id)?.byLevel?.amounts ?? [];
+
 	/** Which levels of government collect a revenue type, as percentages of what they collect together. */
 	function levelShares(id: string) {
-		const amounts = data.revenue.types.find((type) => type.id === id)?.byLevel?.amounts ?? [];
+		const amounts = levelAmounts(id);
 		const total = amounts.reduce((sum, { amount }) => sum + amount.eurMillion, 0);
 		return amounts.map(({ level, amount }) => ({
 			level,
@@ -132,7 +136,7 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 	/** Governments in their own colour; lines inside a government in the colour of their theme; revenue neutral. */
 	const tileColor = (tile: Pick<Tile, 'id' | 'theme' | 'adjustable'>) =>
 		onRevenue
-			? revenueColor(tile.adjustable)
+			? revenueColor(levelAmounts(tile.id), tile.adjustable)
 			: tile.theme
 				? themeColor(tile.theme)
 				: `var(--series-${colorSlot(tile.id)})`;
@@ -346,6 +350,9 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 										>{/if}</span
 								>
 							</span>
+							{#if onRevenue}
+								{@render levelStrip(tile)}
+							{/if}
 							<span class="bar__foot">
 								<span class="bar__track"
 									><span class="bar__fill" style="width:{barWidth(tile)}%"></span></span
@@ -357,9 +364,6 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 									<span class="bar__spacer"></span>
 								{/if}
 							</span>
-							{#if onRevenue}
-								{@render levelStrip(tile)}
-							{/if}
 							{#if !tile.zoomable && editable && !tile.adjustable}
 								<span class="bar__fixed">{fixedText}</span>
 							{/if}
@@ -446,12 +450,12 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 								>{formatEuro(tile.eurMillion, locale)}{#if percent}
 									→ {formatEuro(tile.eurMillion + (current[tile.id] ?? 0), locale)}{/if}</span
 							>
+							{#if onRevenue}
+								{@render levelStrip(tile)}
+							{/if}
 						{/if}
 						{#if percent}
 							<span class="tile__badge">{formatPercentChange(percent, locale)}</span>
-						{/if}
-						{#if onRevenue}
-							{@render levelStrip(tile)}
 						{/if}
 						{@render stepper(tile, percent, hasRoomForSteppers(tile))}
 					</div>
@@ -466,12 +470,12 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 						{#if hasRoom(tile)}
 							<span class="tile__name">{tile.label[locale]}</span>
 							<span class="tile__amount">{formatEuro(tile.eurMillion, locale)}</span>
+							{#if onRevenue}
+								{@render levelStrip(tile)}
+							{/if}
 							{#if editable && !tile.adjustable}
 								<span class="tile__fixed">{fixedText}</span>
 							{/if}
-						{/if}
-						{#if onRevenue}
-							{@render levelStrip(tile)}
 						{/if}
 					</div>
 				{/if}
@@ -901,14 +905,15 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 		position: static;
 	}
 
-	/* Who collects a revenue type: a thin strip along the bottom of its tile, one part per level. */
+	/* Who collects a revenue type: a thin strip under its amount, inside the tile, one part per level. */
 	.levels {
-		position: absolute;
-		right: 0;
-		bottom: 0;
-		left: 0;
 		display: flex;
-		height: 8px;
+		width: 100%;
+		max-width: 16rem;
+		height: 6px;
+		margin-top: var(--space-2);
+		overflow: hidden;
+		border-radius: 3px;
 	}
 
 	.levels__part {
@@ -916,9 +921,8 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 	}
 
 	.bar .levels {
-		position: static;
-		margin-top: var(--space-1);
-		height: 5px;
+		max-width: none;
+		margin: var(--space-1) 0 var(--space-2);
 	}
 
 	.legend {

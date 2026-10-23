@@ -54,11 +54,16 @@ export function themeColor(theme: Theme): string {
 }
 
 /**
- * Revenue tiles are neutral, so that on the revenue map colour only says who collects the money; revenue that cannot
- * be changed (a bookkeeping entry) has a neutral colour of its own.
+ * A revenue type's colour: that of the level of government that collects most of it, so that on the revenue map
+ * colour says who collects the money. Revenue that cannot be changed (a bookkeeping entry), or has no split, is neutral.
  */
-export function revenueColor(adjustable: boolean): string {
-	return adjustable ? 'var(--revenue-tile)' : 'var(--revenue-fixed)';
+export function revenueColor(
+	amounts: readonly { level: Level; amount: { eurMillion: number } }[],
+	adjustable: boolean
+): string {
+	if (!adjustable || amounts.length === 0) return 'var(--revenue-fixed)';
+	const main = amounts.reduce((a, b) => (b.amount.eurMillion > a.amount.eurMillion ? b : a));
+	return levelColor(main.level);
 }
 
 /** The levels of government, in the order the legend and the strips list them. */

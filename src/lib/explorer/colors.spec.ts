@@ -1,6 +1,7 @@
 // ABOUTME: Tests that every government keeps one fixed colour slot, so colours never shift when the view changes, and that
 // ABOUTME: each theme of spending has its own colour. Slots follow the validated categorical palette order in global.css.
 import { describe, expect, it } from 'vitest';
+import type { Level } from '../data/schema.ts';
 import { colorSlot, LEVELS, levelColor, revenueColor, THEMES, themeColor } from './colors.ts';
 
 const GOVERNMENTS = [
@@ -50,13 +51,36 @@ describe('themeColor', () => {
 });
 
 describe('revenueColor', () => {
-	// On the revenue map, colour says who collects the money (the strips); the tiles themselves stay neutral.
-	it('gives every revenue type a visitor can change the same neutral colour', () => {
-		expect(revenueColor(true)).toBe('var(--revenue-tile)');
+	const amounts = (pairs: [Level, number][]) =>
+		pairs.map(([level, eurMillion]) => ({ level, amount: { eurMillion } }));
+
+	// On the revenue map, colour says who collects the money: a tile takes the colour of its main collector.
+	it('colours a revenue type by the level of government that collects most of it', () => {
+		expect(
+			revenueColor(
+				amounts([
+					['federal', 57],
+					['communities-and-regions', 9]
+				]),
+				true
+			)
+		).toBe(levelColor('federal'));
+		expect(
+			revenueColor(
+				amounts([
+					['federal', 1],
+					['communities-and-regions', 4]
+				]),
+				true
+			)
+		).toBe(levelColor('communities-and-regions'));
 	});
 
-	it('shows revenue that cannot be changed in a neutral colour of its own', () => {
-		expect(revenueColor(false)).toBe('var(--revenue-fixed)');
+	it('shows revenue that cannot be changed, or has no split, in a neutral colour', () => {
+		expect(revenueColor(amounts([['communities-and-regions', 9]]), false)).toBe(
+			'var(--revenue-fixed)'
+		);
+		expect(revenueColor([], true)).toBe('var(--revenue-fixed)');
 	});
 });
 
