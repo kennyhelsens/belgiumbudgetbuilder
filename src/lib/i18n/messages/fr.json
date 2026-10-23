@@ -114,5 +114,16 @@
 	"builder.noticeAddPlain": "Plus d'argent pour {name}.",
 	"consequence.cutTitle": "Moins d'argent pour {name} peut signifier :",
 	"consequence.addTitle": "Plus d'argent pour {name} peut signifier :",
-	"consequence.effectsNote": "Des conséquences possibles, pas une prévision : qui les ressent dépend de la manière dont les pouvoirs publics font ce choix."
+	"consequence.effectsNote": "Des conséquences possibles, pas une prévision : qui les ressent dépend de la manière dont les pouvoirs publics font ce choix.",
+	"map.legendLabel": "Couleurs par thème",
+	"theme.social-protection": "Protection sociale",
+	"theme.health": "Santé",
+	"theme.education": "Enseignement",
+	"theme.security": "Sécurité, justice et défense",
+	"theme.economy": "Économie, emploi et mobilité",
+	"theme.environment": "Environnement, logement et territoire",
+	"theme.culture": "Culture, sport et médias",
+	"theme.general": "Administration et services généraux",
+	"theme.debt": "Intérêts de la dette",
+	"theme.by-type": "Dépenses locales par nature"
 }
