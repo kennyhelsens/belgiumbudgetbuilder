@@ -69,6 +69,9 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 	const overviewTiles = $derived(mapTiles(data, { width: 160, height: 100 }));
 	const focusEntity = $derived(data.entities.find((entity) => entity.id === focus));
 	const shownTotal = $derived(tiles.reduce((sum, tile) => sum + tile.eurMillion, 0));
+	// The phone list: largest first, each bar as long as its amount against the largest.
+	const byAmount = $derived([...tiles].sort((a, b) => b.eurMillion - a.eurMillion));
+	const barWidth = (tile: Tile) => (tile.eurMillion / (byAmount[0]?.eurMillion || 1)) * 100;
 
 	const sourcesById = $derived(new Map(data.sources.map((source) => [source.id, source])));
 
@@ -211,102 +214,158 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 		<p class="map__flag">{t('map.displayOnly')}</p>
 	{/if}
 
-	<div class="map__stage" class:map__stage--portrait={portrait} bind:clientWidth={width}>
-		{#each tiles as tile (tile.id)}
-			{@const label = `${tile.label[locale]}, ${formatEuro(tile.eurMillion, locale)}`}
-			{#if tile.zoomable}
-				<button
-					type="button"
-					class="tile"
-					style={boxStyle(tile, frame)}
-					aria-label={label}
-					onclick={() => {
-						focus = tile.id;
-						onopen?.(tile.id);
-					}}
-					{...tipEvents(tile)}
-				>
-					{#if hasRoom(tile)}
-						<span class="tile__name">{tile.label[locale]}</span>
-						<span class="tile__amount">{formatEuro(tile.eurMillion, locale)}</span>
-					{/if}
-				</button>
-			{:else if focusEntity?.adjustable && tile.adjustable}
-				{@const percent = percentOf(tile.id, tile.eurMillion)}
-				{@const slice = changeSlice(percent)}
-				<div
-					class="tile tile--leaf"
-					class:tile--small={!hasRoom(tile)}
-					style={boxStyle(tile, frame)}
-					role="group"
-					aria-label={label}
-					tabindex="-1"
-					{...tipEvents(tile)}
-				>
-					{#if slice}
-						<span
-							class="tile__slice tile__slice--{slice.kind}"
-							style="width: {slice.widthPercent}%"
-							data-testid="change-slice"
-							data-kind={slice.kind}
-						></span>
-					{/if}
-					{#if hasRoom(tile)}
-						<span class="tile__name">{tile.label[locale]}</span>
-						<span class="tile__amount"
-							>{formatEuro(tile.eurMillion, locale)}{#if percent}
-								→ {formatEuro(tile.eurMillion + (changes[tile.id] ?? 0), locale)}{/if}</span
-						>
-					{/if}
-					{#if percent}
-						<span class="tile__badge">{formatPercentChange(percent, locale)}</span>
-					{/if}
-					<span class="stepper" class:stepper--always={hasRoomForSteppers(tile)}>
-						<button
-							type="button"
-							aria-label={t('builder.stepDown').replace('{name}', tile.label[locale])}
-							disabled={percent <= -CHANGE_LIMIT}
-							onclick={() => setPercent(tile, stepPercent(percent, -1))}>−</button
-						>
-						<button
-							type="button"
-							aria-label={t('builder.stepUp').replace('{name}', tile.label[locale])}
-							disabled={percent >= CHANGE_LIMIT}
-							onclick={() => setPercent(tile, stepPercent(percent, 1))}>+</button
-						>
-					</span>
-				</div>
-			{:else}
-				<div
-					class="tile tile--leaf"
-					style={boxStyle(tile, frame)}
-					role="img"
-					aria-label={label}
-					{...tipEvents(tile)}
-				>
-					{#if hasRoom(tile)}
-						<span class="tile__name">{tile.label[locale]}</span>
-						<span class="tile__amount">{formatEuro(tile.eurMillion, locale)}</span>
-						{#if focusEntity?.adjustable && !tile.adjustable}
-							<span class="tile__fixed">{t('builder.fixed')}</span>
+	{#snippet stepper(tile: Tile, percent: number, always: boolean)}
+		<span class="stepper" class:stepper--always={always}>
+			<button
+				type="button"
+				aria-label={t('builder.stepDown').replace('{name}', tile.label[locale])}
+				disabled={percent <= -CHANGE_LIMIT}
+				onclick={() => setPercent(tile, stepPercent(percent, -1))}>−</button
+			>
+			<button
+				type="button"
+				aria-label={t('builder.stepUp').replace('{name}', tile.label[locale])}
+				disabled={percent >= CHANGE_LIMIT}
+				onclick={() => setPercent(tile, stepPercent(percent, 1))}>+</button
+			>
+		</span>
+	{/snippet}
+
+	<div class="map__stage" class:map__stage--list={portrait} bind:clientWidth={width}>
+		{#if portrait}
+			<!-- On a phone a treemap is too narrow to read: rows under each other, each with a bar to scale. -->
+			<ol class="bars">
+				{#each byAmount as tile (tile.id)}
+					{@const label = `${tile.label[locale]}, ${formatEuro(tile.eurMillion, locale)}`}
+					{@const percent = percentOf(tile.id, tile.eurMillion)}
+					{@const changeable = !tile.zoomable && focusEntity?.adjustable && tile.adjustable}
+					{#snippet barRow()}
+						<span class="bar__head">
+							<span class="bar__name">{tile.label[locale]}</span>
+							<span class="bar__amount"
+								>{formatEuro(tile.eurMillion, locale)}{#if percent}
+									→ {formatEuro(tile.eurMillion + (changes[tile.id] ?? 0), locale)}
+									<span class="bar__badge">{formatPercentChange(percent, locale)}</span>{/if}</span
+							>
+						</span>
+						<span class="bar__foot">
+							<span class="bar__track"
+								><span class="bar__fill" style="width:{barWidth(tile)}%"></span></span
+							>
+							{#if changeable}
+								{@render stepper(tile, percent, true)}
+							{:else if !tile.zoomable}
+								<!-- Keeps every bar in a government equally long, with or without buttons. -->
+								<span class="bar__spacer"></span>
+							{/if}
+						</span>
+						{#if !tile.zoomable && focusEntity?.adjustable && !tile.adjustable}
+							<span class="bar__fixed">{t('builder.fixed')}</span>
 						{/if}
+					{/snippet}
+					<li class="bar" data-testid="bar-row" style="--tile-color:{tileColor(tile)}">
+						{#if tile.zoomable}
+							<button
+								type="button"
+								class="bar__body bar__body--open"
+								aria-label={label}
+								onclick={() => {
+									focus = tile.id;
+									onopen?.(tile.id);
+								}}>{@render barRow()}</button
+							>
+						{:else if changeable}
+							<div class="bar__body" role="group" aria-label={label}>{@render barRow()}</div>
+						{:else}
+							<div class="bar__body" role="img" aria-label={label}>{@render barRow()}</div>
+						{/if}
+					</li>
+				{/each}
+			</ol>
+		{:else}
+			{#each tiles as tile (tile.id)}
+				{@const label = `${tile.label[locale]}, ${formatEuro(tile.eurMillion, locale)}`}
+				{#if tile.zoomable}
+					<button
+						type="button"
+						class="tile"
+						style={boxStyle(tile, frame)}
+						aria-label={label}
+						onclick={() => {
+							focus = tile.id;
+							onopen?.(tile.id);
+						}}
+						{...tipEvents(tile)}
+					>
+						{#if hasRoom(tile)}
+							<span class="tile__name">{tile.label[locale]}</span>
+							<span class="tile__amount">{formatEuro(tile.eurMillion, locale)}</span>
+						{/if}
+					</button>
+				{:else if focusEntity?.adjustable && tile.adjustable}
+					{@const percent = percentOf(tile.id, tile.eurMillion)}
+					{@const slice = changeSlice(percent)}
+					<div
+						class="tile tile--leaf"
+						class:tile--small={!hasRoom(tile)}
+						style={boxStyle(tile, frame)}
+						role="group"
+						aria-label={label}
+						tabindex="-1"
+						{...tipEvents(tile)}
+					>
+						{#if slice}
+							<span
+								class="tile__slice tile__slice--{slice.kind}"
+								style="width: {slice.widthPercent}%"
+								data-testid="change-slice"
+								data-kind={slice.kind}
+							></span>
+						{/if}
+						{#if hasRoom(tile)}
+							<span class="tile__name">{tile.label[locale]}</span>
+							<span class="tile__amount"
+								>{formatEuro(tile.eurMillion, locale)}{#if percent}
+									→ {formatEuro(tile.eurMillion + (changes[tile.id] ?? 0), locale)}{/if}</span
+							>
+						{/if}
+						{#if percent}
+							<span class="tile__badge">{formatPercentChange(percent, locale)}</span>
+						{/if}
+						{@render stepper(tile, percent, hasRoomForSteppers(tile))}
+					</div>
+				{:else}
+					<div
+						class="tile tile--leaf"
+						style={boxStyle(tile, frame)}
+						role="img"
+						aria-label={label}
+						{...tipEvents(tile)}
+					>
+						{#if hasRoom(tile)}
+							<span class="tile__name">{tile.label[locale]}</span>
+							<span class="tile__amount">{formatEuro(tile.eurMillion, locale)}</span>
+							{#if focusEntity?.adjustable && !tile.adjustable}
+								<span class="tile__fixed">{t('builder.fixed')}</span>
+							{/if}
+						{/if}
+					</div>
+				{/if}
+			{/each}
+			{#if tip}
+				{@const percent = percentOf(tip.id, tip.eurMillion)}
+				<div class="tile-tip" role="tooltip" style={tipStyle(tip)}>
+					<strong>{tip.label[locale]}</strong>
+					<span
+						>{formatEuro(tip.eurMillion, locale)}{#if percent}
+							→ {formatEuro(tip.eurMillion + (changes[tip.id] ?? 0), locale)}{/if}
+						· {share(tip.eurMillion)}</span
+					>
+					{#if focusEntity?.adjustable && !tip.adjustable}
+						<span>{t('builder.fixed')}</span>
 					{/if}
 				</div>
 			{/if}
-		{/each}
-		{#if tip}
-			{@const percent = percentOf(tip.id, tip.eurMillion)}
-			<div class="tile-tip" role="tooltip" style={tipStyle(tip)}>
-				<strong>{tip.label[locale]}</strong>
-				<span
-					>{formatEuro(tip.eurMillion, locale)}{#if percent}
-						→ {formatEuro(tip.eurMillion + (changes[tip.id] ?? 0), locale)}{/if}
-					· {share(tip.eurMillion)}</span
-				>
-				{#if focusEntity?.adjustable && !tip.adjustable}
-					<span>{t('builder.fixed')}</span>
-				{/if}
-			</div>
 		{/if}
 	</div>
 
@@ -477,8 +536,97 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 		background: var(--paper);
 	}
 
-	.map__stage--portrait {
-		aspect-ratio: 300 / 400;
+	/* The phone list has no fixed shape: rows take the height they need. */
+	.map__stage--list {
+		aspect-ratio: auto;
+	}
+
+	.bars {
+		display: grid;
+		gap: var(--space-1);
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.bar__body {
+		display: grid;
+		gap: var(--space-1);
+		width: 100%;
+		padding: var(--space-2) 0;
+		border: 0;
+		border-top: 1px solid var(--rule);
+		background: none;
+		color: var(--ink);
+		font: inherit;
+		text-align: left;
+	}
+
+	.bar__body--open {
+		cursor: pointer;
+	}
+
+	/* Name and amount share a line; a long amount moves below the name rather than squeezing it. */
+	.bar__head {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: baseline;
+		gap: 0 var(--space-2);
+	}
+
+	.bar__name {
+		font-weight: 600;
+		overflow-wrap: break-word;
+	}
+
+	.bar__amount {
+		margin-left: auto;
+		color: var(--ink-muted);
+		font-size: var(--text-sm);
+		font-variant-numeric: tabular-nums;
+		white-space: nowrap;
+	}
+
+	.bar__badge {
+		margin-left: var(--space-1);
+		color: var(--ink);
+		font-weight: 700;
+	}
+
+	.bar__foot {
+		display: flex;
+		align-items: center;
+		gap: var(--space-2);
+	}
+
+	.bar__track {
+		flex: 1;
+		height: 0.75rem;
+		background: color-mix(in oklab, var(--tile-color) 12%, var(--paper));
+	}
+
+	.bar__fill {
+		display: block;
+		height: 100%;
+		background: var(--tile-color);
+		transition: width 0.3s ease;
+	}
+
+	/* As wide as the − and + buttons. */
+	.bar__spacer {
+		flex: 0 0 calc(4rem + 2px);
+	}
+
+	.bar__fixed {
+		color: var(--ink-muted);
+		font-size: var(--text-sm);
+		font-style: italic;
+	}
+
+	/* In the list the buttons sit beside the bar, always in view. */
+	.bar .stepper {
+		position: static;
 	}
 
 	.legend {

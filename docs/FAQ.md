@@ -477,6 +477,10 @@ spending, as wide as the change. Where a tile is too small for its name, or
 its name is cut off, hovering over it, tapping it or reaching it with the
 keyboard shows its full name, amount and share.
 
+On a phone, a treemap is too narrow to read, so the map becomes a list:
+each government or line is a row with its full name, its amount and a bar
+drawn to scale against the largest row, with − and + always in view.
+
 Interest and other costs of the debt cannot be changed. They are not a budget
 choice: they follow from the debt and the interest rates, which the ten-year
 outlook calculates (see "How is the future debt calculated?").

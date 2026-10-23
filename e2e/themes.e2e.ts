@@ -34,4 +34,14 @@ test.describe('theme colours', () => {
 		await expect(legend).toContainText('Interest on debt');
 		await expect(legend).not.toContainText('Local spending by type');
 	});
+
+	test('colours the rows of a government by theme on a phone too', async ({ page }) => {
+		await page.setViewportSize({ width: 390, height: 844 });
+		await page.goto('/en/');
+		const map = page.getByRole('region', { name: 'Budget map' });
+		await map.getByRole('button', { name: /^Federal government/ }).click();
+		const defence = map.getByTestId('bar-row').filter({ hasText: /^Defence/ });
+		await expect(defence).toHaveAttribute('style', /--tile-color:\s*var\(--series-4\)/);
+		await expect(map.getByRole('list', { name: 'Colours by theme' })).toBeVisible();
+	});
 });

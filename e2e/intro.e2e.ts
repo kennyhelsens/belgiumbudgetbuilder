@@ -13,6 +13,11 @@ async function next(page: Page) {
 	await intro(page).getByRole('button', { name: 'Next' }).click();
 }
 
+// The dialog's close event, which stores that the intro was seen, fires a moment after the dialog hides.
+async function expectRemembered(page: Page) {
+	await expect.poll(() => page.evaluate(() => localStorage.getItem('bbb-intro-seen'))).toBe('1');
+}
+
 test.describe('intro', () => {
 	test('tells the 10 billion story to scale and ends on the budget map', async ({ page }) => {
 		await page.goto('/en/');
@@ -58,6 +63,7 @@ test.describe('intro', () => {
 		await expect(dialog).toBeHidden();
 		await expect(page.getByRole('heading', { name: 'Budget map' })).toBeInViewport();
 
+		await expectRemembered(page);
 		await page.reload();
 		await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
 		await expect(intro(page)).toBeHidden();
@@ -76,6 +82,7 @@ test.describe('intro', () => {
 		await page.goto('/en/');
 		await intro(page).getByRole('button', { name: 'Skip' }).click();
 		await expect(intro(page)).toBeHidden();
+		await expectRemembered(page);
 		await page.reload();
 		await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
 		await expect(intro(page)).toBeHidden();
