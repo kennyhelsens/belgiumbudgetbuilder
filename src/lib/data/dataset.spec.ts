@@ -180,4 +180,19 @@ describe('data/2026', () => {
 			}
 		}
 	});
+
+	// The Planning Bureau reports the federal government with social security (Entity I), and the communities,
+	// regions and local government together (Entity II); the map pairs them the same way.
+	it('groups the governments as the Planning Bureau does: Entity I and Entity II', () => {
+		expect(dataset.groups.map((group) => [group.id, [...group.members].sort()])).toEqual([
+			['entity-1', ['federal', 'social-security']],
+			['entity-2', ['brussels', 'flanders', 'local', 'wallonia', 'wallonia-brussels-federation']]
+		]);
+	});
+
+	it('says how social security relates to the federal government', () => {
+		const socialSecurity = dataset.entities.find((e) => e.id === 'social-security');
+		expect(socialSecurity?.note?.en).toMatch(/Entity I/);
+		expect(socialSecurity?.note?.en).toMatch(/grants from the federal government/);
+	});
 });

@@ -160,4 +160,36 @@ describe('findProblems', () => {
 			expect.stringContaining('duplicate id "revenue.income-tax"')
 		);
 	});
+
+	it('reports a group member that is not a government in the data', () => {
+		const data = datasetFixture();
+		data.groups[0].members.push('atlantis');
+		expect(findProblems(data)).toContainEqual(
+			expect.stringContaining('group entity-1: unknown government "atlantis"')
+		);
+	});
+
+	it('reports a government that is in no group, or in two', () => {
+		const data = datasetFixture();
+		data.groups[0].members = ['federal'];
+		expect(findProblems(data)).toContainEqual(
+			expect.stringContaining('"social-security" is in no group')
+		);
+		data.groups.push({
+			...data.groups[0],
+			id: 'entity-2',
+			members: ['federal', 'social-security']
+		});
+		expect(findProblems(data)).toContainEqual(
+			expect.stringContaining('"federal" is in more than one group')
+		);
+	});
+
+	it('checks the references of the groups too', () => {
+		const data = datasetFixture();
+		data.groups[0].ref.source = 'nowhere';
+		expect(findProblems(data)).toContainEqual(
+			expect.stringContaining('groups.entity-1: unknown source "nowhere"')
+		);
+	});
 });

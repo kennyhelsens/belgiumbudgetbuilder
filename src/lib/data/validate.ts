@@ -53,6 +53,23 @@ export function findProblems(data: Dataset): string[] {
 		}
 	}
 
+	if (data.groups.length > 0) {
+		const groupOf = new Map<string, string>();
+		for (const group of data.groups) {
+			for (const member of group.members) {
+				if (!entityIds.has(member)) {
+					problems.push(`group ${group.id}: unknown government "${member}"`);
+				} else if (groupOf.has(member)) {
+					problems.push(`"${member}" is in more than one group`);
+				}
+				groupOf.set(member, group.id);
+			}
+		}
+		for (const id of entityIds) {
+			if (!groupOf.has(id)) problems.push(`"${id}" is in no group`);
+		}
+	}
+
 	const revenueTypes = data.revenue.types;
 	for (const type of revenueTypes) {
 		if (!type.id.startsWith('revenue.')) problems.push(`"${type.id}" should start with "revenue."`);
@@ -131,6 +148,9 @@ function collectRefs(data: Dataset): { where: string; ref: SourceRef }[] {
 		for (const lever of details.levers) {
 			refs.push({ where: `${details.line}.levers.${lever.id}`, ref: lever.ref });
 		}
+	}
+	for (const group of data.groups) {
+		refs.push({ where: `groups.${group.id}`, ref: group.ref });
 	}
 	for (const type of data.revenue.types) {
 		refs.push({ where: type.id, ref: type.amount.ref });

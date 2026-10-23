@@ -145,6 +145,20 @@ const revenueTypeSchema = z.object({
 	effects: effectsSchema.optional()
 });
 
+/**
+ * Governments that official reports take together, e.g. the Federal Planning Bureau's "Entity I" (the federal
+ * government and social security) and "Entity II" (communities, regions and local government).
+ */
+const groupSchema = z.object({
+	id: slug,
+	label: localized,
+	/** A short name for a tile or a heading, e.g. "Entity I". */
+	short: localized,
+	/** The ids of the governments in this group. */
+	members: z.array(slug).min(1),
+	ref: sourceRefSchema
+});
+
 /** Details behind one spending line, used for its consequence card. */
 const lineDetailsSchema = z.object({
 	/** The id of the spending line these details belong to, e.g. "social-security.healthcare". */
@@ -234,6 +248,8 @@ export const datasetSchema = z.object({
 	}),
 	/** General government revenue split by type; the types add up to overview.revenue. */
 	revenue: z.object({ types: z.array(revenueTypeSchema).min(1) }),
+	/** Groups of governments shown together on the map; when there are any, every government is in one. */
+	groups: z.array(groupSchema).default([]),
 	entities: z.array(entitySchema).min(1),
 	details: z.array(lineDetailsSchema)
 });
@@ -244,3 +260,4 @@ export type Line = Entity['expenditure']['lines'][number];
 export type SourceRef = z.infer<typeof sourceRefSchema>;
 export type LineDetails = Dataset['details'][number];
 export type RevenueType = Dataset['revenue']['types'][number];
+export type Group = Dataset['groups'][number];

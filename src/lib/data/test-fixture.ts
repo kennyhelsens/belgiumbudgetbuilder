@@ -107,6 +107,19 @@ export function datasetFixture(): Dataset {
 				}
 			]
 		},
+		groups: [
+			{
+				id: 'entity-1',
+				label: {
+					nl: 'Entiteit I: federale overheid en sociale zekerheid',
+					fr: 'Entité I : pouvoir fédéral et sécurité sociale',
+					en: 'Entity I: federal government and social security'
+				},
+				short: { nl: 'Entiteit I', fr: 'Entité I', en: 'Entity I' },
+				members: ['federal', 'social-security'],
+				ref: ref('p. 28')
+			}
+		],
 		entities: [
 			{
 				id: 'federal',

@@ -85,6 +85,30 @@ Financing Act is not federal spending at all. The federal budget books it
 as revenue handed over, not as expenditure, so it is not in the federal
 total either.
 
+### Isn't social security part of the federal government?
+
+Both views are official. Social security is regulated at federal level, and
+the federal government pays it large grants. But it has its own budget and
+its own revenue (mainly social contributions), and the national accounts
+(ESA 2010) treat it as a separate part of government, next to the federal
+government, the communities and regions, and local government. The Planning
+Bureau's tables, which give the site its totals and its revenue, follow that
+split.
+
+The map therefore shows social security beside the federal government, not
+inside it, but frames the two together. The Planning Bureau (June 2026, p. 28)
+calls them:
+
+- **Entity I:** the federal government and social security, €205 billion of
+  own spending on the map;
+- **Entity II:** the communities, regions and local government, €150.2
+  billion.
+
+On a phone, the list has a section for each. The federal grants to social
+security are transfers: they are counted once, under social security, where
+the money is spent (see "Isn't money counted twice when one government pays
+another?").
+
 ### Why are public-sector pensions under social security?
 
 Because that is how BOSA and the national accounts present them. The Federal
@@ -567,7 +591,9 @@ keyboard shows its full name, amount and share.
 
 On a phone, a treemap is too narrow to read, so the map becomes a list:
 each government or line is a row with its full name, its amount and a bar
-drawn to scale against the largest row, with − and + always in view.
+drawn to scale against the largest row, with − and + always in view. The
+governments are listed in two sections, Entity I and Entity II (see "Isn't
+social security part of the federal government?").
 
 Above the map, a switch shows **Revenue** instead of spending: what all
 governments together take in, by type, with the same − and + (see "What

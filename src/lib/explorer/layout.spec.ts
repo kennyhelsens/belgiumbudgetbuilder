@@ -2,7 +2,7 @@
 // ABOUTME: Tile areas must be proportional to money, and transfers between governments must not take space twice.
 import { describe, expect, it } from 'vitest';
 import { datasetFixture } from '../data/test-fixture.ts';
-import { mapTiles, revenueTiles, tooltipPlacement } from './layout.ts';
+import { mapGroups, mapTiles, revenueTiles, tooltipPlacement } from './layout.ts';
 
 const area = (t: { x0: number; y0: number; x1: number; y1: number }) =>
 	(t.x1 - t.x0) * (t.y1 - t.y0);
@@ -56,6 +56,48 @@ describe('mapTiles zoomed into one government', () => {
 		expect(() => mapTiles(datasetFixture(), { width: 1, height: 1, focus: 'atlantis' })).toThrow(
 			'atlantis'
 		);
+	});
+});
+
+describe('mapGroups', () => {
+	const inside = (
+		tile: { x0: number; y0: number; x1: number; y1: number },
+		box: { x0: number; y0: number; x1: number; y1: number }
+	) =>
+		tile.x0 >= box.x0 - 1e-9 &&
+		tile.y0 >= box.y0 - 1e-9 &&
+		tile.x1 <= box.x1 + 1e-9 &&
+		tile.y1 <= box.y1 + 1e-9;
+
+	it('keeps the governments of a group together in one rectangle', () => {
+		const data = datasetFixture();
+		data.groups = [
+			{ ...data.groups[0], id: 'entity-1', members: ['federal'] },
+			{ ...data.groups[0], id: 'entity-2', members: ['social-security'] }
+		];
+		const frame = { width: 600, height: 400 };
+		const tiles = mapTiles(data, frame);
+		const groups = mapGroups(data, frame);
+		expect(groups.map((g) => g.id)).toEqual(['entity-2', 'entity-1']);
+		for (const group of groups) {
+			const members = tiles.filter((t) => t.group === group.id);
+			expect(members.map((t) => t.id)).toEqual(group.members);
+			for (const tile of members) expect(inside(tile, group)).toBe(true);
+			const sum = members.reduce((total, t) => total + area(t), 0);
+			expect(area(group)).toBeCloseTo(sum, 6);
+		}
+	});
+
+	it('still makes areas proportional to amounts across groups', () => {
+		const tiles = mapTiles(datasetFixture(), { width: 600, height: 400 });
+		const federal = tiles.find((t) => t.id === 'federal')!;
+		const socsec = tiles.find((t) => t.id === 'social-security')!;
+		expect(area(socsec) / area(federal)).toBeCloseTo(200 / 40, 6);
+		expect(federal.group).toBe('entity-1');
+	});
+
+	it('has no groups inside one government', () => {
+		expect(mapGroups(datasetFixture(), { width: 600, height: 400, focus: 'federal' })).toEqual([]);
 	});
 });
 

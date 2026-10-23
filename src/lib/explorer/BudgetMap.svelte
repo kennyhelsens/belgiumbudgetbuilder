@@ -13,7 +13,7 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 	import { translate, type MessageKey } from '../i18n/translate.ts';
 	import { colorSlot, revenueColor, THEMES, themeColor } from './colors.ts';
 	import { formatEuro } from './format.ts';
-	import { mapTiles, revenueTiles, tooltipPlacement, type Tile } from './layout.ts';
+	import { mapGroups, mapTiles, revenueTiles, tooltipPlacement, type Tile } from './layout.ts';
 
 	let {
 		data,
@@ -94,6 +94,21 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 	const byAmount = $derived([...tiles].sort((a, b) => b.eurMillion - a.eurMillion));
 	const barWidth = (tile: Tile) => (tile.eurMillion / (byAmount[0]?.eurMillion || 1)) * 100;
 
+	// Governments the Planning Bureau reports together (Entity I and II), largest first; none inside a government.
+	const groupBoxes = $derived(onRevenue ? [] : mapGroups(data, { ...frame, focus }));
+	const groupsById = $derived(new Map(data.groups.map((group) => [group.id, group])));
+	const groupTotal = (id: string) =>
+		tiles.filter((tile) => tile.group === id).reduce((sum, tile) => sum + tile.eurMillion, 0);
+	// The phone list in sections: one per group, then anything outside a group.
+	const sections = $derived([
+		...groupBoxes.map((box) => ({
+			id: box.id,
+			group: groupsById.get(box.id),
+			tiles: byAmount.filter((tile) => tile.group === box.id)
+		})),
+		{ id: 'ungrouped', group: undefined, tiles: byAmount.filter((tile) => !tile.group) }
+	]);
+
 	const sourcesById = $derived(new Map(data.sources.map((source) => [source.id, source])));
 
 	function lineSource(id: string) {
@@ -116,14 +131,19 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 		THEMES.filter((theme) => tiles.some((tile) => tile.theme === theme))
 	);
 
-	function boxStyle(tile: Tile, box: { width: number; height: number }) {
+	type Rect = { x0: number; y0: number; x1: number; y1: number };
+
+	function position(rect: Rect, box: { width: number; height: number }) {
 		return [
-			`left:${(tile.x0 / box.width) * 100}%`,
-			`top:${(tile.y0 / box.height) * 100}%`,
-			`width:${((tile.x1 - tile.x0) / box.width) * 100}%`,
-			`height:${((tile.y1 - tile.y0) / box.height) * 100}%`,
-			`--tile-color:${tileColor(tile)}`
+			`left:${(rect.x0 / box.width) * 100}%`,
+			`top:${(rect.y0 / box.height) * 100}%`,
+			`width:${((rect.x1 - rect.x0) / box.width) * 100}%`,
+			`height:${((rect.y1 - rect.y0) / box.height) * 100}%`
 		].join(';');
+	}
+
+	function boxStyle(tile: Tile, box: { width: number; height: number }) {
+		return `${position(tile, box)};--tile-color:${tileColor(tile)}`;
 	}
 
 	/** Show the label inside a tile only when it has room; the accessible name always carries it. */
@@ -238,6 +258,10 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 		</div>
 	{/if}
 
+	{#if focusEntity?.note}
+		<p class="map__entity-note" data-testid="entity-note">{focusEntity.note[locale]}</p>
+	{/if}
+
 	{#if focusEntity?.nationalAccounts}
 		{@const reference = focusEntity.nationalAccounts}
 		{@const source = sourcesById.get(reference.ref.source)}
@@ -283,54 +307,70 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 	<div class="map__stage" class:map__stage--list={portrait} bind:clientWidth={width}>
 		{#if portrait}
 			<!-- On a phone a treemap is too narrow to read: rows under each other, each with a bar to scale. -->
-			<ol class="bars">
-				{#each byAmount as tile (tile.id)}
-					{@const label = `${tile.label[locale]}, ${formatEuro(tile.eurMillion, locale)}`}
-					{@const percent = percentOf(tile.id, tile.eurMillion)}
-					{@const changeable = !tile.zoomable && editable && tile.adjustable}
-					{#snippet barRow()}
-						<span class="bar__head">
-							<span class="bar__name">{tile.label[locale]}</span>
-							<span class="bar__amount"
-								>{formatEuro(tile.eurMillion, locale)}{#if percent}
-									→ {formatEuro(tile.eurMillion + (current[tile.id] ?? 0), locale)}
-									<span class="bar__badge">{formatPercentChange(percent, locale)}</span>{/if}</span
-							>
-						</span>
-						<span class="bar__foot">
-							<span class="bar__track"
-								><span class="bar__fill" style="width:{barWidth(tile)}%"></span></span
-							>
-							{#if changeable}
-								{@render stepper(tile, percent, true)}
-							{:else if !tile.zoomable}
-								<!-- Keeps every bar in a government equally long, with or without buttons. -->
-								<span class="bar__spacer"></span>
+			{#snippet barList(list: Tile[])}
+				<ol class="bars">
+					{#each list as tile (tile.id)}
+						{@const label = `${tile.label[locale]}, ${formatEuro(tile.eurMillion, locale)}`}
+						{@const percent = percentOf(tile.id, tile.eurMillion)}
+						{@const changeable = !tile.zoomable && editable && tile.adjustable}
+						{#snippet barRow()}
+							<span class="bar__head">
+								<span class="bar__name">{tile.label[locale]}</span>
+								<span class="bar__amount"
+									>{formatEuro(tile.eurMillion, locale)}{#if percent}
+										→ {formatEuro(tile.eurMillion + (current[tile.id] ?? 0), locale)}
+										<span class="bar__badge">{formatPercentChange(percent, locale)}</span
+										>{/if}</span
+								>
+							</span>
+							<span class="bar__foot">
+								<span class="bar__track"
+									><span class="bar__fill" style="width:{barWidth(tile)}%"></span></span
+								>
+								{#if changeable}
+									{@render stepper(tile, percent, true)}
+								{:else if !tile.zoomable}
+									<!-- Keeps every bar in a government equally long, with or without buttons. -->
+									<span class="bar__spacer"></span>
+								{/if}
+							</span>
+							{#if !tile.zoomable && editable && !tile.adjustable}
+								<span class="bar__fixed">{fixedText}</span>
 							{/if}
-						</span>
-						{#if !tile.zoomable && editable && !tile.adjustable}
-							<span class="bar__fixed">{fixedText}</span>
-						{/if}
-					{/snippet}
-					<li class="bar" data-testid="bar-row" style="--tile-color:{tileColor(tile)}">
-						{#if tile.zoomable}
-							<button
-								type="button"
-								class="bar__body bar__body--open"
-								aria-label={label}
-								onclick={() => {
-									focus = tile.id;
-									onopen?.(tile.id);
-								}}>{@render barRow()}</button
-							>
-						{:else if changeable}
-							<div class="bar__body" role="group" aria-label={label}>{@render barRow()}</div>
-						{:else}
-							<div class="bar__body" role="img" aria-label={label}>{@render barRow()}</div>
-						{/if}
-					</li>
-				{/each}
-			</ol>
+						{/snippet}
+						<li class="bar" data-testid="bar-row" style="--tile-color:{tileColor(tile)}">
+							{#if tile.zoomable}
+								<button
+									type="button"
+									class="bar__body bar__body--open"
+									aria-label={label}
+									onclick={() => {
+										focus = tile.id;
+										onopen?.(tile.id);
+									}}>{@render barRow()}</button
+								>
+							{:else if changeable}
+								<div class="bar__body" role="group" aria-label={label}>{@render barRow()}</div>
+							{:else}
+								<div class="bar__body" role="img" aria-label={label}>{@render barRow()}</div>
+							{/if}
+						</li>
+					{/each}
+				</ol>
+			{/snippet}
+			{#each sections as section (section.id)}
+				{#if section.group}
+					<section class="bars-group" aria-labelledby="bars-group-{section.id}">
+						<h3 class="bars-group__title" id="bars-group-{section.id}">
+							{section.group.label[locale]}
+							<span class="bars-group__total">{formatEuro(groupTotal(section.id), locale)}</span>
+						</h3>
+						{@render barList(section.tiles)}
+					</section>
+				{:else if section.tiles.length > 0}
+					{@render barList(section.tiles)}
+				{/if}
+			{/each}
 		{:else}
 			{#each tiles as tile (tile.id)}
 				{@const label = `${tile.label[locale]}, ${formatEuro(tile.eurMillion, locale)}`}
@@ -347,6 +387,9 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 						{...tipEvents(tile)}
 					>
 						{#if hasRoom(tile)}
+							{#if tile.group}
+								<span class="tile__group">{groupsById.get(tile.group)?.short[locale]}</span>
+							{/if}
 							<span class="tile__name">{tile.label[locale]}</span>
 							<span class="tile__amount">{formatEuro(tile.eurMillion, locale)}</span>
 						{/if}
@@ -401,6 +444,14 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 					</div>
 				{/if}
 			{/each}
+			{#each groupBoxes as box (box.id)}
+				<span
+					class="group-box"
+					data-testid="group-box"
+					aria-hidden="true"
+					style={position(box, frame)}
+				></span>
+			{/each}
 			{#if tip}
 				{@const percent = percentOf(tip.id, tip.eurMillion)}
 				<div class="tile-tip" role="tooltip" style={tipStyle(tip)}>
@@ -417,6 +468,17 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 			{/if}
 		{/if}
 	</div>
+
+	{#if groupBoxes.length > 0 && !portrait}
+		<ul class="groups" aria-label={t('map.groupsLabel')}>
+			{#each groupBoxes as box (box.id)}
+				<li class="groups__item">
+					<strong>{groupsById.get(box.id)?.label[locale]}</strong>
+					<span class="groups__total">{formatEuro(groupTotal(box.id), locale)}</span>
+				</li>
+			{/each}
+		</ul>
+	{/if}
 
 	{#if shownThemes.length > 0}
 		<ul class="legend" aria-label={t('map.legendLabel')}>
@@ -538,6 +600,79 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 		border: 1px solid var(--rule);
 		font-size: var(--text-sm);
 		font-style: italic;
+	}
+
+	/* A frame around the governments the Planning Bureau reports together; it lets clicks through to the tiles. */
+	.group-box {
+		position: absolute;
+		box-sizing: border-box;
+		border: 3px solid var(--ink);
+		pointer-events: none;
+	}
+
+	/* The group a government belongs to, in small capitals above its name. */
+	.tile__group {
+		display: block;
+		color: var(--ink-muted);
+		font-size: 0.6875rem;
+		font-weight: 700;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+	}
+
+	.groups {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-1) var(--space-4);
+		margin: var(--space-2) 0 0;
+		padding: 0;
+		list-style: none;
+		font-size: var(--text-sm);
+	}
+
+	.groups__item {
+		display: flex;
+		align-items: center;
+		gap: var(--space-2);
+	}
+
+	.groups__item::before {
+		content: '';
+		width: 0.875rem;
+		height: 0.875rem;
+		border: 3px solid var(--ink);
+		box-sizing: border-box;
+	}
+
+	.groups__total {
+		color: var(--ink-muted);
+	}
+
+	.bars-group + .bars-group {
+		margin-top: var(--space-4);
+	}
+
+	.bars-group__title {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		gap: var(--space-1) var(--space-2);
+		margin: 0 0 var(--space-2);
+		padding-bottom: var(--space-1);
+		border-bottom: 3px solid var(--ink);
+		font-size: var(--text-base);
+	}
+
+	.bars-group__total {
+		color: var(--ink-muted);
+		font-weight: 400;
+	}
+
+	.map__entity-note {
+		max-width: var(--measure);
+		margin: 0 0 var(--space-2);
+		color: var(--ink-muted);
+		font-size: var(--text-sm);
 	}
 
 	/* Spending or revenue: two buttons joined into one switch; the chosen one is filled. */
