@@ -1,0 +1,45 @@
+{
+	"line": "wallonia.recovery-plan",
+	"effects": {
+		"cut": [
+			{
+				"nl": "minder openbare woningen gerenoveerd of gebouwd",
+				"fr": "moins de logements publics rénovés ou créés",
+				"en": "fewer public homes renovated or built"
+			},
+			{
+				"nl": "minder nieuwe plaatsen in de kinderopvang",
+				"fr": "moins de nouvelles places d'accueil petite enfance",
+				"en": "fewer new childcare places"
+			},
+			{
+				"nl": "tragere vergroening van de TEC-busvloot",
+				"fr": "un verdissement plus lent de la flotte TEC",
+				"en": "slower greening of the TEC bus fleet"
+			}
+		],
+		"add": [
+			{
+				"nl": "meer openbare woningen gerenoveerd of gebouwd",
+				"fr": "plus de logements publics rénovés ou créés",
+				"en": "more public homes renovated or built"
+			},
+			{
+				"nl": "meer nieuwe plaatsen in de kinderopvang",
+				"fr": "plus de nouvelles places d'accueil petite enfance",
+				"en": "more new childcare places"
+			},
+			{
+				"nl": "snellere vergroening van de TEC-busvloot",
+				"fr": "un verdissement plus rapide de la flotte TEC",
+				"en": "faster greening of the TEC bus fleet"
+			}
+		],
+		"ref": {
+			"source": "wal-aju-2026-ep-mp-budget",
+			"locator": "Annexe 2, programme 10.122 table (PDF p. 63-65), 'Objectifs du programme' (PDF p. 65) and commentary DF 122.001-122.074 (PDF p. 65-66)",
+			"quote": "Ce programme est destiné à couvrir les dépenses des projets repris dans le Plan de relance de la Wallonie et la Facilité pour la relance et la résilience européen (FRR) – y compris les projets RePOWER EU. | Ce crédit est destiné à financer les projets du Plan de relance de la Wallonie.",
+			"note": "Programme 10.122 is mostly provisions (DF 122.001 PRW, DF 122.002 FRR) held by the Minister-President and moved during the year to the 10.122 lines of each minister as projects are carried out (Doc. 591 (2025-2026) N° 1 annexe 7 – Exposé particulier, Ministre du Tourisme, du Patrimoine et de la Petite enfance (https://nautilus.parlement-wallon.be/Archives/2025_2026/BUDGET/bud37.pdf) PDF p. 20: 'les crédits sont alimentés en cours d'exercice par reventilations de crédits, au départ des provisions constituées à cet effet sur les crédits du Ministre-Président'); the budget does not say which projects a change would hit. The three phrases rest only on 2026 documents that name current recovery-plan projects: (1) public housing, wal-aju-2026-ep-energie-logement, SWL budget 'Programme 99 - Plan de Relance de la Wallonie', PDF p. 59 ('Augmenter la création de logements d'intérêt public via le PPP PRW 243'; 'augmentation de l'offre de logements publics rénovation PRW-251') and PDF p. 64 (zero-rate advances to SLSP, PRW-251); (2) childcare places, Doc. 591 (2025-2026) N° 1 annexe 7 – Exposé particulier, Ministre du Tourisme, du Patrimoine et de la Petite enfance (https://nautilus.parlement-wallon.be/Archives/2025_2026/BUDGET/bud37.pdf) PDF p. 20-21 ('Lancer un appel à projet pour la création de places supplémentaires, suivi et création effective des places', project 255, Plan Equilibre, see also PDF p. 3); (3) TEC bus fleet, wal-aju-2026-ep-territoire-mobilite, OTW budget PDF p. 116 ('Greening the bus fleet - Interventions UE (Projet PRW 323)') and PDF p. 131-132 ('Verdir la flotte des bus'). The former phrases on flood repair of roads and riverbanks (Plan de relance de la Wallonie (https://www.wallonie.be/fr/plans-wallons/plan-de-relance-de-la-wallonie) page, an undated portal page describing the 2021 reorientation), on energy renovation of public housing and on public buildings and training centres (2022 joint declaration) were dropped: no 2026 budget document found ties current 10.122 spending to them, and the plan was later tightened ('exercice de resserrage du plan', PDF p. 65). Part of the line is financed by the EU Recovery and Resilience Facility: cutting EU-financed projects can mean losing EU money rather than saving regional money. DF 122.003 'Préfinancement dans le cadre de la FRR' is described as a bookkeeping double entry of EU money ('Ces crédits ne seront pas utilisés en 2026', PDF p. 66), and its table figure (PDF p. 63) differs from its commentary figure; see notes. Also contains a small 'Réserve Ukraine' (DF 122.074), mainly for reception of Ukrainian nationals. corrected: Point 2: replaced all three phrases. The flood-repair phrase rested only on the undated wallonie.be page about the 2021 reorientation, and the housing-energy and public-buildings/training-centres phrases rested only on the 2022 declaration; no 2026 budget document ties current 10.122 spending to them. New phrases (public housing renovated or built, new childcare places, greening of the TEC bus fleet) each rest on a named 2026 recovery-plan project in the 2026 adjustment annexes (pages in caveat). Main source changed to the programme's own page in wal-aju-2026-ep-mp-budget (PDF p. 65); the 2022 declaration source was removed from 'sources' because nothing cites it now. Flagged DF 122.003 (bookkeeping prefinancing entry 'not used in 2026') for the project owner."
+		}
+	}
+}

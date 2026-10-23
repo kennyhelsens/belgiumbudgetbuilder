@@ -1,0 +1,55 @@
+{
+	"line": "wallonia.economy-research",
+	"effects": {
+		"cut": [
+			{
+				"nl": "kleinere investeringspremies voor bedrijven",
+				"fr": "des primes à l'investissement plus faibles",
+				"en": "smaller investment grants for businesses"
+			},
+			{
+				"nl": "minder gewestelijke leningen, waarborgen en participaties voor bedrijven",
+				"fr": "moins de prêts, garanties et participations régionaux aux entreprises",
+				"en": "fewer regional loans, guarantees and stakes in firms"
+			},
+			{
+				"nl": "minder onderzoekssubsidies voor bedrijven en onderzoekscentra",
+				"fr": "moins de subsides de recherche aux entreprises et centres",
+				"en": "less research funding for companies and research centres"
+			},
+			{
+				"nl": "minder geld voor de inrichting van bedrijventerreinen",
+				"fr": "moins de moyens pour aménager les parcs d'activités économiques",
+				"en": "less money to equip business parks"
+			}
+		],
+		"add": [
+			{
+				"nl": "grotere investeringspremies voor bedrijven",
+				"fr": "des primes à l'investissement plus élevées",
+				"en": "larger investment grants for businesses"
+			},
+			{
+				"nl": "meer gewestelijke leningen, waarborgen en participaties voor bedrijven",
+				"fr": "plus de prêts, garanties et participations régionaux aux entreprises",
+				"en": "more regional loans, guarantees and stakes in firms"
+			},
+			{
+				"nl": "meer onderzoekssubsidies voor bedrijven en onderzoekscentra",
+				"fr": "plus de subsides de recherche aux entreprises et centres",
+				"en": "more research funding for companies and research centres"
+			},
+			{
+				"nl": "meer geld voor de inrichting van bedrijventerreinen",
+				"fr": "plus de moyens pour aménager les parcs d'activités économiques",
+				"en": "more money to equip business parks"
+			}
+		],
+		"ref": {
+			"source": "wal-aju-2026-ep-economie-emploi",
+			"locator": "Annexe 4, programme 18.096 'Entreprises – Aides à l'investissement' table (PDF p. 19), programme 18.097 'Entreprises - Outils économiques et financiers' table (PDF p. 21), programme 18.114 'Recherche' table (PDF p. 56); business parks: annexe 3 (wal-aju-2026-ep-territoire-mobilite), programme 18.098 'Zones d'activités économiques' table and objective (PDF p. 53-56, quote p. 55)",
+			"quote": "Primes à l'investissement en application du décret du 11 mars 2004 relatif aux incitants régionaux en faveur des petites ou moyennes entreprises | Moyens d'actions - prêts et garanties - à l'outil régional ayant pour but la consolidation et le développement des entreprises wallonnes - prise de participation | Subventions octroyées en application du décret du 3 juillet 2008 – Entreprises | Subventions octroyées en application du décret du 3 juillet 2008 - Centres de recherche",
+			"note": "The business-parks phrase is grounded in a second document: programme 18.098 is not in annexe 4 (bud35) but in annexe 3, wal-aju-2026-ep-territoire-mobilite (bud34), PDF p. 53-56; objective, PDF p. 55: 'la Région wallonne mène également une politique d'accueil pour les entreprises qui désirent s'installer dans les parcs d'activités économiques reconnus. A cet effet, elle subventionne les aménagements et les infrastructures à construire à l'intérieur de ces parcs, les voiries, l'évacuation des eaux usées et pluviales [...]'. A reform ('Stratégie ZAE 2050', PDF p. 56) is pending; the 2026 credits are set at unchanged rules, and part of 18.098 is a fixed annual charge for past alternative financing (DF 098.009). Loans, guarantees and equity stakes are channelled through the regional economic tool group (Wallonie Entreprendre); much of that is financial transactions rather than grants, and programme 18.097 also funds the group's running costs, Wallimage and SPAQuE. Investment grants and research subsidies are multi-year: payments in a given year largely follow decisions already taken, so a change mostly affects new files. Also includes Digital Wallonia (18.115), EU structural-fund co-financing (18.100) and the research fund (18.118). corrected: quotes and pages confirmed in bud35. Point 3: business parks are not in bud35, but programme 18.098 is detailed in bud34 (PDF p. 53-56) with an explicit objective (subsidising roads, drainage and other infrastructure inside recognised business parks), so the phrase is kept, reworded from 'fewer new business parks developed' to 'less money to equip business parks' to match what the credits pay; locator and caveat now cite bud34 with pages. FR phrases 1 and 3 shortened. Kept four phrases: each is a separate programme of comparable size."
+		}
+	}
+}

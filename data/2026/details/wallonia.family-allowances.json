@@ -35,5 +35,57 @@
 				}
 			}
 		}
-	]
+	],
+	"effects": {
+		"cut": [
+			{
+				"nl": "een lagere maandelijkse kinderbijslag",
+				"fr": "des allocations familiales mensuelles plus basses",
+				"en": "a lower monthly family allowance"
+			},
+			{
+				"nl": "een lagere sociale toeslag bij een laag gezinsinkomen",
+				"fr": "un supplément social plus bas pour les bas revenus",
+				"en": "a smaller social supplement for low-income families"
+			},
+			{
+				"nl": "een lagere jaarlijkse schoolpremie",
+				"fr": "une prime scolaire annuelle plus basse",
+				"en": "a lower annual school bonus"
+			},
+			{
+				"nl": "een lagere geboorte- of adoptiepremie",
+				"fr": "une prime de naissance ou d'adoption plus basse",
+				"en": "a lower birth or adoption grant"
+			}
+		],
+		"add": [
+			{
+				"nl": "een hogere maandelijkse kinderbijslag",
+				"fr": "des allocations familiales mensuelles plus élevées",
+				"en": "a higher monthly family allowance"
+			},
+			{
+				"nl": "een hogere sociale toeslag bij een laag gezinsinkomen",
+				"fr": "un supplément social plus élevé pour les bas revenus",
+				"en": "a larger social supplement for low-income families"
+			},
+			{
+				"nl": "een hogere jaarlijkse schoolpremie",
+				"fr": "une prime scolaire annuelle plus élevée",
+				"en": "a higher annual school bonus"
+			},
+			{
+				"nl": "een hogere geboorte- of adoptiepremie",
+				"fr": "une prime de naissance ou d'adoption plus élevée",
+				"en": "a higher birth or adoption grant"
+			}
+		],
+		"ref": {
+			"source": "famiwal-resume-montants",
+			"locator": "famiwal.be 'Résumé des montants' (Dernière modification: 10/09/2026): sections 'Primes uniques', 'Allocations familiales de base', 'Supplément d'âge annuel' and 'Les suppléments suivant votre situation' (the site menu names the annual age supplement 'Votre supplément d'âge annuel (Prime scolaire)')",
+			"quote": "Prime de naissance ou d'adoption/enfant | Allocations familiales de base | Supplément d'âge annuel | A côté des montants de base, vous êtes susceptibles de recevoir un ou des suppléments suivant votre situation et/ou vos revenus. | Vous pouvez prétendre à un supplément social si vos revenus ne dépassent pas ou sont égaux [...]",
+			"note": "Entitlement line: the amounts are set by the decree of 8 February 2018 on the management and payment of family benefits ('Décret du 08 février 2018 relatif à la gestion et au paiement des prestations familiales', cited as legal basis in wal-aju-2026-ep-sante, DF 093.023, PDF p. 80) and its implementing orders, and are indexed. The appropriation follows those rules and AViQ's estimates ('Ce crédit est destiné à couvrir la charge des allocations familiales réajusté en fonction des derniers facteurs d'actualisations calculés par l'AVIQ', same page); none of the four phrases can happen through the appropriation alone, only through a change to the decree or its orders, and how any change would be split across the parts is a political choice. The four phrases name the four parts listed on the Famiwal page: basic monthly allowance, social supplement (the 'supplément social' for incomes under a ceiling), annual age supplement ('prime scolaire') and birth/adoption grant. Other supplements (single-parent and large families, orphans, children with a disability or illness, long-term illness of the parent) exist on the same page. Allowances are paid by Famiwal and by private funds under the same rules; the private funds' fees (DF 093.024) and Famiwal's operating grant (DF 093.008) sit in the health/social line. corrected: source and quote confirmed on famiwal.be (last modified 10/09/2026) and the appropriation text in wal-aju-2026-ep-sante p. 80. Point 4: kept all four parts (each is a distinct, sourced part of the benefit) but reworded neutrally as the amount of each part ('a lower monthly family allowance' etc.), dropped the redundant 'per child', used 'family allowance' in EN to match the line label, used Famiwal's term 'supplément social' in FR/EN and dropped 'modestes'; caveat now names the decree with its full title and page and states plainly that none of the changes follows from the appropriation alone."
+		}
+	}
 }

@@ -1,0 +1,55 @@
+{
+	"line": "wallonia.housing-territory-energy",
+	"effects": {
+		"cut": [
+			{
+				"nl": "minder renovatiepremies voor woningen, ook via Rénopack",
+				"fr": "moins de primes à la rénovation, dont Rénopack",
+				"en": "fewer home renovation grants, incl. via Rénopack"
+			},
+			{
+				"nl": "minder steun voor de sociale huisvestingsmaatschappijen",
+				"fr": "moins de soutien aux sociétés de logement de service public",
+				"en": "less support for social housing companies"
+			},
+			{
+				"nl": "minder steun voor energiebesparing",
+				"fr": "moins d'aides aux économies d'énergie",
+				"en": "less support for energy saving"
+			},
+			{
+				"nl": "minder geld voor de restauratie van beschermde monumenten",
+				"fr": "moins de moyens pour restaurer les monuments classés",
+				"en": "less money to restore listed monuments"
+			}
+		],
+		"add": [
+			{
+				"nl": "meer renovatiepremies voor woningen, ook via Rénopack",
+				"fr": "plus de primes à la rénovation, dont Rénopack",
+				"en": "more home renovation grants, incl. via Rénopack"
+			},
+			{
+				"nl": "meer steun voor de sociale huisvestingsmaatschappijen",
+				"fr": "plus de soutien aux sociétés de logement de service public",
+				"en": "more support for social housing companies"
+			},
+			{
+				"nl": "meer steun voor energiebesparing",
+				"fr": "plus d'aides aux économies d'énergie",
+				"en": "more support for energy saving"
+			},
+			{
+				"nl": "meer geld voor de restauratie van beschermde monumenten",
+				"fr": "plus de moyens pour restaurer les monuments classés",
+				"en": "more money to restore listed monuments"
+			}
+		],
+		"ref": {
+			"source": "wal-aju-2026-ep-energie-logement",
+			"locator": "Annexe 8, Introduction (PDF p. 3); programme 16.080 table, rows DF 80.028 / 80.073 'Primes aux particuliers pour la réhabilitation, la restructuration ou l'acquisition de logements' (PDF p. 27); DF 084.013 'Primes liées au Rénopack' (PDF p. 41-42, quote p. 42); DF 080.067 'Subventions à la SWL pour l'aide aux SLSP' (PDF p. 31-32)",
+			"quote": "Primes aux particuliers pour la réhabilitation, la restructuration ou l'acquisition de logements | Ce crédit est notamment destiné aux remboursements des primes préfinancée par la SWCS et le FLW dans le cadre de la production de Rénopacks. | Un montant complémentaire de 600.000 euros est alloué à la SWL pour couvrir le fonctionnement des SLSP. | 4.571.000 € viennent renforcer le Fonds énergie pour l’année 2026 afin d’agir sur la maitrise de la demande énergétique tant des entreprises que des ménages.",
+			"note": "The heritage phrase is grounded in a second document, Doc. 591 (2025-2026) N° 1 annexe 7 – Exposé particulier, Ministre du Tourisme, du Patrimoine et de la Petite enfance (https://nautilus.parlement-wallon.be/Archives/2025_2026/BUDGET/bud37.pdf): programme 16.082 'Monuments, sites et fouilles', subsidy to the Agence wallonne du Patrimoine (PDF p. 15), and AWaP A.B. 63.02 'Ce crédit est destiné à couvrir tous les actes et les travaux de restauration des parties classées des monuments' (PDF p. 25; it concerns monuments owned by public bodies under framework agreements). The energy phrase rests on the introduction (PDF p. 3) and on the Fonds Énergie, whose revenue goes 'par priorité' to 'primes et mesures destinées à favoriser l'utilisation rationnelle de l'énergie' (PDF p. 44); programme 16.083 'Energie' is small. Part of the renovation grants is financed by the EU recovery facility (DF 80.073 'PNRR - Primes...'). Rénopack combines zero-interest loans and grants from SWCS and the Fonds du Logement; the budget pays the grants they prefinanced and their management fee, not the loans, so the phrase names grants only. Programme 16.081 'Logement : financement des plans d'investissement' (public housing investment) is not detailed in this annex. Also includes spatial planning and the 'habitat permanent' plan (16.078), urban renewal (16.079) and the waiting allowance for social-housing candidates (DF 080.011). corrected: quotes confirmed in bud38 and bud37; fixed pages (Rénopack DF 084.013 is PDF p. 41-42, SWL aid p. 31-32). Phrase 1 no longer says 'Rénopack loans', because the budget pays the Rénopack grants, not the loans. Energy phrase shortened in all three languages (FR was 11 words). Kept four phrases because each matches a part of the line label (housing x2, energy, heritage). Caveat names the second documents with pages. The social-housing FR phrase stays at ten words to keep the official name (sociétés de logement de service public)."
+		}
+	}
+}

@@ -423,5 +423,45 @@
 		"url": "https://www.dekamer.be/FLWB/PDF/56/1281/56K1281022.pdf",
 		"published": "2026-01-28",
 		"retrieved": "2026-10-23"
+	},
+	{
+		"id": "wal-aju-2026-budget-uap",
+		"title": "Doc. 591 (2025-2026) N° 1 annexe 10 – Projets de décret contenant le premier ajustement des budgets 2026 – Budget des Unités d'administration publique (FOREm, AViQ, AwAC, EAP, APAQ-W)",
+		"publisher": "Parlement de Wallonie / Gouvernement wallon",
+		"url": "https://nautilus.parlement-wallon.be/Archives/2025_2026/BUDGET/bud42.pdf",
+		"published": "2026-05-29",
+		"retrieved": "2026-10-23"
+	},
+	{
+		"id": "wal-aju-2026-ep-economie-emploi",
+		"title": "Doc. 591 (2025-2026) N° 1 annexe 4 – Exposé particulier, Ministre de l'Économie, de l'Industrie, de l'Emploi, de la Formation, de la Recherche et du Numérique",
+		"publisher": "Parlement de Wallonie / Gouvernement wallon",
+		"url": "https://nautilus.parlement-wallon.be/Archives/2025_2026/BUDGET/bud35.pdf",
+		"published": "2026-05-29",
+		"retrieved": "2026-10-23"
+	},
+	{
+		"id": "wal-aju-2026-ep-territoire-mobilite",
+		"title": "Doc. 591 (2025-2026) N° 1 annexe 3 – Exposé particulier, Ministre du Territoire, des Infrastructures, de la Mobilité et des Pouvoirs locaux",
+		"publisher": "Parlement de Wallonie / Gouvernement wallon",
+		"url": "https://nautilus.parlement-wallon.be/Archives/2025_2026/BUDGET/bud34.pdf",
+		"published": "2026-05-29",
+		"retrieved": "2026-10-23"
+	},
+	{
+		"id": "wal-aju-2026-ep-energie-logement",
+		"title": "Doc. 591 (2025-2026) N° 1 annexe 8 – Exposé particulier, Ministre de l'Énergie, du Plan Air-Climat, du Logement et des Aéroports",
+		"publisher": "Parlement de Wallonie / Gouvernement wallon",
+		"url": "https://nautilus.parlement-wallon.be/Archives/2025_2026/BUDGET/bud38.pdf",
+		"published": "2026-05-29",
+		"retrieved": "2026-10-23"
+	},
+	{
+		"id": "wal-aju-2026-ep-agriculture",
+		"title": "Doc. 591 (2025-2026) N° 1 annexe 9 – Exposé particulier, Ministre de l'Agriculture et de la Ruralité",
+		"publisher": "Parlement de Wallonie / Gouvernement wallon",
+		"url": "https://nautilus.parlement-wallon.be/Archives/2025_2026/BUDGET/bud39.pdf",
+		"published": "2026-05-29",
+		"retrieved": "2026-10-23"
 	}
 ]
