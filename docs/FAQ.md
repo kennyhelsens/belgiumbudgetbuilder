@@ -171,10 +171,12 @@ the National Bank use, grouped into themes a reader recognises:
   the EU contribution, administration and grants to other governments
 
 On the revenue map, colour says only one thing: which level of government
-collects the money. Each tile takes the colour of the level that collects
-most of it, and a strip under its amount shows the full split (see "Who
-collects each type of revenue?"). Imputed social contributions, which cannot
-be changed, are neutral.
+collects the money. There are three: the federal level (the federal
+government and social security together, as on the spending map), the
+communities and regions, and local government. Each tile takes the colour of
+the level that collects most of it, and a strip under its amount shows the
+full split (see "Who collects each type of revenue?"). Imputed social
+contributions, which cannot be changed, are neutral.
 
 Two more have neutral colours:
 
@@ -406,10 +408,11 @@ it (§4.23, §4.80 and §4.132) book these items the same way.
 ### Who collects each type of revenue?
 
 Each revenue tile has the colour of the level that collects most of it, and
-a strip under its amount and a list on its card show the full split. The amounts come from the Planning Bureau's account
-of each level (June 2026, column 2026): Table D.2 for the federal government
-(p. 60), D.3 for the communities and regions (p. 61), D.5 for local
-government (p. 63) and D.6 for social security (p. 64). In € million:
+a strip under its amount and a list on its card show the full split. The
+amounts come from the Planning Bureau's account of each level (June 2026,
+column 2026): Table D.2 for the federal government (p. 60), D.3 for the
+communities and regions (p. 61), D.5 for local government (p. 63) and D.6
+for social security (p. 64). In € million:
 
 | Type                                                                | Federal | Communities and regions | Local | Social security |
 | ------------------------------------------------------------------- | ------: | ----------------------: | ----: | --------------: |
@@ -422,6 +425,14 @@ government (p. 63) and D.6 for social security (p. 64). In € million:
 | Sales of goods and services (fees and charges)                      |   5,508 |                   9,947 | 5,013 |             713 |
 | Property income (interest, dividends)                               |   2,832 |                   1,804 | 1,128 |             347 |
 | Transfers and subsidies received (incl. fines)                      |   2,209 |                   3,640 | 1,089 |             174 |
+
+On the map, the federal government and social security count together as
+the federal level, in one colour: social security has its own budget and is
+run together with the organisations of employers and workers, but its
+contributions and benefits are set by federal law, so they fall under federal
+policy (see "Isn't social security part of the federal government?"). Social
+contributions are therefore federal-level blue. The card still lists the two
+separately, as in the table above.
 
 This is who **collects** the money, not who finally spends it. The federal
 government, for example, collects VAT and personal income tax and passes a

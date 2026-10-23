@@ -6,7 +6,7 @@ ABOUTME: words and without numbers, from that type's sourced effects, and which 
 	import type { Dataset, RevenueType } from '../data/schema.ts';
 	import type { Locale } from '../i18n/locales.ts';
 	import { translate, type MessageKey } from '../i18n/translate.ts';
-	import { levelColor } from '../explorer/colors.ts';
+	import { levelColor, mapLevel, mergeLevels } from '../explorer/colors.ts';
 	import { formatEuro } from '../explorer/format.ts';
 
 	let {
@@ -24,7 +24,17 @@ ABOUTME: words and without numbers, from that type's sourced effects, and which 
 		type.effects && data.sources.find((s) => s.id === type.effects?.ref.source)
 	);
 	const titleId = $derived(`revenue-card-${type.id.replace(/\W/g, '-')}`);
-	const levels = $derived(type.byLevel?.amounts ?? []);
+	const amounts = $derived(type.byLevel?.amounts ?? []);
+	// The levels on the map, with the federal government and social security as their own lines under the federal level.
+	const levels = $derived(
+		mergeLevels(amounts).map((merged) => ({
+			...merged,
+			parts:
+				merged.level === 'federal-level'
+					? amounts.filter((a) => mapLevel(a.level) === 'federal-level')
+					: []
+		}))
+	);
 </script>
 
 <section class="card" aria-labelledby={titleId}>
@@ -51,10 +61,22 @@ ABOUTME: words and without numbers, from that type's sourced effects, and which 
 	{#if levels.length > 0}
 		<h4 id="{titleId}-levels">{t('map.levelsLabel')}</h4>
 		<ul class="levels" aria-label={t('map.levelsLabel')}>
-			{#each levels as { level, amount } (level)}
+			{#each levels as { level, eurMillion, parts } (level)}
 				<li style="--level-color:{levelColor(level)}">
-					<span class="levels__name">{t(`level.${level}` as MessageKey)}</span>
-					<span class="levels__amount">{formatEuro(amount.eurMillion, locale)}</span>
+					<span class="levels__row">
+						<span class="levels__name">{t(`level.${level}` as MessageKey)}</span>
+						<span class="levels__amount">{formatEuro(eurMillion, locale)}</span>
+					</span>
+					{#if parts.length > 1}
+						<ul class="levels__parts">
+							{#each parts as part (part.level)}
+								<li>
+									<span class="levels__name">{t(`level.${part.level}` as MessageKey)}</span>
+									<span class="levels__amount">{formatEuro(part.amount.eurMillion, locale)}</span>
+								</li>
+							{/each}
+						</ul>
+					{/if}
 				</li>
 			{/each}
 		</ul>
@@ -110,18 +132,27 @@ ABOUTME: words and without numbers, from that type's sourced effects, and which 
 		font-size: var(--text-sm);
 	}
 
-	.levels li {
+	.levels__row,
+	.levels__parts li {
 		display: flex;
 		align-items: center;
 		gap: var(--space-2);
 	}
 
-	.levels li::before {
+	.levels__row::before {
 		content: '';
 		flex: none;
 		width: 0.75rem;
 		height: 0.75rem;
 		background: var(--level-color);
+	}
+
+	/* The federal government and social security, under the federal level they make up together. */
+	.levels__parts {
+		margin: 2px 0 0;
+		padding: 0 0 0 calc(0.75rem + var(--space-2));
+		list-style: none;
+		color: var(--ink-muted);
 	}
 
 	.levels__amount {
