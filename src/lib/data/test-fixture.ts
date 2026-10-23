@@ -121,7 +121,8 @@ export function datasetFixture(): Dataset {
 							id: 'federal.justice',
 							label: { nl: 'Justitie', fr: 'Justice', en: 'Justice' },
 							amount: { eurMillion: 40, ref: ref('p. 11') },
-							nature: 'discretionary'
+							nature: 'discretionary',
+							theme: 'security'
 						},
 						{
 							id: 'federal.socsec-subsidy',

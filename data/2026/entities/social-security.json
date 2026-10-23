@@ -35,7 +35,8 @@
 					}
 				},
 				"nature": "entitlement",
-				"ageingGroup": "pensions"
+				"ageingGroup": "pensions",
+				"theme": "social-protection"
 			},
 			{
 				"id": "social-security.selfemployed-pensions",
@@ -53,7 +54,8 @@
 					}
 				},
 				"nature": "entitlement",
-				"ageingGroup": "pensions"
+				"ageingGroup": "pensions",
+				"theme": "social-protection"
 			},
 			{
 				"id": "social-security.healthcare",
@@ -71,7 +73,8 @@
 					}
 				},
 				"nature": "entitlement",
-				"ageingGroup": "health"
+				"ageingGroup": "health",
+				"theme": "health"
 			},
 			{
 				"id": "social-security.incapacity",
@@ -89,7 +92,8 @@
 						"note": "14,839,393 (employees) + 1,064,629 (self-employed) = 15,904,022 thousand EUR"
 					}
 				},
-				"nature": "entitlement"
+				"nature": "entitlement",
+				"theme": "social-protection"
 			},
 			{
 				"id": "social-security.unemployment",
@@ -106,7 +110,8 @@
 						"quote": "Werkloosheid 6.486.013 4.637.921 4.836.419 198.497 4,28 % -1.649.595 -25,43 % Chômage"
 					}
 				},
-				"nature": "entitlement"
+				"nature": "entitlement",
+				"theme": "social-protection"
 			},
 			{
 				"id": "social-security.work-accidents-occupational-diseases",
@@ -124,7 +129,8 @@
 						"note": "339,545 + 207,174 = 546,719 thousand EUR"
 					}
 				},
-				"nature": "entitlement"
+				"nature": "entitlement",
+				"theme": "social-protection"
 			},
 			{
 				"id": "social-security.administration",
@@ -142,7 +148,8 @@
 						"note": "1,487,054 + 163,001 + 1,238,421 = 2,888,476 thousand EUR (includes 'Diensten derden', mainly administration costs paid to mutualities/payment bodies)"
 					}
 				},
-				"nature": "committed"
+				"nature": "committed",
+				"theme": "social-protection"
 			},
 			{
 				"id": "social-security.contribution-reductions-esa",
@@ -160,7 +167,8 @@
 						"note": "Accounting item: targeted employer contribution reductions that ESA 2010 records as spending rather than as lower contributions (848,383 federal, 309,385 financed by federated entities)."
 					}
 				},
-				"nature": "committed"
+				"nature": "committed",
+				"theme": "economy"
 			},
 			{
 				"id": "social-security.equilibrium-grant-repayment",
@@ -195,7 +203,8 @@
 						"note": "total 122,783.866 minus listed lines = 4151.697 M EUR. Composition (thousand EUR): employees' GB: other external transfers 2,047,173 (= 3,204,941 'Externe overdrachten' in Tabel I.2 minus 1,157,768 contribution reductions; recipients not itemised), misc. spending 249,018 (796,529 minus the 547,511 repayment), interest 19,348, payment costs 2,278, miners/seamen benefits 7,894, capital expenditure 62,133; self-employed GB: bridging right 16,741, carers' allowance 6,638, misc. 39,918, interest 7,692, external transfers 4,212, payment costs 360; healthcare: misc. spending 1,660,424, external transfers 24,970, EU recovery plan 2,900. Components sum to 4,151,699 (2 thousand EUR rounding difference)."
 					}
 				},
-				"nature": "committed"
+				"nature": "committed",
+				"theme": "social-protection"
 			},
 			{
 				"id": "social-security.civil-service-pensions",
@@ -214,7 +223,8 @@
 					}
 				},
 				"nature": "entitlement",
-				"ageingGroup": "pensions"
+				"ageingGroup": "pensions",
+				"theme": "social-protection"
 			},
 			{
 				"id": "social-security.other-schemes",
@@ -232,7 +242,8 @@
 						"note": "Schemes outside the two global managements: Fedris capitalisation and asbestos funds, Fedris public-sector occupational diseases, former Overseas Social Security, RVA/ONEM career-break missions for the public sector, Medical Accidents Fund, war and terror victims."
 					}
 				},
-				"nature": "entitlement"
+				"nature": "entitlement",
+				"theme": "social-protection"
 			}
 		]
 	},

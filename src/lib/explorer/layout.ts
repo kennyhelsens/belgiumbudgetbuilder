@@ -16,6 +16,8 @@ export type Tile = {
 	zoomable: boolean;
 	/** False for a line no budget decision can change, such as interest on debt. */
 	adjustable: boolean;
+	/** What a line pays for, which sets its colour; governments have none. */
+	theme?: Line['theme'];
 };
 
 type Item = Omit<Tile, 'x0' | 'y0' | 'x1' | 'y1'>;
@@ -64,7 +66,8 @@ function linesOf(data: Dataset, entityId: string): Item[] {
 			label: line.label,
 			eurMillion: line.amount.eurMillion,
 			zoomable: false,
-			adjustable: line.adjustable !== false
+			adjustable: line.adjustable !== false,
+			theme: line.theme
 		}));
 }
 

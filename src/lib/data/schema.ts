@@ -46,6 +46,24 @@ const signedAmountSchema = z.object({
  */
 export const natureSchema = z.enum(['entitlement', 'committed', 'discretionary']);
 
+/**
+ * What a line pays for, for its colour on the map: eight groups after the COFOG functions of government
+ * (Eurostat's classification by purpose), plus interest on debt, and local spending, which is split by type
+ * of spending rather than purpose.
+ */
+export const themeSchema = z.enum([
+	'social-protection',
+	'health',
+	'education',
+	'security',
+	'economy',
+	'environment',
+	'culture',
+	'general',
+	'debt',
+	'by-type'
+]);
+
 /** Parts of the official cost of ageing that have their own projected path. */
 export const ageingGroupSchema = z.enum(['pensions', 'health']);
 
@@ -75,6 +93,8 @@ const lineSchema = z.object({
 	 * and interest rates (the outlook calculates it). Lines are adjustable unless stated.
 	 */
 	adjustable: z.boolean().optional(),
+	/** What the line pays for; required for every line that takes space on the map (all but transfers). */
+	theme: themeSchema.optional(),
 	note: localized.optional()
 });
 

@@ -1,7 +1,7 @@
-// ABOUTME: Tests that every government keeps one fixed colour slot, so colours never shift when the view changes.
-// ABOUTME: Slots follow the validated categorical palette order in global.css.
+// ABOUTME: Tests that every government keeps one fixed colour slot, so colours never shift when the view changes, and that
+// ABOUTME: each theme of spending has its own colour. Slots follow the validated categorical palette order in global.css.
 import { describe, expect, it } from 'vitest';
-import { colorSlot } from './colors.ts';
+import { colorSlot, THEMES, themeColor } from './colors.ts';
 
 const GOVERNMENTS = [
 	'federal',
@@ -30,5 +30,21 @@ describe('colorSlot', () => {
 
 	it('refuses an unknown government instead of inventing a colour', () => {
 		expect(() => colorSlot('atlantis')).toThrow('atlantis');
+	});
+});
+
+describe('themeColor', () => {
+	const purposes = THEMES.filter((theme) => theme !== 'debt' && theme !== 'by-type');
+
+	it('gives each of the eight purposes its own palette colour', () => {
+		const colours = purposes.map(themeColor);
+		expect(purposes).toHaveLength(8);
+		expect(new Set(colours).size).toBe(8);
+		for (const colour of colours) expect(colour).toMatch(/^var\(--series-[1-8]\)$/);
+	});
+
+	it('shows debt interest and local spending by type in neutral colours of their own', () => {
+		expect(themeColor('debt')).toBe('var(--theme-debt)');
+		expect(themeColor('by-type')).toBe('var(--theme-by-type)');
 	});
 });
