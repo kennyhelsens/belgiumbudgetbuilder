@@ -1,0 +1,55 @@
+{
+	"line": "wallonia-brussels-federation.health-social-culture-media-sport",
+	"effects": {
+		"cut": [
+			{
+				"nl": "minder gesubsidieerde kinderopvangplaatsen (ONE)",
+				"fr": "moins de places d'accueil subventionnées (ONE)",
+				"en": "fewer subsidised childcare places (ONE)"
+			},
+			{
+				"nl": "minder middelen voor jeugdhulp en pleegzorg",
+				"fr": "moins de moyens pour l'aide à la jeunesse et l'accueil familial",
+				"en": "less funding for youth care and foster care"
+			},
+			{
+				"nl": "een kleinere dotatie aan de openbare omroep RTBF",
+				"fr": "une dotation plus faible à la RTBF",
+				"en": "a smaller grant to the RTBF public broadcaster"
+			},
+			{
+				"nl": "minder steun voor bibliotheken en lokale sportcentra",
+				"fr": "moins de soutien aux bibliothèques et centres sportifs locaux",
+				"en": "less support for libraries and local sports centres"
+			}
+		],
+		"add": [
+			{
+				"nl": "meer gesubsidieerde kinderopvangplaatsen (ONE)",
+				"fr": "plus de places d'accueil subventionnées (ONE)",
+				"en": "more subsidised childcare places (ONE)"
+			},
+			{
+				"nl": "meer middelen voor jeugdhulp en pleegzorg",
+				"fr": "plus de moyens pour l'aide à la jeunesse et l'accueil familial",
+				"en": "more funding for youth care and foster care"
+			},
+			{
+				"nl": "een grotere dotatie aan de openbare omroep RTBF",
+				"fr": "une dotation plus élevée à la RTBF",
+				"en": "a larger grant to the RTBF public broadcaster"
+			},
+			{
+				"nl": "meer steun voor bibliotheken en lokale sportcentra",
+				"fr": "plus de soutien aux bibliothèques et centres sportifs locaux",
+				"en": "more support for libraries and local sports centres"
+			}
+		],
+		"ref": {
+			"source": "pfwb-184-2025-2026-n1",
+			"locator": "Annexe I, tableau budgétaire (initial 2026): DO 19 Enfance p. 122; DO 17 Aide à la jeunesse p. 116; DO 25 p. 141; DO 20 p. 133; DO 26 p. 149 (printed page numbers; PDF page = printed + 1)",
+			"quote": "Dotation à l'Office de la Naissance et de l'Enfance | Dotation spécifique à l'ONE liée à la création de places | Subventions aux services résidentiels et aux services qui mettent en œuvre un | Subventions aux services d’accompagnement en accueil familial | Dotation à la Radiodiffusion - Télévision Belge de la Communauté française (RTBF) | Conventions et contrats programmes indexés dans le domaine des bibliothèques | Subventions aux centres sportifs locaux",
+			"note": "Line amount from the adjustment decree (chapter II); AB detail from the initial budget tables. The RTBF dotation is tied to the RTBF management contract 2023-2027 (doc. 184 N°1, annex on the CCA: 'Dotation de la Fédération Wallonie-Bruxelles dans le cadre du contrat de gestion de la RTBF'), so it is not freely adjustable year to year. The line also covers justice houses (maisons de justice), youth and adult education, health promotion and infrastructure. ONE also funds child health consultations; the phrase names only childcare. one.be was reachable but not needed. The items used are standing dotations and subsidies, not one-off provisions, so using the initial tables to describe the adjusted chapter is sound. corrected: flag 1: all AB labels confirmed in doc. 184 N°1 (PDF pp. 117, 123, 134, 142, 150) and are standing items. Youth-care phrase reworded to the funded services (accueil familial = foster care) and FR shortened; 'culture' dropped from the last phrase (too broad; libraries and local sports centres are the named items) to bring FR from 13 to 9 words"
+		}
+	}
+}

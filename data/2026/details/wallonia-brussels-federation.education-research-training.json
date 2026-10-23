@@ -52,5 +52,57 @@
 				}
 			}
 		}
-	]
+	],
+	"effects": {
+		"cut": [
+			{
+				"nl": "minder leerkrachten en personeel in de scholen",
+				"fr": "moins d'enseignants et de personnel dans les écoles",
+				"en": "fewer teachers and staff in schools"
+			},
+			{
+				"nl": "minder renovatie en bouw van schoolgebouwen",
+				"fr": "moins de bâtiments scolaires rénovés ou construits",
+				"en": "fewer school buildings renovated or built"
+			},
+			{
+				"nl": "minder studietoelagen voor leerlingen uit gezinnen met laag inkomen",
+				"fr": "moins d'allocations d'études pour les élèves peu aisés",
+				"en": "fewer study grants for pupils from low-income families"
+			},
+			{
+				"nl": "minder middelen voor hoger onderwijs en onderzoek",
+				"fr": "moins de moyens pour l'enseignement supérieur et la recherche",
+				"en": "less funding for higher education and research"
+			}
+		],
+		"add": [
+			{
+				"nl": "meer leerkrachten en personeel in de scholen",
+				"fr": "plus d'enseignants et de personnel dans les écoles",
+				"en": "more teachers and staff in schools"
+			},
+			{
+				"nl": "meer renovatie en bouw van schoolgebouwen",
+				"fr": "plus de bâtiments scolaires rénovés ou construits",
+				"en": "more school buildings renovated or built"
+			},
+			{
+				"nl": "meer studietoelagen voor leerlingen uit gezinnen met laag inkomen",
+				"fr": "plus d'allocations d'études pour les élèves peu aisés",
+				"en": "more study grants for pupils from low-income families"
+			},
+			{
+				"nl": "meer middelen voor hoger onderwijs en onderzoek",
+				"fr": "plus de moyens pour l'enseignement supérieur et la recherche",
+				"en": "more funding for higher education and research"
+			}
+		],
+		"ref": {
+			"source": "pfwb-184-2025-2026-n1",
+			"locator": "Annexe I, tableau budgétaire (initial 2026): DO 51 p. 193; DO 52 p. 199; DO 44 p. 173; DO 47 p. 183; DO 54 p. 216; DO 45 p. 177 (printed page numbers; PDF page = printed + 1)",
+			"quote": "Personnel statutaire du primaire | Personnel statutaire - Enseignement de plein exercice | Dotation au service administratif à comptabilité autonome - Fonds des Bâtiments | Octroi d'allocations d'études aux élèves de condition peu aisée | Allocation de fonctionnement à l'Université catholique de Louvain | Subventions pour le financement des actions de recherche concertées",
+			"note": "Line amount from the adjustment decree (chapter III); AB detail from the initial budget tables. Teacher pay scales are statutory and staffing follows pupil numbers under the education decrees, so most of this line is legally committed; a change mainly works through staffing norms, operating grants and investment. Study grants (allocations d'études) are an entitlement set by decree. Higher education = universities (DO 54) and hautes écoles (DO 55); research = DO 45. corrected: flag 1: AB labels confirmed in doc. 184 N°1 (PDF pp. 175, 178, 184, 194, 200, 217), standing items. Study-grant phrase aligned across languages (NL/EN said 'fewer or smaller', FR 'fewer'); higher-education phrase simplified to 'higher education and research' (FR from 10 to 9 words, NL/EN aligned); FR school-buildings phrase shortened"
+		}
+	}
 }

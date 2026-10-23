@@ -19,9 +19,12 @@ data/2026/
   entities/<id>.json      one file per government: federal, social-security,
                           flanders, wallonia, wallonia-brussels-federation,
                           brussels, german-speaking-community, local
-  details/<line id>.json  what a change to one spending line means: unit
-                          examples, and optionally a breakdown into
-                          sub-budgets and the official levers
+  details/<line id>.json  what a change to one spending line could mean, in
+                          words and without numbers (effects of a cut and
+                          of an increase, with their source), and
+                          optionally unit examples kept as reference, a
+                          breakdown into sub-budgets and the official
+                          levers
 ```
 
 ## Rules

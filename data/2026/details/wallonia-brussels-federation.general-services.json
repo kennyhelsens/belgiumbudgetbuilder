@@ -1,0 +1,45 @@
+{
+	"line": "wallonia-brussels-federation.general-services",
+	"effects": {
+		"cut": [
+			{
+				"nl": "minder personeel in de administratie van de Federatie",
+				"fr": "moins de personnel dans l'administration de la Fédération",
+				"en": "fewer staff in the Federation's administration"
+			},
+			{
+				"nl": "minder digitale diensten voor administratie en scholen (ETNIC)",
+				"fr": "moins de services numériques pour administration et écoles (ETNIC)",
+				"en": "fewer digital services for administration and schools (ETNIC)"
+			},
+			{
+				"nl": "minder internationale samenwerking via WBI",
+				"fr": "moins de coopération internationale via WBI",
+				"en": "less international cooperation through WBI"
+			}
+		],
+		"add": [
+			{
+				"nl": "meer personeel in de administratie van de Federatie",
+				"fr": "plus de personnel dans l'administration de la Fédération",
+				"en": "more staff in the Federation's administration"
+			},
+			{
+				"nl": "meer digitale diensten voor administratie en scholen (ETNIC)",
+				"fr": "plus de services numériques pour administration et écoles (ETNIC)",
+				"en": "more digital services for administration and schools (ETNIC)"
+			},
+			{
+				"nl": "meer internationale samenwerking via WBI",
+				"fr": "plus de coopération internationale via WBI",
+				"en": "more international cooperation through WBI"
+			}
+		],
+		"ref": {
+			"source": "pfwb-184-2025-2026-n1",
+			"locator": "Annexe I, tableau budgétaire (initial 2026): DO 11 AB 11.03/11.04 p. 82; DO 12 AB 14 41.01 and 15 01.10 p. 99; DO 14 AB 11 41.01 p. 103 (printed page numbers; PDF page = printed + 1)",
+			"quote": "Personnel statutaire | Personnel autre que statutaire | Dotation à l'Entreprise publique des Technologies Numériques de l'Information et de la Communication (ETNIC) | Stratégie numérique pour l'enseignement | Dotation à Wallonie Bruxelles International",
+			"note": "The line amount is from the adjustment decree (fwb-decree-adjustment-2026, chapter I); the decree on Gallilex does not reproduce the AB tables, so what is funded is shown from the initial 2026 budget tables (doc. 184 N°1); the items used (staff, ETNIC, digital strategy for education, WBI) are standing items. The school-meals provision ('Provision en faveur de repas complets, sains et durables ...', DO 11 AB 32 01.05, printed p. 92) has no 2026 commitment credits in the initial budget (Eng. '-', Liq. 8.553, i.e. only payments on earlier commitments), and its adjusted amount could not be checked, so it is not phrased. Chapter I also holds provisions with no direct effect (index provision, 'Dotation complémentaire ... Fonds Ecureuil'), parliament and ministers' offices. corrected: flag 1: AB labels confirmed in doc. 184 N°1 (PDF pp. 83, 100, 104). School-meals phrase dropped: the provision has no 2026 commitment credits in the initial budget (only liquidation of earlier commitments) and the adjusted AB table is not published with the decree. ETNIC phrase FR shortened"
+		}
+	}
+}

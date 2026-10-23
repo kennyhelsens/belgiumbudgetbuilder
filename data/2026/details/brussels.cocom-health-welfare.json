@@ -1,0 +1,55 @@
+{
+	"line": "brussels.cocom-health-welfare",
+	"effects": {
+		"cut": [
+			{
+				"nl": "minder financiering voor rusthuizen",
+				"fr": "moins de financement pour les maisons de repos",
+				"en": "less funding for nursing homes"
+			},
+			{
+				"nl": "minder noodopvangplaatsen voor daklozen",
+				"fr": "moins de places d'hébergement d'urgence pour sans-abri",
+				"en": "fewer emergency shelter places for homeless people"
+			},
+			{
+				"nl": "minder terugbetaalde mobiliteitshulpmiddelen",
+				"fr": "moins d'aides à la mobilité remboursées",
+				"en": "fewer mobility aids reimbursed"
+			},
+			{
+				"nl": "minder steun voor diensten voor geestelijke gezondheidszorg",
+				"fr": "moins de soutien aux services de santé mentale",
+				"en": "less support for mental-health services"
+			}
+		],
+		"add": [
+			{
+				"nl": "meer financiering voor rusthuizen",
+				"fr": "plus de financement pour les maisons de repos",
+				"en": "more funding for nursing homes"
+			},
+			{
+				"nl": "meer noodopvangplaatsen voor daklozen",
+				"fr": "plus de places d'hébergement d'urgence pour sans-abri",
+				"en": "more emergency shelter places for homeless people"
+			},
+			{
+				"nl": "meer terugbetaalde mobiliteitshulpmiddelen",
+				"fr": "plus d'aides à la mobilité remboursées",
+				"en": "more mobility aids reimbursed"
+			},
+			{
+				"nl": "meer steun voor diensten voor geestelijke gezondheidszorg",
+				"fr": "plus de soutien aux services de santé mentale",
+				"en": "more support for mental-health services"
+			}
+		],
+		"ref": {
+			"source": "cocom-b67-2",
+			"locator": "AB 05.001.15.01.4140 'Dotation à Iriscare – Santé', Explication, p. 164; AB 05.001.15.02.4140 'Dotation à Iriscare – Aide aux personnes', p. 166; AB 04.004.15.01.4160 New Samusocial, p. 126; AB 03.004.34.03.3300, p. 86",
+			"quote": "Il s’agit entre autre des maisons de repos, les institutions Habitation Protégé, les maisons soins psychiatriques et les conventions de revalidation. | Il s’agit surtout de l’Aide aux Personnes âgées, les aides à la mobilité et des subsides aux institutions pour personnes handicapés et aide à domicile. | Dotation à l’ASBL New Samusocial pour ses missions d’hébergement d’urgence, de maraudes/travail de rue et de centre Housing First | Subvention de fonctionnement aux services de santé mentale privés.",
+			"note": "Mixed line (Iriscare health and aid-to-persons dotations, Iriscare running costs, New Samusocial, Vivalis programmes). Much of it (care-home financing, mobility-aid reimbursement) is set by regulation and is hard to change in-year (see the line's own note). Iriscare and Vivalis sites (*.brussels) were unreachable; phrases rest on the COCOM justification. confirmed: all four quotes found verbatim in B-67/2 at pp. 164, 166, 126 and 86; phrases short, mirrored and grounded"
+		}
+	}
+}

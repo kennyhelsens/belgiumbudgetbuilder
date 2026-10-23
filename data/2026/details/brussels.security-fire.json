@@ -1,0 +1,45 @@
+{
+	"line": "brussels.security-fire",
+	"effects": {
+		"cut": [
+			{
+				"nl": "minder brandweerlieden en ambulanciers bij de DBDMH",
+				"fr": "moins de pompiers et d'ambulanciers au SIAMU",
+				"en": "fewer firefighters and ambulance staff at SIAMU"
+			},
+			{
+				"nl": "minder vervanging van brandweer- en ziekenwagens",
+				"fr": "moins de renouvellement des véhicules de pompiers et ambulances",
+				"en": "fewer fire and ambulance vehicles replaced"
+			},
+			{
+				"nl": "minder subsidies aan de gemeenten voor preventie en veiligheid",
+				"fr": "moins de subsides aux communes en prévention et sécurité",
+				"en": "fewer grants to municipalities for prevention and safety"
+			}
+		],
+		"add": [
+			{
+				"nl": "meer brandweerlieden en ambulanciers bij de DBDMH",
+				"fr": "plus de pompiers et d'ambulanciers au SIAMU",
+				"en": "more firefighters and ambulance staff at SIAMU"
+			},
+			{
+				"nl": "meer vervanging van brandweer- en ziekenwagens",
+				"fr": "plus de renouvellement des véhicules de pompiers et ambulances",
+				"en": "more fire and ambulance vehicles replaced"
+			},
+			{
+				"nl": "meer subsidies aan de gemeenten voor preventie en veiligheid",
+				"fr": "plus de subsides aux communes en prévention et sécurité",
+				"en": "more grants to municipalities for prevention and safety"
+			}
+		],
+		"ref": {
+			"source": "bru-a268-5-p2",
+			"locator": "Section 2 tables: SIAMU (pompiers.brussels) pp. 29-30 (Programme 201 incl. '04 Dépenses de personnel', Programme 202 'Interventions' and Programme 203 'Transports ambulance', each with '14 Investissements'); Bruxelles Prévention & Sécurité pp. 49-50 (Programme 302)",
+			"quote": "Programme 201: Financer les moyens de subsistance de pompiers.brussels | Programme 202: Interventions | Programme 203: Transports ambulance | Programme 302: Financement de la mise en œuvre du PGSP",
+			"note": "Vehicles: the concordance bru-a268-1-p4 (annex 5a) names the investment items of SIAMU programmes 40.202 and 40.203: 'Renouvellement du charroi d'intervention' and 'Renouvellement du charroi pour l'aide médicale urgente' (pp. 201-203 FR; NL pp. 33-34 'Vernieuwing van interventievoertuigen', 'Vernieuwing van voertuigen voor dringende medische hulp'), so the phrase says vehicles are replaced (renewal), not that the fleet grows. Staff: SIAMU programme 201 holds the personnel class ('04 Dépenses de personnel'; annex 5a p. 30 'Bezoldigingen van het statutair personeel'); exposé général Budget des recettes et des dépenses pour l'année budgétaire 2026 – Exposé général (Doc. A-269/1 – 2025/2026) (https://weblex.irisnet.be/data/crb/doc/2025-26/153785/images.pdf) p. 18 mentions credits 'pour des recrutements supplémentaires au sein du service d’incendie'. Prevention: the PGSP programme passes money on to the municipalities, annex 5a p. 171: 'Subventions de fonctionnement aux communes en matière de prévention et de sécurité' and 'Subventions d'investissement aux communes en matière de prévention et de sécurité'. Emergency responses themselves are a legal duty; the phrases describe staff, vehicles and grants, not response times. A new fire station ('Bouw van een voorpost', annex 5a p. 31) is also in SIAMU's budget. corrected: programme headings confirmed (A-268/5 part 2 pp. 29-30, 49-50). Flag 4: 'new fire engines and ambulances' replaced by 'fire and ambulance vehicles replaced', grounded in the named allocations 'Renouvellement du charroi d'intervention' and '... pour l'aide médicale urgente' (annex 5a pp. 201-203). Prevention phrase reworded to what the money is (grants to municipalities, annex 5a p. 171) and FR shortened. Staff phrase confirmed"
+		}
+	}
+}

@@ -1,0 +1,45 @@
+{
+	"line": "brussels.housing",
+	"effects": {
+		"cut": [
+			{
+				"nl": "minder nieuwe en gerenoveerde sociale woningen",
+				"fr": "moins de logements sociaux construits ou rénovés",
+				"en": "fewer social homes built or renovated"
+			},
+			{
+				"nl": "minder huurtoelagen voor huurders",
+				"fr": "moins d'allocations-loyer pour les locataires",
+				"en": "fewer rent allowances for tenants"
+			},
+			{
+				"nl": "minder woningen verhuurd via sociale verhuurkantoren",
+				"fr": "moins de logements loués via les agences immobilières sociales",
+				"en": "fewer homes let through social rental agencies"
+			}
+		],
+		"add": [
+			{
+				"nl": "meer nieuwe en gerenoveerde sociale woningen",
+				"fr": "plus de logements sociaux construits ou rénovés",
+				"en": "more social homes built or renovated"
+			},
+			{
+				"nl": "meer huurtoelagen voor huurders",
+				"fr": "plus d'allocations-loyer pour les locataires",
+				"en": "more rent allowances for tenants"
+			},
+			{
+				"nl": "meer woningen verhuurd via sociale verhuurkantoren",
+				"fr": "plus de logements loués via les agences immobilières sociales",
+				"en": "more homes let through social rental agencies"
+			}
+		],
+		"ref": {
+			"source": "bru-a268-5-p3",
+			"locator": "Annex 1, budget of the SLRB (Société du logement de la Région de Bruxelles-Capitale), expenditure programmes, p. 16",
+			"quote": "Programme 252: Financer les constructions et les acquisitions des logements | Programme 253: Financer les rénovations des logements",
+			"note": "Rent allowance and social rental agencies are grounded in the concordance bru-a268-1-p4 (annex 5a, pp. 115-116, mapped to programme 43.041 'De toegang tot kwaliteitsvolle huisvesting'): 'Inkomensoverdrachten aan particulieren in het kader van de omkaderde en algemene huurtoelage' and 'Werkingssubsidies aan de vzw's 'Sociale Verhuurkantoren' (SVK)'. The line also funds the Fonds du Logement (bru-a268-5-p3 p. 8, 'Programme 202: Garantir à chaque Bruxellois un logement de qualité (Fonds du Logement)'), urban renewal and part of the Renolution renovation grants (Urban.brussels; see brussels.environment). SLRB investment depends on multi-year programmes, so a one-year change shows up with delay. The rent allowance is a transfer to individuals under its own eligibility rules, so the phrase names the number of allowances, not their amount. corrected: SLRB programmes confirmed at A-268/5 part 3 p. 16 and annex 5a items at pp. 115-116; rent-allowance phrase simplified to a clean mirror ('fewer/more rent allowances') instead of 'fewer or lower', which read awkwardly in FR; other phrases confirmed"
+		}
+	}
+}

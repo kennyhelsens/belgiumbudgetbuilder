@@ -1,0 +1,45 @@
+{
+	"line": "brussels.mobility",
+	"effects": {
+		"cut": [
+			{
+				"nl": "minder ritten van MIVB-bussen, -trams en -metro's",
+				"fr": "moins de passages de bus, trams et métros STIB",
+				"en": "fewer STIB bus, tram and metro runs"
+			},
+			{
+				"nl": "minder MIVB-investeringen in metro, trams en bussen",
+				"fr": "moins d'investissements de la STIB (métro, trams, bus)",
+				"en": "less STIB investment in metro, trams and buses"
+			},
+			{
+				"nl": "minder onderhoud van gewestwegen, tunnels en bruggen",
+				"fr": "moins d'entretien des voiries régionales, tunnels et ponts",
+				"en": "less maintenance of regional roads, tunnels and bridges"
+			}
+		],
+		"add": [
+			{
+				"nl": "meer ritten van MIVB-bussen, -trams en -metro's",
+				"fr": "plus de passages de bus, trams et métros STIB",
+				"en": "more STIB bus, tram and metro runs"
+			},
+			{
+				"nl": "meer MIVB-investeringen in metro, trams en bussen",
+				"fr": "plus d'investissements de la STIB (métro, trams, bus)",
+				"en": "more STIB investment in metro, trams and buses"
+			},
+			{
+				"nl": "meer onderhoud van gewestwegen, tunnels en bruggen",
+				"fr": "plus d'entretien des voiries régionales, tunnels et ponts",
+				"en": "more maintenance of regional roads, tunnels and bridges"
+			}
+		],
+		"ref": {
+			"source": "bru-a268-5-p1",
+			"locator": "Section 1 table (SPRB), Mission 42 Mobilité, pp. 60-64: Programme 043 (p. 62-63), Programme 044 (p. 63), Programme 112 (pp. 63-64)",
+			"quote": "Programme 043: Construire, améliorer et entretenir les routes régionales, les infrastructures et les équipements routiers | Programme 044: Développer et maintenir les infrastructures de transports publics dans la Région de Bruxelles-Capitale | Programme 112: Financer la Société des Transports Intercommunaux de Bruxelles (STIB)",
+			"note": "Supporting documents: STIB's own budget (bru-a268-5-p3, annex 1, pp. 30-31: 'Programme 202: Gérer les investissements dans le métro et les infrastructures', 'Programme 203: Gérer les investissements dans les trams et les infrastructures', 'Programme 204: Gérer les investissements dans la flotte bus et les infrastructures'). The service-offer phrase is grounded in the concordance bru-a268-1-p4 (annex 5a, programme 42.112, p. 273 FR / p. 108 NL): 'Dotation à la STIB pour la mise en oeuvre du programme de développement de l'offre' / 'Werkingsdotatie aan de MIVB voor de uitvoering van het programma voor de ontwikkeling van het aanbod'; exposé général Budget des recettes et des dépenses pour l'année budgétaire 2026 – Exposé général (Doc. A-269/1 – 2025/2026) (https://weblex.irisnet.be/data/crb/doc/2025-26/153785/images.pdf) p. 24 lists 'statu quo offre' as a 2026 lever. Roads: Budget des recettes et des dépenses pour l'année budgétaire 2026 – Exposé général (Doc. A-269/1 – 2025/2026) (https://weblex.irisnet.be/data/crb/doc/2025-26/153785/images.pdf) p. 36 ('la priorité est désormais donnée à l’entretien structurel, à la rénovation et à l’amélioration qualitative'). Part of the bridge/tunnel maintenance is paid from federal Beliris money (Budget des recettes et des dépenses pour l'année budgétaire 2026 – Exposé général (Doc. A-269/1 – 2025/2026) (https://weblex.irisnet.be/data/crb/doc/2025-26/153785/images.pdf) p. 20: 'entièrement couverts par des moyens Beliris'), not from this line. STIB also has fare income; the line also pays the regional share of reduced fares ('Intervention dans les tarifs préférentiels en faveur des particuliers à la STIB', same annex p. 273). corrected: quotes and pages re-checked in A-268/5 part 1 (pp. 62-64); FR investment phrase shortened; the service-offer phrase now rests on a named allocation (annex 5a 'Dotation à la STIB pour la mise en oeuvre du programme de développement de l'offre') instead of an assumption, caveat updated"
+		}
+	}
+}

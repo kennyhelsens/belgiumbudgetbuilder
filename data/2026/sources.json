@@ -463,5 +463,45 @@
 		"url": "https://nautilus.parlement-wallon.be/Archives/2025_2026/BUDGET/bud39.pdf",
 		"published": "2026-05-29",
 		"retrieved": "2026-10-23"
+	},
+	{
+		"id": "bru-a268-5-p2",
+		"title": "Projet d'ordonnance contenant le Budget général des Dépenses de la Région de Bruxelles-Capitale pour l'année budgétaire 2026 – Texte adopté (Doc. A-268/5 – 2025/2026, Partie 2: tableaux budgétaires section 2, organismes administratifs autonomes: Bruxelles Environnement, Bruxelles-Propreté, SIAMU, Bruxelles Prévention & Sécurité, Paradigm, ...)",
+		"publisher": "Parlement de la Région de Bruxelles-Capitale",
+		"url": "https://weblex.irisnet.be/data/crb/doc/2025-26/153980/images.pdf",
+		"published": "2026-03-27",
+		"retrieved": "2026-10-23"
+	},
+	{
+		"id": "bru-a268-5-p3",
+		"title": "Projet d'ordonnance contenant le Budget général des Dépenses de la Région de Bruxelles-Capitale pour l'année budgétaire 2026 – Texte adopté (Doc. A-268/5 – 2025/2026, Partie 3: annexe 1, budgets des organismes de seconde catégorie: Fonds du Logement, SLRB, Actiris, STIB, visit.brussels, ...)",
+		"publisher": "Parlement de la Région de Bruxelles-Capitale",
+		"url": "https://weblex.irisnet.be/data/crb/doc/2025-26/153981/images.pdf",
+		"published": "2026-03-27",
+		"retrieved": "2026-10-23"
+	},
+	{
+		"id": "bru-a268-1-p4",
+		"title": "Projet d'ordonnance contenant le Budget général des Dépenses de la Région de Bruxelles-Capitale pour l'année budgétaire 2026 (Doc. A-268/1 – 2025/2026, Partie 4: annexe 5a, table de concordance 2024-2026 par allocation de base)",
+		"publisher": "Parlement de la Région de Bruxelles-Capitale",
+		"url": "https://weblex.irisnet.be/data/crb/doc/2025-26/153791/images.pdf",
+		"published": "2026-03-06",
+		"retrieved": "2026-10-23"
+	},
+	{
+		"id": "cocom-b67-2",
+		"title": "Justification du Budget général des Dépenses de la Commission communautaire commune pour l'année budgétaire 2026 (Doc. B-67/2 – 2025/2026)",
+		"publisher": "Assemblée réunie de la Commission communautaire commune",
+		"url": "https://weblex.irisnet.be/data/arccc/doc/2025-26/110284/images.pdf",
+		"published": "2026-04-20",
+		"retrieved": "2026-10-23"
+	},
+	{
+		"id": "pfwb-184-2025-2026-n1",
+		"title": "Projet de décret contenant le budget des dépenses de la Communauté française pour l'année budgétaire 2026 – Doc. 184 (2025-2026) N°1 (tableau de synthèse et tableau budgétaire par allocation de base)",
+		"publisher": "Parlement de la Fédération Wallonie-Bruxelles",
+		"url": "https://archive.pfwb.be/1000000020dd0e2",
+		"published": "2025-11-21",
+		"retrieved": "2026-10-23"
 	}
 ]

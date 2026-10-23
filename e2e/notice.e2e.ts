@@ -18,7 +18,7 @@ test.describe('change notice', () => {
 		await map.getByRole('group', { name: /^Finance/ }).hover();
 		await map.getByRole('button', { name: 'Cut Finance by 1%' }).click();
 		const notice = page.getByRole('status').filter({ hasText: 'Finance' });
-		await expect(notice).toContainText(/^Less money for Finance could mean: \D+\.$/);
+		await expect(notice).toContainText(/^Less money for Finance could mean: \D+$/);
 	});
 
 	test('speaks the page language', async ({ page }) => {
@@ -29,7 +29,7 @@ test.describe('change notice', () => {
 		await map.getByRole('button', { name: 'Verlaag Pensioenen werknemers met 1%' }).click();
 		const notice = page.getByRole('status').filter({ hasText: 'Pensioenen werknemers' });
 		await expect(notice).toContainText(
-			/^Minder geld voor Pensioenen werknemers kan betekenen: \D+\.$/
+			/^Minder geld voor Pensioenen werknemers kan betekenen: \D+$/
 		);
 	});
 
@@ -43,7 +43,7 @@ test.describe('change notice', () => {
 			.getByRole('button', { name: 'Cut Defence by 1%' })
 			.click();
 		await expect(notice).not.toHaveText(first ?? '');
-		await expect(notice).toContainText(/^Less money for Defence could mean: \D+\.$/);
+		await expect(notice).toContainText(/^Less money for Defence could mean: \D+$/);
 	});
 
 	test('disappears by itself', async ({ page }) => {

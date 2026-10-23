@@ -1,0 +1,45 @@
+{
+	"line": "brussels.family-allowances",
+	"effects": {
+		"cut": [
+			{
+				"nl": "een lagere basisbijslag per kind",
+				"fr": "une allocation de base plus basse par enfant",
+				"en": "a lower basic allowance per child"
+			},
+			{
+				"nl": "lagere sociale toeslagen voor gezinnen met een laag inkomen",
+				"fr": "des suppléments sociaux plus bas pour les bas revenus",
+				"en": "lower social supplements for low-income families"
+			},
+			{
+				"nl": "een lagere toeslag voor eenoudergezinnen",
+				"fr": "un supplément monoparental plus bas",
+				"en": "a lower supplement for single-parent families"
+			}
+		],
+		"add": [
+			{
+				"nl": "een hogere basisbijslag per kind",
+				"fr": "une allocation de base plus élevée par enfant",
+				"en": "a higher basic allowance per child"
+			},
+			{
+				"nl": "hogere sociale toeslagen voor gezinnen met een laag inkomen",
+				"fr": "des suppléments sociaux plus élevés pour les bas revenus",
+				"en": "higher social supplements for low-income families"
+			},
+			{
+				"nl": "een hogere toeslag voor eenoudergezinnen",
+				"fr": "un supplément monoparental plus élevé",
+				"en": "a higher supplement for single-parent families"
+			}
+		],
+		"ref": {
+			"source": "cocom-b67-2",
+			"locator": "Mission 05, Programme 001 Famille, AB 05.001.15.03.4140 'Dotation à Iriscare – Allocations familiales', Explication, p. 167",
+			"quote": "Sur cette allocation de base sont inscrites les sommes qu’Iriscare reçoit des Services du Collège réuni pour le financement des allocations familiales. Il s’agit tant des allocations familiales versées que des allocations familiales irrécouvrables ainsi que des frais administratifs des caisses d’allocations familiales.",
+			"note": "Entitlement: amounts are set by the COCOM ordinance of 25 April 2019 (in force 1 January 2020) and indexed; the budget follows the number of children and the rules, so a change needs a change to the ordinance. The ordinance itself could not be read: eJustice answers with a CAPTCHA and the Iriscare/Famiris/COCOM sites (*.brussels) are blocked, so the parts of the allowance are taken from Constitutional Court rulings: basic allowance from the Court's own description in Cour constitutionnelle, arrêt n° 111/2025 du 17 juillet 2025 (ordonnance de la COCOM du 25 avril 2019 réglant l'octroi des prestations familiales) (https://fr.const-court.be/public/f/2025/2025-111f.pdf) B.2.2 (p. 6: 'le montant de l’allocation familiale de base, visé à l’article 7, b), de cette ordonnance, peut être majoré d’un supplément d’orphelin'); social supplements and the single-parent supplement from the statements of the Collège réuni de la COCOM (the COCOM government) recorded in Cour constitutionnelle, arrêt n° 111/2025 du 17 juillet 2025 (ordonnance de la COCOM du 25 avril 2019 réglant l'octroi des prestations familiales) (https://fr.const-court.be/public/f/2025/2025-111f.pdf) A.2.1 and A.2.3 (pp. 3-4: 'le droit au supplément social ou le droit au supplément pour monoparentalité'; 'majorer l’allocation de base par plusieurs suppléments, en fonction de la situation socio-économique, sur la base de l’article 9 ..., notamment en cas de monoparentalité'); the income basis of the social supplements from Cour constitutionnelle, arrêt n° 105/2022 du 15 septembre 2022 (article 39 de l'ordonnance de la COCOM du 25 avril 2019 réglant l'octroi des prestations familiales) (https://www.const-court.be/public/f/2022/2022-105f.pdf) A.2 (p. 3, Collège réuni: 'sur la base de la déclaration des revenus du ménage de N.K., il est apparu que N.K. a droit à des suppléments sociaux'). Children who already received a higher amount under the old system keep it (transitional art. 39). Other supplements (orphan, age, annual school supplement) are not phrased. corrected: B-67/2 quote confirmed at p. 167. Flag 3: ordinance unreachable (eJustice CAPTCHA, *.brussels blocked), so grounding moved to the Court's own reasoning (2025-111 B.2.2) for the basic allowance and to the COCOM government's own statements in the rulings for the supplements, with a second ruling (2022-105) showing the social supplement depends on household income; parts named neutrally ('basic allowance', 'social supplements', 'single-parent supplement'); FR shortened to 9 words or fewer. Project owner may want to re-ground on the ordinance text once eJustice or Iriscare can be read"
+		}
+	}
+}

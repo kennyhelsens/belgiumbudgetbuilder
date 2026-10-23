@@ -1,0 +1,45 @@
+{
+	"line": "brussels.cocof-vgc",
+	"effects": {
+		"cut": [
+			{
+				"nl": "minder geld doorgestort aan de COCOF en de VGC",
+				"fr": "moins d'argent versé à la COCOF et la VGC",
+				"en": "less money passed on to COCOF and the VGC"
+			},
+			{
+				"nl": "minder geld voor COCOF- en VGC-scholen",
+				"fr": "moins de moyens pour les écoles COCOF et VGC",
+				"en": "less money for COCOF and VGC schools"
+			},
+			{
+				"nl": "minder VGC-kinderopvang met inkomenstarief",
+				"fr": "moins de crèches VGC à tarif selon les revenus",
+				"en": "fewer VGC childcare places with income-based fees"
+			}
+		],
+		"add": [
+			{
+				"nl": "meer geld doorgestort aan de COCOF en de VGC",
+				"fr": "plus d'argent versé à la COCOF et la VGC",
+				"en": "more money passed on to COCOF and the VGC"
+			},
+			{
+				"nl": "meer geld voor COCOF- en VGC-scholen",
+				"fr": "plus de moyens pour les écoles COCOF et VGC",
+				"en": "more money for COCOF and VGC schools"
+			},
+			{
+				"nl": "meer VGC-kinderopvang met inkomenstarief",
+				"fr": "plus de crèches VGC à tarif selon les revenus",
+				"en": "more VGC childcare places with income-based fees"
+			}
+		],
+		"ref": {
+			"source": "bru-a268-1-p4",
+			"locator": "Annex 5a (concordance 2024-2026), programmes 45.002 and 45.003, pp. 320-321 (FR); VGC multi-year plan vgc-stuk6-2026-2027-nr1 ACT116 and ACT241, printed pp. 15 and 19 (PDF pp. 21 and 25)",
+			"quote": "Transferts de revenus à la Commission communautaire française à titre de droit de tirage | Dotations de fonctionnement à la Commission communautaire française pour le financement de l'enseignement | Dotations de fonctionnement à la Commission communautaire flamande pour le financement de l'enseignement | De VGC breidt de capaciteit aan kinderopvang met inkomenstarief uit.",
+			"note": "Grant to two other governments: COCOF and the VGC decide how they spend it. Most of it is fixed by the Special Act of 12 January 1989 on the Brussels institutions: drawing rights (art. 83quater) and special dotations for former provincial education and other former provincial tasks (art. 83ter), see the VGC plan p. 38 (PDF p. 44): 'Het ingeschreven bedrag wordt bepaald bij artikel 83quater van de bijzondere wet van 12 januari 1989'. The education phrase rests on the dotations named in the line itself ('... pour le financement de l'enseignement', former provincial schools). The VGC also invests in school buildings (ACT116: 'De VGC zet in op het behoud en de uitbreiding van de onderwijscapaciteit en investeert in de bouw en de verbouwing van scholen'). COCOF's spending (e.g. disability services via its Service PHARE) could not be checked in its own budget: parlementfrancophone.brussels and ccf.brussels are blocked, and the PHARE page (Service PHARE (personnes en situation de handicap) – page d'accueil (https://phare.irisnet.be/)) is a closure notice listing competences, not spending, so no COCOF-specific service phrase is given. NL uses 'COCOF' as in the line label (official Dutch name: Franse Gemeenschapscommissie, FGC). COCOF's grant is about 78% of this line, VGC about 22%. corrected: flag 2: first phrase now says plainly that the money is passed on to COCOF and the VGC; COCOF disability phrase dropped (rested only on the PHARE closure page, not solid; COCOF budget blocked) and replaced by a schools phrase grounded in the line's own allocations (annex 5a pp. 320-321, education dotations to both commissions); VGC childcare phrase kept (ACT241 confirmed at PDF p. 25); source changed to the annex 5a concordance"
+		}
+	}
+}
