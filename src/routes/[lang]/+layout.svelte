@@ -1,12 +1,9 @@
 <!--
-ABOUTME: Shell for localized pages: masthead with the site title, a work-in-progress badge, a button to watch the intro
-ABOUTME: and the language switcher, and a footer that says how the figures were extracted and links to the FAQ.
+ABOUTME: Shell for localized pages: masthead with the site title, a work-in-progress badge and the language
+ABOUTME: switcher, and a footer that says how the figures were extracted and links to the FAQ.
 -->
 <script lang="ts">
-	import { goto } from '$app/navigation';
 	import { resolve } from '$app/paths';
-	import { page } from '$app/state';
-	import { replay } from '#lib/intro/replay.svelte.ts';
 	import { LOCALES } from '#lib/i18n/locales.ts';
 	import { translate } from '#lib/i18n/translate.ts';
 	import type { LayoutProps } from './$types';
@@ -17,12 +14,6 @@ ABOUTME: and the language switcher, and a footer that says how the figures were 
 	$effect(() => {
 		document.documentElement.lang = data.locale;
 	});
-
-	// The intro sets out why the budget matters, so it stays one click away: from another page, go home first.
-	async function watchIntro() {
-		if (page.route.id !== '/[lang]') await goto(resolve('/[lang]', { lang: data.locale }));
-		replay.requests += 1;
-	}
 </script>
 
 <header class="masthead">
@@ -32,10 +23,6 @@ ABOUTME: and the language switcher, and a footer that says how the figures were 
 		>
 		<span class="masthead__badge">{translate(data.locale, 'site.wip')}</span>
 	</div>
-	<button type="button" class="masthead__intro" onclick={watchIntro}>
-		<span aria-hidden="true">▶</span>
-		{translate(data.locale, 'intro.replay')}
-	</button>
 	<nav aria-label={translate(data.locale, 'language.switcherLabel')}>
 		<ul class="switcher">
 			{#each LOCALES as locale (locale)}
@@ -105,43 +92,6 @@ ABOUTME: and the language switcher, and a footer that says how the figures were 
 		letter-spacing: 0.08em;
 		text-transform: uppercase;
 		white-space: nowrap;
-	}
-
-	.masthead__intro {
-		display: inline-flex;
-		align-items: center;
-		gap: var(--space-1);
-		margin-left: auto;
-		padding: 0.3em 0.9em;
-		border: 1.5px solid var(--ink);
-		border-radius: 999px;
-		background: none;
-		color: var(--ink);
-		font: inherit;
-		font-size: var(--text-sm);
-		font-weight: 600;
-		white-space: nowrap;
-		cursor: pointer;
-		transition:
-			background 0.2s ease,
-			color 0.2s ease;
-	}
-
-	.masthead__intro:hover,
-	.masthead__intro:focus-visible {
-		background: var(--ink);
-		color: var(--paper);
-	}
-
-	.masthead__intro span {
-		font-size: 0.75em;
-		color: var(--accent);
-	}
-
-	@media (prefers-reduced-motion: reduce) {
-		.masthead__intro {
-			transition: none;
-		}
 	}
 
 	.switcher {

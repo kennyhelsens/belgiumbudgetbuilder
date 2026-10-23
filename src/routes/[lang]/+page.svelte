@@ -14,7 +14,6 @@ ABOUTME: Text comes from the message files and every figure from the sourced dat
 	import { translate } from '#lib/i18n/translate.ts';
 	import Intro from '#lib/intro/Intro.svelte';
 	import { introFacts } from '#lib/intro/facts.ts';
-	import { replay } from '#lib/intro/replay.svelte.ts';
 	import { ClickLog, trackingAllowed } from '#lib/tracking/clicklog.ts';
 	import Bubbles from '#lib/ui/Bubbles.svelte';
 	import Toast from '#lib/ui/Toast.svelte';
@@ -75,13 +74,6 @@ ABOUTME: Text comes from the message files and every figure from the sourced dat
 			// Storage can be blocked; then the intro stays closed and can still be opened by hand.
 		}
 	});
-	// The masthead's "watch the intro" button: open the intro for each new request, not for earlier ones.
-	let handledReplays = replay.requests;
-	$effect(() => {
-		if (replay.requests === handledReplays) return;
-		handledReplays = replay.requests;
-		introOpen = true;
-	});
 	function rememberIntro() {
 		try {
 			localStorage.setItem(INTRO_SEEN, '1');
@@ -134,6 +126,7 @@ ABOUTME: Text comes from the message files and every figure from the sourced dat
 	year={data.dataset.year}
 	locale={data.locale}
 	reaction={debtMove && { debt: debtMove, key: noticeKey }}
+	onintro={() => (introOpen = true)}
 />
 <BudgetMap
 	data={data.dataset}

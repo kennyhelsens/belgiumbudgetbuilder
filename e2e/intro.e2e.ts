@@ -95,27 +95,29 @@ test.describe('intro', () => {
 		await expect(intro(page)).toBeHidden();
 	});
 
-	test('can be watched again from the header', async ({ page }) => {
+	test('can be watched again from the key figures, which stay in view', async ({ page }) => {
 		await page.goto('/en/');
 		await expect(intro(page)).toBeVisible();
 		await page.keyboard.press('Escape');
-		await page.getByRole('banner').getByRole('button', { name: 'Watch the intro' }).click();
+		const figures = page.getByRole('region', { name: 'Key figures' });
+		await page.getByRole('region', { name: 'Ten-year outlook' }).scrollIntoViewIfNeeded();
+		const watch = figures.getByRole('button', { name: 'Watch the intro' });
+		await expect(watch).toBeInViewport();
+		await watch.click();
 		await expect(intro(page)).toBeVisible();
 		await expect(intro(page)).toContainText('Step 1 of 7');
 	});
 
-	test('can be watched again from the header of another page', async ({ page }) => {
+	test('keeps the intro button in the key figures on a phone', async ({ page }) => {
+		await page.setViewportSize({ width: 390, height: 844 });
 		await page.goto('/en/');
 		await page.keyboard.press('Escape');
-		await page.goto('/en/faq/');
-		await page.getByRole('banner').getByRole('button', { name: 'Watch the intro' }).click();
-		await expect(page).toHaveURL('/en/');
-		await expect(intro(page)).toBeVisible();
-		await expect(intro(page)).toContainText('Step 1 of 7');
-		await page.keyboard.press('Escape');
-		await page.reload();
-		await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
-		await expect(intro(page)).toBeHidden();
+		await page.getByRole('region', { name: 'Budget map' }).scrollIntoViewIfNeeded();
+		const watch = page
+			.getByRole('region', { name: 'Key figures' })
+			.getByRole('button', { name: 'Watch the intro' });
+		await expect(watch).toBeInViewport();
+		await expect(watch).toHaveText(/Intro/);
 	});
 
 	test('speaks Dutch on the Dutch page', async ({ page }) => {

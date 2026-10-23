@@ -147,5 +147,6 @@
 	"level.local": "Local government",
 	"level.social-security": "Social security",
 	"consequence.levelsNote": "Who collects it, before money passes between governments: the federal government, for example, passes part of what it collects on to the communities and regions and to social security. Source: Federal Planning Bureau, accounts per level of government.",
-	"footer.purpose": "This site is not built for politicians: they should know these figures by heart. It is an effort to grow our shared understanding of public finances, makes no claim to be 100% correct, and is not a budgeting tool for governments."
+	"footer.purpose": "This site is not built for politicians: they should know these figures by heart. It is an effort to grow our shared understanding of public finances, makes no claim to be 100% correct, and is not a budgeting tool for governments.",
+	"intro.replayShort": "Intro"
 }
