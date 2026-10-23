@@ -1,5 +1,5 @@
-// ABOUTME: End-to-end tests for who collects each type of revenue: federal government, communities and regions, local
-// ABOUTME: government or social security, shown on the tiles, the phone rows and the revenue card.
+// ABOUTME: End-to-end tests for who collects each type of revenue: the federal level (federal government and social
+// ABOUTME: security), communities and regions, or local government, on the tiles, the phone rows and the revenue card.
 import { expect, test, type Page } from '@playwright/test';
 
 function map(page: Page) {
@@ -15,11 +15,12 @@ test.describe('who collects the revenue', () => {
 	test('shows on each tile who collects it, with a legend', async ({ page }) => {
 		await showRevenue(page);
 		const legend = map(page).getByRole('list', { name: 'Who collects it' });
-		await expect(legend.getByRole('listitem')).toHaveCount(4);
+		await expect(legend.getByRole('listitem')).toHaveCount(3);
+		await expect(legend).toContainText('Federal level (federal government and social security)');
 		await expect(legend).toContainText('Communities and regions');
 		const vat = map(page).getByRole('group', { name: /^VAT, excise duties/ });
 		const strip = vat.getByTestId('level-strip');
-		await expect(strip.locator('[data-level]')).toHaveCount(4);
+		await expect(strip.locator('[data-level]')).toHaveCount(3);
 		const widths = await strip
 			.locator('[data-level]')
 			.evaluateAll((els) =>
@@ -30,13 +31,13 @@ test.describe('who collects the revenue', () => {
 					])
 				)
 			);
-		expect(widths['federal']).toBeGreaterThan(70);
+		expect(widths['federal-level']).toBeGreaterThan(70);
 	});
 
 	test('colours each tile by the level that collects most of it', async ({ page }) => {
 		await showRevenue(page);
 		const colour = (name: RegExp) => map(page).getByRole('group', { name });
-		// Federal government: palette slot 1; communities and regions: slot 3; social security: slot 2.
+		// Federal level (federal government and social security): palette slot 1; communities and regions: slot 3.
 		await expect(colour(/^VAT, excise duties/)).toHaveAttribute(
 			'style',
 			/--tile-color:\s*var\(--series-1\)/
@@ -47,7 +48,7 @@ test.describe('who collects the revenue', () => {
 		);
 		await expect(colour(/^Social contributions/)).toHaveAttribute(
 			'style',
-			/--tile-color:\s*var\(--series-2\)/
+			/--tile-color:\s*var\(--series-1\)/
 		);
 		await expect(
 			map(page).getByRole('img', { name: /^Imputed social contributions/ })
@@ -65,8 +66,13 @@ test.describe('who collects the revenue', () => {
 			.click();
 		const card = page.getByRole('region', { name: /^More revenue from VAT, excise duties/ });
 		const levels = card.getByRole('list', { name: 'Who collects it' });
-		await expect(levels.getByRole('listitem').first()).toContainText('Federal government');
-		await expect(levels.getByRole('listitem').first()).toContainText('€57.2 billion');
+		const federalLevel = levels.getByRole('listitem').first();
+		await expect(federalLevel).toContainText('Federal level');
+		await expect(federalLevel).toContainText('€59.8 billion');
+		await expect(federalLevel).toContainText('Federal government');
+		await expect(federalLevel).toContainText('€57.2 billion');
+		await expect(federalLevel).toContainText('Social security');
+		await expect(federalLevel).toContainText('€2.6 billion');
 		await expect(card).toContainText('before money passes between governments');
 	});
 
@@ -86,6 +92,6 @@ test.describe('who collects the revenue', () => {
 		await page.setViewportSize({ width: 390, height: 844 });
 		await showRevenue(page);
 		const row = map(page).getByTestId('bar-row').filter({ hasText: 'Corporate income tax' });
-		await expect(row.getByTestId('level-strip').locator('[data-level]')).toHaveCount(2);
+		await expect(row.getByTestId('level-strip').locator('[data-level]')).toHaveCount(1);
 	});
 });

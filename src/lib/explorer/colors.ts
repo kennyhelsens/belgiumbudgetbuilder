@@ -57,27 +57,55 @@ export function themeColor(theme: Theme): string {
  * A revenue type's colour: that of the level of government that collects most of it, so that on the revenue map
  * colour says who collects the money. Revenue that cannot be changed (a bookkeeping entry), or has no split, is neutral.
  */
-export function revenueColor(
-	amounts: readonly { level: Level; amount: { eurMillion: number } }[],
-	adjustable: boolean
-): string {
-	if (!adjustable || amounts.length === 0) return 'var(--revenue-fixed)';
-	const main = amounts.reduce((a, b) => (b.amount.eurMillion > a.amount.eurMillion ? b : a));
+export function revenueColor(amounts: readonly LevelAmount[], adjustable: boolean): string {
+	const merged = mergeLevels(amounts);
+	if (!adjustable || merged.length === 0) return 'var(--revenue-fixed)';
+	const main = merged.reduce((a, b) => (b.eurMillion > a.eurMillion ? b : a));
 	return levelColor(main.level);
 }
 
-/** The levels of government, in the order the legend and the strips list them. */
-export const LEVELS: readonly Level[] = [
-	'federal',
-	'communities-and-regions',
-	'local',
-	'social-security'
-];
+type LevelAmount = { level: Level; amount: { eurMillion: number } };
 
 /**
- * A level's colour: the federal government, local government and social security keep their colour from the map;
- * the communities and regions together take the colour of the first of them.
+ * The levels the map shows. Social security has its own budget but is run under federal policy, so on the map it
+ * counts with the federal government as the federal level, as it does on the spending map.
  */
-export function levelColor(level: Level): string {
-	return `var(--series-${colorSlot(level === 'communities-and-regions' ? 'flanders' : level)})`;
+export type MapLevel = 'federal-level' | 'communities-and-regions' | 'local';
+
+/** The levels on the map, in the order the legend and the strips list them. */
+export const MAP_LEVELS: readonly MapLevel[] = [
+	'federal-level',
+	'communities-and-regions',
+	'local'
+];
+
+export function mapLevel(level: Level): MapLevel {
+	return level === 'federal' || level === 'social-security' ? 'federal-level' : level;
+}
+
+/** What each level on the map collects, with the federal government and social security added up. */
+export function mergeLevels(
+	amounts: readonly LevelAmount[]
+): { level: MapLevel; eurMillion: number }[] {
+	const totals = new Map<MapLevel, number>();
+	for (const { level, amount } of amounts) {
+		totals.set(mapLevel(level), (totals.get(mapLevel(level)) ?? 0) + amount.eurMillion);
+	}
+	return MAP_LEVELS.filter((level) => totals.has(level)).map((level) => ({
+		level,
+		eurMillion: totals.get(level)!
+	}));
+}
+
+/**
+ * A level's colour: the federal level and local government keep their colour from the map; the communities and
+ * regions together take the colour of the first of them.
+ */
+export function levelColor(level: MapLevel): string {
+	const government = {
+		'federal-level': 'federal',
+		'communities-and-regions': 'flanders',
+		local: 'local'
+	}[level];
+	return `var(--series-${colorSlot(government)})`;
 }

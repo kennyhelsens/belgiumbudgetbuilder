@@ -11,7 +11,15 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 	import type { Dataset } from '../data/schema.ts';
 	import type { Locale } from '../i18n/locales.ts';
 	import { translate, type MessageKey } from '../i18n/translate.ts';
-	import { colorSlot, LEVELS, levelColor, revenueColor, THEMES, themeColor } from './colors.ts';
+	import {
+		colorSlot,
+		levelColor,
+		MAP_LEVELS,
+		mergeLevels,
+		revenueColor,
+		THEMES,
+		themeColor
+	} from './colors.ts';
 	import { formatEuro } from './format.ts';
 	import { mapGroups, mapTiles, revenueTiles, tooltipPlacement, type Tile } from './layout.ts';
 
@@ -113,14 +121,11 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 	const levelAmounts = (id: string) =>
 		data.revenue.types.find((type) => type.id === id)?.byLevel?.amounts ?? [];
 
-	/** Which levels of government collect a revenue type, as percentages of what they collect together. */
+	/** Which levels on the map collect a revenue type, as percentages of what they collect together. */
 	function levelShares(id: string) {
-		const amounts = levelAmounts(id);
-		const total = amounts.reduce((sum, { amount }) => sum + amount.eurMillion, 0);
-		return amounts.map(({ level, amount }) => ({
-			level,
-			percent: (amount.eurMillion / total) * 100
-		}));
+		const merged = mergeLevels(levelAmounts(id));
+		const total = merged.reduce((sum, { eurMillion }) => sum + eurMillion, 0);
+		return merged.map(({ level, eurMillion }) => ({ level, percent: (eurMillion / total) * 100 }));
 	}
 
 	const sourcesById = $derived(new Map(data.sources.map((source) => [source.id, source])));
@@ -535,7 +540,7 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 
 	{#if onRevenue}
 		<ul class="legend" aria-label={t('map.levelsLabel')}>
-			{#each LEVELS as level (level)}
+			{#each MAP_LEVELS as level (level)}
 				<li class="legend__item" style="--tile-color:{levelColor(level)}">
 					{t(`level.${level}` as MessageKey)}
 				</li>

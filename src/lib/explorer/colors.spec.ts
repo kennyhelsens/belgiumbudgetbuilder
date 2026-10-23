@@ -2,7 +2,15 @@
 // ABOUTME: each theme of spending has its own colour. Slots follow the validated categorical palette order in global.css.
 import { describe, expect, it } from 'vitest';
 import type { Level } from '../data/schema.ts';
-import { colorSlot, LEVELS, levelColor, revenueColor, THEMES, themeColor } from './colors.ts';
+import {
+	colorSlot,
+	levelColor,
+	MAP_LEVELS,
+	mergeLevels,
+	revenueColor,
+	THEMES,
+	themeColor
+} from './colors.ts';
 
 const GOVERNMENTS = [
 	'federal',
@@ -64,7 +72,7 @@ describe('revenueColor', () => {
 				]),
 				true
 			)
-		).toBe(levelColor('federal'));
+		).toBe(levelColor('federal-level'));
 		expect(
 			revenueColor(
 				amounts([
@@ -76,6 +84,20 @@ describe('revenueColor', () => {
 		).toBe(levelColor('communities-and-regions'));
 	});
 
+	// Social security is run under federal policy, so on the map it counts with the federal government.
+	it('takes social contributions, collected by social security, as federal level', () => {
+		expect(
+			revenueColor(
+				amounts([
+					['federal', 64],
+					['communities-and-regions', 462],
+					['social-security', 84816]
+				]),
+				true
+			)
+		).toBe(levelColor('federal-level'));
+	});
+
 	it('shows revenue that cannot be changed, or has no split, in a neutral colour', () => {
 		expect(revenueColor(amounts([['communities-and-regions', 9]]), false)).toBe(
 			'var(--revenue-fixed)'
@@ -84,12 +106,27 @@ describe('revenueColor', () => {
 	});
 });
 
+describe('mergeLevels', () => {
+	it('adds the federal government and social security up as the federal level, in legend order', () => {
+		const merged = mergeLevels([
+			{ level: 'local', amount: { eurMillion: 5 } },
+			{ level: 'social-security', amount: { eurMillion: 2 } },
+			{ level: 'communities-and-regions', amount: { eurMillion: 9 } },
+			{ level: 'federal', amount: { eurMillion: 57 } }
+		]);
+		expect(merged).toEqual([
+			{ level: 'federal-level', eurMillion: 59 },
+			{ level: 'communities-and-regions', eurMillion: 9 },
+			{ level: 'local', eurMillion: 5 }
+		]);
+	});
+});
+
 describe('levelColor', () => {
-	it('gives each level of government its own palette colour, social security the same as on the map', () => {
-		const colours = LEVELS.map(levelColor);
-		expect(new Set(colours).size).toBe(4);
-		expect(levelColor('federal')).toBe(`var(--series-${colorSlot('federal')})`);
-		expect(levelColor('social-security')).toBe(`var(--series-${colorSlot('social-security')})`);
+	it('gives each level on the map its own palette colour, as the governments have on the map', () => {
+		expect(MAP_LEVELS).toEqual(['federal-level', 'communities-and-regions', 'local']);
+		expect(new Set(MAP_LEVELS.map(levelColor)).size).toBe(3);
+		expect(levelColor('federal-level')).toBe(`var(--series-${colorSlot('federal')})`);
 		expect(levelColor('local')).toBe(`var(--series-${colorSlot('local')})`);
 	});
 });
