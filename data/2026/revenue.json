@@ -1,0 +1,471 @@
+{
+	"types": [
+		{
+			"id": "revenue.personal-income-tax",
+			"label": {
+				"nl": "Personenbelasting en andere directe belastingen",
+				"fr": "Impôt des personnes physiques et autres impôts directs",
+				"en": "Personal income tax and other direct taxes"
+			},
+			"amount": {
+				"eurMillion": 82928,
+				"ref": {
+					"source": "fpb-outlook-2026-06",
+					"locator": "Tabel D.1 'Rekening van de overheid' (Miljoenen euro), p. 58, column 2026; rows 'a. Directe belastingen' and '- Vennootschappen'",
+					"quote": "a. Directe belastingen                   96490   104508   105952   111673   115520 | - Huishoudens                        71435    75581    77771    81561    84494 | - Vennootschappen                    23758    27602    26852    28745    29608 | - Andere sectoren                     1297     1325     1329     1368     1418",
+					"note": "111673 (Directe belastingen) - 28745 (Vennootschappen) = 82928, i.e. the rows 'Huishoudens' (81561) and 'Andere sectoren' (1368). The printed sub-rows sum to 111674 (rounding in the source); taking the total minus companies keeps the parts equal to the table total. ESA 2010 current taxes on income and wealth (D.5) paid by households, plus the small row 'Andere sectoren' (1368, all federal per Tabel D.2, not further described in the source). Per ESA 2010 §4.78(a) this covers taxes on income from work, property, self-employment and pensions, incl. tax withheld by employers (bedrijfsvoorheffing / précompte professionnel); per §4.79(d) it also covers households' payments for licences to own or use vehicles (e.g. road tax on private cars). Includes the regional and municipal surcharges (opcentiemen / centimes additionnels). Levied by (2026, Tabel D.2/D.3/D.5/D.6, households row): federal 58564, communities and regions 16383 (regional surcharges on personal income tax), local governments 5111, social security 1503; 'Andere sectoren' 1368 federal. Part of the federal amount is passed on to communities and regions under the Special Financing Act (Tabel D.3 row 'Overdrachten van fiscale ontvangsten'), so 'levied by' is not 'kept by'."
+				}
+			},
+			"effects": {
+				"cut": [
+					{
+						"nl": "een hogere belastingvrije som",
+						"fr": "une quotité exemptée d'impôt plus élevée",
+						"en": "a higher tax-free allowance"
+					},
+					{
+						"nl": "minder bedrijfsvoorheffing ingehouden op het loon",
+						"fr": "moins de précompte professionnel retenu sur le salaire",
+						"en": "less income tax withheld from pay"
+					},
+					{
+						"nl": "lagere gemeentelijke of gewestelijke opcentiemen",
+						"fr": "des centimes additionnels communaux ou régionaux plus bas",
+						"en": "lower municipal or regional income tax surcharges"
+					}
+				],
+				"add": [
+					{
+						"nl": "een lagere belastingvrije som",
+						"fr": "une quotité exemptée d'impôt plus basse",
+						"en": "a lower tax-free allowance"
+					},
+					{
+						"nl": "meer bedrijfsvoorheffing ingehouden op het loon",
+						"fr": "plus de précompte professionnel retenu sur le salaire",
+						"en": "more income tax withheld from pay"
+					},
+					{
+						"nl": "hogere gemeentelijke of gewestelijke opcentiemen",
+						"fr": "des centimes additionnels communaux ou régionaux plus élevés",
+						"en": "higher municipal or regional income tax surcharges"
+					}
+				],
+				"ref": {
+					"source": "fpb-outlook-2026-06",
+					"locator": "p. 18 (section 3.2, labour supply measures) and p. 41 (section 4.4.3, local government)",
+					"quote": "fiscale en parafiscale prikkels (de verhoging van de belastingvrije som, de afschaffing van de belastingvermindering voor vervangingsinkomens, de aanpassingen aan de sociale en fiscale werkbonus [...]) | een stijging van de fiscale ontvangsten, in het bijzonder van de opcentiemen op de personenbelasting"
+				}
+			}
+		},
+		{
+			"id": "revenue.corporate-income-tax",
+			"label": {
+				"nl": "Vennootschapsbelasting",
+				"fr": "Impôt des sociétés",
+				"en": "Corporate income tax"
+			},
+			"amount": {
+				"eurMillion": 28745,
+				"ref": {
+					"source": "fpb-outlook-2026-06",
+					"locator": "Tabel D.1 'Rekening van de overheid' (Miljoenen euro), p. 58, column 2026; row '- Vennootschappen'",
+					"quote": "- Vennootschappen                    23758    27602    26852    28745    29608",
+					"note": "Direct taxes paid by corporations: ESA 2010 §4.78(b) 'taxes on the income or profits of corporations'. Levied by (2026): federal 28354 (Tabel D.2), social security 391 (Tabel D.6)."
+				}
+			},
+			"effects": {
+				"cut": [
+					{
+						"nl": "een lagere belasting op de winst van vennootschappen",
+						"fr": "un impôt plus bas sur les bénéfices des sociétés",
+						"en": "lower tax on company profits"
+					},
+					{
+						"nl": "een ruimere investeringsaftrek voor bedrijven",
+						"fr": "une déduction pour investissement plus large",
+						"en": "a larger tax deduction for business investment"
+					}
+				],
+				"add": [
+					{
+						"nl": "een hogere belasting op de winst van vennootschappen",
+						"fr": "un impôt plus élevé sur les bénéfices des sociétés",
+						"en": "higher tax on company profits"
+					},
+					{
+						"nl": "een beperktere investeringsaftrek voor bedrijven",
+						"fr": "une déduction pour investissement plus limitée",
+						"en": "a smaller tax deduction for business investment"
+					}
+				],
+				"ref": {
+					"source": "be-chamber-56-1278-001",
+					"locator": "Deel II, Tabel 3 'Technische factoren ter correctie van de fiscale ontvangsten van 2025 en 2026', p. 111 (column VENB / I.Soc)",
+					"quote": "Uitstel hervorming van de investeringsaftrek ... Report réforme de la déduction pour investissement"
+				}
+			}
+		},
+		{
+			"id": "revenue.indirect-taxes",
+			"label": {
+				"nl": "Btw, accijnzen en andere indirecte belastingen",
+				"fr": "TVA, accises et autres impôts indirects",
+				"en": "VAT, excise duties and other indirect taxes"
+			},
+			"amount": {
+				"eurMillion": 77106,
+				"ref": {
+					"source": "fpb-outlook-2026-06",
+					"locator": "Tabel D.1 'Rekening van de overheid' (Miljoenen euro), p. 58, column 2026; row 'b. Indirecte belastingen'",
+					"quote": "b. Indirecte belastingen                 73072    73082    74760    77106    79839",
+					"note": "The FPB gives indirect taxes only as one total, so VAT, excise duties and the rest are kept together. ESA 2010 taxes on production and imports (D.2): VAT (§4.17), excise duties and other taxes on products, incl. taxes payable when ownership of land or buildings changes (registration duties on property sales), car registration taxes, taxes on insurance premiums and on gambling (§4.20), and other taxes on production, incl. taxes on the ownership or use of buildings used in production 'including owner-occupiers of dwellings' (§4.23(a)). The Belgian national accounts book the onroerende voorheffing / précompte immobilier and its opcentiemen as D.29, not as an income tax, and the registration duties (except gift duties) as D.21 (NAI inventory pp. 230-231), so property tax and registration duties on home purchases are inside this row; gift duties are capital taxes (D.91). Levied by (2026): federal 57244 (Tabel D.2), communities and regions 9096 (Tabel D.3), local governments 8204 (Tabel D.5), social security 2562 (Tabel D.6). A large part of federal VAT is passed on to social security and the communities (e.g. alternative financing of social security from VAT, DOC 56 1278/001 pp. 38-39)."
+				}
+			},
+			"effects": {
+				"cut": [
+					{
+						"nl": "een lager btw-tarief op sommige producten en diensten",
+						"fr": "un taux de TVA plus bas sur certains biens et services",
+						"en": "a lower VAT rate on some goods and services"
+					},
+					{
+						"nl": "lagere accijnzen op brandstof, aardgas of stookolie",
+						"fr": "des accises plus basses sur les carburants, le gaz ou le mazout",
+						"en": "lower excise duties on fuel, gas or heating oil"
+					},
+					{
+						"nl": "lagere registratierechten bij aankoop van een woning",
+						"fr": "des droits d'enregistrement plus bas à l'achat d'un logement",
+						"en": "lower registration duties when buying a home"
+					},
+					{
+						"nl": "een lagere onroerende voorheffing",
+						"fr": "un précompte immobilier plus bas",
+						"en": "lower property tax on buildings"
+					}
+				],
+				"add": [
+					{
+						"nl": "een hoger btw-tarief op sommige producten en diensten",
+						"fr": "un taux de TVA plus élevé sur certains biens et services",
+						"en": "a higher VAT rate on some goods and services"
+					},
+					{
+						"nl": "hogere accijnzen op brandstof, aardgas of stookolie",
+						"fr": "des accises plus élevées sur les carburants, le gaz ou le mazout",
+						"en": "higher excise duties on fuel, gas or heating oil"
+					},
+					{
+						"nl": "hogere registratierechten bij aankoop van een woning",
+						"fr": "des droits d'enregistrement plus élevés à l'achat d'un logement",
+						"en": "higher registration duties when buying a home"
+					},
+					{
+						"nl": "een hogere onroerende voorheffing",
+						"fr": "un précompte immobilier plus élevé",
+						"en": "higher property tax on buildings"
+					}
+				],
+				"ref": {
+					"source": "be-chamber-56-1278-001",
+					"locator": "Deel I, fiscal receipts, list of measures, pp. 24-25",
+					"quote": "een stijging van het btw-tarief van 6 % naar 12 % voor hotels en campings [...] een geleidelijke accijnsverhoging van het tarief voor aardgas voor niet-zakelijk verbruik [...] een verhoging van de accijnzen op huisbrandolie [...] een verlaging van de accijnzen op elektriciteit voor niet-zakelijk gebruik"
+				}
+			}
+		},
+		{
+			"id": "revenue.capital-taxes",
+			"label": {
+				"nl": "Erf- en schenkbelasting en andere kapitaalbelastingen",
+				"fr": "Droits de succession et de donation et autres impôts en capital",
+				"en": "Inheritance and gift taxes and other capital taxes"
+			},
+			"amount": {
+				"eurMillion": 5019,
+				"ref": {
+					"source": "fpb-outlook-2026-06",
+					"locator": "Tabel D.1 'Rekening van de overheid' (Miljoenen euro), p. 58, column 2026; row 'c. Kapitaalbelastingen'",
+					"quote": "c. Kapitaalbelastingen                    3959     4258     4318     5019     4763",
+					"note": "ESA 2010 capital taxes (D.91, §4.149): inheritance taxes, death duties and taxes on gifts, plus occasional levies on assets or net worth. Inheritance and gift taxes are regional (Flanders: erfbelasting and schenkbelasting, collected by the Vlaamse Belastingdienst; Brussels and Wallonia: successierechten / droits de succession and schenkingsrechten / droits de donation). Levied by (2026): communities and regions 4113 (Tabel D.3), federal 906 (Tabel D.2; the source does not say what the federal part is)."
+				}
+			},
+			"effects": {
+				"cut": [
+					{
+						"nl": "minder erfbelasting of successierechten voor erfgenamen",
+						"fr": "moins de droits de succession pour les héritiers",
+						"en": "less inheritance tax for heirs"
+					},
+					{
+						"nl": "minder schenkbelasting of schenkingsrechten op schenkingen",
+						"fr": "moins de droits de donation sur les donations",
+						"en": "less gift tax on donations"
+					},
+					{
+						"nl": "een hogere vrijstelling voor de langstlevende partner",
+						"fr": "une exonération plus élevée pour le partenaire survivant",
+						"en": "a larger tax-free amount for a surviving partner"
+					}
+				],
+				"add": [
+					{
+						"nl": "meer erfbelasting of successierechten voor erfgenamen",
+						"fr": "plus de droits de succession pour les héritiers",
+						"en": "more inheritance tax for heirs"
+					},
+					{
+						"nl": "meer schenkbelasting of schenkingsrechten op schenkingen",
+						"fr": "plus de droits de donation sur les donations",
+						"en": "more gift tax on donations"
+					},
+					{
+						"nl": "een lagere vrijstelling voor de langstlevende partner",
+						"fr": "une exonération plus basse pour le partenaire survivant",
+						"en": "a smaller tax-free amount for a surviving partner"
+					}
+				],
+				"ref": {
+					"source": "vp-17-2025-2026-nr1-algemene-toelichting-ba2026",
+					"locator": "Deel III, 8. Gewestbelastingen, p. 31",
+					"quote": "De ontvangsten uit de schenkbelasting [...] De ontvangsten uit erfbelasting (begrotingsartikel CE0-9CDDADK-OW) [...] minder ontvangsten ingevolge de verhoogde voetvrijstelling voor de langstlevende partner en de single-vermindering"
+				}
+			}
+		},
+		{
+			"id": "revenue.social-contributions",
+			"label": {
+				"nl": "Sociale bijdragen (werkgevers, werknemers, zelfstandigen en anderen)",
+				"fr": "Cotisations sociales (employeurs, travailleurs, indépendants et autres)",
+				"en": "Social contributions (employers, workers, self-employed and others)"
+			},
+			"amount": {
+				"eurMillion": 85362,
+				"ref": {
+					"source": "fpb-outlook-2026-06",
+					"locator": "Tabel D.1 'Rekening van de overheid' (Miljoenen euro), p. 58, column 2026; row '2. Werkelijke sociale premies'",
+					"quote": "2. Werkelijke sociale premies             77069    80645    83194    85362    89195",
+					"note": "Actual social contributions (ESA 2010 D.611 employers' and D.613 households' contributions). The FPB government account does not split employers from workers and self-employed, so they are kept together. Levied mainly by social security (2026: 84816, Tabel D.6), i.e. RSZ/ONSS for employees and RSVZ/INASTI for the self-employed (DOC 56 1278/001 Tabel 23-24); small amounts by federal (64), communities and regions (462) and local (21) governments. The sub-sector rows sum to 85363 (rounding). The NBB notes that social contributions also include contributions paid by the non-active population (NBB Verslag 2024, Tabel 4.2, footnote 4), hence 'and others' in the label."
+				}
+			},
+			"effects": {
+				"cut": [
+					{
+						"nl": "lagere werkgeversbijdragen op lonen",
+						"fr": "des cotisations patronales plus basses sur les salaires",
+						"en": "lower employer contributions on wages"
+					},
+					{
+						"nl": "lagere sociale bijdragen ingehouden op het loon",
+						"fr": "des cotisations personnelles plus basses sur le salaire",
+						"en": "lower social contributions deducted from pay"
+					},
+					{
+						"nl": "lagere sociale bijdragen voor zelfstandigen",
+						"fr": "des cotisations sociales plus basses pour les indépendants",
+						"en": "lower social contributions for the self-employed"
+					}
+				],
+				"add": [
+					{
+						"nl": "hogere werkgeversbijdragen op lonen",
+						"fr": "des cotisations patronales plus élevées sur les salaires",
+						"en": "higher employer contributions on wages"
+					},
+					{
+						"nl": "hogere sociale bijdragen ingehouden op het loon",
+						"fr": "des cotisations personnelles plus élevées sur le salaire",
+						"en": "higher social contributions deducted from pay"
+					},
+					{
+						"nl": "hogere sociale bijdragen voor zelfstandigen",
+						"fr": "des cotisations sociales plus élevées pour les indépendants",
+						"en": "higher social contributions for the self-employed"
+					}
+				],
+				"ref": {
+					"source": "fpb-outlook-2026-06",
+					"locator": "Tabel 4 'Maatregelen m.b.t. de arbeidskosten', p. 17, and p. 15",
+					"quote": "Extra budget voor de structurele vermindering van de werkgeversbijdragen op lage en middelhoge brutolonen | Het gaat om lagere personenbelastingen, een hogere sociale werkbonus"
+				}
+			}
+		},
+		{
+			"id": "revenue.imputed-social-contributions",
+			"label": {
+				"nl": "Toegerekende sociale bijdragen",
+				"fr": "Cotisations sociales imputées",
+				"en": "Imputed social contributions"
+			},
+			"amount": {
+				"eurMillion": 14850,
+				"ref": {
+					"source": "fpb-outlook-2026-06",
+					"locator": "Tabel D.1 'Rekening van de overheid' (Miljoenen euro), p. 58, column 2026; row 'D. Toegerekende sociale premies'",
+					"quote": "D. Toegerekende sociale premies              12996 13564 14320 14850 15367",
+					"note": "An accounting entry, not money paid by anyone: ESA 2010 §4.97 defines employers' imputed social contributions as 'the counterpart to social benefits (less eventual employees' social contributions) paid directly by employers' to their (former) employees. The same amount is booked as a cost of government as employer (compensation of employees), so it has no net effect on the balance. Booked by (2026): federal 3968 (Tabel D.2), communities and regions 8723 (Tabel D.3), local 2159 (Tabel D.5)."
+				}
+			},
+			"adjustable": false,
+			"fixedNote": {
+				"nl": "Dit is een boekhoudkundige tegenpost, geen geld dat iemand betaalt. Volgens de Europese rekenregels (ESR 2010) staat hetzelfde bedrag ook bij de uitgaven, als deel van de beloning van het overheidspersoneel. Het weerspiegelt uitkeringen die overheden rechtstreeks aan hun (gewezen) personeel betalen. Daarom kan je het hier niet aanpassen: het verandert het tekort niet.",
+				"fr": "Il s'agit d'une contrepartie comptable, pas d'argent versé par quelqu'un. Selon les règles comptables européennes (SEC 2010), le même montant figure aussi dans les dépenses, comme partie de la rémunération du personnel public. Il reflète les prestations que les pouvoirs publics versent directement à leur personnel (ancien ou actuel). C'est pourquoi il ne peut pas être modifié ici : il ne change pas le déficit.",
+				"en": "This is a bookkeeping entry, not money anyone pays. Under the European accounting rules (ESA 2010), the same amount also appears on the spending side, as part of the pay of government staff. It mirrors benefits that governments pay directly to their current or former staff. That is why it cannot be changed here: it does not change the deficit."
+			}
+		},
+		{
+			"id": "revenue.sales-of-goods-and-services",
+			"label": {
+				"nl": "Verkoop van goederen en diensten (retributies)",
+				"fr": "Ventes de biens et services (redevances)",
+				"en": "Sales of goods and services (fees and charges)"
+			},
+			"amount": {
+				"eurMillion": 21181,
+				"ref": {
+					"source": "fpb-outlook-2026-06",
+					"locator": "Tabel D.1 'Rekening van de overheid' (Miljoenen euro), p. 58, column 2026; row '4. Lopende verkopen van geproduceerde goederen en diensten'",
+					"quote": "4. Lopende verkopen van geprodu-         18491    19671    20153    21181    22004 / ceerde goederen en diensten",
+					"note": "ESA 2010 sales (§20.80-20.82): market output plus payments for non-market output, e.g. museum entrance fees and payments to non-market schools or hospitals; §4.80(d) lists fees for passports, museum or library admissions, garbage disposal, airport and court fees as, in most cases, purchases of government services. Received by (2026): federal 5508 (Tabel D.2), communities and regions 9947 (Tabel D.3), local governments 5013 (Tabel D.5), social security 713 (Tabel D.6). The Belgian national accounts book municipal charges for identity cards and passports as non-market sales and charges for household waste collection and waste bags as market sales, even where the municipality calls them a tax (NAI inventory p. 231)."
+				}
+			},
+			"effects": {
+				"cut": [
+					{
+						"nl": "lagere retributies voor paspoorten en identiteitskaarten",
+						"fr": "des redevances plus basses pour passeports et cartes d'identité",
+						"en": "lower fees for passports and identity cards"
+					},
+					{
+						"nl": "lagere toegangsprijzen voor openbare musea en bibliotheken",
+						"fr": "des entrées moins chères aux musées et bibliothèques publics",
+						"en": "lower entrance fees for public museums and libraries"
+					},
+					{
+						"nl": "lagere prijzen voor huisvuilzakken en afvalophaling",
+						"fr": "des sacs-poubelle et une collecte des déchets moins chers",
+						"en": "lower prices for rubbish bags and waste collection"
+					}
+				],
+				"add": [
+					{
+						"nl": "hogere retributies voor paspoorten en identiteitskaarten",
+						"fr": "des redevances plus élevées pour passeports et cartes d'identité",
+						"en": "higher fees for passports and identity cards"
+					},
+					{
+						"nl": "hogere toegangsprijzen voor openbare musea en bibliotheken",
+						"fr": "des entrées plus chères aux musées et bibliothèques publics",
+						"en": "higher entrance fees for public museums and libraries"
+					},
+					{
+						"nl": "hogere prijzen voor huisvuilzakken en afvalophaling",
+						"fr": "des sacs-poubelle et une collecte des déchets plus chers",
+						"en": "higher prices for rubbish bags and waste collection"
+					}
+				],
+				"ref": {
+					"source": "nai-inventaris-esr1995",
+					"locator": "section 3.24.2.3 'Het onderscheid tussen belastingontvangsten en niet-fiscale ontvangsten', p. 231",
+					"quote": "De volgende belastingen werden opgenomen in de niet-marktverkopen van goederen en diensten: - belastingen op administratieve prestaties: ontvangsten geïnd voor de aflevering van diverse administratieve stukken zoals identiteitskaarten, paspoorten, trouwboekjes, ... [...] De belastingen op prestaties met betrekking tot de openbare hygiëne (ophaling huishoudelijk afval, opbrengst van de verkoop van vuilniszakken, prestaties op begraafplaatsen) werden als marktverkopen van goederen en diensten beschouwd."
+				}
+			}
+		},
+		{
+			"id": "revenue.property-income",
+			"label": {
+				"nl": "Inkomen uit vermogen (rente, dividenden)",
+				"fr": "Revenus de la propriété (intérêts, dividendes)",
+				"en": "Property income (interest, dividends)"
+			},
+			"amount": {
+				"eurMillion": 5808,
+				"ref": {
+					"source": "fpb-outlook-2026-06",
+					"locator": "Tabel D.1 'Rekening van de overheid' (Miljoenen euro), p. 58, column 2026; row '1. Inkomen uit vermogen'",
+					"quote": "1. Inkomen uit vermogen                   5560     6244     5695     5808     5820",
+					"note": "ESA 2010 property income (D.4, §4.41): interest, dividends and other distributed income of corporations, and rent on natural resources, received by government. Received by (2026, before consolidation): federal 2832, communities and regions 1804, local 1128, social security 347 (Tabel D.2/D.3/D.5/D.6; these sum to 6111; Tabel D.1 nets out flows between governments, the source does not explain the 303 difference). Includes e.g. dividends from public holdings such as Belfius (DOC 56 1278/001 p. 15)."
+				}
+			},
+			"effects": {
+				"cut": [
+					{
+						"nl": "minder dividenden uit overheidsparticipaties zoals Belfius",
+						"fr": "moins de dividendes des participations publiques comme Belfius",
+						"en": "smaller dividends from public stakes such as Belfius"
+					},
+					{
+						"nl": "minder ontvangen rente op leningen en deposito's",
+						"fr": "moins d'intérêts perçus sur les prêts et dépôts",
+						"en": "less interest earned on government loans and deposits"
+					}
+				],
+				"add": [
+					{
+						"nl": "meer dividenden uit overheidsparticipaties zoals Belfius",
+						"fr": "plus de dividendes des participations publiques comme Belfius",
+						"en": "larger dividends from public stakes such as Belfius"
+					},
+					{
+						"nl": "meer ontvangen rente op leningen en deposito's",
+						"fr": "plus d'intérêts perçus sur les prêts et dépôts",
+						"en": "more interest earned on government loans and deposits"
+					}
+				],
+				"ref": {
+					"source": "be-chamber-56-1278-001",
+					"locator": "Deel I, structural balance, one-off factors, p. 15",
+					"quote": "de impact van het dividend van Belfius (500 miljoen euro in 2025 en 2026)"
+				}
+			}
+		},
+		{
+			"id": "revenue.transfers-and-subsidies-received",
+			"label": {
+				"nl": "Ontvangen overdrachten en subsidies (o.a. boetes)",
+				"fr": "Transferts et subventions reçus (notamment les amendes)",
+				"en": "Transfers and subsidies received (incl. fines)"
+			},
+			"amount": {
+				"eurMillion": 7114,
+				"ref": {
+					"source": "fpb-outlook-2026-06",
+					"locator": "Tabel D.1 'Rekening van de overheid' (Miljoenen euro), p. 58, column 2026; rows '2. Inkomensoverdrachten', '3. Kapitaaloverdrachten' and 'C. Ontvangen subsidies'",
+					"quote": "2. Inkomensoverdrachten                   4451     4906     4912     4916     4790 | 3. Kapitaaloverdrachten                   1143      660      889     1535      549 | C. Ontvangen subsidies                         713    694    655    663    678",
+					"note": "4916 (Inkomensoverdrachten) + 1535 (Kapitaaloverdrachten) + 663 (Ontvangen subsidies) = 7114 Current transfers (ESA 2010 D.7: e.g. fines imposed by courts and quasi-judicial bodies, §4.132; current transfers from EU institutions, §4.122(b)), capital transfers (D.9: e.g. investment grants received, §4.152) and subsidies received by government units. The FPB does not detail these rows. Received by (2026): income transfers federal 1629, communities and regions 2411, local 734, social security 141 (sum 4915 vs 4916, rounding); capital transfers 580 / 902 / 20 / 33 (sum 1535); subsidies received communities and regions 327, local 335 (sum 662 vs 663, rounding) (Tabel D.2/D.3/D.5/D.6). In the NBB/NAI accounts the current transfers row covers D.72 + D.74 + D.75; fiscal fines are also booked as miscellaneous current transfers (NAI inventory p. 229)."
+				}
+			},
+			"effects": {
+				"cut": [
+					{
+						"nl": "lagere penale boetes en onmiddellijke inningen",
+						"fr": "des amendes pénales et perceptions immédiates plus basses",
+						"en": "lower criminal fines and on-the-spot fines"
+					},
+					{
+						"nl": "minder middelen van de Europese Unie",
+						"fr": "moins de fonds de l'Union européenne",
+						"en": "less funding received from the European Union"
+					}
+				],
+				"add": [
+					{
+						"nl": "hogere penale boetes en onmiddellijke inningen",
+						"fr": "des amendes pénales et perceptions immédiates plus élevées",
+						"en": "higher criminal fines and on-the-spot fines"
+					},
+					{
+						"nl": "meer middelen van de Europese Unie",
+						"fr": "plus de fonds de l'Union européenne",
+						"en": "more funding received from the European Union"
+					}
+				],
+				"ref": {
+					"source": "be-chamber-56-1278-001",
+					"locator": "Deel I, fiscal receipts, list of measures, p. 25",
+					"quote": "een verhoging van de onmiddellijke inningen en opdeciemen op penale boeten: +20 miljoen euro"
+				}
+			}
+		}
+	]
+}

@@ -66,6 +66,47 @@ export function datasetFixture(): Dataset {
 				{ year: 2031, value: 122.3, ref: ref('p. 6') }
 			]
 		},
+		revenue: {
+			types: [
+				{
+					id: 'revenue.income-tax',
+					label: { nl: 'Personenbelasting', fr: 'Impôt des personnes physiques', en: 'Income tax' },
+					amount: { eurMillion: 180000, ref: ref('p. 2') },
+					effects: {
+						cut: [
+							{
+								nl: 'minder belasting op loon',
+								fr: 'moins d’impôt sur le salaire',
+								en: 'less tax on wages'
+							}
+						],
+						add: [
+							{
+								nl: 'meer belasting op loon',
+								fr: 'plus d’impôt sur le salaire',
+								en: 'more tax on wages'
+							}
+						],
+						ref: ref('p. 7')
+					}
+				},
+				{
+					id: 'revenue.contributions',
+					label: {
+						nl: 'Sociale bijdragen',
+						fr: 'Cotisations sociales',
+						en: 'Social contributions'
+					},
+					amount: { eurMillion: 120000, ref: { source: 'socsec-budget', locator: 'table 2' } },
+					adjustable: false,
+					fixedNote: {
+						nl: 'Volgt de lonen.',
+						fr: 'Suit les salaires.',
+						en: 'Follows wages.'
+					}
+				}
+			]
+		},
 		entities: [
 			{
 				id: 'federal',

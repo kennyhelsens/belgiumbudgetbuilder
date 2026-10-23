@@ -1,5 +1,5 @@
-// ABOUTME: Cross-checks on a parsed dataset that a schema cannot express.
-// ABOUTME: Returns readable problems: unknown or unused sources, duplicate ids, totals that do not add up, bad transfers.
+// ABOUTME: Cross-checks on a parsed dataset that a schema cannot express: unknown or unused sources, duplicate ids,
+// ABOUTME: spending and revenue totals that do not add up, and bad transfers. Returns readable problems.
 import type { Dataset, SourceRef } from './schema.ts';
 
 /** Each line may be rounded to the nearest million, so sums may drift by up to 1 per line. */
@@ -51,6 +51,18 @@ export function findProblems(data: Dataset): string[] {
 				problems.push(`${line.id}: transfer to unknown entity "${line.transferTo}"`);
 			}
 		}
+	}
+
+	const revenueTypes = data.revenue.types;
+	for (const type of revenueTypes) {
+		if (!type.id.startsWith('revenue.')) problems.push(`"${type.id}" should start with "revenue."`);
+		if (seenIds.has(type.id)) problems.push(`duplicate id "${type.id}"`);
+		seenIds.add(type.id);
+	}
+	const revenueSum = revenueTypes.reduce((total, type) => total + type.amount.eurMillion, 0);
+	const totalRevenue = data.overview.revenue.eurMillion;
+	if (Math.abs(revenueSum - totalRevenue) > ROUNDING_PER_LINE * revenueTypes.length) {
+		problems.push(`revenue types add up to ${revenueSum}, total revenue is ${totalRevenue}`);
 	}
 
 	const lineAmounts = new Map(
@@ -119,6 +131,10 @@ function collectRefs(data: Dataset): { where: string; ref: SourceRef }[] {
 		for (const lever of details.levers) {
 			refs.push({ where: `${details.line}.levers.${lever.id}`, ref: lever.ref });
 		}
+	}
+	for (const type of data.revenue.types) {
+		refs.push({ where: type.id, ref: type.amount.ref });
+		if (type.effects) refs.push({ where: `${type.id}.effects`, ref: type.effects.ref });
 	}
 	for (const entity of data.entities) {
 		refs.push({ where: `${entity.id}.total`, ref: entity.expenditure.total.ref });

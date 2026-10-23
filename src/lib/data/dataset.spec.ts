@@ -128,4 +128,41 @@ describe('data/2026', () => {
 			expect.arrayContaining(['federal.policy-and-support', 'federal.public-debt-other-costs'])
 		);
 	});
+
+	// Revenue follows the Planning Bureau's account of general government, so its types add up to the same total.
+	it('splits the revenue into types that add up to the total revenue', () => {
+		const sum = dataset.revenue.types.reduce((total, type) => total + type.amount.eurMillion, 0);
+		expect(sum).toBe(dataset.overview.revenue.eurMillion);
+		expect(dataset.revenue.types.map((type) => type.id)).toEqual(
+			expect.arrayContaining([
+				'revenue.personal-income-tax',
+				'revenue.corporate-income-tax',
+				'revenue.indirect-taxes',
+				'revenue.social-contributions'
+			])
+		);
+	});
+
+	// Imputed contributions are a bookkeeping entry with an equal cost on the spending side; no tax decision moves them.
+	it('does not let visitors change imputed social contributions, and says why', () => {
+		const imputed = dataset.revenue.types.find(
+			(type) => type.id === 'revenue.imputed-social-contributions'
+		);
+		expect(imputed?.adjustable).toBe(false);
+		expect(imputed?.fixedNote?.en).toBeTruthy();
+	});
+
+	it('says what less or more revenue could mean for every type a visitor can change', () => {
+		for (const type of dataset.revenue.types) {
+			if (type.adjustable === false) continue;
+			expect(type.effects?.cut.length ?? 0, type.id).toBeGreaterThanOrEqual(2);
+			expect(type.effects?.add.length ?? 0, type.id).toBeGreaterThanOrEqual(2);
+			const phrases = [...(type.effects?.cut ?? []), ...(type.effects?.add ?? [])];
+			for (const phrase of phrases.flatMap((p) => [p.nl, p.fr, p.en])) {
+				expect(phrase, type.id).not.toMatch(/\d/);
+				expect(phrase, type.id).not.toMatch(/\.$/);
+				expect(phrase.charAt(0), type.id).toBe(phrase.charAt(0).toLowerCase());
+			}
+		}
+	});
 });

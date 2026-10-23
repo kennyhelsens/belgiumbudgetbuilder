@@ -1,5 +1,5 @@
 // ABOUTME: Turns a visitor's budget choices into inputs for the debt projection.
-// ABOUTME: Choices are changes per spending line in € million; more spending worsens the balance one for one.
+// ABOUTME: Choices are changes per spending line and per revenue type in € million, each one for one on the balance.
 import type { Dataset } from '../data/schema.ts';
 import type { AgeingGroup, ProjectionInput } from '../projection/project.ts';
 
@@ -8,15 +8,19 @@ export type Changes = Record<string, number>;
 
 export type Choices = {
 	changes: Changes;
+	/** Revenue changes per revenue type id, € million per year; positive = more revenue. */
+	revenue?: Changes;
 	years: number;
 	/** Visitor's own assumptions; the sourced outlook values are used when absent. */
 	interestRate?: number;
 	nominalGrowth?: number;
 };
 
-export function balanceChangeFrom(changes: Changes): number {
-	// 0 - sum rather than -sum, so no changes gives 0 and not -0.
-	return 0 - Object.values(changes).reduce((total, change) => total + change, 0);
+/** What the visitor's choices do to the yearly balance, € million: more revenue improves it, more spending worsens it. */
+export function balanceChangeFrom(changes: Changes, revenue: Changes = {}): number {
+	const sum = (values: Changes) => Object.values(values).reduce((total, change) => total + change, 0);
+	// 0 + … so that no changes gives 0 and not -0.
+	return 0 + sum(revenue) - sum(changes);
 }
 
 /**
@@ -50,7 +54,7 @@ export function outlookInput(data: Dataset, choices: Choices): ProjectionInput {
 		interestRate: choices.interestRate ?? outlook.interestRate.value,
 		nominalGrowth: choices.nominalGrowth ?? outlook.nominalGrowth.value,
 		ageingCostPctGdp: outlook.ageingCostPctGdp.map(({ year, value }) => ({ year, value })),
-		primaryBalanceChange: balanceChangeFrom(choices.changes),
+		primaryBalanceChange: balanceChangeFrom(choices.changes, choices.revenue),
 		ageingGroups: ageingGroupsFor(data, choices.changes)
 	};
 }

@@ -16,7 +16,7 @@ export type HeadlineMetrics = {
 export function headlineMetrics(data: Dataset, choices: Choices): HeadlineMetrics {
 	const { gdp, debt, balance } = data.overview;
 	const official = 0 - balance.eurMillion;
-	const yours = official - balanceChangeFrom(choices.changes);
+	const yours = official - balanceChangeFrom(choices.changes, choices.revenue);
 	const yoursRows = project(outlookInput(data, choices));
 	const unchangedRows = project(outlookInput(data, { ...choices, changes: {} }));
 	const last = yoursRows[yoursRows.length - 1];

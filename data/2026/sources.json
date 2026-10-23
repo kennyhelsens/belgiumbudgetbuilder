@@ -503,5 +503,12 @@
 		"url": "https://archive.pfwb.be/1000000020dd0e2",
 		"published": "2025-11-21",
 		"retrieved": "2026-10-23"
+	},
+	{
+		"id": "nai-inventaris-esr1995",
+		"title": "De berekeningsmethode voor het bruto binnenlands product en het bruto nationaal inkomen volgens het ESR 1995 (Inventaris ESR 1995, section 3.24 'Productgebonden belastingen (D.21)')",
+		"publisher": "Instituut voor de Nationale Rekeningen (Nationale Bank van België)",
+		"url": "https://www.nbb.be/doc/dq/n_method/m_inventaris_esr1995_nl_def.pdf",
+		"retrieved": "2026-10-23"
 	}
 ]

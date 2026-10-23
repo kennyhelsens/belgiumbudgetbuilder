@@ -31,6 +31,11 @@ describe('headlineMetrics', () => {
 		).toBe(30500);
 	});
 
+	it('lowers the deficit by extra revenue', () => {
+		const metrics = headlineMetrics(data, { changes: {}, revenue: { 'revenue.vat': 1000 }, years: 10 });
+		expect(metrics.deficit.yours).toBe(metrics.deficit.official - 1000);
+	});
+
 	it('gives the debt at the horizon, yours and with the budget unchanged', () => {
 		const choices = { changes: { 'federal.justice': -1000 }, years: 10 };
 		const metrics = headlineMetrics(data, choices);
