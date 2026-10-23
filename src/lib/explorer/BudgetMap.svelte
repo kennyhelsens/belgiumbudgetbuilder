@@ -10,7 +10,7 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 	import type { Dataset } from '../data/schema.ts';
 	import type { Locale } from '../i18n/locales.ts';
 	import { translate, type MessageKey } from '../i18n/translate.ts';
-	import { colorSlot } from './colors.ts';
+	import { colorSlot, THEMES, themeColor } from './colors.ts';
 	import { formatEuro } from './format.ts';
 	import { mapTiles, tooltipPlacement, type Tile } from './layout.ts';
 
@@ -81,13 +81,21 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 		return { source: sourcesById.get(line.amount.ref.source), ref: line.amount.ref };
 	}
 
+	/** Governments in their own colour; lines inside a government in the colour of their theme. */
+	const tileColor = (tile: Pick<Tile, 'id' | 'theme'>) =>
+		tile.theme ? themeColor(tile.theme) : `var(--series-${colorSlot(tile.id)})`;
+	// The themes on screen, for the legend, in the legend's fixed order.
+	const shownThemes = $derived(
+		THEMES.filter((theme) => tiles.some((tile) => tile.theme === theme))
+	);
+
 	function boxStyle(tile: Tile, box: { width: number; height: number }) {
 		return [
 			`left:${(tile.x0 / box.width) * 100}%`,
 			`top:${(tile.y0 / box.height) * 100}%`,
 			`width:${((tile.x1 - tile.x0) / box.width) * 100}%`,
 			`height:${((tile.y1 - tile.y0) / box.height) * 100}%`,
-			`--tile-color:var(--series-${colorSlot(tile.id)})`
+			`--tile-color:${tileColor(tile)}`
 		].join(';');
 	}
 
@@ -365,6 +373,16 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 		{/if}
 	</div>
 
+	{#if shownThemes.length > 0}
+		<ul class="legend" aria-label={t('map.legendLabel')}>
+			{#each shownThemes as theme (theme)}
+				<li class="legend__item" style="--tile-color:{themeColor(theme)}">
+					{t(`theme.${theme}` as MessageKey)}
+				</li>
+			{/each}
+		</ul>
+	{/if}
+
 	<p class="map__note">{t('map.transfersNote')}</p>
 
 	<details class="table-view">
@@ -613,6 +631,27 @@ ABOUTME: Includes a "you are here" minimap, breadcrumbs, −/+ buttons on tiles,
 	/* In the list the buttons sit beside the bar, always in view. */
 	.bar .stepper {
 		position: static;
+	}
+
+	.legend {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-1) var(--space-3);
+		margin: var(--space-2) 0 0;
+		padding: 0;
+		list-style: none;
+		color: var(--ink-muted);
+		font-size: var(--text-sm);
+	}
+
+	.legend__item::before {
+		content: '';
+		display: inline-block;
+		width: 0.75em;
+		height: 0.75em;
+		margin-right: 0.4em;
+		background: var(--tile-color);
+		vertical-align: -0.05em;
 	}
 
 	.tile {

@@ -92,7 +92,8 @@
 						"note": "120.417 (art. 58duodecies law of 31 Dec 1983) + 3.809 (hospital investments) + 0.159 (senator) + 0.049 (prison prefinancing) = 124.434."
 					}
 				},
-				"nature": "committed"
+				"nature": "committed",
+				"theme": "general"
 			},
 			{
 				"id": "federal.royal-family-parliament",
@@ -109,7 +110,8 @@
 						"note": "Section 01 total 17,805.396 minus the lines shown separately (17,352.300) = 453.096. Civil list and royal grants, the Chamber, the Senate, the Constitutional Court, the Court of Audit and other bodies of section 01, after the grants to the communities shown separately. The section total is the same in DOC 56 1470/001 p. 8, Synthesetabel: 'lim 17.743.612 61.823 17.805.435 17.743.573 61.823 17.805.396 lim 01 DOTATIONS ET ACTIVITES DE LA FAMILLE ROYALE'."
 					}
 				},
-				"nature": "committed"
+				"nature": "committed",
+				"theme": "general"
 			},
 			{
 				"id": "federal.chancellery",
@@ -126,7 +128,8 @@
 						"note": "Whole section 02: 233.269. The section total is the same in DOC 56 1470/001 p. 8, Synthesetabel: 'lim 365.685 4.648 370.333 228.621 4.648 233.269 lim 02 SPF CHANCELLERIE DU PREMIER MINISTRE'."
 					}
 				},
-				"nature": "discretionary"
+				"nature": "discretionary",
+				"theme": "general"
 			},
 			{
 				"id": "federal.policy-and-support",
@@ -143,7 +146,8 @@
 						"note": "Whole section 06: 2,551.737. Includes the interdepartmental provisions (1,659.8: legal costs 622.4, security 545.6, Ukraine 442.8), part of which is allocated to other departments during the year, and the Recovery and Resilience Plan (610.8). The section total is the same in DOC 56 1470/001 p. 8, Synthesetabel: '06 FEDERALE OVERHEIDSDIENST BELEID EN ONDERSTEUNING ... lim + fon tot 2.740.259 -391.266 2.348.993 3.004.949 -453.212 2.551.737 tot lim + fon'."
 					}
 				},
-				"nature": "discretionary"
+				"nature": "discretionary",
+				"theme": "general"
 			},
 			{
 				"id": "federal.independent-bodies",
@@ -160,7 +164,8 @@
 						"note": "Whole section 07: 30.718. The section total is the same in DOC 56 1470/001 p. 8, Synthesetabel: 'lim 36.735 -6.017 30.718 36.735 -6.017 30.718 lim 07 ORGANES INDEPENDANTS'."
 					}
 				},
-				"nature": "discretionary"
+				"nature": "discretionary",
+				"theme": "general"
 			},
 			{
 				"id": "federal.justice",
@@ -178,7 +183,8 @@
 						"note": "Section 12 total (lim + fon)."
 					}
 				},
-				"nature": "discretionary"
+				"nature": "discretionary",
+				"theme": "security"
 			},
 			{
 				"id": "federal.fedasil",
@@ -196,7 +202,8 @@
 						"note": "Dotation only. Fedasil's own adjusted budget totals 769,002.028 thousand EUR (Tabel 5, DOC 56 1470/001), the difference being own revenue. Includes +41 m added at the budget control for unavoidable reception costs."
 					}
 				},
-				"nature": "discretionary"
+				"nature": "discretionary",
+				"theme": "social-protection"
 			},
 			{
 				"id": "federal.immigration-office",
@@ -214,7 +221,8 @@
 						"note": "Division 13-55 total: limitative 211.984 + variable (fund) 5.567 = 217.551. Includes closed centres and returns operated by the Office."
 					}
 				},
-				"nature": "discretionary"
+				"nature": "discretionary",
+				"theme": "security"
 			},
 			{
 				"id": "federal.home-affairs",
@@ -231,7 +239,8 @@
 						"note": "Section 13 total 2,397.778 minus the lines shown separately (961.422) = 1,436.356. Includes the Commissioner General for Refugees and Stateless Persons and the Council for Alien Law Litigation. The section total is the same in DOC 56 1470/001 p. 8, Synthesetabel: '13 FOD BINNENLANDSE ZAKEN ... lim + fon tot 2.332.960 92.610 2.425.570 2.297.679 100.099 2.397.778 tot lim + fon'."
 					}
 				},
-				"nature": "discretionary"
+				"nature": "discretionary",
+				"theme": "security"
 			},
 			{
 				"id": "federal.foreign-affairs-development",
@@ -249,7 +258,8 @@
 						"note": "Section 14 total (lim + fon)."
 					}
 				},
-				"nature": "discretionary"
+				"nature": "discretionary",
+				"theme": "general"
 			},
 			{
 				"id": "federal.defence",
@@ -267,7 +277,8 @@
 						"note": "Section 16 total (lim + fon). Excludes the 'provision for reinforcing security' (546) and 'provision Ukraine' (443) booked in section 06 (in 'other'), part of which may be allocated to defence during the year. Commitment credits for defence are much higher (20,300.4)."
 					}
 				},
-				"nature": "discretionary"
+				"nature": "discretionary",
+				"theme": "security"
 			},
 			{
 				"id": "federal.police-zone-grants",
@@ -302,7 +313,8 @@
 						"note": "Section 17 total 2,897.145 minus the lines shown separately (1,273.858) = 1,623.287. The section total is the same in DOC 56 1470/001 p. 9, Synthesetabel: '17 FEDERALE POLITIE & GEINTEGREERDE WERKING ... lim + fon tot 2.872.909 20.680 2.893.589 2.892.865 4.280 2.897.145 tot lim + fon'."
 					}
 				},
-				"nature": "discretionary"
+				"nature": "discretionary",
+				"theme": "security"
 			},
 			{
 				"id": "federal.finance",
@@ -319,7 +331,8 @@
 						"note": "Whole section 18: 2,546.929. The section total is the same in DOC 56 1470/001 p. 9, Synthesetabel: '18 FOD FINANCIEN ... lim + fon tot 2.359.415 177.077 2.536.492 2.384.270 162.659 2.546.929 tot lim + fon'."
 					}
 				},
-				"nature": "discretionary"
+				"nature": "discretionary",
+				"theme": "general"
 			},
 			{
 				"id": "federal.buildings-agency",
@@ -336,7 +349,8 @@
 						"note": "Whole section 19: 906.474. The section total is the same in DOC 56 1470/001 p. 9, Synthesetabel: 'lim 948.791 -42.317 906.474 948.791 -42.317 906.474 lim 19 RÉGIE DES BÂTIMENTS'."
 					}
 				},
-				"nature": "discretionary"
+				"nature": "discretionary",
+				"theme": "general"
 			},
 			{
 				"id": "federal.employment",
@@ -353,7 +367,8 @@
 						"note": "Whole section 23: 277.667. The section total is the same in DOC 56 1470/001 p. 9, Synthesetabel: '23 FOD WERKGELEGENHEID, ARBEID EN SOCIAAL OVERLEG ... lim + fon tot 278.191 -628 277.563 278.295 -628 277.667 tot lim + fon'."
 					}
 				},
-				"nature": "discretionary"
+				"nature": "discretionary",
+				"theme": "economy"
 			},
 			{
 				"id": "federal.civil-service-pensions",
@@ -409,7 +424,8 @@
 						"note": "Income-replacement and integration allowances (law of 27 Feb 1987)."
 					}
 				},
-				"nature": "entitlement"
+				"nature": "entitlement",
+				"theme": "social-protection"
 			},
 			{
 				"id": "federal.social-security-other",
@@ -426,7 +442,8 @@
 						"note": "Section 24 total 30,717.154 minus the lines shown separately (29,597.333) = 1,119.821. Income guarantee for older people 1,034.4 (B.A. 24 58 44 34.31.08) plus its running costs 2.3, and the department's own running costs. The section total is the same in DOC 56 1470/001 p. 9, Synthesetabel: 'lim 30.723.479 -6.347 30.717.132 30.723.501 -6.347 30.717.154 lim 24 SPF SÉCURITÉ SOCIALE'."
 					}
 				},
-				"nature": "entitlement"
+				"nature": "entitlement",
+				"theme": "social-protection"
 			},
 			{
 				"id": "federal.public-health",
@@ -443,7 +460,8 @@
 						"note": "Whole section 25: 1,147.148. The section total is the same in DOC 56 1470/001 p. 9, Synthesetabel: '25 FOD VOLKSGEZONDHEID, VEILIGHEID VAN DE VOEDSELKETEN EN LEEFMILIEU ... lim + fon tot 1.063.021 29.335 1.092.356 1.117.813 29.335 1.147.148 tot lim + fon'."
 					}
 				},
-				"nature": "discretionary"
+				"nature": "discretionary",
+				"theme": "health"
 			},
 			{
 				"id": "federal.economy",
@@ -460,7 +478,8 @@
 						"note": "Whole section 32: 1,414.044. The section total is the same in DOC 56 1470/001 p. 9, Synthesetabel: '32 FOD ECONOMIE, KMO, MIDDENSTAND EN ENERGIE ... lim + fon tot 1.402.976 -18.850 1.384.126 1.444.270 -30.226 1.414.044 tot lim + fon'."
 					}
 				},
-				"nature": "discretionary"
+				"nature": "discretionary",
+				"theme": "economy"
 			},
 			{
 				"id": "federal.mobility-rail",
@@ -478,7 +497,8 @@
 						"note": "Section 33 total. Of which programme 33.51.1 'Spoorwegvervoer' (SNCB/Infrabel operating grants, capital participations, PPP fees) = 4,235.245 (liquidation, Tabel 1 p. 919). SNCB and Infrabel are federal public companies, not separate governments in this model."
 					}
 				},
-				"nature": "discretionary"
+				"nature": "discretionary",
+				"theme": "economy"
 			},
 			{
 				"id": "federal.cpas-grants",
@@ -513,7 +533,8 @@
 						"note": "Section 44 total 2,469.224 minus the lines shown separately (2,308.867) = 160.357. Includes refunds to the Auxiliary Fund for Sickness and Disability Insurance (100.3) and the European Social Fund+. The section total is the same in DOC 56 1470/001 p. 10, Synthesetabel: '44 POD MAATSCHAPPELIJKE INTEGRATIE ... lim + fon tot 2.408.512 50.546 2.459.058 2.409.179 60.045 2.469.224 tot lim + fon'."
 					}
 				},
-				"nature": "discretionary"
+				"nature": "discretionary",
+				"theme": "social-protection"
 			},
 			{
 				"id": "federal.science-policy",
@@ -530,7 +551,8 @@
 						"note": "Whole section 46: 528.897. The section total is the same in DOC 56 1470/001 p. 10, Synthesetabel: '46 POD WETENSCHAPSBELEID ... lim + fon tot 497.027 7.584 504.611 520.272 8.625 528.897 tot lim + fon'."
 					}
 				},
-				"nature": "discretionary"
+				"nature": "discretionary",
+				"theme": "general"
 			},
 			{
 				"id": "federal.public-debt-interest",
@@ -549,7 +571,8 @@
 					}
 				},
 				"nature": "committed",
-				"adjustable": false
+				"adjustable": false,
+				"theme": "debt"
 			},
 			{
 				"id": "federal.public-debt-other-costs",
@@ -567,7 +590,8 @@
 					}
 				},
 				"nature": "committed",
-				"adjustable": false
+				"adjustable": false,
+				"theme": "debt"
 			},
 			{
 				"id": "federal.eu-gni-contribution",
@@ -585,7 +609,8 @@
 						"note": "Section 52. Traditional own resources (customs, VAT resource: 4,745 m) are revenue transfers to the EU, not included."
 					}
 				},
-				"nature": "committed"
+				"nature": "committed",
+				"theme": "general"
 			}
 		]
 	},

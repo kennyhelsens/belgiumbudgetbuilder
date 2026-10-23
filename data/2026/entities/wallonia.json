@@ -35,7 +35,8 @@
 						"note": "3.008.488 + 19.825 = 3.028.313 k EUR (decree: 'une dotation pour la gestion de ses missions paritaires d'un montant de 3.028.313.000 euros ... 093.023 ... pour la branche Famille')"
 					}
 				},
-				"nature": "entitlement"
+				"nature": "entitlement",
+				"theme": "social-protection"
 			},
 			{
 				"id": "wallonia.health-disability-social",
@@ -53,7 +54,8 @@
 						"note": "17.093 (7.049.370) − family allowances DF 093.023 (3.028.313) + 17.092 (5.799) + 17.094 (348.606) + 17.095 (15.761) = 4.391.223 k EUR. Includes 146.045 k EUR deducted by the federal government for pre-6th-reform hospital charges (DF 093.027) and 727 k EUR MAF (DF 093.049)."
 					}
 				},
-				"nature": "entitlement"
+				"nature": "entitlement",
+				"theme": "social-protection"
 			},
 			{
 				"id": "wallonia.local-authorities",
@@ -90,7 +92,8 @@
 						"note": "18.130 FOREM 2.876.052 + 18.101 Promotion de l'emploi 72.510 + 18.104 Economie sociale 30.912 + 18.108 Emplois de proximité 27.100 + 18.109 Formation professionnelle 31.469 + 18.111 Formation agricole 1.300 + 18.112 IFAPME 88.299 + 18.113 Politiques croisées formation 18.862 = 3.146.504 k EUR. Since 2026 programme 18.130 consolidates former FOREM programmes 18.102, 18.103, 18.105, 18.106 (titres-services), 18.107 (réductions groupes-cibles), 18.110."
 					}
 				},
-				"nature": "committed"
+				"nature": "committed",
+				"theme": "economy"
 			},
 			{
 				"id": "wallonia.economy-research",
@@ -108,7 +111,8 @@
 						"note": "18.001 5.570 + 18.096 105.828 + 18.097 121.421 + 18.098 74.303 + 18.099 35.395 + 18.100 30.203 + 18.114 202.495 + 18.115 24.970 + 18.118 13.594 = 613.779 k EUR (= DO 18 total 3.760.283 − employment-training line 3.146.504).; minus principal repayments 8.941"
 					}
 				},
-				"nature": "discretionary"
+				"nature": "discretionary",
+				"theme": "economy"
 			},
 			{
 				"id": "wallonia.mobility-infrastructure",
@@ -126,7 +130,8 @@
 						"note": "Whole DO 14: incl. 14.045 urban/interurban/school transport (OTW/TEC) 887.703, 14.049 road/motorway/waterway network 575.955, 14.046 airports 84.552, 14.047 sports infrastructure 59.622."
 					}
 				},
-				"nature": "committed"
+				"nature": "committed",
+				"theme": "economy"
 			},
 			{
 				"id": "wallonia.housing-territory-energy",
@@ -144,7 +149,8 @@
 						"note": "Whole DO 16."
 					}
 				},
-				"nature": "discretionary"
+				"nature": "discretionary",
+				"theme": "environment"
 			},
 			{
 				"id": "wallonia.environment-agriculture",
@@ -162,7 +168,8 @@
 						"note": "Whole DO 15."
 					}
 				},
-				"nature": "discretionary"
+				"nature": "discretionary",
+				"theme": "environment"
 			},
 			{
 				"id": "wallonia.recovery-plan",
@@ -180,7 +187,8 @@
 						"note": "Programme 10.122 only. Cross-cutting multi-year plan; payments go to many policy areas (housing renovation, mobility, economy, etc.) and are not redistributed to the thematic lines above. Partly financed by EU RRF/REPowerEU receipts (1.188.666 k EUR on the revenue side).; minus principal repayments 9.959"
 					}
 				},
-				"nature": "committed"
+				"nature": "committed",
+				"theme": "economy"
 			},
 			{
 				"id": "wallonia.debt-interest",
@@ -199,7 +207,8 @@
 					}
 				},
 				"nature": "committed",
-				"adjustable": false
+				"adjustable": false,
+				"theme": "debt"
 			},
 			{
 				"id": "wallonia.other",
@@ -217,7 +226,8 @@
 						"note": "Total 21.937.935 − sum of the 11 lines above (20.402.138) = 1.535.797 k EUR. Cross-check by composition: DO 01 Parliament/Ombudsman/CWaPE 88.886 + DO 02 ministerial cabinets 28.043 + DO 09 (tourism, external relations/AWEX, CESE, etc.) 213.392 + DO 10 excl. 10.122 21.522 + DO 11 SPW staff & general affairs 932.264 + DO 12 digital 72.917 + DO 19 excl. 19.036 (functional, budget/treasury, tax) 109.857 + DO 36 EU cofinancing provision 30.213 + 17.001 1.467 + transfer to the German-speaking Community (DF 091.049) 37.236 = 1.535.797.; minus principal repayments 0.091"
 					}
 				},
-				"nature": "committed"
+				"nature": "committed",
+				"theme": "general"
 			}
 		]
 	}

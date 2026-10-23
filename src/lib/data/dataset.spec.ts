@@ -86,6 +86,21 @@ describe('data/2026', () => {
 		}
 	});
 
+	// Lines are coloured by what they pay for, after the COFOG functions; debt interest and local spending by type apart.
+	it('gives every line on the map a theme', () => {
+		const lines = dataset.entities.flatMap((e) => e.expenditure.lines).filter((l) => !l.transferTo);
+		for (const line of lines) expect(line.theme, line.id).toBeDefined();
+		const interest = [
+			'federal.public-debt-interest',
+			'flanders.interest',
+			'brussels.interest',
+			'local.interest'
+		];
+		for (const id of interest) expect(lines.find((l) => l.id === id)?.theme, id).toBe('debt');
+		expect(lines.find((l) => l.id === 'local.staff')?.theme).toBe('by-type');
+		expect(lines.find((l) => l.id === 'federal.defence')?.theme).toBe('security');
+	});
+
 	// Every line a visitor can change says in plain words what a cut or an increase could mean.
 	it('says what a change could mean for every line a visitor can change', () => {
 		for (const entity of dataset.entities.filter((e) => e.adjustable)) {

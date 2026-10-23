@@ -33,7 +33,8 @@
 						"quote": "1. Beloning van werknemers               23385   24616   25396   26216   27075"
 					}
 				},
-				"nature": "committed"
+				"nature": "committed",
+				"theme": "by-type"
 			},
 			{
 				"id": "local.goods-services",
@@ -50,7 +51,8 @@
 						"quote": "2. Intermediair verbruik en betaalde      6625    7326    7473    7458    7657"
 					}
 				},
-				"nature": "discretionary"
+				"nature": "discretionary",
+				"theme": "by-type"
 			},
 			{
 				"id": "local.social-benefits",
@@ -67,7 +69,8 @@
 						"quote": "4. Sociale uitkeringen                   4546    4867    4960    5776    6159"
 					}
 				},
-				"nature": "entitlement"
+				"nature": "entitlement",
+				"theme": "by-type"
 			},
 			{
 				"id": "local.investment",
@@ -84,7 +87,8 @@
 						"quote": "1. Bruto-investeringen in vaste activa   4816    5154    5087    4472    4382"
 					}
 				},
-				"nature": "discretionary"
+				"nature": "discretionary",
+				"theme": "by-type"
 			},
 			{
 				"id": "local.transfers-other-gov",
@@ -101,7 +105,8 @@
 						"quote": "c. Overdrachten aan andere overheden         352     369     375     393     404"
 					}
 				},
-				"nature": "committed"
+				"nature": "committed",
+				"theme": "by-type"
 			},
 			{
 				"id": "local.interest",
@@ -119,7 +124,8 @@
 					}
 				},
 				"nature": "committed",
-				"adjustable": false
+				"adjustable": false,
+				"theme": "debt"
 			},
 			{
 				"id": "local.other",
@@ -137,7 +143,8 @@
 						"note": "total 46063 − (26216 + 7458 + 5776 + 4472 + 393 + 173 = 44488) = 1575; components in the table: subsidies 419 + current transfers to households 640 + to companies 55 + other net non-financial assets 150 + capital transfers to households 110 + to companies 202 = 1576 (1 m rounding)"
 					}
 				},
-				"nature": "discretionary"
+				"nature": "discretionary",
+				"theme": "by-type"
 			}
 		]
 	}

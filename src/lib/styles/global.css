@@ -19,6 +19,9 @@ ABOUTME: Light by default, with a dark palette following the visitor's system pr
 	--series-6: #e07a2e;
 	--series-7: #d6578c;
 	--series-8: #6f9a1e;
+	/* Neutral colours for lines that are not a policy purpose: debt interest, and local spending by type. */
+	--theme-debt: #6f6a76;
+	--theme-by-type: #a8a194;
 
 	/* A bold display serif for headlines, a calm reading serif for text. Both are served from the site. */
 	--font-display: 'Fraunces Variable', Georgia, 'Times New Roman', serif;
@@ -60,6 +63,8 @@ ABOUTME: Light by default, with a dark palette following the visitor's system pr
 		--series-6: #d77634;
 		--series-7: #cf5fa8;
 		--series-8: #7da22c;
+		--theme-debt: #8e8996;
+		--theme-by-type: #6b665e;
 	}
 }
 

@@ -114,5 +114,16 @@
 	"builder.noticeAddPlain": "More money for {name}.",
 	"consequence.cutTitle": "Less money for {name} could mean:",
 	"consequence.addTitle": "More money for {name} could mean:",
-	"consequence.effectsNote": "Possible effects, not a forecast: who feels them depends on how the government makes the choice."
+	"consequence.effectsNote": "Possible effects, not a forecast: who feels them depends on how the government makes the choice.",
+	"map.legendLabel": "Colours by theme",
+	"theme.social-protection": "Social protection",
+	"theme.health": "Health",
+	"theme.education": "Education",
+	"theme.security": "Security, justice and defence",
+	"theme.economy": "Economy, work and mobility",
+	"theme.environment": "Environment, housing and land",
+	"theme.culture": "Culture, sport and media",
+	"theme.general": "Government and general services",
+	"theme.debt": "Interest on debt",
+	"theme.by-type": "Local spending by type"
 }

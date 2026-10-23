@@ -114,5 +114,16 @@
 	"builder.noticeAddPlain": "Meer geld voor {name}.",
 	"consequence.cutTitle": "Minder geld voor {name} kan betekenen:",
 	"consequence.addTitle": "Meer geld voor {name} kan betekenen:",
-	"consequence.effectsNote": "Mogelijke gevolgen, geen voorspelling: wie het voelt, hangt af van hoe de overheid de keuze invult."
+	"consequence.effectsNote": "Mogelijke gevolgen, geen voorspelling: wie het voelt, hangt af van hoe de overheid de keuze invult.",
+	"map.legendLabel": "Kleuren naar thema",
+	"theme.social-protection": "Sociale bescherming",
+	"theme.health": "Gezondheid",
+	"theme.education": "Onderwijs",
+	"theme.security": "Veiligheid, justitie en defensie",
+	"theme.economy": "Economie, werk en mobiliteit",
+	"theme.environment": "Milieu, wonen en ruimte",
+	"theme.culture": "Cultuur, sport en media",
+	"theme.general": "Bestuur en algemene diensten",
+	"theme.debt": "Rente op de schuld",
+	"theme.by-type": "Lokale uitgaven naar soort"
 }
