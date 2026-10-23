@@ -124,3 +124,18 @@ test.describe('going back up a level', () => {
 		await expect(map.getByRole('button', { name: /^Back to Belgium/ })).toHaveCount(0);
 	});
 });
+
+test.describe('tile names', () => {
+	// Long Dutch words such as "Arbeidsongeschiktheid" must wrap inside their tile, not run past its edge.
+	test('keeps every tile name inside its tile', async ({ page }) => {
+		await page.goto('/nl/');
+		const kaart = page.getByRole('region', { name: 'Begrotingskaart' });
+		await kaart.getByRole('button', { name: /^Sociale zekerheid/ }).click();
+		const names = kaart.locator('.tile__name');
+		await expect(names.first()).toBeVisible();
+		const overflowing = await names.evaluateAll((els) =>
+			els.filter((el) => el.scrollWidth > el.clientWidth + 1).map((el) => el.textContent)
+		);
+		expect(overflowing).toEqual([]);
+	});
+});

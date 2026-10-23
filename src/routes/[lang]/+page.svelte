@@ -14,6 +14,7 @@ ABOUTME: Text comes from the message files and every figure from the sourced dat
 	import { translate } from '#lib/i18n/translate.ts';
 	import Intro from '#lib/intro/Intro.svelte';
 	import { introFacts } from '#lib/intro/facts.ts';
+	import { replay } from '#lib/intro/replay.svelte.ts';
 	import { ClickLog, trackingAllowed } from '#lib/tracking/clicklog.ts';
 	import Bubbles from '#lib/ui/Bubbles.svelte';
 	import Toast from '#lib/ui/Toast.svelte';
@@ -74,6 +75,13 @@ ABOUTME: Text comes from the message files and every figure from the sourced dat
 			// Storage can be blocked; then the intro stays closed and can still be opened by hand.
 		}
 	});
+	// The masthead's "watch the intro" button: open the intro for each new request, not for earlier ones.
+	let handledReplays = replay.requests;
+	$effect(() => {
+		if (replay.requests === handledReplays) return;
+		handledReplays = replay.requests;
+		introOpen = true;
+	});
 	function rememberIntro() {
 		try {
 			localStorage.setItem(INTRO_SEEN, '1');
@@ -118,10 +126,6 @@ ABOUTME: Text comes from the message files and every figure from the sourced dat
 	<p class="article__kicker">{t('home.kicker')}</p>
 	<h1>{t('home.title')}</h1>
 	<p class="article__lede">{t('home.lede')}</p>
-	<button type="button" class="article__replay" onclick={() => (introOpen = true)}>
-		<span aria-hidden="true">▶</span>
-		{t('intro.replay')}
-	</button>
 	<p class="article__status">{t('home.status')}</p>
 </main>
 
@@ -240,36 +244,6 @@ ABOUTME: Text comes from the message files and every figure from the sourced dat
 		.article > * {
 			animation: none;
 		}
-	}
-
-	.article__replay {
-		display: inline-flex;
-		align-items: center;
-		gap: var(--space-2);
-		margin-bottom: var(--space-3);
-		padding: 0.5em 1.1em;
-		border: 1.5px solid var(--ink);
-		border-radius: 999px;
-		background: none;
-		color: var(--ink);
-		font: inherit;
-		font-size: var(--text-sm);
-		font-weight: 600;
-		cursor: pointer;
-		transition:
-			background 0.2s ease,
-			color 0.2s ease;
-	}
-
-	.article__replay:hover,
-	.article__replay:focus-visible {
-		background: var(--ink);
-		color: var(--paper);
-	}
-
-	.article__replay span {
-		font-size: 0.75em;
-		color: var(--accent);
 	}
 
 	.article__status {

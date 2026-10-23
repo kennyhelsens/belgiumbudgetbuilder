@@ -95,13 +95,27 @@ test.describe('intro', () => {
 		await expect(intro(page)).toBeHidden();
 	});
 
-	test('can be watched again from the home page', async ({ page }) => {
+	test('can be watched again from the header', async ({ page }) => {
 		await page.goto('/en/');
 		await expect(intro(page)).toBeVisible();
 		await page.keyboard.press('Escape');
-		await page.getByRole('button', { name: 'Watch the intro again' }).click();
+		await page.getByRole('banner').getByRole('button', { name: 'Watch the intro' }).click();
 		await expect(intro(page)).toBeVisible();
 		await expect(intro(page)).toContainText('Step 1 of 7');
+	});
+
+	test('can be watched again from the header of another page', async ({ page }) => {
+		await page.goto('/en/');
+		await page.keyboard.press('Escape');
+		await page.goto('/en/faq/');
+		await page.getByRole('banner').getByRole('button', { name: 'Watch the intro' }).click();
+		await expect(page).toHaveURL('/en/');
+		await expect(intro(page)).toBeVisible();
+		await expect(intro(page)).toContainText('Step 1 of 7');
+		await page.keyboard.press('Escape');
+		await page.reload();
+		await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
+		await expect(intro(page)).toBeHidden();
 	});
 
 	test('speaks Dutch on the Dutch page', async ({ page }) => {

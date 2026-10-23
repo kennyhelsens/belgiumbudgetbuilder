@@ -84,7 +84,7 @@
 	"intro.next": "Suivant",
 	"intro.back": "Retour",
 	"intro.progress": "Étape {n} sur {total}",
-	"intro.replay": "Revoir l'introduction",
+	"intro.replay": "Voir l'intro",
 	"intro.dotLegend": "1 point = 1 milliard €",
 	"intro.start": "Vers la carte du budget",
 	"intro.s1.kicker": "Vous l'avez lu dans le journal",
