@@ -1,11 +1,14 @@
 <!--
-ABOUTME: Shell for localized pages: masthead with the site title, a work-in-progress badge and the language
-ABOUTME: switcher, and a footer that says how the figures were extracted and links to the FAQ.
+ABOUTME: Shell for localized pages: masthead with the flag, the site title, a work-in-progress badge, the language switcher
+ABOUTME: and a link to the source code; a footer on how the figures were made, and where to ask questions.
 -->
 <script lang="ts">
 	import { resolve } from '$app/paths';
 	import { LOCALES } from '#lib/i18n/locales.ts';
 	import { translate } from '#lib/i18n/translate.ts';
+	import { LINKEDIN_URL, NEW_ISSUE_URL, REPO_URL } from '#lib/site.ts';
+	import Flag from '#lib/ui/Flag.svelte';
+	import Icon from '#lib/ui/Icon.svelte';
 	import type { LayoutProps } from './$types';
 
 	let { data, children }: LayoutProps = $props();
@@ -19,25 +22,34 @@ ABOUTME: switcher, and a footer that says how the figures were extracted and lin
 <header class="masthead">
 	<div class="masthead__brand">
 		<a class="masthead__title" href={resolve('/[lang]', { lang: data.locale })}
-			>{translate(data.locale, 'site.title')}</a
+			><Flag size="0.9em" /> {translate(data.locale, 'site.title')}</a
 		>
 		<span class="masthead__badge">{translate(data.locale, 'site.wip')}</span>
 	</div>
-	<nav aria-label={translate(data.locale, 'language.switcherLabel')}>
-		<ul class="switcher">
-			{#each LOCALES as locale (locale)}
-				<li>
-					<a
-						href={resolve('/[lang]', { lang: locale })}
-						lang={locale}
-						hreflang={locale}
-						aria-current={locale === data.locale ? 'page' : undefined}
-						>{translate(locale, 'language.code')}</a
-					>
-				</li>
-			{/each}
-		</ul>
-	</nav>
+	<div class="masthead__tools">
+		<nav aria-label={translate(data.locale, 'language.switcherLabel')}>
+			<ul class="switcher">
+				{#each LOCALES as locale (locale)}
+					<li>
+						<a
+							href={resolve('/[lang]', { lang: locale })}
+							lang={locale}
+							hreflang={locale}
+							aria-current={locale === data.locale ? 'page' : undefined}
+							>{translate(locale, 'language.code')}</a
+						>
+					</li>
+				{/each}
+			</ul>
+		</nav>
+		<a
+			class="masthead__github"
+			href={REPO_URL}
+			rel="external noopener"
+			aria-label={translate(data.locale, 'site.github')}
+			title={translate(data.locale, 'site.github')}><Icon name="github" size="1.25rem" /></a
+		>
+	</div>
 </header>
 
 {@render children()}
@@ -50,6 +62,16 @@ ABOUTME: switcher, and a footer that says how the figures were extracted and lin
 		>
 	</p>
 	<p class="colophon__disclaimer">{translate(data.locale, 'footer.purpose')}</p>
+	<p class="colophon__contact">
+		{translate(data.locale, 'footer.contactLead')}
+		<a href={NEW_ISSUE_URL} rel="external noopener"
+			><Icon name="github" /> {translate(data.locale, 'footer.issue')}</a
+		>
+		{translate(data.locale, 'footer.or')}
+		<a href={LINKEDIN_URL} rel="external noopener"
+			><Icon name="linkedin" /> {translate(data.locale, 'footer.linkedin')}</a
+		>.
+	</p>
 	<p>{translate(data.locale, 'footer.note')}</p>
 </footer>
 
@@ -92,6 +114,22 @@ ABOUTME: switcher, and a footer that says how the figures were extracted and lin
 		letter-spacing: 0.08em;
 		text-transform: uppercase;
 		white-space: nowrap;
+	}
+
+	.masthead__tools {
+		display: flex;
+		align-items: center;
+		gap: var(--space-3);
+	}
+
+	.masthead__github {
+		display: inline-flex;
+		color: var(--ink-muted);
+	}
+
+	.masthead__github:hover,
+	.masthead__github:focus-visible {
+		color: var(--ink);
 	}
 
 	.switcher {

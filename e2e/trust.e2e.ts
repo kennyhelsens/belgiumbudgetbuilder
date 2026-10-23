@@ -40,6 +40,36 @@ test.describe('disclaimer', () => {
 		await expect(page.getByRole('contentinfo')).toContainText('niet gemaakt voor politici');
 	});
 
+	test('shows the Belgian flag in the masthead and in the key figures', async ({ page }) => {
+		await page.goto('/en/');
+		await expect(page.getByRole('banner').getByTestId('flag')).toBeVisible();
+		await expect(
+			page.getByRole('region', { name: 'Key figures' }).getByTestId('flag')
+		).toBeVisible();
+	});
+
+	test('links to the source code on GitHub from the masthead', async ({ page }) => {
+		await page.goto('/en/');
+		await expect(
+			page.getByRole('banner').getByRole('link', { name: 'Source code on GitHub' })
+		).toHaveAttribute('href', 'https://github.com/kennyhelsens/belgiumbudgetbuilder');
+	});
+
+	test('says where to ask questions or report a mistake', async ({ page }) => {
+		await page.goto('/en/');
+		const footer = page.getByRole('contentinfo');
+		await expect(footer).toContainText('Questions, or found a mistake?');
+		await expect(footer.getByRole('link', { name: 'Open an issue on GitHub' })).toHaveAttribute(
+			'href',
+			'https://github.com/kennyhelsens/belgiumbudgetbuilder/issues/new'
+		);
+		await expect(
+			footer.getByRole('link', { name: 'message Kenny Helsens on LinkedIn' })
+		).toHaveAttribute('href', 'https://www.linkedin.com/in/kennyhelsens/');
+		await page.goto('/nl/');
+		await expect(page.getByRole('contentinfo')).toContainText('Vragen of een fout gevonden?');
+	});
+
 	test('the FAQ shows its tables and sections', async ({ page }) => {
 		await page.goto('/en/faq/');
 		await expect(
