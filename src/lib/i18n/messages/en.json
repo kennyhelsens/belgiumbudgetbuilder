@@ -141,7 +141,6 @@
 	"consequence.lessRevenueTitle": "Less revenue from {name} could mean:",
 	"consequence.moreRevenueTitle": "More revenue from {name} could mean:",
 	"consequence.revenueEffectsNote": "Possible ways, not a forecast: who pays more or less depends on how the government makes the choice. This site does not model how people and firms react.",
-	"map.groupsLabel": "Groups of governments",
 	"map.levelsLabel": "Who collects it",
 	"level.federal": "Federal government",
 	"level.communities-and-regions": "Communities and regions",

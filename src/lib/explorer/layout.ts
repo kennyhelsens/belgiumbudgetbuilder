@@ -18,11 +18,11 @@ export type Tile = {
 	adjustable: boolean;
 	/** What a line pays for, which sets its colour; governments have none. */
 	theme?: Line['theme'];
-	/** The group a government belongs to, such as Entity I; lines have none. */
+	/** The group a government belongs to, such as the federal level; lines have none. */
 	group?: string;
 };
 
-/** The rectangle a group of governments takes on the map, e.g. Entity I: federal government and social security. */
+/** The rectangle a group of governments takes on the map, e.g. the federal government and social security. */
 export type GroupBox = {
 	id: string;
 	/** The governments in the group, in the order the map lays them out. */

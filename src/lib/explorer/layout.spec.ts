@@ -72,13 +72,13 @@ describe('mapGroups', () => {
 	it('keeps the governments of a group together in one rectangle', () => {
 		const data = datasetFixture();
 		data.groups = [
-			{ ...data.groups[0], id: 'entity-1', members: ['federal'] },
-			{ ...data.groups[0], id: 'entity-2', members: ['social-security'] }
+			{ ...data.groups[0], id: 'federal-level', members: ['federal'] },
+			{ ...data.groups[0], id: 'other', members: ['social-security'] }
 		];
 		const frame = { width: 600, height: 400 };
 		const tiles = mapTiles(data, frame);
 		const groups = mapGroups(data, frame);
-		expect(groups.map((g) => g.id)).toEqual(['entity-2', 'entity-1']);
+		expect(groups.map((g) => g.id)).toEqual(['other', 'federal-level']);
 		for (const group of groups) {
 			const members = tiles.filter((t) => t.group === group.id);
 			expect(members.map((t) => t.id)).toEqual(group.members);
@@ -93,7 +93,7 @@ describe('mapGroups', () => {
 		const federal = tiles.find((t) => t.id === 'federal')!;
 		const socsec = tiles.find((t) => t.id === 'social-security')!;
 		expect(area(socsec) / area(federal)).toBeCloseTo(200 / 40, 6);
-		expect(federal.group).toBe('entity-1');
+		expect(federal.group).toBe('federal-level');
 	});
 
 	it('has no groups inside one government', () => {

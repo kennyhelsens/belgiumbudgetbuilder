@@ -47,7 +47,7 @@ describe('assembleDataset', () => {
 
 	it('reads the groups of governments', () => {
 		const dataset = assembleDataset(filesFromFixture(), 2026);
-		expect(dataset.groups.map((group) => group.id)).toEqual(['entity-1']);
+		expect(dataset.groups.map((group) => group.id)).toEqual(['federal-level']);
 	});
 
 	it('reads the details files of spending lines', () => {

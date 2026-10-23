@@ -95,19 +95,17 @@ government, the communities and regions, and local government. The Planning
 Bureau's tables, which give the site its totals and its revenue, follow that
 split.
 
-The map therefore shows social security beside the federal government, not
-inside it, but frames the two together. The Planning Bureau (June 2026, p. 28)
-calls them:
+The map therefore shows social security as a budget of its own, but beside
+the federal government, in the same colour and in one frame, with the caption
+"two separate budgets, both under federal policy". Together they spend €205
+billion on the map. The Planning Bureau (June 2026, p. 28) takes the two
+together in the same way, under the technical name "Entity I"; the
+communities, regions and local government are its "Entity II".
 
-- **Entity I:** the federal government and social security, €205 billion of
-  own spending on the map;
-- **Entity II:** the communities, regions and local government, €150.2
-  billion.
-
-On a phone, the list has a section for each. The federal grants to social
-security are transfers: they are counted once, under social security, where
-the money is spent (see "Isn't money counted twice when one government pays
-another?").
+On a phone, the two are a section of their own at the top of the list. The
+federal grants to social security are transfers: they are counted once, under
+social security, where the money is spent (see "Isn't money counted twice
+when one government pays another?").
 
 ### Why are public-sector pensions under social security?
 
@@ -151,7 +149,9 @@ shows them beside ours:
 
 ### Why are the lines coloured as they are?
 
-On the map of Belgium, each government has its own colour. Inside a
+On the map of Belgium, each government has its own colour, except that
+social security shares the federal government's colour (see "Isn't social
+security part of the federal government?"). Inside a
 government, each line takes the colour of what it pays for, so you can see,
 for example, that education sits with the communities and security with the
 federal government. The eight themes follow the COFOG functions of
@@ -170,10 +170,11 @@ the National Bank use, grouped into themes a reader recognises:
 - **Government and general services:** COFOG 01, including foreign affairs,
   the EU contribution, administration and grants to other governments
 
-On the revenue map, the tiles are neutral, so that colour says only one
-thing there: which level of government collects the money (a strip along each
-tile, see "Who collects each type of revenue?"). Imputed social contributions,
-which cannot be changed, are a lighter neutral.
+On the revenue map, colour says only one thing: which level of government
+collects the money. Each tile takes the colour of the level that collects
+most of it, and a strip under its amount shows the full split (see "Who
+collects each type of revenue?"). Imputed social contributions, which cannot
+be changed, are neutral.
 
 Two more have neutral colours:
 
@@ -404,8 +405,8 @@ it (§4.23, §4.80 and §4.132) book these items the same way.
 
 ### Who collects each type of revenue?
 
-A strip along each revenue tile, and a list on its card, show which level of
-government collects it. The amounts come from the Planning Bureau's account
+Each revenue tile has the colour of the level that collects most of it, and
+a strip under its amount and a list on its card show the full split. The amounts come from the Planning Bureau's account
 of each level (June 2026, column 2026): Table D.2 for the federal government
 (p. 60), D.3 for the communities and regions (p. 61), D.5 for local
 government (p. 63) and D.6 for social security (p. 64). In € million:
@@ -657,8 +658,9 @@ keyboard shows its full name, amount and share.
 On a phone, a treemap is too narrow to read, so the map becomes a list:
 each government or line is a row with its full name, its amount and a bar
 drawn to scale against the largest row, with − and + always in view. The
-governments are listed in two sections, Entity I and Entity II (see "Isn't
-social security part of the federal government?").
+federal government and social security come first, in a section of their own
+(see "Isn't social security part of the federal government?"). For revenue,
+each bar is split into the levels of government that collect it.
 
 Above the map, a switch shows **Revenue** instead of spending: what all
 governments together take in, by type, with the same − and + (see "What

@@ -1,32 +1,32 @@
-// ABOUTME: End-to-end tests for the groups on the map of Belgium: Entity I (federal government and social security) and
-// ABOUTME: Entity II (communities, regions and local government), as the Planning Bureau reports them.
+// ABOUTME: End-to-end tests for the frame around the federal government and social security on the map of Belgium:
+// ABOUTME: two separate budgets, both under federal policy, in one colour with a caption that says so.
 import { expect, test, type Page } from '@playwright/test';
 
 function map(page: Page) {
 	return page.getByRole('region', { name: 'Budget map' });
 }
 
-test.describe('groups of governments', () => {
-	test('pairs the federal government with social security, and names both groups', async ({
-		page
-	}) => {
+test.describe('federal government and social security', () => {
+	test('share one colour and one frame, with a caption that explains why', async ({ page }) => {
 		await page.goto('/en/');
-		await expect(map(page).getByTestId('group-box')).toHaveCount(2);
-		await expect(map(page).getByRole('button', { name: /^Social security/ })).toContainText(
-			'Entity I'
+		await expect(map(page).getByTestId('group-box')).toHaveCount(1);
+		await expect(map(page).getByTestId('group-caption')).toHaveText(
+			'Federal government and social security: two separate budgets, both under federal policy'
 		);
-		await expect(map(page).getByRole('button', { name: /^Flanders/ })).toContainText('Entity II');
-		const groups = map(page).getByRole('list', { name: 'Groups of governments' });
-		await expect(groups.getByRole('listitem')).toHaveCount(2);
-		await expect(groups.getByRole('listitem').first()).toContainText(
-			'Entity I: federal government and social security'
+		const federal = map(page).getByRole('button', { name: /^Federal government/ });
+		const socialSecurity = map(page).getByRole('button', { name: /^Social security/ });
+		await expect(federal).toHaveAttribute('style', /--tile-color:\s*var\(--series-1\)/);
+		await expect(socialSecurity).toHaveAttribute('style', /--tile-color:\s*var\(--series-1\)/);
+		await expect(map(page).getByRole('button', { name: /^Flanders/ })).not.toHaveAttribute(
+			'style',
+			/--tile-color:\s*var\(--series-1\)/
 		);
-		await expect(groups).toContainText('Entity II: communities, regions and local government');
+		await expect(map(page)).not.toContainText('Entity');
 	});
 
-	test('draws each group around its own governments', async ({ page }) => {
+	test('draws the frame around both of them', async ({ page }) => {
 		await page.goto('/en/');
-		const box = await map(page).getByTestId('group-box').first().boundingBox();
+		const box = await map(page).getByTestId('group-box').boundingBox();
 		for (const name of [/^Social security/, /^Federal government/]) {
 			const tile = await map(page).getByRole('button', { name }).boundingBox();
 			expect(tile!.x).toBeGreaterThanOrEqual(box!.x - 1);
@@ -42,29 +42,26 @@ test.describe('groups of governments', () => {
 			.getByRole('button', { name: /^Social security/ })
 			.click();
 		const note = map(page).getByTestId('entity-note');
-		await expect(note).toContainText('Entity I');
+		await expect(note).toContainText('own budget');
 		await expect(note).toContainText('grants from the federal government');
 	});
 
-	test('shows the groups as sections on a phone', async ({ page }) => {
+	test('shows them as one section on a phone, the others below', async ({ page }) => {
 		await page.setViewportSize({ width: 390, height: 844 });
 		await page.goto('/en/');
-		const first = map(page).getByRole('region', {
-			name: /^Entity I: federal government and social security/
+		const section = map(page).getByRole('region', {
+			name: /^Federal government and social security: two separate budgets/
 		});
-		await expect(first.getByTestId('bar-row')).toHaveCount(2);
-		await expect(first.getByTestId('bar-row').first()).toContainText('Social security');
-		const second = map(page).getByRole('region', {
-			name: /^Entity II: communities, regions and local government/
-		});
-		await expect(second.getByTestId('bar-row').first()).toContainText('Flanders');
+		await expect(section.getByTestId('bar-row')).toHaveCount(2);
+		await expect(section.getByTestId('bar-row').first()).toContainText('Social security');
+		await expect(map(page).getByTestId('bar-row')).toHaveCount(7);
 	});
 
 	test('speaks Dutch on the Dutch page', async ({ page }) => {
 		await page.goto('/nl/');
 		const kaart = page.getByRole('region', { name: 'Begrotingskaart' });
-		await expect(kaart.getByRole('list', { name: 'Groepen van overheden' })).toContainText(
-			'Entiteit I: federale overheid en sociale zekerheid'
+		await expect(kaart.getByTestId('group-caption')).toHaveText(
+			'Federale overheid en sociale zekerheid: twee aparte begrotingen, allebei federaal beleid'
 		);
 	});
 });

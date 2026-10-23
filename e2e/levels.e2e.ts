@@ -17,9 +17,9 @@ test.describe('who collects the revenue', () => {
 		const legend = map(page).getByRole('list', { name: 'Who collects it' });
 		await expect(legend.getByRole('listitem')).toHaveCount(4);
 		await expect(legend).toContainText('Communities and regions');
-		const capital = map(page).getByRole('group', { name: /^Inheritance and gift taxes/ });
-		const strip = capital.getByTestId('level-strip');
-		await expect(strip.locator('[data-level]')).toHaveCount(2);
+		const vat = map(page).getByRole('group', { name: /^VAT, excise duties/ });
+		const strip = vat.getByTestId('level-strip');
+		await expect(strip.locator('[data-level]')).toHaveCount(4);
 		const widths = await strip
 			.locator('[data-level]')
 			.evaluateAll((els) =>
@@ -30,7 +30,28 @@ test.describe('who collects the revenue', () => {
 					])
 				)
 			);
-		expect(widths['communities-and-regions']).toBeGreaterThan(80);
+		expect(widths['federal']).toBeGreaterThan(70);
+	});
+
+	test('colours each tile by the level that collects most of it', async ({ page }) => {
+		await showRevenue(page);
+		const colour = (name: RegExp) => map(page).getByRole('group', { name });
+		// Federal government: palette slot 1; communities and regions: slot 3; social security: slot 2.
+		await expect(colour(/^VAT, excise duties/)).toHaveAttribute(
+			'style',
+			/--tile-color:\s*var\(--series-1\)/
+		);
+		await expect(colour(/^Inheritance and gift taxes/)).toHaveAttribute(
+			'style',
+			/--tile-color:\s*var\(--series-3\)/
+		);
+		await expect(colour(/^Social contributions/)).toHaveAttribute(
+			'style',
+			/--tile-color:\s*var\(--series-2\)/
+		);
+		await expect(
+			map(page).getByRole('img', { name: /^Imputed social contributions/ })
+		).toHaveAttribute('style', /--tile-color:\s*var\(--revenue-fixed\)/);
 	});
 
 	test('lists the amounts per level on the card, before transfers between governments', async ({

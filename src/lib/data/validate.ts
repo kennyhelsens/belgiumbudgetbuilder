@@ -65,9 +65,6 @@ export function findProblems(data: Dataset): string[] {
 				groupOf.set(member, group.id);
 			}
 		}
-		for (const id of entityIds) {
-			if (!groupOf.has(id)) problems.push(`"${id}" is in no group`);
-		}
 	}
 
 	const revenueTypes = data.revenue.types;

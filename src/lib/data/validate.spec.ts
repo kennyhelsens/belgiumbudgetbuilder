@@ -165,20 +165,22 @@ describe('findProblems', () => {
 		const data = datasetFixture();
 		data.groups[0].members.push('atlantis');
 		expect(findProblems(data)).toContainEqual(
-			expect.stringContaining('group entity-1: unknown government "atlantis"')
+			expect.stringContaining('group federal-level: unknown government "atlantis"')
 		);
 	});
 
-	it('reports a government that is in no group, or in two', () => {
+	it('lets a government stay outside any group', () => {
 		const data = datasetFixture();
 		data.groups[0].members = ['federal'];
-		expect(findProblems(data)).toContainEqual(
-			expect.stringContaining('"social-security" is in no group')
-		);
+		expect(findProblems(data)).toEqual([]);
+	});
+
+	it('reports a government that is in two groups', () => {
+		const data = datasetFixture();
 		data.groups.push({
 			...data.groups[0],
-			id: 'entity-2',
-			members: ['federal', 'social-security']
+			id: 'other',
+			members: ['federal']
 		});
 		expect(findProblems(data)).toContainEqual(
 			expect.stringContaining('"federal" is in more than one group')
@@ -189,7 +191,7 @@ describe('findProblems', () => {
 		const data = datasetFixture();
 		data.groups[0].ref.source = 'nowhere';
 		expect(findProblems(data)).toContainEqual(
-			expect.stringContaining('groups.entity-1: unknown source "nowhere"')
+			expect.stringContaining('groups.federal-level: unknown source "nowhere"')
 		);
 	});
 
