@@ -1,11 +1,12 @@
 <!--
 ABOUTME: Key figures that stay at the top of the screen while visitors change the budget: public debt, deficit, and the
-ABOUTME: debt at the end of the outlook with a sparkline, reacting to each change; plus a button to watch the intro again.
+ABOUTME: debt at the end of the outlook with a sparkline, reacting to each change; with the flag and a button to watch the intro.
 -->
 <script lang="ts">
 	import type { Locale } from '../i18n/locales.ts';
 	import { translate, type MessageKey } from '../i18n/translate.ts';
 	import { formatEuro } from '../explorer/format.ts';
+	import Flag from '../ui/Flag.svelte';
 	import type { HeadlineMetrics } from './metrics.ts';
 
 	let {
@@ -52,6 +53,7 @@ ABOUTME: debt at the end of the outlook with a sparkline, reacting to each chang
 
 <section class="figures" aria-label={t('metrics.title')}>
 	<div class="figures__row">
+		<span class="figures__flag"><Flag size="1.5rem" /></span>
 		<div class="metric" data-testid="metric-debt">
 			<span class="metric__label">{t('metrics.debt').replace('{year}', String(year))}</span>
 			<span class="metric__value">{formatEuro(metrics.debt.eurMillion, locale)}</span>
@@ -134,11 +136,16 @@ ABOUTME: debt at the end of the outlook with a sparkline, reacting to each chang
 
 	.figures__row {
 		display: grid;
-		grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
+		grid-template-columns: auto repeat(3, minmax(0, 1fr)) auto;
 		gap: var(--space-3);
 		max-width: 64rem;
 		margin: 0 auto;
 		padding: var(--space-2) var(--gutter);
+	}
+
+	.figures__flag {
+		display: flex;
+		align-self: center;
 	}
 
 	.intro {
@@ -208,6 +215,11 @@ ABOUTME: debt at the end of the outlook with a sparkline, reacting to each chang
 		}
 
 		.intro__long {
+			display: none;
+		}
+
+		/* On a phone every pixel goes to the three figures; the masthead above shows the flag. */
+		.figures__flag {
 			display: none;
 		}
 
