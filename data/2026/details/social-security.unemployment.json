@@ -1,17 +1,5 @@
 {
 	"line": "social-security.unemployment",
-	"recipients": {
-		"who": {
-			"nl": "elke werkloze",
-			"fr": "chaque chômeur",
-			"en": "every unemployed person"
-		},
-		"what": {
-			"nl": "uitkering",
-			"fr": "d'allocations",
-			"en": "benefit"
-		}
-	},
 	"equivalents": [
 		{
 			"id": "avg-yearly-unemployment-benefit-jobseeker",

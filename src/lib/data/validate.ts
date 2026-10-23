@@ -113,6 +113,9 @@ function collectRefs(data: Dataset): { where: string; ref: SourceRef }[] {
 				ref: equivalent.unitEur.ref
 			});
 		}
+		if (details.effects) {
+			refs.push({ where: `${details.line}.effects`, ref: details.effects.ref });
+		}
 		for (const lever of details.levers) {
 			refs.push({ where: `${details.line}.levers.${lever.id}`, ref: lever.ref });
 		}

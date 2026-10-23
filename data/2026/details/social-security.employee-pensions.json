@@ -1,17 +1,5 @@
 {
 	"line": "social-security.employee-pensions",
-	"recipients": {
-		"who": {
-			"nl": "elke gepensioneerde werknemer",
-			"fr": "chaque pensionné salarié",
-			"en": "every retired employee"
-		},
-		"what": {
-			"nl": "pensioen",
-			"fr": "de pension",
-			"en": "pension"
-		}
-	},
 	"equivalents": [
 		{
 			"id": "avg-yearly-pension-employee-scheme",

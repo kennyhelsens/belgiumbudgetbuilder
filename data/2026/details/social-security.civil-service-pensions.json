@@ -1,17 +1,5 @@
 {
 	"line": "social-security.civil-service-pensions",
-	"recipients": {
-		"who": {
-			"nl": "elke gepensioneerde ambtenaar",
-			"fr": "chaque fonctionnaire pensionné",
-			"en": "every retired civil servant"
-		},
-		"what": {
-			"nl": "pensioen",
-			"fr": "de pension",
-			"en": "pension"
-		}
-	},
 	"equivalents": [
 		{
 			"id": "min-pension-civil-service-single-year",

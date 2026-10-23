@@ -382,16 +382,11 @@ They stay at the top of the screen while you change the budget:
   ten-year outlook, with the result for an unchanged budget next to it once
   you make a change.
 
-After every click, a short notice illustrates that one step, not your total
-change. Each click on the same line shows something new. For a benefit line
-(see "What is the card that appears when I change a spending line?") the
-first click says what the step means in time for the people who receive it,
-for example "as if every retired employee got about 4 days less pension a
-year" for 1% of employee pensions. Then come the line's examples in concrete
-units in turn, such as GP consultations reimbursed, and then the step per
-inhabitant per year (Belgium's population on 1 January 2026, 11,867,634,
-Statbel). Counts are rounded to two digits because they are
-illustrations. The exact amounts are in the key figures and on the map. The
+After every click, a short notice says one thing the change could mean, in
+plain words: for example "Less money for Healthcare could mean: a higher
+co-payment at the GP". Each click on the same line shows the next possible
+effect. The notice has no numbers, because a number is never right for
+everyone; the exact amounts are in the key figures and on the map. The
 notice disappears by itself after a few seconds.
 
 Each change also moves the debt: more spending raises it and less spending
@@ -399,6 +394,14 @@ lowers it. The figures at the top react, and emojis bubble up the screen:
 happy ones when the debt falls, worried ones when it rises. This is a playful
 signal of direction, not a judgement of the choice. People who have asked
 their device for reduced motion do not see these animations.
+
+### What happened to the examples in concrete units?
+
+Earlier versions of the site expressed a change in concrete units, such as
+"about 15 million GP consultations". The site no longer shows them: a count
+like that is never right for everyone, and the possible effects in words are
+easier to grasp. The examples stay in the data, with their sources, for
+reference; they are listed below.
 
 ### Are the examples in concrete units checked?
 
@@ -409,10 +412,7 @@ arithmetic. That second check confirmed, corrected or rejected each example:
 corrected examples carry the reason in the data, and rejected or misleading
 ones were left out.
 
-The project owners have chosen to show the examples while their own review
-is still under way: examples a reviewer has approved come first, and the
-others are shown too. Each example records who approved it, once that has
-happened.
+Each example records who approved it, once a reviewer has done so.
 
 Examples are measured per year or per item, so they can be compared with a
 yearly budget. Where the source gives a monthly amount, the data multiplies
@@ -467,39 +467,44 @@ changed on the site, so it has no examples.
 
 ### What is the card that appears when I change a spending line?
 
-When you change a spending line that has detailed data behind it, a card
-says in one plain sentence what the change means, with the amounts in small
-print below. Healthcare through RIZIV/INAMI also has the last two parts; the
-other lines in "Which examples are there?" have the sentence and the
-amounts:
+When you change a spending line, a card says what that change could mean,
+in plain words and without numbers:
 
-- **The plain sentence, for benefit lines:** for lines that are mostly
-  payments to people (employee, self-employed and public-sector pensions,
-  unemployment, sickness and invalidity benefits, disability allowances and
-  Walloon family allowances), the card tells the change as time for the
-  people who receive it. A 6% cut in employee pensions reads: "As if every
-  retired employee got about 3 weeks less pension a year". This is 6% of a
-  year (365 days × 6% ≈ 22 days), rounded to days, weeks or months. It is an
-  average: it spreads the change evenly over everyone. A real reform could
-  instead hit some people harder, or only new pensioners (see "How could it
-  be done?").
-- **The plain sentence, for other lines, and the second sentence for benefit
-  lines:** one example in concrete units, such as the average yearly pay
-  costs of a member of the armed forces. Counts are rounded to two digits,
-  because they show an order of size. For 6% of employee pensions:
-  "Or about 150,000 × years of the average gross pension from the employee
-  scheme". Every example is measured per year or per item, never per month,
-  so a yearly budget change is always compared with a yearly amount.
-  Examples a reviewer has approved come first (see "Are the examples in
-  concrete units checked?").
-- **The amounts:** the yearly change, and that change divided by Belgium's
-  population on 1 January 2026 (11,867,634, Statbel). For example, a 10% cut
-  in healthcare is about €370 less per inhabitant a year.
-- **Where it would land:** the change is spread over the sub-budgets in
-  proportion to their size. A real reform chooses where to cut; the
-  proportional spread only shows the scale.
-- **How could it be done?:** the official levers through which this spending
-  changes, each with a neutral explanation and its source.
+- **Could mean:** two to four possible effects of a cut, or of an increase,
+  such as "a higher co-payment at the GP" or "fewer trains at off-peak
+  hours". They are possibilities, not a forecast: who feels a change depends
+  on how a government makes the choice. Each line links to the official
+  document that shows what the line pays for (see "Where do the possible
+  effects come from?").
+- **Where it would land:** for healthcare through RIZIV/INAMI, the change is
+  spread over the sub-budgets in proportion to their size and shown as bars.
+  A real reform chooses where to cut; the proportional spread only shows the
+  scale.
+- **How could it be done?:** for healthcare, the official levers through
+  which this spending changes, each with a neutral explanation and its
+  source.
+
+### Where do the possible effects come from?
+
+For every line you can change, AI research agents (Claude, by Anthropic)
+read the official documents that say what the line pays for: the budget
+laws and decrees, their general explanations, the policy notes of the
+ministers, and the agencies' own pages. From those they wrote short phrases
+for what a cut and an increase could mean, in Dutch, French and English,
+with the source of each line. A second agent checked every phrase against
+its source and against these rules:
+
+- **No numbers:** no amounts, percentages or counts, because they are never
+  right for everyone.
+- **Grounded:** each phrase names something the line actually pays for, or
+  an official lever over it.
+- **Direct, not speculative:** "fewer buses and trams", not guesses about
+  traffic, jobs or the economy.
+- **Neutral and mirrored:** a cut and an increase are described the same
+  way ("fewer" and "more"), without loaded words or party positions.
+
+Like the rest of the site, the phrases still await a human review; see "Why
+does the site say "work in progress"?".
 
 ### Where do the healthcare sub-budgets come from?
 

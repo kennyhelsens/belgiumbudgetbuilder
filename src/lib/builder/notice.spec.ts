@@ -1,7 +1,7 @@
-// ABOUTME: Unit tests for the short notice shown after each click on a budget line: a tangible illustration of
-// ABOUTME: that one step (an example in concrete units, or the amount per inhabitant), rotating per click, in NL/FR/EN.
+// ABOUTME: Unit tests for the short notice shown after each click on a budget line: one thing the change could mean,
+// ABOUTME: in plain words without numbers, a different one on each click, in NL/FR/EN.
 import { describe, expect, it } from 'vitest';
-import { changeNotice, formatPercentChange, pickIllustration } from './notice.ts';
+import { changeNotice, formatPercentChange, pickEffect } from './notice.ts';
 
 describe('formatPercentChange', () => {
 	it('signs a change with a real minus sign', () => {
@@ -14,102 +14,72 @@ describe('formatPercentChange', () => {
 	});
 });
 
-describe('pickIllustration', () => {
-	const examples = ['soldiers', 'prisoners'];
+describe('pickEffect', () => {
+	const effects = [
+		'fewer trains at off-peak hours',
+		'fewer station staff',
+		'older trains for longer'
+	];
 
-	it('gives a different illustration on each click: every example, then the amount per inhabitant', () => {
-		expect([0, 1, 2, 3, 4].map((click) => pickIllustration(examples, click))).toEqual([
-			'soldiers',
-			'prisoners',
-			undefined,
-			'soldiers',
-			'prisoners'
+	it('gives a different effect on each click, and starts again after the last', () => {
+		expect([0, 1, 2, 3].map((click) => pickEffect(effects, click))).toEqual([
+			'fewer trains at off-peak hours',
+			'fewer station staff',
+			'older trains for longer',
+			'fewer trains at off-peak hours'
 		]);
 	});
 
-	it('uses the amount per inhabitant when a line has no examples', () => {
-		expect(pickIllustration([], 0)).toBeUndefined();
-		expect(pickIllustration([], 7)).toBeUndefined();
+	it('has nothing to give for a line without effects', () => {
+		expect(pickEffect([], 3)).toBeUndefined();
 	});
 });
 
 describe('changeNotice', () => {
-	const base = { name: 'Defence', percent: -1, population: 11867634 };
+	const base = { name: 'Healthcare', percent: -1, stepEurMillion: -350 };
 
-	it('illustrates the step just taken, not the total change', () => {
-		const step = { ...base, stepEurMillion: -109.6 };
-		const example = {
-			unitEur: 70690,
-			label: 'average yearly pay costs of a member of the armed forces'
-		};
-		expect(changeNotice('en', { ...step, example })).toBe(
-			'Defence: this cut equals about 1,600 average yearly pay costs of a member of the armed forces.'
+	it('says what a cut could mean, in plain words', () => {
+		expect(changeNotice('en', { ...base, effect: 'a higher co-payment at the GP' })).toBe(
+			'Less money for Healthcare could mean: a higher co-payment at the GP.'
 		);
-		expect(changeNotice('en', { ...step, percent: -7, example })).toBe(
-			changeNotice('en', { ...step, example })
-		);
-	});
-
-	it('says whether the step adds money', () => {
-		expect(
-			changeNotice('en', {
-				...base,
-				percent: 1,
-				stepEurMillion: 109.6,
-				example: { unitEur: 62283, label: 'prisoners held for a year (average cost)' }
-			})
-		).toBe('Defence: this increase equals about 1,800 prisoners held for a year (average cost).');
-	});
-
-	it('tells a step on a benefit line as time for the people who receive it', () => {
-		const recipients = {
-			who: {
-				nl: 'elke gepensioneerde werknemer',
-				fr: 'chaque pensionné salarié',
-				en: 'every retired employee'
-			},
-			what: { nl: 'pensioen', fr: 'de pension', en: 'pension' }
-		};
 		expect(
 			changeNotice('nl', {
 				...base,
-				name: 'Pensioenen werknemers',
-				stepEurMillion: -430.4,
-				stepPercent: -1,
-				recipients
+				name: 'Gezondheidszorg',
+				effect: 'een hogere bijdrage bij de huisarts'
+			})
+		).toBe('Minder geld voor Gezondheidszorg kan betekenen: een hogere bijdrage bij de huisarts.');
+	});
+
+	it('says what an increase could mean', () => {
+		expect(
+			changeNotice('fr', {
+				...base,
+				name: 'Soins de santé',
+				percent: 1,
+				stepEurMillion: 350,
+				effect: 'un ticket modérateur plus bas chez le généraliste'
 			})
 		).toBe(
-			"Pensioenen werknemers: alsof elke gepensioneerde werknemer zo'n 4 dagen pensioen per jaar minder krijgt."
+			"Plus d'argent pour Soins de santé peut signifier : un ticket modérateur plus bas chez le généraliste."
 		);
 	});
 
-	it('falls back to the amount per inhabitant, with cents for small steps', () => {
-		expect(changeNotice('en', { ...base, stepEurMillion: -109.6 })).toBe(
-			'Defence: this cut equals about €9 less per inhabitant a year.'
-		);
-		expect(changeNotice('en', { ...base, name: 'Chancellery', stepEurMillion: -2.33 })).toBe(
-			'Chancellery: this cut equals about €0.20 less per inhabitant a year.'
+	it('names the direction when a line has no effects', () => {
+		expect(changeNotice('en', base)).toBe('Less money for Healthcare.');
+		expect(changeNotice('en', { ...base, percent: 2, stepEurMillion: 350 })).toBe(
+			'More money for Healthcare.'
 		);
 	});
 
-	it('leaves out percentages and exact budget amounts, which the tiles and key figures show', () => {
-		const text = changeNotice('en', { ...base, stepEurMillion: -109.6 });
-		expect(text).not.toMatch(/%|million|billion|Deficit/);
+	it('shows no numbers at all', () => {
+		const text = changeNotice('en', { ...base, effect: 'fewer medicines reimbursed' });
+		expect(text).not.toMatch(/\d/);
 	});
 
 	it('says when a line is back to the official budget', () => {
-		expect(changeNotice('en', { ...base, percent: 0, stepEurMillion: 109.6 })).toBe(
-			'Defence is back to the official budget.'
-		);
-	});
-
-	it('speaks Dutch and French', () => {
-		const step = { ...base, stepEurMillion: -109.6 };
-		expect(changeNotice('nl', step)).toMatch(
-			/^Defence: deze besparing is ongeveer €\s9 minder per inwoner per jaar\.$/
-		);
-		expect(changeNotice('fr', step)).toMatch(
-			/^Defence\s: cette économie équivaut à environ 9\s€ de moins par habitant et par an\.$/
+		expect(changeNotice('en', { ...base, percent: 0, stepEurMillion: 350 })).toBe(
+			'Healthcare is back to the official budget.'
 		);
 	});
 });

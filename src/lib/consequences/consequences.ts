@@ -1,5 +1,5 @@
-// ABOUTME: Consequence card logic: where a change to a spending line lands, and what it is worth in concrete units.
-// ABOUTME: Pure functions over sourced line details; only reviewed examples are offered, as the project rules require.
+// ABOUTME: Consequence card logic: where a change to a spending line would land among its sub-budgets.
+// ABOUTME: A pure function over sourced line details.
 type Amount = { eurMillion: number };
 
 type BreakdownItem = {
@@ -24,31 +24,4 @@ export function distributeChange(
 				? 0
 				: (item.amount.eurMillion / base) * changeEurMillion
 	}));
-}
-
-/** How many units of a given cost (€) a change in € million is worth, rounded to whole units. */
-export function equivalentCount(changeEurMillion: number, unitEur: number): number {
-	if (unitEur <= 0) throw new Error('equivalentCount: unit amount must be positive');
-	return Math.round((Math.abs(changeEurMillion) * 1_000_000) / unitEur);
-}
-
-/** A yearly change in € million, spread over every inhabitant, in €. */
-export function perInhabitantPerYear(changeEurMillion: number, population: number): number {
-	if (population <= 0) throw new Error('perInhabitantPerYear: population must be positive');
-	return (changeEurMillion * 1_000_000) / population;
-}
-
-/** Only examples approved by a reviewer may be shown. */
-export function reviewedEquivalents<T extends { reviewedBy?: string }>(
-	equivalents: readonly T[]
-): T[] {
-	return equivalents.filter((equivalent) => Boolean(equivalent.reviewedBy));
-}
-
-/** Examples approved by a reviewer first, then the ones still waiting for review. */
-export function preferReviewed<T extends { reviewedBy?: string }>(equivalents: readonly T[]): T[] {
-	return [
-		...reviewedEquivalents(equivalents),
-		...equivalents.filter((equivalent) => !equivalent.reviewedBy)
-	];
 }

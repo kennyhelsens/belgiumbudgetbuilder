@@ -1,17 +1,5 @@
 {
 	"line": "wallonia.family-allowances",
-	"recipients": {
-		"who": {
-			"nl": "elk kind in Wallonië",
-			"fr": "chaque enfant en Wallonie",
-			"en": "every child in Wallonia"
-		},
-		"what": {
-			"nl": "kinderbijslag",
-			"fr": "d'allocations familiales",
-			"en": "child benefit"
-		}
-	},
 	"equivalents": [
 		{
 			"id": "wallonia-base-family-allowance-child-year",
