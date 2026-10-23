@@ -18,7 +18,8 @@ export type Choices = {
 
 /** What the visitor's choices do to the yearly balance, € million: more revenue improves it, more spending worsens it. */
 export function balanceChangeFrom(changes: Changes, revenue: Changes = {}): number {
-	const sum = (values: Changes) => Object.values(values).reduce((total, change) => total + change, 0);
+	const sum = (values: Changes) =>
+		Object.values(values).reduce((total, change) => total + change, 0);
 	// 0 + … so that no changes gives 0 and not -0.
 	return 0 + sum(revenue) - sum(changes);
 }
