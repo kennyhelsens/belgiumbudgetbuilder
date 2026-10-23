@@ -35,7 +35,8 @@
 						"note": "Payment credits: row B plus row E (variable credits of budget funds), A-268/5 programme tables."
 					}
 				},
-				"nature": "discretionary"
+				"nature": "discretionary",
+				"theme": "economy"
 			},
 			{
 				"id": "brussels.employment-economy",
@@ -53,7 +54,8 @@
 						"note": "Mission 44 total: Actiris 647.722 + service vouchers (titres-services) 303.832 + other economy/research/innovation 243.129. The service-voucher subsidy (303.8) is demand-driven per voucher and behaves like an entitlement."
 					}
 				},
-				"nature": "discretionary"
+				"nature": "discretionary",
+				"theme": "economy"
 			},
 			{
 				"id": "brussels.housing",
@@ -71,7 +73,8 @@
 						"note": "Payment credits: row B plus row E (variable credits of budget funds), A-268/5 programme tables."
 					}
 				},
-				"nature": "discretionary"
+				"nature": "discretionary",
+				"theme": "environment"
 			},
 			{
 				"id": "brussels.local-authorities",
@@ -108,7 +111,8 @@
 						"note": "5.423 + 126.829 + 128.164 + 0.421 + 0.169 + 0.321 + 0.200 = 261.527. Mainly fire-brigade staff and the BPS grant; BPS passes part on to municipalities/police zones (BPS's own 2026 budget, A-268/5 Part 2 p. 50 (BPS section 2 table), programme 302 'Financement de la mise en oeuvre du PGSP', total row B: 68.654), but the ordinance does not split that by recipient, so it is not marked as a transfer."
 					}
 				},
-				"nature": "committed"
+				"nature": "committed",
+				"theme": "security"
 			},
 			{
 				"id": "brussels.environment",
@@ -126,7 +130,8 @@
 						"note": "Payment credits: row B plus row E (variable credits of budget funds), A-268/5 programme tables."
 					}
 				},
-				"nature": "discretionary"
+				"nature": "discretionary",
+				"theme": "environment"
 			},
 			{
 				"id": "brussels.family-allowances",
@@ -144,7 +149,8 @@
 						"note": "Single budget line; financed mainly by the federal dotation to COCOM under the Special Financing Act (COCOM revenue AB 01.002.01.01.4940 'Dotation en provenance du pouvoir fédéral': 1,648.591, B-66/4 p. 4)."
 					}
 				},
-				"nature": "entitlement"
+				"nature": "entitlement",
+				"theme": "social-protection"
 			},
 			{
 				"id": "brussels.cocom-health-welfare",
@@ -162,7 +168,8 @@
 						"note": "2,040.467 - 1,057.784 (family allowances, own line) - 39.627 (FSAS paid on to the CPAS; already counted in the local-authorities line) = 943.056. Includes the dotations to Iriscare for health (469.647) and aid to persons (100.137), Iriscare operating/non-profit dotations, New Samusocial/Bruss'Help and Vivalis' own health and welfare programmes. Much of it (care-home and hospital financing) is set by regulation and hard to change in-year."
 					}
 				},
-				"nature": "discretionary"
+				"nature": "discretionary",
+				"theme": "social-protection"
 			},
 			{
 				"id": "brussels.cocof-vgc",
@@ -180,7 +187,8 @@
 						"note": "98.476 + 357.090 = 455.566. COCOF and VGC budgets themselves are not consolidated here (see missing); their spending (social, health, education, culture for Brussels) is shown as this grant."
 					}
 				},
-				"nature": "committed"
+				"nature": "committed",
+				"theme": "general"
 			},
 			{
 				"id": "brussels.interest",
@@ -199,7 +207,8 @@
 					}
 				},
 				"nature": "committed",
-				"adjustable": false
+				"adjustable": false,
+				"theme": "debt"
 			},
 			{
 				"id": "brussels.other",
@@ -217,7 +226,8 @@
 						"note": "Payment credits: row B plus row E (variable credits of budget funds), A-268/5 programme tables. Excludes 0.223 of debt principal in mission 41."
 					}
 				},
-				"nature": "discretionary"
+				"nature": "discretionary",
+				"theme": "general"
 			}
 		]
 	}

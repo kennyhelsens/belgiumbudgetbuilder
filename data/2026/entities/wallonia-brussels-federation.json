@@ -34,7 +34,8 @@
 						"quote": "CHAPITRE I – Services généraux ... 1.203.087 1.184.679 -40.349 -39.757 23.532 24.075 1.186.270 1.168.997"
 					}
 				},
-				"nature": "discretionary"
+				"nature": "discretionary",
+				"theme": "general"
 			},
 			{
 				"id": "wallonia-brussels-federation.health-social-culture-media-sport",
@@ -51,7 +52,8 @@
 						"quote": "CHAPITRE II – Santé, Affaires sociales, Culture, Audiovisuel et Sport ... 2.206.568 2.325.485 40.599 40.007 17.213 13.521 2.264.380 2.379.013"
 					}
 				},
-				"nature": "committed"
+				"nature": "committed",
+				"theme": "social-protection"
 			},
 			{
 				"id": "wallonia-brussels-federation.education-research-training",
@@ -68,7 +70,8 @@
 						"quote": "CHAPITRE III – Education, Recherche et Formation ... 10.925.380 10.928.638 -250 -250 167.395 161.400 11.092.525 11.089.788"
 					}
 				},
-				"nature": "committed"
+				"nature": "committed",
+				"theme": "education"
 			},
 			{
 				"id": "wallonia-brussels-federation.public-debt",
@@ -87,7 +90,8 @@
 					}
 				},
 				"nature": "committed",
-				"adjustable": false
+				"adjustable": false,
+				"theme": "debt"
 			},
 			{
 				"id": "wallonia-brussels-federation.transfers-walloon-region-cocof",

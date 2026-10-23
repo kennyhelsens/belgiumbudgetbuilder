@@ -43,6 +43,10 @@ describe('mapTiles zoomed into one government', () => {
 		expect(tiles.map((t) => t.id)).toEqual(['federal.justice']);
 	});
 
+	it('carries the theme of each line, for its colour', () => {
+		expect(tiles[0].theme).toBe('security');
+	});
+
 	it('fills the frame and cannot be zoomed further', () => {
 		expect(area(tiles[0])).toBeCloseTo(600 * 400, 6);
 		expect(tiles[0].zoomable).toBe(false);

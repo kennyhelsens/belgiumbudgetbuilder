@@ -125,6 +125,118 @@ shows them beside ours:
   adjusted budget of June 2026, in payment credits, line by line; BOSA's
   overview uses the initial budget and the national accounts.
 
+### Why are the lines coloured as they are?
+
+On the map of Belgium, each government has its own colour. Inside a
+government, each line takes the colour of what it pays for, so you can see,
+for example, that education sits with the communities and security with the
+federal government. The eight themes follow the COFOG functions of
+government, the international classification by purpose that Eurostat and
+the National Bank use, grouped into themes a reader recognises:
+
+- **Social protection:** pensions, unemployment, sickness and family benefits,
+  social assistance (COFOG 10)
+- **Health:** COFOG 07
+- **Education:** COFOG 09
+- **Security, justice and defence:** COFOG 02 and 03
+- **Economy, work and mobility:** COFOG 04, including transport and labour
+  market policy
+- **Environment, housing and land:** COFOG 05 and 06
+- **Culture, sport and media:** COFOG 08
+- **Government and general services:** COFOG 01, including foreign affairs,
+  the EU contribution, administration and grants to other governments
+
+Two more have neutral colours:
+
+- **Interest on debt:** in COFOG it belongs to general services, but it
+  follows from the debt rather than from a budget choice.
+- **Local spending by type:** the local budgets in the data are split by type
+  of spending (staff, investment, ...), not by purpose.
+
+Many budget lines mix several purposes. The site classifies each by its main
+purpose; this is the site's own classification, not an official one. Every
+line:
+
+| Theme                           | Government                   | Line                                                                                                                                              |
+| ------------------------------- | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Social protection               | Brussels                     | COCOM: health, elderly care and welfare (Vivalis, Iriscare, New Samusocial)                                                                       |
+| Social protection               | Brussels                     | Family allowances (COCOM, via Iriscare)                                                                                                           |
+| Social protection               | Federal government           | Allowances for persons with disabilities                                                                                                          |
+| Social protection               | Federal government           | Grant to Fedasil (reception of asylum seekers)                                                                                                    |
+| Social protection               | Federal government           | Income guarantee for older people (GRAPA) and running costs of the Social Security department                                                     |
+| Social protection               | Federal government           | Social integration (other)                                                                                                                        |
+| Social protection               | Flanders                     | Welfare, public health and family (incl. Groeipakket family allowances and Flemish social protection)                                             |
+| Social protection               | Social security              | Administration costs (institutions and health insurance funds)                                                                                    |
+| Social protection               | Social security              | Employee pensions                                                                                                                                 |
+| Social protection               | Social security              | Other schemes (Fedris funds, public-sector career breaks, former Overseas Social Security, ...)                                                   |
+| Social protection               | Social security              | Other spending                                                                                                                                    |
+| Social protection               | Social security              | Public-sector pensions (all levels of government, Federal Pension Service)                                                                        |
+| Social protection               | Social security              | Self-employed pensions                                                                                                                            |
+| Social protection               | Social security              | Sickness, disability and maternity benefits                                                                                                       |
+| Social protection               | Social security              | Unemployment and related benefits (RVA/ONEM)                                                                                                      |
+| Social protection               | Social security              | Work accidents and occupational diseases (Fedris)                                                                                                 |
+| Social protection               | Wallonia-Brussels Federation | Health, social affairs, culture, media and sport (incl. early childhood/ONE, youth care, justice houses, culture, RTBF public broadcaster, sport) |
+| Social protection               | Walloon Region               | Family allowances (AVIQ, family branch)                                                                                                           |
+| Social protection               | Walloon Region               | Health, elderly care, disability and social action (AVIQ and other)                                                                               |
+| Health                          | Federal government           | Public health, food chain safety and environment                                                                                                  |
+| Health                          | Social security              | Healthcare (RIZIV/INAMI)                                                                                                                          |
+| Education                       | Flanders                     | Education and training                                                                                                                            |
+| Education                       | Wallonia-Brussels Federation | Education, research and training (compulsory education incl. teacher salaries, higher education, research, school buildings)                      |
+| Security, justice and defence   | Brussels                     | Fire service, prevention and security (SIAMU, Brussels Prevention & Security)                                                                     |
+| Security, justice and defence   | Federal government           | Defence                                                                                                                                           |
+| Security, justice and defence   | Federal government           | Federal police (excluding grants to local police zones)                                                                                           |
+| Security, justice and defence   | Federal government           | Home affairs (excluding Fedasil and the Immigration Office)                                                                                       |
+| Security, justice and defence   | Federal government           | Immigration Office                                                                                                                                |
+| Security, justice and defence   | Federal government           | Justice                                                                                                                                           |
+| Economy, work and mobility      | Brussels                     | Employment and economy (Actiris, service vouchers, Innoviris, hub.brussels)                                                                       |
+| Economy, work and mobility      | Brussels                     | Mobility and public transport (incl. STIB)                                                                                                        |
+| Economy, work and mobility      | Federal government           | Economy, small businesses, self-employed and energy                                                                                               |
+| Economy, work and mobility      | Federal government           | Employment, labour and social dialogue                                                                                                            |
+| Economy, work and mobility      | Federal government           | Mobility and transport (mostly SNCB and Infrabel railways)                                                                                        |
+| Economy, work and mobility      | Flanders                     | Mobility and public works                                                                                                                         |
+| Economy, work and mobility      | Flanders                     | Work, economy, science, innovation, agriculture and social economy                                                                                |
+| Economy, work and mobility      | Social security              | Contribution reductions booked as spending (ESA 2010)                                                                                             |
+| Economy, work and mobility      | Walloon Region               | Economy, research and digital                                                                                                                     |
+| Economy, work and mobility      | Walloon Region               | Employment and training (FOREM, IFAPME, service vouchers, target-group reductions)                                                                |
+| Economy, work and mobility      | Walloon Region               | Mobility, roads, waterways and public transport                                                                                                   |
+| Economy, work and mobility      | Walloon Region               | Walloon Recovery Plan (PRW) and EU Recovery and Resilience Facility                                                                               |
+| Environment, housing and land   | Brussels                     | Environment, energy and cleanliness                                                                                                               |
+| Environment, housing and land   | Brussels                     | Housing and urban development                                                                                                                     |
+| Environment, housing and land   | Flanders                     | Environment and spatial planning (Omgeving)                                                                                                       |
+| Environment, housing and land   | Walloon Region               | Agriculture, nature and environment                                                                                                               |
+| Environment, housing and land   | Walloon Region               | Housing, spatial planning, energy and heritage                                                                                                    |
+| Culture, sport and media        | Flanders                     | Culture, youth, sport and media                                                                                                                   |
+| Government and general services | Brussels                     | Grants to the French (COCOF) and Flemish (VGC) community commissions                                                                              |
+| Government and general services | Brussels                     | Other (administration, tax service, financial stakes and loans, EU-funded projects, external relations, ...)                                      |
+| Government and general services | Federal government           | Buildings Agency (Régie des Bâtiments)                                                                                                            |
+| Government and general services | Federal government           | Chancellery of the Prime Minister                                                                                                                 |
+| Government and general services | Federal government           | Finance                                                                                                                                           |
+| Government and general services | Federal government           | Foreign affairs, foreign trade and development cooperation                                                                                        |
+| Government and general services | Federal government           | GNI-based contribution to the EU budget                                                                                                           |
+| Government and general services | Federal government           | Grants to the German-speaking Community                                                                                                           |
+| Government and general services | Federal government           | Independent bodies                                                                                                                                |
+| Government and general services | Federal government           | Policy and Support (BOSA), with provisions                                                                                                        |
+| Government and general services | Federal government           | Royal family, parliament and other grants                                                                                                         |
+| Government and general services | Federal government           | Science policy                                                                                                                                    |
+| Government and general services | Flanders                     | Chancellery, governance, foreign affairs and justice (excl. local government funds)                                                               |
+| Government and general services | Flanders                     | Finance and budget (excl. interest): provisions, tax administration, budget policy                                                                |
+| Government and general services | Flanders                     | Higher entities (Flemish Parliament etc.)                                                                                                         |
+| Government and general services | Wallonia-Brussels Federation | General services (parliament, ministers' offices, general secretariat incl. staff, IT, buildings, international relations)                        |
+| Government and general services | Walloon Region               | General administration (SPW staff, digital), institutions and other                                                                               |
+| Interest on debt                | Brussels                     | Interest on regional debt                                                                                                                         |
+| Interest on debt                | Federal government           | Interest on the public debt                                                                                                                       |
+| Interest on debt                | Federal government           | Public debt: other costs (excluding repayments)                                                                                                   |
+| Interest on debt                | Flanders                     | Interest and financial costs on Flemish debt                                                                                                      |
+| Interest on debt                | Local government             | Interest                                                                                                                                          |
+| Interest on debt                | Wallonia-Brussels Federation | Public debt: interest and charges (excluding repayment of principal)                                                                              |
+| Interest on debt                | Walloon Region               | Debt interest, issuance costs and guarantees                                                                                                      |
+| Local spending by type          | Local government             | Goods and services (intermediate consumption)                                                                                                     |
+| Local spending by type          | Local government             | Gross fixed capital formation                                                                                                                     |
+| Local spending by type          | Local government             | Other (subsidies, transfers to households and companies, other capital spending)                                                                  |
+| Local spending by type          | Local government             | Social benefits (incl. integration income via OCMW/CPAS)                                                                                          |
+| Local spending by type          | Local government             | Staff (compensation of employees)                                                                                                                 |
+| Local spending by type          | Local government             | Transfers to other governments                                                                                                                    |
+
 ### Why is the map total (€355 billion) lower than the official €362 billion?
 
 The €362 billion (€361.8 billion) is general government spending in the

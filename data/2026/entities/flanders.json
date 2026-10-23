@@ -33,7 +33,8 @@
 						"quote": "Onderwijs en Vorming                                  20.207.912      20.223.063"
 					}
 				},
-				"nature": "committed"
+				"nature": "committed",
+				"theme": "education"
 			},
 			{
 				"id": "flanders.welfare-health-family",
@@ -50,7 +51,8 @@
 						"quote": "Welzijn, Volksgezondheid en Gezin                     17.767.208      17.768.858"
 					}
 				},
-				"nature": "entitlement"
+				"nature": "entitlement",
+				"theme": "social-protection"
 			},
 			{
 				"id": "flanders.mobility-public-works",
@@ -67,7 +69,8 @@
 						"quote": "Mobiliteit en Openbare Werken                         6.027.239       6.263.371"
 					}
 				},
-				"nature": "committed"
+				"nature": "committed",
+				"theme": "economy"
 			},
 			{
 				"id": "flanders.economy-work-science-agriculture",
@@ -84,7 +87,8 @@
 						"quote": "Werk, Economie, Wetenschap, Innovatie, Landbouw ... en Sociale Economie   5.895.425       5.991.959"
 					}
 				},
-				"nature": "discretionary"
+				"nature": "discretionary",
+				"theme": "economy"
 			},
 			{
 				"id": "flanders.environment",
@@ -101,7 +105,8 @@
 						"quote": "Omgeving                                              3.416.944       3.345.709"
 					}
 				},
-				"nature": "discretionary"
+				"nature": "discretionary",
+				"theme": "environment"
 			},
 			{
 				"id": "flanders.culture-youth-sport-media",
@@ -118,7 +123,8 @@
 						"quote": "Cultuur, Jeugd, Sport en Media                        1.689.330       1.689.764"
 					}
 				},
-				"nature": "discretionary"
+				"nature": "discretionary",
+				"theme": "culture"
 			},
 			{
 				"id": "flanders.local-government-funds",
@@ -155,7 +161,8 @@
 						"note": "6305.880 - 4773.156 = 1532.724"
 					}
 				},
-				"nature": "committed"
+				"nature": "committed",
+				"theme": "general"
 			},
 			{
 				"id": "flanders.interest",
@@ -174,7 +181,8 @@
 					}
 				},
 				"nature": "committed",
-				"adjustable": false
+				"adjustable": false,
+				"theme": "debt"
 			},
 			{
 				"id": "flanders.finance-budget-other",
@@ -192,7 +200,8 @@
 						"note": "5350.466 - 1230.706 = 4119.760"
 					}
 				},
-				"nature": "discretionary"
+				"nature": "discretionary",
+				"theme": "general"
 			},
 			{
 				"id": "flanders.higher-entities",
@@ -209,7 +218,8 @@
 						"quote": "Hogere Entiteiten                                      176.535         174.974"
 					}
 				},
-				"nature": "committed"
+				"nature": "committed",
+				"theme": "general"
 			}
 		]
 	}
