@@ -1,0 +1,45 @@
+{
+	"line": "flanders.higher-entities",
+	"effects": {
+		"cut": [
+			{
+				"nl": "een kleinere dotatie voor het Vlaams Parlement",
+				"fr": "une dotation plus faible pour le Parlement flamand",
+				"en": "a smaller allocation for the Flemish Parliament"
+			},
+			{
+				"nl": "minder personeel op de kabinetten van de Vlaamse ministers",
+				"fr": "moins de personnel dans les cabinets des ministres flamands",
+				"en": "fewer staff in Flemish ministers' offices"
+			},
+			{
+				"nl": "een kleinere dotatie voor de Vlaamse Nutsregulator",
+				"fr": "une dotation plus faible pour la Vlaamse Nutsregulator",
+				"en": "a smaller allocation for the Vlaamse Nutsregulator (utility regulator)"
+			}
+		],
+		"add": [
+			{
+				"nl": "een grotere dotatie voor het Vlaams Parlement",
+				"fr": "une dotation plus élevée pour le Parlement flamand",
+				"en": "a larger allocation for the Flemish Parliament"
+			},
+			{
+				"nl": "meer personeel op de kabinetten van de Vlaamse ministers",
+				"fr": "plus de personnel dans les cabinets des ministres flamands",
+				"en": "more staff in Flemish ministers' offices"
+			},
+			{
+				"nl": "een grotere dotatie voor de Vlaamse Nutsregulator",
+				"fr": "une dotation plus élevée pour la Vlaamse Nutsregulator",
+				"en": "a larger allocation for the Vlaamse Nutsregulator (utility regulator)"
+			}
+		],
+		"ref": {
+			"source": "vp-19-2025-2026-nr10-bijlagen-1",
+			"locator": "Administratieve uitgavenbegroting, beleidsdomein V Hogere Entiteiten (PDF pages): programma VD 'Vlaams Parlement' (VP0-1VDA2BY-IS 'VLAAMS PARLEMENT', VP0-1VDA2BX-IS 'VLAAMSE NUTSREGULATOR') p. 162; programma's VF-VO 'Apparaatskredieten kabinet ...' (articles ...-LO 'LONEN' and ...-WT 'WERKING EN TOELAGEN') pp. 163-168 (overview p. 160-161)",
+			"quote": "VP0-1VDA2BX-IS 1 VLAAMSE NUTSREGULATOR / VP0-1VDA2BY-IS 1 VLAAMS PARLEMENT / VF APPARAATSKREDIETEN KABINET VAN DE MINISTER-PRESIDENT VAN DE VLAAMSE REGERING",
+			"note": "The Flemish Parliament adopts its own operating budget; the dotation is what the Flemish budget passes to it. The Vlaamse Nutsregulator (regulator for electricity, gas and drinking water; role not stated in the budget table) is financed by a dotation voted by Parliament. Ministers' office budgets are mostly staff wages ('LONEN'). Small line. corrected: articles confirmed; cabinet programmes start on p. 163 (heading VF), not p. 162, so locator fixed; the VF heading wraps over two lines ('... VAN DE VLAAMSE' / 'REGERING'). Phrases confirmed; tiny wording change in English ('utility regulator')."
+		}
+	}
+}

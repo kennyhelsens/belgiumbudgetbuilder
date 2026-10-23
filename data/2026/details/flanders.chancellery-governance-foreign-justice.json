@@ -1,0 +1,55 @@
+{
+	"line": "flanders.chancellery-governance-foreign-justice",
+	"effects": {
+		"cut": [
+			{
+				"nl": "minder inburgeringstrajecten voor nieuwkomers",
+				"fr": "moins de parcours d'intégration civique pour primo-arrivants",
+				"en": "fewer civic integration courses for newcomers"
+			},
+			{
+				"nl": "minder middelen voor justitiehuizen en elektronisch toezicht",
+				"fr": "moins de moyens pour maisons de justice et surveillance électronique",
+				"en": "less money for justice houses and electronic monitoring"
+			},
+			{
+				"nl": "minder middelen voor Vlaamse overheidsgebouwen en -IT",
+				"fr": "moins de budget immobilier et informatique de l'administration flamande",
+				"en": "less money for Flemish government buildings and IT"
+			},
+			{
+				"nl": "minder steun voor toerisme en export",
+				"fr": "moins de soutien au tourisme et à l'exportation",
+				"en": "less support for tourism and exports"
+			}
+		],
+		"add": [
+			{
+				"nl": "meer inburgeringstrajecten voor nieuwkomers",
+				"fr": "plus de parcours d'intégration civique pour primo-arrivants",
+				"en": "more civic integration courses for newcomers"
+			},
+			{
+				"nl": "meer middelen voor justitiehuizen en elektronisch toezicht",
+				"fr": "plus de moyens pour maisons de justice et surveillance électronique",
+				"en": "more money for justice houses and electronic monitoring"
+			},
+			{
+				"nl": "meer middelen voor Vlaamse overheidsgebouwen en -IT",
+				"fr": "plus de budget immobilier et informatique de l'administration flamande",
+				"en": "more money for Flemish government buildings and IT"
+			},
+			{
+				"nl": "meer steun voor toerisme en export",
+				"fr": "plus de soutien au tourisme et à l'exportation",
+				"en": "more support for tourism and exports"
+			}
+		],
+		"ref": {
+			"source": "vp-19-2025-2026-nr10-bijlagen-1",
+			"locator": "vp-19 Bijlagen-1, administratieve uitgavenbegroting, beleidsdomein Kanselarij, Bestuur, Buitenlandse Zaken en Justitie (PDF pages): SJ0-1SFC2DY-IS 'AGENTSCHAP INTEGRATIE EN INBURGERING' and SJ0-1SFC2DA-WT 'UITBOUW VLAAMS INTEGRATIE- EN INBURGERINGSBELEID' p. 123; SL0-1SDE2JA-WT 'JUSTITIEHUIZEN EN ELEKTRONISCH TOEZICHT KOSTEN' p. 120 (programma SD Justitie en Handhaving; agency staff on SL0-1SAE2ZZ-LO 'LONEN' p. 119); SH0-1SKA2PB-WT 'VASTGOEDBEHEER' p. 127 (programma SK 'Interne dienstverlening Vlaamse overheid'); SC0-1SJA2NY-IS 'EIGEN VERMOGEN DIGITAAL VLAANDEREN' p. 127 (programma SJ Digitalisering); SA0-1SQB2WY-IS 'TOERISME VLAANDEREN' p. 135; SA0-1SPA2OY-IS 'VLAAMS AGENTSCHAP VOOR INTERNATIONAAL ONDERNEMEN' p. 135 (name wraps over two lines). Name FIT: vp-17-2025-2026-nr1-algemene-toelichting-ba2026 p. 100 links SA0-1SPA2OY-IS to 'werkingstoelage FIT'",
+			"quote": "SJ0-1SFC2DY-IS 2 AGENTSCHAP INTEGRATIE EN INBURGERING / SL0-1SDE2JA-WT 2 JUSTITIEHUIZEN EN ELEKTRONISCH TOEZICHT KOSTEN / SH0-1SKA2PB-WT 1 VASTGOEDBEHEER / SC0-1SJA2NY-IS 1 EIGEN VERMOGEN DIGITAAL VLAANDEREN / SA0-1SQB2WY-IS 1 TOERISME VLAANDEREN / SA0-1SPA2OY-IS 3 VLAAMS AGENTSCHAP VOOR INTERNATIONAAL ONDERNEMEN",
+			"note": "Very mixed line; it excludes the local government funds (separate line). A large share is the running cost of the Flemish administration's central services: staff ('apparaatskredieten'), pensions, buildings (Facilitair Bedrijf, 'VASTGOEDBEHEER') and IT (Digitaal Vlaanderen); the third phrase covers buildings and IT. Most justice-house and electronic-monitoring spending is staff of the Agentschap Justitie en Handhaving (SL0-1SAE2ZZ-LO), not the small cost article quoted; the domain also funds youth-delinquency measures (JEUGDDELINQUENTIE). FIT is the name the budget explanation itself uses for the Vlaams Agentschap voor Internationaal Ondernemen (Flanders Investment & Trade); Toerisme Vlaanderen trades as VISITFLANDERS. Other items not covered: Flemish Rand policy, cities policy, development cooperation and foreign representation. corrected: all articles confirmed at the stated pages. Flag 4: the four phrases covered only policy agencies and skipped the administration's central services, among the largest items (VASTGOEDBEHEER, Digitaal Vlaanderen, staff); merged tourism and export into one phrase and added 'buildings and IT of the Flemish government'. Flag 2: agency names dropped from the merged phrase to keep it short; the caveat names the agencies as the budget does (Toerisme Vlaanderen; FIT at vp-17 p. 100) and notes the public names (VISITFLANDERS, Flanders Investment & Trade), which are clearly the same agencies. French shortened."
+		}
+	}
+}

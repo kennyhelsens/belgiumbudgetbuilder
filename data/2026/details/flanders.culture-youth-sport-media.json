@@ -1,0 +1,55 @@
+{
+	"line": "flanders.culture-youth-sport-media",
+	"effects": {
+		"cut": [
+			{
+				"nl": "minder middelen voor de openbare omroep VRT",
+				"fr": "moins de moyens pour l'audiovisuel public flamand (VRT)",
+				"en": "less funding for the public broadcaster VRT"
+			},
+			{
+				"nl": "minder subsidies voor de kunsten",
+				"fr": "moins de subsides pour les arts",
+				"en": "fewer subsidies for the arts"
+			},
+			{
+				"nl": "minder steun voor het jeugdwerk",
+				"fr": "moins de soutien aux organisations de jeunesse (jeugdwerk)",
+				"en": "less support for youth work"
+			},
+			{
+				"nl": "minder middelen voor Sport Vlaanderen",
+				"fr": "moins de moyens pour Sport Vlaanderen",
+				"en": "less funding for Sport Vlaanderen"
+			}
+		],
+		"add": [
+			{
+				"nl": "meer middelen voor de openbare omroep VRT",
+				"fr": "plus de moyens pour l'audiovisuel public flamand (VRT)",
+				"en": "more funding for the public broadcaster VRT"
+			},
+			{
+				"nl": "meer subsidies voor de kunsten",
+				"fr": "plus de subsides pour les arts",
+				"en": "more subsidies for the arts"
+			},
+			{
+				"nl": "meer steun voor het jeugdwerk",
+				"fr": "plus de soutien aux organisations de jeunesse (jeugdwerk)",
+				"en": "more support for youth work"
+			},
+			{
+				"nl": "meer middelen voor Sport Vlaanderen",
+				"fr": "plus de moyens pour Sport Vlaanderen",
+				"en": "more funding for Sport Vlaanderen"
+			}
+		],
+		"ref": {
+			"source": "vp-19-2025-2026-nr10-bijlagen-1",
+			"locator": "Administratieve uitgavenbegroting, beleidsdomein Cultuur, Jeugd, Sport en Media: HB0-1HCF2TC-WT (p. 71 of the PDF), HB0-1HDB2UE-WT (p. 75), HB0-1HEI2XX-IS (p. 77), HB0-1HFH2NY-IS (p. 78). Cross-check: vp-17-2025-2026-nr1-algemene-toelichting-ba2026 pp. 66-67 (VRT)",
+			"quote": "HB0-1HCF2TC-WT 2 KUNSTEN / HB0-1HDB2UE-WT 2 KWALITEIT VAN HET JEUGDWERK / HB0-1HEI2XX-IS 2 VLAAMSE RADIO- EN TELEVISIEOMROEP / HB0-1HFH2NY-IS 2 SPORT VLAANDEREN",
+			"note": "The VRT grant is set in a management agreement (beheersovereenkomst) with the Flemish government; VRT staff pensions (HB0-1HEI2XA) are a separate legally due cost in this line. The line also holds cultural heritage, socio-cultural adult work, the film fund and culture/youth infrastructure. corrected: all four article names confirmed verbatim at pp. 71, 75, 77, 78; quote reordered to match the locator. French VRT and youth-work phrases shortened."
+		}
+	}
+}

@@ -52,5 +52,57 @@
 				}
 			}
 		}
-	]
+	],
+	"effects": {
+		"cut": [
+			{
+				"nl": "minder leerkrachten en ander schoolpersoneel",
+				"fr": "moins d'enseignants et autre personnel scolaire",
+				"en": "fewer teachers and other school staff"
+			},
+			{
+				"nl": "minder werkingsmiddelen voor scholen",
+				"fr": "moins de moyens de fonctionnement pour les écoles",
+				"en": "less operating money for schools"
+			},
+			{
+				"nl": "minder basisfinanciering voor universiteiten en hogescholen",
+				"fr": "moins de financement de base des universités et hautes écoles",
+				"en": "less core funding for universities and university colleges"
+			},
+			{
+				"nl": "lagere studietoelagen in het hoger onderwijs",
+				"fr": "des allocations d'études plus faibles dans le supérieur",
+				"en": "smaller study grants in higher education"
+			}
+		],
+		"add": [
+			{
+				"nl": "meer leerkrachten en ander schoolpersoneel",
+				"fr": "plus d'enseignants et autre personnel scolaire",
+				"en": "more teachers and other school staff"
+			},
+			{
+				"nl": "meer werkingsmiddelen voor scholen",
+				"fr": "plus de moyens de fonctionnement pour les écoles",
+				"en": "more operating money for schools"
+			},
+			{
+				"nl": "meer basisfinanciering voor universiteiten en hogescholen",
+				"fr": "plus de financement de base des universités et hautes écoles",
+				"en": "more core funding for universities and university colleges"
+			},
+			{
+				"nl": "hogere studietoelagen in het hoger onderwijs",
+				"fr": "des allocations d'études plus élevées dans le supérieur",
+				"en": "larger study grants in higher education"
+			}
+		],
+		"ref": {
+			"source": "vp-17-2025-2026-nr1-algemene-toelichting-ba2026",
+			"locator": "Ch. IV, 4.4 'Onderwijs en Vorming': p. 58 (loonkredieten onderwijspersoneel: lonen basis- en secundair onderwijs), p. 60 (werkingskredieten per onderwijsniveau; studiefinanciering hoger onderwijs, FD0-1FGE2HA-WT), p. 61 (basisfinanciering universiteiten en hogescholen, FD0-1FEE2EA-IS). Same articles in vp-19-2025-2026-nr10-bijlagen-1 pp. 47-48, 55 (LONEN BASISONDERWIJS, LONEN SECUNDAIR ONDERWIJS, WERKING GEWOON BASISONDERWIJS, HOGER ONDERWIJS – BASISFINANCIERING, STUDIEFINANCIERING)",
+			"quote": "Binnen het beleidsdomein Onderwijs en Vorming vormen de loonkredieten van het onderwijspersoneel de voornaamste uitgavenpost.",
+			"note": "Teacher pay follows statutory pay scales and staffing is allocated by decree-based rules (omkadering); a cut or increase in practice means changing those rules. 'Studietoelagen' = studiefinanciering hoger onderwijs (the secondary-school allowance is paid via the Groeipakket, in the welfare line). Universities and university colleges get a block grant (basisfinanciering) and decide themselves how to spend it. corrected: source re-downloaded, quote verbatim at p. 58 and other locators confirmed (pp. 60-61; printed = PDF page). Study-grant phrase now says 'in higher education' (the budget item is studiefinanciering hoger onderwijs, FD0-1FGE2HA-WT). French shortened. Flag 3 (teacher staffing by decree): kept 'fewer/more teachers' because the money pays teacher salaries and the staffing rules are the official lever; caveat already says a change means changing those rules; no phrase claims an automatic effect."
+		}
+	}
 }

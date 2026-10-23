@@ -1,0 +1,55 @@
+{
+	"line": "flanders.environment",
+	"effects": {
+		"cut": [
+			{
+				"nl": "minder steun voor energiezuinig verbouwen",
+				"fr": "moins d'aides pour la rénovation énergétique des logements",
+				"en": "less support for energy-saving home renovation"
+			},
+			{
+				"nl": "minder nieuwe of gerenoveerde sociale huurwoningen",
+				"fr": "moins de logements sociaux neufs ou rénovés",
+				"en": "fewer new or renovated social rental homes"
+			},
+			{
+				"nl": "minder subsidies voor riolering en waterzuivering",
+				"fr": "moins de subsides pour l'égouttage et l'épuration",
+				"en": "less funding for sewers and wastewater treatment"
+			},
+			{
+				"nl": "minder middelen voor natuur en bos",
+				"fr": "moins de moyens pour la nature et les forêts",
+				"en": "less money for nature and woodland"
+			}
+		],
+		"add": [
+			{
+				"nl": "meer steun voor energiezuinig verbouwen",
+				"fr": "plus d'aides pour la rénovation énergétique des logements",
+				"en": "more support for energy-saving home renovation"
+			},
+			{
+				"nl": "meer nieuwe of gerenoveerde sociale huurwoningen",
+				"fr": "plus de logements sociaux neufs ou rénovés",
+				"en": "more new or renovated social rental homes"
+			},
+			{
+				"nl": "meer subsidies voor riolering en waterzuivering",
+				"fr": "plus de subsides pour l'égouttage et l'épuration",
+				"en": "more funding for sewers and wastewater treatment"
+			},
+			{
+				"nl": "meer middelen voor natuur en bos",
+				"fr": "plus de moyens pour la nature et les forêts",
+				"en": "more money for nature and woodland"
+			}
+		],
+		"ref": {
+			"source": "vp-19-2025-2026-nr10-bijlagen-1",
+			"locator": "vp-19 Bijlagen-1, administratieve uitgavenbegroting, beleidsdomein Omgeving (PDF pages): QE0-1QEB2KB-WT and -PA p. 105 (article name wraps over four table lines); QF0-1QDB2QK-IS 'VLAAMSE MAATSCHAPPIJ VOOR SOCIAAL WONEN (VMSW)' p. 103; QB0-1QCG2OX-IS DAB Minafonds p. 102 (name wraps over two lines); QD0-1QCG2FA-WT p. 98 (name wraps over several lines). Cross-check vp-17-2025-2026-nr1-algemene-toelichting-ba2026 pp. 70-71 ('rioleringssubsidies'; Minafonds grants to the drinking-water companies 'in het kader van hun saneringsverplichtingen', incl. NV Aquafin; 'Mijn VerbouwLeningen'; VMSW)",
+			"quote": "QE0-1QEB2KB-WT 3 TRANSITIE NAAR EEN ENERGIEZUINIG EN KLIMAATNEUTRAAL GEBOUWENPARK ONDERSTEUNEN / QF0-1QDB2QK-IS 3 VLAAMSE MAATSCHAPPIJ VOOR SOCIAAL WONEN (VMSW) / QB0-1QCG2OX-IS 3 DAB FONDS VOOR PREVENTIE EN SANERING INZAKE MILIEU EN NATUUR (DAB MINAFONDS) / QD0-1QCG2FA-WT 3 ... NETTO TOENAME AAN NATUUR EN BOS MET HOGE KWALITEIT, EEN PASSEND BEHEER EN BESCHERMING VAN NATUUR",
+			"note": "Quote joins article names that run over several lines in the table. Mixed line: housing (Wonen), energy and climate, environment and nature, spatial planning and immovable heritage. Social housing is largely financed with loans via VMSW (outside this line's spending); the line holds the subsidies and grants. Part of the line (e.g. litter funds for municipalities, OVAM) is financed by earmarked receipts. corrected: all four articles confirmed at the stated pages; each quote part is verbatim (article names that wrap over table lines are joined; the first is cut after 'ONDERSTEUNEN', the last marked with '...'). Locator now notes the wraps and the larger -PA article for building renovation. French sewer phrase shortened ('l'égouttage et l'épuration', the usual Belgian terms)."
+		}
+	}
+}
