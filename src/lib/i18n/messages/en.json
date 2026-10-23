@@ -125,5 +125,20 @@
 	"theme.culture": "Culture, sport and media",
 	"theme.general": "Government and general services",
 	"theme.debt": "Interest on debt",
-	"theme.by-type": "Local spending by type"
+	"theme.by-type": "Local spending by type",
+	"map.viewLabel": "Show",
+	"map.viewSpending": "Spending",
+	"map.viewRevenue": "Revenue",
+	"map.revenueIntro": "What all Belgian governments together take in during 2026, by type, to scale. Lower or raise a type to see what it does to the deficit and the debt.",
+	"map.revenueNote": "All governments together, consolidated, as the Federal Planning Bureau estimates them in the national accounts (ESA 2010). What one government passes on to another counts only once.",
+	"builder.revenueStepDown": "Lower {name} by 1%",
+	"builder.revenueStepUp": "Raise {name} by 1%",
+	"builder.revenueFixed": "A bookkeeping entry: does not change the deficit",
+	"builder.noticeLessRevenueEffect": "Less revenue from {name} could mean: {effect}.",
+	"builder.noticeMoreRevenueEffect": "More revenue from {name} could mean: {effect}.",
+	"builder.noticeLessRevenuePlain": "Less revenue from {name}.",
+	"builder.noticeMoreRevenuePlain": "More revenue from {name}.",
+	"consequence.lessRevenueTitle": "Less revenue from {name} could mean:",
+	"consequence.moreRevenueTitle": "More revenue from {name} could mean:",
+	"consequence.revenueEffectsNote": "Possible ways, not a forecast: who pays more or less depends on how the government makes the choice. This site does not model how people and firms react."
 }

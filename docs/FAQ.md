@@ -146,6 +146,9 @@ the National Bank use, grouped into themes a reader recognises:
 - **Government and general services:** COFOG 01, including foreign affairs,
   the EU contribution, administration and grants to other governments
 
+On the revenue map, each type has its own colour, except imputed social
+contributions, which cannot be changed and have a neutral one.
+
 Two more have neutral colours:
 
 - **Interest on debt:** in COFOG it belongs to general services, but it
@@ -287,6 +290,91 @@ These tags say how hard a line is to change in practice:
 
 These tags are our own judgement, not taken from the budget documents, and
 are open to review.
+
+## Revenue
+
+### Where do the revenue figures come from?
+
+From the same Federal Planning Bureau forecast of June 2026 as the starting
+values of the outlook: the 2026 column of Table D.1 "Rekening van de
+overheid" (p. 58). It is the account of all Belgian governments together,
+consolidated, in the national accounts (ESA 2010), so the types add up
+exactly to the total revenue of **€328,113 million**:
+
+| Type                                                                | € million | Calculation                   |
+| ------------------------------------------------------------------- | --------: | ----------------------------- |
+| Social contributions (employers, workers, self-employed and others) |    85,362 |                               |
+| Personal income tax and other direct taxes                          |    82,928 | direct taxes 111,673 − 28,745 |
+| VAT, excise duties and other indirect taxes                         |    77,106 |                               |
+| Corporate income tax                                                |    28,745 |                               |
+| Sales of goods and services (fees and charges)                      |    21,181 |                               |
+| Imputed social contributions                                        |    14,850 |                               |
+| Transfers and subsidies received (incl. fines)                      |     7,114 | 4,916 + 1,535 + 663           |
+| Property income (interest, dividends)                               |     5,808 |                               |
+| Inheritance and gift taxes and other capital taxes                  |     5,019 |                               |
+
+Only two types need arithmetic. Personal income tax is the table's direct
+taxes minus those paid by companies; the household and "other sectors" rows
+under it add up to one million more, a rounding difference in the source.
+Transfers and subsidies received are three rows of the table added up
+(current transfers, capital transfers and subsidies received).
+
+The Planning Bureau does not split indirect taxes (VAT, excise duties,
+registration duties, property tax) or social contributions (employers,
+workers, self-employed). The site keeps them together and names them in the
+label: a split from another document would not add up to the same total.
+
+Revenue is shown for all governments together, not per government: what one
+government passes on to another (for example the share of personal income tax
+the regions receive) counts only once.
+
+### Why can't I change imputed social contributions?
+
+They are a bookkeeping entry, not money anyone pays. Under the European
+accounting rules (ESA 2010, §4.97), when governments pay benefits directly to
+their current or former staff, the same amount is booked as revenue here and
+as part of staff pay on the spending side. Changing it would not change the
+deficit, so the site shows it but offers no − and +. It has a neutral colour.
+
+### What happens when I change revenue?
+
+Switch the map from **Spending** to **Revenue**. Each click on − or + changes
+a type by 1% of its 2026 amount, up to 50% either way, as for spending. The
+site changes the amount, not a tax rate: 1% more corporate income tax means
+1% more revenue from it, however a government would raise it.
+
+More revenue lowers the deficit euro for euro, and less revenue raises it. In
+the ten-year outlook the change stays the same share of GDP every year, like
+a spending change. As everywhere on the site, people and companies do not
+react: a higher tax does not slow the economy and a lower one does not speed
+it up (see "What does the outlook leave out?").
+
+### Where do the phrases about less or more revenue come from?
+
+The same way as the possible effects of spending (see "Where do the possible
+effects come from?"): research agents wrote short phrases for what less and
+more of each type could mean for those who pay it, grounded in what the type
+is levied on according to an official document, and a second agent checked
+every amount and phrase against its source. The documents:
+
+- **Personal income tax, social contributions:** the Federal Planning
+  Bureau's forecast of June 2026 (its measures on labour costs and income
+  tax, pp. 15–18, and on local government, p. 41).
+- **Corporate income tax, indirect taxes, property income, transfers and
+  fines:** the general explanation of the federal budget 2026 (Chamber,
+  DOC 56 1278/001).
+- **Inheritance and gift taxes:** the general explanation of the Flemish
+  budget adjustment 2026 (Flemish Parliament, Stuk 17 (2025-2026) Nr. 1).
+- **Sales of goods and services:** the Institute for National Accounts'
+  description of how it compiles GDP (published by the National Bank), which
+  books fees for passports and identity cards and waste collection as sales.
+
+Some types bundle things that are booked together in the national accounts.
+The property tax (onroerende voorheffing / précompte immobilier) is an
+"other tax on production", so it sits under indirect taxes. Court and tax
+fines are transfers received, not taxes. The national accounts description
+used for these choices dates from ESA 1995; the ESA 2010 rules that replaced
+it (§4.23, §4.80 and §4.132) book these items the same way.
 
 ---
 
@@ -481,6 +569,11 @@ On a phone, a treemap is too narrow to read, so the map becomes a list:
 each government or line is a row with its full name, its amount and a bar
 drawn to scale against the largest row, with − and + always in view.
 
+Above the map, a switch shows **Revenue** instead of spending: what all
+governments together take in, by type, with the same − and + (see "What
+happens when I change revenue?"). Your spending and revenue changes are kept
+apart and both count.
+
 Interest and other costs of the debt cannot be changed. They are not a budget
 choice: they follow from the debt and the interest rates, which the ten-year
 outlook calculates (see "How is the future debt calculated?").
@@ -491,8 +584,8 @@ They stay at the top of the screen while you change the budget:
 
 - **Public debt 2026:** €729 billion, or 109.9% of GDP (Federal Planning
   Bureau, June 2026; see "What are the starting values?").
-- **Deficit 2026:** €33.7 billion, or 5.1% of GDP, minus your cuts and plus
-  your extra spending, euro for euro. Changes are assumed not to affect the
+- **Deficit 2026:** €33.7 billion, or 5.1% of GDP, minus your cuts and extra
+  revenue, plus your extra spending and lower revenue, euro for euro. Changes are assumed not to affect the
   economy or tax revenue (see "What does the outlook leave out?").
 - **Debt at the end of the outlook:** your budget as calculated in the
   ten-year outlook, with the result for an unchanged budget next to it once
@@ -505,8 +598,11 @@ effect. The notice has no numbers, because a number is never right for
 everyone; the exact amounts are in the key figures and on the map. The
 notice disappears by itself after a few seconds.
 
-Each change also moves the debt: more spending raises it and less spending
-lowers it. The figures at the top react, and emojis bubble up the screen:
+For revenue the notice reads the same way, for example "More revenue from
+Corporate income tax could mean: higher tax on company profits".
+
+Each change also moves the debt: more spending or less revenue raises it,
+less spending or more revenue lowers it. The figures at the top react, and emojis bubble up the screen:
 happy ones when the debt falls, worried ones when it rises. This is a playful
 signal of direction, not a judgement of the choice. People who have asked
 their device for reduced motion do not see these animations.
@@ -599,6 +695,10 @@ in plain words and without numbers:
 - **How could it be done?:** for healthcare, the official levers through
   which this spending changes, each with a neutral explanation and its
   source.
+
+A change to revenue gets a card too, with what less or more of that revenue
+could mean for those who pay it, and its source (see "Where do the phrases
+about less or more revenue come from?").
 
 ### Where do the possible effects come from?
 
@@ -696,8 +796,10 @@ to this FAQ.
 Only on the budget map, and anonymously, to learn which budgets people look
 at, cut or add to. For each click on a tile the site records:
 
-- which government or spending line was clicked (e.g. `federal.defence`);
-- whether you opened it, cut it or added to it, and the resulting percentage;
+- which government, spending line or revenue type was clicked (e.g.
+  `federal.defence` or `revenue.corporate-income-tax`);
+- whether you opened it, cut it or added to it (for revenue: lowered or
+  raised it), and the resulting percentage;
 - the language of the page and the order of the click;
 - a random session id that exists only while the page is open. It is not
   stored on your device, so a reload or a second visit gets a new one.

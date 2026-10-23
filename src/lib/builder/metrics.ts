@@ -18,7 +18,7 @@ export function headlineMetrics(data: Dataset, choices: Choices): HeadlineMetric
 	const official = 0 - balance.eurMillion;
 	const yours = official - balanceChangeFrom(choices.changes, choices.revenue);
 	const yoursRows = project(outlookInput(data, choices));
-	const unchangedRows = project(outlookInput(data, { ...choices, changes: {} }));
+	const unchangedRows = project(outlookInput(data, { ...choices, changes: {}, revenue: {} }));
 	const last = yoursRows[yoursRows.length - 1];
 	return {
 		debt: { eurMillion: debt.eurMillion, pctGdp: (debt.eurMillion / gdp.eurMillion) * 100 },

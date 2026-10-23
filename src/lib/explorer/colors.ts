@@ -1,5 +1,5 @@
 // ABOUTME: Fixed colour slot per government, following the validated categorical palette order (--series-1..8), and a
-// ABOUTME: colour per theme for the lines inside a government, so lines show what they pay for.
+// ABOUTME: colour per theme for the lines inside a government, so lines show what they pay for, and one per revenue type.
 import type { z } from 'zod';
 import type { themeSchema } from '../data/schema.ts';
 const SLOTS: Record<string, number> = {
@@ -51,4 +51,23 @@ const THEME_SLOTS: Partial<Record<Theme, number>> = {
 export function themeColor(theme: Theme): string {
 	const slot = THEME_SLOTS[theme];
 	return slot ? `var(--series-${slot})` : `var(--theme-${theme})`;
+}
+
+/** Revenue types in palette order, largest first; imputed contributions cannot be changed and stay neutral. */
+const REVENUE_SLOTS: Record<string, number | undefined> = {
+	'revenue.personal-income-tax': 1,
+	'revenue.social-contributions': 2,
+	'revenue.indirect-taxes': 3,
+	'revenue.corporate-income-tax': 4,
+	'revenue.sales-of-goods-and-services': 5,
+	'revenue.transfers-and-subsidies-received': 6,
+	'revenue.property-income': 7,
+	'revenue.capital-taxes': 8,
+	'revenue.imputed-social-contributions': undefined
+};
+
+export function revenueColor(id: string): string {
+	if (!(id in REVENUE_SLOTS)) throw new Error(`revenueColor: unknown revenue type "${id}"`);
+	const slot = REVENUE_SLOTS[id];
+	return slot ? `var(--series-${slot})` : 'var(--revenue-fixed)';
 }

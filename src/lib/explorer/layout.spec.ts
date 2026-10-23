@@ -2,7 +2,7 @@
 // ABOUTME: Tile areas must be proportional to money, and transfers between governments must not take space twice.
 import { describe, expect, it } from 'vitest';
 import { datasetFixture } from '../data/test-fixture.ts';
-import { mapTiles, tooltipPlacement } from './layout.ts';
+import { mapTiles, revenueTiles, tooltipPlacement } from './layout.ts';
 
 const area = (t: { x0: number; y0: number; x1: number; y1: number }) =>
 	(t.x1 - t.x0) * (t.y1 - t.y0);
@@ -56,6 +56,22 @@ describe('mapTiles zoomed into one government', () => {
 		expect(() => mapTiles(datasetFixture(), { width: 1, height: 1, focus: 'atlantis' })).toThrow(
 			'atlantis'
 		);
+	});
+});
+
+describe('revenueTiles', () => {
+	const tiles = revenueTiles(datasetFixture(), { width: 600, height: 400 });
+
+	it('gives one tile per revenue type, sized by its amount', () => {
+		expect(tiles.map((t) => t.id)).toEqual(['revenue.income-tax', 'revenue.contributions']);
+		const [tax, contributions] = tiles;
+		expect(area(tax) / area(contributions)).toBeCloseTo(180000 / 120000, 6);
+		expect(area(tax) + area(contributions)).toBeCloseTo(600 * 400, 6);
+	});
+
+	it('marks which types a visitor can change, and none can be zoomed', () => {
+		expect(tiles.map((t) => t.adjustable)).toEqual([true, false]);
+		expect(tiles.every((t) => !t.zoomable)).toBe(true);
 	});
 });
 

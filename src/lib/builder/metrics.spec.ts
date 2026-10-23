@@ -40,6 +40,17 @@ describe('headlineMetrics', () => {
 		expect(metrics.deficit.yours).toBe(metrics.deficit.official - 1000);
 	});
 
+	it('keeps the unchanged path free of revenue changes', () => {
+		const withRevenue = headlineMetrics(data, {
+			changes: {},
+			revenue: { 'revenue.vat': 5000 },
+			years: 10
+		});
+		const without = headlineMetrics(data, { changes: {}, years: 10 });
+		expect(withRevenue.horizon.unchangedPctGdp).toBe(without.horizon.unchangedPctGdp);
+		expect(withRevenue.horizon.yoursPctGdp).toBeLessThan(without.horizon.yoursPctGdp);
+	});
+
 	it('gives the debt at the horizon, yours and with the budget unchanged', () => {
 		const choices = { changes: { 'federal.justice': -1000 }, years: 10 };
 		const metrics = headlineMetrics(data, choices);

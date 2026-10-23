@@ -1,5 +1,5 @@
 // ABOUTME: Area-true treemap layout for the budget map: every euro gets the same amount of space.
-// ABOUTME: Shows governments for Belgium as a whole, or one government's lines when zoomed in; transfers take no space.
+// ABOUTME: Governments for Belgium as a whole, one government's lines when zoomed in (transfers take no space), or revenue.
 import { hierarchy, treemap, treemapSquarify } from 'd3-hierarchy';
 import { ownExpenditure } from '../data/consolidate.ts';
 import type { Dataset, Line } from '../data/schema.ts';
@@ -14,7 +14,7 @@ export type Tile = {
 	y1: number;
 	/** True when the tile is a government that can be opened to show its lines. */
 	zoomable: boolean;
-	/** False for a line no budget decision can change, such as interest on debt. */
+	/** False for a line or revenue no budget decision can change, such as interest on debt. */
 	adjustable: boolean;
 	/** What a line pays for, which sets its colour; governments have none. */
 	theme?: Line['theme'];
@@ -26,7 +26,22 @@ export function mapTiles(
 	data: Dataset,
 	frame: { width: number; height: number; focus?: string }
 ): Tile[] {
-	const items = frame.focus ? linesOf(data, frame.focus) : governments(data);
+	return layOut(frame.focus ? linesOf(data, frame.focus) : governments(data), frame);
+}
+
+/** General government revenue, one tile per type (personal income tax, VAT and other indirect taxes, ...). */
+export function revenueTiles(data: Dataset, frame: { width: number; height: number }): Tile[] {
+	const items = data.revenue.types.map((type) => ({
+		id: type.id,
+		label: type.label,
+		eurMillion: type.amount.eurMillion,
+		zoomable: false,
+		adjustable: type.adjustable !== false
+	}));
+	return layOut(items, frame);
+}
+
+function layOut(items: Item[], frame: { width: number; height: number }): Tile[] {
 	const root = hierarchy<{ children?: Item[] } | Item>({ children: items })
 		.sum((node) => ('eurMillion' in node ? node.eurMillion : 0))
 		.sort((a, b) => (b.value ?? 0) - (a.value ?? 0));
