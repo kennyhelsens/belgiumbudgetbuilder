@@ -49,6 +49,7 @@ ABOUTME: switcher, and a footer that says how the figures were extracted and lin
 			>{translate(data.locale, 'footer.faq')}</a
 		>
 	</p>
+	<p class="colophon__disclaimer">{translate(data.locale, 'footer.purpose')}</p>
 	<p>{translate(data.locale, 'footer.note')}</p>
 </footer>
 

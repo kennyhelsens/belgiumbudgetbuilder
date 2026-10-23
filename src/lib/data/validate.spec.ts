@@ -192,4 +192,40 @@ describe('findProblems', () => {
 			expect.stringContaining('groups.entity-1: unknown source "nowhere"')
 		);
 	});
+
+	it('reports a split by level that does not add up to the revenue type', () => {
+		const data = datasetFixture();
+		data.revenue.types[0].byLevel!.amounts[1].amount.eurMillion = 20000;
+		expect(findProblems(data)).toContainEqual(
+			expect.stringContaining('revenue.income-tax: levels add up to 170000, type is 180000')
+		);
+	});
+
+	it('accepts a split by level that differs from the type when a note explains why', () => {
+		const data = datasetFixture();
+		const byLevel = data.revenue.types[0].byLevel!;
+		byLevel.amounts[1].amount.eurMillion = 20000;
+		byLevel.note = {
+			nl: 'Voor consolidatie.',
+			fr: 'Avant consolidation.',
+			en: 'Before consolidation.'
+		};
+		expect(findProblems(data)).toEqual([]);
+	});
+
+	it('reports the same level twice in a split', () => {
+		const data = datasetFixture();
+		data.revenue.types[0].byLevel!.amounts[1].level = 'federal';
+		expect(findProblems(data)).toContainEqual(
+			expect.stringContaining('revenue.income-tax: level "federal" appears twice')
+		);
+	});
+
+	it('checks the references of the split by level too', () => {
+		const data = datasetFixture();
+		data.revenue.types[0].byLevel!.amounts[0].amount.ref.source = 'nowhere';
+		expect(findProblems(data)).toContainEqual(
+			expect.stringContaining('revenue.income-tax.byLevel.federal: unknown source "nowhere"')
+		);
+	});
 });

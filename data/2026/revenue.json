@@ -16,6 +16,50 @@
 					"note": "111673 (Directe belastingen) - 28745 (Vennootschappen) = 82928, i.e. the rows 'Huishoudens' (81561) and 'Andere sectoren' (1368). The printed sub-rows sum to 111674 (rounding in the source); taking the total minus companies keeps the parts equal to the table total. ESA 2010 current taxes on income and wealth (D.5) paid by households, plus the small row 'Andere sectoren' (1368, all federal per Tabel D.2, not further described in the source). Per ESA 2010 §4.78(a) this covers taxes on income from work, property, self-employment and pensions, incl. tax withheld by employers (bedrijfsvoorheffing / précompte professionnel); per §4.79(d) it also covers households' payments for licences to own or use vehicles (e.g. road tax on private cars). Includes the regional and municipal surcharges (opcentiemen / centimes additionnels). Levied by (2026, Tabel D.2/D.3/D.5/D.6, households row): federal 58564, communities and regions 16383 (regional surcharges on personal income tax), local governments 5111, social security 1503; 'Andere sectoren' 1368 federal. Part of the federal amount is passed on to communities and regions under the Special Financing Act (Tabel D.3 row 'Overdrachten van fiscale ontvangsten'), so 'levied by' is not 'kept by'."
 				}
 			},
+			"byLevel": {
+				"amounts": [
+					{
+						"level": "federal",
+						"amount": {
+							"eurMillion": 59932,
+							"ref": {
+								"source": "fpb-outlook-2026-06",
+								"locator": "Tabel D.2 'Rekening van de federale overheid' (Miljoenen euro), p. 60, column 2026; row '- Huishoudens' 58564 + '- Andere sectoren' 1368"
+							}
+						}
+					},
+					{
+						"level": "communities-and-regions",
+						"amount": {
+							"eurMillion": 16383,
+							"ref": {
+								"source": "fpb-outlook-2026-06",
+								"locator": "Tabel D.3 'Rekening van de gemeenschappen en gewesten' (Miljoenen euro), p. 61, column 2026; row 'a. Directe belastingen - huishoudens'"
+							}
+						}
+					},
+					{
+						"level": "local",
+						"amount": {
+							"eurMillion": 5111,
+							"ref": {
+								"source": "fpb-outlook-2026-06",
+								"locator": "Tabel D.5 'Rekening van de lagere overheid' (Miljoenen euro), p. 63, column 2026; row 'a. Directe belastingen - huishoudens'"
+							}
+						}
+					},
+					{
+						"level": "social-security",
+						"amount": {
+							"eurMillion": 1503,
+							"ref": {
+								"source": "fpb-outlook-2026-06",
+								"locator": "Tabel D.6 'Rekening van de wettelijke-sociale-verzekeringsinstellingen' (Miljoenen euro), p. 64, column 2026; row '- Huishoudens'"
+							}
+						}
+					}
+				]
+			},
 			"effects": {
 				"cut": [
 					{
@@ -74,6 +118,30 @@
 					"note": "Direct taxes paid by corporations: ESA 2010 §4.78(b) 'taxes on the income or profits of corporations'. Levied by (2026): federal 28354 (Tabel D.2), social security 391 (Tabel D.6)."
 				}
 			},
+			"byLevel": {
+				"amounts": [
+					{
+						"level": "federal",
+						"amount": {
+							"eurMillion": 28354,
+							"ref": {
+								"source": "fpb-outlook-2026-06",
+								"locator": "Tabel D.2 'Rekening van de federale overheid' (Miljoenen euro), p. 60, column 2026; row '- Vennootschappen'"
+							}
+						}
+					},
+					{
+						"level": "social-security",
+						"amount": {
+							"eurMillion": 391,
+							"ref": {
+								"source": "fpb-outlook-2026-06",
+								"locator": "Tabel D.6 'Rekening van de wettelijke-sociale-verzekeringsinstellingen' (Miljoenen euro), p. 64, column 2026; row '- Vennootschappen'"
+							}
+						}
+					}
+				]
+			},
 			"effects": {
 				"cut": [
 					{
@@ -121,6 +189,50 @@
 					"quote": "b. Indirecte belastingen                 73072    73082    74760    77106    79839",
 					"note": "The FPB gives indirect taxes only as one total, so VAT, excise duties and the rest are kept together. ESA 2010 taxes on production and imports (D.2): VAT (§4.17), excise duties and other taxes on products, incl. taxes payable when ownership of land or buildings changes (registration duties on property sales), car registration taxes, taxes on insurance premiums and on gambling (§4.20), and other taxes on production, incl. taxes on the ownership or use of buildings used in production 'including owner-occupiers of dwellings' (§4.23(a)). The Belgian national accounts book the onroerende voorheffing / précompte immobilier and its opcentiemen as D.29, not as an income tax, and the registration duties (except gift duties) as D.21 (NAI inventory pp. 230-231), so property tax and registration duties on home purchases are inside this row; gift duties are capital taxes (D.91). Levied by (2026): federal 57244 (Tabel D.2), communities and regions 9096 (Tabel D.3), local governments 8204 (Tabel D.5), social security 2562 (Tabel D.6). A large part of federal VAT is passed on to social security and the communities (e.g. alternative financing of social security from VAT, DOC 56 1278/001 pp. 38-39)."
 				}
+			},
+			"byLevel": {
+				"amounts": [
+					{
+						"level": "federal",
+						"amount": {
+							"eurMillion": 57244,
+							"ref": {
+								"source": "fpb-outlook-2026-06",
+								"locator": "Tabel D.2 'Rekening van de federale overheid' (Miljoenen euro), p. 60, column 2026; row 'b. Indirecte belastingen'"
+							}
+						}
+					},
+					{
+						"level": "communities-and-regions",
+						"amount": {
+							"eurMillion": 9096,
+							"ref": {
+								"source": "fpb-outlook-2026-06",
+								"locator": "Tabel D.3 'Rekening van de gemeenschappen en gewesten' (Miljoenen euro), p. 61, column 2026; row 'b. Indirecte belastingen'"
+							}
+						}
+					},
+					{
+						"level": "local",
+						"amount": {
+							"eurMillion": 8204,
+							"ref": {
+								"source": "fpb-outlook-2026-06",
+								"locator": "Tabel D.5 'Rekening van de lagere overheid' (Miljoenen euro), p. 63, column 2026; row 'b. Indirecte belastingen'"
+							}
+						}
+					},
+					{
+						"level": "social-security",
+						"amount": {
+							"eurMillion": 2562,
+							"ref": {
+								"source": "fpb-outlook-2026-06",
+								"locator": "Tabel D.6 'Rekening van de wettelijke-sociale-verzekeringsinstellingen' (Miljoenen euro), p. 64, column 2026; row 'b. Indirecte belastingen'"
+							}
+						}
+					}
+				]
 			},
 			"effects": {
 				"cut": [
@@ -190,6 +302,30 @@
 					"note": "ESA 2010 capital taxes (D.91, §4.149): inheritance taxes, death duties and taxes on gifts, plus occasional levies on assets or net worth. Inheritance and gift taxes are regional (Flanders: erfbelasting and schenkbelasting, collected by the Vlaamse Belastingdienst; Brussels and Wallonia: successierechten / droits de succession and schenkingsrechten / droits de donation). Levied by (2026): communities and regions 4113 (Tabel D.3), federal 906 (Tabel D.2; the source does not say what the federal part is)."
 				}
 			},
+			"byLevel": {
+				"amounts": [
+					{
+						"level": "federal",
+						"amount": {
+							"eurMillion": 906,
+							"ref": {
+								"source": "fpb-outlook-2026-06",
+								"locator": "Tabel D.2 'Rekening van de federale overheid' (Miljoenen euro), p. 60, column 2026; row 'c. Kapitaalbelastingen'"
+							}
+						}
+					},
+					{
+						"level": "communities-and-regions",
+						"amount": {
+							"eurMillion": 4113,
+							"ref": {
+								"source": "fpb-outlook-2026-06",
+								"locator": "Tabel D.3 'Rekening van de gemeenschappen en gewesten' (Miljoenen euro), p. 61, column 2026; row 'c. Kapitaalbelastingen'"
+							}
+						}
+					}
+				]
+			},
 			"effects": {
 				"cut": [
 					{
@@ -247,6 +383,50 @@
 					"quote": "2. Werkelijke sociale premies             77069    80645    83194    85362    89195",
 					"note": "Actual social contributions (ESA 2010 D.611 employers' and D.613 households' contributions). The FPB government account does not split employers from workers and self-employed, so they are kept together. Levied mainly by social security (2026: 84816, Tabel D.6), i.e. RSZ/ONSS for employees and RSVZ/INASTI for the self-employed (DOC 56 1278/001 Tabel 23-24); small amounts by federal (64), communities and regions (462) and local (21) governments. The sub-sector rows sum to 85363 (rounding). The NBB notes that social contributions also include contributions paid by the non-active population (NBB Verslag 2024, Tabel 4.2, footnote 4), hence 'and others' in the label."
 				}
+			},
+			"byLevel": {
+				"amounts": [
+					{
+						"level": "federal",
+						"amount": {
+							"eurMillion": 64,
+							"ref": {
+								"source": "fpb-outlook-2026-06",
+								"locator": "Tabel D.2 'Rekening van de federale overheid' (Miljoenen euro), p. 60, column 2026; row '2. Werkelijke sociale premies'"
+							}
+						}
+					},
+					{
+						"level": "communities-and-regions",
+						"amount": {
+							"eurMillion": 462,
+							"ref": {
+								"source": "fpb-outlook-2026-06",
+								"locator": "Tabel D.3 'Rekening van de gemeenschappen en gewesten' (Miljoenen euro), p. 61, column 2026; row '2. Werkelijke sociale premies'"
+							}
+						}
+					},
+					{
+						"level": "local",
+						"amount": {
+							"eurMillion": 21,
+							"ref": {
+								"source": "fpb-outlook-2026-06",
+								"locator": "Tabel D.5 'Rekening van de lagere overheid' (Miljoenen euro), p. 63, column 2026; row '2. Werkelijke sociale premies'"
+							}
+						}
+					},
+					{
+						"level": "social-security",
+						"amount": {
+							"eurMillion": 84816,
+							"ref": {
+								"source": "fpb-outlook-2026-06",
+								"locator": "Tabel D.6 'Rekening van de wettelijke-sociale-verzekeringsinstellingen' (Miljoenen euro), p. 64, column 2026; row '2. Werkelijke sociale premies'"
+							}
+						}
+					}
+				]
 			},
 			"effects": {
 				"cut": [
@@ -306,6 +486,40 @@
 					"note": "An accounting entry, not money paid by anyone: ESA 2010 §4.97 defines employers' imputed social contributions as 'the counterpart to social benefits (less eventual employees' social contributions) paid directly by employers' to their (former) employees. The same amount is booked as a cost of government as employer (compensation of employees), so it has no net effect on the balance. Booked by (2026): federal 3968 (Tabel D.2), communities and regions 8723 (Tabel D.3), local 2159 (Tabel D.5)."
 				}
 			},
+			"byLevel": {
+				"amounts": [
+					{
+						"level": "federal",
+						"amount": {
+							"eurMillion": 3968,
+							"ref": {
+								"source": "fpb-outlook-2026-06",
+								"locator": "Tabel D.2 'Rekening van de federale overheid' (Miljoenen euro), p. 60, column 2026; row 'C. Toegerekende sociale premies'"
+							}
+						}
+					},
+					{
+						"level": "communities-and-regions",
+						"amount": {
+							"eurMillion": 8723,
+							"ref": {
+								"source": "fpb-outlook-2026-06",
+								"locator": "Tabel D.3 'Rekening van de gemeenschappen en gewesten' (Miljoenen euro), p. 61, column 2026; row 'D. Toegerekende sociale premies'"
+							}
+						}
+					},
+					{
+						"level": "local",
+						"amount": {
+							"eurMillion": 2159,
+							"ref": {
+								"source": "fpb-outlook-2026-06",
+								"locator": "Tabel D.5 'Rekening van de lagere overheid' (Miljoenen euro), p. 63, column 2026; row 'D. Toegerekende sociale premies'"
+							}
+						}
+					}
+				]
+			},
 			"adjustable": false,
 			"fixedNote": {
 				"nl": "Dit is een boekhoudkundige tegenpost, geen geld dat iemand betaalt. Volgens de Europese rekenregels (ESR 2010) staat hetzelfde bedrag ook bij de uitgaven, als deel van de beloning van het overheidspersoneel. Het weerspiegelt uitkeringen die overheden rechtstreeks aan hun (gewezen) personeel betalen. Daarom kan je het hier niet aanpassen: het verandert het tekort niet.",
@@ -328,6 +542,50 @@
 					"quote": "4. Lopende verkopen van geprodu-         18491    19671    20153    21181    22004 / ceerde goederen en diensten",
 					"note": "ESA 2010 sales (§20.80-20.82): market output plus payments for non-market output, e.g. museum entrance fees and payments to non-market schools or hospitals; §4.80(d) lists fees for passports, museum or library admissions, garbage disposal, airport and court fees as, in most cases, purchases of government services. Received by (2026): federal 5508 (Tabel D.2), communities and regions 9947 (Tabel D.3), local governments 5013 (Tabel D.5), social security 713 (Tabel D.6). The Belgian national accounts book municipal charges for identity cards and passports as non-market sales and charges for household waste collection and waste bags as market sales, even where the municipality calls them a tax (NAI inventory p. 231)."
 				}
+			},
+			"byLevel": {
+				"amounts": [
+					{
+						"level": "federal",
+						"amount": {
+							"eurMillion": 5508,
+							"ref": {
+								"source": "fpb-outlook-2026-06",
+								"locator": "Tabel D.2 'Rekening van de federale overheid' (Miljoenen euro), p. 60, column 2026; row '4. Lopende verkopen van geproduceerde goederen en diensten'"
+							}
+						}
+					},
+					{
+						"level": "communities-and-regions",
+						"amount": {
+							"eurMillion": 9947,
+							"ref": {
+								"source": "fpb-outlook-2026-06",
+								"locator": "Tabel D.3 'Rekening van de gemeenschappen en gewesten' (Miljoenen euro), p. 61, column 2026; row '4. Lopende verkopen van geproduceerde goederen en diensten'"
+							}
+						}
+					},
+					{
+						"level": "local",
+						"amount": {
+							"eurMillion": 5013,
+							"ref": {
+								"source": "fpb-outlook-2026-06",
+								"locator": "Tabel D.5 'Rekening van de lagere overheid' (Miljoenen euro), p. 63, column 2026; row '4. Lopende verkopen van geproduceerde goederen en diensten'"
+							}
+						}
+					},
+					{
+						"level": "social-security",
+						"amount": {
+							"eurMillion": 713,
+							"ref": {
+								"source": "fpb-outlook-2026-06",
+								"locator": "Tabel D.6 'Rekening van de wettelijke-sociale-verzekeringsinstellingen' (Miljoenen euro), p. 64, column 2026; row '4. Lopende verkopen van geproduceerde goederen en diensten'"
+							}
+						}
+					}
+				]
 			},
 			"effects": {
 				"cut": [
@@ -387,6 +645,55 @@
 					"note": "ESA 2010 property income (D.4, §4.41): interest, dividends and other distributed income of corporations, and rent on natural resources, received by government. Received by (2026, before consolidation): federal 2832, communities and regions 1804, local 1128, social security 347 (Tabel D.2/D.3/D.5/D.6; these sum to 6111; Tabel D.1 nets out flows between governments, the source does not explain the 303 difference). Includes e.g. dividends from public holdings such as Belfius (DOC 56 1278/001 p. 15)."
 				}
 			},
+			"byLevel": {
+				"amounts": [
+					{
+						"level": "federal",
+						"amount": {
+							"eurMillion": 2832,
+							"ref": {
+								"source": "fpb-outlook-2026-06",
+								"locator": "Tabel D.2 'Rekening van de federale overheid' (Miljoenen euro), p. 60, column 2026; row '1. Inkomen uit vermogen'"
+							}
+						}
+					},
+					{
+						"level": "communities-and-regions",
+						"amount": {
+							"eurMillion": 1804,
+							"ref": {
+								"source": "fpb-outlook-2026-06",
+								"locator": "Tabel D.3 'Rekening van de gemeenschappen en gewesten' (Miljoenen euro), p. 61, column 2026; row '1. Inkomen uit vermogen'"
+							}
+						}
+					},
+					{
+						"level": "local",
+						"amount": {
+							"eurMillion": 1128,
+							"ref": {
+								"source": "fpb-outlook-2026-06",
+								"locator": "Tabel D.5 'Rekening van de lagere overheid' (Miljoenen euro), p. 63, column 2026; row '1. Inkomen uit vermogen'"
+							}
+						}
+					},
+					{
+						"level": "social-security",
+						"amount": {
+							"eurMillion": 347,
+							"ref": {
+								"source": "fpb-outlook-2026-06",
+								"locator": "Tabel D.6 'Rekening van de wettelijke-sociale-verzekeringsinstellingen' (Miljoenen euro), p. 64, column 2026; row '1. Inkomen uit vermogen'"
+							}
+						}
+					}
+				],
+				"note": {
+					"nl": "Per overheid opgeteld is dit meer dan het totaal voor alle overheden samen, dat geconsolideerd is. Het Planbureau licht het verschil niet toe.",
+					"fr": "Additionné par pouvoir, c'est plus que le total de l'ensemble des pouvoirs publics, qui est consolidé. Le Bureau du Plan n'explique pas l'écart.",
+					"en": "Added up per level, this is more than the total for all governments together, which is consolidated. The Planning Bureau does not explain the difference."
+				}
+			},
 			"effects": {
 				"cut": [
 					{
@@ -434,6 +741,50 @@
 					"quote": "2. Inkomensoverdrachten                   4451     4906     4912     4916     4790 | 3. Kapitaaloverdrachten                   1143      660      889     1535      549 | C. Ontvangen subsidies                         713    694    655    663    678",
 					"note": "4916 (Inkomensoverdrachten) + 1535 (Kapitaaloverdrachten) + 663 (Ontvangen subsidies) = 7114 Current transfers (ESA 2010 D.7: e.g. fines imposed by courts and quasi-judicial bodies, §4.132; current transfers from EU institutions, §4.122(b)), capital transfers (D.9: e.g. investment grants received, §4.152) and subsidies received by government units. The FPB does not detail these rows. Received by (2026): income transfers federal 1629, communities and regions 2411, local 734, social security 141 (sum 4915 vs 4916, rounding); capital transfers 580 / 902 / 20 / 33 (sum 1535); subsidies received communities and regions 327, local 335 (sum 662 vs 663, rounding) (Tabel D.2/D.3/D.5/D.6). In the NBB/NAI accounts the current transfers row covers D.72 + D.74 + D.75; fiscal fines are also booked as miscellaneous current transfers (NAI inventory p. 229)."
 				}
+			},
+			"byLevel": {
+				"amounts": [
+					{
+						"level": "federal",
+						"amount": {
+							"eurMillion": 2209,
+							"ref": {
+								"source": "fpb-outlook-2026-06",
+								"locator": "Tabel D.2 'Rekening van de federale overheid' (Miljoenen euro), p. 60, column 2026; row '2. Inkomensoverdrachten' 1629 + '3. Kapitaaloverdrachten' 580 (no subsidies row)"
+							}
+						}
+					},
+					{
+						"level": "communities-and-regions",
+						"amount": {
+							"eurMillion": 3640,
+							"ref": {
+								"source": "fpb-outlook-2026-06",
+								"locator": "Tabel D.3 'Rekening van de gemeenschappen en gewesten' (Miljoenen euro), p. 61, column 2026; row '2. Inkomensoverdrachten' 2411 + '3. Kapitaaloverdrachten' 902 + 'C. Ontvangen subsidies' 327"
+							}
+						}
+					},
+					{
+						"level": "local",
+						"amount": {
+							"eurMillion": 1089,
+							"ref": {
+								"source": "fpb-outlook-2026-06",
+								"locator": "Tabel D.5 'Rekening van de lagere overheid' (Miljoenen euro), p. 63, column 2026; row '2. Inkomensoverdrachten' 734 + '3. Kapitaaloverdrachten' 20 + 'C. Ontvangen subsidies' 335"
+							}
+						}
+					},
+					{
+						"level": "social-security",
+						"amount": {
+							"eurMillion": 174,
+							"ref": {
+								"source": "fpb-outlook-2026-06",
+								"locator": "Tabel D.6 'Rekening van de wettelijke-sociale-verzekeringsinstellingen' (Miljoenen euro), p. 64, column 2026; row '2. Inkomensoverdrachten' 141 + '3. Kapitaaloverdrachtens' 33 (no subsidies row)"
+							}
+						}
+					}
+				]
 			},
 			"effects": {
 				"cut": [

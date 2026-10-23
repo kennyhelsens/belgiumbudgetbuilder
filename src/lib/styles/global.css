@@ -22,6 +22,8 @@ ABOUTME: Light by default, with a dark palette following the visitor's system pr
 	/* Neutral colours for lines that are not a policy purpose: debt interest, and local spending by type. */
 	--theme-debt: #6f6a76;
 	--theme-by-type: #a8a194;
+	/* Revenue tiles are neutral: on the revenue map, colour says who collects the money. */
+	--revenue-tile: #7d8794;
 	/* Neutral colour for revenue no tax decision changes (a bookkeeping entry). */
 	--revenue-fixed: #9c968b;
 
@@ -67,6 +69,7 @@ ABOUTME: Light by default, with a dark palette following the visitor's system pr
 		--series-8: #7da22c;
 		--theme-debt: #8e8996;
 		--theme-by-type: #6b665e;
+		--revenue-tile: #8a94a1;
 		--revenue-fixed: #77726a;
 	}
 }

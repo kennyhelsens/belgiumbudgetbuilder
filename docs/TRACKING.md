@@ -1,7 +1,9 @@
 # Anonymous click tracking: setup and queries
 
 The site counts clicks on budget-map tiles: which government a visitor opens,
-and which spending lines they cut or add to. `docs/FAQ.md` ("Does the site
+and which spending lines they cut or add to. Revenue types are counted the
+same way, with ids such as `revenue.corporate-income-tax`; for them `cut`
+means lower and `add` means raise. `docs/FAQ.md` ("Does the site
 track what I click?") explains it to visitors.
 
 ## How it works

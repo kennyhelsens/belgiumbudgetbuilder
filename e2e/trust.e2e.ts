@@ -30,6 +30,16 @@ test.describe('disclaimer', () => {
 		);
 	});
 
+	test('says who the site is for, and what it is not', async ({ page }) => {
+		await page.goto('/en/');
+		const footer = page.getByRole('contentinfo');
+		await expect(footer).toContainText('not built for politicians');
+		await expect(footer).toContainText('makes no claim to be 100% correct');
+		await expect(footer).toContainText('not a budgeting tool for governments');
+		await page.goto('/nl/');
+		await expect(page.getByRole('contentinfo')).toContainText('niet gemaakt voor politici');
+	});
+
 	test('the FAQ shows its tables and sections', async ({ page }) => {
 		await page.goto('/en/faq/');
 		await expect(

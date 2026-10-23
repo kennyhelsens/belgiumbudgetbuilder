@@ -141,5 +141,12 @@
 	"consequence.lessRevenueTitle": "Moins de recettes de {name} peut signifier :",
 	"consequence.moreRevenueTitle": "Plus de recettes de {name} peut signifier :",
 	"consequence.revenueEffectsNote": "Des pistes possibles, pas une prévision : qui paie plus ou moins dépend de la manière dont les pouvoirs publics font ce choix. Ce site ne tient pas compte de la réaction des personnes et des entreprises.",
-	"map.groupsLabel": "Groupes de pouvoirs publics"
+	"map.groupsLabel": "Groupes de pouvoirs publics",
+	"map.levelsLabel": "Qui la perçoit",
+	"level.federal": "Pouvoir fédéral",
+	"level.communities-and-regions": "Communautés et régions",
+	"level.local": "Pouvoirs locaux",
+	"level.social-security": "Sécurité sociale",
+	"consequence.levelsNote": "Qui la perçoit, avant que l'argent ne passe d'un pouvoir à l'autre : le pouvoir fédéral, par exemple, reverse une partie de ce qu'il perçoit aux communautés et régions et à la sécurité sociale. Source : Bureau fédéral du Plan, comptes par pouvoir.",
+	"footer.purpose": "Ce site n'est pas conçu pour les responsables politiques : ils devraient connaître ces chiffres par cœur. Il veut faire grandir notre compréhension commune des finances publiques, ne prétend pas être exact à 100 % et n'est pas un outil budgétaire pour les pouvoirs publics."
 }
