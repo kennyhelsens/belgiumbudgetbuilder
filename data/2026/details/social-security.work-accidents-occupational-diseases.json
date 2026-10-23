@@ -1,0 +1,35 @@
+{
+	"line": "social-security.work-accidents-occupational-diseases",
+	"effects": {
+		"cut": [
+			{
+				"nl": "lagere vergoedingen van Fedris voor slachtoffers van arbeidsongevallen",
+				"fr": "des indemnités de Fedris plus basses pour les victimes d'accidents du travail",
+				"en": "lower Fedris payments to work-accident victims"
+			},
+			{
+				"nl": "lagere vergoedingen voor wie een beroepsziekte heeft",
+				"fr": "des indemnités plus basses pour les victimes de maladies professionnelles",
+				"en": "lower benefits for people with an occupational disease"
+			}
+		],
+		"add": [
+			{
+				"nl": "hogere vergoedingen van Fedris voor slachtoffers van arbeidsongevallen",
+				"fr": "des indemnités de Fedris plus élevées pour les victimes d'accidents du travail",
+				"en": "higher Fedris payments to work-accident victims"
+			},
+			{
+				"nl": "hogere vergoedingen voor wie een beroepsziekte heeft",
+				"fr": "des indemnités plus élevées pour les victimes de maladies professionnelles",
+				"en": "higher benefits for people with an occupational disease"
+			}
+		],
+		"ref": {
+			"source": "be-chamber-56-1468-001",
+			"locator": "p. 155, Tabel II.5, blocks 'Arbeidsongevallen (aantal gerechtigden)' and 'Beroepsziekten (aantal vergoedingen)'",
+			"quote": "Aanpassingsbijslag 13.178 12.810 12.753 | Pneumoconiose 3.073 2.897 2.688 | Andere beroepsziekten 44.697 43.757 44.027",
+			"note": "Narrow line, so two phrases. For private-sector work accidents the employer's insurer pays most compensation, outside this line: Fedris says 'In principe betaalt de arbeidsongevallenverzekeraar van de werkgever deze vergoedingen. Enkel in specifieke situaties gebeurt de betaling door Fedris.' (Vergoedingen in de privésector (arbeidsongevallen) (https://www.fedris.be/nl/themas/vergoedingen-ao/vergoedingen-de-privesector)). The work-accident phrase therefore names Fedris: this line pays only what Fedris pays (the categories in Tabel II.5: lump-sum scheme, 'aanpassingsbijslag' supplements, the listed allowance categories; also medical costs for accidents before 1988, per Vergoedingen na arbeidsongeval (https://www.socialsecurity.be/citizen/nl/arbeidsongeschiktheid-ongeval-en-beroepsziekte/vergoedingen-na-arbeidsongeval)). Occupational-disease benefits are paid by Fedris itself. Amounts follow the law. corrected: work-accident phrase narrowed to what Fedris pays ('Fedris payments'), since private insurers pay most work-accident compensation (confirmed on fedris.be); occupational-disease phrase and quote confirmed"
+		}
+	}
+}

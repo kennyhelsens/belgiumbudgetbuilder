@@ -1,17 +1,5 @@
 {
 	"line": "social-security.civil-service-pensions",
-	"recipients": {
-		"who": {
-			"nl": "elke gepensioneerde ambtenaar",
-			"fr": "chaque fonctionnaire pensionné",
-			"en": "every retired civil servant"
-		},
-		"what": {
-			"nl": "pensioen",
-			"fr": "de pension",
-			"en": "pension"
-		}
-	},
 	"equivalents": [
 		{
 			"id": "min-pension-civil-service-single-year",
@@ -30,5 +18,57 @@
 				}
 			}
 		}
-	]
+	],
+	"effects": {
+		"cut": [
+			{
+				"nl": "lagere pensioenen voor gepensioneerde ambtenaren en leerkrachten",
+				"fr": "des pensions plus basses pour les fonctionnaires et enseignants retraités",
+				"en": "lower pensions for retired civil servants and teachers"
+			},
+			{
+				"nl": "lagere pensioenen voor gepensioneerd personeel van lokale besturen",
+				"fr": "des pensions plus basses pour le personnel retraité des pouvoirs locaux",
+				"en": "lower pensions for retired local government staff"
+			},
+			{
+				"nl": "lagere pensioenen voor gepensioneerde militairen en spoorpersoneel",
+				"fr": "des pensions plus basses pour les militaires et cheminots retraités",
+				"en": "lower pensions for retired soldiers and rail staff"
+			},
+			{
+				"nl": "lagere overlevingspensioenen in de openbare sector",
+				"fr": "des pensions de survie plus basses dans le secteur public",
+				"en": "lower survivors' pensions in the public sector"
+			}
+		],
+		"add": [
+			{
+				"nl": "hogere pensioenen voor gepensioneerde ambtenaren en leerkrachten",
+				"fr": "des pensions plus élevées pour les fonctionnaires et enseignants retraités",
+				"en": "higher pensions for retired civil servants and teachers"
+			},
+			{
+				"nl": "hogere pensioenen voor gepensioneerd personeel van lokale besturen",
+				"fr": "des pensions plus élevées pour le personnel retraité des pouvoirs locaux",
+				"en": "higher pensions for retired local government staff"
+			},
+			{
+				"nl": "hogere pensioenen voor gepensioneerde militairen en spoorpersoneel",
+				"fr": "des pensions plus élevées pour les militaires et cheminots retraités",
+				"en": "higher pensions for retired soldiers and rail staff"
+			},
+			{
+				"nl": "hogere overlevingspensioenen in de openbare sector",
+				"fr": "des pensions de survie plus élevées dans le secteur public",
+				"en": "higher survivors' pensions in the public sector"
+			}
+		],
+		"ref": {
+			"source": "be-chamber-56-1468-001",
+			"locator": "pp. 186-187, Hoofdstuk 7 'De ambtenarenpensioenen', Inleiding (first, fifth and ninth sectors)",
+			"quote": "De eerste sector bestaat uit de pensioenen ten laste van de Schatkist. Het betreft de pensioenen van de vastbenoemde personeelsleden van de federale overheidsdiensten, van de militairen, van de ministeries van Gemeenschappen en Gewesten, van het onderwijs, van bpost, van Proximus, … | De vijfde sector omvat de pensioenen van de vastbenoemde personeelsleden van de NMBS | De negende sector betreft de vastbenoemde personeelsleden van de provinciale en plaatselijke besturen",
+			"note": "Statutory (vastbenoemde) staff only; contract staff are in the employee scheme. Pensions follow each government's statute and the law. Local authorities finance their sector largely with their own employer contributions, and the communities and regions pay a responsibilisation contribution outside this budget. The line also pays reparation pensions and war annuities, public-sector work-accident annuities and annuities for civilian war and terrorism victims (sectors 2-4), not phrased here. confirmed"
+		}
+	}
 }

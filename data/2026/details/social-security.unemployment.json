@@ -1,17 +1,5 @@
 {
 	"line": "social-security.unemployment",
-	"recipients": {
-		"who": {
-			"nl": "elke werkloze",
-			"fr": "chaque chômeur",
-			"en": "every unemployed person"
-		},
-		"what": {
-			"nl": "uitkering",
-			"fr": "d'allocations",
-			"en": "benefit"
-		}
-	},
 	"equivalents": [
 		{
 			"id": "avg-yearly-unemployment-benefit-jobseeker",
@@ -47,5 +35,57 @@
 				}
 			}
 		}
-	]
+	],
+	"effects": {
+		"cut": [
+			{
+				"nl": "lagere uitkeringen voor werkzoekenden",
+				"fr": "des allocations plus basses pour les demandeurs d'emploi",
+				"en": "lower benefits for jobseekers"
+			},
+			{
+				"nl": "werkloosheidsuitkeringen gedurende een kortere periode",
+				"fr": "des allocations de chômage pendant une période plus courte",
+				"en": "unemployment benefits paid for a shorter period"
+			},
+			{
+				"nl": "lagere uitkeringen bij tijdelijke werkloosheid",
+				"fr": "des allocations plus basses en cas de chômage temporaire",
+				"en": "lower temporary unemployment benefits"
+			},
+			{
+				"nl": "lagere uitkeringen voor tijdskrediet",
+				"fr": "des allocations de crédit-temps plus basses",
+				"en": "lower time-credit allowances"
+			}
+		],
+		"add": [
+			{
+				"nl": "hogere uitkeringen voor werkzoekenden",
+				"fr": "des allocations plus élevées pour les demandeurs d'emploi",
+				"en": "higher benefits for jobseekers"
+			},
+			{
+				"nl": "werkloosheidsuitkeringen gedurende een langere periode",
+				"fr": "des allocations de chômage pendant une période plus longue",
+				"en": "unemployment benefits paid for a longer period"
+			},
+			{
+				"nl": "hogere uitkeringen bij tijdelijke werkloosheid",
+				"fr": "des allocations plus élevées en cas de chômage temporaire",
+				"en": "higher temporary unemployment benefits"
+			},
+			{
+				"nl": "hogere uitkeringen voor tijdskrediet",
+				"fr": "des allocations de crédit-temps plus élevées",
+				"en": "higher time-credit allowances"
+			}
+		],
+		"ref": {
+			"source": "be-chamber-56-1468-001",
+			"locator": "p. 155, Tabel II.5, block 'Werkloosheid (aantal fysieke eenheden)'; duration lever named on p. 69",
+			"quote": "Volledige werkloosheid 342.676 212.757 230.229 | Tijdelijke werkloosheid 101.680 101.081 97.231 | Tijdskrediet 169.654 168.022 168.800 | de beperking in de tijd van de werkloosheidsuitkeringen",
+			"note": "Benefits are set by law and paid by RVA/ONEM through the payment bodies. The 'period' phrases describe a legal parameter of the scheme (how long benefits are paid), stated as a mirrored pair with no reference to any reform or proposal; since 2026 full-unemployment benefits are limited in time (DOC 56 1468/001 p. 69; RVA monitoring cited by the Court of Audit, doc-56-1469-002 p. 59, footnote 73), which explains most of the fall versus 2025. The line also pays SWT/RCC (unemployment with company supplement), youth and senior holidays and some smaller schemes. corrected: duration phrase reworded to a neutral legal parameter ('benefits paid for a shorter/longer period' instead of 'a shorter/longer duration of unemployment benefit'), caveat now says it describes the parameter, not the 2026 reform; p. 69 quote verified; other phrases confirmed"
+		}
+	}
 }

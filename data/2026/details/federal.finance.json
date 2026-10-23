@@ -1,0 +1,45 @@
+{
+	"line": "federal.finance",
+	"effects": {
+		"cut": [
+			{
+				"nl": "minder personeel voor belastingaangiften en -controles",
+				"fr": "moins de personnel pour les déclarations et contrôles fiscaux",
+				"en": "fewer staff for tax returns and tax audits"
+			},
+			{
+				"nl": "minder personeel bij de douane",
+				"fr": "moins de personnel à la douane",
+				"en": "fewer customs staff"
+			},
+			{
+				"nl": "strengere voorwaarden voor voorschotten op onderhoudsgeld (DAVO)",
+				"fr": "des conditions plus strictes pour les avances sur pensions alimentaires (SECAL)",
+				"en": "stricter conditions for advances on unpaid maintenance (DAVO/SECAL)"
+			}
+		],
+		"add": [
+			{
+				"nl": "meer personeel voor belastingaangiften en -controles",
+				"fr": "plus de personnel pour les déclarations et contrôles fiscaux",
+				"en": "more staff for tax returns and tax audits"
+			},
+			{
+				"nl": "meer personeel bij de douane",
+				"fr": "plus de personnel à la douane",
+				"en": "more customs staff"
+			},
+			{
+				"nl": "soepelere voorwaarden voor voorschotten op onderhoudsgeld (DAVO)",
+				"fr": "des conditions plus souples pour les avances sur pensions alimentaires (SECAL)",
+				"en": "less strict conditions for advances on unpaid maintenance (DAVO/SECAL)"
+			}
+		],
+		"ref": {
+			"source": "be-chamber-56-1470-001",
+			"locator": "DOC 56 1470/001, Tabel 1 'Aangepaste programma's', section 18 FOD Financiën, pp. 819-821: divisions 51 'Fiscaliteit', 52 'Douane en accijnzen', 53 'Inning en invordering' (B.A. 18 53 03 53.20.02), 54 'Bijzondere Belastinginspectie'",
+			"quote": "FISCALITEIT / FISCALITÉ ... DOUANE EN ACCIJNZEN / DOUANES ET ACCISES ... INNING EN INVORDERING / PERCEPTION ET RECOUVREMENT ... Voorschotten inzake alimentatievorderingen / Avances en matière de créances alimentaires ... BIJZONDERE BELASTINGINSPECTIE / INSPECTION SPÉCIALE DES IMPÔTS",
+			"note": "Mostly staff, IT and running costs of the tax, customs, collection and land-registry (Patrimoniumdocumentatie) administrations. The tax-return/audit phrase rests on the staff appropriations of division 51 'Fiscaliteit' and division 54 'Bijzondere Belastinginspectie'. Not phrased: 'Rente op borgtochten en consignaties' (interest on deposits and consignments, p. 822, a legal obligation) and a dotation for the transfer of regional taxes. Maintenance advances (B.A. 18 53 03 53.20.02) are a legal right under conditions set by law, so a cut would in practice mean stricter access or lower advances, not a discretionary rationing. DAVO/SECAL names are the service's official names (Dienst voor Alimentatievorderingen / Service des créances alimentaires); the budget label itself says only 'alimentatievorderingen'. Second check: the official DAVO/SECAL names appear in DOC 56 1469/001 p. 43 ('Terugbetaling van de werkingskosten van DAVO door de onderhoudsplichtige / Remboursement des frais de fonctionnement du SECAL par le débiteur d'aliments'). The pages that set out the conditions for an advance (financien.belgium.be) and the law on Justel (ejustice.just.fgov.be) both returned a CAPTCHA and were not used; the 'conditions' phrase therefore names the lever only in general terms. corrected: maintenance-advance phrase changed from 'fewer/more advances' (suggested rationing of a legal right) to 'stricter/less strict conditions', the lever over an entitlement (flag 6); DAVO/SECAL name confirmed in DOC 56 1469/001 p. 43 (source added). Tax, customs and division quotes confirmed at pp. 819-821."
+		}
+	}
+}

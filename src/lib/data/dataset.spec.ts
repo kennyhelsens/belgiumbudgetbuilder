@@ -86,20 +86,27 @@ describe('data/2026', () => {
 		}
 	});
 
-	// The card tells a change to a benefit line as time for the people who receive it, so they must be named.
-	it('names who receives each benefit line', () => {
-		const benefitLines = [
-			'social-security.employee-pensions',
-			'social-security.selfemployed-pensions',
-			'social-security.civil-service-pensions',
-			'social-security.unemployment',
-			'social-security.incapacity',
-			'federal.disability-allowances',
-			'wallonia.family-allowances'
-		];
-		for (const id of benefitLines) {
-			const details = dataset.details.find((d) => d.line === id);
-			expect(details?.recipients?.who.nl, id).toBeTruthy();
+	// Every line a visitor can change says in plain words what a cut or an increase could mean.
+	it('says what a change could mean for every line a visitor can change', () => {
+		for (const entity of dataset.entities.filter((e) => e.adjustable)) {
+			for (const line of entity.expenditure.lines) {
+				if (line.transferTo || line.adjustable === false) continue;
+				const effects = dataset.details.find((d) => d.line === line.id)?.effects;
+				expect(effects?.cut.length ?? 0, line.id).toBeGreaterThanOrEqual(2);
+				expect(effects?.add.length ?? 0, line.id).toBeGreaterThanOrEqual(2);
+			}
+		}
+	});
+
+	// Numbers are never right for everyone, so the effects have none; the site builds the sentence around them.
+	it('writes the effects without numbers, as phrases the site can put in a sentence', () => {
+		for (const details of dataset.details) {
+			const phrases = [...(details.effects?.cut ?? []), ...(details.effects?.add ?? [])];
+			for (const phrase of phrases.flatMap((p) => [p.nl, p.fr, p.en])) {
+				expect(phrase, details.line).not.toMatch(/\d/);
+				expect(phrase, details.line).not.toMatch(/\.$/);
+				expect(phrase.charAt(0), details.line).toBe(phrase.charAt(0).toLowerCase());
+			}
 		}
 	});
 

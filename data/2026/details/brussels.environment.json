@@ -1,0 +1,45 @@
+{
+	"line": "brussels.environment",
+	"effects": {
+		"cut": [
+			{
+				"nl": "minder afvalophaling en straatreiniging (Net Brussel)",
+				"fr": "moins de collecte et de nettoiement (Bruxelles-Propreté)",
+				"en": "less waste collection and street cleaning (Bruxelles-Propreté)"
+			},
+			{
+				"nl": "minder onderhoud en aanleg van groene ruimten",
+				"fr": "moins d'entretien et d'aménagement des espaces verts",
+				"en": "less upkeep and development of green spaces"
+			},
+			{
+				"nl": "minder Renolution-premies voor woningrenovatie",
+				"fr": "moins de primes Renolution à la rénovation",
+				"en": "fewer Renolution home renovation grants"
+			}
+		],
+		"add": [
+			{
+				"nl": "meer afvalophaling en straatreiniging (Net Brussel)",
+				"fr": "plus de collecte et de nettoiement (Bruxelles-Propreté)",
+				"en": "more waste collection and street cleaning (Bruxelles-Propreté)"
+			},
+			{
+				"nl": "meer onderhoud en aanleg van groene ruimten",
+				"fr": "plus d'entretien et d'aménagement des espaces verts",
+				"en": "more upkeep and development of green spaces"
+			},
+			{
+				"nl": "meer Renolution-premies voor woningrenovatie",
+				"fr": "plus de primes Renolution à la rénovation",
+				"en": "more Renolution home renovation grants"
+			}
+		],
+		"ref": {
+			"source": "bru-a268-5-p2",
+			"locator": "Section 2 tables: Bruxelles Environnement pp. 16-17 (Programmes 202-204); Bruxelles-Propreté pp. 23-24 (Programmes 252-253)",
+			"quote": "Programme 203: Améliorer la résilience au changement climatique via les maillages vert et bleu | Programme 252: Collecte et traitement des déchets | Programme 253: Nettoiement",
+			"note": "Green spaces: programme 203 ('maillages vert et bleu') is mapped in the concordance bru-a268-1-p4 (annex 5a, NL pp. 13-14, FR pp. 189-190) to items including 'Werkingskosten ... in het kader van de studie- en dienstenovereenkomsten inzake onderhoud, inrichting en uitrusting van groene ruimten' and '... de bescherming en het behoud van het bos- en natuurpatrimonium'; the phrase uses those words rather than a gloss of 'maillages'. 'Waterways' was dropped: the 'blue' part shows up only as water-policy studies in the annex. Renolution: exposé général Budget des recettes et des dépenses pour l'année budgétaire 2026 – Exposé général (Doc. A-269/1 – 2025/2026) (https://weblex.irisnet.be/data/crb/doc/2025-26/153785/images.pdf) p. 21 ('Les primes Renolution sont réduites globalement ... afin d’opérer une transition vers des prêts à taux zéro. Les crédits restants sont redistribués entre les budgets d’Urban et de Bruxelles Environnement'), so part of the grants sits in the housing line (Urban.brussels); the zero-rate loans are not located in this line by the documents read, so the phrase names grants only. The line also covers energy-market regulation (Brugel), water policy and Homegrade. corrected: programme headings confirmed (A-268/5 part 2 pp. 16-17, 23-24). Flag 4: 'parks and waterways' replaced by 'green spaces' (upkeep and development), the wording of the allocations under programme 203 in annex 5a; waterways dropped as not supported. Renolution phrase limited to grants (loans not shown to be in this line). FR shortened (Bruxelles-Propreté and Renolution phrases were 10-11 words); NL name Net Brussel kept"
+		}
+	}
+}

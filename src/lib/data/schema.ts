@@ -117,21 +117,32 @@ const lineDetailsSchema = z.object({
 			})
 		)
 		.default([]),
-	/** Concrete units ("a GP consultation reimbursed") to express a change in. Shown only once reviewed. */
-	equivalents: z.array(
-		z.object({
-			id: slug,
-			label: localized,
-			unitEur: z.object({ value: z.number().positive(), ref: sourceRefSchema }),
-			/** GitHub handle of the reviewer who approved this example. */
-			reviewedBy: nonEmpty.optional()
-		})
-	),
 	/**
-	 * For benefit lines: who receives the benefit and what it is called, so a change can be told as time,
-	 * e.g. "as if every retired employee got about 3 weeks less pension a year".
+	 * Concrete units ("a GP consultation reimbursed") with a sourced cost. Kept as reference for the FAQ;
+	 * the site describes changes in words instead, because counts are never right for everyone.
 	 */
-	recipients: z.object({ who: localized, what: localized }).optional(),
+	equivalents: z
+		.array(
+			z.object({
+				id: slug,
+				label: localized,
+				unitEur: z.object({ value: z.number().positive(), ref: sourceRefSchema }),
+				/** GitHub handle of the reviewer who approved this example. */
+				reviewedBy: nonEmpty.optional()
+			})
+		)
+		.default([]),
+	/**
+	 * What a cut or an increase could mean, in plain words and without numbers ("a higher co-payment at the
+	 * GP"), grounded in what the line pays for according to the source.
+	 */
+	effects: z
+		.object({
+			cut: z.array(localized).min(1).max(4),
+			add: z.array(localized).min(1).max(4),
+			ref: sourceRefSchema
+		})
+		.optional(),
 	/** The official ways this spending can be changed. */
 	levers: z
 		.array(z.object({ id: slug, label: localized, description: localized, ref: sourceRefSchema }))

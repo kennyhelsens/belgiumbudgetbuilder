@@ -1,0 +1,45 @@
+{
+	"line": "wallonia.other",
+	"effects": {
+		"cut": [
+			{
+				"nl": "minder personeel bij de Waalse Overheidsdienst (SPW)",
+				"fr": "moins de personnel au Service public de Wallonie (SPW)",
+				"en": "fewer staff at the Walloon public service (SPW)"
+			},
+			{
+				"nl": "tragere digitalisering van de gewestelijke overheidsdiensten",
+				"fr": "une numérisation plus lente des services publics régionaux",
+				"en": "slower digitalisation of regional public services"
+			},
+			{
+				"nl": "minder steun voor toerisme en exporterende bedrijven",
+				"fr": "moins de soutien au tourisme et aux exportateurs",
+				"en": "less support for tourism and exporting firms"
+			}
+		],
+		"add": [
+			{
+				"nl": "meer personeel bij de Waalse Overheidsdienst (SPW)",
+				"fr": "plus de personnel au Service public de Wallonie (SPW)",
+				"en": "more staff at the Walloon public service (SPW)"
+			},
+			{
+				"nl": "snellere digitalisering van de gewestelijke overheidsdiensten",
+				"fr": "une numérisation plus rapide des services publics régionaux",
+				"en": "faster digitalisation of regional public services"
+			},
+			{
+				"nl": "meer steun voor toerisme en exporterende bedrijven",
+				"fr": "plus de soutien au tourisme et aux exportateurs",
+				"en": "more support for tourism and exporting firms"
+			}
+		],
+		"ref": {
+			"source": "wal-aju-2026-expose-general",
+			"locator": "Exposé général, §3.2 'Crédits de liquidation', table by division organique and programme (PDF p. 16-17): 11.031, 12.029, 09.018, 09.020",
+			"quote": "11.031 Gestion du personnel | 12.029 Gestion du Digital | 09.018 Tourisme | 09.020 Commerce extérieur et investisseurs étrangers",
+			"note": "Residual line. Staff pay (11.031) is the biggest part and follows statutory pay scales and indexation, so a change mostly works through hiring. The digital phrase is grounded in Doc. 591 (2025-2026) N° 1 annexe 6 – Exposé particulier afférent aux compétences de la Ministre de la Fonction publique, de la Simplification administrative et des Infrastructures sportives (https://nautilus.parlement-wallon.be/Archives/2025_2026/BUDGET/bud36.pdf), programme 12.029 'Gestion du Digital', objective (PDF p. 35: 'Le SPW Digital a pour objectif d'offrir à l'ensemble du SPW [...] les outils et moyens visant la digitalisation des compétences'). Tourism is grounded in Doc. 591 (2025-2026) N° 1 annexe 7 – Exposé particulier, Ministre du Tourisme, du Patrimoine et de la Petite enfance (https://nautilus.parlement-wallon.be/Archives/2025_2026/BUDGET/bud37.pdf), programme 09.018 objective (PDF p. 14: financing of Tourisme Wallonie and VISITWallonia); export support in wal-aju-2026-ep-economie-emploi, programme 09.020 table (PDF p. 11: 'Dotation à l'AWEX'). Parts are not freely adjustable: the dotations to the Walloon Parliament and Ombudsman (01.002, 01.003), the transfer to the German-speaking Community for transferred competences (DF 091.049, set by law) and the provision for EU co-financing (DO 36). Also includes ministerial cabinets (DO 02), external relations, the CESE Wallonie, the regulator CWaPE and the tax and budget administration (DO 19 excl. debt). corrected: programme labels confirmed in the exposé général table (PDF p. 16-17). Added the documents that describe what the digital, tourism and export programmes fund (bud36 p. 35, bud37 p. 14, bud35 p. 11) to the caveat; bud36 added under sources. FR export phrase shortened. Phrases otherwise confirmed."
+		}
+	}
+}

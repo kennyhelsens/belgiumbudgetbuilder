@@ -18,5 +18,57 @@
 				}
 			}
 		}
-	]
+	],
+	"effects": {
+		"cut": [
+			{
+				"nl": "minder nieuwe militairen aangeworven",
+				"fr": "moins de nouveaux militaires recrutés",
+				"en": "fewer new soldiers recruited"
+			},
+			{
+				"nl": "minder aankopen van militair materieel en voertuigen",
+				"fr": "moins d'achats de matériel militaire et de véhicules",
+				"en": "fewer purchases of military equipment and vehicles"
+			},
+			{
+				"nl": "minder oefeningen en onderhoud van materieel",
+				"fr": "moins d'exercices et d'entretien du matériel",
+				"en": "fewer exercises and less equipment maintenance"
+			},
+			{
+				"nl": "minder nieuwe of gerenoveerde kazernes",
+				"fr": "moins de casernes neuves ou rénovées",
+				"en": "fewer new or renovated barracks"
+			}
+		],
+		"add": [
+			{
+				"nl": "meer nieuwe militairen aangeworven",
+				"fr": "plus de nouveaux militaires recrutés",
+				"en": "more new soldiers recruited"
+			},
+			{
+				"nl": "meer aankopen van militair materieel en voertuigen",
+				"fr": "plus d'achats de matériel militaire et de véhicules",
+				"en": "more purchases of military equipment and vehicles"
+			},
+			{
+				"nl": "meer oefeningen en onderhoud van materieel",
+				"fr": "plus d'exercices et d'entretien du matériel",
+				"en": "more exercises and equipment maintenance"
+			},
+			{
+				"nl": "meer nieuwe of gerenoveerde kazernes",
+				"fr": "plus de casernes neuves ou rénovées",
+				"en": "more new or renovated barracks"
+			}
+		],
+		"ref": {
+			"source": "be-chamber-56-1281-008",
+			"locator": "DOC 56 1281/008, general part: 'Personeel' p. 12, infrastructure and 'Werking' p. 14; programme table (Bestaansmiddelen, Paraatstelling, Vernieuwing van de uitrusting, Vernieuwing van de infrastructuur, Inzet) p. 15; programme 50.1 'Paraatstelling', p. 27",
+			"quote": "Om de effectieven van Defensie te bestendigen, zal Defensie de rekruteringsinspanning vanaf 2026 verhogen tot 2.800 militairen van het actief kader per jaar",
+			"note": "Large equipment purchases run under multi-year contracts: commitment credits are much higher than the liquidation credits shown, and payments follow deliveries under contracts already signed, so a one-year change mostly shifts timing. Belgium's NATO commitments frame the level of defence spending. Provisions for reinforcing security and for Ukraine are booked in section 06 (policy-and-support line), part of which can be allocated to Defence during the year. confirmed"
+		}
+	}
 }

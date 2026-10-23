@@ -1,0 +1,55 @@
+{
+	"line": "federal.mobility-rail",
+	"effects": {
+		"cut": [
+			{
+				"nl": "minder binnenlandse treinen van de NMBS",
+				"fr": "moins de trains intérieurs de la SNCB",
+				"en": "fewer domestic passenger trains run by SNCB"
+			},
+			{
+				"nl": "minder onderhoud van het spoornet door Infrabel",
+				"fr": "moins d'entretien du réseau ferroviaire par Infrabel",
+				"en": "less upkeep of the rail network by Infrabel"
+			},
+			{
+				"nl": "minder investeringen in het spoornet en in treinen",
+				"fr": "moins d'investissements dans le réseau ferroviaire et les trains",
+				"en": "less investment in the rail network and trains"
+			},
+			{
+				"nl": "minder steun voor gratis woon-werkverkeer per trein",
+				"fr": "moins d'aide aux trajets domicile-travail gratuits en train",
+				"en": "less support for free home-to-work train travel"
+			}
+		],
+		"add": [
+			{
+				"nl": "meer binnenlandse treinen van de NMBS",
+				"fr": "plus de trains intérieurs de la SNCB",
+				"en": "more domestic passenger trains run by SNCB"
+			},
+			{
+				"nl": "meer onderhoud van het spoornet door Infrabel",
+				"fr": "plus d'entretien du réseau ferroviaire par Infrabel",
+				"en": "more upkeep of the rail network by Infrabel"
+			},
+			{
+				"nl": "meer investeringen in het spoornet en in treinen",
+				"fr": "plus d'investissements dans le réseau ferroviaire et les trains",
+				"en": "more investment in the rail network and trains"
+			},
+			{
+				"nl": "meer steun voor gratis woon-werkverkeer per trein",
+				"fr": "plus d'aide aux trajets domicile-travail gratuits en train",
+				"en": "more support for free home-to-work train travel"
+			}
+		],
+		"ref": {
+			"source": "be-chamber-56-1470-001",
+			"locator": "DOC 56 1470/001, Tabel 1, section 33, programme 33.51.1 'Spoorwegvervoer', p. 917 (B.A. 33 51 10 31.21.07, 51 10 31.22.02, 51 10 41.40.51, 51 11 51.11.01, 51 11 61.41.51); justification pp. 140-142",
+			"quote": "Bijdrage voor het binnenlands vervoer van reizigers met treinen van de gewone dienst ten gunste van de NMBS ... Bijdrage voor het onderhoud, het beheer en de exploitatie van de spoorweginfrastructuur ten voordele van Infrabel ... Deelname van de Staat in het kapitaal van de NMBS met oog op de financiering van de investeringen ... Deelname van de Staat in het kapitaal van Infrabel met het oog op de financiering van de investeringen ... Bijdrage voor maatregelen die strekken tot het kosteloos woon-werkverkeer per trein",
+			"note": "The rail amounts follow the public service contract between SNCB and the State and the performance contract between Infrabel and the State (pp. 140-142), so they are set for several years and indexed. 'Tracks and trains' simplifies the investment allocations (Infrabel: infrastructure; SNCB: its own investments, which also cover stations). Not phrased: bpost management contract payment (B.A. 33.41.52.312207), skeyes, Beliris/Metro Noord, PPP availability fees (Diabolo, Liefkenshoek), night-train subsidies, road safety and aviation administration. A 4th phrase was kept because free commuting is a separate, tangible allocation; drop it if 3 are preferred. Second check: 'tracks' replaced by 'rail network' because Infrabel's investment allocation covers the whole infrastructure, not only tracks; SNCB's investments also include stations (see B.A. 33 51 17 51.11.05 'Investeringen NMBS leefbare en veilige stations', p. 918), which the phrase does not list for brevity. The free-commuting allocation's French label says 'mesures permettant de tendre vers la gratuité' (measures towards free commuting), so it supports free commuting rather than making all commuting free; the phrase 'support for free home-to-work train travel' stays within that. corrected: investment phrase 'tracks and trains' changed to 'the rail network and trains' (Infrabel invests in the whole infrastructure, not just tracks) (flag 5). Free home-to-work phrase confirmed: grounded in B.A. 33 51 10 31.21.07 (p. 917, 'kosteloos woon-werkverkeer per trein'), neutral; kept as a 4th phrase. All five allocations confirmed on p. 917, contracts on pp. 140-142; phrases describe what the contracts pay for and do not suggest automatic changes (flag 3)."
+		}
+	}
+}

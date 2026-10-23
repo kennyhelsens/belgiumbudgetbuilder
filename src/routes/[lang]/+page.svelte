@@ -9,9 +9,7 @@ ABOUTME: Text comes from the message files and every figure from the sourced dat
 	import Outlook from '#lib/builder/Outlook.svelte';
 	import type { Changes } from '#lib/builder/choices.ts';
 	import { headlineMetrics } from '#lib/builder/metrics.ts';
-	import { changeNotice, pickIllustration } from '#lib/builder/notice.ts';
-	import type { Recipients } from '#lib/consequences/human.ts';
-	import { preferReviewed } from '#lib/consequences/consequences.ts';
+	import { changeNotice, pickEffect } from '#lib/builder/notice.ts';
 	import BudgetMap from '#lib/explorer/BudgetMap.svelte';
 	import { translate } from '#lib/i18n/translate.ts';
 	import Intro from '#lib/intro/Intro.svelte';
@@ -34,33 +32,24 @@ ABOUTME: Text comes from the message files and every figure from the sourced dat
 			nominalGrowth: growthPct === undefined ? undefined : growthPct / 100
 		})
 	);
-	// Approved examples first; examples still waiting for review are shown too, by the owners' choice.
-	const examplesFor = (id: string) =>
-		preferReviewed(data.dataset.details.find((d) => d.line === id)?.equivalents ?? []).map(
-			(example) => ({ unitEur: example.unitEur.value, label: example.label[data.locale] })
-		);
-	// Clicks per line, so every click on the same line is illustrated with something new.
+	// What a cut or an increase to a line could mean, in plain words, in the page's language.
+	const effectsFor = (id: string, cut: boolean) => {
+		const effects = data.dataset.details.find((d) => d.line === id)?.effects;
+		return ((cut ? effects?.cut : effects?.add) ?? []).map((effect) => effect[data.locale]);
+	};
+	// Clicks per line, so every click on the same line tells something new.
 	const clicks: Record<string, number> = {};
 	// The last step the visitor took, illustrated by the notice.
 	let lastStep = $state<{
 		name: string;
 		percent: number;
 		stepEurMillion: number;
-		example?: { unitEur: number; label: string };
-		recipients?: Recipients;
-		stepPercent?: number;
+		effect?: string;
 	}>();
 	let noticeKey = $state(0);
 	// How the last change moved the debt: more spending raises it, less spending lowers it.
 	let debtMove = $state<'up' | 'down'>();
-	const notice = $derived(
-		lastStep === undefined
-			? undefined
-			: changeNotice(data.locale, {
-					...lastStep,
-					population: data.dataset.overview.population.persons
-				})
-	);
+	const notice = $derived(lastStep === undefined ? undefined : changeNotice(data.locale, lastStep));
 	const t = $derived((key: Parameters<typeof translate>[1]) => translate(data.locale, key));
 
 	const facts = $derived(introFacts(data.dataset));
@@ -146,23 +135,10 @@ ABOUTME: Text comes from the message files and every figure from the sourced dat
 		clickLog?.record(change.id, change.stepEurMillion < 0 ? 'cut' : 'add', change.percent);
 		const click = clicks[change.id] ?? 0;
 		clicks[change.id] = click + 1;
-		// Benefit lines first tell the step as time for the people who receive them, then the examples.
-		const recipients = data.dataset.details.find((d) => d.line === change.id)?.recipients;
-		const pick = pickIllustration<'asIf' | { unitEur: number; label: string }>(
-			recipients ? ['asIf', ...examplesFor(change.id)] : examplesFor(change.id),
-			click
-		);
-		const lineAmount = data.dataset.entities
-			.flatMap((e) => e.expenditure.lines)
-			.find((l) => l.id === change.id)?.amount.eurMillion;
-		lastStep =
-			pick === 'asIf'
-				? {
-						...change,
-						recipients,
-						stepPercent: lineAmount ? (change.stepEurMillion / lineAmount) * 100 : undefined
-					}
-				: { ...change, example: pick };
+		lastStep = {
+			...change,
+			effect: pickEffect(effectsFor(change.id, change.stepEurMillion < 0), click)
+		};
 		debtMove = change.stepEurMillion > 0 ? 'up' : 'down';
 		noticeKey += 1;
 	}}

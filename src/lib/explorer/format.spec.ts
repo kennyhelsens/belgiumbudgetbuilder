@@ -1,7 +1,7 @@
 // ABOUTME: Tests for writing amounts the way people read them: billions or millions, per language.
-// ABOUTME: Also the per-person view (euro per inhabitant per month) and rough counts for illustrations.
+// ABOUTME: Also the per-person view: euro per inhabitant per month.
 import { describe, expect, it } from 'vitest';
-import { formatEuro, perInhabitantPerMonth, roughCount } from './format.ts';
+import { formatEuro, perInhabitantPerMonth } from './format.ts';
 
 describe('formatEuro', () => {
 	it('writes large amounts in billions, one decimal', () => {
@@ -34,14 +34,5 @@ describe('perInhabitantPerMonth', () => {
 
 	it('refuses a population of zero', () => {
 		expect(() => perInhabitantPerMonth(1, 0)).toThrow();
-	});
-});
-
-describe('roughCount', () => {
-	it('keeps two significant digits, because an illustration is approximate', () => {
-		expect(roughCount(14746931, 'en')).toBe('15,000,000');
-		expect(roughCount(3187, 'en')).toBe('3,200');
-		expect(roughCount(45, 'en')).toBe('45');
-		expect(roughCount(3187, 'nl')).toBe('3.200');
 	});
 });

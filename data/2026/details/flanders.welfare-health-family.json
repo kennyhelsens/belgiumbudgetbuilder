@@ -35,5 +35,57 @@
 				}
 			}
 		}
-	]
+	],
+	"effects": {
+		"cut": [
+			{
+				"nl": "een lager Groeipakket voor gezinnen met kinderen",
+				"fr": "un Groeipakket (allocations familiales) plus bas",
+				"en": "lower Groeipakket child benefits for families"
+			},
+			{
+				"nl": "minder gesubsidieerde plaatsen in de kinderopvang",
+				"fr": "moins de places d'accueil d'enfants subventionnées",
+				"en": "fewer subsidised childcare places"
+			},
+			{
+				"nl": "minder persoonsvolgende budgetten voor personen met een handicap",
+				"fr": "moins de budgets personnalisés pour personnes handicapées (VAPH)",
+				"en": "fewer personal budgets for people with a disability (VAPH)"
+			},
+			{
+				"nl": "minder financiering van de zorg in woonzorgcentra",
+				"fr": "moins de financement des soins en maisons de repos",
+				"en": "less funding for care in residential care homes"
+			}
+		],
+		"add": [
+			{
+				"nl": "een hoger Groeipakket voor gezinnen met kinderen",
+				"fr": "un Groeipakket (allocations familiales) plus élevé",
+				"en": "higher Groeipakket child benefits for families"
+			},
+			{
+				"nl": "meer gesubsidieerde plaatsen in de kinderopvang",
+				"fr": "plus de places d'accueil d'enfants subventionnées",
+				"en": "more subsidised childcare places"
+			},
+			{
+				"nl": "meer persoonsvolgende budgetten voor personen met een handicap",
+				"fr": "plus de budgets personnalisés pour personnes handicapées (VAPH)",
+				"en": "more personal budgets for people with a disability (VAPH)"
+			},
+			{
+				"nl": "meer financiering van de zorg in woonzorgcentra",
+				"fr": "plus de financement des soins en maisons de repos",
+				"en": "more funding for care in residential care homes"
+			}
+		],
+		"ref": {
+			"source": "vp-17-2025-2026-nr1-algemene-toelichting-ba2026",
+			"locator": "Ch. IV, 4.5 'Welzijn, Volksgezondheid en Gezin': p. 62 (Vlaamse Sociale Bescherming, financiering van de woonzorgcentra, GB0-1GCF2VX-IS), p. 63 (Opgroeien: Groeipakket GB0-1GEF2QX-IS; 'voorziene middelen voor kinderopvang' GB0-1GEF2UX-IS), p. 65 (VAPH: 'Persoonsvolgend Budget (PVB)'; p. 65 also 'basistegemoetkoming zorg' for woonzorgcentra)",
+			"quote": "Bij Opgroeien Regie wordt de raming voor het Groeipakket geactualiseerd",
+			"note": "Mostly entitlements: Groeipakket amounts and the Vlaamse Sociale Bescherming care-home funding are fixed by decree, so a change means changing the rules. Childcare phrase: the budget names 'middelen voor kinderopvang' (p. 63); that these fund subsidised places is from Opgroeien's own plan (source Ondernemingsplan 2026 (Opgroeien) (https://publicaties.vlaanderen.be/view-file/83592), p. 46: 'het realiseren van meer betaalbare opvangplaatsen in de kinderopvang via een meerjarenprogrammatie van de uitbreiding van T2-plaatsen'). The line also holds home care (thuis- en gezinszorg), youth care and foster care, preventive health and hospital infrastructure (VIPA). Care-home phrase: the Flemish money is the care allowance ('basistegemoetkoming zorg', p. 65) under the Vlaamse Sociale Bescherming, not the residents' day price. corrected: quote verbatim at p. 63 and locators confirmed; Opgroeien plan quote confirmed at p. 46. Care-home phrase reworded to 'funding for care in residential care homes' (dropped 'Flemish' in all three languages to shorten FR; the line is Flemish anyway). French shortened (Groeipakket, childcare, VAPH, care homes). Flag 3: Groeipakket amounts and care-home funding are set by decree; the phrases name the benefit or funding the money pays for (the official lever), none claims an automatic effect, and the caveat says a change means changing the rules."
+		}
+	}
 }

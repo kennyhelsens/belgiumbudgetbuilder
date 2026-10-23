@@ -1,0 +1,45 @@
+{
+	"line": "federal.policy-and-support",
+	"effects": {
+		"cut": [
+			{
+				"nl": "minder geld opzij gezet voor veiligheidsdiensten en gevangenissen",
+				"fr": "moins de moyens réservés aux services de sécurité et aux prisons",
+				"en": "less money set aside for security services and prisons"
+			},
+			{
+				"nl": "een kleinere reserve voor kosten van de oorlog in Oekraïne",
+				"fr": "une réserve plus faible pour les dépenses liées à la guerre en Ukraine",
+				"en": "a smaller reserve for Ukraine war costs"
+			},
+			{
+				"nl": "minder uitgaven voor projecten van het Plan voor Herstel en Veerkracht",
+				"fr": "moins de dépenses pour les projets du Plan pour la Reprise et la Résilience",
+				"en": "less spending on Recovery and Resilience Plan projects"
+			}
+		],
+		"add": [
+			{
+				"nl": "meer geld opzij gezet voor veiligheidsdiensten en gevangenissen",
+				"fr": "plus de moyens réservés aux services de sécurité et aux prisons",
+				"en": "more money set aside for security services and prisons"
+			},
+			{
+				"nl": "een grotere reserve voor kosten van de oorlog in Oekraïne",
+				"fr": "une réserve plus élevée pour les dépenses liées à la guerre en Ukraine",
+				"en": "a larger reserve for Ukraine war costs"
+			},
+			{
+				"nl": "meer uitgaven voor projecten van het Plan voor Herstel en Veerkracht",
+				"fr": "plus de dépenses pour les projets du Plan pour la Reprise et la Résilience",
+				"en": "more spending on Recovery and Resilience Plan projects"
+			}
+		],
+		"ref": {
+			"source": "be-chamber-56-1281-003",
+			"locator": "DOC 56 1281/003, division 90 'Interdepartementale provisies', B.A. 06.90.10.01.00.10 and 06.90.10.01.00.09, p. 101 (division 90 'Interdepartementale provisies', p. 99-101); programme 41/1 'Plan voor Herstel en Veerkracht', p. 73-74",
+			"quote": "Om de veiligheidsdiensten te versterken en het probleem van overbevolking in gevangenissen aan te pakken, is hiervoor een provisie opgericht.",
+			"note": "Most of this line is provisions: reserves that are allocated to other departments during the year (security services and prisons, the war in Ukraine, court costs and damages). A change here mainly changes what other departments can later receive. Court-ordered damages and legal costs ('gerechtskosten en schadevergoedingen') must be paid whatever the budget says. The Recovery and Resilience Plan projects (digital transformation, mobility, climate) are financed by the EU Recovery and Resilience Facility; the plan has a fixed envelope and deadlines. The rest is BOSA's own staff and operating costs (budget, HR and digital services for the federal administration). Second check: the two provision phrases already say 'set aside' / 'reserve', which is honest that this money is passed on to other departments during the year. The Recovery and Resilience Plan's projects and milestones are fixed in the plan approved by the Council of the EU (revised version approved 13 November 2025, p. 73), so a budget change alters spending on those projects rather than their number; the phrase was changed accordingly. Note that in the initial budget the 'gerechtskosten' provision also held reserves for Fedasil, prison infrastructure and other measures awaiting a decision (p. 99-100). corrected: 'fewer/more projects under the Recovery and Resilience Plan' changed to 'less/more spending on Recovery and Resilience Plan projects', because the plan's projects are fixed in the plan approved by the Council of the EU and programme 41/1 only budgets their federal spending (DOC 56 1281/003 p. 73-74); FR name capitalised as in the source. Provision phrases kept: 'set aside'/'reserve' is honest about money allocated to other departments. Quote confirmed verbatim at p. 101."
+		}
+	}
+}

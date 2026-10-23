@@ -1,0 +1,55 @@
+{
+	"line": "federal.foreign-affairs-development",
+	"effects": {
+		"cut": [
+			{
+				"nl": "minder ontwikkelingshulp aan partnerlanden via Enabel",
+				"fr": "moins d'aide au développement aux pays partenaires via Enabel",
+				"en": "less development aid to partner countries via Enabel"
+			},
+			{
+				"nl": "minder humanitaire hulp bij crisissen",
+				"fr": "moins d'aide humanitaire lors de crises",
+				"en": "less humanitarian aid in crises"
+			},
+			{
+				"nl": "minder steun voor ngo's in ontwikkelingssamenwerking",
+				"fr": "moins de soutien aux ONG de coopération au développement",
+				"en": "less support for development NGOs"
+			},
+			{
+				"nl": "minder personeel in Belgische ambassades en consulaten",
+				"fr": "moins de personnel dans les ambassades et consulats belges",
+				"en": "fewer staff at Belgian embassies and consulates"
+			}
+		],
+		"add": [
+			{
+				"nl": "meer ontwikkelingshulp aan partnerlanden via Enabel",
+				"fr": "plus d'aide au développement aux pays partenaires via Enabel",
+				"en": "more development aid to partner countries via Enabel"
+			},
+			{
+				"nl": "meer humanitaire hulp bij crisissen",
+				"fr": "plus d'aide humanitaire lors de crises",
+				"en": "more humanitarian aid in crises"
+			},
+			{
+				"nl": "meer steun voor ngo's in ontwikkelingssamenwerking",
+				"fr": "plus de soutien aux ONG de coopération au développement",
+				"en": "more support for development NGOs"
+			},
+			{
+				"nl": "meer personeel in Belgische ambassades en consulaten",
+				"fr": "plus de personnel dans les ambassades et consulats belges",
+				"en": "more staff at Belgian embassies and consulates"
+			}
+		],
+		"ref": {
+			"source": "be-chamber-56-1281-007",
+			"locator": "DOC 56 1281/007, DGD liquidation credits by programme, p. 68; activity 10 Enabel, p. 85; division 'Diplomatieke en consulaire posten en posten voor samenwerking', missions, p. 29",
+			"quote": "Ondersteuning overheden [...] Een georganiseerde civiele maatschappij die zich inzet voor de DOD in ontwikkelingslanden als in België [...] Humanitaire hulp",
+			"note": "Part of the line is compulsory contributions to international organisations (UN bodies, NATO trust funds, the European Peace Facility, the European Development Fund) and multilateral debt relief, set by treaties or assessments rather than by the budget alone. Development programmes run over several years under agreements with Enabel, NGOs and multilateral partners. confirmed"
+		}
+	}
+}

@@ -18,5 +18,57 @@
 				}
 			}
 		}
-	]
+	],
+	"effects": {
+		"cut": [
+			{
+				"nl": "minder APE-subsidies voor lokale besturen en vzw's",
+				"fr": "moins d'aides APE aux pouvoirs locaux et asbl",
+				"en": "less APE funding for local authorities and non-profits"
+			},
+			{
+				"nl": "minder gewestelijke steun per dienstencheque",
+				"fr": "moins de soutien régional par titre-service",
+				"en": "less regional support per service voucher"
+			},
+			{
+				"nl": "minder aanwervingssteun voor werkgevers",
+				"fr": "moins d'aides à l'embauche pour les employeurs",
+				"en": "less hiring support for employers"
+			},
+			{
+				"nl": "minder opleidingen bij FOREM, IFAPME en CISP",
+				"fr": "moins de formations FOREM, IFAPME et CISP",
+				"en": "fewer training courses at FOREM, IFAPME and CISP centres"
+			}
+		],
+		"add": [
+			{
+				"nl": "meer APE-subsidies voor lokale besturen en vzw's",
+				"fr": "plus d'aides APE aux pouvoirs locaux et asbl",
+				"en": "more APE funding for local authorities and non-profits"
+			},
+			{
+				"nl": "meer gewestelijke steun per dienstencheque",
+				"fr": "plus de soutien régional par titre-service",
+				"en": "more regional support per service voucher"
+			},
+			{
+				"nl": "meer aanwervingssteun voor werkgevers",
+				"fr": "plus d'aides à l'embauche pour les employeurs",
+				"en": "more hiring support for employers"
+			},
+			{
+				"nl": "meer opleidingen bij FOREM, IFAPME en CISP",
+				"fr": "plus de formations FOREM, IFAPME et CISP",
+				"en": "more training courses at FOREM, IFAPME and CISP centres"
+			}
+		],
+		"ref": {
+			"source": "wal-aju-2026-ep-economie-emploi",
+			"locator": "Annexe 4, programme 18.130 FOREM table (PDF p. 65) and commentary DF 130.006 APE (PDF p. 69), 130.007 Titres-Services (PDF p. 70), 130.016 CISP (PDF p. 72-73, quote p. 73), 130.018 réductions groupes-cibles (PDF p. 73-74), 130.021 JOB+ (PDF p. 74); programme 18.112 IFAPME (PDF p. 52)",
+			"quote": "Décret du 25 avril 2002 relatif aux aides visant à favoriser l'engagement de demandeurs d'emploi inoccupés par les pouvoirs locaux, régionaux et communautaires, par certains employeurs du secteur non marchand | Ce crédit finance d’une part les factures de subsides Titres-Services | Ce crédit est destiné à financer le nouvel incitant à l’embauche : JOB+. | Les CISP assurent la formation de stagiaires éloignés de l’emploi",
+			"note": "Service vouchers: DF 130.007 'finance d'une part les factures de subsides Titres-Services, et d'autre part les frais de gestion' (PDF p. 70), i.e. the Region's subsidy per voucher paid to the approved firms (the gap between the reimbursement value, see ts-wallonie-tableau-indexation, and what the user pays). The phrase names that subsidy, not the user price: a change could be passed on as a different user price, a different reimbursement value for firms, or both, which the Walloon Government decides. APE: since the decree of 10 June 2021 the APE aid is a subsidy to employers (local, regional and community authorities, certain non-profit employers and education, PDF p. 69), so the phrase names the funding, not a number of jobs. Hiring support covers the target-group social-contribution reductions (applied via ONSS/RSZ, incl. older workers) and the new JOB+ incentive that replaces SESAM, Impulsion and other aids from mid-2026, at constant budget; existing contracts run on. FOREM's operating grant (DF 130.012) also funds job-search support and counselling, not only training. Also includes paid educational leave compensation to employers (DF 130.009) and the activation allowance (DF 130.004). corrected: quotes and pages confirmed in bud35 (CISP quote is on p. 73). Point 1: replaced 'a higher/lower price for service vouchers' with 'less/more regional support per service voucher', which is what DF 130.007 pays ('factures de subsides Titres-Services'); the user price is a lever the budget does not set directly. APE phrase now names the funding ('less APE funding for local authorities and non-profits') rather than predicting fewer jobs, since APE is now a subsidy to employers. Hiring phrase no longer says 'jobseekers' (target-group reductions also cover older workers); FR shortened. Training FR shortened. Kept four phrases: all four are large, distinct items, two named in the line label."
+		}
+	}
 }

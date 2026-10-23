@@ -1,0 +1,45 @@
+{
+	"line": "brussels.other",
+	"effects": {
+		"cut": [
+			{
+				"nl": "minder personeel in de gewestelijke administratie",
+				"fr": "moins de personnel dans l'administration régionale",
+				"en": "fewer staff in the regional administration"
+			},
+			{
+				"nl": "minder toeristische promotie van Brussel (visit.brussels)",
+				"fr": "moins de promotion touristique de Bruxelles (visit.brussels)",
+				"en": "less tourism promotion of Brussels (visit.brussels)"
+			},
+			{
+				"nl": "tragere digitalisering van gewestelijke diensten",
+				"fr": "une numérisation plus lente des services régionaux",
+				"en": "slower digitalisation of regional services"
+			}
+		],
+		"add": [
+			{
+				"nl": "meer personeel in de gewestelijke administratie",
+				"fr": "plus de personnel dans l'administration régionale",
+				"en": "more staff in the regional administration"
+			},
+			{
+				"nl": "meer toeristische promotie van Brussel (visit.brussels)",
+				"fr": "plus de promotion touristique de Bruxelles (visit.brussels)",
+				"en": "more tourism promotion of Brussels (visit.brussels)"
+			},
+			{
+				"nl": "snellere digitalisering van gewestelijke diensten",
+				"fr": "une numérisation plus rapide des services régionaux",
+				"en": "faster digitalisation of regional services"
+			}
+		],
+		"ref": {
+			"source": "bru-a268-5-p1",
+			"locator": "Section 1 table (SPRB): Mission 35 Programme 041 p. 39; Mission 37 Programme 042 p. 44 and Programme 101 p. 45; Mission 39 Programme 121 p. 50",
+			"quote": "Programme 041: Gérer efficacement la fonction publique - RH du SPRB | Programme 042: Poursuivre la simplification administrative au sein de la Région de Bruxelles-Capitale | Programme 101: Financer Paradigm | Programme 121: Financer visit.brussels",
+			"note": "Residual line. Supporting: visit.brussels budget (bru-a268-5-p3 p. 74, 'Programme 302: Soutenir le tourisme dans la Région de Bruxelles-Capitale'); Paradigm budget (bru-a268-5-p2 p. 8, 'Programme 202: Soutenir la transition numérique et l'innovation technologique dans la Région de Bruxelles-Capitale : exploitation et maintenance'). Large parts have no direct citizen-facing effect: financial stakes and loans (e.g. capital for Vivaqua, SLRB, Brussels Expo per Budget des recettes et des dépenses pour l'année budgétaire 2026 – Exposé général (Doc. A-269/1 – 2025/2026) (https://weblex.irisnet.be/data/crb/doc/2025-26/153785/images.pdf) p. 23), provisions, EU co-funded projects, ministers' offices and parliament, worship and secular organisations, tax administration. corrected: quotes confirmed (A-268/5 part 1 pp. 39, 44, 45, 50; visit.brussels part 3 p. 74; Paradigm part 2 p. 8); visit.brussels phrase shortened in all three languages; other phrases confirmed"
+		}
+	}
+}

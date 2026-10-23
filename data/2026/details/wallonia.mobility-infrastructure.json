@@ -1,0 +1,45 @@
+{
+	"line": "wallonia.mobility-infrastructure",
+	"effects": {
+		"cut": [
+			{
+				"nl": "minder ritten van TEC-bussen en -trams",
+				"fr": "moins de bus et de trams du TEC",
+				"en": "fewer TEC bus and tram services"
+			},
+			{
+				"nl": "minder onderhoud van wegen, autosnelwegen en waterwegen",
+				"fr": "moins d'entretien des routes, autoroutes et voies hydrauliques",
+				"en": "less maintenance of roads, motorways and waterways"
+			},
+			{
+				"nl": "minder geld voor leerlingenvervoer",
+				"fr": "moins de moyens pour le transport scolaire",
+				"en": "less money for school transport"
+			}
+		],
+		"add": [
+			{
+				"nl": "meer ritten van TEC-bussen en -trams",
+				"fr": "plus de bus et de trams du TEC",
+				"en": "more TEC bus and tram services"
+			},
+			{
+				"nl": "meer onderhoud van wegen, autosnelwegen en waterwegen",
+				"fr": "plus d'entretien des routes, autoroutes et voies hydrauliques",
+				"en": "more maintenance of roads, motorways and waterways"
+			},
+			{
+				"nl": "meer geld voor leerlingenvervoer",
+				"fr": "plus de moyens pour le transport scolaire",
+				"en": "more money for school transport"
+			}
+		],
+		"ref": {
+			"source": "wal-aju-2026-ep-territoire-mobilite",
+			"locator": "Annexe 3, programme 14.045 'Transport urbain, interurbain et scolaire' table (PDF p. 16-17) and 'Objectif du programme' (PDF p. 18); programme 14.049 'Réseau routier, autoroutier et voies hydrauliques - Construction et entretien du réseau' table (PDF p. 22)",
+			"quote": "l’offre TEC de l’Opérateur de Transport de Wallonie (OTW) constitue les services réguliers régionaux urbains, interurbains et scolaires | Intervention financière de la Région dans la couverture des charges d'exploitation de l'OTW | Intervention financière de la Région en faveur de l'OTW couvrant l'établissement et l'organisation de transport scolaire, y compris le transport des enfants présentant un handicap | Entretien routes",
+			"note": "OTW/TEC is financed under a public service contract (revised CSP approved 16/04/2026 with a multi-year budget trajectory, PDF p. 18), so changes pass through that contract. School transport organised by OTW includes transport of children with a disability (DF 045.010, PDF p. 16). Investment grants to OTW (infrastructure, fleet electrification DF 045.050, Charleroi metro) are also in this line but no longer have their own phrase. Some payments follow long-term commitments that cannot be changed quickly, e.g. SOFICO (DF 049.098) and the reimbursement to OTW of the costs of the Liège tram project (DF 045.023). The line is the whole DO 14: it also contains regional airports and aerodromes (14.046), sports infrastructure grants (14.047) and subsidised works for municipalities (14.048), not reflected in the phrases. corrected: quotes and pages confirmed in bud34. Point 7: dropped the fourth phrase (TEC infrastructure and electric buses), the weakest since it overlaps with the TEC phrase, and mentioned it in the caveat. School-transport phrase shortened (FR was 11 words) and uses the Flemish term 'leerlingenvervoer'; the disability detail moved to the caveat."
+		}
+	}
+}

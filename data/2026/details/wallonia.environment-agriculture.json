@@ -1,0 +1,45 @@
+{
+	"line": "wallonia.environment-agriculture",
+	"effects": {
+		"cut": [
+			{
+				"nl": "minder gewestelijke cofinanciering van landbouwsteun (GLB)",
+				"fr": "moins de cofinancement régional des aides agricoles (PAC)",
+				"en": "less regional co-funding of farm support (CAP)"
+			},
+			{
+				"nl": "minder onderhoud van waterlopen en minder overstromingspreventie",
+				"fr": "moins d'entretien des cours d'eau et de prévention des inondations",
+				"en": "less upkeep of streams and flood prevention"
+			},
+			{
+				"nl": "minder steun voor natuurparken en beschermde natuurgebieden",
+				"fr": "moins de soutien aux parcs naturels et sites protégés",
+				"en": "less support for nature parks and protected sites"
+			}
+		],
+		"add": [
+			{
+				"nl": "meer gewestelijke cofinanciering van landbouwsteun (GLB)",
+				"fr": "plus de cofinancement régional des aides agricoles (PAC)",
+				"en": "more regional co-funding of farm support (CAP)"
+			},
+			{
+				"nl": "meer onderhoud van waterlopen en meer overstromingspreventie",
+				"fr": "plus d'entretien des cours d'eau et de prévention des inondations",
+				"en": "more upkeep of streams and flood prevention"
+			},
+			{
+				"nl": "meer steun voor natuurparken en beschermde natuurgebieden",
+				"fr": "plus de soutien aux parcs naturels et sites protégés",
+				"en": "more support for nature parks and protected sites"
+			}
+		],
+		"ref": {
+			"source": "wal-aju-2026-ep-agriculture",
+			"locator": "Annexe 9, Introduction (PDF p. 3); programme 058 'Aides à l'agriculture' objectives (PDF p. 39); programme 060 'Nature, forêt, chasse-pêche' table (PDF p. 42-44, parcs naturels and Natura 2000 rows p. 43); programme 061 'Espace rural et naturel' table (PDF p. 48) and DF 061.007 (PDF p. 52)",
+			"quote": "Ce programme regroupe l’ensemble des dépenses relatives à l’Organisme Payeur de Wallonie pour assurer la mise en œuvre et le paiement des mesures d’aides aux exploitations agricoles, coopératives ou associations dans le cadre de la Politique Agricole Commune (PAC) | Entretien des cours d'eau non navigables et des ouvrages de régularisation du régime des eaux de première catégorie | Subventions de fonctionnement aux parcs naturels | gestion des sites Natura 2000",
+			"note": "Most CAP payments to farmers are EU-funded and do not pass through this line; the Region pays its co-financing share and the paying agency's (OPW) running costs, so the farm-support phrase refers to the regional share only. Streams here are the non-navigable watercourses managed by the Region (navigable waterways are in the mobility line); the flood link is stated in the introduction (PDF p. 3: 'la gestion des cours d'eau non navigables et [...] la prévention des inondations constitue une priorité majeure') and in the legal basis of DF 061.007 (PDF p. 52). Waste prevention and sorting (programme 15.064, wal-aju-2026-ep-sante PDF p. 45, and the waste fund 15.077) is also in this line but no longer has its own phrase. Large items not described in the phrases: the Walloon 'Kyoto' climate fund (programme 15.074, financed by emission-allowance revenue; its uses are not detailed in the annexes read), the environment protection fund (15.075), air/water/soil protection (15.062), SPW ARNE studies and monitoring (15.057), animal welfare (15.059) and the agricultural calamities fund. corrected: quotes and pages confirmed in bud39 (parcs naturels and Natura 2000 rows are on p. 43). Point 7: dropped the fourth phrase (waste prevention and sorting), the weakest since it rests on a second document and a smaller programme; noted in the caveat. Nature phrase shortened in FR. Flood-prevention wording kept: the annex states it explicitly. The streams FR phrase stays at ten words; shortening it would drop either the streams or the flood part."
+		}
+	}
+}

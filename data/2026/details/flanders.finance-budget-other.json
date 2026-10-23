@@ -1,0 +1,45 @@
+{
+	"line": "flanders.finance-budget-other",
+	"effects": {
+		"cut": [
+			{
+				"nl": "een lagere Vlaamse jobbonus voor werkenden",
+				"fr": "un jobbonus flamand plus faible pour les travailleurs",
+				"en": "a lower Flemish jobbonus for workers"
+			},
+			{
+				"nl": "een kleinere woonbonus voor wie een woonlening afbetaalt",
+				"fr": "un woonbonus plus faible sur les prêts hypothécaires",
+				"en": "a smaller woonbonus tax reduction on home loans"
+			},
+			{
+				"nl": "minder geld voor projecten van Vlaamse Veerkracht",
+				"fr": "moins d'argent pour les projets « Vlaamse Veerkracht »",
+				"en": "less money for Vlaamse Veerkracht recovery projects"
+			}
+		],
+		"add": [
+			{
+				"nl": "een hogere Vlaamse jobbonus voor werkenden",
+				"fr": "un jobbonus flamand plus élevé pour les travailleurs",
+				"en": "a higher Flemish jobbonus for workers"
+			},
+			{
+				"nl": "een grotere woonbonus voor wie een woonlening afbetaalt",
+				"fr": "un woonbonus plus élevé sur les prêts hypothécaires",
+				"en": "a larger woonbonus tax reduction on home loans"
+			},
+			{
+				"nl": "meer geld voor projecten van Vlaamse Veerkracht",
+				"fr": "plus d'argent pour les projets « Vlaamse Veerkracht »",
+				"en": "more money for Vlaamse Veerkracht recovery projects"
+			}
+		],
+		"ref": {
+			"source": "vr-2025-2410-bbt-financien-begroting-bo2026",
+			"locator": "Uitgavenartikelen: CE0-1CDD2DP-WT 'JOBBONUS', heading p. 41, 'Korte inhoud begrotingsartikel' with the quote p. 42; CB0-1CDD2DB-WT 'WOONFISCALITEIT', heading p. 36, description p. 37 ('Vlaamse fiscale uitgaven (belastingverminderingen en belastingkredieten) bij lopende wetgeving'), table with 'Woonbonus 2005-2014' and 'Gewestelijke woonbonus' p. 38. Recovery plan: vp-19-2025-2026-nr10-bijlagen-1 p. 39 (CB0-1CBD2AH-PR 'VOOR RELANCEPLAN VLAAMSE VEERKRACHT') and vp-17-2025-2026-nr1-algemene-toelichting-ba2026 p. 55 ('Relanceprovisie', VEK estimated from the 'encours per eind 2025') and p. 151 (Bijlage 7, 'Relanceprovisie VEK-spreiding per project')",
+			"quote": "Op dit begrotingsartikel wordt de Vlaamse jobbonus aangerekend.",
+			"note": "Source describes the initial 2026 budget (BO 2026); the articles are the same in BA 2026 (vp-19 Bijlagen-1 p. 41). Jobbonus and woonbonus are set in tax law: the budget article estimates their cost 'bij lopende wetgeving', so a change needs a decree change, and the woonbonus works through the personal income tax assessment, so effects come with delay. The recovery-plan provision pays out commitments already made (no new commitment credit in 2026; payments estimated from the 'encours per eind 2025') and is partly matched by EU receipts, so a cut would mean delaying or dropping projects. The line also contains items that are hard to change by budget choice: the 'responsabiliseringsbijdrage' for civil-servant pensions (CB0-1CCD2CA-LO), the provision for wage adjustments under collective agreements (CB0-1CBD2AB-PR), the index provision for automatic wage indexation, the payment-incidence provision and the truck-toll availability fee (kilometerheffing/Viapass). Provisions are later moved to other domains, so cuts there show up elsewhere. corrected: jobbonus quote is verbatim but on p. 42, not p. 41 (heading only on p. 41); woonbonus table is on p. 38, not pp. 36-37; locator fixed. Recovery-plan phrase reworded to the projects the provision pays for, with a caveat that it pays out earlier commitments and is partly EU-matched. French woonbonus phrase shortened. Flag 3: jobbonus/woonbonus phrases name the tax credit the money pays for (the official lever), not an automatic effect; caveat states the decree and income-tax route."
+		}
+	}
+}

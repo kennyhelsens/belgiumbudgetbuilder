@@ -1,17 +1,5 @@
 {
 	"line": "social-security.selfemployed-pensions",
-	"recipients": {
-		"who": {
-			"nl": "elke gepensioneerde zelfstandige",
-			"fr": "chaque pensionné indépendant",
-			"en": "every retired self-employed person"
-		},
-		"what": {
-			"nl": "pensioen",
-			"fr": "de pension",
-			"en": "pension"
-		}
-	},
 	"equivalents": [
 		{
 			"id": "min-pension-selfemployed-full-career-single-year",
@@ -30,5 +18,47 @@
 				}
 			}
 		}
-	]
+	],
+	"effects": {
+		"cut": [
+			{
+				"nl": "lagere pensioenen voor gepensioneerde zelfstandigen",
+				"fr": "des pensions plus basses pour les indépendants retraités",
+				"en": "lower pensions for retired self-employed people"
+			},
+			{
+				"nl": "lagere overlevingspensioenen in het stelsel van zelfstandigen",
+				"fr": "des pensions de survie plus basses chez les indépendants",
+				"en": "lower survivors' pensions in the self-employed scheme"
+			},
+			{
+				"nl": "een lager minimumpensioen voor zelfstandigen",
+				"fr": "une pension minimum plus basse pour les indépendants",
+				"en": "a lower minimum pension for self-employed people"
+			}
+		],
+		"add": [
+			{
+				"nl": "hogere pensioenen voor gepensioneerde zelfstandigen",
+				"fr": "des pensions plus élevées pour les indépendants retraités",
+				"en": "higher pensions for retired self-employed people"
+			},
+			{
+				"nl": "hogere overlevingspensioenen in het stelsel van zelfstandigen",
+				"fr": "des pensions de survie plus élevées chez les indépendants",
+				"en": "higher survivors' pensions in the self-employed scheme"
+			},
+			{
+				"nl": "een hoger minimumpensioen voor zelfstandigen",
+				"fr": "une pension minimum plus élevée pour les indépendants",
+				"en": "a higher minimum pension for self-employed people"
+			}
+		],
+		"ref": {
+			"source": "be-chamber-56-1468-001",
+			"locator": "p. 168, Tabel III.4 'Volumefactoren van de prestaties van het stelsel globaal beheer voor zelfstandigen', block 'Pensioenen (aantal begunstigden)'",
+			"quote": "Pensioenen (aantal begunstigden) 652.054 669.545 658.381 | Rustpensioenen 561.583 582.345 570.515 | Overlevingspensioenen 90.471 87.200 87.866",
+			"note": "Legal entitlements; changing them requires changing the law. The minimum-pension phrase rests on the RSVZ/INASTI page already in sources (rsvz-faq-hoeveel-pensioen: 'Minimum rustpensioen als alleenstaande'), which is the unit used in data/2026/details/social-security.selfemployed-pensions.json. Many recipients have mixed careers and also get an employee or civil-service pension from other lines. confirmed"
+		}
+	}
 }

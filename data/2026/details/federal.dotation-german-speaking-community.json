@@ -1,0 +1,45 @@
+{
+	"line": "federal.dotation-german-speaking-community",
+	"effects": {
+		"cut": [
+			{
+				"nl": "een kleinere dotatie voor de kinderbijslag van de Gemeenschap",
+				"fr": "une dotation réduite pour les allocations familiales de la Communauté",
+				"en": "a smaller grant for the Community's child benefit"
+			},
+			{
+				"nl": "een kleinere dotatie voor de ouderenzorg van de Gemeenschap",
+				"fr": "une dotation réduite pour les soins aux aînés de la Communauté",
+				"en": "a smaller grant for the Community's elderly care"
+			},
+			{
+				"nl": "een kleinere dotatie voor ziekenhuisinvesteringen in de Gemeenschap",
+				"fr": "une dotation réduite pour les investissements hospitaliers de la Communauté",
+				"en": "a smaller grant for the Community's hospital investments"
+			}
+		],
+		"add": [
+			{
+				"nl": "een grotere dotatie voor de kinderbijslag van de Gemeenschap",
+				"fr": "une dotation plus élevée pour les allocations familiales de la Communauté",
+				"en": "a larger grant for the Community's child benefit"
+			},
+			{
+				"nl": "een grotere dotatie voor de ouderenzorg van de Gemeenschap",
+				"fr": "une dotation plus élevée pour les soins aux aînés de la Communauté",
+				"en": "a larger grant for the Community's elderly care"
+			},
+			{
+				"nl": "een grotere dotatie voor ziekenhuisinvesteringen in de Gemeenschap",
+				"fr": "une dotation plus élevée pour les investissements hospitaliers de la Communauté",
+				"en": "a larger grant for the Community's hospital investments"
+			}
+		],
+		"ref": {
+			"source": "be-chamber-56-1281-001",
+			"locator": "DOC 56 1281/001, section 01, division 35 programme 4 'Duitstalige Gemeenschap', p. 26-27 (legal basis, programme 4 starts at the foot of p. 26) and table 'initiële doorstortingen 2026', p. 31 (column Dgem/Cg; also justitiehuizen and 'bijkomende middelen Dgem'); hospital investments: division 36 programme 4, p. 41",
+			"quote": "Het betreft de verschuldigde dotaties in toepassing van het artikel 58duodecies van de wet van 31 december 1983 tot hervorming der instellingen voor de Duitstalige Gemeenschap. [...] dotatie gezinsbijslagen [...] dotatie ouderenzorg [...] dotatie gezondheidszorgen & hulp aan personen [...] dotatie ziekenhuizen",
+			"note": "A grant to another government, not federal spending on a service. The amount follows from the law of 31 December 1983 (art. 58duodecies) and its parameters (population, index, growth); changing it means changing that law, and the German-speaking Community, not the federal government, decides how the money is spent. The dotation also covers houses of justice (justitiehuizen) and extra means for the Community's small scale; the line also includes hospital investments paid on the Community's behalf, the senator grant and prison prefinancing. Phrases describe what the transferred competences are; they are not a prediction of the Community's choices. Second check: phrases now say 'a smaller/larger grant for' rather than 'less/more money for' child benefit, elderly care and hospitals, because the Community, not the federal budget, sets child benefit and care spending; 'hospitals' narrowed to 'hospital investments' (division 36 p. 41 and the 'dotatie ziekenhuizen' are for hospital infrastructure and medico-technical services). 'the Community' refers to the line label. corrected: rephrased all six phrases from 'less/more money for X in the German-speaking Community' to 'a smaller/larger grant for the Community's X', so they describe the transfer (fixed by art. 58duodecies of the law of 31 December 1983) and not the Community's own spending decisions; 'hospitals' narrowed to 'hospital investments' as the source describes; shortened to about 8 words. Quote and locator confirmed verbatim (DOC 56 1281/001 p. 27 and table p. 31)."
+		}
+	}
+}

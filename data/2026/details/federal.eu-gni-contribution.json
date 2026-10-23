@@ -1,0 +1,35 @@
+{
+	"line": "federal.eu-gni-contribution",
+	"effects": {
+		"cut": [
+			{
+				"nl": "een kleinere EU-begroting, beslist op Europees niveau",
+				"fr": "un budget de l'UE plus petit, décidé au niveau européen",
+				"en": "a smaller EU budget, decided at EU level"
+			},
+			{
+				"nl": "meer andere EU-inkomsten, zoals douanerechten",
+				"fr": "plus d'autres recettes de l'UE, comme les droits de douane",
+				"en": "more other EU revenue, such as customs duties"
+			}
+		],
+		"add": [
+			{
+				"nl": "een grotere EU-begroting, beslist op Europees niveau",
+				"fr": "un budget de l'UE plus grand, décidé au niveau européen",
+				"en": "a larger EU budget, decided at EU level"
+			},
+			{
+				"nl": "minder andere EU-inkomsten, zoals douanerechten",
+				"fr": "moins d'autres recettes de l'UE, comme les droits de douane",
+				"en": "less other EU revenue, such as customs duties"
+			}
+		],
+		"ref": {
+			"source": "be-chamber-56-1470-001",
+			"locator": "DOC 56 1470/001, section 52 justification p. 168 (B.A. 52 40 10 351010); Tabel 1 p. 953",
+			"quote": "De totale uitgaven in de EU-begroting moeten gelijk zijn aan de totale ontvangsten. De betalingskredieten worden gefinancierd door een aantal eigen middelen die de 27 lidstaten afdragen aan de EU (douanerechten, btw-bijdrage en een plasticbijdrage) alsook andere ontvangsten (bijvoorbeeld geldboetes voor bedrijven). Het resterende bedrag moet gefinancierd worden door middel van de BNI-bijdrage die gebaseerd is op de BNI-sleutel van elk land.",
+			"note": "Belgium cannot change this contribution on its own: it is the balancing resource of the EU budget, set by the EU own-resources rules, the annual EU budget agreed by the Council and the European Parliament, and Belgium's GNI key (p. 168). The site should probably show this as a fixed/committed line or add a notice; the second phrase describes the route by which the amount changes (the EU budget agreed between the Council and the European Parliament, p. 168), not a Belgian budget choice. Reviewer may prefer to keep only the first phrase pair. Second check: the phrase pair 'a smaller/larger Belgian contribution to the EU budget' was dropped: it only restated the change and read as if Belgium could simply pay less. The second phrase pair rests on the same quote: the GNI contribution finances 'het resterende bedrag' after customs duties, the VAT and plastic contributions and other revenue such as fines, so higher other EU revenue lowers it and lower other revenue raises it. Both routes are outside the Belgian budget. Belgium's GNI key is set by its share of EU GNI (p. 168). corrected: dropped 'a smaller/larger Belgian contribution to the EU budget' (tautological and implies Belgium can just pay less, flag 4); kept 'a smaller/larger EU budget, decided at EU level'; added 'more/less other EU revenue, such as customs duties', grounded in the quote on p. 168 (the GNI contribution covers the remainder after other own resources). Owner decision: this line is already tagged nature 'committed' in data/2026/entities/federal.json and would better be shown as not adjustable, like interest, with a notice that only EU decisions change it."
+		}
+	}
+}

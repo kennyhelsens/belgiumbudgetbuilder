@@ -1,0 +1,55 @@
+{
+	"line": "wallonia.health-disability-social",
+	"effects": {
+		"cut": [
+			{
+				"nl": "minder geld voor zorg in woonzorgcentra",
+				"fr": "moins de moyens pour les maisons de repos",
+				"en": "less funding for care in nursing homes"
+			},
+			{
+				"nl": "minder uren gezinszorg voor ouderen en gezinnen",
+				"fr": "moins d'heures d'aide familiale pour aînés et familles",
+				"en": "fewer home-help hours for older people and families"
+			},
+			{
+				"nl": "minder geld voor centra voor personen met een handicap",
+				"fr": "moins de moyens pour les centres pour personnes handicapées",
+				"en": "less funding for disability day and residential centres"
+			},
+			{
+				"nl": "minder voedselhulp en schuldbemiddeling",
+				"fr": "moins d'aide alimentaire et de médiation de dettes",
+				"en": "less food aid and debt counselling"
+			}
+		],
+		"add": [
+			{
+				"nl": "meer geld voor zorg in woonzorgcentra",
+				"fr": "plus de moyens pour les maisons de repos",
+				"en": "more funding for care in nursing homes"
+			},
+			{
+				"nl": "meer uren gezinszorg voor ouderen en gezinnen",
+				"fr": "plus d'heures d'aide familiale pour aînés et familles",
+				"en": "more home-help hours for older people and families"
+			},
+			{
+				"nl": "meer geld voor centra voor personen met een handicap",
+				"fr": "plus de moyens pour les centres pour personnes handicapées",
+				"en": "more funding for disability day and residential centres"
+			},
+			{
+				"nl": "meer voedselhulp en schuldbemiddeling",
+				"fr": "plus d'aide alimentaire et de médiation de dettes",
+				"en": "more food aid and debt counselling"
+			}
+		],
+		"ref": {
+			"source": "wal-aju-2026-budget-uap",
+			"locator": "Annexe 10, AViQ budget: A.B. 34.01.31 'Transfert pour la gestion du système de protection sociale wallonne' (table PDF p. 134, commentary PDF p. 134-138, quote PDF p. 138); A.B. 33.03.00 'Subventions à des services agréés d'aide aux familles et aux aînés' (PDF p. 123-124, quote p. 124); A.B. 33.07.00 'Services résidentiels et d'accueil de jour - Subventions forfaitaires annuelles' (PDF p. 95)",
+			"quote": "Financement des frais de séjour en MR, MRS et CSJ | Les Services agréés d’aides aux familles et aux aînés, créés par les ASBL, proposent les services d’aides familiales et de gardes à domicile aux personnes âgées ou aux familles en incapacité d’accomplir des actes de vie journalière. | Ce crédit est destiné à couvrir la subvention forfaitaire annuelle des services résidentiels et d’accueil de jour.",
+			"note": "Mixed line: AViQ dotations (paritaires DF 093.016, réglementées DF 093.017 etc.) plus programmes 17.092, 17.094 (social action) and 17.095 (crèche buildings). The fourth phrase is grounded in a second document, wal-aju-2026-ep-sante, programme 17.094: DF 094.033 'Aide alimentaire (secteur privé)' (PDF p. 104) and DF 094.027 'Soutien à des initiatives relatives à la médiation de dettes' (PDF p. 103); the same programme also funds homeless shelters, DF 094.015 'Subventions aux Maisons d'accueil et aux Maisons communautaires' (PDF p. 99), not named in the phrase. Much of the nursing-home, hospital-infrastructure and rehabilitation-centre spending is billed by care providers through the Walloon health insurers under regulated rates (A.B. 34.01.31), so it behaves like an entitlement. Other large items not named in the phrases: the APA care allowance for older people (A.B. 34.01.31), sheltered workshops (ETA, bud42 PDF p. 110-112), and the amount withheld by the federal government for pre-reform hospital charges (DF 093.027), which the Region cannot adjust. corrected: quotes confirmed in bud42 (AViQ) and bud40 (social action); fixed the 34.01.31 page (quote is on PDF p. 138, table p. 134). Kept four phrases because each covers a part named in the line label (care, elderly, disability, social action). Shortened phrase 2 in NL/EN; phrase 3 in EN/NL now says 'people with a disability'; phrase 4 shortened in all languages to food aid and debt counselling (FR was 13 words), with shelters moved to the caveat. Caveat names the second document with pages. FR nursing-home phrase shortened."
+		}
+	}
+}

@@ -1,0 +1,55 @@
+{
+	"line": "brussels.employment-economy",
+	"effects": {
+		"cut": [
+			{
+				"nl": "minder aanwervingspremies voor werkgevers die werkzoekenden aannemen",
+				"fr": "moins d'aides à l'embauche de chercheurs d'emploi",
+				"en": "fewer hiring subsidies for employers taking on jobseekers"
+			},
+			{
+				"nl": "minder begeleiding van werkzoekenden door Actiris",
+				"fr": "moins d'accompagnement des chercheurs d'emploi par Actiris",
+				"en": "less jobseeker guidance from Actiris"
+			},
+			{
+				"nl": "minder gewestelijke steun per dienstencheque",
+				"fr": "moins de soutien régional par titre-service",
+				"en": "less regional support per service voucher"
+			},
+			{
+				"nl": "minder onderzoeks- en innovatiesubsidies van Innoviris",
+				"fr": "moins de subsides de recherche et d'innovation (Innoviris)",
+				"en": "fewer research and innovation grants from Innoviris"
+			}
+		],
+		"add": [
+			{
+				"nl": "meer aanwervingspremies voor werkgevers die werkzoekenden aannemen",
+				"fr": "plus d'aides à l'embauche de chercheurs d'emploi",
+				"en": "more hiring subsidies for employers taking on jobseekers"
+			},
+			{
+				"nl": "meer begeleiding van werkzoekenden door Actiris",
+				"fr": "plus d'accompagnement des chercheurs d'emploi par Actiris",
+				"en": "more jobseeker guidance from Actiris"
+			},
+			{
+				"nl": "meer gewestelijke steun per dienstencheque",
+				"fr": "plus de soutien régional par titre-service",
+				"en": "more regional support per service voucher"
+			},
+			{
+				"nl": "meer onderzoeks- en innovatiesubsidies van Innoviris",
+				"fr": "plus de subsides de recherche et d'innovation (Innoviris)",
+				"en": "more research and innovation grants from Innoviris"
+			}
+		],
+		"ref": {
+			"source": "bru-a268-5-p1",
+			"locator": "Section 1 table (SPRB), Mission 44, programme headings pp. 72-73 (Programmes 048, 106, 111)",
+			"quote": "Programme 048: Soutenir l’emploi de proximité et le développement des compétences par le dispositif des titres-services | Programme 106: Financer Innoviris | Programme 111: Financer Actiris",
+			"note": "Supporting documents: Actiris' own budget (bru-a268-5-p3, annex 1, p. 23: 'Programme 252: Financer les dépenses de partenariats', 'Programme 253: Financer les programmes d'aides à l'emploi'); concordance bru-a268-1-p4 (annex 5a, pp. 149-153) lists 'Werkingssubsidies aan Actiris voor de financiering van de Premies Tewerkstelling' and 'Exploitatiesubsidie aan de privéonderneming die de dienstencheques uitgeeft'. Service vouchers: the regional subsidy is paid per voucher to the issuing company and is demand-driven (see the line's own note); whether a change reaches users through the voucher price or the companies through the amount they receive is a separate regulatory choice, so the phrase stays at 'support per voucher'. hub.brussels and other economy programmes are also in this line but not phrased. corrected: quotes confirmed at A-268/5 part 1 p. 73, Actiris p. 23 of part 3, annex 5a items confirmed (pp. 149-153); Actiris and Innoviris phrases shortened (FR was 10-11 words), 'and its partners' dropped in all three languages to keep them aligned"
+		}
+	}
+}

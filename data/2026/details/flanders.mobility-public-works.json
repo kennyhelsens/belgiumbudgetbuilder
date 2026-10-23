@@ -18,5 +18,57 @@
 				}
 			}
 		}
-	]
+	],
+	"effects": {
+		"cut": [
+			{
+				"nl": "minder bussen en trams van De Lijn",
+				"fr": "moins de bus et de trams De Lijn",
+				"en": "fewer De Lijn buses and trams"
+			},
+			{
+				"nl": "minder onderhoud van gewestwegen en autosnelwegen",
+				"fr": "moins d'entretien des routes régionales et autoroutes",
+				"en": "less maintenance of regional roads and motorways"
+			},
+			{
+				"nl": "minder investeringen in fietsinfrastructuur",
+				"fr": "moins d'investissements dans les infrastructures cyclables",
+				"en": "less investment in cycling infrastructure"
+			},
+			{
+				"nl": "minder onderhoud van kanalen en waterwegen",
+				"fr": "moins d'entretien des canaux et voies navigables",
+				"en": "less maintenance of canals and waterways"
+			}
+		],
+		"add": [
+			{
+				"nl": "meer bussen en trams van De Lijn",
+				"fr": "plus de bus et de trams De Lijn",
+				"en": "more De Lijn buses and trams"
+			},
+			{
+				"nl": "meer onderhoud van gewestwegen en autosnelwegen",
+				"fr": "plus d'entretien des routes régionales et autoroutes",
+				"en": "more maintenance of regional roads and motorways"
+			},
+			{
+				"nl": "meer investeringen in fietsinfrastructuur",
+				"fr": "plus d'investissements dans les infrastructures cyclables",
+				"en": "more investment in cycling infrastructure"
+			},
+			{
+				"nl": "meer onderhoud van kanalen en waterwegen",
+				"fr": "plus d'entretien des canaux et voies navigables",
+				"en": "more maintenance of canals and waterways"
+			}
+		],
+		"ref": {
+			"source": "vp-19-2025-2026-nr10-bijlagen-1",
+			"locator": "vp-19 Bijlagen-1, administratieve uitgavenbegroting, beleidsdomein Mobiliteit en Openbare Werken (PDF pages): MB0-1MEH2GY-IS 'VLAAMSE VERVOERSMAATSCHAPPIJ DE LIJN' p. 84; MD0-1MHH2QA-WT 'ONDERHOUD WEGINFRASTRUCTUUR' p. 88; MB0-1MHH2RH-WT 'FIETSFONDS' p. 88; MB0-1MIH2UA-WT 'ONDERHOUD WATERINFRASTRUCTUUR' p. 91. Cross-check vp-17-2025-2026-nr1-algemene-toelichting-ba2026: p. 68 (werkingstoelage De Lijn MB0-1MEH2GY-IS 'in kader van het uitbreidingsbeleid'; 'regulier onderhoud' for MDK, De Vlaamse Waterweg and AWV); p. 110, MOW compensation tables: 'Uitbreidingsbeleid openbaar vervoer naar De Lijn' and 'Effect reduceren budget fietsinfrastuctuur' [sic] on the central MOW investment article MB0-1MFH2LD-WT",
+			"quote": "MB0-1MEH2GY-IS 3 VLAAMSE VERVOERSMAATSCHAPPIJ DE LIJN / MD0-1MHH2QA-WT 3 ONDERHOUD WEGINFRASTRUCTUUR / MB0-1MHH2RH-WT 3 FIETSFONDS / MB0-1MIH2UA-WT 3 ONDERHOUD WATERINFRASTRUCTUUR",
+			"note": "Quote joins four article names, each verbatim from one table row (page per article in the locator). Cycling phrase now rests on FIETSFONDS plus the budget's own term 'fietsinfrastructuur' (vp-17 p. 110); the budget does not say how many paths it builds, so the phrase speaks of investment, not of paths. A large part of the line is multi-year investment under contract (Oosterweel/Lantis, De Werkvennootschap, Nieuwe Sluis Terneuzen with the Netherlands), which cannot be changed quickly. De Lijn's service is set in its service contract with the Flemish government. corrected: all four article names confirmed verbatim at the stated pages. Flag 2: 'new or upgraded cycle paths' went beyond the article name FIETSFONDS; replaced by 'investment in cycling infrastructure', the budget's own term (vp-17 p. 110). Flag 1: kept the joined quote (no single sentence covers the line) but reordered it to match the locator, which names the page of each part. Added vp-17 p. 68/110 grounding for De Lijn service expansion."
+		}
+	}
 }

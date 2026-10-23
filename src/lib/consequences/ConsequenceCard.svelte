@@ -1,15 +1,12 @@
 <!--
-ABOUTME: Consequence card: what a visitor's change to one spending line means, in one plain sentence from that line's
-ABOUTME: sourced details, the amounts in small print, where the change would land, and the official levers.
+ABOUTME: Consequence card: what a visitor's change to one spending line could mean, in plain words and without numbers,
+ABOUTME: from that line's sourced details; with where the change would land and the official levers where known.
 -->
 <script lang="ts">
 	import type { Dataset, LineDetails } from '../data/schema.ts';
 	import type { Locale } from '../i18n/locales.ts';
 	import { translate, type MessageKey } from '../i18n/translate.ts';
-	import { formatEuro } from '../explorer/format.ts';
-	import { formatPercentChange } from '../builder/notice.ts';
-	import { distributeChange, preferReviewed } from './consequences.ts';
-	import { amountsLine, asIfSentence, exampleSentence } from './human.ts';
+	import { distributeChange } from './consequences.ts';
 
 	let {
 		data,
@@ -26,44 +23,30 @@ ABOUTME: sourced details, the amounts in small print, where the change would lan
 	const sourcesById = $derived(new Map(data.sources.map((source) => [source.id, source])));
 	const spread = $derived(distributeChange(details.breakdown, changeEurMillion));
 	const largestChange = $derived(Math.max(...spread.map((item) => Math.abs(item.change)), 1));
-	const signed = (eurMillion: number) =>
-		eurMillion > 0 ? `+${formatEuro(eurMillion, locale)}` : formatEuro(eurMillion, locale);
-	const percent = $derived((changeEurMillion / line.amount.eurMillion) * 100);
-	// One example only: the card tells one thing well rather than many numbers.
-	const example = $derived(
-		preferReviewed(details.equivalents)
-			.slice(0, 1)
-			.map((e) => ({ unitEur: e.unitEur.value, label: e.label[locale] }))[0]
-	);
-	// Benefit lines lead with time for the people who receive them; other lines with an example.
-	const lead = $derived(
-		details.recipients
-			? asIfSentence(locale, details.recipients, percent)
-			: example && exampleSentence(locale, 'lead', changeEurMillion, example)
-	);
-	const also = $derived(
-		details.recipients && example
-			? exampleSentence(locale, 'also', changeEurMillion, example)
-			: undefined
-	);
+	const cut = $derived(changeEurMillion < 0);
+	const effects = $derived((cut ? details.effects?.cut : details.effects?.add) ?? []);
+	const effectsSource = $derived(details.effects && sourcesById.get(details.effects.ref.source));
 	const titleId = $derived(`consequence-${details.line.replace(/\W/g, '-')}`);
 </script>
 
 <section class="card" aria-labelledby={titleId}>
 	<h3 id={titleId}>
-		{t('consequence.title')
-			.replace('{change}', formatPercentChange(Math.round(percent), locale))
-			.replace('{name}', line.label[locale])}
+		{t(cut ? 'consequence.cutTitle' : 'consequence.addTitle').replace('{name}', line.label[locale])}
 	</h3>
-	{#if lead}
-		<p class="card__lead">{lead}</p>
+	{#if effects.length > 0}
+		<ul class="effects">
+			{#each effects as effect (effect.en)}
+				<li>{effect[locale]}</li>
+			{/each}
+		</ul>
+		<p class="card__note">
+			{t('consequence.effectsNote')}
+			{#if effectsSource}
+				{t('consequence.source')}:
+				<a href={effectsSource.url} rel="external noopener">{effectsSource.title}</a>
+			{/if}
+		</p>
 	{/if}
-	{#if also}
-		<p class="card__also">{also}</p>
-	{/if}
-	<p class="card__amounts" data-testid="amounts">
-		{amountsLine(locale, changeEurMillion, data.overview.population.persons)}
-	</p>
 
 	{#if details.breakdown.length > 0}
 		<h4 id="{titleId}-where">{t('consequence.where')}</h4>
@@ -81,7 +64,6 @@ ABOUTME: sourced details, the amounts in small print, where the change would lan
 								style="width:{(Math.abs(spread[i].change) / largestChange) * 100}%"
 							></span>
 						</span>
-						<span class="spread__value">{signed(spread[i].change)}</span>
 					{/if}
 				</li>
 			{/each}
@@ -133,24 +115,18 @@ ABOUTME: sourced details, the amounts in small print, where the change would lan
 		font-size: var(--text-base);
 	}
 
-	/* The plain sentence is the point of the card; the amounts are small print. */
-	.card__lead {
+	/* The possible effects are what the card says; everything else is small print. */
+	.effects {
 		margin: var(--space-2) 0 0;
+		padding-left: var(--space-4);
 		font-family: var(--font-display);
 		font-size: var(--text-lg);
 		font-weight: 700;
 		line-height: 1.3;
 	}
 
-	.card__also {
-		margin: var(--space-2) 0 0;
-	}
-
-	.card__amounts {
-		margin: var(--space-2) 0 0;
-		color: var(--ink-muted);
-		font-size: var(--text-sm);
-		font-variant-numeric: tabular-nums;
+	.effects li + li {
+		margin-top: var(--space-1);
 	}
 
 	.card__note {
@@ -169,7 +145,7 @@ ABOUTME: sourced details, the amounts in small print, where the change would lan
 
 	.spread li {
 		display: grid;
-		grid-template-columns: minmax(8rem, 1.4fr) 2fr minmax(5.5rem, auto);
+		grid-template-columns: minmax(8rem, 1.4fr) 2fr;
 		gap: var(--space-2);
 		align-items: center;
 	}
@@ -189,13 +165,8 @@ ABOUTME: sourced details, the amounts in small print, where the change would lan
 		background: var(--series-3);
 	}
 
-	.spread__value {
-		text-align: right;
-		font-variant-numeric: tabular-nums;
-	}
-
 	.spread__offset {
-		grid-column: 2 / 4;
+		grid-column: 2;
 		color: var(--ink-muted);
 		font-style: italic;
 	}
@@ -217,12 +188,12 @@ ABOUTME: sourced details, the amounts in small print, where the change would lan
 
 	@media (max-width: 599px) {
 		.spread li {
-			grid-template-columns: 1fr auto;
+			grid-template-columns: 1fr;
 		}
 
-		.spread__bar {
-			grid-column: 1 / 3;
-			grid-row: 2;
+		.spread__bar,
+		.spread__offset {
+			grid-column: 1;
 		}
 	}
 </style>

@@ -258,6 +258,58 @@
 			}
 		}
 	],
+	"effects": {
+		"cut": [
+			{
+				"nl": "een hoger remgeld bij de huisarts",
+				"fr": "un ticket modérateur plus élevé chez le médecin généraliste",
+				"en": "a higher co-payment at the GP"
+			},
+			{
+				"nl": "minder terugbetaalde geneesmiddelen",
+				"fr": "moins de médicaments remboursés",
+				"en": "fewer medicines reimbursed"
+			},
+			{
+				"nl": "lagere honoraria voor artsen en andere zorgverleners",
+				"fr": "des honoraires plus bas pour les médecins et autres prestataires",
+				"en": "lower fees for doctors and other care providers"
+			},
+			{
+				"nl": "minder geld voor de ziekenhuizen",
+				"fr": "moins d'argent pour les hôpitaux",
+				"en": "less money for hospitals"
+			}
+		],
+		"add": [
+			{
+				"nl": "een lager remgeld bij de huisarts",
+				"fr": "un ticket modérateur moins élevé chez le médecin généraliste",
+				"en": "a lower co-payment at the GP"
+			},
+			{
+				"nl": "meer terugbetaalde geneesmiddelen",
+				"fr": "plus de médicaments remboursés",
+				"en": "more medicines reimbursed"
+			},
+			{
+				"nl": "hogere honoraria voor artsen en andere zorgverleners",
+				"fr": "des honoraires plus élevés pour les médecins et autres prestataires",
+				"en": "higher fees for doctors and other care providers"
+			},
+			{
+				"nl": "meer geld voor de ziekenhuizen",
+				"fr": "plus d'argent pour les hôpitaux",
+				"en": "more money for hospitals"
+			}
+		],
+		"ref": {
+			"source": "riziv-argv-2025-069",
+			"locator": "Punt 4.A 'Snellere toegang en een betere bescherming via een solidaire bijdrage', PDF p. 13 (printed p. 11); GP co-payment named in the midwives section, PDF p. 24 (printed p. 22)",
+			"quote": "Geneesmiddelen kosten zeer veel geld. Voor sommige verpakkingen ligt het remgeld zeer laag | een remgeld in te voeren in de nomenclatuur van de vroedvrouwen, gelijkaardig aan dat voor consultaties bij de huisarts",
+			"note": "Each phrase maps to a lever already in data/2026/details/social-security.healthcare.json: co-payment = 'patient-copayments' (the maximum billing and increased reimbursement protect low incomes); medicines = 'medicines-framework' (same note, PDF p. 13, also moves acid-reflux medicines from reimbursement category B to Cx); fees = 'fees-nomenclature' and 'health-index'; hospitals = 'hospital-financing' (doc-56-1469-002, the state part of hospital financing is in this budget from 2026). The growth norm and sector split decide which of these is used; the GP co-payment is the example the site owner asked for, so it is listed first. confirmed"
+		}
+	},
 	"levers": [
 		{
 			"id": "growth-norm",

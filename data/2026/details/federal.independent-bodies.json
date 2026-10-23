@@ -1,0 +1,45 @@
+{
+	"line": "federal.independent-bodies",
+	"effects": {
+		"cut": [
+			{
+				"nl": "minder acties tegen discriminatie op basis van geslacht",
+				"fr": "moins d'actions contre les discriminations fondées sur le sexe",
+				"en": "less action against discrimination based on sex"
+			},
+			{
+				"nl": "minder werk aan instrumenten en strategieën voor gendermainstreaming",
+				"fr": "moins de travail sur les outils et stratégies de gender mainstreaming",
+				"en": "less work on gender mainstreaming tools and strategies"
+			},
+			{
+				"nl": "lagere dotaties voor Unia en Myria, via nieuwe financieringsregels",
+				"fr": "des dotations plus faibles pour Unia et Myria, via de nouvelles règles de financement",
+				"en": "lower grants to Unia and Myria, via new funding rules"
+			}
+		],
+		"add": [
+			{
+				"nl": "meer acties tegen discriminatie op basis van geslacht",
+				"fr": "plus d'actions contre les discriminations fondées sur le sexe",
+				"en": "more action against discrimination based on sex"
+			},
+			{
+				"nl": "meer werk aan instrumenten en strategieën voor gendermainstreaming",
+				"fr": "plus de travail sur les outils et stratégies de gender mainstreaming",
+				"en": "more work on gender mainstreaming tools and strategies"
+			},
+			{
+				"nl": "hogere dotaties voor Unia en Myria, via nieuwe financieringsregels",
+				"fr": "des dotations plus élevées pour Unia et Myria, via de nouvelles règles de financement",
+				"en": "higher grants to Unia and Myria, via new funding rules"
+			}
+		],
+		"ref": {
+			"source": "be-chamber-56-1281-004",
+			"locator": "DOC 56 1281/004, section 07, programme 41/1 'Dotaties', B.A. 41.10.414001 (Instituut voor de gelijkheid van vrouwen en mannen), p. 3; 41.10.414002 (Unia), p. 3-4; 41.10.414003 (Myria), p. 5",
+			"quote": "Het heeft als taak toe te zien op de naleving van de gelijkheid van vrouwen en mannen; elke vorm van discriminatie en ongelijkheid op basis van geslacht te bestrijden",
+			"note": "Three grants: the Institute for the Equality of Women and Men (by far the largest), Unia and Myria. Unia's budget is fixed by the cooperation agreement of 12 June 2013 (law of 19 January 2014, art. 16 §2, indexed) and Myria's funding by the royal decree of 29 June 2014 (indexed); Unia is an interfederal body also funded by regions and communities. Both must work independently under the Paris Principles. Second check: the Institute's tasks quoted at p. 3 include developing 'instrumenten en strategieën die gestoeld zijn op een geïntegreerde aanpak van de genderdimensie' (gender mainstreaming), which grounds the second phrase. Unia's budget is fixed by art. 16 §2 of the law of 19 January 2014 approving the cooperation agreement of 12 June 2013 (p. 4), which the federal government cannot change alone; Myria's by art. 15, 2° of the royal decree of 29 June 2014 (p. 5). Their phrases now name that lever and no longer describe their work as if the budget alone could change it. corrected: the separate Unia and Myria phrases ('less/more work by Unia ...', 'less/more Myria monitoring ...') suggested the budget alone changes amounts fixed by the cooperation agreement of 12 June 2013 and the royal decree of 29 June 2014 (DOC 56 1281/004 p. 4-5); merged into 'lower/higher grants to Unia and Myria, via new funding rules'. Added a second grounded phrase for the Institute for the Equality of Women and Men, the largest grant (gender mainstreaming tools and strategies, p. 3). Quote confirmed verbatim at p. 3."
+		}
+	}
+}

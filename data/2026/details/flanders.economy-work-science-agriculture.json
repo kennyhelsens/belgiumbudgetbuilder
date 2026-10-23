@@ -18,5 +18,57 @@
 				}
 			}
 		}
-	]
+	],
+	"effects": {
+		"cut": [
+			{
+				"nl": "minder VDAB-opleidingen en -begeleiding voor werkzoekenden",
+				"fr": "moins de formations VDAB et d'accompagnement des demandeurs d'emploi",
+				"en": "fewer VDAB training courses and coaching for jobseekers"
+			},
+			{
+				"nl": "een lagere Vlaamse tegemoetkoming per dienstencheque",
+				"fr": "une intervention flamande plus faible par titre-service",
+				"en": "a lower Flemish subsidy per service voucher"
+			},
+			{
+				"nl": "minder onderzoeksgeld (FWO, imec, VIB, VITO)",
+				"fr": "moins de crédits de recherche (FWO, imec, VIB, VITO)",
+				"en": "less research funding (FWO, imec, VIB, VITO)"
+			},
+			{
+				"nl": "minder gesubsidieerde jobs in maatwerkbedrijven",
+				"fr": "moins d'emplois subventionnés en entreprises de travail adapté",
+				"en": "fewer subsidised jobs in sheltered workplaces (maatwerkbedrijven)"
+			}
+		],
+		"add": [
+			{
+				"nl": "meer VDAB-opleidingen en -begeleiding voor werkzoekenden",
+				"fr": "plus de formations VDAB et d'accompagnement des demandeurs d'emploi",
+				"en": "more VDAB training courses and coaching for jobseekers"
+			},
+			{
+				"nl": "een hogere Vlaamse tegemoetkoming per dienstencheque",
+				"fr": "une intervention flamande plus élevée par titre-service",
+				"en": "a higher Flemish subsidy per service voucher"
+			},
+			{
+				"nl": "meer onderzoeksgeld (FWO, imec, VIB, VITO)",
+				"fr": "plus de crédits de recherche (FWO, imec, VIB, VITO)",
+				"en": "more research funding (FWO, imec, VIB, VITO)"
+			},
+			{
+				"nl": "meer gesubsidieerde jobs in maatwerkbedrijven",
+				"fr": "plus d'emplois subventionnés en entreprises de travail adapté",
+				"en": "more subsidised jobs in sheltered workplaces (maatwerkbedrijven)"
+			}
+		],
+		"ref": {
+			"source": "vp-19-2025-2026-nr10-bijlagen-1",
+			"locator": "vp-19 Bijlagen-1, administratieve uitgavenbegroting, beleidsdomein Werk, Economie, Wetenschap, Innovatie, Landbouw en Sociale Economie (PDF pages): TB0-1TDE2QY-IS 'VDAB' and TB0-1TDE2RA-WT 'DIENSTENCHEQUES' p. 146; TB0-1TEA5GT-IS 'FWO' p. 148; TB0-1TFA2LA-WT imec, TB0-1TFA2LW-IS 'VIB', TB0-1TFA2LX-IS 'VITO' p. 151; TB0-1THC2UA-WT 'COLLECTIEF MAATWERK' p. 153. Cross-check vp-17-2025-2026-nr1-algemene-toelichting-ba2026 p. 9 (VDAB = 'Vlaamse Dienst voor Arbeidsbemiddeling en Beroepsopleiding') and p. 57 (VDAB; Collectief Maatwerk; 'loonpremie Individueel Maatwerk')",
+			"quote": "TB0-1TDE2QY-IS 3 VDAB / TB0-1TDE2RA-WT 3 DIENSTENCHEQUES / TB0-1TEA5GT-IS 1 FWO / TB0-1TFA2LA-WT 1 STRATEGISCHE ONDERZOEKSCENTRUM IMEC / TB0-1TFA2LW-IS 1 VIB / TB0-1TFA2LX-IS 1 VITO / TB0-1THC2UA-WT 3 COLLECTIEF MAATWERK",
+			"note": "Service vouchers: the Flemish money is the 'tegemoetkoming' per voucher paid to the service-voucher company (see vr-2025-1710-bvr-dienstencheques); the price the user pays is set separately by the Flemish government, so a cut does not by itself change the user price. Mixed line: it also holds business innovation support via the Fonds voor Innoveren en Ondernemen (VLAIO), employer-contribution reductions for target groups, training leave and vouchers, and agriculture (incl. VLIF investment support for farmers), which are not covered by the phrases. corrected: all article names confirmed verbatim at the stated pages; quote now lists every article named in the phrases, in locator order. French shortened (VDAB, maatwerk); English maatwerk phrase made plainer ('sheltered workplaces'). Training/coaching for jobseekers is grounded in VDAB's official name (Arbeidsbemiddeling en Beroepsopleiding, vp-17 p. 9)."
+		}
+	}
 }
