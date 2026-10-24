@@ -154,5 +154,20 @@
 	"footer.contactLead": "Vragen of een fout gevonden?",
 	"footer.issue": "Maak een issue aan op GitHub",
 	"footer.or": "of",
-	"footer.linkedin": "stuur me een bericht op LinkedIn"
+	"footer.linkedin": "stuur me een bericht op LinkedIn",
+	"share.titleFound": "Mijn Belgische begroting vindt {amount}. Kun jij beter?",
+	"share.titleWorse": "Mijn Belgische begroting maakt het tekort {amount} groter. Kun jij beter?",
+	"share.titlePlain": "Mijn Belgische begroting. Kun jij beter?",
+	"share.description": "Bouw zelf een begroting voor alle Belgische overheden: op schaal, met officiële bronnen en het effect op tekort en schuld.",
+	"share.open": "Open de begroting",
+	"challenge.title": "Uitdaging: vind {goal}",
+	"challenge.lede": "De regering zoekt {goal}. Vind jij het op de kaart, en durf je te delen hoe?",
+	"challenge.empty": "Maak eerst een keuze op de kaart.",
+	"challenge.progress": "Gevonden: {found} van {goal}",
+	"challenge.worse": "Jouw keuzes maken het tekort {amount} groter.",
+	"challenge.done": "Gelukt: je vond {found}. Deel je begroting en kijk of anderen anders kiezen.",
+	"challenge.share": "Deel je begroting",
+	"challenge.copied": "Link gekopieerd",
+	"challenge.shared": "Je bekijkt een gedeelde begroting. Pas ze aan, of begin opnieuw.",
+	"challenge.restart": "Begin opnieuw"
 }

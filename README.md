@@ -31,6 +31,7 @@ are no easy choices.** Try to balance a budget yourself.
 - Switch to revenue and see which level of government collects which tax.
 - Lower or raise any line or tax. The site says in plain words what that could
   mean, and shows the deficit and the debt over the next ten years.
+- Take the challenge, find €10 billion, and share your budget as a link.
 - Follow every figure to the official document it comes from.
 
 ## What this is, and what it is not
@@ -61,15 +62,16 @@ npm ci                        # install
 npm run dev                   # dev server at http://localhost:5173
 npm run lint && npm run check # formatting, ESLint, type checks
 npm test                      # unit, integration and end-to-end tests
+npm run og-images             # after a build: the preview images in static/og/
 ```
 
-| Where        | What                                                                   |
-| ------------ | ---------------------------------------------------------------------- |
-| `data/2026/` | every amount, with its source, page and the line it was copied from    |
-| `src/lib/`   | map, builder, outlook, intro, translations (NL, FR, EN)                |
-| `functions/` | the anonymous click counter ([`docs/TRACKING.md`](docs/TRACKING.md))   |
-| `e2e/`       | end-to-end tests (Playwright)                                          |
-| `docs/`      | [FAQ](docs/FAQ.md), [spec](docs/SPEC.md), [deployment](docs/DEPLOY.md) |
+| Where        | What                                                                                    |
+| ------------ | --------------------------------------------------------------------------------------- |
+| `data/2026/` | every amount, with its source, page and the line it was copied from                     |
+| `src/lib/`   | map, builder, outlook, intro, translations (NL, FR, EN)                                 |
+| `functions/` | the anonymous click counter ([`docs/TRACKING.md`](docs/TRACKING.md)) and share previews |
+| `e2e/`       | end-to-end tests (Playwright)                                                           |
+| `docs/`      | [FAQ](docs/FAQ.md), [spec](docs/SPEC.md), [deployment](docs/DEPLOY.md)                  |
 
 Every figure on the site comes from `data/`, never from the code, and every
 change to figures goes through a pull request that a person reviews against

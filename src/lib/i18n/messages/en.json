@@ -154,5 +154,20 @@
 	"footer.contactLead": "Questions, or found a mistake?",
 	"footer.issue": "Open an issue on GitHub",
 	"footer.or": "or",
-	"footer.linkedin": "message me on LinkedIn"
+	"footer.linkedin": "message me on LinkedIn",
+	"share.titleFound": "My Belgian budget finds {amount}. Can you do better?",
+	"share.titleWorse": "My Belgian budget makes the deficit {amount} bigger. Can you do better?",
+	"share.titlePlain": "My Belgian budget. Can you do better?",
+	"share.description": "Build your own budget for all Belgian governments: to scale, with official sources and the effect on the deficit and the debt.",
+	"share.open": "Open the budget",
+	"challenge.title": "Challenge: find {goal}",
+	"challenge.lede": "Government looks for {goal}. Can you find it on the map, and do you dare to share how?",
+	"challenge.empty": "Make a choice on the map first.",
+	"challenge.progress": "Found: {found} of {goal}",
+	"challenge.worse": "Your choices make the deficit {amount} bigger.",
+	"challenge.done": "Done: you found {found}. Share your budget and see if others choose differently.",
+	"challenge.share": "Share your budget",
+	"challenge.copied": "Link copied",
+	"challenge.shared": "You are looking at a shared budget. Change it, or start again.",
+	"challenge.restart": "Start again"
 }

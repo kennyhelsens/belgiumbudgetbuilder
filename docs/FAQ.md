@@ -711,6 +711,35 @@ happy ones when the debt falls, worried ones when it rises. This is a playful
 signal of direction, not a judgement of the choice. People who have asked
 their device for reduced motion do not see these animations.
 
+### What is the challenge above the map?
+
+"Challenge: find €10 billion" counts how far your choices get towards the
+amount in the headlines (see "Where does "10 billion" come from?"): your
+spending cuts plus your extra revenue, minus your extra spending and lower
+revenue, for 2026. It says when your choices make the deficit bigger instead.
+It is a game, not advice: the site does not say which choices are right.
+
+### Can I share my budget?
+
+Yes. **Share your budget** opens your device's share menu, or copies a link
+with a short line such as "My Belgian budget finds €2.4 billion. Can you do
+better?". The address of the page also keeps your choices, so copying it
+works too.
+
+The link holds only your choices: each changed line or revenue type and its
+percentage, for example `federal.defence:-3` for 3% less on Defence. Nothing
+about you is in it. Whoever opens it sees your budget, with a note that it was
+shared and a button to start again; the intro does not open first.
+
+When a link is shared on a social network or in a chat app, the preview shows
+that line and a card with the site's title and the map of all governments to
+scale. The card has no amounts in it apart from the €10 billion of the
+challenge, so it cannot go out of date when the figures are corrected. The
+amount in the line is worked out from your choices when you share, and written
+into the link; the budget itself is always recalculated from the choices when
+the link is opened, so the site shows the real result even if someone edits
+the amount in a link.
+
 ### What happened to the examples in concrete units?
 
 Earlier versions of the site expressed a change in concrete units, such as
