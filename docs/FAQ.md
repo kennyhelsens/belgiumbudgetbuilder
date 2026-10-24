@@ -740,6 +740,21 @@ into the link; the budget itself is always recalculated from the choices when
 the link is opened, so the site shows the real result even if someone edits
 the amount in a link.
 
+### Can I put the site on my own page?
+
+Yes, free of charge and without asking. The page **For press and teachers**,
+linked at the bottom of every page, gives a short piece of code to paste into
+an article, a course page or a blog. It shows the builder (the key figures,
+the challenge, the map and the outlook) in the language you choose, without
+the site's header, intro and footer. Its links open the full site in a new
+tab, and its figures are the same as on the site, because it is the same page.
+Clicks inside it are counted anonymously in the same way (see "Does the site
+track what I click?").
+
+The same page has the preview images in each language and a sentence to cite
+the site. It is an independent project, not an official source: please check
+a figure against its source before you publish it.
+
 ### What happened to the examples in concrete units?
 
 Earlier versions of the site expressed a change in concrete units, such as

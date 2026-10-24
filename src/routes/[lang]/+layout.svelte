@@ -1,6 +1,7 @@
 <!--
 ABOUTME: Shell for localized pages: masthead with the flag, the site title, a work-in-progress badge, the language switcher
-ABOUTME: and a link to the source code; a footer on how the figures were made, and where to ask questions.
+ABOUTME: and a link to the source code; a footer on how the figures were made, a link for press and teachers, and where
+ABOUTME: to ask questions.
 -->
 <script lang="ts">
 	import { resolve } from '$app/paths';
@@ -62,6 +63,11 @@ ABOUTME: and a link to the source code; a footer on how the figures were made, a
 		>
 	</p>
 	<p class="colophon__disclaimer">{translate(data.locale, 'footer.purpose')}</p>
+	<p>
+		<a href={resolve('/[lang]/press', { lang: data.locale })}
+			>{translate(data.locale, 'footer.press')}</a
+		>
+	</p>
 	<p class="colophon__contact">
 		{translate(data.locale, 'footer.contactLead')}
 		<a href={NEW_ISSUE_URL} rel="external noopener"

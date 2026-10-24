@@ -32,6 +32,8 @@ are no easy choices.** Try to balance a budget yourself.
 - Lower or raise any line or tax. The site says in plain words what that could
   mean, and shows the deficit and the debt over the next ten years.
 - Take the challenge, find €10 billion, and share your budget as a link.
+- Put the builder in an article or a course page with the code on the page for
+  press and teachers.
 - Follow every figure to the official document it comes from.
 
 ## What this is, and what it is not

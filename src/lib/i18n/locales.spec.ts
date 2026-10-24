@@ -40,4 +40,11 @@ describe('localeFromPath', () => {
 		expect(localeFromPath('/de/')).toBeUndefined();
 		expect(localeFromPath('/favicon.svg')).toBeUndefined();
 	});
+
+	it('reads the locale after /embed/ and /card/, the pages without the site around them', () => {
+		expect(localeFromPath('/embed/fr/')).toBe('fr');
+		expect(localeFromPath('/card/en/')).toBe('en');
+		expect(localeFromPath('/embed/')).toBeUndefined();
+		expect(localeFromPath('/share/fr/')).toBeUndefined();
+	});
 });
