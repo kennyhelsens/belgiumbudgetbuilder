@@ -1,5 +1,5 @@
 // ABOUTME: Prerenders the embeddable builder once per language, with the 2026 budget data; news sites, schools and
-// ABOUTME: blogs frame it with the code from the press page. Unsupported languages return a 404.
+// ABOUTME: blogs frame it with the code from the FAQ. Unsupported languages return a 404.
 import { error } from '@sveltejs/kit';
 import { loadDataset } from '#lib/data/dataset.ts';
 import { LOCALES, isLocale } from '#lib/i18n/locales.ts';

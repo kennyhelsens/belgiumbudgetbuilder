@@ -171,21 +171,5 @@
 	"challenge.shared": "You are looking at a shared budget. Change it, or start again.",
 	"challenge.restart": "Start again",
 	"embed.open": "Open the full site",
-	"embed.sources": "Sources and assumptions",
-	"footer.press": "For press and teachers: embed the site",
-	"press.title": "For press and teachers",
-	"press.lede": "This site shows the 2026 budgets of all Belgian governments to scale, from official sources. Anyone can lower or raise a line or a tax and see what it does to the deficit and the debt. You are welcome to use, embed and share it, free of charge and without asking.",
-	"press.embedTitle": "Embed the builder",
-	"press.embedText": "Paste this code into an article, a course page or a blog. It shows the key figures, the challenge and the map, without our header and footer; its links open the full site.",
-	"press.embedCode": "Code to embed the builder",
-	"press.copy": "Copy the code",
-	"press.copied": "Code copied",
-	"press.embedPreview": "See what the embed looks like",
-	"press.imagesTitle": "Images",
-	"press.imagesText": "The preview card, 1200 by 630 pixels, in each language. Free to use with a mention of the site.",
-	"press.citeTitle": "How to cite",
-	"press.cite": "Belgium Budget Builder (belgiumbudgetbuilder.pages.dev), based on the 2026 budgets published by BOSA, the Chamber of Representatives, the Federal Planning Bureau and the National Bank of Belgium.",
-	"press.citeNote": "An independent, non-partisan project by Kenny Helsens, not an official source. The figures were extracted with the help of AI agents and mistakes are possible: please check a figure against its source, linked from the map and the FAQ, before you publish it.",
-	"press.contactTitle": "Contact",
-	"press.contactText": "Questions, corrections or an interview?"
+	"embed.sources": "Sources and assumptions"
 }

@@ -1,5 +1,5 @@
 // ABOUTME: End-to-end tests for embedding the site: the builder without the site around it, working inside another
-// ABOUTME: page's frame, and the page for press and teachers with the code to embed it, images and how to cite it.
+// ABOUTME: page's frame, and the code to embed it as the FAQ gives it.
 import { expect, test } from '@playwright/test';
 import { PREVIEW_PORT } from './servers.ts';
 
@@ -34,7 +34,7 @@ test.describe('the embeddable builder', () => {
 	test('works inside another page', async ({ page }) => {
 		// Another site: 127.0.0.1 is another origin than localhost. (A page made up in the test would count as a
 		// public site, and Chrome does not let public sites frame a local server.)
-		await page.goto(`http://127.0.0.1:${PREVIEW_PORT}/en/press/`);
+		await page.goto(`http://127.0.0.1:${PREVIEW_PORT}/en/faq/`);
 		await page.evaluate((src) => {
 			const frame = document.createElement('iframe');
 			Object.assign(frame, { src, title: 'Budget', width: '1200', height: '900' });
@@ -50,47 +50,11 @@ test.describe('the embeddable builder', () => {
 	});
 });
 
-test.describe('the page for press and teachers', () => {
-	test('is linked from the footer and gives the code to embed the builder', async ({
-		page,
-		context
-	}) => {
-		await context.grantPermissions(['clipboard-read', 'clipboard-write']);
-		await page.goto('/en/');
-		await page.getByRole('link', { name: 'For press and teachers: embed the site' }).click();
-		await expect(page).toHaveURL('/en/press/');
-		await expect(page.getByRole('heading', { level: 1 })).toHaveText('For press and teachers');
-		const code = page.getByRole('textbox', { name: 'Code to embed the builder' });
-		await expect(code).toHaveValue(
-			/^<iframe src="https:\/\/belgiumbudgetbuilder\.pages\.dev\/embed\/en\/" title="Belgium Budget Builder"/
-		);
-		await page.getByRole('button', { name: 'Copy the code' }).click();
-		await expect(page.getByRole('status')).toHaveText('Code copied');
-		expect(await page.evaluate(() => navigator.clipboard.readText())).toBe(await code.inputValue());
-		await expect(page.getByRole('link', { name: /See what the embed looks like/ })).toHaveAttribute(
-			'href',
-			'/embed/en'
-		);
-	});
-
-	test('offers the preview images, how to cite the site and a contact', async ({
-		page,
-		request
-	}) => {
-		await page.goto('/nl/press/');
-		const images = page.getByRole('region', { name: 'Beelden' }).getByRole('link');
-		await expect(images).toHaveCount(3);
-		for (const lang of ['nl', 'fr', 'en']) {
-			const response = await request.get(`/og/${lang}.png`);
-			expect(response.headers()['content-type']).toBe('image/png');
-		}
-		await expect(page.getByRole('region', { name: 'Hoe verwijzen' })).toContainText(
-			'geen officiële bron'
-		);
-		await expect(
-			page.getByRole('region', { name: 'Contact' }).getByRole('link', { name: /LinkedIn/ })
-		).toBeVisible();
-	});
+test('the FAQ gives the code to embed the builder', async ({ page }) => {
+	await page.goto('/en/faq/');
+	await expect(page.locator('code', { hasText: '<iframe' })).toContainText(
+		'src="https://belgiumbudgetbuilder.pages.dev/embed/nl/"'
+	);
 });
 
 test('the preview card is in the language of its address', async ({ page }) => {

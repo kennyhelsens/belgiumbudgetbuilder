@@ -171,21 +171,5 @@
 	"challenge.shared": "Vous regardez un budget partagé. Modifiez-le, ou recommencez.",
 	"challenge.restart": "Recommencer",
 	"embed.open": "Ouvrir le site complet",
-	"embed.sources": "Sources et hypothèses",
-	"footer.press": "Pour la presse et les enseignants : intégrez le site",
-	"press.title": "Pour la presse et les enseignants",
-	"press.lede": "Ce site montre à l'échelle les budgets 2026 de tous les pouvoirs publics belges, à partir de sources officielles. Chacun peut réduire ou augmenter un poste ou un impôt et voir l'effet sur le déficit et la dette. Vous pouvez l'utiliser, l'intégrer et le partager librement, gratuitement et sans demander.",
-	"press.embedTitle": "Intégrer l'outil",
-	"press.embedText": "Collez ce code dans un article, une page de cours ou un blog. Il montre les chiffres clés, le défi et la carte, sans notre en-tête ni notre pied de page ; ses liens ouvrent le site complet.",
-	"press.embedCode": "Code pour intégrer l'outil",
-	"press.copy": "Copier le code",
-	"press.copied": "Code copié",
-	"press.embedPreview": "Voir la version intégrée",
-	"press.imagesTitle": "Images",
-	"press.imagesText": "La carte d'aperçu, 1200 sur 630 pixels, dans chaque langue. Libre d'utilisation avec mention du site.",
-	"press.citeTitle": "Comment citer",
-	"press.cite": "Bâtir le budget belge (belgiumbudgetbuilder.pages.dev), sur la base des budgets 2026 publiés par le SPF BOSA, la Chambre des représentants, le Bureau fédéral du Plan et la Banque nationale de Belgique.",
-	"press.citeNote": "Un projet indépendant et non partisan de Kenny Helsens, pas une source officielle. Les chiffres ont été extraits avec l'aide d'agents d'IA et des erreurs sont possibles : vérifiez un chiffre auprès de sa source, liée depuis la carte et dans la FAQ, avant de le publier.",
-	"press.contactTitle": "Contact",
-	"press.contactText": "Des questions, une correction ou une interview ?"
+	"embed.sources": "Sources et hypothèses"
 }

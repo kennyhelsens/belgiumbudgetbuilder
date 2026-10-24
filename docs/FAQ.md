@@ -742,18 +742,27 @@ the amount in a link.
 
 ### Can I put the site on my own page?
 
-Yes, free of charge and without asking. The page **For press and teachers**,
-linked at the bottom of every page, gives a short piece of code to paste into
-an article, a course page or a blog. It shows the builder (the key figures,
-the challenge, the map and the outlook) in the language you choose, without
-the site's header, intro and footer. Its links open the full site in a new
-tab, and its figures are the same as on the site, because it is the same page.
-Clicks inside it are counted anonymously in the same way (see "Does the site
-track what I click?").
+Yes, free of charge and without asking. Paste this code into an article, a
+course page or a blog (use `nl`, `fr` or `en` for the language):
 
-The same page has the preview images in each language and a sentence to cite
-the site. It is an independent project, not an official source: please check
-a figure against its source before you publish it.
+```html
+<iframe
+	src="https://belgiumbudgetbuilder.pages.dev/embed/nl/"
+	title="Belgische Begrotingsbouwer"
+	width="100%"
+	height="900"
+	style="border:0"
+	loading="lazy"
+></iframe>
+```
+
+It shows the builder (the key figures, the challenge, the map and the
+outlook) without the site's header, intro and footer. Its links open the full
+site in a new tab, and its figures are the same as on the site, because it is
+the same page. Clicks inside it are counted anonymously in the same way (see
+"Does the site track what I click?"). It is an independent project, not an
+official source: please check a figure against its source before you publish
+it.
 
 ### What happened to the examples in concrete units?
 

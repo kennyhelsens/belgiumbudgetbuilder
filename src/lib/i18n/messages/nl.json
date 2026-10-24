@@ -171,21 +171,5 @@
 	"challenge.shared": "Je bekijkt een gedeelde begroting. Pas ze aan, of begin opnieuw.",
 	"challenge.restart": "Begin opnieuw",
 	"embed.open": "Open de volledige site",
-	"embed.sources": "Bronnen en aannames",
-	"footer.press": "Voor pers en leerkrachten: zet de site op je eigen pagina",
-	"press.title": "Voor pers en leerkrachten",
-	"press.lede": "Deze site toont de begrotingen 2026 van alle Belgische overheden op schaal, uit officiële bronnen. Iedereen kan een post of een belasting verlagen of verhogen en zien wat dat doet met het tekort en de schuld. Je mag de site gratis gebruiken, insluiten en delen, zonder het te vragen.",
-	"press.embedTitle": "De begrotingsbouwer insluiten",
-	"press.embedText": "Plak deze code in een artikel, een lespagina of een blog. Ze toont de kerncijfers, de uitdaging en de kaart, zonder onze kop en voettekst; de links openen de volledige site.",
-	"press.embedCode": "Code om de begrotingsbouwer in te sluiten",
-	"press.copy": "Kopieer de code",
-	"press.copied": "Code gekopieerd",
-	"press.embedPreview": "Bekijk hoe de ingesloten versie eruitziet",
-	"press.imagesTitle": "Beelden",
-	"press.imagesText": "De previewkaart, 1200 op 630 pixels, in elke taal. Vrij te gebruiken met vermelding van de site.",
-	"press.citeTitle": "Hoe verwijzen",
-	"press.cite": "Belgische Begrotingsbouwer (belgiumbudgetbuilder.pages.dev), op basis van de begrotingen 2026 gepubliceerd door BOSA, de Kamer van volksvertegenwoordigers, het Federaal Planbureau en de Nationale Bank van België.",
-	"press.citeNote": "Een onafhankelijk, partijpolitiek neutraal project van Kenny Helsens, geen officiële bron. De cijfers werden met hulp van AI-agents verzameld en fouten zijn mogelijk: controleer een cijfer bij de bron, gelinkt vanaf de kaart en in de FAQ, voor je het publiceert.",
-	"press.contactTitle": "Contact",
-	"press.contactText": "Vragen, correcties of een interview?"
+	"embed.sources": "Bronnen en aannames"
 }
