@@ -1,7 +1,7 @@
 // ABOUTME: End-to-end tests for embedding the site: the builder without the site around it, working inside another
 // ABOUTME: page's frame, and the code to embed it as the FAQ gives it.
 import { expect, test } from '@playwright/test';
-import { PREVIEW_PORT } from './servers.ts';
+import { PAGES_DEV_URL, PREVIEW_PORT } from './servers.ts';
 
 test.describe('the embeddable builder', () => {
 	test('shows the builder without the masthead, the intro or the language switcher', async ({
@@ -32,9 +32,9 @@ test.describe('the embeddable builder', () => {
 	});
 
 	test('works inside another page', async ({ page }) => {
-		// Another site: 127.0.0.1 is another origin than localhost. (A page made up in the test would count as a
-		// public site, and Chrome does not let public sites frame a local server.)
-		await page.goto(`http://127.0.0.1:${PREVIEW_PORT}/en/faq/`);
+		// Another site: the Pages server, on another port, is another origin. (A page made up in the test would count
+		// as a public site, and Chrome does not let public sites frame a local server.)
+		await page.goto(`${PAGES_DEV_URL}/en/faq/`);
 		await page.evaluate((src) => {
 			const frame = document.createElement('iframe');
 			Object.assign(frame, { src, title: 'Budget', width: '1200', height: '900' });
