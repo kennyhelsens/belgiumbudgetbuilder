@@ -29,7 +29,9 @@ const countRows = async () =>
 	(await query<{ n: number }>('SELECT count(*) AS n FROM tile_clicks'))[0].n;
 
 async function visitAndClick(page: Page) {
-	await page.goto('/en/');
+	// The map is in the prerendered HTML before its scripts run; on the slower `wrangler pages dev`, a click before
+	// the page is hydrated does nothing. Wait until the scripts have loaded.
+	await page.goto('/en/', { waitUntil: 'networkidle' });
 	const map = page.getByRole('region', { name: 'Budget map' });
 	await map.getByRole('button', { name: /^Federal government/ }).click();
 	const cut = map.getByRole('button', { name: 'Cut Defence by 1%' });

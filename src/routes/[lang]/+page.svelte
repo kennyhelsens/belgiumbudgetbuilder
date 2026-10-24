@@ -1,18 +1,22 @@
 <!--
-ABOUTME: Localized home page: the intro on a first visit, the mission, key figures that stay in view, the budget map,
-ABOUTME: the outlook and a change notice.
+ABOUTME: Localized home page: the intro on a first visit, the mission, key figures that stay in view, the 10 billion
+ABOUTME: challenge with a share link, the budget map, the outlook and a change notice.
 ABOUTME: Text comes from the message files and every figure from the sourced data in data/.
 -->
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { replaceState } from '$app/navigation';
+	import Challenge from '#lib/builder/Challenge.svelte';
 	import KeyFigures from '#lib/builder/KeyFigures.svelte';
 	import Outlook from '#lib/builder/Outlook.svelte';
 	import type { Changes } from '#lib/builder/choices.ts';
 	import { headlineMetrics } from '#lib/builder/metrics.ts';
 	import { changeNotice, pickEffect } from '#lib/builder/notice.ts';
+	import { decodeChoices, encodeChoices } from '#lib/builder/share.ts';
 	import BudgetMap from '#lib/explorer/BudgetMap.svelte';
 	import { translate } from '#lib/i18n/translate.ts';
 	import Intro from '#lib/intro/Intro.svelte';
+	import { SITE_URL } from '#lib/site.ts';
 	import { introFacts } from '#lib/intro/facts.ts';
 	import { ClickLog, trackingAllowed } from '#lib/tracking/clicklog.ts';
 	import Bubbles from '#lib/ui/Bubbles.svelte';
@@ -64,10 +68,39 @@ ABOUTME: Text comes from the message files and every figure from the sourced dat
 			label: data.dataset.entities.find((e) => e.id === id)?.label[data.locale] ?? id
 		}))
 	);
+	// A budget shared as a link opens with its choices; the address keeps the choices on screen, so it can be copied.
+	let shared = $state(false);
+	let addressReady = $state(false);
+	const encoded = $derived(encodeChoices(data.dataset, { changes, revenue }));
+	onMount(() => {
+		const choices = decodeChoices(data.dataset, new URLSearchParams(location.search).get('b'));
+		if (Object.keys(choices.changes).length + Object.keys(choices.revenue).length > 0) {
+			changes = choices.changes;
+			revenue = choices.revenue;
+			shared = true;
+		}
+		addressReady = true;
+	});
+	$effect(() => {
+		if (!addressReady) return;
+		const search = encoded === '' ? '' : `?${new URLSearchParams({ b: encoded })}`;
+		if (location.search === search) return;
+		// Only the query changes; the path stays the page's own (with its trailing slash).
+		// eslint-disable-next-line svelte/no-navigation-without-resolve -- same page, new query.
+		replaceState(`${location.pathname}${search}`, {});
+	});
+	function startAgain() {
+		changes = {};
+		revenue = {};
+		shared = false;
+	}
+
 	// The intro opens on a first visit only; the browser remembers that it was seen, nothing more.
+	// A shared budget opens straight away: whoever shared it wants it seen.
 	const INTRO_SEEN = 'bbb-intro-seen';
 	let introOpen = $state(false);
 	onMount(() => {
+		if (shared) return;
 		try {
 			introOpen = localStorage.getItem(INTRO_SEEN) === null;
 		} catch {
@@ -112,6 +145,14 @@ ABOUTME: Text comes from the message files and every figure from the sourced dat
 <svelte:head>
 	<title>{t('site.title')}</title>
 	<meta name="description" content={t('home.lede')} />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="{SITE_URL}/{data.locale}/" />
+	<meta property="og:title" content={t('site.title')} />
+	<meta property="og:description" content={t('home.lede')} />
+	<meta property="og:image" content="{SITE_URL}/og/{data.locale}.png" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<meta name="twitter:card" content="summary_large_image" />
 </svelte:head>
 
 <main class="article">
@@ -127,6 +168,14 @@ ABOUTME: Text comes from the message files and every figure from the sourced dat
 	locale={data.locale}
 	reaction={debtMove && { debt: debtMove, key: noticeKey }}
 	onintro={() => (introOpen = true)}
+/>
+<Challenge
+	data={data.dataset}
+	locale={data.locale}
+	{changes}
+	{revenue}
+	{shared}
+	onrestart={startAgain}
 />
 <BudgetMap
 	data={data.dataset}
@@ -151,10 +200,7 @@ ABOUTME: Text comes from the message files and every figure from the sourced dat
 	locale={data.locale}
 	{changes}
 	{revenue}
-	onreset={() => {
-		changes = {};
-		revenue = {};
-	}}
+	onreset={startAgain}
 	bind:years
 	bind:interestPct
 	bind:growthPct

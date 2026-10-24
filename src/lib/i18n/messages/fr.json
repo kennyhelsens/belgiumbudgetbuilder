@@ -154,5 +154,20 @@
 	"footer.contactLead": "Des questions, ou une erreur trouvée ?",
 	"footer.issue": "Ouvrez une issue sur GitHub",
 	"footer.or": "ou",
-	"footer.linkedin": "envoyez-moi un message sur LinkedIn"
+	"footer.linkedin": "envoyez-moi un message sur LinkedIn",
+	"share.titleFound": "Mon budget belge trouve {amount}. Ferez-vous mieux ?",
+	"share.titleWorse": "Mon budget belge creuse le déficit de {amount}. Ferez-vous mieux ?",
+	"share.titlePlain": "Mon budget belge. Ferez-vous mieux ?",
+	"share.description": "Construisez vous-même un budget pour tous les pouvoirs publics belges : à l'échelle, avec les sources officielles et l'effet sur le déficit et la dette.",
+	"share.open": "Ouvrir le budget",
+	"challenge.title": "Défi : trouvez {goal}",
+	"challenge.lede": "Le gouvernement cherche {goal}. Les trouverez-vous sur la carte, et oserez-vous partager comment ?",
+	"challenge.empty": "Faites d'abord un choix sur la carte.",
+	"challenge.progress": "Trouvé : {found} sur {goal}",
+	"challenge.worse": "Vos choix creusent le déficit de {amount}.",
+	"challenge.done": "C'est fait : vous avez trouvé {found}. Partagez votre budget et voyez si d'autres choisissent autrement.",
+	"challenge.share": "Partagez votre budget",
+	"challenge.copied": "Lien copié",
+	"challenge.shared": "Vous regardez un budget partagé. Modifiez-le, ou recommencez.",
+	"challenge.restart": "Recommencer"
 }
