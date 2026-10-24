@@ -169,5 +169,7 @@
 	"challenge.share": "Deel je begroting",
 	"challenge.copied": "Link gekopieerd",
 	"challenge.shared": "Je bekijkt een gedeelde begroting. Pas ze aan, of begin opnieuw.",
-	"challenge.restart": "Begin opnieuw"
+	"challenge.restart": "Begin opnieuw",
+	"embed.open": "Open de volledige site",
+	"embed.sources": "Bronnen en aannames"
 }

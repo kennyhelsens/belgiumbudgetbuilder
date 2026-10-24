@@ -169,5 +169,7 @@
 	"challenge.share": "Partagez votre budget",
 	"challenge.copied": "Lien copié",
 	"challenge.shared": "Vous regardez un budget partagé. Modifiez-le, ou recommencez.",
-	"challenge.restart": "Recommencer"
+	"challenge.restart": "Recommencer",
+	"embed.open": "Ouvrir le site complet",
+	"embed.sources": "Sources et hypothèses"
 }

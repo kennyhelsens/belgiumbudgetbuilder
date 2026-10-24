@@ -1,64 +1,18 @@
 <!--
-ABOUTME: Localized home page: the intro on a first visit, the mission, key figures that stay in view, the 10 billion
-ABOUTME: challenge with a share link, the budget map, the outlook and a change notice.
+ABOUTME: Localized home page: the intro on a first visit, the mission, and the budget builder (key figures, the 10
+ABOUTME: billion challenge with a share link, the budget map, the outlook and a change notice).
 ABOUTME: Text comes from the message files and every figure from the sourced data in data/.
 -->
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { replaceState } from '$app/navigation';
-	import Challenge from '#lib/builder/Challenge.svelte';
-	import KeyFigures from '#lib/builder/KeyFigures.svelte';
-	import Outlook from '#lib/builder/Outlook.svelte';
-	import type { Changes } from '#lib/builder/choices.ts';
-	import { headlineMetrics } from '#lib/builder/metrics.ts';
-	import { changeNotice, pickEffect } from '#lib/builder/notice.ts';
-	import { decodeChoices, encodeChoices } from '#lib/builder/share.ts';
-	import BudgetMap from '#lib/explorer/BudgetMap.svelte';
+	import Builder from '#lib/builder/Builder.svelte';
 	import { translate } from '#lib/i18n/translate.ts';
 	import Intro from '#lib/intro/Intro.svelte';
 	import { SITE_URL } from '#lib/site.ts';
 	import { introFacts } from '#lib/intro/facts.ts';
-	import { ClickLog, trackingAllowed } from '#lib/tracking/clicklog.ts';
-	import Bubbles from '#lib/ui/Bubbles.svelte';
-	import Toast from '#lib/ui/Toast.svelte';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
-	let changes: Changes = $state({});
-	let revenue: Changes = $state({});
-	let years = $state(10);
-	let interestPct: number | undefined = $state(undefined);
-	let growthPct: number | undefined = $state(undefined);
-	const metrics = $derived(
-		headlineMetrics(data.dataset, {
-			changes,
-			revenue,
-			years,
-			interestRate: interestPct === undefined ? undefined : interestPct / 100,
-			nominalGrowth: growthPct === undefined ? undefined : growthPct / 100
-		})
-	);
-	// What a cut or an increase to a line or revenue type could mean, in plain words, in the page's language.
-	const effectsFor = (id: string, cut: boolean) => {
-		const effects =
-			data.dataset.details.find((d) => d.line === id)?.effects ??
-			data.dataset.revenue.types.find((type) => type.id === id)?.effects;
-		return ((cut ? effects?.cut : effects?.add) ?? []).map((effect) => effect[data.locale]);
-	};
-	// Clicks per line, so every click on the same line tells something new.
-	const clicks: Record<string, number> = {};
-	// The last step the visitor took, illustrated by the notice.
-	let lastStep = $state<{
-		name: string;
-		percent: number;
-		stepEurMillion: number;
-		revenue: boolean;
-		effect?: string;
-	}>();
-	let noticeKey = $state(0);
-	// How the last change moved the debt: more spending or less revenue raises it, the opposite lowers it.
-	let debtMove = $state<'up' | 'down'>();
-	const notice = $derived(lastStep === undefined ? undefined : changeNotice(data.locale, lastStep));
 	const t = $derived((key: Parameters<typeof translate>[1]) => translate(data.locale, key));
 
 	const facts = $derived(introFacts(data.dataset));
@@ -68,32 +22,8 @@ ABOUTME: Text comes from the message files and every figure from the sourced dat
 			label: data.dataset.entities.find((e) => e.id === id)?.label[data.locale] ?? id
 		}))
 	);
-	// A budget shared as a link opens with its choices; the address keeps the choices on screen, so it can be copied.
+	// A shared budget opens with its choices; the builder says so when it mounts, before the intro is considered.
 	let shared = $state(false);
-	let addressReady = $state(false);
-	const encoded = $derived(encodeChoices(data.dataset, { changes, revenue }));
-	onMount(() => {
-		const choices = decodeChoices(data.dataset, new URLSearchParams(location.search).get('b'));
-		if (Object.keys(choices.changes).length + Object.keys(choices.revenue).length > 0) {
-			changes = choices.changes;
-			revenue = choices.revenue;
-			shared = true;
-		}
-		addressReady = true;
-	});
-	$effect(() => {
-		if (!addressReady) return;
-		const search = encoded === '' ? '' : `?${new URLSearchParams({ b: encoded })}`;
-		if (location.search === search) return;
-		// Only the query changes; the path stays the page's own (with its trailing slash).
-		// eslint-disable-next-line svelte/no-navigation-without-resolve -- same page, new query.
-		replaceState(`${location.pathname}${search}`, {});
-	});
-	function startAgain() {
-		changes = {};
-		revenue = {};
-		shared = false;
-	}
 
 	// The intro opens on a first visit only; the browser remembers that it was seen, nothing more.
 	// A shared budget opens straight away: whoever shared it wants it seen.
@@ -114,26 +44,6 @@ ABOUTME: Text comes from the message files and every figure from the sourced dat
 			// Nothing to remember without storage.
 		}
 	}
-	// Anonymous tile clicks, to learn which budgets people look at, cut or add to; see the FAQ on privacy.
-	let clickLog: ClickLog | undefined;
-	onMount(() => {
-		const nav = navigator as Navigator & { globalPrivacyControl?: boolean };
-		if (!trackingAllowed(nav)) return;
-		const log = new ClickLog(data.locale, (body) =>
-			navigator.sendBeacon('/api/events', new Blob([body], { type: 'application/json' }))
-		);
-		clickLog = log;
-		const flush = () => log.flush();
-		addEventListener('pagehide', flush);
-		const onHidden = () => document.visibilityState === 'hidden' && log.flush();
-		document.addEventListener('visibilitychange', onHidden);
-		return () => {
-			log.flush();
-			removeEventListener('pagehide', flush);
-			document.removeEventListener('visibilitychange', onHidden);
-		};
-	});
-
 	function showMap() {
 		const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 		document
@@ -162,49 +72,7 @@ ABOUTME: Text comes from the message files and every figure from the sourced dat
 	<p class="article__status">{t('home.status')}</p>
 </main>
 
-<KeyFigures
-	{metrics}
-	year={data.dataset.year}
-	locale={data.locale}
-	reaction={debtMove && { debt: debtMove, key: noticeKey }}
-	onintro={() => (introOpen = true)}
-/>
-<Challenge
-	data={data.dataset}
-	locale={data.locale}
-	{changes}
-	{revenue}
-	{shared}
-	onrestart={startAgain}
-/>
-<BudgetMap
-	data={data.dataset}
-	locale={data.locale}
-	bind:changes
-	bind:revenue
-	onopen={(id) => clickLog?.record(id, 'open', 0)}
-	onchange={(change) => {
-		clickLog?.record(change.id, change.stepEurMillion < 0 ? 'cut' : 'add', change.percent);
-		const click = clicks[change.id] ?? 0;
-		clicks[change.id] = click + 1;
-		lastStep = {
-			...change,
-			effect: pickEffect(effectsFor(change.id, change.stepEurMillion < 0), click)
-		};
-		debtMove = change.stepEurMillion > 0 !== change.revenue ? 'up' : 'down';
-		noticeKey += 1;
-	}}
-/>
-<Outlook
-	data={data.dataset}
-	locale={data.locale}
-	{changes}
-	{revenue}
-	onreset={startAgain}
-	bind:years
-	bind:interestPct
-	bind:growthPct
-/>
+<Builder data={data.dataset} locale={data.locale} bind:shared onintro={() => (introOpen = true)} />
 <Intro
 	{facts}
 	{legend}
@@ -214,8 +82,6 @@ ABOUTME: Text comes from the message files and every figure from the sourced dat
 	onclose={rememberIntro}
 	onstart={showMap}
 />
-<Toast message={notice} key={noticeKey} closeLabel={t('builder.noticeClose')} />
-<Bubbles burst={debtMove && { mood: debtMove === 'down' ? 'happy' : 'worried', key: noticeKey }} />
 
 <style>
 	.article {
