@@ -944,10 +944,10 @@ to this FAQ.
 - **Technology:** SvelteKit, D3, TypeScript.
 - **Hosting:** Cloudflare Pages, which builds a preview of every proposed
   change.
-- **Privacy:** the site has no cookies, no accounts and no third-party
-  trackers. Its fonts are served from the site itself, so no third-party font
-  service sees your visit. It does count clicks on the budget map, anonymously;
-  see below.
+- **Privacy:** the site has no cookies and no accounts. Its fonts are served
+  from the site itself, so no third-party font service sees your visit. It
+  counts visits with Cloudflare Web Analytics and clicks on the budget map,
+  both anonymously; see below.
 
 ### Does the site track what I click?
 
@@ -966,6 +966,15 @@ It does not record your IP address, browser, device or location, and sets no
 cookies. If your browser sends Global Privacy Control or Do Not Track, nothing
 is recorded at all. The clicks are stored in a Cloudflare D1 database that
 only the project's maintainers can read.
+
+Separately, the site counts page views and visits with Cloudflare Web
+Analytics, the statistics service of the company that hosts the site. Its
+script loads from `static.cloudflareinsights.com`. According to Cloudflare, it
+sets no cookies, stores nothing on your device and does not fingerprint your
+browser; it reports which page was viewed, the referring site, the type of
+browser and device, and the country. Only the project's maintainers can see
+the totals. The Global Privacy Control and Do Not Track opt-out above applies
+to the click counter on the map.
 
 ### I found a mistake. What now?
 

@@ -65,7 +65,27 @@ GROUP BY line ORDER BY sessions DESC LIMIT 20;
 -- Visits and clicks per day
 SELECT date(created_at) AS day, count(DISTINCT session) AS sessions, count(*) AS clicks
 FROM tile_clicks GROUP BY day ORDER BY day DESC;
+
+-- Sessions and clicks per hour over the last two days, in Belgian time
+-- (created_at is UTC: '+1 hour' in winter, '+2 hours' in summer)
+SELECT strftime('%Y-%m-%d %H:00', created_at, '+1 hour') AS hour_brussels,
+       count(DISTINCT session) AS sessions, count(*) AS clicks
+FROM tile_clicks WHERE created_at >= datetime('now', '-2 days')
+GROUP BY hour_brussels ORDER BY hour_brussels DESC;
 ```
+
+A session here is one page load with at least one click on the map; a reload
+gets a new one, and browsers that opt out are not counted. For page views and
+visits, including people who never click, see Cloudflare Web Analytics below.
+
+## Page views and visits: Cloudflare Web Analytics
+
+Web Analytics is switched on for the Pages project (**Workers & Pages →
+belgiumbudgetbuilder → Metrics → Web Analytics**). Cloudflare adds its script
+(`static.cloudflareinsights.com/beacon.min.js`) to every page itself; the
+site's code does not include it. The dashboard shows page views and visits
+over time, by page, referrer, country and device. The FAQ ("Does the site
+track what I click?") tells visitors about it.
 
 ## Tests
 
