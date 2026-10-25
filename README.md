@@ -77,3 +77,11 @@ npm run og-images             # after a build: the preview images in static/og/
 Every figure on the site comes from `data/`, never from the code, and every
 change to figures goes through a pull request that a person reviews against
 its source.
+
+## License
+
+The code is under the [MIT License](LICENSE). The data (`data/`), the
+documentation (`docs/`) and the site's texts are under
+[CC BY 4.0](LICENSE-DATA): reuse them freely, with credit. The figures come
+from public sources, listed in `data/2026/sources.json` and next to each
+figure; those publications keep their own terms, so please cite them too.

@@ -1,0 +1,22 @@
+Data and texts: Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+Copyright (c) 2026 Kenny Helsens
+
+The data in data/, the documentation in docs/ and the site's texts in
+src/lib/i18n/messages/ are licensed under the Creative Commons Attribution 4.0
+International License: https://creativecommons.org/licenses/by/4.0/
+
+You may share and adapt them for any purpose, including commercially, as long
+as you give appropriate credit ("Belgium Budget Builder,
+https://belgiumbudgetbuilder.pages.dev"), link to the license and indicate if
+changes were made.
+
+The figures themselves come from public sources: the budget documents of the
+federal, regional and community parliaments and governments, the Federal
+Planning Bureau, the National Bank of Belgium, social security institutions,
+Statbel and Eurostat. Every source is listed in data/2026/sources.json and
+referenced next to each figure. Those publications remain under their own
+terms; this license covers only this project's selection, structure and
+texts. When you reuse a figure, please cite its original source as well.
+
+The code is licensed separately under the MIT License (see LICENSE).

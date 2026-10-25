@@ -976,6 +976,16 @@ browser and device, and the country. Only the project's maintainers can see
 the totals. The Global Privacy Control and Do Not Track opt-out above applies
 to the click counter on the map.
 
+### Can I reuse the data or the code?
+
+Yes. The code is under the MIT License. The data, the FAQ and the site's
+texts are under Creative Commons Attribution 4.0 (CC BY 4.0): you may reuse
+and adapt them for any purpose, including commercially, as long as you credit
+"Belgium Budget Builder" with a link to the site. The figures themselves come
+from public sources, listed next to each figure and in
+`data/2026/sources.json`. Those publications keep their own terms, so please
+cite the original source of a figure as well.
+
 ### I found a mistake. What now?
 
 Please open an issue or pull request on the project's GitHub repository, with
